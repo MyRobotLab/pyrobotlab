@@ -6,7 +6,7 @@ topcodes = Runtime.createAndStart("topcodes","TopCodes")
 opencv.startService()
 opencv.addFilter("PyramidDown1", "PyramidDown")
 
-def input() :
+def input(data) :
  simage = opencv.getDisplay()
  codes = topcodes.scan(simage.getImage())
  limit = codes.size()
