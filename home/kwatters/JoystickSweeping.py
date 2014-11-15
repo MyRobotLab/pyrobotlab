@@ -119,6 +119,25 @@ def StickRXListener(value):
     else:
       i01.leftArm.rotate.sweep(i01.leftArm.rotate.min, i01.leftArm.rotate.pos, delay, -1, True)
 
+
+### Gesture control
+############################
+# Attach the joystick to 
+# the inmoov service servos
+############################
+def AButtonListener(value):
+  i01.rightHand.close()
+   
+def XButtonListener(value):
+  i01.rightHand.open()  
+
+def BButtonListener(value):
+  i01.leftHand.close()
+   
+def YButtonListener(value):
+  i01.leftHand.open()  
+
+
 ########################################################
 # Left Arm Control  (left joystick for rotate and shoulder)
 ########################################################
@@ -131,4 +150,15 @@ uberjoy.addListener("publishY", "python", "StickYListener")
 
 uberjoy.addListener("publishRX", "python", "StickRXListener")
 uberjoy.addListener("publishRY", "python", "StickRYListener")
+
+uberjoy.addListener("publish0", "python", "AButtonListener")
+uberjoy.addListener("publish1", "python", "BButtonListener")
+uberjoy.addListener("publish2", "python", "XButtonListener")
+uberjoy.addListener("publish3", "python", "YButtonListener")
+
+# TODO: figure how to control both biceps ..
+# the z button (trigger)is a bit tricky
+uberjoy.map("z", 0, 1, i01.rightArm.bicep.max, i01.rightArm.bicep.min)
+uberjoy.addZListener(i01.rightArm.bicep)
+
 
