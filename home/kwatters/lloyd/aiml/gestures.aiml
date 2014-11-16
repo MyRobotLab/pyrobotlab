@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<topic name="GESTURES">
+<category><pattern>REST</pattern>
+<template><random>
+          <li>Resting position</li>
+          <li>Relaxing</li>
+        </random>
+        <oob>
+          <mrl>
+            <service>i01</service>
+            <method>rest</method>
+          </mrl>
+        </oob></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>FIST HIPS</pattern>
+<template>Putting my fists on my hips.
+        <oob>
+          <mrl>
+            <service>i01</service>
+            <method>fistHips</method>
+          </mrl>
+        </oob></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>POUR THE BOTTLE</pattern>
+<template><random>
+          <li>Your money is no good here</li>
+          <li>Let me top up your glass</li>
+          <li>Hair of the dog that bit you, huh?</li>
+        </random>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param> # define the method def pourbottle(): i01.setHandSpeed("left", 0.60, 0.60, 0.60, 0.60, 0.60, 0.60)
+              i01.setHandSpeed("right", 0.60, 0.80, 0.60, 0.60, 0.60, 0.60) i01.setArmSpeed("left", 0.60, 0.60, 0.60, 0.60)
+              i01.setArmSpeed("right", 0.60, 0.60, 0.60, 0.60) i01.setHeadSpeed(0.65, 0.65) i01.moveHead(20,84)
+              i01.moveArm("left",58,40,95,30) i01.moveArm("right",68,74,43,10) i01.moveHand("left",109,138,180,109,180,4)
+              i01.moveHand("right",145,95,110,105,143,90) # invoke the method pourbottle()
+            </param>
+          </mrl>
+        </oob></template>
+</category></topic>
+
+</aiml>

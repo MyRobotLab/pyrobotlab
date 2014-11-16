@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<topic name="BOOTUP">
+<category><pattern>START IN MOVE</pattern>
+<template><oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>
+# set the com ports and start the service named i01          
+leftPort = "COM19"
+rightPort = "COM15"
+i01 = Runtime.createAndStart("i01", "InMoov")
+i01.setMute(True)
+i01.startAll(leftPort, rightPort)
+            </param>
+          </mrl>
+        </oob></template>
+</category></topic>
+
+<topic name="BOOTUP">
+<category><pattern>SYSTEM CHECK</pattern>
+<template><oob>
+          <mrl>
+            <service>i01</service>
+            <method>systemCheck</method>
+          </mrl>
+        </oob></template>
+</category></topic>
+
+<topic name="BOOTUP">
+<category><pattern>START KINECT</pattern>
+<template><oob>
+          <mrl>
+            <service>i01</service>
+            <method>copyGesture</method>
+            <param>True</param>
+          </mrl>
+        </oob></template>
+</category></topic>
+
+</aiml>
