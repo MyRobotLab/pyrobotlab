@@ -119,24 +119,28 @@ def StickRXListener(value):
     else:
       i01.leftArm.rotate.sweep(i01.leftArm.rotate.min, i01.leftArm.rotate.pos, delay, -1, True)
 
-
 ### Gesture control
 ############################
 # Attach the joystick to 
 # the inmoov service servos
+# only activate when the value is 1.0
 ############################
 def AButtonListener(value):
-  i01.rightHand.close()
+  print "A button pressed"  + str(value)
+  if value == 1.0:
+    i01.rightHand.close()
    
 def XButtonListener(value):
-  i01.rightHand.open()  
+  if value == 1.0:
+    i01.rightHand.open()  
 
 def BButtonListener(value):
-  i01.leftHand.close()
+  if value == 1.0:
+    i01.leftHand.close()
    
 def YButtonListener(value):
-  i01.leftHand.open()  
-
+  if value == 1.0:
+    i01.leftHand.open()
 
 ########################################################
 # Left Arm Control  (left joystick for rotate and shoulder)
