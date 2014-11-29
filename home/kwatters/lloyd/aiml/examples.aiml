@@ -79,7 +79,15 @@
     <template>Robots are mechanical devices, but for how long?</template>
   </category>
   
-  
-  
+  <category>
+    <pattern>HOW MANY DAYS UNTIL CHRISTMAS</pattern>
+    <template>
+     <interval>
+        <style>days</style>
+        <from><date jformat="MMMMMMMMM dd, yyyy"/></from>
+        <to>Dec 25, <date jformat="yyyy"/></to>
+      </interval> days until Christmas.    
+    </template>  
+  </category>
   
 </aiml>
