@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<category><pattern>TALK ABOUT *</pattern>
+<template><think><set name="topic"><star index="1"/></set></think>
+<think><set name="about"><star index="1"/></set></think>
+<condition name="about">
+<li value="robots">So we can talk about me.</li>
+<li>Alright. What would you like to know about <get name="about"/>?</li>
+</condition>
+</template>
+</category>
+
+</aiml>
