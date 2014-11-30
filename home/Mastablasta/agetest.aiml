@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!-- File: agetest.aiml -->
+<!-- Author: Mastablasta -->
+<!-- Last modified: November 29, 2014 -->
+<!--  -->
+<!-- This AIML file is part of the ELIAS unknown chat bot knowledge base. -->
+<!--  -->
+<!-- The ELIAS brain is Copyright &copy; 2014 by MBDaR. -->
+<!--  -->
+<!-- The ELIAS brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see http://www.alicebot.org -->
+<!--  -->
+<category><pattern>HOW OLD IS MY WIFE</pattern>
+<template><think>
+<set var="years">
+<interval>
+<jformat>MMMMMMMMM dd, YYYY</jformat>
+<style>years</style>
+<from><date jformat="MMMMMMMMM dd, YYYY"/></from>
+<to>February 01, 1971</to>
+</interval></set>
+</think>She is <get var="years"/> years old.</template>
+</category>
+<category><pattern>HOW OLD IS MY BROTHER</pattern>
+<template><think>
+<set var="years">
+<interval>
+<jformat>MMMMMMMMM dd, YYYY</jformat>
+<style>years</style>
+<from>December 20, 1985</from>
+<to><date jformat="MMMMMMMMM dd, YYYY"/></to>
+</interval></set>
+</think>He is <get var="years"/> years old.</template>
+</category>
+
+</aiml>
