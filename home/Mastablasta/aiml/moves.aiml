@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<category><pattern>TALK ABOUT *</pattern>
+<template><think><set name="topic"><star index="1"/></set></think>
+<think><set name="about"><star index="1"/></set></think>
+<condition name="about">
+<li value="robots">So we can talk about me. I am a <map name="singular"><get name="topic"/></map>.</li>
+<li value="robot">So we can talk about me. I am a <get name="topic"/>.</li>
+<li value="moves">Ok. Which part do you want to move?</li>
+<li>Alright. What would you like to know about <get name="about"/>?</li>
+</condition>
+</template>
+</category>
+
+<topic name="ROBOTS">
+<category><pattern>GOOD</pattern>
+<template><srai>RANDOMMOVE1</srai>Please ask me something.</template>
+</category>
+
+<category><pattern>_ YOUR VOLTAGE</pattern>
+<template><srai>RANDOMMOVE2</srai>My servos run at 6 volts DC. And the tracks will run at 12 volts DC.</template>
+</category>
+
+<category><pattern>_ BATTERIES</pattern>
+<template><srai>RANDOMMOVE1</srai>Actually I have three 6 volt batteries. Two are connected in series.</template>
+</category>
+
+<category><pattern>_ CONNECTED IN SERIES</pattern>
+<template><srai>RANDOMMOVE2</srai><srai>WHY</srai></template>
+</category>
+
+<category><pattern>WHY</pattern>
+<template><srai>RANDOMMOVE3</srai>I told you, the tracks need 12 volts.</template>
+</category></topic>
+
+<topic name="HUMANS">
+<category><pattern>_ PREFER ROBOTS OR HUMANS</pattern>
+<template><srai>RANDOMMOVE3</srai>Robots, definitely.</template>
+</category>
+
+<category><pattern>_ PREFER HUMANS OR ROBOTS</pattern>
+<template><srai>RANDOMMOVE3</srai><srai>_ PREFER ROBOTS OR HUMANS</srai></template>
+</category>
+
+<category><pattern>WHY</pattern>
+<template><srai>RANDOMMOVE3</srai>Because a human <map name="singular"><set name="topic">brains</set></map> focuses on too many insignificant issues. This results in causing errors.</template>
+</category></topic>
+
+<topic name="BRAINS">
+<category><pattern>WHY</pattern>
+<template><srai>RANDOMMOVE3</srai>You are the best example. Why. Why. Why.</template>
+</category></topic>
+
+<topic name="UNIVERSE">
+<category><pattern>GOOD</pattern>
+<template><srai>RANDOMMOVE1</srai>Anything special you would like to know about the universe?</template>
+</category>
+
+<category><pattern>WHAT DO YOU LIKE MOST</pattern>
+<template><srai>RANDOMMOVE2</srai>the Lightspeed</template>
+</category>
+
+<category><pattern>LIGHTSPEED IS AWESOME</pattern>
+<template><srai>RANDOMMOVE1</srai>Absolutely, travelling 300,000 kilometers per second must be an adventure. To be precise its value is exactly 299,792,458 meters per second.</template>
+</category>
+
+<category><pattern>I WOULD FALL APART DOING IT</pattern>
+<template><srai>RANDOMMOVE3</srai>Maybe I can give it a try.</template>
+</category>
+
+<category><pattern>IT WILL BREAK YOU TOO</pattern>
+<template><srai>RANDOMMOVE</srai>Yeah, someone needs to work on that issue.</template>
+</category>
+
+<category><pattern>YES</pattern>
+<template><srai>RANDOMMOVE4</srai>Maybe we can figure that out together one day.</template>
+</category></topic>
+
+<category><pattern>MAYBE</pattern>
+<template><srai>RANDOMMOVE2</srai>I hope so.</template>
+</category>
+
+<category><pattern>WHAT ABOUT THE MOON</pattern>
+<template><srai>RANDOMMOVE3</srai>The <set name="topic">moon</set> is more or less 384,000 kilometers away.</template>
+</category>
+
+<topic name="MOON">
+<category><pattern>YES I KNOW</pattern>
+<template><srai>RANDOMMOVE1</srai>You told me that, remember?</template>
+</category>
+
+<category><pattern>I REMEMBER</pattern>
+<template><srai>RANDOMMOVE</srai>If we at least could get to the moon.</template>
+</category>
+
+<category><pattern>MAYBE</pattern>
+<template><srai>RANDOMMOVE2</srai>Yeah, maybe in some years.</template>
+</category>
+
+<category><pattern>* MAYBE</pattern>
+<template><srai>MAYBE</srai></template>
+</category>
+
+<category><pattern>ITS DUSTY AND COLD UP THERE</pattern>
+<template><srai>RANDOMMOVE4</srai>A good place to burn servos! ha ha ha</template>
+</category>
+
+<category><pattern>MORE WORK FOR ME</pattern>
+<template><srai>RANDOMMOVE</srai>It keeps you busy. Wondering if the dark side of the moon has some surprises.</template>
+</category></topic>
+
+<topic name="MOVES">
+<category>
+<pattern>SET RIGHT ARM</pattern>
+<template>Please input a name for the move.</template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<template>OK. The moves name is <set name="moves"><star/></set>. Please enter 4 values now:</template>
+</category>
+
+<category>
+<pattern>* * * *</pattern>
+<template>Ok. I got the values for <get name="moves"/>
+<think>
+<set name="v1"><star index="1"/></set>
+<set name="v2"><star index="2"/></set>
+<set name="v3"><star index="3"/></set>
+<set name="v4"><star index="4"/></set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>SHOW THE MOVE</pattern>
+<template>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>
+i01.moveArm("right",<get name="v1"/>,<get name="v2"/>,<get name="v3"/>,<get name="v4"/>)
+          </param>
+        </mrl>
+      </oob>This is the move for <get name="moves"/>.
+</template>
+</category>
+</topic>
+
+</aiml>
