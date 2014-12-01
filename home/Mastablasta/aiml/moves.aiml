@@ -122,13 +122,37 @@
 </category>
 
 <category>
-<pattern>* * * *</pattern>
-<template>Ok. I got the values for <get name="moves"/>
+<pattern>FIRST VALUE IS *</pattern>
+<template>Ok. I got the first value.
 <think>
-<set name="v1"><star index="1"/></set>
-<set name="v2"><star index="2"/></set>
-<set name="v3"><star index="3"/></set>
-<set name="v4"><star index="4"/></set>
+<set name="v1"><star/></set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>SECOND VALUE IS *</pattern>
+<template>Ok. I got the second value.
+<think>
+<set name="v2"><star/></set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>THIRD VALUE IS *</pattern>
+<template>Ok. I got the third value.
+<think>
+<set name="v3"><star/></set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>Last VALUE IS *</pattern>
+<template>Ok. I got all values for <get name="moves"/> now.
+<think>
+<set name="v4"><star/></set>
 </think>
 </template>
 </category>
