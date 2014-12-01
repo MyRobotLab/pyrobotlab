@@ -4,7 +4,7 @@
 <template><think><set name="topic"><star index="1"/></set></think>
 <think><set name="about"><star index="1"/></set></think>
 <condition name="about">
-<li value="robots">So we can talk about me. I am a <map name="singular"><get name="topic"/></map></li>
+<li value="robots">So we can talk about me. I am a <map name="singular"><get name="topic"/></map>.</li>
 <li>Alright. What would you like to know about <get name="about"/>?</li>
 </condition>
 </template>
