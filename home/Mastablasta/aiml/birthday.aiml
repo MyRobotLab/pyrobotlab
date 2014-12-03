@@ -13,7 +13,7 @@
 </think>
 <think><get var="days"/></think>
 <condition>
-<li value="1" var="days">Happy birthday Stupid!</li>
+<li value="0" var="days">Happy birthday Stupid!</li>
 </condition>
 <think>
 <set var="days">
@@ -27,7 +27,7 @@
 </think>
 <think><get var="days"/></think>
 <condition>
-<li value="1" var="days">Happy birthday wife!</li>
+<li value="0" var="days">Happy birthday wife!</li>
 </condition>
 <think>
 <set var="days">
@@ -41,7 +41,7 @@
 </think>
 <think><get var="days"/></think>
 <condition>
-<li value="1" var="days">Happy birthday brother!</li>
+<li value="0" var="days">Happy birthday brother!</li>
 </condition>
 <think>
 <set var="days">
@@ -55,7 +55,7 @@
 </think>
 <think><get var="days"/></think>
 <condition>
-<li value="1" var="days">Happy birthday universe!</li>
+<li value="0" var="days">Happy birthday universe!</li>
 </condition></template>
 </category>
 </aiml>
