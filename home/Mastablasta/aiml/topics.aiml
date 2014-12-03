@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
-<!-- File: topics.aiml -->
-<!-- Author: Mastablasta -->
-<!-- Last modified: Dezember 03, 2014 -->
-<!--  -->
-<!-- This AIML file is part of the ELIAS unknown chat bot knowledge base. -->
-<!--  -->
-<!-- The ELIAS brain is Copyright &copy; 2014 by MBDaR. -->
-<!--  -->
-<!-- The ELIAS brain is released under the terms of the GNU Lesser General -->
-<!-- Public License, as published by the Free Software Foundation. -->
-<!--  -->
-<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
-<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
-<!--  -->
-<!-- For more information see http://www.alicebot.org -->
-<!--  -->
+
 <category><pattern># TALK ABOUT *</pattern>
 <template><think><set name="topic"><map name="singular"><star index="2"/></map></set></think>
 <think><set name="about"><map name="singular"><star index="2"/></map></set></think>
