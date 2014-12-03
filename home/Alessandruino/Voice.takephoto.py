@@ -15,10 +15,9 @@ ear.startListening("hello robot|take photo")
 
 
 # set up a message route from the ear --to--> python method "heard"
-ear.addListener("recognized", python.name, "heard", String().getClass()); 
+ear.addListener("recognized", python.name, "heard"); 
 
-def heard():
-      data = msg_ear_recognized.data[0]
+def heard(data):
       print "heard ", data
       if (data == "hello robot"):
          mouth.speak("Hi Alessandro.") 
