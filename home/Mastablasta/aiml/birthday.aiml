@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+
 <category><pattern>ANYTHING SPECIAL TODAY</pattern>
 <template><think>
 <set var="days">
@@ -58,4 +59,5 @@
 <li value="0" var="days">Happy birthday universe!</li>
 </condition></template>
 </category>
+
 </aiml>
