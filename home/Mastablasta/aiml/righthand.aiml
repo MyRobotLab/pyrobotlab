@@ -18,32 +18,32 @@
 <!--  -->
 <topic name="RIGHTHAND">
 <category><pattern>FIRST VALUE IS *</pattern>
-<template><think><set name="v5"><star index="1"/></set></think></template>
+<template><think><set name="v5"><star/></set></think></template>
 </category></topic>
 
 <topic name="RIGHTHAND">
 <category><pattern>SECOND VALUE IS *</pattern>
-<template><think><set name="v6"><star index="1"/></set></think></template>
+<template><think><set name="v6"><star/></set></think></template>
 </category></topic>
 
 <topic name="RIGHTHAND">
 <category><pattern>THIRD VALUE IS *</pattern>
-<template><think><set name="v7"><star index="1"/></set></think></template>
+<template><think><set name="v7"><star/></set></think></template>
 </category></topic>
 
 <topic name="RIGHTHAND">
 <category><pattern>FOURTH VALUE IS *</pattern>
-<template><think><set name="v8"><star index="1"/></set></think></template>
+<template><think><set name="v8"><star/></set></think></template>
 </category></topic>
 
 <topic name="RIGHTHAND">
 <category><pattern>FIFTH VALUE IS *</pattern>
-<template><think><set name="v9"><star index="1"/></set></think></template>
+<template><think><set name="v9"><star/></set></think></template>
 </category></topic>
 
 <topic name="RIGHTHAND">
 <category><pattern>SIXTH VALUE IS *</pattern>
-<template><think><set name="v10"><star index="1"/></set></think>
+<template><think><set name="v10"><star/></set></think>
 The six values are <get name="v5"/> <get name="v6"/> <get name="v7"/> <get name="v8"/> <get name="v9"/> <get name="v10"/></template>
 </category></topic>
 
