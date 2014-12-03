@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!-- File: righthand.aiml -->
+<!-- Author: Mastablasta -->
+<!-- Last modified: Dezember 03, 2014 -->
+<!--  -->
+<!-- This AIML file is part of the ELIAS unknown chat bot knowledge base. -->
+<!--  -->
+<!-- The ELIAS brain is Copyright &copy; 2014 by MBDaR. -->
+<!--  -->
+<!-- The ELIAS brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see http://www.alicebot.org -->
+<!--  -->
+<topic name="RIGHTHAND">
+<category><pattern>FIRST VALUE IS *</pattern>
+<template><think><set name="v5"><star index="1"/></set></think></template>
+</category></topic>
+
+<topic name="RIGHTHAND">
+<category><pattern>SECOND VALUE IS *</pattern>
+<template><think><set name="v6"><star index="1"/></set></think></template>
+</category></topic>
+
+<topic name="RIGHTHAND">
+<category><pattern>THIRD VALUE IS *</pattern>
+<template><think><set name="v7"><star index="1"/></set></think></template>
+</category></topic>
+
+<topic name="RIGHTHAND">
+<category><pattern>FOURTH VALUE IS *</pattern>
+<template><think><set name="v8"><star index="1"/></set></think></template>
+</category></topic>
+
+<topic name="RIGHTHAND">
+<category><pattern>FIFTH VALUE IS *</pattern>
+<template><think><set name="v9"><star index="1"/></set></think></template>
+</category></topic>
+
+<topic name="RIGHTHAND">
+<category><pattern>SIXTH VALUE IS *</pattern>
+<template><think><set name="v10"><star index="1"/></set></think>
+The six values are <get name="v5"/> <get name="v6"/> <get name="v7"/> <get name="v8"/> <get name="v9"/> <get name="v10"/></template>
+</category></topic>
+
+<topic name="RIGHTHAND">
+<category><pattern>THIS IS THE MOTION *</pattern>
+<template>I will remember the motion is called <star/>
+<learn>
+<category>
+    <pattern>SHOW MOTION <eval><star/></eval></pattern>
+    <template>This is the motion <eval><star/></eval>    
+    <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>
+i01.moveHand("right",<get name="v5"/>,<get name="v6"/>,<get name="v7"/>,<get name="v8"/>,<get name="v9"/>,<get name="v10"/>)
+          </param>
+        </mrl>
+      </oob></template>
+</category>
+</learn></template>
+</category></topic>
+
+</aiml>
