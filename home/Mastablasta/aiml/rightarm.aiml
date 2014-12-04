@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<topic name="RIGHTARM">
+<category><pattern>FIRST VALUE IS *</pattern>
+<template><think><set name="v1"><star/></set></think></template>
+</category></topic>
+
+<topic name="RIGHTARM">
+<category><pattern>SECOND VALUE IS *</pattern>
+<template><think><set name="v2"><star/></set></think></template>
+</category></topic>
+
+<topic name="RIGHTARM">
+<category><pattern>THIRD VALUE IS *</pattern>
+<template><think><set name="v3"><star/></set></think></template>
+</category></topic>
+
+<topic name="RIGHTARM">
+<category><pattern>FOURTH VALUE IS *</pattern>
+<template><think><set name="v4"><star/></set></think>
+The four values are <get name="v1"/> <get name="v2"/> <get name="v3"/> <get name="v4"/></template>
+</category></topic>
+
+<topic name="RIGHTARM">
+<category><pattern>THIS IS THE MOTION *</pattern>
+<template>I will remember the motion <star/>
+<learn>
+<category>
+    <pattern>SHOW MOTION <eval><star/></eval></pattern>
+    <template>This is the motion <eval><star/></eval>    
+    <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>
+i01.moveArm("right",<get name="v1"/>,<get name="v2"/>,<get name="v3"/>,<get name="v4"/>)
+          </param>
+        </mrl>
+      </oob></template>
+</category>
+</learn></template>
+</category></topic>
+</aiml>

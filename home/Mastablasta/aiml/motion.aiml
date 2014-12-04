@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<topic name="MOTION">
+<category><pattern>SET RIGHT ARM</pattern>
+<template>Please enter 4 values now:<think><set name="topic">RIGHTARM</set></think></template>
+</category></topic>
+
+<topic name="MOTION">
+<category><pattern>SET RIGHT HAND</pattern>
+<template>Please enter 6 values now:<think><set name="topic">RIGHTHAND</set></think></template>
+</category></topic>
+
+</aiml>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<topic name="RIGHTHAND">
+<category><pattern>FIRST VALUE IS *</pattern>
+<template><think><set name="v5"><star/></set></think></template>
+</category></topic>
+
+<topic name="RIGHTHAND">
+<category><pattern>SECOND VALUE IS *</pattern>
+<template><think><set name="v6"><star/></set></think></template>
+</category></topic>
+
+<topic name="RIGHTHAND">
+<category><pattern>THIRD VALUE IS *</pattern>
+<template><think><set name="v7"><star/></set></think></template>
+</category></topic>
+
+<topic name="RIGHTHAND">
+<category><pattern>FOURTH VALUE IS *</pattern>
+<template><think><set name="v8"><star/></set></think></template>
+</category></topic>
+
+<topic name="RIGHTHAND">
+<category><pattern>FIFTH VALUE IS *</pattern>
+<template><think><set name="v9"><star/></set></think></template>
+</category></topic>
+
+<topic name="RIGHTHAND">
+<category><pattern>SIXTH VALUE IS *</pattern>
+<template><think><set name="v10"><star/></set></think>
+The six values are <get name="v5"/> <get name="v6"/> <get name="v7"/> <get name="v8"/> <get name="v9"/> <get name="v10"/></template>
+</category></topic>
+
+<topic name="RIGHTHAND">
+<category><pattern>THIS IS THE MOTION *</pattern>
+<template>I will remember the motion is called <star/>
+<learn>
+<category>
+    <pattern>SHOW MOTION <eval><star/></eval></pattern>
+    <template>This is the motion <eval><star/></eval>    
+    <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>
+i01.moveHand("right",<get name="v5"/>,<get name="v6"/>,<get name="v7"/>,<get name="v8"/>,<get name="v9"/>,<get name="v10"/>)
+          </param>
+        </mrl>
+      </oob></template>
+</category>
+</learn></template>
+</category></topic>
+
+</aiml>
