@@ -27,7 +27,7 @@ ear.startListening("hello robot|take photo|send email")
 
 
 # set up a message route from the ear --to--> python method "heard"
-ear.addListener("recognized", python.name, "heard", String().getClass()); 
+ear.addListener("recognized", python.name, "heard"); 
 
 def mail(to, subject, text, attach):
             msg = MIMEMultipart()
@@ -54,8 +54,7 @@ def mail(to, subject, text, attach):
             # Should be mailServer.quit(), but that crashes...
             mailServer.close()
 
-def heard():
-      data = msg_ear_recognized.data[0]
+def heard(data):
       print "heard ", data
       if (data == "hello robot"):
          mouth.speak("ciao Alessandro.") 
