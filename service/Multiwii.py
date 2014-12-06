@@ -31,10 +31,12 @@ serial.connect(COMPORT,BAUDRATE,8,1,0);
 send_msp(MSP_SET_RAW_RC, rc_bytes, MSP_SET_RAW_RC_LENGTH);
 
 def arm():
+  msgType = 200 # MSP_SET_RAW_RC
+  
   serial.write(Header0??)
   serial.write(Header1??)
   serial.write(Header2??)
-  serial.write(MsgType??)
+  serial.write(msgType)
   serial.write(MsgLength??)
   
   serial.write(throttleValue)
