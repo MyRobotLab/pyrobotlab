@@ -33,9 +33,10 @@ send_msp(MSP_SET_RAW_RC, rc_bytes, MSP_SET_RAW_RC_LENGTH);
 def arm():
   msgType = 200 # MSP_SET_RAW_RC
   
-  serial.write(Header0??)
-  serial.write(Header1??)
-  serial.write(Header2??)
+  # header $M<
+  serial.write('$')
+  serial.write('M')
+  serial.write('<')
   serial.write(msgType)
   serial.write(MsgLength??)
   
