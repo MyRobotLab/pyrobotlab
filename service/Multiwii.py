@@ -1,4 +1,6 @@
 #define POLL_PERIOD 20
+serial = Runtime.start("serial","Serial"
+
 COMPORT= "COM19"
 BAUDRATE = 9600
 #define MSP_SET_RAW_RC        200
