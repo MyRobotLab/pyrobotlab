@@ -40,10 +40,10 @@ def arm():
   serial.write(msgType)
   serial.write(MsgLength??)
   
-  serial.write(0) # min throttle 
-  serial.write(2000) # max yaw 
+  serial.write(1000) # min roll 
+  serial.write(1000) # min throttle 
+  serial.write(2000) # max yaw
   serial.write(1000) # min pitch
-  serial.write(1000) # min roll
   serial.write(1000) # aux1
   serial.write(1000) # aux2
   serial.write(1000) # aux3
