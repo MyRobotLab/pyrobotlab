@@ -1,5 +1,5 @@
 #define POLL_PERIOD 20
-serial = Runtime.start("serial","Serial"
+serial = Runtime.start("serial","Serial")
 
 COMPORT= "COM19"
 BAUDRATE = 9600
