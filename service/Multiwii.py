@@ -40,14 +40,30 @@ def arm():
   serial.write(msgType)
   serial.write(MsgLength??)
   
+  # msg data - LSB first 2 byte uint_8
   serial.write(1500) # min roll 
+  serial.write(1500 >> 8) # min roll 
+
   serial.write(1000) # min throttle 
+  serial.write(1000 >> 8) # min throttle 
+
   serial.write(2000) # max yaw
+  serial.write(2000 >> 8) # max yaw
+
   serial.write(1500) # min pitch
+  serial.write(1500 >> 8) # min pitch
+
   serial.write(1000) # aux1
+  serial.write(1000 >> 8) # aux1
+
   serial.write(1000) # aux2
+  serial.write(1000 >> 8) # aux2
+
   serial.write(1000) # aux3
+  serial.write(1000 >> 8) # aux3
+
   serial.write(1000) # aux4
+  serial.write(1000 >> 8) # aux4
   
   serial.write(checksum)
   
