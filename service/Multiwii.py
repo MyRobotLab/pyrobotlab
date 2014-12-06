@@ -31,12 +31,26 @@ serial.connect(COMPORT,BAUDRATE,8,1,0);
 send_msp(MSP_SET_RAW_RC, rc_bytes, MSP_SET_RAW_RC_LENGTH);
 
 def arm():
-
-  rc_signals[THROTTLE] = RC_MIN;
-  rc_signals[YAW] = RC_MAX;
-  rc_signals[PITCH] = RC_MID;
-  rc_signals[ROLL] = RC_MID;
-  rc_signals[AUX1] = RC_MIN;
-  rc_signals[AUX2] = RC_MIN;
+  serial.write(Header0??)
+  serial.write(Header1??)
+  serial.write(Header2??)
+  serial.write(MsgType??)
+  serial.write(MsgLength??)
+  
+  serial.write(throttleValue)
+  serial.write(yawValue)
+  serial.write(pitchValue)
+  serial.write(rollValue)
+  serial.write(aux1)
+  serial.write(aux2)
+  
+  serial.write(checksum)
+  
+  # rc_signals[THROTTLE] = RC_MIN;
+  # rc_signals[YAW] = RC_MAX;
+  # rc_signals[PITCH] = RC_MID;
+  # rc_signals[ROLL] = RC_MID;
+  # rc_signals[AUX1] = RC_MIN;
+  # rc_signals[AUX2] = RC_MIN;
   
 arm()
