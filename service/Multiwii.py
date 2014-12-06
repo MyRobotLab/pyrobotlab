@@ -26,7 +26,7 @@ uint16_t rc_signals[8] = { 1234 };
 #Buffer for storing the serializes byte form of the RC signals
 uint8_t rc_bytes[16] = { 0 };
 
-Serial.connect(COMPORT,BAUDRATE,8,1,0);
+serial.connect(COMPORT,BAUDRATE,8,1,0);
 
 send_msp(MSP_SET_RAW_RC, rc_bytes, MSP_SET_RAW_RC_LENGTH);
 
