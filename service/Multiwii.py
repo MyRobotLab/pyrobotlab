@@ -38,3 +38,5 @@ def arm():
   rc_signals[ROLL] = RC_MID;
   rc_signals[AUX1] = RC_MIN;
   rc_signals[AUX2] = RC_MIN;
+  
+arm()
