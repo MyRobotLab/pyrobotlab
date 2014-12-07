@@ -65,6 +65,9 @@ def arm():
   serial.write(1000) # aux4
   serial.write(1000 >> 8) # aux4
   
+  checksum = 0
+  checksum ^= (16 & 0xFF);
+  checksum ^= (msp) ?
   serial.write(checksum)
   
   # rc_signals[THROTTLE] = RC_MIN;
