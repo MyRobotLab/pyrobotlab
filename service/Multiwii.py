@@ -40,11 +40,19 @@ def arm():
   serial.write(msgType)
   serial.write(MsgLength??)
   
+  # start checksum
+  checksum = 0
+  checksum ^= (16 & 0xFF);
+  checksum ^= (200) # msp
+
   # msg data - LSB first 2 byte uint_8
   serial.write(1500) # min roll 
+  checksum ^= (1500)
   serial.write(1500 >> 8) # min roll 
+  checksum ^= (1500 >> 8)
 
   serial.write(1000) # min throttle 
+  checksum ^= (1000)
   serial.write(1000 >> 8) # min throttle 
 
   serial.write(2000) # max yaw
@@ -65,9 +73,6 @@ def arm():
   serial.write(1000) # aux4
   serial.write(1000 >> 8) # aux4
   
-  checksum = 0
-  checksum ^= (16 & 0xFF);
-  checksum ^= (msp) ?
   serial.write(checksum)
   
   # rc_signals[THROTTLE] = RC_MIN;
