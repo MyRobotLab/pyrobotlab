@@ -14,7 +14,12 @@ print (sys.version)
 print (sys.path)
 
 bpy.data.objects["Cube"].data.vertices[0].co.x += 1.0
+
 a=0.0
+version = "0.9"
+
+def getVersion():
+  return version
 
 # way to dynamically add actuators & controllers
 # http://www.blender.org/api/blender_python_api_2_60_6/bpy.ops.logic.html
@@ -38,58 +43,83 @@ def Cube():
                                             #xyz[2] z Rotation axis
     own.localOrientation = xyz.to_matrix()  #Apply your rotation data
 
-server = None
+controlServer = None
+controlPort = 8989
+serialServer = None
+serialPort = 9191
     
 def stopServer():
-    global server
-    print ("stopping server")
-    if (server != None):
-        server.shutdown()
+    global controlServer, serialServer
+    print ("stopping controlServer")
+    
+    if (controlServer != None):
+        controlServer.shutdown()
     else:
-        print("server already stopped")
-    server = None
+        print("controlServer already stopped")
+    controlServer = None
+    
+    print ("stopping serialServer")
+    
+    if (serialServer != None):
+        serialServer.shutdown()
+    else:
+        print("serialServer already stopped")
+    serialServer = None    
     
 def startServer():
-    global server
+    global controlServer, serialServer
     # Port 0 means to select an arbitrary unused port
-    HOST, PORT = "localhost", 9090
 
-    if (server ==  None):
-        server = ThreadedTCPServer((HOST, PORT), ThreadedTCPRequestHandler)
-        ip, port = server.server_address
+    if (controlServer ==  None):
+      ##### control server begin ####
+      controlServer = ThreadedTCPServer(("localhost", controlPort), ThreadedTCPControlHandler)
+      ip, port = controlServer.server_address
 
-        # Start a thread with the server -- that thread will then start one
-        # more thread for each request
-        server_thread = threading.Thread(target=server.serve_forever)
-        # Exit the server thread when the main thread terminates
-        server_thread.daemon = True
-        server_thread.start()
-        print ("Server loop running in thread:", server_thread.name)
+      # Start a thread with the controlServer -- that thread will then start one
+      # more thread for each request
+      controlThread = threading.Thread(target=controlServer.serve_forever)
+      # Exit the controlServer thread when the main thread terminates
+      controlThread.daemon = True
+      controlThread.start()
+      print ("control server loop running in thread:", controlThread.name, " port ", controlPort)
+      ##### control server end ####
+      ##### serial server begin ####
+      serialServer = ThreadedTCPServer(("localhost", serialPort), ThreadedTCPControlHandler)
+      ip, port = serialServer.server_address
+
+      # Start a thread with the serialServer -- that thread will then start one
+      # more thread for each request
+      serialThread = threading.Thread(target=serialServer.serve_forever)
+      # Exit the serialServer thread when the main thread terminates
+      serialThread.daemon = True
+      serialThread.start()
+      print ("Server loop running in thread:", serialThread.name, " port ", serialPort)
+      ##### serial server end ####
     else:
-        print ("server already started")
+        print ("servers already started")
 
     
-class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
+class ThreadedTCPControlHandler(socketserver.BaseRequestHandler):
 
     def handle(self):
         #data = self.request.recv(1024).decode()
-        cur_thread = threading.current_thread()
-        #response = "{}: {}".format(cur_thread.name, data)
+        myThread = threading.current_thread()
+        #response = "{}: {}".format(myThread.name, data)
         #self.request.sendall(response.encode())
         
         buffer = ''
-        continue_recv = True
+        listening = True
 
-        while continue_recv:
+        while listening:
             try:
                 # Try to receive som data
                 data = self.request.recv(1024).decode()
                 buffer += data
                 
                 if (data == "q"):
-                    response = "{}: {}".format(cur_thread.name, buffer)
+                    response = "{}: {}".format(myThread.name, buffer)
                     self.request.sendall(response.encode())
-                    continue_recv = False
+                    listening = False
                 
             #except self.request.error, e:
             except e:
@@ -98,9 +128,11 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
                     print ("Error: %r" % e)
                     #run_main_loop = False
                 # If e.errno is errno.EWOULDBLOCK, then no more data
-                continue_recv = False
+                listening = False
         
         print("buffer ", buffer)
+        if (buffer == "stopServer"):
+            stopServer()
         
 
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
