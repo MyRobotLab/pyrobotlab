@@ -6,7 +6,7 @@ from os.path import expanduser
 import socket
 import threading
 import socketserver
-
+import json
 
 home = expanduser("~")
 print (home)
@@ -17,6 +17,17 @@ bpy.data.objects["Cube"].data.vertices[0].co.x += 1.0
 
 a=0.0
 version = "0.9"
+controlServer = None
+controlPort = 8989
+# I need a list of handlers - where can I get it?
+controlHandlers = []
+
+serialServer = None
+serialPort = 9191
+
+class Message(object):
+  def __init__(self, j):
+    self.__dict__ = json.loads(j)
 
 def getVersion():
   return version
@@ -43,10 +54,6 @@ def Cube():
                                             #xyz[2] z Rotation axis
     own.localOrientation = xyz.to_matrix()  #Apply your rotation data
 
-controlServer = None
-controlPort = 8989
-serialServer = None
-serialPort = 9191
     
 def stopServer():
     global controlServer, serialServer
@@ -93,7 +100,7 @@ def startServer():
       # Exit the serialServer thread when the main thread terminates
       serialThread.daemon = True
       serialThread.start()
-      print ("Server loop running in thread:", serialThread.name, " port ", serialPort)
+      print ("serial server loop running in thread:", serialThread.name, " port ", serialPort)
       ##### serial server end ####
     else:
         print ("servers already started")
@@ -104,7 +111,8 @@ class ThreadedTCPControlHandler(socketserver.BaseRequestHandler):
     def handle(self):
         #data = self.request.recv(1024).decode()
         myThread = threading.current_thread()
-        #response = "{}: {}".format(myThread.name, data)
+        
+        print("client connected to control socket thread {} port {}".format(myThread.name, controlPort))
         #self.request.sendall(response.encode())
         
         buffer = ''
@@ -113,21 +121,41 @@ class ThreadedTCPControlHandler(socketserver.BaseRequestHandler):
         while listening:
             try:
                 # Try to receive som data
-                data = self.request.recv(1024).decode()
-                buffer += data
+                # data = self.request.recv(1024).decode()
                 
-                if (data == "q"):
-                    response = "{}: {}".format(myThread.name, buffer)
-                    self.request.sendall(response.encode())
-                    listening = False
+                controlMsg = json.loads(self.request.recv(1024).decode().strip())
                 
-            #except self.request.error, e:
-            except e:
-                if e.errno != errno.EWOULDBLOCK:
-                    # Error! Print it and tell main loop to stop
-                    print ("Error: %r" % e)
-                    #run_main_loop = False
-                # If e.errno is errno.EWOULDBLOCK, then no more data
+                print("recv msg ", controlMsg)
+                
+                #### command processing begin ####
+                command = controlMsg["method"] + "("
+                cnt = 0
+                
+                # unload parameter array
+                data = controlMsg["data"]
+                if (len(data) > 0):
+                  for param in data:
+                    cnt = cnt + 1
+                    
+                    if isinstance(param, int):
+                      command = command + str(param)
+                    else:
+                      command = command + "'" + param + "'"
+                      
+                      
+                    if (len(data) != cnt):
+                      command = command + ","
+                
+                command = command + ")"
+                
+                print ("command " , command)
+                
+                # eval(command)
+                #### command processing end ####
+            
+            except Exception as e:             
+                print ("Error receiving message: ", e)
+                #run_main_loop = False
                 listening = False
         
         print("buffer ", buffer)
