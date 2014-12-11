@@ -7,6 +7,7 @@ import socket
 import threading
 import socketserver
 import json
+import traceback
 
 home = expanduser("~")
 print (home)
@@ -16,20 +17,33 @@ print (sys.path)
 bpy.data.objects["Cube"].data.vertices[0].co.x += 1.0
 
 a=0.0
+
 version = "0.9"
 controlServer = None
 controlPort = 8989
 # I need a list of handlers - where can I get it?
 controlHandlers = []
+serialHandlers = {}
 
 serialServer = None
 serialPort = 9191
 
-class Message(object):
-  def __init__(self, j):
-    self.__dict__ = json.loads(j)
+class Message:
+  """an MRL message definition in Python"""
+  def __init__(self):
+    self.msgID = 0
+    self.timeStamp = 0
+    self.name = ""
+    self.sender = ""
+    self.method = ""
+    self.sendingMethod = ""
+    self.data = []
+    self.historyList = []
+    #def __init__(self, j):
+      #self.__dict__ = json.loads(j)
 
 def getVersion():
+  print("version is ", version)
   return version
 
 # way to dynamically add actuators & controllers
@@ -53,10 +67,11 @@ def Cube():
                                             #xyz[1] y Rotation axis
                                             #xyz[2] z Rotation axis
     own.localOrientation = xyz.to_matrix()  #Apply your rotation data
+  
 
     
 def stopServer():
-    global controlServer, serialServer
+    global controlServer, serialServer, controlHandlers
     print ("stopping controlServer")
     
     if (controlServer != None):
@@ -71,7 +86,12 @@ def stopServer():
         serialServer.shutdown()
     else:
         print("serialServer already stopped")
-    serialServer = None    
+    serialServer = None
+    
+    #for controlHandler in controlHandlers
+    #    print (controlHandler)
+    	#controlHandlers[controlHandler].listening = False
+      
     
 def startServer():
     global controlServer, serialServer
@@ -79,7 +99,7 @@ def startServer():
 
     if (controlServer ==  None):
       ##### control server begin ####
-      controlServer = ThreadedTCPServer(("localhost", controlPort), ThreadedTCPControlHandler)
+      controlServer = ThreadedTCPServer(("localhost", controlPort), ControlHandler)
       ip, port = controlServer.server_address
 
       # Start a thread with the controlServer -- that thread will then start one
@@ -91,7 +111,7 @@ def startServer():
       print ("control server loop running in thread:", controlThread.name, " port ", controlPort)
       ##### control server end ####
       ##### serial server begin ####
-      serialServer = ThreadedTCPServer(("localhost", serialPort), ThreadedTCPControlHandler)
+      serialServer = ThreadedTCPServer(("localhost", serialPort), SerialHandler)
       ip, port = serialServer.server_address
 
       # Start a thread with the serialServer -- that thread will then start one
@@ -106,8 +126,10 @@ def startServer():
         print ("servers already started")
 
     
-class ThreadedTCPControlHandler(socketserver.BaseRequestHandler):
-
+class ControlHandler(socketserver.BaseRequestHandler):
+    global controlHandlers
+    listening = False
+    
     def handle(self):
         #data = self.request.recv(1024).decode()
         myThread = threading.current_thread()
@@ -117,18 +139,20 @@ class ThreadedTCPControlHandler(socketserver.BaseRequestHandler):
         
         buffer = ''
         listening = True
+#        controlHandlers[myThread.name] = self
 
         while listening:
             try:
                 # Try to receive som data
                 # data = self.request.recv(1024).decode()
-                
+                # TODO - refactor to loading Message object
                 controlMsg = json.loads(self.request.recv(1024).decode().strip())
                 
                 print("recv msg ", controlMsg)
+                method = controlMsg["method"]
                 
                 #### command processing begin ####
-                command = controlMsg["method"] + "("
+                command = method + "("
                 cnt = 0
                 
                 # unload parameter array
@@ -142,7 +166,6 @@ class ThreadedTCPControlHandler(socketserver.BaseRequestHandler):
                     else:
                       command = command + "'" + param + "'"
                       
-                      
                     if (len(data) != cnt):
                       command = command + ","
                 
@@ -150,19 +173,56 @@ class ThreadedTCPControlHandler(socketserver.BaseRequestHandler):
                 
                 print ("command " , command)
                 
-                # eval(command)
+                ret = eval(command)
+                retMsg = Message()
+                retMsg.name = "blender"
+                retMsg.method = "on" + method[0:1].capitalize() + method[1:]
+                retMsg.sendingMethod = controlMsg["method"]
+                retMsg.data.append(ret)
+                
+                retJson = json.dumps(retMsg.__dict__)
+                
+                print ("retJson " , retJson)
+                
+                self.request.sendall(retJson.encode())
+                self.request.sendall("\n".encode())
                 #### command processing end ####
             
-            except Exception as e:             
-                print ("Error receiving message: ", e)
+            except Exception as e:  
+                print ("control handler error: ", e)
+                print (traceback.format_exc())
                 #run_main_loop = False
                 listening = False
         
-        print("buffer ", buffer)
-        if (buffer == "stopServer"):
-            stopServer()
+        print("terminating control handler", myThread.name, controlPort)
+       
+       
+class SerialHandler(socketserver.BaseRequestHandler):
+      listening = False
+      
+      def handle(self):
+          #data = self.request.recv(1024).decode()
+          myThread = threading.current_thread()
+          
+          print("client connected to serial socket thread {} port {}".format(myThread.name, serialPort))
+          #self.request.sendall(response.encode())
+          
+          buffer = ''
+          listening = True
+  #        serialHandlers[myThread.name] = self
+  
+          while listening:
+            try:
+              data = self.request.recv(1024)
+              print (data)
+            except Exception as e:  
+                print ("serial handler error: ", e)
+                print (traceback.format_exc())
+                #run_main_loop = False
+                listening = False
         
-
+          print("terminating serial handler", myThread.name, serialPort)
+         
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     pass
 
