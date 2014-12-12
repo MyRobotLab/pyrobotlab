@@ -19,11 +19,14 @@ bpy.data.objects["Cube"].data.vertices[0].co.x += 1.0
 a=0.0
 
 version = "0.9"
+# the one and only controller
+control = None
 controlServer = None
 controlPort = 8989
 # I need a list of handlers - where can I get it?
-controlHandlers = []
+# controlHandlers = []
 serialHandlers = {}
+readyToAttach = None
 
 serialServer = None
 serialPort = 9191
@@ -41,6 +44,13 @@ class Message:
     self.historyList = []
     #def __init__(self, j):
       #self.__dict__ = json.loads(j)
+      
+class VirtualDevice:
+  """a virtual device Servo, Arduino, Lidar, etc"""
+  def __init__(self, name, type, serialHandler):
+    self.name = name
+    self.type = type
+    self.serialHandler = serialHandler
 
 def getVersion():
   print("version is ", version)
@@ -68,10 +78,24 @@ def Cube():
                                             #xyz[2] z Rotation axis
     own.localOrientation = xyz.to_matrix()  #Apply your rotation data
   
+def createJsonMsg(method, data):
+  msg = Message()
+  msg.name = "blender"
+  msg.method = method
+  msg.sendingMethod = method
+  msg.data.append(data)
+  retJson = json.dumps(msg.__dict__)
+  # FIXME - better terminator ?
+  retJson = retJson + "\n"
+  return retJson.encode()
 
+def onError(msg):
+  global control
+  print(msg)
+  control.request.sendall(createJsonMsg("onError", msg))
     
 def stopServer():
-    global controlServer, serialServer, controlHandlers
+    global controlServer, serialServer
     print ("stopping controlServer")
     
     if (controlServer != None):
@@ -90,8 +114,7 @@ def stopServer():
     
     #for controlHandler in controlHandlers
     #    print (controlHandler)
-    	#controlHandlers[controlHandler].listening = False
-      
+    #controlHandlers[controlHandler].listening = False  
     
 def startServer():
     global controlServer, serialServer
@@ -123,14 +146,31 @@ def startServer():
       print ("serial server loop running in thread:", serialThread.name, " port ", serialPort)
       ##### serial server end ####
     else:
-        print ("servers already started")
+      print ("servers already started")
+        
+
+# attach a device - control message comes in and sets up
+# name and type - next connection on the serial port will be
+# the new device
+def attach(name, type):
+  global control, serialHandlers, readyToAttach
+  newDevice = VirtualDevice(name, type, None)
+  serialHandlers[name] = newDevice
+  readyToAttach = name
+  global control
+  print("onAttach " + str(name) + " " + str(type) + " SUCCESS - ready for serial connection")
+  # print("<--- sending control onAttach(" + str(name) + ")")
+  # control.request.sendall(createJsonMsg("onAttach", name))
+  return name
 
     
 class ControlHandler(socketserver.BaseRequestHandler):
-    global controlHandlers
+    global control    
     listening = False
     
     def handle(self):
+        global control
+        control = self
         #data = self.request.recv(1024).decode()
         myThread = threading.current_thread()
         
@@ -138,8 +178,8 @@ class ControlHandler(socketserver.BaseRequestHandler):
         #self.request.sendall(response.encode())
         
         buffer = ''
+        
         listening = True
-#        controlHandlers[myThread.name] = self
 
         while listening:
             try:
@@ -148,7 +188,7 @@ class ControlHandler(socketserver.BaseRequestHandler):
                 # TODO - refactor to loading Message object
                 controlMsg = json.loads(self.request.recv(1024).decode().strip())
                 
-                print("recv msg ", controlMsg)
+                print("---> control: controlMsg ", controlMsg)
                 method = controlMsg["method"]
                 
                 #### command processing begin ####
@@ -171,7 +211,7 @@ class ControlHandler(socketserver.BaseRequestHandler):
                 
                 command = command + ")"
                 
-                print ("command " , command)
+                print ("*** command " , command)
                 
                 ret = eval(command)
                 retMsg = Message()
@@ -182,9 +222,10 @@ class ControlHandler(socketserver.BaseRequestHandler):
                 
                 retJson = json.dumps(retMsg.__dict__)
                 
-                print ("retJson " , retJson)
+                print ("<--- control: ret" , retJson)
                 
                 self.request.sendall(retJson.encode())
+                # TODO - better way to send full json message ? better way to parse it?
                 self.request.sendall("\n".encode())
                 #### command processing end ####
             
@@ -195,19 +236,32 @@ class ControlHandler(socketserver.BaseRequestHandler):
                 listening = False
         
         print("terminating control handler", myThread.name, controlPort)
-       
-       
+
+
 class SerialHandler(socketserver.BaseRequestHandler):
       listening = False
+      name = ""
       
       def handle(self):
+          global readyToAttach, serialHandlers
+          
           #data = self.request.recv(1024).decode()
           myThread = threading.current_thread()
           
-          print("client connected to serial socket thread {} port {}".format(myThread.name, serialPort))
+          print("++++serial client connected++++ thread {} port {}".format(myThread.name, serialPort))
           #self.request.sendall(response.encode())
           
           buffer = ''
+          
+          if (readyToAttach in serialHandlers):
+            print("++++attaching " + str(readyToAttach) + " serial handler++++")
+            serialHandlers[readyToAttach].serialHandler = self
+            self.name = name
+          else:
+            # ERROR - we need a name to attach
+            onError("XXXX incoming serial connection but readyToAttach [" + str(readyToAttach) + "] XXXX")
+            return           
+          
           listening = True
   #        serialHandlers[myThread.name] = self
   
@@ -235,5 +289,11 @@ def client(ip, port, message):
         print ("Received: {}".format(response))
     finally:
         sock.close()
+        
+        
+class Arduino:
+  
+  def handle(self):
+    print 
  
 
