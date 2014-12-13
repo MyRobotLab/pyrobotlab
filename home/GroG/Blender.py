@@ -385,6 +385,12 @@ def moveTo():
     xyz[0] = math.radians(pos/8)
     own.localOrientation = xyz.to_matrix()
     
+def frameTick():
+"""Always block will drive this to update all data which would effect the scene"""
+  # iterate through global containers
+  # if data different than last time - update scene
+  # this method should be quick 
+    
 def endcomm():
     bge.logic.endGame()    
     
