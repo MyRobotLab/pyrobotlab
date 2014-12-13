@@ -1,5 +1,5 @@
-import bge                      #blender game engine
-import bpy                      #blender python interface
+#import bge                      #blender game engine
+#import bpy                      #blender python interface
 import math                     #Maths Module
 import sys
 from os.path import expanduser
@@ -14,7 +14,7 @@ print (home)
 print (sys.version)
 print (sys.path)
 
-bpy.data.objects["Cube"].data.vertices[0].co.x += 1.0
+# bpy.data.objects["Cube"].data.vertices[0].co.x += 1.0
 
 a=0.0
 
@@ -47,10 +47,11 @@ class Message:
       
 class VirtualDevice:
   """a virtual device Servo, Arduino, Lidar, etc"""
-  def __init__(self, name, type, serialHandler):
+  def __init__(self, name, type):
     self.name = name
     self.type = type
-    self.serialHandler = serialHandler
+    self.serialHandler = None
+    self.service = None
 
 def getVersion():
   print("version is ", version)
@@ -154,7 +155,10 @@ def startServer():
 # the new device
 def attach(name, type):
   global control, serialHandlers, readyToAttach
-  newDevice = VirtualDevice(name, type, None)
+  # adding name an type to new virtual device
+  newDevice = VirtualDevice(name, type)
+  # constructing the correct type
+  newDevice.service = eval(type + "('" + name + "')")
   serialHandlers[name] = newDevice
   readyToAttach = name
   global control
@@ -199,7 +203,7 @@ class ControlHandler(socketserver.BaseRequestHandler):
                 data = controlMsg["data"]
                 if (len(data) > 0):
                   for param in data:
-                    cnt = cnt + 1
+                    cnt += 1
                     
                     if isinstance(param, int):
                       command = command + str(param)
@@ -211,7 +215,7 @@ class ControlHandler(socketserver.BaseRequestHandler):
                 
                 command = command + ")"
                 
-                print ("*** command " , command)
+                print ("*** command " , command, " ***")
                 
                 ret = eval(command)
                 retMsg = Message()
@@ -240,23 +244,19 @@ class ControlHandler(socketserver.BaseRequestHandler):
 
 class SerialHandler(socketserver.BaseRequestHandler):
       listening = False
+      service = None
       name = ""
       
       def handle(self):
           global readyToAttach, serialHandlers
           
-          #data = self.request.recv(1024).decode()
           myThread = threading.current_thread()
-          
-          print("++++serial client connected++++ thread {} port {}".format(myThread.name, serialPort))
-          #self.request.sendall(response.encode())
-          
-          buffer = ''
-          
+                              
           if (readyToAttach in serialHandlers):
-            print("++++attaching " + str(readyToAttach) + " serial handler++++")
+            print("++++attaching " + str(readyToAttach) + " serial handler++++ thread {} port {}".format(myThread.name, serialPort))
             serialHandlers[readyToAttach].serialHandler = self
-            self.name = name
+            service = serialHandlers[readyToAttach].service
+            self.name = readyToAttach
           else:
             # ERROR - we need a name to attach
             onError("XXXX incoming serial connection but readyToAttach [" + str(readyToAttach) + "] XXXX")
@@ -268,7 +268,8 @@ class SerialHandler(socketserver.BaseRequestHandler):
           while listening:
             try:
               data = self.request.recv(1024)
-              print (data)
+              service.handle(data)
+
             except Exception as e:  
                 print ("serial handler error: ", e)
                 print (traceback.format_exc())
@@ -292,8 +293,62 @@ def client(ip, port, message):
         
         
 class Arduino:
-  
-  def handle(self):
-    print 
- 
+  def __init__(self, name):
+    print("creating new Arduino ", name)
+    self.name = name
+    self.servos = {}
+    self.msgByteCount = 0
+    self.msgSize = 0
+    self.method = 0
 
+  def handle(self, byteArray):
+    newByteCnt = len(byteArray)
+    print (self.name + " recvd " + str(newByteCnt) + " bytes")
+    print(byteArray)
+    
+    for newByte in byteArray: 
+      self.msgByteCount += 1
+      # check magic
+      if (self.msgByteCount == 1):
+        if (newByte == 170):
+          print("YAY FOUND MAGIC!")
+        else:
+          print("ERROR message does not begin with MAGIC")
+          self.msgByteCount = 0
+      elif (self.msgByteCount == 2):      
+        # print command - TODO error checking > 64
+        print("MRLCOMM msg size is " + str(newByte))
+        self.msgSize = newByte
+      elif (self.msgByteCount == 3):  
+        print("MRLCOMM method is " + str(newByte))
+        self.method = newByte
+      elif (self.msgByteCount > 3 and self.msgByteCount <= self.msgSize):  
+        print("MRLCOMM datablock")
+      else:
+        print("blah")
+      
+      # do command
+
+class Servo:
+  def __init__(self, name):
+    print("creating new Servo ", name)
+    self.name = name
+
+  def moveTo(self, pos):
+    print ("moving servo to ", pos)
+ 
+    
+def JawMech():
+    global a
+    a = a + 1
+    scene = bge.logic.getCurrentScene()
+    cont = bge.logic.getCurrentController()
+    own = cont.owner   
+    #print (a)    
+    xyz = own.localOrientation.to_euler()
+    xyz[0] = math.radians(a/8)
+    own.localOrientation = xyz.to_matrix()
+    
+def endcomm():
+    bge.logic.endGame()    
+    
