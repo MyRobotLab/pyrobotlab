@@ -1,0 +1,1570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<topic name="RH3">
+<category>
+<pattern>MOVE #</pattern>
+<template>Ok. I will move the <set name="CHOOSEFINGER"><star/></set>. Just say open or close.
+<think><set name="fi3-1">40</set><set name="fi3-2">40</set><set name="fi3-3">40</set><set name="fi3-4">80</set><set name="fi3-5">40</set><set name="fi3-6">80</set></think>
+<oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)</param></mrl></oob>
+<condition name="CHOOSEFINGER">
+<li value="thumb"><think><set name="topic">THUMBRFI3</set></think></li>
+<li value="index finger"><think><set name="topic">INDEXRFI3</set></think></li>
+<li value="middle finger"><think><set name="topic">MIDDLERFI3</set></think></li>
+<li value="ring finger"><think><set name="topic">RINGRFI3</set></think></li>
+<li value="small finger"><think><set name="topic">SMALLRFI3</set></think></li>
+<li value="joint"><think><set name="topic">WRISTRFI3</set></think></li>
+<li value="pinky"><think><set name="topic">SMALLRFI3</set></think></li>
+<li value="wrist"><think><set name="topic">WRISTRFI3</set></think></li>
+</condition>
+</template>
+</category>
+</topic>
+
+<topic name="THUMBRFI3">
+<category>
+<pattern>MOVE #</pattern>
+<template>Ok. I will move the <set name="CHOOSEFINGER"><star/></set>. Just say open or close.
+<condition name="CHOOSEFINGER">
+<li value="index finger"><think><set name="topic">INDEXRFI3</set></think></li>
+<li value="middle finger"><think><set name="topic">MIDDLERFI3</set></think></li>
+<li value="ring finger"><think><set name="topic">RINGRFI3</set></think></li>
+<li value="small finger"><think><set name="topic">SMALLRFI3</set></think></li>
+<li value="joint"><think><set name="topic">WRISTRFI3</set></think></li>
+<li value="pinky"><think><set name="topic">SMALLRFI3</set></think></li>
+<li value="wrist"><think><set name="topic">WRISTRFI3</set></think></li>
+</condition>
+</template>
+</category>
+</topic>
+
+<topic name="INDEXRFI3">
+<category>
+<pattern>MOVE #</pattern>
+<template>Ok. I will move the <set name="CHOOSEFINGER"><star/></set>. Just say open or close.
+<condition name="CHOOSEFINGER">
+<li value="thumb"><think><set name="topic">THUMBRFI3</set></think></li>
+<li value="middle finger"><think><set name="topic">MIDDLERFI3</set></think></li>
+<li value="ring finger"><think><set name="topic">RINGRFI3</set></think></li>
+<li value="small finger"><think><set name="topic">SMALLRFI3</set></think></li>
+<li value="joint"><think><set name="topic">WRISTRFI3</set></think></li>
+<li value="pinky"><think><set name="topic">SMALLRFI3</set></think></li>
+<li value="wrist"><think><set name="topic">WRISTRFI3</set></think></li>
+</condition>
+</template>
+</category>
+</topic>
+
+<topic name="MIDDLERFI3">
+<category>
+<pattern>MOVE #</pattern>
+<template>Ok. I will move the <set name="CHOOSEFINGER"><star/></set>. Just say open or close.
+<condition name="CHOOSEFINGER">
+<li value="thumb"><think><set name="topic">THUMBRFI3</set></think></li>
+<li value="index finger"><think><set name="topic">INDEXRFI3</set></think></li>
+<li value="ring finger"><think><set name="topic">RINGRFI3</set></think></li>
+<li value="small finger"><think><set name="topic">SMALLRFI3</set></think></li>
+<li value="joint"><think><set name="topic">WRISTRFI3</set></think></li>
+<li value="pinky"><think><set name="topic">SMALLRFI3</set></think></li>
+<li value="wrist"><think><set name="topic">WRISTRFI3</set></think></li>
+</condition>
+</template>
+</category>
+</topic>
+
+<topic name="RINGRFI3">
+<category>
+<pattern>MOVE #</pattern>
+<template>Ok. I will move the <set name="CHOOSEFINGER"><star/></set>. Just say open or close.
+<condition name="CHOOSEFINGER">
+<li value="index finger"><think><set name="topic">INDEXRFI3</set></think></li>
+<li value="middle finger"><think><set name="topic">MIDDLERFI3</set></think></li>
+<li value="thumb finger"><think><set name="topic">THUMBRFI3</set></think></li>
+<li value="small finger"><think><set name="topic">SMALLRFI3</set></think></li>
+<li value="joint"><think><set name="topic">WRISTRFI3</set></think></li>
+<li value="pinky"><think><set name="topic">SMALLRFI3</set></think></li>
+<li value="wrist"><think><set name="topic">WRISTRFI3</set></think></li>
+</condition>
+</template>
+</category>
+</topic>
+
+<topic name="SMALLRFI3">
+<category>
+<pattern>MOVE #</pattern>
+<template>Ok. I will move the <set name="CHOOSEFINGER"><star/></set>. Just say open or close.
+<condition name="CHOOSEFINGER">
+<li value="index finger"><think><set name="topic">INDEXRFI3</set></think></li>
+<li value="middle finger"><think><set name="topic">MIDDLERFI3</set></think></li>
+<li value="ring finger"><think><set name="topic">RINGRFI3</set></think></li>
+<li value="thumb finger"><think><set name="topic">THUMBRFI3</set></think></li>
+<li value="joint"><think><set name="topic">WRISTRFI3</set></think></li>
+<li value="wrist"><think><set name="topic">WRISTRFI3</set></think></li>
+</condition>
+</template>
+</category>
+</topic>
+
+<topic name="WRISTRFI3">
+<category>
+<pattern>MOVE #</pattern>
+<template>Ok. I will move the <set name="CHOOSEFINGER"><star/></set>. Just say open or close.
+<condition name="CHOOSEFINGER">
+<li value="index finger"><think><set name="topic">INDEXRFI3</set></think></li>
+<li value="middle finger"><think><set name="topic">MIDDLERFI3</set></think></li>
+<li value="ring finger"><think><set name="topic">RINGRFI3</set></think></li>
+<li value="small finger"><think><set name="topic">SMALLRFI3</set></think></li>
+<li value="pinky"><think><set name="topic">SMALLRFI3</set></think></li>
+<li value="thumb finger"><think><set name="topic">THUMBRFI3</set></think></li>
+</condition>
+</template>
+</category>
+</topic>
+
+<topic name="THUMBRFI3">
+<category><pattern>CLOSE</pattern>
+<template>
+<condition name="fi3-1">
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",60,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",80,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",100,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",120,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",140,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">140</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",50,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",70,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",90,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",110,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",130,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",140,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">140</set></think></li>
+<li value="140">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="THUMBRFI3">
+<category><pattern>OPEN</pattern>
+<template>
+<condition name="fi3-1">
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",120,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",100,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",80,40,40,90,40,80)</param></mrl></oob><think><set name="fi3-1">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",60,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",20,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">20</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",110,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",90,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",70,40,40,90,40,80)</param></mrl></oob><think><set name="fi3-1">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",50,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",30,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",20,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">20</set></think></li>
+<li value="20">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="THUMBRFI3">
+<category><pattern>CLOSE MORE</pattern>
+<template>
+<condition name="fi3-1">
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",50,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">50</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",60,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">60</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",70,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">70</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",80,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">80</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",90,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">90</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",100,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">100</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",110,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">110</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",120,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">120</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",130,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">130</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",140,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">140</set></think>Reached maximum.</li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",140,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">140</set></think>Reached maximum.</li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",140,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">140</set></think>Reached maximum.</li>
+<li value="140">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="THUMBRFI3">
+<category><pattern>OPEN MORE</pattern>
+<template>
+<condition name="fi3-1">
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",110,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">110</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",100,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">100</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",90,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">90</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",80,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">80</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",70,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">70</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",60,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">60</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",50,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">50</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">40</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",30,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">30</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",20,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">20</set></think>Reached maximum.</li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",20,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">20</set></think>Reached maximum.</li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",20,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">20</set></think>Reached maximum.</li>
+<li value="20">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="THUMBRFI3">
+<category><pattern>CLOSE LESS</pattern>
+<template>
+<condition name="fi3-1">
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",30,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",50,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",60,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",70,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",80,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",90,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",100,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",110,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",120,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",130,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",140,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">140</set></think></li>
+<li value="140">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="THUMBRFI3">
+<category><pattern>OPEN LESS</pattern>
+<template>
+<condition name="fi3-1">
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",130,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",120,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",110,40,40,90,40,80)</param></mrl></oob><think><set name="fi3-1">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",100,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",90,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",80,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",70,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",60,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",50,40,40,90,40,80)</param></mrl></oob><think><set name="fi3-1">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",30,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",20,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-1">20</set></think></li>
+<li value="20">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="INDEXRFI3">
+<category><pattern>CLOSE</pattern>
+<template>
+<condition name="fi3-2">
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,60,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,80,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,100,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,120,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,140,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">140</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,50,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,70,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,90,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,110,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,130,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,140,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">140</set></think></li>
+<li value="140">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="INDEXRFI3">
+<category><pattern>OPEN</pattern>
+<template>
+<condition name="fi3-2">
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,120,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,100,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,80,40,90,40,80)</param></mrl></oob><think><set name="fi3-2">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,60,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,20,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">20</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,110,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,90,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,70,40,90,40,80)</param></mrl></oob><think><set name="fi3-2">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,50,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,30,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,20,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">20</set></think></li>
+<li value="20">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="INDEXRFI3">
+<category><pattern>CLOSE MORE</pattern>
+<template>
+<condition name="fi3-2">
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,50,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">50</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,60,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">60</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,70,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">70</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,80,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">80</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,90,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">90</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,100,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">100</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,110,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">110</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,120,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">120</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,130,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">130</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,140,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">140</set></think>Reached maximum.</li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,140,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">140</set></think>Reached maximum.</li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,140,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">140</set></think>Reached maximum.</li>
+<li value="140">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="INDEXRFI3">
+<category><pattern>OPEN MORE</pattern>
+<template>
+<condition name="fi3-2">
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,110,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">110</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,100,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">100</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,90,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">90</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,80,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">80</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,70,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">70</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,60,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">60</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,50,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">50</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">40</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,30,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">30</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,20,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">20</set></think>Reached maximum.</li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,20,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">20</set></think>Reached maximum.</li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,20,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">20</set></think>Reached maximum.</li>
+<li value="20">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="INDEXRFI3">
+<category><pattern>CLOSE LESS</pattern>
+<template>
+<condition name="fi3-2">
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,30,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,50,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,60,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,70,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,80,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,90,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,100,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,110,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,120,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,130,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,140,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">140</set></think></li>
+<li value="140">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="INDEXRFI3">
+<category><pattern>OPEN LESS</pattern>
+<template>
+<condition name="fi3-2">
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,130,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,120,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,110,40,90,40,80)</param></mrl></oob><think><set name="fi3-2">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,100,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,90,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,80,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,70,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,60,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,50,40,90,40,80)</param></mrl></oob><think><set name="fi3-2">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,30,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,20,40,80,40,80)</param></mrl></oob><think><set name="fi3-2">20</set></think></li>
+<li value="20">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="MIDDLERFI3">
+<category><pattern>CLOSE</pattern>
+<template>
+<condition name="fi3-3">
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-3">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,60,80,40,80)</param></mrl></oob><think><set name="fi3-3">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,80,80,40,80)</param></mrl></oob><think><set name="fi3-3">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,100,80,40,80)</param></mrl></oob><think><set name="fi3-3">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,120,80,40,80)</param></mrl></oob><think><set name="fi3-3">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,140,80,40,80)</param></mrl></oob><think><set name="fi3-3">140</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,50,80,40,80)</param></mrl></oob><think><set name="fi3-3">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,70,80,40,80)</param></mrl></oob><think><set name="fi3-3">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,90,80,40,80)</param></mrl></oob><think><set name="fi3-3">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,110,80,40,80)</param></mrl></oob><think><set name="fi3-3">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,130,80,40,80)</param></mrl></oob><think><set name="fi3-3">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,140,80,40,80)</param></mrl></oob><think><set name="fi3-3">140</set></think></li>
+<li value="140">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="MIDDLERFI3">
+<category><pattern>OPEN</pattern>
+<template>
+<condition name="fi3-3">
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,120,80,40,80)</param></mrl></oob><think><set name="fi3-3">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,100,80,40,80)</param></mrl></oob><think><set name="fi3-3">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,80,90,40,80)</param></mrl></oob><think><set name="fi3-3">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,60,80,40,80)</param></mrl></oob><think><set name="fi3-3">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-3">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,20,80,40,80)</param></mrl></oob><think><set name="fi3-3">20</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,110,80,40,80)</param></mrl></oob><think><set name="fi3-3">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,90,80,40,80)</param></mrl></oob><think><set name="fi3-3">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,70,90,40,80)</param></mrl></oob><think><set name="fi3-3">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,50,80,40,80)</param></mrl></oob><think><set name="fi3-3">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,30,80,40,80)</param></mrl></oob><think><set name="fi3-3">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,20,80,40,80)</param></mrl></oob><think><set name="fi3-3">20</set></think></li>
+<li value="20">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="MIDDLERFI3">
+<category><pattern>CLOSE MORE</pattern>
+<template>
+<condition name="fi3-3">
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,50,80,40,80)</param></mrl></oob><think><set name="fi3-3">50</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,60,80,40,80)</param></mrl></oob><think><set name="fi3-3">60</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,70,80,40,80)</param></mrl></oob><think><set name="fi3-3">70</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,80,80,40,80)</param></mrl></oob><think><set name="fi3-3">80</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,90,80,40,80)</param></mrl></oob><think><set name="fi3-3">90</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,100,80,40,80)</param></mrl></oob><think><set name="fi3-3">100</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,110,80,40,80)</param></mrl></oob><think><set name="fi3-3">110</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,120,80,40,80)</param></mrl></oob><think><set name="fi3-3">120</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,130,80,40,80)</param></mrl></oob><think><set name="fi3-3">130</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,140,80,40,80)</param></mrl></oob><think><set name="fi3-3">140</set></think>Reached maximum.</li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,140,80,40,80)</param></mrl></oob><think><set name="fi3-3">140</set></think>Reached maximum.</li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,140,80,40,80)</param></mrl></oob><think><set name="fi3-3">140</set></think>Reached maximum.</li><li value="140">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="MIDDLERFI3">
+<category><pattern>OPEN MORE</pattern>
+<template>
+<condition name="fi3-3">
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,110,80,40,80)</param></mrl></oob><think><set name="fi3-3">110</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,100,80,40,80)</param></mrl></oob><think><set name="fi3-3">100</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,90,80,40,80)</param></mrl></oob><think><set name="fi3-3">90</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,80,80,40,80)</param></mrl></oob><think><set name="fi3-3">80</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,70,80,40,80)</param></mrl></oob><think><set name="fi3-3">70</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,60,80,40,80)</param></mrl></oob><think><set name="fi3-3">60</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,50,80,40,80)</param></mrl></oob><think><set name="fi3-3">50</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-3">40</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,30,80,40,80)</param></mrl></oob><think><set name="fi3-3">30</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,20,80,40,80)</param></mrl></oob><think><set name="fi3-3">20</set></think>Reached maximum.</li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,20,80,40,80)</param></mrl></oob><think><set name="fi3-3">20</set></think>Reached maximum.</li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,20,80,40,80)</param></mrl></oob><think><set name="fi3-3">20</set></think>Reached maximum.</li>
+<li value="20">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="MIDDLERFI3">
+<category><pattern>CLOSE LESS</pattern>
+<template>
+<condition name="fi3-3">
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,30,80,40,80)</param></mrl></oob><think><set name="fi3-3">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-3">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,50,80,40,80)</param></mrl></oob><think><set name="fi3-3">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,60,80,40,80)</param></mrl></oob><think><set name="fi3-3">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,70,80,40,80)</param></mrl></oob><think><set name="fi3-3">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,80,80,40,80)</param></mrl></oob><think><set name="fi3-3">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,90,80,40,80)</param></mrl></oob><think><set name="fi3-3">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,100,80,40,80)</param></mrl></oob><think><set name="fi3-3">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,110,80,40,80)</param></mrl></oob><think><set name="fi3-3">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,120,80,40,80)</param></mrl></oob><think><set name="fi3-3">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,130,80,40,80)</param></mrl></oob><think><set name="fi3-3">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,140,80,40,80)</param></mrl></oob><think><set name="fi3-3">140</set></think></li>
+<li value="140">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="MIDDLERFI3">
+<category><pattern>OPEN LESS</pattern>
+<template>
+<condition name="fi3-3">
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,130,80,40,80)</param></mrl></oob><think><set name="fi3-3">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,120,80,40,80)</param></mrl></oob><think><set name="fi3-3">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,110,90,40,80)</param></mrl></oob><think><set name="fi3-3">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,100,80,40,80)</param></mrl></oob><think><set name="fi3-3">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,90,80,40,80)</param></mrl></oob><think><set name="fi3-3">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,80,80,40,80)</param></mrl></oob><think><set name="fi3-3">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,70,80,40,80)</param></mrl></oob><think><set name="fi3-3">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,60,80,40,80)</param></mrl></oob><think><set name="fi3-3">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,50,90,40,80)</param></mrl></oob><think><set name="fi3-3">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-3">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,30,80,40,80)</param></mrl></oob><think><set name="fi3-3">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,20,80,40,80)</param></mrl></oob><think><set name="fi3-3">20</set></think></li>
+<li value="20">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="RINGRFI3">
+<category><pattern>CLOSE</pattern>
+<template>
+<condition name="fi3-4">
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,100,40,80)</param></mrl></oob><think><set name="fi3-4">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,120,40,80)</param></mrl></oob><think><set name="fi3-4">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,140,40,80)</param></mrl></oob><think><set name="fi3-4">140</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,160,40,80)</param></mrl></oob><think><set name="fi3-4">160</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,110,40,80)</param></mrl></oob><think><set name="fi3-3">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,130,40,80)</param></mrl></oob><think><set name="fi3-3">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,150,40,80)</param></mrl></oob><think><set name="fi3-3">150</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,160,40,80)</param></mrl></oob><think><set name="fi3-3">160</set></think></li>
+<li value="160">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="RINGRFI3">
+<category><pattern>OPEN</pattern>
+<template>
+<condition name="fi3-4">
+<li value="160"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,140,40,80)</param></mrl></oob><think><set name="fi3-4">140</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,120,40,80)</param></mrl></oob><think><set name="fi3-4">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,100,40,80)</param></mrl></oob><think><set name="fi3-4">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-4">80</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,130,40,80)</param></mrl></oob><think><set name="fi3-3">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,110,40,80)</param></mrl></oob><think><set name="fi3-3">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,80)</param></mrl></oob><think><set name="fi3-3">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-3">80</set></think></li>
+<li value="80">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="RINGRFI3">
+<category><pattern>CLOSE MORE</pattern>
+<template>
+<condition name="fi3-4">
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,110,40,80)</param></mrl></oob><think><set name="fi3-4">110</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,120,40,80)</param></mrl></oob><think><set name="fi3-4">120</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,130,40,80)</param></mrl></oob><think><set name="fi3-4">130</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,140,40,80)</param></mrl></oob><think><set name="fi3-4">140</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,150,40,80)</param></mrl></oob><think><set name="fi3-4">150</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,160,40,80)</param></mrl></oob><think><set name="fi3-4">160</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,160,40,80)</param></mrl></oob><think><set name="fi3-4">160</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,160,40,80)</param></mrl></oob><think><set name="fi3-4">160</set></think></li>
+<li value="160">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="RINGRFI3">
+<category><pattern>OPEN MORE</pattern>
+<template>
+<condition name="fi3-4">
+<li value="160"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,130,40,80)</param></mrl></oob><think><set name="fi3-4">130</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,110,40,80)</param></mrl></oob><think><set name="fi3-4">110</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,80)</param></mrl></oob><think><set name="fi3-4">90</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,70,40,80)</param></mrl></oob><think><set name="fi3-4">70</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,120,40,80)</param></mrl></oob><think><set name="fi3-3">120</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,100,40,80)</param></mrl></oob><think><set name="fi3-3">100</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-3">80</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-3">80</set></think></li>
+<li value="80">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="RINGRFI3">
+<category><pattern>CLOSE LESS</pattern>
+<template>
+<condition name="fi3-4">
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,80)</param></mrl></oob><think><set name="fi3-4">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,100,40,80)</param></mrl></oob><think><set name="fi3-4">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,110,40,80)</param></mrl></oob><think><set name="fi3-4">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,120,40,80)</param></mrl></oob><think><set name="fi3-4">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,130,40,80)</param></mrl></oob><think><set name="fi3-4">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,140,40,80)</param></mrl></oob><think><set name="fi3-4">140</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,150,40,80)</param></mrl></oob><think><set name="fi3-4">150</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,160,40,80)</param></mrl></oob><think><set name="fi3-4">160</set></think></li>
+<li value="160">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="RINGRFI3">
+<category><pattern>OPEN LESS</pattern>
+<template>
+<condition name="fi3-4">
+<li value="160"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,150,40,80)</param></mrl></oob><think><set name="fi3-4">150</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,140,40,80)</param></mrl></oob><think><set name="fi3-4">140</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,130,40,80)</param></mrl></oob><think><set name="fi3-4">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,120,40,80)</param></mrl></oob><think><set name="fi3-4">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,110,40,80)</param></mrl></oob><think><set name="fi3-4">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,100,40,80)</param></mrl></oob><think><set name="fi3-4">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,80)</param></mrl></oob><think><set name="fi3-4">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-4">80</set></think></li>
+<li value="80">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="SMALLRFI3">
+<category><pattern>CLOSE</pattern>
+<template>
+<condition name="fi3-5">
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-5">40</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,50,80)</param></mrl></oob><think><set name="fi3-5">50</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,60,80)</param></mrl></oob><think><set name="fi3-5">60</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,70,80)</param></mrl></oob><think><set name="fi3-5">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,80,80)</param></mrl></oob><think><set name="fi3-5">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,90,80)</param></mrl></oob><think><set name="fi3-5">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,100,80)</param></mrl></oob><think><set name="fi3-5">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,110,80)</param></mrl></oob><think><set name="fi3-5">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,120,80)</param></mrl></oob><think><set name="fi3-5">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,130,80)</param></mrl></oob><think><set name="fi3-5">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,140,80)</param></mrl></oob><think><set name="fi3-5">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,140,80)</param></mrl></oob><think><set name="fi3-5">140</set></think></li>
+<li value="140">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="SMALLRFI3">
+<category><pattern>OPEN</pattern>
+<template>
+<condition name="fi3-5">
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,120,80)</param></mrl></oob><think><set name="fi3-5">120</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,110,80)</param></mrl></oob><think><set name="fi3-5">110</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,100,80)</param></mrl></oob><think><set name="fi3-5">100</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,90,80)</param></mrl></oob><think><set name="fi3-5">90</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,80,80)</param></mrl></oob><think><set name="fi3-5">80</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,70,80)</param></mrl></oob><think><set name="fi3-5">70</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,60,80)</param></mrl></oob><think><set name="fi3-5">60</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-5">50</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,80)</param></mrl></oob><think><set name="fi3-5">40</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,30,80)</param></mrl></oob><think><set name="fi3-5">30</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,20,80)</param></mrl></oob><think><set name="fi3-5">20</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,20,80)</param></mrl></oob><think><set name="fi3-5">20</set></think></li>
+<li value="20">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="SMALLRFI3">
+<category><pattern>CLOSE MORE</pattern>
+<template>
+<condition name="fi3-5">
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,50,80)</param></mrl></oob><think><set name="fi3-5">50</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,60,80)</param></mrl></oob><think><set name="fi3-5">60</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,70,80)</param></mrl></oob><think><set name="fi3-5">70</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,80,80)</param></mrl></oob><think><set name="fi3-5">80</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,90,80)</param></mrl></oob><think><set name="fi3-5">90</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,100,80)</param></mrl></oob><think><set name="fi3-5">100</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,110,80)</param></mrl></oob><think><set name="fi3-5">110</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,120,80)</param></mrl></oob><think><set name="fi3-5">120</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,130,80)</param></mrl></oob><think><set name="fi3-5">130</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,140,80)</param></mrl></oob><think><set name="fi3-5">140</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,140,80)</param></mrl></oob><think><set name="fi3-5">140</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,140,80)</param></mrl></oob><think><set name="fi3-5">140</set></think></li>
+<li value="140">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="SMALLRFI3">
+<category><pattern>OPEN MORE</pattern>
+<template>
+<condition name="fi3-5">
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,110,80)</param></mrl></oob><think><set name="fi3-5">110</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,100,80)</param></mrl></oob><think><set name="fi3-5">100</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,90,80)</param></mrl></oob><think><set name="fi3-5">90</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,80,80)</param></mrl></oob><think><set name="fi3-5">80</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,70,80)</param></mrl></oob><think><set name="fi3-5">70</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,60,80)</param></mrl></oob><think><set name="fi3-5">60</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,50,80)</param></mrl></oob><think><set name="fi3-5">50</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,80)</param></mrl></oob><think><set name="fi3-5">40</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,30,80)</param></mrl></oob><think><set name="fi3-5">30</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,20,80)</param></mrl></oob><think><set name="fi3-5">20</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,20,80)</param></mrl></oob><think><set name="fi3-5">20</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,20,80)</param></mrl></oob><think><set name="fi3-5">20</set></think></li>
+<li value="20">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="SMALLRFI3">
+<category><pattern>CLOSE LESS</pattern>
+<template>
+<condition name="fi3-5">
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,30,80)</param></mrl></oob><think><set name="fi3-5">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-5">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,50,80)</param></mrl></oob><think><set name="fi3-5">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,60,80)</param></mrl></oob><think><set name="fi3-5">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,70,80)</param></mrl></oob><think><set name="fi3-5">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,80,80)</param></mrl></oob><think><set name="fi3-5">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,90,80)</param></mrl></oob><think><set name="fi3-5">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,100,80)</param></mrl></oob><think><set name="fi3-5">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,110,80)</param></mrl></oob><think><set name="fi3-5">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,120,80)</param></mrl></oob><think><set name="fi3-5">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,130,80)</param></mrl></oob><think><set name="fi3-5">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,140,80)</param></mrl></oob><think><set name="fi3-5">140</set></think></li>
+<li value="140">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="SMALLRFI3">
+<category><pattern>OPEN LESS</pattern>
+<template>
+<condition name="fi3-5">
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,130,80)</param></mrl></oob><think><set name="fi3-5">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,120,80)</param></mrl></oob><think><set name="fi3-5">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,110,80)</param></mrl></oob><think><set name="fi3-5">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,100,80)</param></mrl></oob><think><set name="fi3-5">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,90,80)</param></mrl></oob><think><set name="fi3-5">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,80,80)</param></mrl></oob><think><set name="fi3-5">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,70,80)</param></mrl></oob><think><set name="fi3-5">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,60,80)</param></mrl></oob><think><set name="fi3-5">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,50,80)</param></mrl></oob><think><set name="fi3-5">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-5">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,30,80)</param></mrl></oob><think><set name="fi3-5">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,20,80)</param></mrl></oob><think><set name="fi3-5">20</set></think></li>
+<li value="20">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="WRISTRFI3">
+<category><pattern>CLOSE</pattern>
+<template>
+<condition name="fi3-6">
+<li value="10"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,30)</param></mrl></oob><think><set name="fi3-6">30</set></think></li>
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,40)</param></mrl></oob><think><set name="fi3-6">40</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,50)</param></mrl></oob><think><set name="fi3-6">50</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,60)</param></mrl></oob><think><set name="fi3-6">60</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,70)</param></mrl></oob><think><set name="fi3-6">70</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-6">80</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,90)</param></mrl></oob><think><set name="fi3-6">90</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,100)</param></mrl></oob><think><set name="fi3-6">100</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,110)</param></mrl></oob><think><set name="fi3-6">110</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,120)</param></mrl></oob><think><set name="fi3-6">120</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,130)</param></mrl></oob><think><set name="fi3-6">130</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,140)</param></mrl></oob><think><set name="fi3-6">140</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,150)</param></mrl></oob><think><set name="fi3-6">150</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,160)</param></mrl></oob><think><set name="fi3-6">160</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,170)</param></mrl></oob><think><set name="fi3-6">170</set></think></li>
+<li value="160"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,170)</param></mrl></oob><think><set name="fi3-6">170</set></think></li>
+<li value="170">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="WRISTRFI3">
+<category><pattern>OPEN</pattern>
+<template>
+<condition name="fi3-6">
+<li value="170"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,150)</param></mrl></oob><think><set name="fi3-5">150</set></think></li>
+<li value="160"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,140)</param></mrl></oob><think><set name="fi3-5">140</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,130)</param></mrl></oob><think><set name="fi3-5">130</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,120)</param></mrl></oob><think><set name="fi3-5">120</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,110)</param></mrl></oob><think><set name="fi3-5">110</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,100)</param></mrl></oob><think><set name="fi3-5">100</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,90)</param></mrl></oob><think><set name="fi3-5">90</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-5">80</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,70)</param></mrl></oob><think><set name="fi3-5">70</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,60)</param></mrl></oob><think><set name="fi3-5">60</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,50)</param></mrl></oob><think><set name="fi3-5">50</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,40)</param></mrl></oob><think><set name="fi3-5">40</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,30)</param></mrl></oob><think><set name="fi3-5">30</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,20)</param></mrl></oob><think><set name="fi3-5">20</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,10)</param></mrl></oob><think><set name="fi3-5">10</set></think></li>
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,10)</param></mrl></oob><think><set name="fi3-5">30</set></think></li>
+<li value="10">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="WRISTRFI3">
+<category><pattern>CLOSE MORE</pattern>
+<template>
+<condition name="fi3-6">
+<li value="10"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,40)</param></mrl></oob><think><set name="fi3-6">40</set></think></li>
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,50)</param></mrl></oob><think><set name="fi3-6">50</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,60)</param></mrl></oob><think><set name="fi3-6">60</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,70)</param></mrl></oob><think><set name="fi3-6">70</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-6">80</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,90)</param></mrl></oob><think><set name="fi3-6">90</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,100)</param></mrl></oob><think><set name="fi3-6">100</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,110)</param></mrl></oob><think><set name="fi3-6">110</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,120)</param></mrl></oob><think><set name="fi3-6">120</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,130)</param></mrl></oob><think><set name="fi3-6">130</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,140)</param></mrl></oob><think><set name="fi3-6">140</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,150)</param></mrl></oob><think><set name="fi3-6">150</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,160)</param></mrl></oob><think><set name="fi3-6">160</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,170)</param></mrl></oob><think><set name="fi3-6">170</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,170)</param></mrl></oob><think><set name="fi3-6">170</set></think></li>
+<li value="160"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,170)</param></mrl></oob><think><set name="fi3-6">170</set></think></li>
+<li value="170">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="WRISTRFI3">
+<category><pattern>OPEN MORE</pattern>
+<template>
+<condition name="fi3-6">
+<li value="170"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,140)</param></mrl></oob><think><set name="fi3-5">140</set></think></li>
+<li value="160"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,130)</param></mrl></oob><think><set name="fi3-5">130</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,120)</param></mrl></oob><think><set name="fi3-5">120</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,110)</param></mrl></oob><think><set name="fi3-5">110</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,100)</param></mrl></oob><think><set name="fi3-5">100</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,90)</param></mrl></oob><think><set name="fi3-5">90</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-5">80</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,70)</param></mrl></oob><think><set name="fi3-5">70</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,60)</param></mrl></oob><think><set name="fi3-5">60</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,50)</param></mrl></oob><think><set name="fi3-5">50</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,40)</param></mrl></oob><think><set name="fi3-5">40</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,30)</param></mrl></oob><think><set name="fi3-5">30</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,20)</param></mrl></oob><think><set name="fi3-5">20</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,10)</param></mrl></oob><think><set name="fi3-5">10</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,10)</param></mrl></oob><think><set name="fi3-5">10</set></think></li>
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,10)</param></mrl></oob><think><set name="fi3-5">10</set></think></li>
+<li value="10">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="WRISTRFI3">
+<category><pattern>CLOSE LESS</pattern>
+<template>
+<condition name="fi3-6">
+<li value="10"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,20)</param></mrl></oob><think><set name="fi3-6">20</set></think></li>
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,30)</param></mrl></oob><think><set name="fi3-6">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,40)</param></mrl></oob><think><set name="fi3-6">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,50)</param></mrl></oob><think><set name="fi3-6">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,60)</param></mrl></oob><think><set name="fi3-6">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,70)</param></mrl></oob><think><set name="fi3-6">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-6">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,90)</param></mrl></oob><think><set name="fi3-6">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,100)</param></mrl></oob><think><set name="fi3-6">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,110)</param></mrl></oob><think><set name="fi3-6">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,120)</param></mrl></oob><think><set name="fi3-6">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,130)</param></mrl></oob><think><set name="fi3-6">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,140)</param></mrl></oob><think><set name="fi3-6">140</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,150)</param></mrl></oob><think><set name="fi3-6">150</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,160)</param></mrl></oob><think><set name="fi3-6">160</set></think></li>
+<li value="160"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,170)</param></mrl></oob><think><set name="fi3-6">170</set></think></li>
+<li value="170">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="WRISTRFI3">
+<category><pattern>OPEN LESS</pattern>
+<template>
+<condition name="fi3-6">
+<li value="170"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,160)</param></mrl></oob><think><set name="fi3-6">160</set></think></li>
+<li value="160"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,150)</param></mrl></oob><think><set name="fi3-6">150</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,140)</param></mrl></oob><think><set name="fi3-6">140</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,130)</param></mrl></oob><think><set name="fi3-6">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,120)</param></mrl></oob><think><set name="fi3-6">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,110)</param></mrl></oob><think><set name="fi3-6">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,100)</param></mrl></oob><think><set name="fi3-6">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,90)</param></mrl></oob><think><set name="fi3-6">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,80)</param></mrl></oob><think><set name="fi3-6">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,70)</param></mrl></oob><think><set name="fi3-6">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,60)</param></mrl></oob><think><set name="fi3-6">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,90,40,50)</param></mrl></oob><think><set name="fi3-6">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,40)</param></mrl></oob><think><set name="fi3-6">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,30)</param></mrl></oob><think><set name="fi3-6">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,20)</param></mrl></oob><think><set name="fi3-6">20</set></think></li>
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveHand("right",40,40,40,80,40,10)</param></mrl></oob><think><set name="fi3-6">10</set></think></li>
+<li value="10">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="THUMBRFI3">
+<category><pattern>SETUP FINISHED</pattern>
+<template>Do you want to save the motion, or add another limb?
+</template></category></topic>
+
+<topic name="THUMBRFI3">
+<category><pattern>ADD LIMB</pattern>
+<template>Alright, which one?<think><set name="RH3SAVE">true</set><set name="topic">MOTION</set></think>
+</template></category></topic>
+
+<topic name="THUMBRFI3">
+<category><pattern>SAVE MOTION</pattern>
+<template>Please enter motion name.
+<think><set name="RH3SAVE">true</set></think>
+</template></category></topic>
+
+<topic name="THUMBRFI3">
+<category><pattern># MOTION NAME IS #</pattern>
+<template>Motion name is <star index="2"/>
+<condition name="ALLSET">
+<li><condition name="RH3SAVE">
+    <li value="true">
+        <learn><category><pattern># SHOW MOTION <eval><star index="2"/></eval></pattern>
+        <template>This is the motion <eval><star index="2"/></eval>
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob>
+    <condition name="RH2SAVE" value="true">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)
+            </param></mrl></oob>
+    <condition name="RH1SAVE" value="true">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi1-1"/>,<get name="fi1-2"/>,<get name="fi1-3"/>,<get name="fi1-4"/>,<get name="fi1-5"/>,<get name="fi1-6"/>)
+            </param></mrl></oob>
+    </condition></condition></template></category></learn>
+    </li>
+    <li><condition name="RH3SAVE">
+        <li value="true">h3
+            <learn><category><pattern># SHOW MOTION <eval><star index="2"/></eval></pattern>
+            <template>This is the motion <eval><star index="2"/></eval>
+                 <oob><mrl><service>python</service><method>exec</method><param>
+                 i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+                 </param></mrl></oob>
+                 </template></category></learn><think><set name="RH3SAVE">false</set></think>
+        </li>
+        </condition>
+    </li>
+</condition>
+</li>
+</condition>
+</template>
+</category></topic>
+
+<topic name="INDEXRFI3">
+<category><pattern>SETUP FINISHED</pattern>
+<template>Do you want to save the motion, or add another limb?
+</template></category></topic>
+
+<topic name="INDEXRFI3">
+<category><pattern>ADD LIMB</pattern>
+<template>Alright, which one?<think><set name="RH2SAVE">true</set><set name="topic">MOTION</set></think>
+</template></category></topic>
+
+<topic name="INDEXRFI3">
+<category><pattern>SAVE MOTION</pattern>
+<template>Please enter motion name.
+<think><set name="RH2SAVE">true</set></think>
+</template></category></topic>
+
+<topic name="INDEXRFI3">
+<category><pattern># MOTION NAME IS #</pattern>
+<template>Motion name is <star index="2"/>
+<condition name="ALLSET">
+
+<li><condition name="RH1SAVE">
+    <li value="true">
+        <learn><category><pattern># SHOW MOTION <eval><star index="2"/></eval></pattern>
+        <template>This is the motion <eval><star index="2"/></eval>
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi1-1"/>,<get name="fi1-2"/>,<get name="fi1-3"/>,<get name="fi1-4"/>,<get name="fi1-5"/>,<get name="fi1-6"/>)
+            </param></mrl></oob>
+    <condition name="RH2SAVE" value="true">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)
+            </param></mrl></oob>
+    <condition name="RH3SAVE" value="true">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob>
+    </condition></condition></template></category></learn>
+    </li>
+    <li><condition name="RH2SAVE">
+        <li value="true">h2
+            <learn><category><pattern># SHOW MOTION <eval><star index="2"/></eval></pattern>
+            <template>This is the motion <eval><star index="2"/></eval>
+                 <oob><mrl><service>python</service><method>exec</method><param>
+                 i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+                 </param></mrl></oob>
+                 </template></category></learn>
+        </li>
+        </condition>
+    </li>
+    <think><set name="RH1SAVE">false</set><set name="RH2SAVE">false</set></think>
+</condition>
+</li>
+</condition>
+</template>
+</category></topic>
+
+<topic name="MIDDLERFI3">
+<category><pattern>SETUP FINISHED</pattern>
+<template>Do you want to save the motion, or add another limb?
+</template></category></topic>
+
+<topic name="MIDDLERFI3">
+<category><pattern>ADD LIMB</pattern>
+<template>Alright, which one?<think><set name="RH2SAVE">true</set><set name="topic">MOTION</set></think>
+</template></category></topic>
+
+<topic name="MIDDLERFI3">
+<category><pattern>SAVE MOTION</pattern>
+<template>Please enter motion name.
+<think><set name="RH2SAVE">true</set></think>
+</template></category></topic>
+
+<topic name="MIDDLERFI3">
+<category><pattern># MOTION NAME IS #</pattern>
+<template>Motion name is <star index="2"/>
+<condition name="ALLSET">
+<li><condition name="RH1SAVE">
+    <li value="true">
+        <learn><category><pattern># SHOW MOTION <eval><star index="2"/></eval></pattern>
+        <template>This is the motion <eval><star index="2"/></eval>
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi1-1"/>,<get name="fi1-2"/>,<get name="fi1-3"/>,<get name="fi1-4"/>,<get name="fi1-5"/>,<get name="fi1-6"/>)
+            </param></mrl></oob>
+    <condition name="RH2SAVE" value="true">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)
+            </param></mrl></oob>
+    <condition name="RH3SAVE" value="true">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob>
+    </condition></condition></template></category></learn>
+    </li>
+    <li><condition name="RH2SAVE">
+        <li value="true">h2
+            <learn><category><pattern># SHOW MOTION <eval><star index="2"/></eval></pattern>
+            <template>This is the motion <eval><star index="2"/></eval>
+                 <oob><mrl><service>python</service><method>exec</method><param>
+                 i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+                 </param></mrl></oob>
+                 </template></category></learn>
+        </li>
+        </condition>
+    </li>
+    <think><set name="RH1SAVE">false</set><set name="RH2SAVE">false</set></think>
+</condition>
+</li>
+</condition>
+</template>
+</category></topic>
+
+<topic name="RINGRFI3">
+<category><pattern>SETUP FINISHED</pattern>
+<template>Do you want to save the motion, or add another limb?
+</template></category></topic>
+
+<topic name="RINGRFI3">
+<category><pattern>ADD LIMB</pattern>
+<template>Alright, which one?<think><set name="RH2SAVE">true</set><set name="topic">MOTION</set></think>
+</template></category></topic>
+
+<topic name="RINGRFI3">
+<category><pattern>SAVE MOTION</pattern>
+<template>Please enter motion name.
+<think><set name="RH2SAVE">true</set></think>
+</template></category></topic>
+
+<topic name="RINGRFI3">
+<category><pattern># MOTION NAME IS #</pattern>
+<template>Motion name is <star index="2"/>
+<condition name="ALLSET">
+<li><condition name="RH1SAVE">
+    <li value="true">
+        <learn><category><pattern># SHOW MOTION <eval><star index="2"/></eval></pattern>
+        <template>This is the motion <eval><star index="2"/></eval>
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi1-1"/>,<get name="fi1-2"/>,<get name="fi1-3"/>,<get name="fi1-4"/>,<get name="fi1-5"/>,<get name="fi1-6"/>)
+            </param></mrl></oob>
+    <condition name="RH2SAVE" value="true">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)
+            </param></mrl></oob>
+    <condition name="RH3SAVE" value="true">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob>
+    </condition></condition></template></category></learn>
+    </li>
+    <li><condition name="RH2SAVE">
+        <li value="true">h2
+            <learn><category><pattern># SHOW MOTION <eval><star index="2"/></eval></pattern>
+            <template>This is the motion <eval><star index="2"/></eval>
+                 <oob><mrl><service>python</service><method>exec</method><param>
+                 i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+                 </param></mrl></oob>
+                 </template></category></learn>
+        </li>
+        </condition>
+    </li>
+    <think><set name="RH1SAVE">false</set><set name="RH2SAVE">false</set></think>
+</condition>
+</li>
+</condition>
+</template>
+</category></topic>
+
+<topic name="SMALLRFI3">
+<category><pattern>SETUP FINISHED</pattern>
+<template>Do you want to save the motion, or add another limb?
+</template></category></topic>
+
+<topic name="SMALLRFI3">
+<category><pattern>ADD LIMB</pattern>
+<template>Alright, which one?<think><set name="RH2SAVE">true</set><set name="topic">MOTION</set></think>
+</template></category></topic>
+
+<topic name="SMALLRFI3">
+<category><pattern>SAVE MOTION</pattern>
+<template>Please enter motion name.
+<think><set name="RH2SAVE">true</set></think>
+</template></category></topic>
+
+<topic name="SMALLRFI3">
+<category><pattern># MOTION NAME IS #</pattern>
+<template>Motion name is <star index="2"/>
+<condition name="ALLSET">
+<li><condition name="RH1SAVE">
+    <li value="true">
+        <learn><category><pattern># SHOW MOTION <eval><star index="2"/></eval></pattern>
+        <template>This is the motion <eval><star index="2"/></eval>
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi1-1"/>,<get name="fi1-2"/>,<get name="fi1-3"/>,<get name="fi1-4"/>,<get name="fi1-5"/>,<get name="fi1-6"/>)
+            </param></mrl></oob>
+    <condition name="RH2SAVE" value="true">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)
+            </param></mrl></oob>
+    <condition name="RH3SAVE" value="true">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob>
+    </condition></condition></template></category></learn>
+    </li>
+    <li><condition name="RH2SAVE">
+        <li value="true">h2
+            <learn><category><pattern># SHOW MOTION <eval><star index="2"/></eval></pattern>
+            <template>This is the motion <eval><star index="2"/></eval>
+                 <oob><mrl><service>python</service><method>exec</method><param>
+                 i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+                 </param></mrl></oob>
+                 </template></category></learn>
+        </li>
+        </condition>
+    </li>
+    <think><set name="RH1SAVE">false</set><set name="RH2SAVE">false</set></think>
+</condition>
+</li>
+</condition>
+</template>
+</category></topic>
+
+<topic name="WRISTRFI3">
+<category><pattern>SETUP FINISHED</pattern>
+<template>Do you want to save the motion, or add another limb?
+</template></category></topic>
+
+<topic name="WRISTRFI3">
+<category><pattern>ADD LIMB</pattern>
+<template>Alright, which one?<think><set name="RH2SAVE">true</set><set name="topic">MOTION</set></think>
+</template></category></topic>
+
+<topic name="WRISTRFI3">
+<category><pattern>SAVE MOTION</pattern>
+<template>Please enter motion name.
+<think><set name="RH2SAVE">true</set></think>
+</template></category></topic>
+
+<topic name="WRISTRFI3">
+<category><pattern># MOTION NAME IS #</pattern>
+<template>Motion name is <star index="2"/>
+<condition name="ALLSET">
+<li><condition name="RH1SAVE">
+    <li value="true">
+        <learn><category><pattern># SHOW MOTION <eval><star index="2"/></eval></pattern>
+        <template>This is the motion <eval><star index="2"/></eval>
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi1-1"/>,<get name="fi1-2"/>,<get name="fi1-3"/>,<get name="fi1-4"/>,<get name="fi1-5"/>,<get name="fi1-6"/>)
+            </param></mrl></oob>
+    <condition name="RH2SAVE" value="true">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)
+            </param></mrl></oob>
+    <condition name="RH3SAVE" value="true">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob>
+    </condition></condition></template></category></learn>
+    </li>
+    <li><condition name="RH3SAVE">
+        <li value="true">
+            <learn><category><pattern># SHOW MOTION <eval><star index="2"/></eval></pattern>
+            <template>This is the motion <eval><star index="2"/></eval>
+                 <oob><mrl><service>python</service><method>exec</method><param>
+                 i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+                 </param></mrl></oob>
+                 </template></category></learn>
+        </li>
+        </condition>
+    </li>
+    <think><set name="RH1SAVE">false</set><set name="RH2SAVE">false</set><set name="RH3SAVE">false</set></think>
+</condition>
+</li>
+</condition>
+</template>
+</category></topic>
+
+</aiml>
