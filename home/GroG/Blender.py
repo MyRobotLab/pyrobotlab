@@ -1,4 +1,4 @@
-#import bge                      #blender game engine
+import bge                      #blender game engine
 #import bpy                      #blender python interface
 import math                     #Maths Module
 import sys
@@ -291,7 +291,7 @@ def client(ip, port, message):
     finally:
         sock.close()
         
-        
+arduinoMethodMap = { 6:"SERVO_ATTACH", 7:"SERVO_WRITE", 8:"SERVO_SET_MAX_PULSE", 9:"SERVO_DETACH",12:"SET_SERVO_SPEED",26:"GET_MRLCOMM_VERSION",28:"SERVO_WRITE_MICROSECONDS"}       
 class Arduino:
   def __init__(self, name):
     print("creating new Arduino ", name)
@@ -300,33 +300,70 @@ class Arduino:
     self.msgByteCount = 0
     self.msgSize = 0
     self.method = 0
+    self.params = []
 
   def handle(self, byteArray):
+    global pos
     newByteCnt = len(byteArray)
-    print (self.name + " recvd " + str(newByteCnt) + " bytes")
-    print(byteArray)
+    # print (self.name + " recvd " + str(newByteCnt) + " bytes")
+    # print(byteArray)
     
     for newByte in byteArray: 
       self.msgByteCount += 1
+      # print("byte ", newByte, " byteCount  ", self.msgByteCount, " size ", self.msgSize)
       # check magic
       if (self.msgByteCount == 1):
-        if (newByte == 170):
-          print("YAY FOUND MAGIC!")
-        else:
+        if (newByte != 170):
           print("ERROR message does not begin with MAGIC")
           self.msgByteCount = 0
+          self.msgSize = 0
       elif (self.msgByteCount == 2):      
-        # print command - TODO error checking > 64
-        print("MRLCOMM msg size is " + str(newByte))
+        # print command - TODO error checking > 64        
         self.msgSize = newByte
+        # print("MRLCOMM msg size is " + str(self.msgSize))
       elif (self.msgByteCount == 3):  
-        print("MRLCOMM method is " + str(newByte))
+        # print("MRLCOMM method is " + str(newByte))
         self.method = newByte
-      elif (self.msgByteCount > 3 and self.msgByteCount <= self.msgSize):  
-        print("MRLCOMM datablock")
-      else:
-        print("blah")
-      
+      elif (self.msgByteCount > 3 and self.msgByteCount - 3 < self.msgSize):  
+        # print("MRLCOMM datablock")
+        self.params.append(newByte)
+      elif (self.msgByteCount > 3 and self.msgByteCount - 3 > self.msgSize):  
+        print("MRLCOMM ERROR STATE - resetting ")
+        self.msgSize = 0
+        self.msgByteCount = 0
+        self.params = []
+
+      # full valid message
+      if (self.msgByteCount - 2 == self.msgSize and self.msgSize != 0):
+        if (self.method in arduinoMethodMap):
+          print(arduinoMethodMap[self.method], "(", self.params, ")")
+        else:
+          print(self.method, "(", self.params, ")")
+        
+        # GET_VERSION
+        if (self.method == 26):
+          print("GET_MRLCOMM_VERSION")
+        elif (self.method == 6):
+          print("SERVO_ATTACH", self.params)
+        elif (self.method == 7):
+          print("SERVO_WRITE", self.params)
+          #moveTo(self.params[1])
+          pos = self.params[1]
+        elif (self.method == 8):
+          print("SERVO_SET_MAX_PULSE", self.params)
+        elif (self.method == 9):
+          print("SERVO_DETACH", self.params)
+        elif (self.method == 12):
+          print("SET_SERVO_SPEED", self.params)
+        elif (self.method == 28):
+          print("SERVO_WRITE_MICROSECONDS", self.params)
+          
+        
+        #print("MRLCOMM msg done ")
+        self.msgSize = 0
+        self.msgByteCount = 0
+        self.params = []
+          
       # do command
 
 class Servo:
@@ -334,19 +371,18 @@ class Servo:
     print("creating new Servo ", name)
     self.name = name
 
-  def moveTo(self, pos):
-    print ("moving servo to ", pos)
- 
-    
-def JawMech():
-    global a
-    a = a + 1
+pos = 0.0
+
+#def moveTo(pos):
+def moveTo():
+    global pos
+    #print ("moving servo to ", pos)
     scene = bge.logic.getCurrentScene()
     cont = bge.logic.getCurrentController()
     own = cont.owner   
     #print (a)    
     xyz = own.localOrientation.to_euler()
-    xyz[0] = math.radians(a/8)
+    xyz[0] = math.radians(pos/8)
     own.localOrientation = xyz.to_matrix()
     
 def endcomm():
