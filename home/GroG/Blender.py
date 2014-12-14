@@ -25,7 +25,7 @@ controlServer = None
 controlPort = 8989
 # I need a list of handlers - where can I get it?
 # controlHandlers = []
-serialHandlers = {}
+virtualDevices = {}
 readyToAttach = None
 
 serialServer = None
@@ -154,12 +154,12 @@ def startServer():
 # name and type - next connection on the serial port will be
 # the new device
 def attach(name, type):
-  global control, serialHandlers, readyToAttach
+  global control, virtualDevices, readyToAttach
   # adding name an type to new virtual device
   newDevice = VirtualDevice(name, type)
   # constructing the correct type
   newDevice.service = eval(type + "('" + name + "')")
-  serialHandlers[name] = newDevice
+  virtualDevices[name] = newDevice
   readyToAttach = name
   global control
   print("onAttach " + str(name) + " " + str(type) + " SUCCESS - ready for serial connection")
@@ -248,14 +248,14 @@ class SerialHandler(socketserver.BaseRequestHandler):
       name = ""
       
       def handle(self):
-          global readyToAttach, serialHandlers
+          global readyToAttach, virtualDevices
           
           myThread = threading.current_thread()
                               
-          if (readyToAttach in serialHandlers):
+          if (readyToAttach in virtualDevices):
             print("++++attaching " + str(readyToAttach) + " serial handler++++ thread {} port {}".format(myThread.name, serialPort))
-            serialHandlers[readyToAttach].serialHandler = self
-            service = serialHandlers[readyToAttach].service
+            virtualDevices[readyToAttach].serialHandler = self
+            service = virtualDevices[readyToAttach].service
             self.name = readyToAttach
           else:
             # ERROR - we need a name to attach
@@ -263,7 +263,7 @@ class SerialHandler(socketserver.BaseRequestHandler):
             return           
           
           listening = True
-  #        serialHandlers[myThread.name] = self
+  #        virtualDevices[myThread.name] = self
   
           while listening:
             try:
@@ -291,7 +291,6 @@ def client(ip, port, message):
     finally:
         sock.close()
         
-arduinoMethodMap = { 6:"SERVO_ATTACH", 7:"SERVO_WRITE", 8:"SERVO_SET_MAX_PULSE", 9:"SERVO_DETACH",12:"SET_SERVO_SPEED",26:"GET_MRLCOMM_VERSION",28:"SERVO_WRITE_MICROSECONDS"}       
 class Arduino:
   def __init__(self, name):
     print("creating new Arduino ", name)
@@ -301,9 +300,20 @@ class Arduino:
     self.msgSize = 0
     self.method = 0
     self.params = []
+    self.version = 20
+    
+  def sendMRLCOMMMsg(self, method, value):
+    socket = virtualDevices[self.name].serialHandler.request
+    print("sending bytes")
+    print(bytes([170, method, 1, value]))
+    # MRLCOMM PROTOCOL
+    # MAGIC_NUMBER|NUM_BYTES|FUNCTION|DATA0|DATA1|....|DATA(N)
+    #              NUM_BYTES - is the number of bytes after NUM_BYTES to the end
+    
+    socket.sendall(bytes([170, 2, method, value]))
 
   def handle(self, byteArray):
-    global pos
+    global pos, virtualDevices, version
     newByteCnt = len(byteArray)
     # print (self.name + " recvd " + str(newByteCnt) + " bytes")
     # print(byteArray)
@@ -335,14 +345,11 @@ class Arduino:
 
       # full valid message
       if (self.msgByteCount - 2 == self.msgSize and self.msgSize != 0):
-        if (self.method in arduinoMethodMap):
-          print(arduinoMethodMap[self.method], "(", self.params, ")")
-        else:
-          print(self.method, "(", self.params, ")")
         
         # GET_VERSION
         if (self.method == 26):
           print("GET_MRLCOMM_VERSION")
+          self.sendMRLCOMMMsg(26, self.version)          
         elif (self.method == 6):
           print("SERVO_ATTACH", self.params)
         elif (self.method == 7):
@@ -357,7 +364,8 @@ class Arduino:
           print("SET_SERVO_SPEED", self.params)
         elif (self.method == 28):
           print("SERVO_WRITE_MICROSECONDS", self.params)
-          
+        else:
+          print ("UNKNOWN METHOD ", self.method, self.params)
         
         #print("MRLCOMM msg done ")
         self.msgSize = 0
@@ -386,10 +394,11 @@ def moveTo():
     own.localOrientation = xyz.to_matrix()
     
 def frameTick():
-"""Always block will drive this to update all data which would effect the scene"""
+  """Always block will drive this to update all data which would effect the scene"""
   # iterate through global containers
   # if data different than last time - update scene
   # this method should be quick 
+  print("tick")
     
 def endcomm():
     bge.logic.endGame()    
