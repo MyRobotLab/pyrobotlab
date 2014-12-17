@@ -4,9 +4,6 @@ mouth = Runtime.createAndStart("mouth","Speech")
 arduino = Runtime.createAndStart("arduino","Arduino")
 arduino.connect("COM4")
 
-Pin0 = 14
-Pin1 = 15
-
 pin0 = None
 pin1 = None
 
