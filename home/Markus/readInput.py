@@ -20,15 +20,19 @@ arduino.addListener("publishPin", "python", "publishPin")
 # my call-back
 def publishPin(pin):
 
-  print pin.value
+  #print pin.value
 
-  if (pin.pin == 14 and pin.value >= 500):
-    mouth.speak("pin 0")
-    sleep(2)
+  if (pin.pin == 14):
+    print("pin14.value ", pin.value)
+    if (pin.value >= 500):
+      mouth.speak("pin 0")
+      sleep(2)
     
-  elif (pin.pin == 15 and pin.value >= 500):
-    mouth.speak("pin 1")
-    sleep(2)
+  elif (pin.pin == 15):
+    print("pin15.value ", pin.value)
+    if (pin.value >= 500):
+      mouth.speak("pin 1")
+      sleep(2)
 
 
 #  print pin.pin, pin.value, pin.type, pin.source,
