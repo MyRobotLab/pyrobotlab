@@ -26,6 +26,7 @@ controlPort = 8989
 # I need a list of handlers - where can I get it?
 # controlHandlers = []
 virtualDevices = {}
+#registry = {}
 readyToAttach = None
 
 serialServer = None
@@ -352,6 +353,9 @@ class Arduino:
           self.sendMRLCOMMMsg(26, self.version)          
         elif (self.method == 6):
           print("SERVO_ATTACH", self.params)
+          # create "new" servo if doesnt exist
+          # attach to this Arduino's set of servos
+          
         elif (self.method == 7):
           print("SERVO_WRITE", self.params)
           #moveTo(self.params[1])
