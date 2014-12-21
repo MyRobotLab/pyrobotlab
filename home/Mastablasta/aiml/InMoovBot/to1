@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<topic name="TO1">
+<category><pattern>SET SPEED #</pattern>
+<template>Speed is set to <set name="TOSPEED1"><star/></set>
+<condition name="TOSPEED1">
+<li value="slow"><think><set name="sto1-1">0.9</set><set name="sto1-2">0.9</set><set name="sto1-3">0.9</set></think></li>
+<li value="normal"><think><set name="sto1-1">0.95</set><set name="sto1-2">0.95</set><set name="sto1-3">0.95</set></think></li>
+<li value="fast"><think><set name="sto1-1">1</set><set name="sto1-2">1</set><set name="sto1-3">1</set></think></li>
+</condition><think><set name="STO1SAVE">ok</set></think>
+</template>
+</category>
+</topic>
+
+<topic name="TO1">
+<category><pattern>ADD # SECOND</pattern>
+<template><set name="TOPAUSE1"><star/></set> second is saved.
+<condition name="TOPAUSE1">
+<li value="1"><think><set name="pto1-1">1</set></think></li>
+</condition><think><set name="PTO1SAVE">ok</set></think>
+</template>
+</category>
+</topic>
+
+<topic name="TO1">
+<category><pattern>ADD # SECONDS</pattern>
+<template><set name="TOPAUSE1"><star/></set> seconds are saved
+<condition name="TOPAUSE1">
+<li value="2"><think><set name="pto1-1">2</set></think></li>
+<li value="3"><think><set name="pto1-1">3</set></think></li>
+<li value="4"><think><set name="pto1-1">4</set></think></li>
+<li value="5"><think><set name="pto1-1">5</set></think></li>
+<li value="6"><think><set name="pto1-1">6</set></think></li>
+<li value="7"><think><set name="pto1-1">7</set></think></li>
+<li value="8"><think><set name="pto1-1">8</set></think></li>
+<li value="9"><think><set name="pto1-1">9</set></think></li>
+<li value="10"><think><set name="pto1-1">10</set></think></li>
+</condition><think><set name="PTO1SAVE">ok</set></think>
+</template>
+</category>
+</topic>
+
+<topic name="TO1">
+<category><pattern>RELAX POSITION</pattern>
+<template>
+<random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(90,90,90)</param></mrl></oob>
+<think><set name="to1-1">90</set><set name="to1-2">90</set><set name="to1-3">90</set></think>
+</template></category></topic> 
+
+<topic name="TO1">
+<category><pattern>MOVE RIGHT</pattern>
+<template><condition name="to1-3">
+<li value="170"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(150,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">150</set></think></li>
+<li value="160"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(140,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">140</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(130,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">130</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(120,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">120</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(110,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">110</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(100,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">100</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(90,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">90</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(80,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">80</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(70,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">70</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(60,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">60</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(50,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">50</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(40,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">40</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(30,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">30</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(20,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">20</set></think></li>
+<li value="30"><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(10,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">10</set></think> I have reached the limit.</li>
+<li value="20"><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(10,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">10</set></think> I have reached the limit.</li>
+<li value="10">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="TO1">
+<category><pattern>MOVE LEFT</pattern>
+<template><condition name="to1-3">
+<li value="10"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(30,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">30</set></think></li>
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(40,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">40</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(50,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">50</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(60,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">60</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(70,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">70</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(80,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">80</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(90,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">90</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(100,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">100</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(110,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">110</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(120,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">120</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(130,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">130</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(140,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">140</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(150,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">150</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(160,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">160</set></think></li>
+<li value="150"><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(170,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">170</set></think> I have reached the limit.</li>
+<li value="160"><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(170,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">170</set></think> I have reached the limit.</li>
+<li value="170">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="TO1">
+<category><pattern>MORE RIGHT</pattern>
+<template><condition name="to1-3">
+<li value="170"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(140,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">140</set></think></li>
+<li value="160"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(130,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">130</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(120,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">120</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(110,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">110</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(100,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">100</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(90,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">90</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(70,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">80</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(60,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">70</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(50,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">60</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(40,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">50</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(30,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">40</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(20,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">30</set></think></li>
+<li value="40"><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(10,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">20</set></think> I have reached the limit.</li>
+<li value="30"><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(10,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">10</set></think> I have reached the limit.</li>
+<li value="20"><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(10,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">10</set></think> I have reached the limit.</li>
+<li value="10">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="TO1">
+<category><pattern>MORE LEFT</pattern>
+<template><condition name="to1-3">
+<li value="10"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(40,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">40</set></think></li>
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(50,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">50</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(60,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">60</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(70,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">70</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(80,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">80</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(90,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">90</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(100,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">100</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(110,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">110</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(120,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">120</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(130,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">130</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(140,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">140</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(150,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">150</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(160,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">160</set></think></li>
+<li value="140"><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(170,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">170</set></think> I have reached the limit.</li>
+<li value="150"><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(170,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">170</set></think> I have reached the limit.</li>
+<li value="160"><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(170,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">170</set></think> I have reached the limit.</li>
+<li value="170">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="TO1">
+<category><pattern>LESS RIGHT</pattern>
+<template><condition name="to1-3">
+<li value="170"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(160,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">160</set></think></li>
+<li value="160"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(150,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">150</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(140,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">140</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(130,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(120,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(110,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(100,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-3">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(90,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(80,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(70,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(60,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(50,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(40,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(30,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(20,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">20</set></think></li>
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(10,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">10</set></think></li>
+<li value="10">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="TO1">
+<category><pattern>LESS LEFT</pattern>
+<template><condition name="to1-3">
+<li value="10"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(20,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">20</set></think></li>
+<li value="20"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(30,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">30</set></think></li>
+<li value="30"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(40,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">40</set></think></li>
+<li value="40"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(50,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">50</set></think></li>
+<li value="50"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(60,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">60</set></think></li>
+<li value="60"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(70,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">70</set></think></li>
+<li value="70"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(80,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">80</set></think></li>
+<li value="80"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(90,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">90</set></think></li>
+<li value="90"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(100,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">100</set></think></li>
+<li value="100"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(110,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">110</set></think></li>
+<li value="110"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(120,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">120</set></think></li>
+<li value="120"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(130,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">130</set></think></li>
+<li value="130"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(140,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">140</set></think></li>
+<li value="140"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(150,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">150</set></think></li>
+<li value="150"><random><li>Ok</li><li>Got it</li><li>Moving</li><li>Yes</li><li>On my way</li><li>Here we go</li><li>Alright</li><li>Yes Sir</li><li>Please</li><li>Accomplished</li><li>Performing</li></random><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(160,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">160</set></think></li>
+<li value="160"><oob><mrl><service>python</service><method>exec</method><param>
+i01.moveTorso(170,<get name="to1-2"/>,<get name="to1-3"/>)</param></mrl></oob><think><set name="to1-1">170</set></think> I have reached the limit.</li>
+<li value="170">I have reached the limit.</li>
+</condition></template></category></topic>
+
+<topic name="TO1">
+<category><pattern>ADD ANOTHER PART</pattern>
+<template>
+<think><set name="TO1SAVE">ok</set><set name="topic">MOTION1</set></think>Alright, which one?
+<condition name="ORDER1">
+    <li value="0"><think><set name="ORDER1">1</set><set name="LIST1">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW1">ok</set></think>
+    </li>
+    <li value="1"><think><set name="ORDER1">2</set><set name="LIST2">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW2">ok</set></think>
+    </li>
+    <li value="2"><think><set name="ORDER1">3</set><set name="LIST3">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW3">ok</set></think>
+    </li>
+    <li value="3"><think><set name="ORDER1">4</set><set name="LIST4">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW4">ok</set></think>
+    </li>
+        <li value="4"><think><set name="ORDER1">5</set><set name="LIST5">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW5">ok</set></think>
+    </li>
+    <li value="5"><think><set name="ORDER1">6</set><set name="LIST6">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW6">ok</set></think>
+    </li>
+    <li value="6"><think><set name="ORDER1">7</set><set name="LIST7">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW7">ok</set></think>
+    </li>
+    <li value="7"><think><set name="ORDER1">8</set><set name="LIST8">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW8">ok</set></think>
+    </li>
+    <li value="8"><think><set name="ORDER1">9</set><set name="LIST9">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW9">ok</set></think>
+    </li>
+    <li value="9"><think><set name="ORDER1">10</set><set name="LIST10">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW10">ok</set></think>
+    </li>
+    <li value="10"><think><set name="ORDER1">11</set><set name="LIST11">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW11">ok</set></think>
+    </li>
+    <li value="11"><think><set name="ORDER1">12</set><set name="LIST12">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW12">ok</set></think>
+    </li>
+    <li value="12"><think><set name="ORDER1">13</set><set name="LIST13">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW13">ok</set></think>
+    </li>
+    <li value="13"><think><set name="ORDER1">14</set><set name="LIST14">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW14">ok</set></think>
+    </li>
+    <li value="14"><think><set name="ORDER1">15</set><set name="LIST15">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW15">ok</set></think>
+    </li>
+    <li value="15"><think><set name="ORDER1">16</set><set name="LIST16">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW16">ok</set></think>
+    </li>
+    <li value="16"><think><set name="ORDER1">17</set><set name="LIST17">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW17">ok</set></think>
+    </li>
+    <li value="17"><think><set name="ORDER1">18</set><set name="LIST18">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW18">ok</set></think>
+    </li>
+    <li value="18"><think><set name="ORDER1">19</set><set name="LIST19">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW19">ok</set></think>
+    </li>
+    <li value="19"><think><set name="ORDER1">20</set><set name="LIST20">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW20">ok</set></think>
+    </li>
+    <li value="20"><think><set name="ORDER1">21</set><set name="LIST21">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW21">ok</set></think>
+    </li>
+    <li value="21"><think><set name="ORDER1">22</set><set name="LIST22">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW22">ok</set></think>
+    </li>
+    <li value="22"><think><set name="ORDER1">23</set><set name="LIST23">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW23">ok</set></think>
+    </li>
+    <li value="23"><think><set name="ORDER1">24</set><set name="LIST24">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW24">ok</set></think>
+    </li>
+    </condition>
+</template></category></topic>
+
+<topic name="TO1">
+<category><pattern>SAVE MOTION</pattern>
+<template>Please enter motion name.
+<think><set name="TO1SAVE">ok</set><set name="topic">SAVING1</set></think>
+<condition name="ORDER1">
+    <li value="0"><think><set name="ORDER1">1</set><set name="LIST1">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW1">ok</set></think>
+    </li>
+    <li value="1"><think><set name="ORDER1">2</set><set name="LIST2">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW2">ok</set></think>
+    </li>
+    <li value="2"><think><set name="ORDER1">3</set><set name="LIST3">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW3">ok</set></think>
+    </li>
+    <li value="3"><think><set name="ORDER1">4</set><set name="LIST4">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW4">ok</set></think>
+    </li>
+        <li value="4"><think><set name="ORDER1">5</set><set name="LIST5">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW5">ok</set></think>
+    </li>
+    <li value="5"><think><set name="ORDER1">6</set><set name="LIST6">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW6">ok</set></think>
+    </li>
+    <li value="6"><think><set name="ORDER1">7</set><set name="LIST7">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW7">ok</set></think>
+    </li>
+    <li value="7"><think><set name="ORDER1">8</set><set name="LIST8">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW8">ok</set></think>
+    </li>
+    <li value="8"><think><set name="ORDER1">9</set><set name="LIST9">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW9">ok</set></think>
+    </li>
+    <li value="9"><think><set name="ORDER1">10</set><set name="LIST10">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW10">ok</set></think>
+    </li>
+    <li value="10"><think><set name="ORDER1">11</set><set name="LIST11">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW11">ok</set></think>
+    </li>
+    <li value="11"><think><set name="ORDER1">12</set><set name="LIST12">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW12">ok</set></think>
+    </li>
+    <li value="12"><think><set name="ORDER1">13</set><set name="LIST13">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW13">ok</set></think>
+    </li>
+    <li value="13"><think><set name="ORDER1">14</set><set name="LIST14">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW14">ok</set></think>
+    </li>
+    <li value="14"><think><set name="ORDER1">15</set><set name="LIST15">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW15">ok</set></think>
+    </li>
+    <li value="15"><think><set name="ORDER1">16</set><set name="LIST16">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW16">ok</set></think>
+    </li>
+    <li value="16"><think><set name="ORDER1">17</set><set name="LIST17">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW17">ok</set></think>
+    </li>
+    <li value="17"><think><set name="ORDER1">18</set><set name="LIST18">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW18">ok</set></think>
+    </li>
+    <li value="18"><think><set name="ORDER1">19</set><set name="LIST19">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW19">ok</set></think>
+    </li>
+    <li value="19"><think><set name="ORDER1">20</set><set name="LIST20">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW20">ok</set></think>
+    </li>
+    <li value="20"><think><set name="ORDER1">21</set><set name="LIST21">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW21">ok</set></think>
+    </li>
+    <li value="21"><think><set name="ORDER1">22</set><set name="LIST22">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW22">ok</set></think>
+    </li>
+    <li value="22"><think><set name="ORDER1">23</set><set name="LIST23">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW23">ok</set></think>
+    </li>
+    <li value="23"><think><set name="ORDER1">24</set><set name="LIST24">
+        <condition name="STO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setTorsoSpeed(<get name="sto1-1"/>,<get name="sto1-2"/>,<get name="sto1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="TO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)
+            </param></mrl></oob></condition>
+        <condition name="PTO1SAVE" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="pto1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW24">ok</set></think>
+    </li>
+    </condition>
+</template></category></topic>
+
+</aiml>
