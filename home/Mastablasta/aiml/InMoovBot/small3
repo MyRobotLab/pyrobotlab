@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<topic name="SMALLRFI3">
+<category><pattern>ADD ANOTHER PART</pattern>
+<template>
+<think><set name="RHS3">ok</set><set name="topic">MOTION1</set></think>Alright, which one?
+<condition name="ORDER1">
+    <li value="0"><think><set name="ORDER1">1</set><set name="LIST1">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW1">ok</set></think>
+    </li>
+    <li value="1"><think><set name="ORDER1">2</set><set name="LIST2">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW2">ok</set></think>
+    </li>
+    <li value="2"><think><set name="ORDER1">3</set><set name="LIST3">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW3">ok</set></think>
+    </li>
+    <li value="3"><think><set name="ORDER1">4</set><set name="LIST4">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW4">ok</set></think>
+    </li>
+        <li value="4"><think><set name="ORDER1">5</set><set name="LIST5">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW5">ok</set></think>
+    </li>
+    <li value="5"><think><set name="ORDER1">6</set><set name="LIST6">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW6">ok</set></think>
+    </li>
+    <li value="6"><think><set name="ORDER1">7</set><set name="LIST7">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW7">ok</set></think>
+    </li>
+    <li value="7"><think><set name="ORDER1">8</set><set name="LIST8">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW8">ok</set></think>
+    </li>
+    <li value="8"><think><set name="ORDER1">9</set><set name="LIST9">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW9">ok</set></think>
+    </li>
+    <li value="9"><think><set name="ORDER1">10</set><set name="LIST10">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW10">ok</set></think>
+    </li>
+    <li value="10"><think><set name="ORDER1">11</set><set name="LIST11">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW11">ok</set></think>
+    </li>
+    <li value="11"><think><set name="ORDER1">12</set><set name="LIST12">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW12">ok</set></think>
+    </li>
+    <li value="12"><think><set name="ORDER1">13</set><set name="LIST13">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW13">ok</set></think>
+    </li>
+    <li value="13"><think><set name="ORDER1">14</set><set name="LIST14">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW14">ok</set></think>
+    </li>
+    <li value="14"><think><set name="ORDER1">15</set><set name="LIST15">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW15">ok</set></think>
+    </li>
+    <li value="15"><think><set name="ORDER1">16</set><set name="LIST16">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW16">ok</set></think>
+    </li>
+    <li value="16"><think><set name="ORDER1">17</set><set name="LIST17">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW17">ok</set></think>
+    </li>
+    <li value="17"><think><set name="ORDER1">18</set><set name="LIST18">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW18">ok</set></think>
+    </li>
+    <li value="18"><think><set name="ORDER1">19</set><set name="LIST19">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW19">ok</set></think>
+    </li>
+    <li value="19"><think><set name="ORDER1">20</set><set name="LIST20">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW20">ok</set></think>
+    </li>
+    <li value="20"><think><set name="ORDER1">21</set><set name="LIST21">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW21">ok</set></think>
+    </li>
+    <li value="21"><think><set name="ORDER1">22</set><set name="LIST22">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW22">ok</set></think>
+    </li>
+    <li value="22"><think><set name="ORDER1">23</set><set name="LIST23">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW23">ok</set></think>
+    </li>
+    <li value="23"><think><set name="ORDER1">24</set><set name="LIST24">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW24">ok</set></think>
+    </li>
+    </condition>
+</template></category></topic>
+
+<topic name="SMALLRFI3">
+<category><pattern>SAVE MOTION</pattern>
+<template>Please enter motion name.
+<think><set name="RHS3">ok</set><set name="topic">SAVING1</set></think>
+<condition name="ORDER1">
+    <li value="0"><think><set name="ORDER1">1</set><set name="LIST1">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW1">ok</set></think>
+    </li>
+    <li value="1"><think><set name="ORDER1">2</set><set name="LIST2">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW2">ok</set></think>
+    </li>
+    <li value="2"><think><set name="ORDER1">3</set><set name="LIST3">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW3">ok</set></think>
+    </li>
+    <li value="3"><think><set name="ORDER1">4</set><set name="LIST4">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW4">ok</set></think>
+    </li>
+        <li value="4"><think><set name="ORDER1">5</set><set name="LIST5">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW5">ok</set></think>
+    </li>
+    <li value="5"><think><set name="ORDER1">6</set><set name="LIST6">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW6">ok</set></think>
+    </li>
+    <li value="6"><think><set name="ORDER1">7</set><set name="LIST7">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW7">ok</set></think>
+    </li>
+    <li value="7"><think><set name="ORDER1">8</set><set name="LIST8">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW8">ok</set></think>
+    </li>
+    <li value="8"><think><set name="ORDER1">9</set><set name="LIST9">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW9">ok</set></think>
+    </li>
+    <li value="9"><think><set name="ORDER1">10</set><set name="LIST10">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW10">ok</set></think>
+    </li>
+    <li value="10"><think><set name="ORDER1">11</set><set name="LIST11">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW11">ok</set></think>
+    </li>
+    <li value="11"><think><set name="ORDER1">12</set><set name="LIST12">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW12">ok</set></think>
+    </li>
+    <li value="12"><think><set name="ORDER1">13</set><set name="LIST13">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW13">ok</set></think>
+    </li>
+    <li value="13"><think><set name="ORDER1">14</set><set name="LIST14">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW14">ok</set></think>
+    </li>
+    <li value="14"><think><set name="ORDER1">15</set><set name="LIST15">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW15">ok</set></think>
+    </li>
+    <li value="15"><think><set name="ORDER1">16</set><set name="LIST16">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW16">ok</set></think>
+    </li>
+    <li value="16"><think><set name="ORDER1">17</set><set name="LIST17">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW17">ok</set></think>
+    </li>
+    <li value="17"><think><set name="ORDER1">18</set><set name="LIST18">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW18">ok</set></think>
+    </li>
+    <li value="18"><think><set name="ORDER1">19</set><set name="LIST19">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW19">ok</set></think>
+    </li>
+    <li value="19"><think><set name="ORDER1">20</set><set name="LIST20">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW20">ok</set></think>
+    </li>
+    <li value="20"><think><set name="ORDER1">21</set><set name="LIST21">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW21">ok</set></think>
+    </li>
+    <li value="21"><think><set name="ORDER1">22</set><set name="LIST22">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW22">ok</set></think>
+    </li>
+    <li value="22"><think><set name="ORDER1">23</set><set name="LIST23">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW23">ok</set></think>
+    </li>
+    <li value="23"><think><set name="ORDER1">24</set><set name="LIST24">
+        <condition name="SRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.setHandSpeed("right",<get name="sfi3-1"/>,<get name="sfi3-2"/>,<get name="sfi3-3"/>,<get name="sfi3-4"/>,<get name="sfi3-5"/>,<get name="sfi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="RHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            i01.moveHand("right",<get name="fi3-1"/>,<get name="fi3-2"/>,<get name="fi3-3"/>,<get name="fi3-4"/>,<get name="fi3-5"/>,<get name="fi3-6"/>)
+            </param></mrl></oob></condition>
+        <condition name="PRHS3" value="ok">
+            <oob><mrl><service>python</service><method>exec</method><param>
+            sleep(<get name="prh1-1"/>)
+            </param></mrl></oob></condition>
+        </set><set name="ROW24">ok</set></think>
+    </li>
+    </condition>
+</template></category></topic>
+</aiml>
