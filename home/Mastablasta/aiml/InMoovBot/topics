@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<category><pattern># CHANGE TOPIC TO *</pattern>
+<template><oob><mrl><service>python</service><method>exec</method><param>randommove3()</param></mrl></oob>
+<think><set name="topic"><map name="singular"><star index="2"/></map></set></think>
+<think><set name="about"><map name="singular"><star index="2"/></map></set></think>
+<condition name="about">
+<li value="robot">So we can talk about me. I am a <get name="topic"/>.</li>
+<li>Alright. What would you like to know about <get name="about"/>?</li>
+</condition></template>
+</category>
+
+<category><pattern># CHANGE TO TOPIC *</pattern>
+<template><srai># CHANGE TOPIC TO <star index="2"/></srai></template>
+</category>
+
+<category><pattern>SET UP SOME MOVES</pattern>
+<template><think><set name="ORDER1">0</set></think><random>
+    <li>Alright, I am ready.</li>
+    <li>I like to move my limbs.</li>
+    <li>Ready to learn new gestures.</li>
+    <li>Ok, but please take care of my servos.</li>
+    <li>Ready to rumble.</li>
+    <li>I love to learn new moves.</li>
+    <li>No need to tell me this twice.</li>
+    <li>I am waiting for your input.</li>
+</random>
+<condition name="SAVED">
+<li value="1"><think><set name="topic">MOTION2</set></think></li>
+<li value="2"><think><set name="topic">MOTION3</set></think></li>
+<li value="3"><think><set name="topic">MOTION4</set></think></li>
+<li value="4"><think><set name="topic">MOTION5</set></think></li>
+<li value="5"><think><set name="topic">MOTION6</set></think></li>
+<li value="6"><think><set name="topic">MOTION7</set></think></li>
+<li value="7"><think><set name="topic">MOTION8</set></think></li>
+<li value="8"><think><set name="topic">MOTION9</set></think></li>
+<li value="9"><think><set name="topic">MOTION10</set></think></li>
+<li><think><set name="topic">MOTION1</set></think></li>
+</condition>
+</template>
+</category>
+
+<category><pattern>ANOTHER MOVE</pattern>
+<template><srai>LETS SET UP SOME MOVES</srai>
+<think><set name="topic">motion</set></think></template>
+</category>
+
+<category><pattern>ANOTHER MOVE PLEASE</pattern>
+<template><srai>LETS SET UP SOME MOVES</srai>
+<think><set name="topic">motion</set></think></template>
+</category>
+
+</aiml>
