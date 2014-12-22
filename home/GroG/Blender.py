@@ -1,6 +1,9 @@
-import bge                      #blender game engine
-#import bpy                      #blender python interface
-import math                     #Maths Module
+# TODO
+# way to dynamically add actuators & controllers
+# http://www.blender.org/api/blender_python_api_2_60_6/bpy.ops.logic.html
+import bge # blender game engine
+import bpy  # blender python interface
+import math
 import sys
 from os.path import expanduser
 import socket
@@ -9,29 +12,50 @@ import socketserver
 import json
 import traceback
 
+# FIXES
+# bge dynamic import or absolute? path info ???
+# clean/complete shutdown
+# out of bge mode and back in - should still work - removal of all globals
+# already started .... on start 
+# BGE - restart does not work !!!
+# when "run script" bge does not exist
+# BGE - restarted - and sockets left running - everything reconnects fine BUT GRAPHICS DONT MOVE !!
+
+# MRL is disconnected - BGE terminates then restarts - connections look normal but mouth does not move !
+
+# WORKS
+# when MRL is terminated and BGE is left running - can connect multiple times & threads appear to die as expected
+# regular start/stop appears to work 
+
 home = expanduser("~")
 print (home)
 print (sys.version)
 print (sys.path)
 
+version = "0.9"
+controlPort = 8989
+serialPort = 9191
+readyToAttach = None # must I remove this too ?
+# pos = 0.0
+
+class MyRobotLab:
+  """the MyRobotLab class - mrl manages the control and serial servers which the middleware interfaces with"""
+  def __init__(self):
+    self.control = None
+    self.controlServer = None
+    self.serialServer = None
+    self.virtualDevices = {}
+    self.pos = 0.0
+    
 # bpy.data.objects["Cube"].data.vertices[0].co.x += 1.0
 
-a=0.0
-
-version = "0.9"
-# the one and only controller
-control = None
-controlServer = None
-controlPort = 8989
-# I need a list of handlers - where can I get it?
-# controlHandlers = []
-virtualDevices = {}
-#registry = {}
-readyToAttach = None
-
-serialServer = None
-serialPort = 9191
-
+if (not hasattr(bpy, "mrl")):
+    print("initializing MyRobotLab")
+    bpy.mrl = MyRobotLab()
+else:
+    print("MyRobotLab already initialized")    
+    
+    
 class Message:
   """an MRL message definition in Python"""
   def __init__(self):
@@ -58,8 +82,6 @@ def getVersion():
   print("version is ", version)
   return version
 
-# way to dynamically add actuators & controllers
-# http://www.blender.org/api/blender_python_api_2_60_6/bpy.ops.logic.html
 
 def AnaLoop():                
      global a                 
@@ -92,39 +114,40 @@ def createJsonMsg(method, data):
   return retJson.encode()
 
 def onError(msg):
-  global control
   print(msg)
-  control.request.sendall(createJsonMsg("onError", msg))
+  request = bpy.mrl.control.request
+  request.sendall(createJsonMsg("onError", msg))
     
 def stopServer():
-    global controlServer, serialServer
     print ("stopping controlServer")
+    controlServer = bpy.mrl.controlServer
     
     if (controlServer != None):
         controlServer.shutdown()
     else:
         print("controlServer already stopped")
-    controlServer = None
+    bpy.mrl.controlServer = None
     
     print ("stopping serialServer")
+    
+    serialServer = bpy.mrl.serialServer
     
     if (serialServer != None):
         serialServer.shutdown()
     else:
         print("serialServer already stopped")
-    serialServer = None
+    bpy.mrl.serialServer = None
     
     #for controlHandler in controlHandlers
     #    print (controlHandler)
     #controlHandlers[controlHandler].listening = False  
     
 def startServer():
-    global controlServer, serialServer
-    # Port 0 means to select an arbitrary unused port
-
+    controlServer = bpy.mrl.controlServer
     if (controlServer ==  None):
       ##### control server begin ####
       controlServer = ThreadedTCPServer(("localhost", controlPort), ControlHandler)
+      bpy.mrl.controlServer = controlServer
       ip, port = controlServer.server_address
 
       # Start a thread with the controlServer -- that thread will then start one
@@ -137,6 +160,7 @@ def startServer():
       ##### control server end ####
       ##### serial server begin ####
       serialServer = ThreadedTCPServer(("localhost", serialPort), SerialHandler)
+      bpy.mrl.serialServer = serialServer
       ip, port = serialServer.server_address
 
       # Start a thread with the serialServer -- that thread will then start one
@@ -155,11 +179,12 @@ def startServer():
 # name and type - next connection on the serial port will be
 # the new device
 def attach(name, type):
-  global control, virtualDevices, readyToAttach
+  global control, readyToAttach
   # adding name an type to new virtual device
   newDevice = VirtualDevice(name, type)
   # constructing the correct type
   newDevice.service = eval(type + "('" + name + "')")
+  virtualDevices = bpy.mrl.virtualDevices
   virtualDevices[name] = newDevice
   readyToAttach = name
   global control
@@ -170,16 +195,17 @@ def attach(name, type):
 
     
 class ControlHandler(socketserver.BaseRequestHandler):
-    global control    
+    #global control    
     listening = False
     
     def handle(self):
-        global control
+        # global control        
         control = self
+        bpy.mrl.control = control
         #data = self.request.recv(1024).decode()
         myThread = threading.current_thread()
         
-        print("client connected to control socket thread {} port {}".format(myThread.name, controlPort))
+        print("---> client connected to control socket thread {} port {}".format(myThread.name, controlPort))
         #self.request.sendall(response.encode())
         
         buffer = ''
@@ -249,9 +275,10 @@ class SerialHandler(socketserver.BaseRequestHandler):
       name = ""
       
       def handle(self):
-          global readyToAttach, virtualDevices
+          global readyToAttach
           
           myThread = threading.current_thread()
+          virtualDevices = bpy.mrl.virtualDevices
                               
           if (readyToAttach in virtualDevices):
             print("++++attaching " + str(readyToAttach) + " serial handler++++ thread {} port {}".format(myThread.name, serialPort))
@@ -259,6 +286,7 @@ class SerialHandler(socketserver.BaseRequestHandler):
             service = virtualDevices[readyToAttach].service
             self.name = readyToAttach
           else:
+            print("could not attach serial device")
             # ERROR - we need a name to attach
             onError("XXXX incoming serial connection but readyToAttach [" + str(readyToAttach) + "] XXXX")
             return           
@@ -304,6 +332,7 @@ class Arduino:
     self.version = 20
     
   def sendMRLCOMMMsg(self, method, value):
+    virtualDevices = bpy.mrl.virtualDevices
     socket = virtualDevices[self.name].serialHandler.request
     print("sending bytes")
     print(bytes([170, method, 1, value]))
@@ -314,7 +343,7 @@ class Arduino:
     socket.sendall(bytes([170, 2, method, value]))
 
   def handle(self, byteArray):
-    global pos, virtualDevices, version
+    global version
     newByteCnt = len(byteArray)
     # print (self.name + " recvd " + str(newByteCnt) + " bytes")
     # print(byteArray)
@@ -359,7 +388,7 @@ class Arduino:
         elif (self.method == 7):
           print("SERVO_WRITE", self.params)
           #moveTo(self.params[1])
-          pos = self.params[1]
+          bpy.mrl.pos = self.params[1]
         elif (self.method == 8):
           print("SERVO_SET_MAX_PULSE", self.params)
         elif (self.method == 9):
@@ -383,18 +412,16 @@ class Servo:
     print("creating new Servo ", name)
     self.name = name
 
-pos = 0.0
-
 #def moveTo(pos):
 def moveTo():
-    global pos
+    #global pos
     #print ("moving servo to ", pos)
     scene = bge.logic.getCurrentScene()
     cont = bge.logic.getCurrentController()
     own = cont.owner   
     #print (a)    
     xyz = own.localOrientation.to_euler()
-    xyz[0] = math.radians(pos/8)
+    xyz[0] = math.radians(bpy.mrl.pos/8)
     own.localOrientation = xyz.to_matrix()
     
 def frameTick():
@@ -405,5 +432,6 @@ def frameTick():
   print("tick")
     
 def endcomm():
+    print("endcomm")
     bge.logic.endGame()    
     
