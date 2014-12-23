@@ -9,7 +9,6 @@
 <condition name="SAVED" value="1">
 <oob><mrl><service>python</service><method>exec</method><param>
 <condition name="ROW1" value="ok"><get name="LIST1"/></condition><condition name="ROW2" value="ok"> <get name="LIST2"/></condition><condition name="ROW3" value="ok"><get name="LIST3"/></condition></param></mrl></oob></condition>
-
 <condition name="ROW4" value="ok"><oob><mrl><service>python</service><method>exec</method><param>
 <get name="LIST4"/></param></mrl></oob></condition>
 <condition name="ROW5" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST5"/></param></mrl></oob></condition>
