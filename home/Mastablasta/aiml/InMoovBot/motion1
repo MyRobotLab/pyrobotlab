@@ -9,41 +9,57 @@ The <set name="CHOOSELIMB"><star/></set> is hereby ready for setup.
 <condition name="CHOOSELIMB">
 <li value="right hand">
     <condition name="SAVE1">
-    <li value="1"><think><set name="SAVE1">2</set><set name="topic">RH2</set><set name="fi2-1">40</set><set name="fi2-2">40</set><set name="fi2-3">40</set><set name="fi2-4">80</set><set name="fi2-5">40</set><set name="fi2-6">80</set></think></li>
-    <li value="2"><think><set name="SAVE1">3</set><set name="topic">RH3</set><set name="fi3-1">40</set><set name="fi3-2">40</set><set name="fi3-3">40</set><set name="fi3-4">80</set><set name="fi3-5">40</set><set name="fi3-6">80</set></think></li>
-    <li value="3"><think><set name="SAVE1">4</set><set name="topic">RH4</set><set name="fi4-1">40</set><set name="fi4-2">40</set><set name="fi4-3">40</set><set name="fi4-4">80</set><set name="fi4-5">40</set><set name="fi4-6">80</set></think></li>
+    <li value="1"><think><set name="SAVE1">2</set><set name="topic">RH2</set>
+        <set name="sfi2-1">0.95</set><set name="sfi2-2">0.95</set><set name="sfi2-3">0.95</set><set name="sfi2-4">0.95</set><set name="sfi2-5">0.95</set><set name="sfi2-6">0.95</set>
+        <set name="fi2-1">40</set><set name="fi2-2">40</set><set name="fi2-3">40</set><set name="fi2-4">80</set><set name="fi2-5">40</set><set name="fi2-6">80</set></think></li>
+    <li value="2"><think><set name="SAVE1">3</set><set name="topic">RH3</set>
+        <set name="fi3-1">40</set><set name="fi3-2">40</set><set name="fi3-3">40</set><set name="fi3-4">80</set><set name="fi3-5">40</set><set name="fi3-6">80</set></think></li>
+        <set name="sfi3-1">0.95</set><set name="sfi3-2">0.95</set><set name="sfi3-3">0.95</set><set name="sfi3-4">0.95</set><set name="sfi3-5">0.95</set><set name="sfi3-6">0.95</set>
+    <li value="3"><think><set name="SAVE1">4</set><set name="topic">RH4</set>
+        <set name="fi4-1">40</set><set name="fi4-2">40</set><set name="fi4-3">40</set><set name="fi4-4">80</set><set name="fi4-5">40</set><set name="fi4-6">80</set></think></li>
+        <set name="sfi4-1">0.95</set><set name="sfi4-2">0.95</set><set name="sfi4-3">0.95</set><set name="sfi4-4">0.95</set><set name="sfi4-5">0.95</set><set name="sfi4-6">0.95</set>
     <li value="4"><think><set name="topic">SAVING1</set></think>Last motion for right.</li>
-    <li><think><set name="SAVE1">1</set><set name="topic">RH1</set><set name="fi1-1">40</set><set name="fi1-2">40</set><set name="fi1-3">40</set><set name="fi1-4">80</set><set name="fi1-5">40</set><set name="fi1-6">80</set></think></li>
+    <li><think><set name="SAVE1">1</set><set name="topic">RH1</set>
+        <set name="sfi1-1">0.95</set><set name="sfi1-2">0.95</set><set name="sfi1-3">0.95</set><set name="sfi1-4">0.95</set><set name="sfi1-5">0.95</set><set name="sfi1-6">0.95</set>
+        <set name="fi1-1">40</set><set name="fi1-2">40</set><set name="fi1-3">40</set><set name="fi1-4">80</set><set name="fi1-5">40</set><set name="fi1-6">80</set></think></li>
     </condition>
 </li>
 <li value="right arm">
     <condition name="RASET">
-    <li value="1"><think><set name="RASET">2</set><set name="topic">RA2</set><set name="ra2-1">0</set><set name="ra2-2">105</set><set name="ra2-3">95</set><set name="ra2-4">20</set>
-    <oob><mrl><service>python</service><method>exec</method><param>
-    i01.moveArm("right",<get name="ra2-1"/>,<get name="ra2-2"/>,<get name="ra2-3"/>,<get name="ra2-4"/>)</param></mrl></oob></think></li>
-    <li value="2"><think><set name="RASET">3</set><set name="topic">RA3</set><set name="ra3-1">0</set><set name="ra3-2">105</set><set name="ra3-3">95</set><set name="ra3-4">20</set>
-    <oob><mrl><service>python</service><method>exec</method><param>
-    i01.moveArm("right",<get name="ra3-1"/>,<get name="ra3-2"/>,<get name="ra3-3"/>,<get name="ra3-4"/>)</param></mrl></oob></think></li>
-    <li value="3"><think><set name="RASET">4</set><set name="topic">RA4</set><set name="ra4-1">0</set><set name="ra4-2">105</set><set name="ra4-3">95</set><set name="ra4-4">20</set>
-    <oob><mrl><service>python</service><method>exec</method><param>
-    i01.moveArm("right",<get name="ra4-1"/>,<get name="ra1-4"/>,<get name="ra4-3"/>,<get name="ra4-4"/>)</param></mrl></oob></think></li>
-    <li><think><set name="RASET">1</set><set name="topic">RA1</set><set name="ra1-1">0</set><set name="ra1-2">105</set><set name="ra1-3">95</set><set name="ra1-4">20</set>
-    <oob><mrl><service>python</service><method>exec</method><param>
-    i01.moveArm("right",<get name="ra1-1"/>,<get name="ra1-2"/>,<get name="ra1-3"/>,<get name="ra1-4"/>)</param></mrl></oob></think>
+    <li value="1"><think><set name="RASET">2</set><set name="topic">RA2</set>
+        <set name="sra2-1">0.95</set><set name="sra2-2">0.95</set><set name="sra2-3">0.95</set><set name="sra2-4">0.95</set>
+        <set name="ra2-1">0</set><set name="ra2-2">105</set><set name="ra2-3">95</set><set name="ra2-4">20</set>
+        <oob><mrl><service>python</service><method>exec</method><param>
+        i01.moveArm("right",<get name="ra2-1"/>,<get name="ra2-2"/>,<get name="ra2-3"/>,<get name="ra2-4"/>)</param></mrl></oob></think></li>
+    <li value="2"><think><set name="RASET">3</set><set name="topic">RA3</set>
+        <set name="sra3-1">0.95</set><set name="sra3-2">0.95</set><set name="sra3-3">0.95</set><set name="sra3-4">0.95</set>
+        <set name="ra3-1">0</set><set name="ra3-2">105</set><set name="ra3-3">95</set><set name="ra3-4">20</set>
+        <oob><mrl><service>python</service><method>exec</method><param>
+        i01.moveArm("right",<get name="ra3-1"/>,<get name="ra3-2"/>,<get name="ra3-3"/>,<get name="ra3-4"/>)</param></mrl></oob></think></li>
+    <li value="3"><think><set name="RASET">4</set><set name="topic">RA4</set>
+        <set name="sra4-1">0.95</set><set name="sra4-2">0.95</set><set name="sra4-3">0.95</set><set name="sra4-4">0.95</set>
+        <set name="ra4-1">0</set><set name="ra4-2">105</set><set name="ra4-3">95</set><set name="ra4-4">20</set>
+        <oob><mrl><service>python</service><method>exec</method><param>
+        i01.moveArm("right",<get name="ra4-1"/>,<get name="ra1-4"/>,<get name="ra4-3"/>,<get name="ra4-4"/>)</param></mrl></oob></think></li>
+    <li><think><set name="RASET">1</set><set name="topic">RA1</set>
+        <set name="sra1-1">0.95</set><set name="sra1-2">0.95</set><set name="sra1-3">0.95</set><set name="sra1-4">0.95</set>
+        <set name="ra1-1">0</set><set name="ra1-2">105</set><set name="ra1-3">95</set><set name="ra1-4">20</set>
+        <oob><mrl><service>python</service><method>exec</method><param>
+        i01.moveArm("right",<get name="ra1-1"/>,<get name="ra1-2"/>,<get name="ra1-3"/>,<get name="ra1-4"/>)</param></mrl></oob></think>
     </li></condition>
 </li>
 <li value="torso">
     <condition name="TOSET">
-    <li value="1"><think><set name="TOSET">2</set><set name="topic">TO2</set><set name="to2-1">90</set><set name="to2-2">90</set><set name="to2-3">90</set>
+    <li value="1"><think><set name="TOSET">2</set><set name="topic">TO2</set><set name="sto1-1">0.95</set><set name="sto1-2">0.95</set><set name="sto1-3">0.95</set><set name="to2-1">90</set><set name="to2-2">90</set><set name="to2-3">90</set>
     <oob><mrl><service>python</service><method>exec</method><patom>
     i01.moveTorso(<get name="to2-1"/>,<get name="to2-2"/>,<get name="to2-3"/>)</patom></mrl></oob></think></li>
-    <li value="2"><think><set name="TOSET">3</set><set name="topic">TO3</set><set name="to3-1">90</set><set name="to3-2">90</set><set name="to3-3">90</set>
+    <li value="2"><think><set name="TOSET">3</set><set name="topic">TO3</set><set name="sto1-1">0.95</set><set name="sto1-2">0.95</set><set name="sto1-3">0.95</set><set name="to3-1">90</set><set name="to3-2">90</set><set name="to3-3">90</set>
     <oob><mrl><service>python</service><method>exec</method><patom>
     i01.moveTorso(<get name="to3-1"/>,<get name="to3-2"/>,<get name="to3-3"/>)</patom></mrl></oob></think></li>
-    <li value="3"><think><set name="TOSET">4</set><set name="topic">TO4</set><set name="to4-1">90</set><set name="to4-2">90</set><set name="to4-3">90</set>
+    <li value="3"><think><set name="TOSET">4</set><set name="topic">TO4</set><set name="sto1-1">0.95</set><set name="sto1-2">0.95</set><set name="sto1-3">0.95</set><set name="to4-1">90</set><set name="to4-2">90</set><set name="to4-3">90</set>
     <oob><mrl><service>python</service><method>exec</method><patom>
     i01.moveTorso(<get name="to4-1"/>,<get name="to1-4"/>,<get name="to4-3"/>)</patom></mrl></oob></think></li>
-    <li><think><set name="TOSET">1</set><set name="topic">TO1</set><set name="to1-1">90</set><set name="to1-2">90</set><set name="to1-3">90</set>
+    <li><think><set name="TOSET">1</set><set name="topic">TO1</set><set name="sto1-1">0.95</set><set name="sto1-2">0.95</set><set name="sto1-3">0.95</set><set name="to1-1">90</set><set name="to1-2">90</set><set name="to1-3">90</set>
     <oob><mrl><service>python</service><method>exec</method><patom>
     i01.moveTorso(<get name="to1-1"/>,<get name="to1-2"/>,<get name="to1-3"/>)</patom></mrl></oob></think>
     </li></condition>
