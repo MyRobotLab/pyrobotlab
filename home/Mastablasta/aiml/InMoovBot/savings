@@ -6,30 +6,31 @@
 <template>Motion name is <star index="2"/>
 <learn><category><pattern># SHOW MOTION <eval><star index="2"/></eval></pattern>
 <template>This is the motion <eval><star index="2"/></eval>
-<condition name="ROW1" value="ok"> <get name="LIST1"/></condition>
-<condition name="ROW2" value="ok"> <get name="LIST2"/></condition>
-<condition name="ROW3" value="ok"> <get name="LIST3"/></condition>
-<condition name="ROW4" value="ok"> <get name="LIST4"/></condition>
-<condition name="ROW5" value="ok"> <get name="LIST5"/></condition>
-<condition name="ROW6" value="ok"> <get name="LIST6"/></condition>
-<condition name="ROW7" value="ok"><get name="LIST7"/></condition>
-<condition name="ROW8" value="ok"><get name="LIST8"/></condition>
-<condition name="ROW9" value="ok"><get name="LIST9"/></condition>
-<condition name="ROW10" value="ok"><get name="LIST10"/></condition>
-<condition name="ROW11" value="ok"><get name="LIST11"/></condition>
-<condition name="ROW12" value="ok"><get name="LIST12"/></condition>
-<condition name="ROW13" value="ok"><get name="LIST13"/></condition>
-<condition name="ROW14" value="ok"><get name="LIST14"/></condition>
-<condition name="ROW15" value="ok"><get name="LIST15"/></condition>
-<condition name="ROW16" value="ok"><get name="LIST16"/></condition>
-<condition name="ROW17" value="ok"><get name="LIST17"/></condition>
-<condition name="ROW18" value="ok"><get name="LIST18"/></condition>
-<condition name="ROW19" value="ok"><get name="LIST19"/></condition>
-<condition name="ROW20" value="ok"><get name="LIST20"/></condition>
-<condition name="ROW21" value="ok"><get name="LIST21"/></condition>
-<condition name="ROW22" value="ok"><get name="LIST22"/></condition>
-<condition name="ROW23" value="ok"><get name="LIST23"/></condition>
-<condition name="ROW24" value="ok"><get name="LIST24"/></condition>
+<condition name="SAVED" value="1">
+<oob><mrl><service>python</service><method>exec</method><param>
+<condition name="ROW1" value="ok"><get name="LIST1"/></condition><condition name="ROW2" value="ok"> <get name="LIST2"/></condition><condition name="ROW3" value="ok"><get name="LIST3"/></condition></param></mrl></oob></condition>
+<condition name="ROW4" value="ok"><oob><mrl><service>python</service><method>exec</method><param>
+<get name="LIST4"/></param></mrl></oob></condition>
+<condition name="ROW5" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST5"/></param></mrl></oob></condition>
+<condition name="ROW6" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST6"/></param></mrl></oob></condition>
+<condition name="ROW7" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST7"/></param></mrl></oob></condition>
+<condition name="ROW8" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST8"/></param></mrl></oob></condition>
+<condition name="ROW9" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST9"/></param></mrl></oob></condition>
+<condition name="ROW10" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST10"/></param></mrl></oob></condition>
+<condition name="ROW11" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST11"/></param></mrl></oob></condition>
+<condition name="ROW12" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST12"/></param></mrl></oob></condition>
+<condition name="ROW13" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST13"/></param></mrl></oob></condition>
+<condition name="ROW14" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST14"/></param></mrl></oob></condition>
+<condition name="ROW15" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST15"/></param></mrl></oob></condition>
+<condition name="ROW16" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST16"/></param></mrl></oob></condition>
+<condition name="ROW17" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST17"/></param></mrl></oob></condition>
+<condition name="ROW18" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST18"/></param></mrl></oob></condition>
+<condition name="ROW19" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST19"/></param></mrl></oob></condition>
+<condition name="ROW20" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST20"/></param></mrl></oob></condition>
+<condition name="ROW21" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST21"/></param></mrl></oob></condition>
+<condition name="ROW22" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST22"/></param></mrl></oob></condition>
+<condition name="ROW23" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST23"/></param></mrl></oob></condition>
+<condition name="ROW24" value="ok"><oob><mrl><service>python</service><method>exec</method><param><get name="LIST24"/></param></mrl></oob></condition>
 </template></category></learn>
 <think><set name="SAVED">1</set></think>
 </template>
