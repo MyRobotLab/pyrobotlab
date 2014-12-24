@@ -32,12 +32,13 @@ print (home)
 print (sys.version)
 print (sys.path)
 
-version = "0.9"
 controlPort = 8989
-serialPort = 9191
-readyToAttach = None # must I remove this too ?
-# pos = 0.0
+serialPort  = 9191
 
+readyToAttach = None # must I remove this too ?
+
+# TODO - derive from json object - so we can control correct encoding
+# http://stackoverflow.com/questions/3768895/python-how-to-make-a-class-json-serializable
 class MyRobotLab:
   """the MyRobotLab class - mrl manages the control and serial servers which the middleware interfaces with"""
   def __init__(self):
@@ -45,7 +46,35 @@ class MyRobotLab:
     self.controlServer = None
     self.serialServer = None
     self.virtualDevices = {}
+    self.blenderObjects = {}
+    self.version = "0.9"
     self.pos = 0.0
+    
+  def toJson(self):
+    ret = "{'control': "
+    ret += "'initialized'" if (self.control != None) else "'None'"
+    ret += ", 'controlServer': "
+    ret += "'initialized'" if (self.controlServer != None) else "'None'"
+    ret += ", 'serialServer': "
+    ret += "'initialized'" if (self.serialServer != None) else "'None'"
+    ret += ", 'virtualDevices': ["
+    
+    vdJson = []
+   
+    print(self.virtualDevices)
+    for vd in self.virtualDevices:
+      print("virtual device [" + vd + "]")
+      #vdJson.append("'" + vd + "': " + self.virtualDevices[vd])
+      #vdJson.append("'" + vd + "': '" + vd + "'")
+    
+    ret += ",".join(self.virtualDevices)
+    ret += "]"
+    
+    ret += "}"
+    return ret
+    
+def toJson():
+  return bpy.mrl.toJson();
     
 # bpy.data.objects["Cube"].data.vertices[0].co.x += 1.0
 
@@ -53,9 +82,8 @@ if (not hasattr(bpy, "mrl")):
     print("initializing MyRobotLab")
     bpy.mrl = MyRobotLab()
 else:
-    print("MyRobotLab already initialized")    
-    
-    
+    print("MyRobotLab already initialized")
+
 class Message:
   """an MRL message definition in Python"""
   def __init__(self):
@@ -77,17 +105,20 @@ class VirtualDevice:
     self.type = type
     self.serialHandler = None
     self.service = None
+   
+  def toJson(self):
+    ret = "{'name':'" + self.name + "', 'type':'" + self.type + "',"
+    ret += "'serialHandler': '"
+    ret += "'initialized'" if (self.serialHandler != None) else "'None'"
+    ret += "'service': '"
+    ret += "'initialized'" if (self.service != None) else "'None'"
+    ret += "}"
 
 def getVersion():
-  print("version is ", version)
-  return version
+  print("version is ", bpy.mrl.version)
+  return bpy.mrl.version
 
 
-def AnaLoop():                
-     global a                 
-     a=a+1    
-     #print (a)               
-    
 def Cube():
     global a
     #print ("cube ", a)
@@ -143,6 +174,7 @@ def stopServer():
     #controlHandlers[controlHandler].listening = False  
     
 def startServer():
+    global controlPort
     controlServer = bpy.mrl.controlServer
     if (controlServer ==  None):
       ##### control server begin ####
@@ -156,7 +188,7 @@ def startServer():
       # Exit the controlServer thread when the main thread terminates
       controlThread.daemon = True
       controlThread.start()
-      print ("control server loop running in thread:", controlThread.name, " port ", controlPort)
+      print ("control server loop running in thread: ", controlThread.name, " port ", controlPort)
       ##### control server end ####
       ##### serial server begin ####
       serialServer = ThreadedTCPServer(("localhost", serialPort), SerialHandler)
@@ -169,7 +201,7 @@ def startServer():
       # Exit the serialServer thread when the main thread terminates
       serialThread.daemon = True
       serialThread.start()
-      print ("serial server loop running in thread:", serialThread.name, " port ", serialPort)
+      print ("serial server loop running in thread: ", serialThread.name, " port ", serialPort)
       ##### serial server end ####
     else:
       print ("servers already started")
@@ -178,16 +210,15 @@ def startServer():
 # attach a device - control message comes in and sets up
 # name and type - next connection on the serial port will be
 # the new device
+# FIXME - catch throw on class not found
 def attach(name, type):
-  global control, readyToAttach
+  global readyToAttach
   # adding name an type to new virtual device
   newDevice = VirtualDevice(name, type)
   # constructing the correct type
   newDevice.service = eval(type + "('" + name + "')")
-  virtualDevices = bpy.mrl.virtualDevices
-  virtualDevices[name] = newDevice
+  bpy.mrl.virtualDevices[name] = newDevice
   readyToAttach = name
-  global control
   print("onAttach " + str(name) + " " + str(type) + " SUCCESS - ready for serial connection")
   # print("<--- sending control onAttach(" + str(name) + ")")
   # control.request.sendall(createJsonMsg("onAttach", name))
@@ -195,18 +226,14 @@ def attach(name, type):
 
     
 class ControlHandler(socketserver.BaseRequestHandler):
-    #global control    
     listening = False
     
     def handle(self):
-        # global control        
-        control = self
-        bpy.mrl.control = control
+        bpy.mrl.control = self
         #data = self.request.recv(1024).decode()
         myThread = threading.current_thread()
         
         print("---> client connected to control socket thread {} port {}".format(myThread.name, controlPort))
-        #self.request.sendall(response.encode())
         
         buffer = ''
         
@@ -278,12 +305,11 @@ class SerialHandler(socketserver.BaseRequestHandler):
           global readyToAttach
           
           myThread = threading.current_thread()
-          virtualDevices = bpy.mrl.virtualDevices
-                              
-          if (readyToAttach in virtualDevices):
+          
+          if (readyToAttach in bpy.mrl.virtualDevices):
             print("++++attaching " + str(readyToAttach) + " serial handler++++ thread {} port {}".format(myThread.name, serialPort))
-            virtualDevices[readyToAttach].serialHandler = self
-            service = virtualDevices[readyToAttach].service
+            bpy.mrl.virtualDevices[readyToAttach].serialHandler = self
+            service = bpy.mrl.virtualDevices[readyToAttach].service
             self.name = readyToAttach
           else:
             print("could not attach serial device")
@@ -292,7 +318,6 @@ class SerialHandler(socketserver.BaseRequestHandler):
             return           
           
           listening = True
-  #        virtualDevices[myThread.name] = self
   
           while listening:
             try:
@@ -309,16 +334,6 @@ class SerialHandler(socketserver.BaseRequestHandler):
          
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     pass
-
-def client(ip, port, message):
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect((ip, port))
-    try:
-        sock.sendall(message)
-        response = sock.recv(1024).encode
-        print ("Received: {}".format(response))
-    finally:
-        sock.close()
         
 class Arduino:
   def __init__(self, name):
@@ -332,8 +347,7 @@ class Arduino:
     self.version = 20
     
   def sendMRLCOMMMsg(self, method, value):
-    virtualDevices = bpy.mrl.virtualDevices
-    socket = virtualDevices[self.name].serialHandler.request
+    socket = bpy.mrl.virtualDevices[self.name].serialHandler.request
     print("sending bytes")
     print(bytes([170, method, 1, value]))
     # MRLCOMM PROTOCOL
@@ -343,11 +357,11 @@ class Arduino:
     socket.sendall(bytes([170, 2, method, value]))
 
   def handle(self, byteArray):
-    global version
     newByteCnt = len(byteArray)
     # print (self.name + " recvd " + str(newByteCnt) + " bytes")
     # print(byteArray)
     
+    # parse MRL Msg
     for newByte in byteArray: 
       self.msgByteCount += 1
       # print("byte ", newByte, " byteCount  ", self.msgByteCount, " size ", self.msgSize)
@@ -373,7 +387,7 @@ class Arduino:
         self.msgByteCount = 0
         self.params = []
 
-      # full valid message
+      # now we have a full valid message
       if (self.msgByteCount - 2 == self.msgSize and self.msgSize != 0):
         
         # GET_VERSION
@@ -384,11 +398,26 @@ class Arduino:
           print("SERVO_ATTACH", self.params)
           # create "new" servo if doesnt exist
           # attach to this Arduino's set of servos
+          params = self.params
+          servoIndex = params[0]
+          servoPin = params[1]
           
+          servoName = ""
+          for x in range(3, params[2]+3):
+            servoName += chr(params[x])
+          print ("servo index", servoIndex, "pin", servoPin, "name", servoName)
+          print("servo index")
+          self.servos[servoIndex] = servoName
+          bpy.mrl.blenderObjects[servoName] = 0 # rest position? 90 ?
         elif (self.method == 7):
           print("SERVO_WRITE", self.params)
           #moveTo(self.params[1])
-          bpy.mrl.pos = self.params[1]
+          # FIXME - not necessary to put in blenderObject[] on attach !!!
+          servoIndex = self.params[0]
+          pos = self.params[1]
+          servoName = self.servos[servoIndex]
+          print("blender object ", servoName, "position", pos)
+          bpy.mrl.blenderObjects[servoName] = pos
         elif (self.method == 8):
           print("SERVO_SET_MAX_PULSE", self.params)
         elif (self.method == 9):
@@ -407,15 +436,21 @@ class Arduino:
           
       # do command
 
-class Servo:
-  def __init__(self, name):
-    print("creating new Servo ", name)
-    self.name = name
-
-#def moveTo(pos):
 def moveTo():
-    #global pos
-    #print ("moving servo to ", pos)
+
+    # iterate through all current actuator points
+    for name in bpy.mrl.blenderObjects:
+      # set each
+      scene = bge.logic.getCurrentScene()        
+      #object = scene.objects["Servo_Jaw_Drive_shaft"]
+      object = scene.objects[name]
+      xyz = object.localOrientation.to_euler()
+      # orientation a problem?
+      pos = bpy.mrl.blenderObjects[name]
+      xyz[0] = math.radians(pos/8)
+      object.localOrientation = xyz.to_matrix()
+    
+    """
     scene = bge.logic.getCurrentScene()
     cont = bge.logic.getCurrentController()
     own = cont.owner   
@@ -423,6 +458,7 @@ def moveTo():
     xyz = own.localOrientation.to_euler()
     xyz[0] = math.radians(bpy.mrl.pos/8)
     own.localOrientation = xyz.to_matrix()
+    """
     
 def frameTick():
   """Always block will drive this to update all data which would effect the scene"""
@@ -430,8 +466,23 @@ def frameTick():
   # if data different than last time - update scene
   # this method should be quick 
   print("tick")
+  
+
+def client(ip, port, message):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.connect((ip, port))
+    try:
+        sock.sendall(message)
+        response = sock.recv(1024).encode
+        print ("Received: {}".format(response))
+    finally:
+        sock.close()
     
 def endcomm():
     print("endcomm")
     bge.logic.endGame()    
     
+    
+    
+# mrl = MyRobotLab()
+# print(mrl.toJson())
