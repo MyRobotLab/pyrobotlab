@@ -436,6 +436,7 @@ class Arduino:
           
       # do command
 
+# TODO - REMOVE
 def moveTo():
 
     # iterate through all current actuator points
@@ -459,13 +460,53 @@ def moveTo():
     xyz[0] = math.radians(bpy.mrl.pos/8)
     own.localOrientation = xyz.to_matrix()
     """
+
+tick = 0
     
 def frameTick():
   """Always block will drive this to update all data which would effect the scene"""
+  global tick
+  tick += 1
   # iterate through global containers
   # if data different than last time - update scene
   # this method should be quick 
-  print("tick")
+  if (tick == 1):
+    print("frame tick")
+    
+  scene = bge.logic.getCurrentScene()        
+    
+  # iterate through all "attached" blender objects
+  for name in bpy.mrl.blenderObjects:
+    # grab object of the same name as MRL service
+    obj = scene.objects[name]
+    # for that object - grab it's actuator with the same name
+    actuator = obj.actuators["i01.head.jaw"]
+    
+   # apply the rotation for that actuator locally
+    
+    # print("local ", obj.localOrientation)
+    # print(actuator.dRot)
+    
+    # xyz = obj.localOrientation.to_euler()
+    # orientation a problem?
+    pos = bpy.mrl.blenderObjects[name]
+    if (pos > 0):
+      obj.applyRotation(actuator.dRot, True)
+      
+    print("pos", pos, obj.localOrientation, obj.localOrientation.to_euler())
+      
+    # Euler cheating way - because I don't know
+    # how to apply "absolute" matrix
+    
+    #    cont = bge.logic.getCurrentController()
+    #    own = cont.owner   
+
+    
+"""
+    xyz = obj.localOrientation.to_euler()
+    xyz[0] = math.radians(pos/8)
+    obj.localOrientation = xyz.to_matrix()
+"""  
   
 
 def client(ip, port, message):
@@ -483,6 +524,7 @@ def endcomm():
     bge.logic.endGame()    
     
     
+startServer()
     
 # mrl = MyRobotLab()
 # print(mrl.toJson())
