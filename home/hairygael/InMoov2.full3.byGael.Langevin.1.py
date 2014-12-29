@@ -2414,6 +2414,8 @@ def power_up():
         ##rightSerialPort.digitalWrite(53, Arduino.HIGH)
         ##leftSerialPort.digitalWrite(53, Arduino.HIGH)
         i01.mouth.speakBlocking("I was sleeping")
+        lookrightside()
+        lookleftside()
         relax()
         ear.clearLock()
         sleep(2)
