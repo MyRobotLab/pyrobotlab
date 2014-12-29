@@ -1174,11 +1174,11 @@ def stoprockpaperscissors():
     if (data == "no thanks"):
         i01.mouth.speak("maybe some other time")
         sleep(4)
-        powerdown()
+        power_down()
     if (data == "no thank you"):
         i01.mouth.speak("maybe some other time")
         sleep(4)
-        powerdown()
+        power_down()
     ##i01.mouth.speak("ok i'll find something else to do then")
     ##lookaroundyou()
     
