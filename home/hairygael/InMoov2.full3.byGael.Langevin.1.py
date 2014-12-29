@@ -2408,7 +2408,6 @@ def power_down():
         ear.resumeListening()
  
 def power_up():
-        i01.powerUp()
         ##sleep(2)        
         ##ear.pauseListening()
         ##rightSerialPort.digitalWrite(53, Arduino.HIGH)
