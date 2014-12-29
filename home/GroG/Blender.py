@@ -4,6 +4,7 @@
 import bge # blender game engine
 import bpy  # blender python interface
 import math
+import mathutils
 import sys
 from os.path import expanduser
 import socket
@@ -36,6 +37,49 @@ controlPort = 8989
 serialPort  = 9191
 
 readyToAttach = None # must I remove this too ?
+
+#-------- obj begin ---------------
+# ['__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__','__hash__', '__init__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__','__reduce_ex__', '__repr__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'actuators', 'addDebugProperty', 'alignAxisToVect', 'angularVelocity', 'applyForce', 'applyImpulse', 'applyMovement', 'applyRotation', 'applyTorque', 'attrDict', 'children', 'childrenRecursive', 'collisionCallbacks','color', 'controllers', 'debug', 'debugRecursive', 'disableRigidBody', 'enableRigidBody', 'endObject', 'get', 'getActionFrame', 'getAngularVelocity', 'getAxisVect', 'getDistanceTo', 'getLinearVelocity', 'getPhysicsId', 'getPropertyNames','getReactionForce', 'getVectTo', 'getVelocity', 'groupMembers', 'groupObject', 'invalid', 'isPlayingAction', 'life', 'linVelocityMax', 'linVelocityMin', 'linearVelocity', 'localAngularVelocity', 'localInertia', 'localLinearVelocity', 'localOrientation', 'localPosition', 'localScale', 'localTransform', 'mass', 'meshes','name', 'occlusion', 'orientation', 'parent', 'playAction', 'position', 'rayCast', 'rayCastTo', 'record_animation', 'reinstancePhysicsMesh', 'removeParent', 'replaceMesh', 'restoreDynamics', 'scaling', 'scene', 'sendMessage', 'sensors', 'setActionFrame', 'setAngularVelocity', 'setCollisionMargin', 'setLinearVelocity','setOcclusion', 'setParent', 'setVisible', 'state', 'stopAction', 'suspendDynamics', 'timeOffset', 'visible', 'worldAngularVelocity', 'worldLinearVelocity', 'worldOrientation', 'worldPosition', 'worldScale', 'worldTransform']-------- obj end ---------------
+
+print("-------- cene begin ---------------")
+scene = bge.logic.getCurrentScene()
+# help(scene)
+print(dir(scene))
+print("-------- cene end ---------------")
+obj = scene.objects["i01.head.jaw"]
+print("-------- obj begin ---------------")
+print(dir(obj))
+print("-------- obj end ---------------")
+print("localOrientation", obj.localOrientation)
+print("localPosition", obj.localPosition)
+print("----- actuator begin ----")
+print(dir(obj.actuators["i01.head.jaw"]))
+print("----- actuator end ----")
+actuator = obj.actuators["i01.head.jaw"]
+print("dRot", actuator.dRot)
+print("angV", actuator.angV)
+
+obj.applyRotation([ 0.1, 0.0, 0.0], True)
+
+print("localOrientation", obj.localOrientation)
+"""
+xyz = obj.localOrientation.to_euler()
+xyz[0] = math.radians(10)
+obj.localOrientation = xyz.to_matrix()
+"""
+
+# create a rotation matrix
+mat_rot = mathutils.Matrix.Rotation(math.radians(10.0), 4, 'X')
+print("mat_rot", mat_rot)
+# mat_rot = mathutils.Matrix.Rotation(math.radians(10.0), 3, 'X')
+
+# extract components back out of the matrix
+#loc, rot, sca = obj.localOrientation.decompose()
+#print(loc, rot, sca)
+#obj.applyRotation(mat_rot)
+#obj.localTransform = mat_rot
+
+#obj.localOrientation = mat_rot.to_3x3()
 
 # TODO - derive from json object - so we can control correct encoding
 # http://stackoverflow.com/questions/3768895/python-how-to-make-a-class-json-serializable
@@ -494,6 +538,7 @@ def frameTick():
       obj.applyRotation(actuator.dRot, True)
       
     print("pos", pos, obj.localOrientation, obj.localOrientation.to_euler())
+    
       
     # Euler cheating way - because I don't know
     # how to apply "absolute" matrix

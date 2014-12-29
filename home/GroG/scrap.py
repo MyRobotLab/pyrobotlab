@@ -71,11 +71,16 @@ import traceback
 
 print("here")
 #print(dir (bge.logic.getCurrentScene().objects["i01.head.jaw"]))
-print(dir (bge.logic.getCurrentScene()))
+
+print("-------- cene begin ---------------")
+print(dir(bge.logic.getCurrentScene()))
+print("-------- cene end ---------------")
 obj = bge.logic.getCurrentScene().objects["i01.head.jaw"]
 print("-------- obj begin ---------------")
 print(dir(obj))
 print("-------- obj end ---------------")
+print("dRot", obj.dRot)
+print("angV", obj.angV)
 print("----- actuator begin ----")
 print(dir(obj.actuators["i01.head.jaw"]))
 print("----- actuator end ----")
