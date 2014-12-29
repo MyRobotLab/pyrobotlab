@@ -129,6 +129,7 @@ i01.startPIR("COM20",30)
 ############################################################
  
 helvar = 1
+weathervar = 1
  
 # play rock paper scissors
 inmoov = 0
@@ -1174,11 +1175,11 @@ def stoprockpaperscissors():
     if (data == "no thanks"):
         i01.mouth.speak("maybe some other time")
         sleep(4)
-        powerdown()
+        power_down()
     if (data == "no thank you"):
         i01.mouth.speak("maybe some other time")
         sleep(4)
-        powerdown()
+        power_down()
     ##i01.mouth.speak("ok i'll find something else to do then")
     ##lookaroundyou()
     
@@ -1662,11 +1663,11 @@ def heard(data):
 
     data = msg_i01_ear_recognized.data[0]
     if (data == "what is the weather"):
-        if helvar <= 2:    
+        if weathervar <= 2:    
             i01.mouth.speak("I have no idea, I am not connected to internet")
-            global helvar
-            helvar += 1
-        elif helvar == 3:
+            global weathervar
+            weathervar += 1
+        elif weathervar == 3:
             i01.mouth.speak("Sorry, I told you, I am not connected to internet")
             i01.moveArm("left",43,88,22,10)
             i01.moveArm("right",20,90,30,10)
@@ -1674,9 +1675,9 @@ def heard(data):
             i01.moveHand("right",0,0,0,0,0,119)
             sleep(2)
             relax()
-            global helvar
-            helvar += 1
-        elif helvar == 4:
+            global weathervar
+            weathervar += 1
+        elif weathervar == 4:
             i01.mouth.speak("Gael, you are annoying, stop asking me the weather")
             i01.moveArm("left",30,83,22,10)
             i01.moveArm("right",40,85,30,10)
@@ -1684,9 +1685,9 @@ def heard(data):
             i01.moveHand("right",130,180,180,180,180,119)
             sleep(2)
             relax()
-            global helvar
-            helvar += 1
-        elif helvar == 5:
+            global weathervar
+            weathervar += 1
+        elif weathervar == 5:
             i01.setHeadSpeed(0.95, 0.95, 0.90, 0.90, 1.0)
             i01.moveHead(80,66)
             sleep(1)
@@ -1711,8 +1712,8 @@ def heard(data):
             i01.moveTorso(90,90,90)
             sleep(4)
             relax()
-            global helvar
-            helvar += 1       
+            global weathervar
+            weathervar += 1       
 
      
 def startkinect():
@@ -2408,7 +2409,6 @@ def power_down():
         ear.resumeListening()
  
 def power_up():
-        i01.powerUp()
         ##sleep(2)        
         ##ear.pauseListening()
         ##rightSerialPort.digitalWrite(53, Arduino.HIGH)
