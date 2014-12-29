@@ -1138,14 +1138,14 @@ def rockpaperscissors2():
     if inmoov == 3:
         stoprockpaperscissors()
         sleep(1)
-    if human == 3:
+    elif human == 3:                       # changed from if to  elif              
         stoprockpaperscissors()
         sleep(1)
-    if inmoov <= 2:
+    elif inmoov <= 2:                      # changed from if to  elif 
         rockpaperscissors2()
-    if human <= 2:
-        rockpaperscissors2()    
-
+    elif human <= 2:                       # changed from if to  elif 
+        rockpaperscissors2()   
+  
 def stoprockpaperscissors():
     rest()
     sleep(5)
@@ -1153,11 +1153,11 @@ def stoprockpaperscissors():
         i01.mouth.speak("congratulations you won with" + str(human - inmoov) + "points")
         sleep(3)
         i01.mouth.speak(str(human) + "points to you and" + str(inmoov) + "points to me")
-    if inmoov > human:
+    elif inmoov > human:                                                                                                         # changed from if to  elif
         i01.mouth.speak("yes yes i won with" + str(inmoov - human) + "points")
         sleep(3)
         i01.mouth.speak("i've got " + str(inmoov) + "points and you got" + str(human) + "points")
-    if inmoov == human:
+    elif inmoov == human:                                                                                                          # changed from if to  elif
         i01.mouth.speak("none of us won we both got" + str(inmoov) + "points")
     global inmoov
     inmoov = 0
@@ -1170,13 +1170,13 @@ def stoprockpaperscissors():
     data = msg_i01_ear_recognized.data[0]
     if (data == "yes let's play again"):
         rockpaperscissors2()
-    if (data == "yes"):
+    elif (data == "yes"):                                                                              # changed from if to  elif
         rockpaperscissors2()
-    if (data == "no thanks"):
+    elif (data == "no thanks"):                                                                  # changed from if to  elif
         i01.mouth.speak("maybe some other time")
         sleep(4)
         power_down()
-    if (data == "no thank you"):
+    elif (data == "no thank you"):                                                           # changed from if to  elif
         i01.mouth.speak("maybe some other time")
         sleep(4)
         power_down()
