@@ -2,7 +2,7 @@
 from java.lang import String
 
 #creating services
-avr = Runtime.start("avr", "AndroidVoiceReconition")
+avr = Runtime.start("avr", "AndroidVoiceRecognition")
 speech = Runtime.start("speech", "Speech")
 
 #recognition-def
