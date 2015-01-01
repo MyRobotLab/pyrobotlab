@@ -524,21 +524,37 @@ def frameTick():
     # grab object of the same name as MRL service
     obj = scene.objects[name]
     # for that object - grab it's actuator with the same name
-    actuator = obj.actuators["i01.head.jaw"]
-    
-   # apply the rotation for that actuator locally
-    
+    actuator = obj.actuators[name]
+
+    # apply the rotation for that actuator locally
     # print("local ", obj.localOrientation)
     # print(actuator.dRot)
-    
     # xyz = obj.localOrientation.to_euler()
     # orientation a problem?
     pos = bpy.mrl.blenderObjects[name]
-    if (pos > 0):
-      obj.applyRotation(actuator.dRot, True)
-      
-    print("pos", pos, obj.localOrientation, obj.localOrientation.to_euler())
+    xyz = obj.localOrientation.to_euler()
     
+    # find actuators rotation axis based on dRot
+    av = actuator.dRot
+    axis = 3
+    if (av[0] > 0):
+      axis = 0 # x
+    elif (av[1] > 0):
+      axis = 2 # y
+    elif (av[2] > 0):
+      axis = 1 # z
+      
+    # FIXME - should just do matrix multiplications
+    # but since rotations are so simple at the moment
+    # using Euler conversions
+    
+    print ("av", av, "axis", axis, "pos", pos)
+    
+    xyz = obj.localOrientation.to_euler()
+    xyz[axis] = math.radians(pos/8)
+    obj.localOrientation = xyz.to_matrix()
+    
+    # print("pos", pos, obj.localOrientation, obj.localOrientation.to_euler())
       
     # Euler cheating way - because I don't know
     # how to apply "absolute" matrix
@@ -547,7 +563,7 @@ def frameTick():
     #    own = cont.owner   
 
     
-"""
+""" GONNA USE EULER SINCE ONLY ROT ON 1 AXIS
     xyz = obj.localOrientation.to_euler()
     xyz[0] = math.radians(pos/8)
     obj.localOrientation = xyz.to_matrix()
