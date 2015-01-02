@@ -18,12 +18,6 @@ uno = head.createPeer("arduino")
 
 uno.connect(unoPort)
 
-# starting parts
-# i01.startMouthControl(unoPort)
-# i01.startMouth()
-#to tweak the default voice
-# i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
-
 # custom pins - must be done before
 # starting
 
@@ -33,7 +27,13 @@ eyeY.setPin(9)
 rothead.setPin(10)
 neck.setPin(11)
 
-i01.startHead(unoPort)
+i01.startHead(unoPort, "uno")
+
+# starting parts
+i01.startMouthControl(unoPort)
+i01.startMouth()
+#to tweak the default voice
+i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
 
 # other customizations can be called
 # at anytime ...
@@ -45,3 +45,5 @@ jaw.setMinMax(20, 154)
 # mapping maps the whole range of the first two values onto
 # the second - so its more like "volume control" instead
 rothead.map(0,180,10,160)
+
+
