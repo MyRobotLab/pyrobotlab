@@ -1,7 +1,6 @@
 # new file for Amby robot !
 import random
-rightPort = "COM3" ####Arduino Uno
-leftPort = "COM5"  ####Arduino Mega
+leftPort = "COM3"  ####Arduino Mega
 
 #################Inmoov
 
