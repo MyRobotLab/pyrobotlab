@@ -521,6 +521,10 @@ def frameTick():
     
   # iterate through all "attached" blender objects
   for name in bpy.mrl.blenderObjects:
+    if (name not in scene.objects):
+      print("did not find", name, "in blender objects - need to define objects and actuators?")
+      return
+      
     # grab object of the same name as MRL service
     obj = scene.objects[name]
     # for that object - grab it's actuator with the same name
@@ -548,10 +552,15 @@ def frameTick():
     # but since rotations are so simple at the moment
     # using Euler conversions
     
-    print ("av", av, "axis", axis, "pos", pos)
+    #print ("av", av, "axis", axis, "pos", pos)
+    print(name, "axis", axis, "pos", pos)
     
     xyz = obj.localOrientation.to_euler()
-    xyz[axis] = math.radians(pos/8)
+    # depending on mechanical amplification
+    # this unit (if not accurately modeled) could
+    # be different for each joint
+    # xyz[axis] = math.radians(pos/8)
+    xyz[axis] = math.radians(pos/2)
     obj.localOrientation = xyz.to_matrix()
     
     # print("pos", pos, obj.localOrientation, obj.localOrientation.to_euler())
