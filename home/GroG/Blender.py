@@ -41,11 +41,13 @@ readyToAttach = None # must I remove this too ?
 #-------- obj begin ---------------
 # ['__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__','__hash__', '__init__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__','__reduce_ex__', '__repr__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'actuators', 'addDebugProperty', 'alignAxisToVect', 'angularVelocity', 'applyForce', 'applyImpulse', 'applyMovement', 'applyRotation', 'applyTorque', 'attrDict', 'children', 'childrenRecursive', 'collisionCallbacks','color', 'controllers', 'debug', 'debugRecursive', 'disableRigidBody', 'enableRigidBody', 'endObject', 'get', 'getActionFrame', 'getAngularVelocity', 'getAxisVect', 'getDistanceTo', 'getLinearVelocity', 'getPhysicsId', 'getPropertyNames','getReactionForce', 'getVectTo', 'getVelocity', 'groupMembers', 'groupObject', 'invalid', 'isPlayingAction', 'life', 'linVelocityMax', 'linVelocityMin', 'linearVelocity', 'localAngularVelocity', 'localInertia', 'localLinearVelocity', 'localOrientation', 'localPosition', 'localScale', 'localTransform', 'mass', 'meshes','name', 'occlusion', 'orientation', 'parent', 'playAction', 'position', 'rayCast', 'rayCastTo', 'record_animation', 'reinstancePhysicsMesh', 'removeParent', 'replaceMesh', 'restoreDynamics', 'scaling', 'scene', 'sendMessage', 'sensors', 'setActionFrame', 'setAngularVelocity', 'setCollisionMargin', 'setLinearVelocity','setOcclusion', 'setParent', 'setVisible', 'state', 'stopAction', 'suspendDynamics', 'timeOffset', 'visible', 'worldAngularVelocity', 'worldLinearVelocity', 'worldOrientation', 'worldPosition', 'worldScale', 'worldTransform']-------- obj end ---------------
 
-print("-------- cene begin ---------------")
+print("-------- scene begin ---------------")
 scene = bge.logic.getCurrentScene()
 # help(scene)
 print(dir(scene))
-print("-------- cene end ---------------")
+print("-------- scene end ---------------")
+
+"""
 obj = scene.objects["i01.head.jaw"]
 print("-------- obj begin ---------------")
 print(dir(obj))
@@ -62,11 +64,11 @@ print("angV", actuator.angV)
 obj.applyRotation([ 0.1, 0.0, 0.0], True)
 
 print("localOrientation", obj.localOrientation)
-"""
+
+# euler rotations
 xyz = obj.localOrientation.to_euler()
 xyz[0] = math.radians(10)
 obj.localOrientation = xyz.to_matrix()
-"""
 
 # create a rotation matrix
 mat_rot = mathutils.Matrix.Rotation(math.radians(10.0), 4, 'X')
@@ -80,6 +82,8 @@ print("mat_rot", mat_rot)
 #obj.localTransform = mat_rot
 
 #obj.localOrientation = mat_rot.to_3x3()
+
+"""
 
 # TODO - derive from json object - so we can control correct encoding
 # http://stackoverflow.com/questions/3768895/python-how-to-make-a-class-json-serializable
@@ -522,13 +526,14 @@ def frameTick():
   # iterate through all "attached" blender objects
   for name in bpy.mrl.blenderObjects:
     if (name not in scene.objects):
-      print("did not find", name, "in blender objects - need to define objects and actuators?")
+      # print("did not find", name, "in blender objects - need to define objects and actuators?")
       return
       
     # grab object of the same name as MRL service
     obj = scene.objects[name]
     # for that object - grab it's actuator with the same name
-    actuator = obj.actuators[name]
+    # actuator = obj.actuators[name]
+    actuator = obj.actuators[0]
 
     # apply the rotation for that actuator locally
     # print("local ", obj.localOrientation)
@@ -541,12 +546,15 @@ def frameTick():
     # find actuators rotation axis based on dRot
     av = actuator.dRot
     axis = 3
-    if (av[0] > 0):
+    if (av[0] != 0):
       axis = 0 # x
-    elif (av[1] > 0):
+    elif (av[1] != 0):
       axis = 2 # y
-    elif (av[2] > 0):
+    elif (av[2] != 0):
       axis = 1 # z
+    else:
+      print("ERROR UNKNOWN AXIS")
+      return
       
     # FIXME - should just do matrix multiplications
     # but since rotations are so simple at the moment

@@ -2,10 +2,7 @@
 # to experiment with Lucas Kanade optical flow/tracking
 # starts opencv and adds the filter and one tracking point
 
-from jarray import zeros, array
-import time
-
-opencv = runtime.createAndStart("opencv","OpenCV")
+opencv = Runtime.start("opencv","OpenCV")
 
 # scale the view down - faster since updating the screen is 
 # relatively slow

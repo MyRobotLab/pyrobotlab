@@ -26,6 +26,9 @@ i01.startHead("MRL.0")
 neck = Runtime.getService("i01.head.neck")
 rothead = Runtime.getService("i01.head.rothead")
 
+neck.moveTo(90)
+sleep(10)
+
 neck.setMinMax(0,180)
 neck.moveTo(180)
 mouth.speak("why are you people waiting?")
