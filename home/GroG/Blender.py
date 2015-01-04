@@ -458,13 +458,13 @@ class Arduino:
           self.servos[servoIndex] = servoName
           bpy.mrl.blenderObjects[servoName] = 0 # rest position? 90 ?
         elif (self.method == 7):
-          print("SERVO_WRITE", self.params)
+#          print("SERVO_WRITE", self.params)
           #moveTo(self.params[1])
           # FIXME - not necessary to put in blenderObject[] on attach !!!
           servoIndex = self.params[0]
           pos = self.params[1]
           servoName = self.servos[servoIndex]
-          print("blender object ", servoName, "position", pos)
+#          print("blender object ", servoName, "position", pos)
           bpy.mrl.blenderObjects[servoName] = pos
         elif (self.method == 8):
           print("SERVO_SET_MAX_PULSE", self.params)
@@ -560,8 +560,9 @@ def frameTick():
     # but since rotations are so simple at the moment
     # using Euler conversions
     
-    #print ("av", av, "axis", axis, "pos", pos)
-    print(name, "axis", axis, "pos", pos)
+    # print ("av", av, "axis", axis, "pos", pos)
+    # nice debugging prints out "working" position & axis & object
+    # print(name, "axis", axis, "pos", pos)
     
     xyz = obj.localOrientation.to_euler()
     # depending on mechanical amplification

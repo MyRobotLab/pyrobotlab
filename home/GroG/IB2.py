@@ -1,6 +1,17 @@
 # create a Blender service, we'll call it ... blender
 blender = Runtime.start("blender","Blender")
 
+# WORKY
+# i01.leftArm.bicep
+# i01.leftArm.rotate
+# i01.leftArm.shoulder
+# i01.head.rothead
+
+# FIXME 
+# omoplate
+# eyeX
+# eyeY
+
 # FIXME - make sure a no-connect is published & error'd
 # connect it to Blender - blender must be running the Blender.py
 # or easier yet, start blender with the Blender.blend file
@@ -36,6 +47,40 @@ rothead = Runtime.getService("i01.head.rothead")
 neck = Runtime.getService("i01.head.neck")
 neck.map(0,180,90,270)
 neck.setMinMax(-360, 360)
+
+
+## get reference handles to services to directly modify them
+
+# left arm parts
+leftBicep = Runtime.getService("i01.leftArm.bicep")
+leftRotate = Runtime.getService("i01.leftArm.rotate")
+leftShoulder = Runtime.getService("i01.leftArm.shoulder")
+leftOmoplate = Runtime.getService("i01.leftArm.omoplate")
+
+# head parts
+jaw = Runtime.getService("i01.head.jaw")
+rothead = Runtime.getService("i01.head.rothead")
+neck = Runtime.getService("i01.head.neck")
+
+leftBicep.sweep(0,180)
+leftRotate.sweep(0,180)
+leftShoulder.sweep(0,180)
+leftOmoplate.sweep(0,180)
+
+jaw.sweep(0,180)
+rothead.sweep(0,180)
+neck.sweep(0,180)
+
+sleep(1)
+
+leftBicep.stop()
+leftRotate.stop()
+leftShoulder.stop()
+leftOmoplate.stop()
+
+jaw.stop()
+rothead.stop()
+neck.stop()
 
 
 neck.moveTo(90)
