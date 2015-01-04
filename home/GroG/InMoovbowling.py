@@ -11,7 +11,6 @@ else:
 
 # create InMoov service
 i01 = Runtime.start("i01","InMoov")
-mouth = i01.startMouth()
 
 # next we are going to create the arduino BEFORE startMouthControl creates it
 arduino = Runtime.start("i01.left","Arduino")
@@ -20,11 +19,23 @@ arduino = Runtime.start("i01.left","Arduino")
 # and it automagically connects all the serial pipes under the hood
 blender.attach(arduino)
 
-i01.startMouthControl("MRL.0")
-i01.startHead("MRL.0")
+# i01.startMouthControl("MRL.0")
+# i01.startHead("MRL.0")
+# mouth = i01.startMouth()
 
+neck = Runtime.start("i01.head.neck","Servo")
+neck.attach(arduino, 7)
+
+
+#########  start mods ###################
 neck = Runtime.getService("i01.head.neck")
-rothead = Runtime.getService("i01.head.rothead")
+neck.map(0,180,90,270)
+neck.setMinMax(-360, 360)
+
+arduino01 = Runtime.getService("arduino01")
+rothead = Runtime.start("i01.head.rothead", "Servo")
+rothead.attach(arduino01, 8)
+#rothead = Runtime.getService("i01.head.rothead")
 
 neck.moveTo(90)
 sleep(10)
