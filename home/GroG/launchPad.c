@@ -15,9 +15,6 @@
 *
 */
 #define MAX_SERVOS				10
-#define TCCR0B				0
-#define TCCR1B				0
-#define TCCR2B				0
 
 #include <Servo.h>
 
@@ -376,24 +373,6 @@ void softReset()
 
 }
 
-void setPWMFrequency (int address, int prescalar)
-{
-	int clearBits = 0x07;
-	if (address == 0x25)
-	{
-		TCCR0B &= ~clearBits;
-		TCCR0B |= prescalar;
-	} else if (address == 0x2E)
-	{
-		TCCR1B &= ~clearBits;
-		TCCR1B |= prescalar;
-	} else if (address == 0xA1)
-	{
-		TCCR2B &= ~clearBits;
-		TCCR2B |= prescalar;
-	}
-
-}
 
 void removeAndShift (int array [], int& len, int removeValue)
 {
@@ -584,7 +563,7 @@ void loop () {
 		}
 
 		case SET_PWM_FREQUENCY:{
-			setPWMFrequency (ioCmd[1], ioCmd[2]);
+			//setPWMFrequency (ioCmd[1], ioCmd[2]);
 			break;
 		}
 
