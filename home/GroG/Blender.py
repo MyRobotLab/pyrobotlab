@@ -458,7 +458,7 @@ class Arduino:
           self.servos[servoIndex] = servoName
           bpy.mrl.blenderObjects[servoName] = 0 # rest position? 90 ?
         elif (self.method == 7):
-#          print("SERVO_WRITE", self.params)
+          print("SERVO_WRITE", self.params)
           #moveTo(self.params[1])
           # FIXME - not necessary to put in blenderObject[] on attach !!!
           servoIndex = self.params[0]
@@ -526,8 +526,8 @@ def frameTick():
   # iterate through all "attached" blender objects
   for name in bpy.mrl.blenderObjects:
     if (name not in scene.objects):
-      # print("did not find", name, "in blender objects - need to define objects and actuators?")
-      return
+      #print("did not find", name, "in blender objects - need to define objects and actuators?")
+      continue
       
     # grab object of the same name as MRL service
     obj = scene.objects[name]
