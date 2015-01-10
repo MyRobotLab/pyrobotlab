@@ -20,6 +20,17 @@ servoY = tracker.getY()
 servoY.setPin(yServoPin)
 servoY.setMinMax(30, 150)
 
+# changing PID values change the 
+# speed and "jumpyness" of the Servos
+xpid = tracker.getXPID()
+ypid = tracker.getYPID()
+
+# these are default setting
+# adjust to make more smooth
+# or faster
+# xpid.setPID(5.0, 5.0, 0.1)
+# ypid.setPID(5.0, 5.0, 0.1)
+
 # optional filter settings
 opencv = tracker.getOpenCV()
 
