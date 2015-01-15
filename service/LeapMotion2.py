@@ -11,7 +11,7 @@
 # Type.TYPE_RING 
 # Type.TYPE_PINKY
 
-import com.leapmotion.leap.Finger.Type as Type
+from com.leapmotion.leap.Finger import Type
 # from __future__ import division
 
 leap = Runtime.createAndStart("leap","LeapMotion2")
