@@ -53,10 +53,11 @@ i01.eyesTracking.ypid.setPID(15.0,5.0,0.1)
 ############################################################
 
 
-Pin12 = 0
-#resttimer = 0
 
-right.digitalReadPollingStart(Pin12)
+Pin27 = 27
+
+
+right.digitalReadPollingStart(Pin27)
 
 # make friendly sample rate
 right.setSampleRate(3000)
@@ -68,7 +69,7 @@ def publishPin(pin):
 #  print pin.pin, pin.value, pin.type, pin.source,
 
  
-  if (pin.pin == 12 and pin.value == 1):
+  if (pin.pin == 27 and pin.value == 1):
       if pin12 == 0:
           i01.mouth.speak("hello")
           global pin12
@@ -88,7 +89,6 @@ def publishPin(pin):
 #              global resttimer
 #              resttimer = 0
 #              gotosleepnow() 
-
              
 #############################################################################################
 
