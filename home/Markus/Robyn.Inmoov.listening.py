@@ -3,7 +3,9 @@ mouth = Runtime.createAndStart("mouth","Speech")
 from org.myrobotlab.service import Servo
 
 servo1 = Runtime.create("servo1","Servo")
+servo2 = Runtime.create("servo2","Servo")
 servo1.startService()
+servo2.startService()
 
 arduino = Runtime.createAndStart("arduino","Arduino")
 arduino.connect("COM3")
@@ -17,9 +19,14 @@ right = 300
 leftstedy = 600
 rightstedy = 600
 
+leftval = left - leftstedy
+rightval = right - rightstedy
+
 servo1.attach("arduino", 13)
+servo2.attach("arduino", 12)
 
 servo1.setSpeed(0.8)
+servo2.setSpeed(0.8)
 
 arduino.analogReadPollingStart(pin0)
 arduino.analogReadPollingStart(pin1)
@@ -35,30 +42,44 @@ def publishPin(pin):
   if (pin.pin == 54):
     pin0 = pin
     global left
-    left = (left + pin0.value) / 2
+    left = pin0.value
+    if (left <= leftstedy ):
+      global left
+      left = leftstedy
     global leftstedy
-    leftstedy = ((leftstedy * 29) + pin0.value) / 30    
+    leftstedy = ((leftstedy * 49) + pin0.value) / 50    
+    global leftval
+    leftval = left - leftstedy
     
-  elif (pin.pin == 55):
+  if (pin.pin == 55):
     pin1 = pin
     global right
-    right = (right + pin1.value) / 2 
+    right = pin1.value
+    if (right <= rightstedy ):
+      global right
+      right = rightstedy
     global rightstedy
-    rightstedy = ((rightstedy * 29) + pin1.value) / 30   
+    rightstedy = ((rightstedy * 49) + pin1.value) / 50   
+    global rightval
+    rightval = right - rightstedy  
   
-  if (left >= leftstedy + 50 ):
-    mouth.speak("pin 0")
-    servo1.moveTo(50)
+  if (leftval >= rightval + 50 ):
+#    mouth.speak("pin 0")
+    servo1.moveTo(30)
     sleep (4)
 
-  elif (right >= rightstedy + 50 ):
-    mouth.speak("pin 1")
-    servo1.moveTo(130)
+  elif (rightval >= leftval + 50 ):
+#    mouth.speak("pin 1")
+    servo1.moveTo(150)
     sleep (4)
 
+  else :
+    servo1.moveTo(90)
 
     
-  print left
-  print leftstedy
-  print right
-  print rightstedy
+#  print left
+#  print leftstedy
+#  print right
+#  print rightstedy
+  print leftval
+  print rightval
