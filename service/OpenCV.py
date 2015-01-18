@@ -1,5 +1,7 @@
 # start a opencv service
 opencv = Runtime.start("opencv","OpenCV")
+# to capture from an image on the file system
+# opencv.captureFromImageFile("C:\Users\grperry\Desktop\mars.jpg")
 opencv.capture()
 sleep(4) 
 
