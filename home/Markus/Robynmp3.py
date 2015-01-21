@@ -1,3 +1,6 @@
+
+# this is a little script that is easy to copy and paste into your main inmoov script.
+
 import random
 
 music = Runtime.createAndStart("music","Speech")
@@ -54,7 +57,7 @@ def play():
     musiconoff = 1
     number = str(random.randint(1, 314))
     i01.mouth.speak("playing song number" + str(number))
-    # usually you need to escape backslash
+    # name your mp3 files music1 music2 and so on
     music.audioFile.playFile("C:\\Users\\Markus\\Music\\Robynsfavoriter\\music" + str(number) + ".mp3", False)
     print number
 
