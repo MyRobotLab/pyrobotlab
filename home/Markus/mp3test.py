@@ -1,4 +1,6 @@
 #  this is a test script
+#  i have a folder with the mp3 files named from music1 to music8.
+#  it random choses the files . no problem
 
 from java.lang import String
 from org.myrobotlab.service import Speech
