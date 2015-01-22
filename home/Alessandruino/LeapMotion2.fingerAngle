@@ -1,0 +1,15 @@
+leap = Runtime.createAndStart("leap","LeapMotion2")
+
+from math import degrees
+
+leap.addFrameListener(python)
+ 
+def onFrame(frame):
+
+ palm = frame.hands().rightmost().palmNormal()
+ finger = frame.hands().rightmost().fingers().get(1).direction()
+ angle = degrees(palm.angleTo(finger))
+ print angle
+ 
+ 
+leap.startTracking()
