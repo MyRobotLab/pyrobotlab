@@ -9,7 +9,7 @@ def onFrame(frame):
  palm = frame.hands().rightmost().palmNormal()
  finger = frame.hands().rightmost().fingers().get(1).direction()
  angle = degrees(palm.angleTo(finger))
- print angle
+ print (angle)
  
  
 leap.startTracking()
