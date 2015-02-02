@@ -1,23 +1,15 @@
 inmoov = Runtime.createAndStart("inmoov","InMoov")
 
-inmoov.startRightHand("COM3")
+inmoov.startRightHand("COM5")
 
-inmoov.rightHand.index.setMinMax(30,90)
-#i need to invert the angles from leap since servos @ 90 degrees is hand-closed to me, 0 is hand open)
-inmoov.rightHand.index.map(30,90,90,30)
+inmoov.rightHand.index.setMinMax(30,89)
+inmoov.rightHand.thumb.setMinMax(30,60)
+inmoov.rightHand.majeure.setMinMax(30,89)
+inmoov.rightHand.ringFinger.setMinMax(30,90)
+inmoov.rightHand.pinky.setMinMax(30,90)
 
-leap = Runtime.createAndStart("leap","LeapMotion2")
- 
-from math import degrees
- 
-leap.addFrameListener(python)
-  
-def onFrame(frame):
- 
- palm = frame.hands().rightmost().palmNormal()
- finger = frame.hands().rightmost().fingers().get(1).direction()
- angle = int(degrees(palm.angleTo(finger)))
- inmoov.rightHand.index.moveTo(angle)
-  
-  
-leap.startTracking()
+sleep(1)
+
+inmoov.rightHand.startLeapTracking()
+
+# inmoov.rightHand.stopLeapTracking()
