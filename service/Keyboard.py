@@ -1,6 +1,6 @@
 # create services
+python = Runtime.start("python", "Python")
 keyboard = Runtime.start("keyboard", "Keyboard")
-python = Runtime.getService("python")
 
 # non blocking event example
 keyboard.addKeyListener(python);
