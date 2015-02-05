@@ -47,10 +47,9 @@ opencv.addFilter("PyramidDown1", "PyramidDown")
 # add the face detect filter
 opencv.addFilter("FaceDetect1", "FaceDetect")
  
-def input():
+def input(opencvData):
  
     #print 'found face at (x,y) ', msg_opencv_publishOpenCVData.data[0].x(), msg_opencv_publish.data[0].y()
-    opencvData = msg_opencv_publishOpenCVData.data[0]
     global x
     global y
     global sposx
