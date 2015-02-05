@@ -46,7 +46,7 @@ opencv.startService()
 opencv.addFilter("PyramidDown1", "PyramidDown")
 # add the face detect filter
 opencv.addFilter("FaceDetect1", "FaceDetect")
- 
+  
 def input(opencvData):
  
     #print 'found face at (x,y) ', msg_opencv_publishOpenCVData.data[0].x(), msg_opencv_publish.data[0].y()
@@ -89,7 +89,6 @@ def input(opencvData):
      print 'y servo' , int(actservoy)
      pan.moveTo(int(actservox))
      tilt.moveTo(int(actservoy))
-     return object
 
 # create a message route from opencv to python so we can see the coordinate locations
 opencv.addListener("publishOpenCVData", python.name, "input");
