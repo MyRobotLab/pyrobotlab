@@ -15,7 +15,23 @@
 *
 */
 
+#include "I2Cdev.h"
+#include "MPU6050.h"
+#include "ADXL345.h"
+#include <HMC5883L.h>
+
 #include <Servo.h>
+ 
+MPU6050 accelgyro;
+ADXL345 accel2;
+HMC5883L mag;
+//MPU6050 accelgyro(0x69); // <-- use for AD0 high
+ 
+int16_t ax, ay, az;
+int16_t gx, gy, gz;
+int16_t ax2, ay2, az2;
+int16_t mx, my, mz;
+int cnt;
 
 // ----------  MRLCOMM FUNCTION INTERFACE BEGIN -----------
 #define MRLCOMM_VERSION				20
@@ -321,6 +337,17 @@ void startMsg() {
 }
 
 void setup() {
+	 // join I2C bus (I2Cdev library doesn't do this automatically)
+    #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
+        Wire.begin();
+    #elif I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_FASTWIRE
+        Fastwire::setup(400, true);
+    #endif
+    
+    accelgyro.initialize();
+    accel2.initialize();
+    mag.initialize();
+
 	Serial.begin(57600);        // connect to the serial port
 
 	softReset();
@@ -1083,6 +1110,31 @@ void loop () {
 		Serial.write((byte)(loadTime >> 16));
 		Serial.write((byte)(loadTime >> 8));
 		Serial.write((byte) loadTime & 0xFF);
+	}
+	
+	accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+  	accel2.getAcceleration(&ax2, &ay2, &az2);
+  	mag.getHeading(&mx, &my, &mz);
+	float heading = atan2(my, mx);
+  	int16_t headingint = (heading * 180/M_PI);
+
+  	// process mrl commands
+  	// servo control, sensor, control send & recieve
+  	// oscope, analog polling, digital polling etc..
+  	// mrl messages
+  	//mrl.process();
+ 
+  	// example how to
+  	// send 3 vars to mrl
+  
+  	cnt += 1;
+  	if (cnt%10 == 0) {
+    		startMsg();
+    		append(ay);
+    		append(ax2);
+    		append(headingint);
+    		sendMsg();
+    		cnt = 0;
 	}
 
 
