@@ -4,7 +4,7 @@ import random
 
 Runtime.createAndStart("sweety", "Sweety")
 sweety.arduino.setBoard("atmega2560")
-sweety.connect("COM9")
+sweety.connect("COM8")
 sleep(1) # give a second to the arduino for connect
 sweety.attach()
 
