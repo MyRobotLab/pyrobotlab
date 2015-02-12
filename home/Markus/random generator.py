@@ -1,3 +1,5 @@
+# this way it don't make the same thing twice in a row
+
 import random
 
 from org.myrobotlab.service import Speech
