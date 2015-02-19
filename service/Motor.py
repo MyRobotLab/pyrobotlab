@@ -4,12 +4,10 @@
 # 1 pin controls power/speed with pulse width modulation
 # the other controls direction
 
-port = "COM10"
+arduino = Runtime.start("arduino", "Arduino")
+arduino.connect("COM15")
 
-arduino = Runtime.createAndStart("arduino", "Arduino")
-arduino.connect(port)
-
-m1 = Runtime.createAndStart("m1","Motor")
+m1 = Runtime.start("m1","Motor")
 
 # connect motor m1 with pwm power pin 3, direction pin 4
 arduino.motorAttach("m1", 3, 4) 
