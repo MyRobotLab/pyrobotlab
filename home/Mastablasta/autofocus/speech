@@ -34,8 +34,8 @@ i01.mouth.speak("just say help and I will guide you through my menus")
 
 ear.addCommand("stop talking", "python", "stopTalking")
 
-ear.addComfirmations("yes","correct","ya","yeah")
-ear.addNegations("no","wrong","nope","nah")
+ear.addComfirmations("yes")
+ear.addNegations("no")
 
 ear.startListening("thank you | left one | left two | left three | left four | left five | left six | left seven | left eight | left nine | right one | right two | right three | right four | right five | right six | right seven | right eight | right nine | help | start listening")
 
