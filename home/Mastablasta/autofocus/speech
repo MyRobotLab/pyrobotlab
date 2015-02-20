@@ -6,7 +6,6 @@ arduino.connect(rightPort)
 m1 = Runtime.createAndStart("m1","Motor")
 arduino.motorAttach("m1", 5, 6)
 m1.stop()
-m1.move(-0.01)
 
 keyboard = Runtime.start("keyboard", "Keyboard")
 keyboard.addCommand("Links", "python", "Links", "Links")               ########### I have a German keyboard !!! ###########
