@@ -5,8 +5,6 @@ arduino = Runtime.createAndStart("arduino", "Arduino")
 arduino.connect(rightPort) 
 m1 = Runtime.createAndStart("m1","Motor")
 arduino.motorAttach("m1", "TYPE_LPWM_RPWM", 5, 6)
-m1.stop()
-m1.move(-0.01)
 
 keyboard = Runtime.start("keyboard", "Keyboard")
 keyboard.addCommand("Links", "python", "Links", "Links")               ########### I have a German keyboard !!! ###########
@@ -153,7 +151,7 @@ def heard(data):
        i01.mouth.speak("right nine")
 
     if (data == "thank you"):
-       i01.mouth.speak("it is a pleasure to be an assistant")
+       i01.mouth.speak("it is a pleasure to be your assistant")
 
     if (data == "help"):
        i01.mouth.speak("the numbers will set the motor speed")
