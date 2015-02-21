@@ -4,7 +4,7 @@ rightPort = "COM3"
 arduino = Runtime.createAndStart("arduino", "Arduino")
 arduino.connect(rightPort) 
 m1 = Runtime.createAndStart("m1","Motor")
-arduino.motorAttach("m1", 5, 6)
+arduino.motorAttach("m1", "TYPE_LPWM_RPWM",  5, 6)
 m1.stop()
 
 keyboard = Runtime.start("keyboard", "Keyboard")
