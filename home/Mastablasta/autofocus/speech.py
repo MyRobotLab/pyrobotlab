@@ -1,11 +1,12 @@
 import random
-rightPort = "COM3"
+rightPort = "COM6"
 
 arduino = Runtime.createAndStart("arduino", "Arduino")
 arduino.connect(rightPort) 
 m1 = Runtime.createAndStart("m1","Motor")
-arduino.motorAttach("m1", "TYPE_LPWM_RPWM",  5, 6)
+arduino.motorAttach("m1", "TYPE_LPWM_RPWM", 5, 6)
 m1.stop()
+m1.move(-0.01)
 
 keyboard = Runtime.start("keyboard", "Keyboard")
 keyboard.addCommand("Links", "python", "Links", "Links")               ########### I have a German keyboard !!! ###########
@@ -34,8 +35,8 @@ i01.mouth.speak("just say help and I will guide you through my menus")
 
 ear.addCommand("stop talking", "python", "stopTalking")
 
-ear.addComfirmations("yes")
-ear.addNegations("no")
+ear.addComfirmations("yes","correct","ya","yeah")
+ear.addNegations("no","wrong","nope","nah")
 
 ear.startListening("thank you | left one | left two | left three | left four | left five | left six | left seven | left eight | left nine | right one | right two | right three | right four | right five | right six | right seven | right eight | right nine | help | start listening")
 
@@ -189,19 +190,19 @@ def Links(cmd):
     print "Focus left"
     i01.mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/k1.mp3", False)
     if ms == 1:
-       m1.move(0.9)
+       m1.move(0.1)
        m1.sleep(100)
        m1.stop()
     if ms == 2:
-       m1.move(0.8)
+       m1.move(0.2)
        m1.sleep(100)
        m1.stop()
     if ms == 3:
-       m1.move(0.7)
+       m1.move(0.3)
        m1.sleep(100)
        m1.stop()
     if ms == 4:
-       m1.move(0.6)
+       m1.move(0.4)
        m1.sleep(100)
        m1.stop()
     if ms == 5:
@@ -209,23 +210,23 @@ def Links(cmd):
        m1.sleep(100)
        m1.stop()
     if ms == 6:
-       m1.move(0.4)
+       m1.move(0.6)
        m1.sleep(100)
        m1.stop()
     if ms == 7:
-       m1.move(0.3)
+       m1.move(0.7)
        m1.sleep(100)
        m1.stop()
     if ms == 8:
-       m1.move(0.2)
+       m1.move(0.8)
        m1.sleep(100)
        m1.stop()
     if ms == 9:
-       m1.move(0.1)
+       m1.move(0.9)
        m1.sleep(100)
        m1.stop()
     if ms >= 9:
-       m1.move(0.1)
+       m1.move(0.9)
        m1.sleep(100)
        m1.stop()
 
