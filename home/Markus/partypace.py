@@ -20,6 +20,7 @@ torso = i01.startTorso("COM3")
 left = Runtime.getService("i01.left")
 right = Runtime.getService("i01.right")
 
+isRunning = False
 
 #############################################################################################
 # Markus Mod
@@ -62,9 +63,8 @@ i01.mouth.speak("working on full speed")
 
 ##################################################################
 
- 
+# Input from the keyboard is routed here
 def input(cmd):
-
     if (cmd == "P"):
         global millis
         interval = time.time() -  millis
@@ -72,10 +72,15 @@ def input(cmd):
         global partypace
         partypace = (str(round(interval,2)))
         print partypace
-
     if (cmd == "L"):
-        led()
+      global isRunning
+      isRunning = True
+        
+    if (cmd == "S"):
+      global isRunning
+      isRunning = False
                
+# Method to blink the leds and sleep for a moment.
 def led():
     left.digitalWrite(42, 1) # ON
     left.digitalWrite(43, 0) # OFF
@@ -87,4 +92,13 @@ def led():
     left.digitalWrite(44, 0) # OFF
     left.digitalWrite(45, 0) # OFF
     sleep (partypace - 0.2)
-    led()
+
+# Main program Loop
+while True:
+   if isRunning == True:
+     # If we're running. flip the led()  (this method will block the correct amount of time)
+     led()
+   else:
+     # keep the CPU from going crazy.
+     sleep (partypace)
+     
