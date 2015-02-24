@@ -47,7 +47,7 @@ i01.eyesTracking.xpid.setPID(15.0,5.0,0.1)
 i01.eyesTracking.ypid.setPID(15.0,5.0,0.1)
 ############################################################
 
-partypace = 1
+partypace = 1.0
 
 i01.systemCheck()
 
@@ -70,7 +70,7 @@ def input(cmd):
         interval = time.time() -  millis
         millis = time.time()
         global partypace
-        partypace = (str(round(interval,2)))
+        partypace = (round(interval,2))
         print partypace
     if (cmd == "L"):
       global isRunning
