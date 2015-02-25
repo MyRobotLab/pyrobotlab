@@ -2,7 +2,6 @@ from java.lang import String
 from org.myrobotlab.net import BareBonesBrowserLaunch 
 BareBonesBrowserLaunch.openURL
 
-global false
 
 elias = Runtime.createAndStart("elias", "ProgramAB")
 elias.startSession("ProgramAB", "default", "elias")
