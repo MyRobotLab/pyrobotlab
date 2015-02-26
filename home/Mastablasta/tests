@@ -1,7 +1,0 @@
-<category><pattern>STOP THE SOUND</pattern><template>alright<oob>
-    <mrl>
-      <service>python</service>
-      <method>exec</method>
-      <param><oob><mrl><service>python</service><method>exec</method><param>BareBonesBrowserLaunch.openURL("http://www.google.com")</param></mrl></oob></param>
-    </mrl>
-  </oob></template></category>
