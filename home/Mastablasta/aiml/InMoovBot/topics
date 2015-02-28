@@ -10,11 +10,9 @@
 <li>Alright. What would you like to know about <get name="about"/>?</li>
 </condition></template>
 </category>
-
 <category><pattern># CHANGE TO TOPIC *</pattern>
 <template><srai># CHANGE TOPIC TO <star index="2"/></srai></template>
 </category>
-
 <category><pattern>SET UP SOME MOVES</pattern>
 <template><think><set name="ORDER1">0</set></think><random>
     <li>Alright, I am ready.</li>
@@ -37,18 +35,14 @@
 <li value="8"><think><set name="topic">MOTION9</set></think></li>
 <li value="9"><think><set name="topic">MOTION10</set></think></li>
 <li><think><set name="topic">MOTION1</set></think></li>
-</condition>
-</template>
+</condition></template>
 </category>
-
 <category><pattern>ANOTHER MOVE</pattern>
 <template><srai>LETS SET UP SOME MOVES</srai>
 <think><set name="topic">motion</set></think></template>
 </category>
-
 <category><pattern>ANOTHER MOVE PLEASE</pattern>
 <template><srai>LETS SET UP SOME MOVES</srai>
 <think><set name="topic">motion</set></think></template>
 </category>
-
 </aiml>
