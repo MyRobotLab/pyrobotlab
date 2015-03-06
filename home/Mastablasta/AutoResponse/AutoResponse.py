@@ -1,8 +1,8 @@
 import random
 from java.lang import String
 from org.myrobotlab.net import BareBonesBrowserLaunch
-elias = Runtime.createAndStart("elias", "ProgramAB")
-elias.startSession("ProgramAB", "default", "elias")
+alice2 = Runtime.createAndStart("alice2", "ProgramAB")
+alice2.startSession("ProgramAB", "default", "alice2")
 htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 mouth = Runtime.createAndStart("i01.mouth", "Speech")
 mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Graham&txt=")
@@ -11,12 +11,12 @@ opencv.addFilter("PyramidDown")
 opencv.addFilter("FaceDetect")
 opencv.setDisplayFilter("FaceDetect")
 opencv.addListener("publishOpenCVData", python.name, "input")
-elias.addTextListener(htmlfilter)
+alice2.addTextListener(htmlfilter)
 htmlfilter.addTextListener(mouth)
 holygrail = Runtime.create("holygrail", "WebGUI")
 holygrail.startService()
 sleep(10)
-resp = elias.getResponse("BY YOUR COMMAND")
+resp = alice2.getResponse("BY YOUR COMMAND")
 
 def BT():
     global c
@@ -36,22 +36,22 @@ def BT():
         if x == 1:
             i01.mouth.speak("I will tell myself a joke.")
             sleep(4)
-            resp = elias.getResponse("TELL ME A JOKE") 
+            resp = alice2.getResponse("TELL ME A JOKE") 
         if x == 2:
             i01.mouth.speak("Do you like Star Wars?")
             sleep(4)
-            resp = elias.getResponse("DO YOU LIKE STAR WARS")
+            resp = alice2.getResponse("DO YOU LIKE STAR WARS")
             sleep(6)
             i01.mouth.speak("It was worth a try.")
         if x == 3:
             i01.mouth.speak("Let's talk about the weather.")
             sleep(4)
-            resp = elias.getResponse("WEATHER IN RIO DE JANEIRO")
+            resp = alice2.getResponse("WEATHER IN RIO")
     if (c == 9):
             i01.mouth.speak("Where is everybody?")
             i01.headTracking.faceDetect()
             i01.eyesTracking.faceDetect()
-            def input(data):                                #### TO FIX!!! No detection of face recognized.
+            def input(data):
                 ff = data.getBoundingBoxArray()
                 for rect in ff:
                     i01.mouth.speak("Here you are!")
@@ -77,22 +77,22 @@ def BT():
         if x == 1:
             i01.mouth.speak("I will tell myself a joke.")
             sleep(4)
-            resp = elias.getResponse("TELL ME A JOKE") 
+            resp = alice2.getResponse("TELL ME A JOKE") 
         if x == 2:
             i01.mouth.speak("Do you like Star Wars?")
             sleep(4)
-            resp = elias.getResponse("DO YOU LIKE STAR WARS")
+            resp = alice2.getResponse("DO YOU LIKE STAR WARS")
             sleep(6)
             i01.mouth.speak("It was worth a try.")
         if x == 3:
             i01.mouth.speak("Let's talk about the weather.")
             sleep(4)
-            resp = elias.getResponse("WEATHER IN RIO DE JANEIRO")
+            resp = alice2.getResponse("WEATHER IN RIO")
     if (c == -51):
             i01.mouth.speak("Where is everybody?")
             i01.headTracking.faceDetect()
             i01.eyesTracking.faceDetect()
-            def input(data):                                #### TO FIX!!! No detection of face recognized.
+            def input(data):
                 ff = data.getBoundingBoxArray()
                 for rect in ff:
                     i01.mouth.speak("Here you are!")
@@ -103,10 +103,15 @@ def BT():
         i01.mouth.speak("I will turn off in 10 seconds.")
         sleep(10)
         i01.powerDown()
-        ear.lockOutAllGrammarExcept("sorry")
-        ear.resumeListening()             
+             
     else:
         sleep(56)
-        resp = elias.getResponse("CHECKTIME")
+        resp = alice2.getResponse("CHECKTIME")
         sleep(2)
-        resp = elias.getResponse("7OF9")
+        resp = alice2.getResponse("7OF9")
+
+def PO():
+    ear.lockOutAllGrammarExcept("sorry")
+    ear.resumeListening()
+    sleep(2)
+    i01.powerUp()
