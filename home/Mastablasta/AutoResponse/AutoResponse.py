@@ -51,7 +51,7 @@ def BT():
             i01.mouth.speak("Where is everybody?")
             i01.headTracking.faceDetect()
             i01.eyesTracking.faceDetect()
-            def input(data):
+            def input(data):                                #### TO FIX!!! No detection of face recognized.
                 ff = data.getBoundingBoxArray()
                 for rect in ff:
                     i01.mouth.speak("Here you are!")
@@ -92,7 +92,7 @@ def BT():
             i01.mouth.speak("Where is everybody?")
             i01.headTracking.faceDetect()
             i01.eyesTracking.faceDetect()
-            def input(data):
+            def input(data):                                #### TO FIX!!! No detection of face recognized.
                 ff = data.getBoundingBoxArray()
                 for rect in ff:
                     i01.mouth.speak("Here you are!")
