@@ -1,17 +1,17 @@
 import random
 from java.lang import String
 from org.myrobotlab.net import BareBonesBrowserLaunch
-alice2 = Runtime.createAndStart("alice2", "ProgramAB")
-alice2.startSession("ProgramAB", "default", "alice2")
+elias = Runtime.createAndStart("elias", "ProgramAB")
+elias.startSession("ProgramAB", "default", "elias")
 htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 mouth = Runtime.createAndStart("i01.mouth", "Speech")
-mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
-alice2.addTextListener(htmlfilter)
+mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Graham&txt=")
+elias.addTextListener(htmlfilter)
 htmlfilter.addTextListener(mouth)
 holygrail = Runtime.create("holygrail", "WebGUI")
 holygrail.startService()
 sleep(10)
-resp = alice2.getResponse("BY YOUR COMMAND")
+resp = elias.getResponse("BY YOUR COMMAND")
 
 def BT():
     global c
@@ -31,17 +31,17 @@ def BT():
         if x == 1:
             i01.mouth.speak("I will tell myself a joke.")
             sleep(4)
-            resp = alice2.getResponse("TELL ME A JOKE") 
+            resp = elias.getResponse("TELL ME A JOKE") 
         if x == 2:
             i01.mouth.speak("Do you like Star Wars?")
             sleep(4)
-            resp = alice2.getResponse("DO YOU LIKE STAR WARS")
+            resp = elias.getResponse("DO YOU LIKE STAR WARS")
             sleep(6)
             i01.mouth.speak("It was worth a try.")
         if x == 3:
             i01.mouth.speak("Let's talk about the weather.")
             sleep(4)
-            resp = alice2.getResponse("WEATHER IN RIO")
+            resp = elias.getResponse("WEATHER IN RIO")
     if (c == 9):
             i01.mouth.speak("Where is everybody?")
             i01.headTracking.faceDetect()
@@ -53,8 +53,6 @@ def BT():
         i01.mouth.speak("I will turn off in 10 seconds.")
         sleep(10)
         i01.powerDown()
-        ear.lockOutAllGrammarExcept("sorry")
-        ear.resumeListening()
     if (c == -57):
         x = (random.randint(1, 3))
         if x == 1:
@@ -68,17 +66,17 @@ def BT():
         if x == 1:
             i01.mouth.speak("I will tell myself a joke.")
             sleep(4)
-            resp = alice2.getResponse("TELL ME A JOKE") 
+            resp = elias.getResponse("TELL ME A JOKE") 
         if x == 2:
             i01.mouth.speak("Do you like Star Wars?")
             sleep(4)
-            resp = alice2.getResponse("DO YOU LIKE STAR WARS")
+            resp = elias.getResponse("DO YOU LIKE STAR WARS")
             sleep(6)
             i01.mouth.speak("It was worth a try.")
         if x == 3:
             i01.mouth.speak("Let's talk about the weather.")
             sleep(4)
-            resp = alice2.getResponse("WEATHER IN RIO")
+            resp = elias.getResponse("WEATHER IN RIO")
     if (c == -51):
             i01.mouth.speak("Where is everybody?")
             i01.headTracking.faceDetect()
@@ -92,11 +90,6 @@ def BT():
         i01.powerDown()            
     else:
         sleep(56)
-        resp = alice2.getResponse("CHECKTIME")
+        resp = elias.getResponse("CHECKTIME")
         sleep(2)
-        resp = alice2.getResponse("7OF9")
-
-def PO():
-    ear.resumeListening()
-    sleep(2)
-    i01.powerUp()
+        resp = elias.getResponse("7OF9")
