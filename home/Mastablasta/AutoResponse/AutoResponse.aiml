@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<category><pattern>CHECKTIME</pattern><template><think><set name="to"><date format="%M" jformat="mm"/></set></think>
+<oob><mrl><service>python</service><method>exec</method><param>
+b = <get name="to"/>
+BT()
+</param></mrl></oob>
+</template></category>
+
+<category><pattern>RESET</pattern><template>
+<oob><mrl><service>python</service><method>exec</method><param>
+a = <set name="from"><date format="%M" jformat="mm"/></set>
+</param></mrl></oob>
+</template></category>
+
+<category><pattern>7OF9</pattern><template><think><set name="8OF9">1</set></think></template></category>
+
+<category><pattern>HI ROBOT</pattern><template><srai>RESET</srai></template></category>
+
+</aiml>
