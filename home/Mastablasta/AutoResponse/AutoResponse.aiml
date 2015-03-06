@@ -16,6 +16,13 @@ a = <set name="from"><date format="%M" jformat="mm"/></set>
 
 <category><pattern>7OF9</pattern><template><think><set name="8OF9">1</set></think></template></category>
 
-<category><pattern>HI ROBOT</pattern><template><srai>RESET</srai></template></category>
+<category><pattern>HI ELIAS</pattern><template><srai>RESET</srai></template></category>
+
+<category><pattern>POWERUP</pattern><template>
+<oob><mrl><service>python</service><method>exec</method><param>
+PO()
+</param></mrl></oob>
+<srai>RESET</srai>
+</template></category>
 
 </aiml>
