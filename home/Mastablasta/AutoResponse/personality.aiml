@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
+<!-- File: personality.aiml -->
+<!-- Author: Mastablasta -->
+<!-- Last modified: Februar 27, 2015 -->
+<!--  -->
+<!-- This AIML file is part of the ELIAS unknown chat bot knowledge base. -->
+<!--  -->
+<!-- The ELIAS brain is Copyright &copy; 2015 by MBDaR. -->
+<!--  -->
+<!-- The ELIAS brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see http://www.alicebot.org -->
+<!--  -->
 <category><pattern>WHY WAS 6 AFRAID OF 7</pattern>
 <template>Because 7 8 9.</template>
 </category>
@@ -1053,7 +1069,7 @@ Adam and Eve.  <set name="she">Eve</set> tempts him and <set name="he">Adam</set
 <category><pattern>SORRY</pattern>
 <template>There is no need to apologize.
 <oob><mrl><service>python</service><method>exec</method><param>
-PO()
+i01.powerUp
 a = <set name="from"><date format="%M" jformat="mm"/></set>
 </param></mrl></oob>
 </template>
