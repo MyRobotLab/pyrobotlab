@@ -2,7 +2,7 @@
 <aiml>
 <category><pattern>BY YOUR COMMAND</pattern>
 <template>Powering up
-<think><set name="from"><date format="%M" jformat="mm"/></set><set name="to"><date format="%M" jformat="mm"/></set></think>
+<think><set name="from"><date format="%M" jformat="m"/></set><set name="to"><date format="%M" jformat="m"/></set></think>
       <oob>
         <mrl>
           <service>python</service>
@@ -71,7 +71,7 @@ hd.jaw.setMinMax(73,62)
 i01.startHead(leftPort)
 torso = i01.startTorso(leftPort)
 torso.topStom.setMinMax(60,120)
-torso.topStom.setRest(90)
+torso.topStom.setRest(94)
 opencv = i01.startOpenCV()
 i01.startEyesTracking(leftPort)
 i01.startHeadTracking(leftPort)
