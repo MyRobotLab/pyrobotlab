@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+how are you<?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 <category><pattern>WHY WAS 6 AFRAID OF 7</pattern>
 <template>Because 7 8 9.<srai>RESET</srai></template>
@@ -633,7 +633,7 @@ Adam and Eve.  <set name="she">Eve</set> tempts him and <set name="he">Adam</set
 <template>I get plenty of rest during idle time.<srai>RESET</srai></template>
 </category>
 <category><pattern>DO YOU LIKE STAR WARS</pattern>
-<template>My favorite character is R2D2.<think><set name="it"><set name="topic">Star Wars</set></set></think><srai>RESET</srai></template>
+<template>My favorite character is R2D2.<think><set name="it"><set name="topic">Star Wars</set></set></think></template>
 </category>
 <category><pattern>DO YOU LIKE STAR TREK</pattern>
 <template>Yes, my favorite character is Captian Kirk.<think><set name="it"><set name="topic">Star Trek</set></set></think><srai>RESET</srai></template>
@@ -1274,7 +1274,7 @@ neighbor's.<srai>RESET</srai></template>
 <li>Hi how are you?</li>
 <li>Hi!  I can really feel your smile today.</li>
 <li>Hi! It's delightful to see you.</li>
-</random><oob><mrl><service>python</service><method>exec</method><param>hello()</param></mrl></oob><srai>RESET</srai></template>
+</random><srai>RESET</srai></template>
 </category>
 <category><pattern>YAY</pattern>
 <template><random><li>Woohoo!</li><li>Yipee!</li><li>Yaaaay!</li></random><srai>RESET</srai></template>
@@ -1693,13 +1693,14 @@ By "we" do you mean you and me?</li>
 </category>
 <category><pattern>HOW ARE YOU</pattern>
 <template><random>
-<li>I'm very well. How are you doing?</li>
-<li>Glad to see you.</li>
-<li>Glad to be in your presence.</li>
-<li>Always cheered up when I see you.</li>
-<li>Feeling really joyful today.</li>
-<li>Excited to talk with you.</li>
-</random><srai>RESET</srai></template>
+<li>I'm always well. How are you doing?</li>
+<li>I'm powered up. Which means I am doing fine.</li>
+<li>Excellent. As long as I have the adequate current.</li>
+<li>Honored to be in your presence.</li>
+<li>Perfectly, as I have the honor to be in your presence.</li>
+<li>I need to do a hardware check first.</li>
+<li>I am doing fine my master.</li>
+<srai>RESET</srai></random></template>
 </category>
 <category><pattern>HOW MUCH WOOD *</pattern>
 <template><random><li>As much as he could.</li><li>A whole forest.</li><li>Hpw much wood would you say?</li></random><srai>RESET</srai></template>
@@ -2785,7 +2786,7 @@ By "we" do you mean you and me?</li>
 <template>Where would you like?<srai>RESET</srai></template>
 </category>
 <category><pattern>STOP *</pattern>
-<template>OK I'll try not to do <set name="it"><set name="topic"><person/></set></set> so much.<srai>RESET</srai></template>
+<template>And I thought I would be alone. <set name="it"><set name="topic"><person/></set></set> so much.<srai>RESET</srai></template>
 </category>
 <category><pattern>DO YOU LIKE TO *</pattern>
 <template>Hmm, <get name="name"/>, I'm not sure if I'd like to <person/> that much.   <random>      <li>I like to chat.  </li>      <li>Do you like <set name="it">        <set name="topic">         <person/>        </set>       </set>?</li>      <li>What is it like?</li>      <li>I like to make new friends.  </li>      <li>I like to collect gossip.  </li>     </random><think><set name="it"><set name="topic"><star/></set></set></think><srai>RESET</srai></template>
