@@ -1,4 +1,4 @@
-how are you<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 <category><pattern>WHY WAS 6 AFRAID OF 7</pattern>
 <template>Because 7 8 9.<srai>RESET</srai></template>
