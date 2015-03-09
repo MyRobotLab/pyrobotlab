@@ -11,7 +11,6 @@ BT()
 <category><pattern>RESET</pattern><template>
 <oob><mrl><service>python</service><method>exec</method><param>
 a = <set name="from"><date format="%M" jformat="m"/></set>
-BT()
 </param></mrl></oob>
 </template></category>
 
