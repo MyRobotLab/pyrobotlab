@@ -16,4 +16,8 @@ a = <set name="from"><date format="%M" jformat="m"/></set>
 
 <category><pattern>7OF9</pattern><template><think><set name="8OF9">1</set></think></template></category>
 
+<category><pattern>HI ALICE</pattern><template>Thanks for talking to me.<srai>RESET</srai></template></category>
+
+<category><pattern>NOW I AM HERE</pattern><template>Thanks for talking to me.<srai>RESET</srai></template></category>
+
 </aiml>
