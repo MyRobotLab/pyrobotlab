@@ -5,20 +5,20 @@
 # all commented code is not necessary but allows custom
 # options
 
-port = "COM15"
-xServoPin = 13
-yServoPin = 12
+port = "COM15"   #change COM port to your own port
+xServoPin = 13   #change this to the right servo pin if needed, for inmoov this is right
+yServoPin = 12   #change this to the right servo pin if needed, for inmoov this is right
 
 tracker = Runtime.createAndStart("tracker", "Tracking")
 
 # set specifics on each Servo
 servoX = tracker.getX()
 servoX.setPin(xServoPin)
-servoX.setMinMax(30, 150)
+servoX.setMinMax(30, 150)  #minimum and maximum settings for the X servo
 
 servoY = tracker.getY()
 servoY.setPin(yServoPin)
-servoY.setMinMax(30, 150)
+servoY.setMinMax(30, 150)  #minimum and maximum settings for the Y servo
 
 # changing PID values change the 
 # speed and "jumpyness" of the Servos
