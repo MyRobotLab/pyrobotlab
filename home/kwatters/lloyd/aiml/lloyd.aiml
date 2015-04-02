@@ -51,13 +51,29 @@
 </category>
 
 <category>
-  <pattern>ATTACH JAW</pattern>
+  <pattern>ATTACH JAW WITH TAG</pattern>
   <template>Attaching all
     <oob>
       <mrl>
         <service>i01</service>
         <method>startMouthControl</method>
         <param>COM19</param>
+      </mrl>
+    </oob>
+  </template>
+</category>
+
+<category>
+  <pattern>ATTACH JAW WITH PYTHON</pattern>
+  <template>Attaching all
+    <oob>
+      <mrl>
+        <service>python</service>
+        <method>exec</method>
+        <param>
+# cut & paste the python code here that you want to run
+i01.startMouthControl("COM19")
+        </param>
       </mrl>
     </oob>
   </template>
