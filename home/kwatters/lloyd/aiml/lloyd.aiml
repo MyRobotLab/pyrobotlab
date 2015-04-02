@@ -49,4 +49,18 @@
         </mrl>
       </oob></template>
 </category>
+
+<category>
+  <pattern>ATTACH JAW</pattern>
+  <template>Attaching all
+    <oob>
+      <mrl>
+        <service>i01</service>
+        <method>startMouthControl</method>
+        <param>COM19</param>
+      </mrl>
+    </oob>
+  </template>
+</category>
+
 </aiml>
