@@ -12,3 +12,4 @@ def read_serial():
     ob = bge.logic.getCurrentController().owner
     ob.channels["jaw2"].joint_rotation = mathutils.Vector([radians(x/8),0,0])
     print(x)
+    ob.update()
