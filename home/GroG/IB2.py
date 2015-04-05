@@ -26,13 +26,16 @@ i01 = Runtime.start("i01","InMoov")
 # mouth = i01.startMouth()
 
 leftPort = "MRL.0"
+rightPort = "MRL.1"
 
 # next we are going to create the arduino BEFORE startMouthControl creates it
-arduino = Runtime.start("i01.left","Arduino")
+arduinoLeft = Runtime.start("i01.left","Arduino")
+arduinoRight = Runtime.start("i01.right","Arduino")
 
 # now we attach the arduino to blender - creating a virtual Arduino
 # and it automagically connects all the serial pipes under the hood
-blender.attach(arduino)
+blender.attach(arduinoLeft)
+blender.attach(arduinoRight)
 
 ### start inmoov services ###
 # i01.startMouthControl(leftPort)
@@ -61,6 +64,8 @@ leftBicep.setMinMax(-360, 360)
 
 jaw.setMinMax(0, 25)
 
+
+neck.moveTo(90)
 
 def sweep():
   global leftBicep, leftRotate, leftShoulder, leftOmoplate, jaw, rothead, neck

@@ -12,9 +12,12 @@ import threading
 import socketserver
 import json
 import traceback
+import math
+from math import *
+import mathutils
+
 
 # FIXES
-# bge dynamic import or absolute? path info ???
 # clean/complete shutdown
 # out of bge mode and back in - should still work - removal of all globals
 # already started .... on start 
@@ -47,6 +50,7 @@ scene = bge.logic.getCurrentScene()
 print(dir(scene))
 print("-------- scene end ---------------")
 
+  
 """
 obj = scene.objects["i01.head.jaw"]
 print("-------- obj begin ---------------")
@@ -124,8 +128,8 @@ class MyRobotLab:
 def toJson():
   return bpy.mrl.toJson();
     
-# bpy.data.objects["Cube"].data.vertices[0].co.x += 1.0
-
+# this is to initialize the mrl data
+# it needs persist longer than just game mode
 if (not hasattr(bpy, "mrl")):
     print("initializing MyRobotLab")
     bpy.mrl = MyRobotLab()
@@ -166,7 +170,7 @@ def getVersion():
   print("version is ", bpy.mrl.version)
   return bpy.mrl.version
 
-
+# TODO remove?
 def Cube():
     global a
     #print ("cube ", a)
@@ -384,6 +388,159 @@ class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     pass
         
 class Arduino:
+  
+  MRLCOMM_VERSION = 21
+
+  ##### PYTHON GENERATED DEFINITION BEGIN ######
+  # {publishMRLCommError Integer} 
+  PUBLISH_MRLCOMM_ERROR = 1
+
+  # {getVersion} 
+  GET_VERSION = 2
+
+  # {publishVersion Integer} 
+  PUBLISH_VERSION = 3
+
+  # {analogReadPollingStart Integer} 
+  ANALOG_READ_POLLING_START = 4
+
+  # {analogReadPollingStop Integer} 
+  ANALOG_READ_POLLING_STOP = 5
+
+  # {analogWrite Integer Integer} 
+  ANALOG_WRITE = 6
+
+  # {digitalReadPollingStart Integer} 
+  DIGITAL_READ_POLLING_START = 7
+
+  # {digitalReadPollingStop Integer} 
+  DIGITAL_READ_POLLING_STOP = 8
+
+  # {digitalWrite Integer Integer} 
+  DIGITAL_WRITE = 9
+
+  # {motorAttach String String Integer Integer Integer} 
+  MOTOR_ATTACH = 10
+
+  # {motorDetach String} 
+  MOTOR_DETACH = 11
+
+  # {motorMove String} 
+  MOTOR_MOVE = 12
+
+  # {motorMoveTo String double} 
+  MOTOR_MOVE_TO = 13
+
+  # {pinMode Integer Integer} 
+  PIN_MODE = 14
+
+  # {publishCustomMsg Integer} 
+  PUBLISH_CUSTOM_MSG = 15
+
+  # {publishLoadTimingEvent Long} 
+  PUBLISH_LOAD_TIMING_EVENT = 16
+
+  # {publishPin Pin} 
+  PUBLISH_PIN = 17
+
+  # {publishPulse Integer} 
+  PUBLISH_PULSE = 18
+
+  # {publishServoEvent Integer} 
+  PUBLISH_SERVO_EVENT = 19
+
+  # {publishSesorData SensorData} 
+  PUBLISH_SESOR_DATA = 20
+
+  # {publishStepperEvent StepperEvent} 
+  PUBLISH_STEPPER_EVENT = 21
+
+  # {publishTrigger Pin} 
+  PUBLISH_TRIGGER = 22
+
+  # {pulseIn int int int int} 
+  PULSE_IN = 23
+
+  # {sensorAttach String} 
+  SENSOR_ATTACH = 24
+
+  # {sensorPollingStart String int} 
+  SENSOR_POLLING_START = 25
+
+  # {sensorPollingStop String} 
+  SENSOR_POLLING_STOP = 26
+
+  # {servoAttach String Integer} 
+  SERVO_ATTACH = 27
+
+  # {servoDetach Servo} 
+  SERVO_DETACH = 28
+
+  # {servoSweepStart String int int int} 
+  SERVO_SWEEP_START = 29
+
+  # {servoSweepStop String} 
+  SERVO_SWEEP_STOP = 30
+
+  # {servoWrite String Integer} 
+  SERVO_WRITE = 31
+
+  # {servoWriteMicroseconds String Integer} 
+  SERVO_WRITE_MICROSECONDS = 32
+
+  # {setDebounce int} 
+  SET_DEBOUNCE = 33
+
+  # {setDigitalTriggerOnly Boolean} 
+  SET_DIGITAL_TRIGGER_ONLY = 34
+
+  # {setLoadTimingEnabled boolean} 
+  SET_LOAD_TIMING_ENABLED = 35
+
+  # {setPWMFrequency Integer Integer} 
+  SET_PWMFREQUENCY = 36
+
+  # {setSampleRate int} 
+  SET_SAMPLE_RATE = 37
+
+  # {setSerialRate int} 
+  SET_SERIAL_RATE = 38
+
+  # {setServoEventsEnabled String boolean} 
+  SET_SERVO_EVENTS_ENABLED = 39
+
+  # {setServoSpeed String Float} 
+  SET_SERVO_SPEED = 40
+
+  # {setStepperSpeed Integer} 
+  SET_STEPPER_SPEED = 41
+
+  # {setTrigger int int int} 
+  SET_TRIGGER = 42
+
+  # {softReset} 
+  SOFT_RESET = 43
+
+  # {stepperAttach String} 
+  STEPPER_ATTACH = 44
+
+  # {stepperDetach String} 
+  STEPPER_DETACH = 45
+
+  # {stepperMoveTo String int int} 
+  STEPPER_MOVE_TO = 46
+
+  # {stepperReset String} 
+  STEPPER_RESET = 47
+
+  # {stepperStop String} 
+  STEPPER_STOP = 48
+
+  # {stopService} 
+  STOP_SERVICE = 49
+
+
+##### PYTHON GENERATED INTERFACE END ##### 
   def __init__(self, name):
     print("creating new Arduino ", name)
     self.name = name
@@ -392,7 +549,6 @@ class Arduino:
     self.msgSize = 0
     self.method = 0
     self.params = []
-    self.version = 20
     
   def sendMRLCOMMMsg(self, method, value):
     socket = bpy.mrl.virtualDevices[self.name].serialHandler.request
@@ -437,12 +593,12 @@ class Arduino:
 
       # now we have a full valid message
       if (self.msgByteCount - 2 == self.msgSize and self.msgSize != 0):
-        
+        print("Arduino Msg Method # -> ", self.method)
         # GET_VERSION
-        if (self.method == 26):
+        if (self.method == self.GET_VERSION):
           print("GET_MRLCOMM_VERSION")
-          self.sendMRLCOMMMsg(26, self.version)          
-        elif (self.method == 6):
+          self.sendMRLCOMMMsg(self.PUBLISH_VERSION, self.MRLCOMM_VERSION)          
+        elif (self.method == self.SERVO_ATTACH):
           print("SERVO_ATTACH", self.params)
           # create "new" servo if doesnt exist
           # attach to this Arduino's set of servos
@@ -454,28 +610,28 @@ class Arduino:
           for x in range(3, params[2]+3):
             servoName += chr(params[x])
           print ("servo index", servoIndex, "pin", servoPin, "name", servoName)
-          print("servo index")
           self.servos[servoIndex] = servoName
           bpy.mrl.blenderObjects[servoName] = 0 # rest position? 90 ?
-        elif (self.method == 7):
+        elif (self.method == self.SERVO_WRITE):
           print("SERVO_WRITE", self.params)
-          #moveTo(self.params[1])
-          # FIXME - not necessary to put in blenderObject[] on attach !!!
           servoIndex = self.params[0]
           pos = self.params[1]
           servoName = self.servos[servoIndex]
-#          print("blender object ", servoName, "position", pos)
-          bpy.mrl.blenderObjects[servoName] = pos
-        elif (self.method == 8):
-          print("SERVO_SET_MAX_PULSE", self.params)
-        elif (self.method == 9):
+          ob = bge.logic.getCurrentController().owner
+          if (servoName in ob.channels):
+            ob.channels[servoName].joint_rotation = mathutils.Vector([radians(pos),0,0])
+            ob.update()
+            print("WROTE ", servoName, radians(-pos+90))
+          else:
+            print("ERROR can't find bone ", servoName)
+        elif (self.method == self.SERVO_DETACH):
           print("SERVO_DETACH", self.params)
-        elif (self.method == 12):
+        elif (self.method == self.SET_SERVO_SPEED):
           print("SET_SERVO_SPEED", self.params)
-        elif (self.method == 28):
+        elif (self.method == self.SERVO_WRITE_MICROSECONDS):
           print("SERVO_WRITE_MICROSECONDS", self.params)
         else:
-          print ("UNKNOWN METHOD ", self.method, self.params)
+          print ("ERROR UNKNOWN METHOD ", self.method, self.params)
         
         #print("MRLCOMM msg done ")
         self.msgSize = 0
@@ -484,109 +640,6 @@ class Arduino:
           
       # do command
 
-# TODO - REMOVE
-def moveTo():
-
-    # iterate through all current actuator points
-    for name in bpy.mrl.blenderObjects:
-      # set each
-      scene = bge.logic.getCurrentScene()        
-      #object = scene.objects["Servo_Jaw_Drive_shaft"]
-      object = scene.objects[name]
-      xyz = object.localOrientation.to_euler()
-      # orientation a problem?
-      pos = bpy.mrl.blenderObjects[name]
-      xyz[0] = math.radians(pos/8)
-      object.localOrientation = xyz.to_matrix()
-    
-    """
-    scene = bge.logic.getCurrentScene()
-    cont = bge.logic.getCurrentController()
-    own = cont.owner   
-    #print (a)    
-    xyz = own.localOrientation.to_euler()
-    xyz[0] = math.radians(bpy.mrl.pos/8)
-    own.localOrientation = xyz.to_matrix()
-    """
-
-tick = 0
-    
-def frameTick():
-  """Always block will drive this to update all data which would effect the scene"""
-  global tick
-  tick += 1
-  # iterate through global containers
-  # if data different than last time - update scene
-  # this method should be quick 
-  if (tick == 1):
-    print("frame tick")
-    
-  scene = bge.logic.getCurrentScene()        
-    
-  # iterate through all "attached" blender objects
-  for name in bpy.mrl.blenderObjects:
-    if (name not in scene.objects):
-      #print("did not find", name, "in blender objects - need to define objects and actuators?")
-      continue
-      
-    # grab object of the same name as MRL service
-    obj = scene.objects[name]
-    # for that object - grab it's actuator with the same name
-    # actuator = obj.actuators[name]
-    actuator = obj.actuators[0]
-
-    # apply the rotation for that actuator locally
-    # print("local ", obj.localOrientation)
-    # print(actuator.dRot)
-    # xyz = obj.localOrientation.to_euler()
-    # orientation a problem?
-    pos = bpy.mrl.blenderObjects[name]
-    xyz = obj.localOrientation.to_euler()
-    
-    # find actuators rotation axis based on dRot
-    av = actuator.dRot
-    axis = 3
-    if (av[0] != 0):
-      axis = 0 # x
-    elif (av[1] != 0):
-      axis = 2 # y
-    elif (av[2] != 0):
-      axis = 1 # z
-    else:
-      print("ERROR UNKNOWN AXIS")
-      return
-      
-    # FIXME - should just do matrix multiplications
-    # but since rotations are so simple at the moment
-    # using Euler conversions
-    
-    # print ("av", av, "axis", axis, "pos", pos)
-    # nice debugging prints out "working" position & axis & object
-    # print(name, "axis", axis, "pos", pos)
-    
-    xyz = obj.localOrientation.to_euler()
-    # depending on mechanical amplification
-    # this unit (if not accurately modeled) could
-    # be different for each joint
-    # xyz[axis] = math.radians(pos/8)
-    xyz[axis] = math.radians(pos/2)
-    obj.localOrientation = xyz.to_matrix()
-    
-    # print("pos", pos, obj.localOrientation, obj.localOrientation.to_euler())
-      
-    # Euler cheating way - because I don't know
-    # how to apply "absolute" matrix
-    
-    #    cont = bge.logic.getCurrentController()
-    #    own = cont.owner   
-
-    
-""" GONNA USE EULER SINCE ONLY ROT ON 1 AXIS
-    xyz = obj.localOrientation.to_euler()
-    xyz[0] = math.radians(pos/8)
-    obj.localOrientation = xyz.to_matrix()
-"""  
-  
 
 def client(ip, port, message):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -604,6 +657,8 @@ def endcomm():
     
     
 startServer()
-    
-# mrl = MyRobotLab()
-# print(mrl.toJson())
+
+frame = 0
+def frameTick():
+    global frame
+    frame = frame + 1
