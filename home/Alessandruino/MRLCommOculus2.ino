@@ -212,8 +212,6 @@ int cnt;
 // ------ error types ------
 #define SENSOR_ULTRASONIC				1
 
-#define CUSTOM_MSG						50
-
 // need a method to identify type of board
 // http://forum.arduino.cc/index.php?topic=100557.0
 
@@ -340,8 +338,7 @@ typedef struct
 servo_type servos[MAX_SERVOS];
 
 // Motors
-typedef struct
-{
+typedef struct {
     int index; // index of this motor
     int speed;
     int targetPos;
@@ -465,7 +462,7 @@ void sendMsg(){
 	Serial.write(MAGIC_NUMBER);
 	Serial.write(paramBuffIndex + 2); // = param buff size + FN + paramCnt
 	//Serial.write(2); // = param buff size + FN + paramCnt
-	Serial.write(CUSTOM_MSG);
+	Serial.write(PUBLISH_CUSTOM_MSG);
 	Serial.write(paramCnt);
 
 	for (int i = 0; i < paramBuffIndex; ++i){
