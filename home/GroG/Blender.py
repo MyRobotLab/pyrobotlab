@@ -291,12 +291,17 @@ class ControlHandler(socketserver.BaseRequestHandler):
         
         listening = True
 
+        # change socket into a file
+        f = self.request.makefile() 
         while listening:
             try:
                 # Try to receive som data
                 # data = self.request.recv(1024).decode()
                 # TODO - refactor to loading Message object
-                controlMsg = json.loads(self.request.recv(1024).decode().strip())
+                # jsonCmd = self.request.recv(1024).decode().strip()
+                jsonCmd = f.readline()
+                print("incoming json cmd -<" + jsonCmd + ">-")
+                controlMsg = json.loads(jsonCmd)
                 
                 print("---> control: controlMsg ", controlMsg)
                 method = controlMsg["method"]

@@ -2,8 +2,8 @@
 # service and attaches it to the Blender virtual InMoov
 # Blender (2.72b) must be running a Blender.py TCP/IP server file
 
-vPortLeft = "vPortLeft"
-vPortRight = "vPortRight"
+vPortLeft = "vleft"
+vPortRight = "vright"
 
 ###########################################################################
 ### special virtual blender handling - not in "regular" scripts - begin ###
@@ -36,6 +36,7 @@ blender.attach(i01_right)
 i01 = Runtime.start("i01", "InMoov")
 i01.startHead(vPortLeft)
 i01.startLeftArm(vPortLeft)
+i01.startRightArm(vPortRight)
 
 # virtual InMoov config begin ##############
 jaw = Runtime.getService("i01.head.jaw")
