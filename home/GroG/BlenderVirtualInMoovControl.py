@@ -26,7 +26,7 @@ i01_right = Runtime.start("i01.right", "Arduino")
 # blender "attach" will connect Arduinos with serial ports running
 # over tcp/ip sockets to Blender.py
 blender.attach(i01_left)
-blender.attach(i01_right)
+#blender.attach(i01_right)
 
 ### special virtual blender handling - not in "regular" scripts - end  ###
 ##########################################################################
@@ -36,7 +36,7 @@ blender.attach(i01_right)
 i01 = Runtime.start("i01", "InMoov")
 i01.startHead(vPortLeft)
 i01.startLeftArm(vPortLeft)
-i01.startRightArm(vPortRight)
+#i01.startRightArm(vPortRight)
 
 mc = i01.startMouthControl("vPortLeft")
 speech = i01.startMouth()
