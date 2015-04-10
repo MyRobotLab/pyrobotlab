@@ -1275,6 +1275,7 @@ void loop () {
     		append(ay);
     		append(ax2);
     		append(headingint);
+    		append(accel.testConnection());
     		sendMsg();
     		cnt = 0;
 	}
