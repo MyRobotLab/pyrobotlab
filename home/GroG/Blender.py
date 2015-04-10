@@ -622,13 +622,16 @@ class Arduino:
           servoIndex = self.params[0]
           pos = self.params[1]
           servoName = self.servos[servoIndex]
-          ob = bge.logic.getCurrentController().owner
-          if (servoName in ob.channels):
-            ob.channels[servoName].joint_rotation = mathutils.Vector([radians(pos),0,0])
-            ob.update()
-            print("WROTE ", servoName, radians(-pos+90))
+          if (bge.logic.getCurrentController() is not None):
+            ob = bge.logic.getCurrentController().owner
+            if (servoName in ob.channels):
+              ob.channels[servoName].joint_rotation = mathutils.Vector([radians(pos),0,0])
+              ob.update()
+              print("WROTE ", servoName, pos, radians(pos))
+            else:
+              print("ERROR can't find bone ", servoName)
           else:
-            print("ERROR can't find bone ", servoName)
+            print("ERROR logic controller == None - game engine not running?")
         elif (self.method == self.SERVO_DETACH):
           print("SERVO_DETACH", self.params)
         elif (self.method == self.SET_SERVO_SPEED):

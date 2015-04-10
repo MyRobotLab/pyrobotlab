@@ -38,15 +38,25 @@ i01.startHead(vPortLeft)
 i01.startLeftArm(vPortLeft)
 i01.startRightArm(vPortRight)
 
-# virtual InMoov config begin ##############
-jaw = Runtime.getService("i01.head.jaw")
-jaw.setMinMax(0,180)
-neck = Runtime.getService("i01.head.neck")
-neck.setMinMax(0,720)
-neck.map(0,180,340,170)
-neck.moveTo(74)
-# virtual InMoov config end ##############
-
 mc = i01.startMouthControl("vPortLeft")
 speech = i01.startMouth()
 speech.speak("ow my neck hurts")
+
+# virtual InMoov config begin ##############
+jaw = Runtime.getService("i01.head.jaw")
+rothead = Runtime.getService("i01.head.rothead")
+neck = Runtime.getService("i01.head.neck")
+
+jaw.map(0,180,0,180)
+jaw.setMinMax(0, 180)
+jaw.broadcastState()
+
+rothead.map(0,180,0,180)
+rothead.setMinMax(0, 180)
+rothead.broadcastState()
+
+neck.map(0,180,0,180)
+neck.setMinMax(0, 180)
+neck.broadcastState()
+
+# virtual InMoov config end ##############
