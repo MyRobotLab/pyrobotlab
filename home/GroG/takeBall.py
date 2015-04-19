@@ -113,7 +113,6 @@ i01.startRightArm(rightPort)
 #i01.rightArm.omoplate.setMinMax(10,75)
 
 def takeball():
-  rest()
   i01.setHandSpeed("right", 0.85, 0.75, 0.75, 0.75, 0.85, 0.75)
   i01.setArmSpeed("right", 0.85, 0.85, 0.85, 0.85)
   i01.setHeadSpeed(0.9, 0.9)
