@@ -31,6 +31,7 @@ blender.attach(i01_right)
 
 i01 = Runtime.start("i01", "InMoov")
 i01.startHead(leftPort)
+
 i01.startLeftArm(leftPort)
 i01.startRightArm(leftPort)
 i01.startMouthControl(leftPort)
@@ -199,7 +200,5 @@ def studyball():
   i01.mouth.speakBlocking("I will start tracking the object")
   sleep(2)
   i01.mouth.speakBlocking("you need to set the point")
-  fullspeed()
-  #i01.headTracking.startLKTracking()
-  #i01.eyesTracking.startLKTracking()
-  sleep()
+
+i01.speakBlocking("I think I am ready")
