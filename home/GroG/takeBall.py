@@ -201,3 +201,10 @@ def studyball():
   i01.mouth.speakBlocking("you need to set the point")
 
 i01.speakBlocking("I think I am ready")
+i01.rest()
+i01.speakBlocking("this is rest")
+sleep(4)
+i01.speakBlocking("this is takeball")
+takeball()
+i01.speakBlocking("this is studyball")
+studyball()
