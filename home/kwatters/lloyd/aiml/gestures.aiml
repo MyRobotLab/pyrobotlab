@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
-<!--  -->
-<!--  -->
-<topic name="GESTURES">
-<category><pattern>REST</pattern>
-<template><random>
+  <!-- Defines gestures and the pattern to trigger them -->
+  <!-- ProgramAB must be in GESTURES topic to use these responses -->
+  <topic name="GESTURES">
+    <!-- The REST Gesture -->
+    <category>
+      <pattern>REST</pattern>
+      <template>
+        <random>
           <li>Resting position</li>
           <li>Relaxing</li>
         </random>
@@ -13,23 +16,27 @@
             <service>i01</service>
             <method>rest</method>
           </mrl>
-        </oob></template>
-</category></topic>
+        </oob>
+      </template>
+    </category>
 
-<topic name="GESTURES">
-<category><pattern>FIST HIPS</pattern>
-<template>Putting my fists on my hips.
+    <!-- Put your fists on your hips -->
+    <category>
+      <pattern>FIST HIPS</pattern>
+      <template>Putting my fists on my hips.
         <oob>
           <mrl>
             <service>i01</service>
             <method>fistHips</method>
           </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>POUR THE BOTTLE</pattern>
-<template><random>
+        </oob>
+      </template>
+    </category>
+  
+    <category>
+      <pattern>POUR THE BOTTLE</pattern>
+      <template>
+        <random>
           <li>Your money is no good here</li>
           <li>Let me top up your glass</li>
           <li>Hair of the dog that bit you, huh?</li>
@@ -55,7 +62,1193 @@ def pourbottle():
 pourbottle()
             </param>
           </mrl>
-        </oob></template>
-</category></topic>
+        </oob>
+      </template>
+    </category>
+
+
+   <!--  -->
+   <category>
+      <pattern>CARRY THE BABY</pattern>
+      <template>
+        I can carry the baby.
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param> 
+def carrybaby():
+  i01.moveHead(18,111,85,85,5)
+  i01.moveArm("left",81,50,45,16)
+  i01.moveArm("right",78,44,50,31)
+  i01.moveHand("left",180,180,180,180,180,25)
+  i01.moveHand("right",111,128,140,151,169,86)
+  i01.moveTorso(90,90,90)
+carrybaby()
+            </param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <!--  -->
+   <category>
+      <pattern>SLOWLY CLOSE RIGHT HAND</pattern>
+      <template>
+        I can close my right hand slowly.
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>
+def slowlycloserighthand():
+    i01.setArmSpeed("left",1.0,1.0,1.0,1.0)
+    i01.setArmSpeed("right",1.0,0.8,1.0,1.0)
+    i01.setHandSpeed("left",1.0,1.0,1.0,1.0,1.0,1.0)
+    i01.setHandSpeed("right",1.0,0.8,0.8,0.7,1.0,1.0)
+    i01.setHeadSpeed(0.8,0.8)
+    i01.moveHead(30,60)
+    i01.moveArm("right",5,80,30,10)
+    i01.moveHand("right",176,173,175,175,2,180)
+slowlycloserighthand()
+            </param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <!-- the gestures below are defined in python in the load gestures call fro the bootup topic -->
+   <category>
+      <pattern>CARRY BABY</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>carrybaby()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>SLOWLY CLOSE RIGHT HAND</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>slowlycloserighthand()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <!--  -->
+   <category>
+      <pattern>STOP IT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>stopit()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <!--  -->
+   <category>
+      <pattern>PLAY SONG</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>playsong()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+     <!--  -->
+   <category>
+      <pattern>NEW YORK</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>newyork()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+     <!--  -->
+   <category>
+      <pattern>PHONE HOME</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>phonehome()</param>
+          </mrl>
+        </oob>
+      </template>
+   </category>
+   <!--  -->
+   <category>
+      <pattern>TEST 1</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>test1()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+
+   <!--  -->
+   <category>
+      <pattern>MADE BY</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>madeby()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <!--  -->
+   <category>
+      <pattern>BRAKE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>brake()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <!--  -->
+   <category>
+      <pattern>APPROACH</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>approach()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <!--  -->
+   <category>
+      <pattern>FINGER RIGHT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>fingerright()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <!--  -->
+   <category>
+      <pattern>FINGER LEFT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>fingerleft()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <!--  -->
+   <category>
+      <pattern>COME HERE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>comehere()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <!--  -->
+   <category>
+      <pattern>GUESS WHAT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>guesswhat()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <!--  -->
+   <category>
+      <pattern>ROCK PAPER SCISSORS</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>rockpaperscissors()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <!--  -->
+   <category>
+      <pattern>EYES LOOKING</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>eyeslooking()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>THAT WAS FUN</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>thatwasfun()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>STOP ROCK PAPER SCISSORS</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>stoprockpaperscissors()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+  
+   <category>
+      <pattern>LOOK AROUND YOU</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>lookaroundyou()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   
+   
+   <category>
+      <pattern>TAKE THIS</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>takethis()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>FIST HIPS</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>fisthips()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>UNHAPPY</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>unhappy()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>REST</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>rest()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   
+   <category>
+      <pattern>FULL SPEED</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>fullspeed()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>DELICATE GRAB</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>delicategrab()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>PERFECT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>perfect()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>FIST HIPS</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>fisthips()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>RELEASE DELICATE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>releasedelicate()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+
+   <category>
+      <pattern>GRAB THE BOTTLE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>grabthebottle()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+    <category>
+      <pattern>GRAB THE GLASS</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>grabtheglass()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>POUR BOTTLE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>pourbottle()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+    <category>
+      <pattern>GIVE THE GLASS</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>givetheglass()</param>
+          </mrl>
+        </oob>
+      </template>   
+    </category>
+   
+    <category>
+      <pattern>GRAB THE GLASS</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>grabtheglass()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   
+   <category>
+      <pattern>POUR BOTTLE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>pourbottle()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>  
+   <category>
+      <pattern>GIVE THE GLASS</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>givetheglass()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>TAKE BALL</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>takeball()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>GET BALL</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>getball()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>KEEP BALL</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>keepball()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>APPROACH LEFT HAND</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>approachlefthand()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>USE LEFT HAND</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>uselefthand()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>MORE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>more()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>HAND DOWN</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>handdown()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>IS IT A BALL</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>isitaball()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>PUT IT DOWN</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>putitdown()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>DROP IT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>dropit()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern></pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param></param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>REMOVE LEFT ARM</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>removeleftarm()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>RELAX</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>relax()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>ARMS UP</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>armsUp()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>HAND OPEN</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>handopen()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>HAND CLOSE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>handclose()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>OPEN LEFT HAND</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>openlefthand()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>OPEN RIGHT HAND</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>openrighthand()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>CLOSE LEFT HAND</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>closelefthand()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>CLOSE RIGHT HAND</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>closerighthand()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>PICTURE LEFT SIDE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>pictureleftside()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>PICTURE RIGHT SIDE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>picturerightside()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>PICTURE BOTH SIDES</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>picturebothside()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern></pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param></param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>LOOK RIGHT SIDE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>lookrightside()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>LOOK LEFT SIDE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>lookleftside()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>LOOK IN MIDDLE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>lookinmiddle()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   
+   <category>
+      <pattern>EYES FRONT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>eyesfront()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>EYES DOWN</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>eyesdown()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>EYES UP</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>eyesup()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>EYES RIGHT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>eyesright()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>EYES LEFT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>eyesleft()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>HEAD FRONT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>headfront()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>HEAD DOWN</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>headdown()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>HEAD UP</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>headup()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>HEAD RIGHT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>headright()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>HEAD LEFT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>headleft()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+
+
+   <category>
+      <pattern>TORSO</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>Torso()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>MUSCLE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>muscle()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern></pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param></param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>POWER DOWN</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>power_down()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>POWER UP</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>power_up()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>HELLO</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>hello()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>ITALIAN HELLO</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>italianhello()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>PHOTO</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>photo()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>HAPPY</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>happy()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>ABOUT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>about()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>SERVOS</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>servos()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>HOW MANY FINGERS DO I HAVE</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>howmanyfingersdoihave()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>STUDY BALL</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>studyball()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>WELCOME</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>welcome()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>CYCLE GESTURE 1</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>cyclegesture1()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>CYCLE GESTURE 2</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>cyclegesture2()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+   <category>
+      <pattern>CYCLE GESTURE 3</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>cyclegesture3()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>
+
+   <category>
+      <pattern>SYSTEM CHECK</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>systemcheck()</param>
+          </mrl>
+        </oob>
+      </template>   
+   </category>      
+  <!-- end of gestures topic responses -->  
+  </topic>
 
 </aiml>
