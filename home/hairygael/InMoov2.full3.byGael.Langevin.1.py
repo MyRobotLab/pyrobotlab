@@ -22,7 +22,7 @@ forwardServo.attach("COM7", 13)
 i01.startMouthControl(leftPort)
 i01.startMouth()
 #to tweak the default voice
-i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=AntoineHappy(emotive voice)&txt=")
+i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
 
 
 i01.startHead(leftPort)
