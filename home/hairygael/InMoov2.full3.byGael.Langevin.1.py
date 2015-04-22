@@ -1,3 +1,5 @@
+#file : InMoov2.full3.byGael.Langevin.1.py
+
 # this script is provided as a basic guide
 # most parts can be run by uncommenting them
 # InMoov now can be started in modular pieces
@@ -6,22 +8,33 @@ leftPort = "COM20"
 rightPort = "COM7"
  
 i01 = Runtime.createAndStart("i01", "InMoov")
-cleverbot = Runtime.createAndStart("cleverbot","CleverBot")
- 
+#inmoov = Runtime.createAndStart("alice", "ProgramAB") 
+#inmoov.startSession() 
+directionServo = Runtime.createAndStart("directionServo","Servo")
+forwardServo = Runtime.createAndStart("forwardServo","Servo")
+#cleverbot = Runtime.createAndStart("cleverbot","CleverBot")
+
 # starts everything
 ##i01.startAll(leftPort, rightPort)
- 
+directionServo.attach("COM7", 12)
+forwardServo.attach("COM7", 13)
 # starting parts
 i01.startMouthControl(leftPort)
 i01.startMouth()
 #to tweak the default voice
-i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
+i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=AntoineHappy(emotive voice)&txt=")
 
 
 i01.startHead(leftPort)
+##############
+# tweaking default settings of jaw
+i01.head.jaw.setMinMax(65,90)
+#i01.head.jaw.map(0,180,10,35)
+i01.mouthControl.setmouth(65,90)
+i01.head.jaw.setRest(90)
 # tweaking default settings of eyes
 i01.head.eyeY.setMinMax(0,180)
-i01.head.eyeY.map(0,180,75,95)
+i01.head.eyeY.map(0,180,80,100)
 i01.head.eyeY.setRest(85)
 i01.head.eyeX.setMinMax(0,180)
 i01.head.eyeX.map(0,180,70,100)
@@ -35,11 +48,6 @@ i01.head.rothead.setRest(86)
 ###################
 i01.startEyesTracking(leftPort)
 i01.startHeadTracking(leftPort)
-##############
-# tweaking default settings of jaw
-i01.head.jaw.setMinMax(6,25)
-#i01.head.jaw.map(0,180,10,35)
-i01.mouthControl.setmouth(6,25)
 ##############
 i01.startEar()
 ##############
@@ -114,7 +122,7 @@ i01.headTracking.xpid.setPID(12.0,5.0,0.1)
 i01.headTracking.ypid.setPID(12.0,5.0,0.1)
 ############################################################
 
-i01.startPIR("COM20",30)
+#i01.startPIR("COM20",30)
  
  
  
@@ -195,6 +203,10 @@ ear.addCommand("attach right arm", "i01.rightArm", "attach")
 ear.addCommand("disconnect right arm", "i01.rightArm", "detach")
 ear.addCommand("attach torso", "i01.torso", "attach")
 ear.addCommand("disconnect torso", "i01.torso", "detach")
+ear.addCommand("attach jaw", "i01.head.jaw", "attach")
+ear.addCommand("disconnect jaw", "i01.head.jaw", "detach")
+ear.addCommand("attach wheel", "directionServo","forwardServo", "attach")
+ear.addCommand("disconnect wheel", "directionServo","forwardServo", "detach")
 ear.addCommand("search humans", "python", "trackHumans")
 ear.addCommand("quit search", "python", "stopTracking")
 ear.addCommand("track", "python", "trackPoint")
@@ -295,15 +307,17 @@ ear.addCommand("play your song", "python", "playsong")
 ear.addCommand("quit your action", "python", "stopit")
 ear.addCommand("carry baby", "python", "carrybaby")
 ear.addCommand("system check", "python", "systemcheck")
+#ear.addCommand("watch out", "python", "watch out")
 
 
 ear.addComfirmations("yes","correct","ya","yeah")
 ear.addNegations("no","wrong","nope","nah")
 
-ear.startListening("yes | no | very good, thank you | it's okay | no thanks | no thank you | sorry | how do you do | hello | i know | yes let's play again | i have rock | i have paper | i have scissors | look at the people | pause | can i have your attention | good morning | very good | italian hello | alessandro | bye bye | i love you | thanks | thank you | shake hand| what about star wars | where are you from | nice | what is the weather")
+ear.startListening("yes | no | very good, thank you | it's okay | no thanks | no thank you | sorry | how do you do | hello | i know | yes let's play again | i have rock | i have paper | i have scissors | look at the people | pause | can i have your attention | good morning | very good | italian hello | alessandro | bye bye | i love you | thanks | thank you | shake hand| what about star wars | where are you from | nice | what is the weather | are you hungry | do you speak hindi | go forward | go backwards | watch out | to the left | to the right | go straight")
  
 # set up a message route from the ear --to--> python method "heard"
 ear.addListener("recognized", "python", "heard")
+#inmoov.addTextListener(i01.mouth)
 
 def carrybaby():
     i01.moveHead(18,111,85,85,5)
@@ -664,7 +678,8 @@ def madeby():
     i01.moveHand("right",55,2,50,48,30,90)
     i01.moveTorso(90,90,90)
     sleep(3)
-    i01.mouth.speakBlocking("hello")
+    #i01.mouth.speakBlocking("hello")
+    i01.mouth.speakBlocking("bonjour")
     i01.moveHead(80,98)
     i01.moveArm("left",5,90,30,10)
     i01.moveArm("right",5,90,30,10)
@@ -685,7 +700,8 @@ def madeby():
     i01.moveHand("left",120,116,110,115,98,73)
     i01.moveHand("right",114,146,125,113,117,109)
     i01.moveTorso(90,90,90)
-    i01.mouth.speakBlocking("my name is inmoov")
+    #i01.mouth.speakBlocking("my name is inmoov")
+    i01.mouth.speakBlocking("je m'appelle inmouv")
     i01.moveHead(68,90)
     i01.moveArm("left",5,99,30,16)
     i01.moveArm("right",85,102,38,16)
@@ -706,7 +722,8 @@ def madeby():
     i01.moveHand("right",114,118,131,132,168,19)
     i01.moveTorso(90,90,90)
     sleep(1)
-    i01.mouth.speakBlocking("I am created by gael langevin")
+    #i01.mouth.speakBlocking("I am created by gael langevin")
+    i01.mouth.speakBlocking("j'ai ete creer par gael langevin")
     i01.setHandSpeed("left", 0.90, 0.90, 0.90, 0.90, 0.90, 0.95)
     i01.setHandSpeed("right", 0.90, 0.90, 0.90, 0.90, 0.90, 0.95)
     i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
@@ -733,7 +750,8 @@ def madeby():
     i01.moveHand("left",110,62,56,88,81,145)
     i01.moveHand("right",78,88,101,95,81,27)
     i01.moveTorso(90,90,90)
-    i01.mouth.speakBlocking("who is a french sculptor, designer")
+    #i01.mouth.speakBlocking("who is a french sculptor, designer")
+    i01.mouth.speakBlocking("qui est un sculpteur, designer francais")
     sleep(0.5)
     i01.moveHead(80,86)
     i01.moveArm("left",5,96,25,10)
@@ -748,6 +766,8 @@ def madeby():
     i01.moveHand("left",110,62,56,88,81,0)
     i01.moveHand("right",78,88,101,95,81,27)
     i01.moveTorso(90,90,90)
+    i01.mouth.speakBlocking("my software is being developped by myrobtlab dot org")
+    i01.mouth.speakBlocking("mon logiciel est developpe par myrobotlab point org")
     sleep(1)
     i01.moveHead(20,69)
     i01.moveArm("left",6,91,22,14)
@@ -755,7 +775,8 @@ def madeby():
     i01.moveHand("left",110,62,56,88,81,0)
     i01.moveHand("right",78,88,101,95,81,27)
     i01.moveTorso(90,90,90)
-    i01.mouth.speakBlocking("I am totally build with 3 D printed parts")
+    #i01.mouth.speakBlocking("I am totally build with 3 D printed parts")
+    i01.mouth.speakBlocking("je suis entierement imprimer en 3 D")
     i01.moveHead(75,97)
     i01.moveArm("left",85,106,25,18)
     i01.moveArm("right",87,107,32,18)
@@ -776,14 +797,16 @@ def madeby():
     i01.moveHand("left",110,62,56,88,81,145)
     i01.moveHand("right",111,75,117,125,111,143)
     i01.moveTorso(90,90,90)
-    i01.mouth.speakBlocking("which means all my parts")
+    #i01.mouth.speakBlocking("which means all my parts")
+    i01.mouth.speakBlocking("ce qui veut dire que toutes mes pieces,")
     i01.moveHead(79,88)
     i01.moveArm("left",85,104,25,18)
     i01.moveArm("right",87,59,46,18)
     i01.moveHand("left",110,62,56,88,81,145)
     i01.moveHand("right",59,75,117,125,111,113)
     i01.moveTorso(90,90,90)
-    i01.mouth.speakBlocking("are made on a home 3 D printer")
+    #i01.mouth.speakBlocking("are made on a home 3 D printer")
+    i01.mouth.speakBlocking("sont fabriquer sur une petite imprimante familiale")
     sleep(1)
     i01.moveHead(40,84)
     i01.moveArm("left",85,72,38,18)
@@ -791,7 +814,8 @@ def madeby():
     i01.moveHand("left",124,97,66,120,130,35)
     i01.moveHand("right",59,75,117,125,111,113)
     i01.moveTorso(90,90,90)
-    i01.mouth.speakBlocking("each parts are design to fit 12 centimeter cube build area")
+    #i01.mouth.speakBlocking("each parts are design to fit 12 centimeter cube build area")
+    i01.mouth.speakBlocking("chaque piece est concu dans un format de 12 centimetre cube,")
     sleep(1)
     i01.moveHead(97,80)
     i01.moveArm("left",85,79,39,14)
@@ -807,7 +831,8 @@ def madeby():
     i01.moveHand("right",78,88,101,95,81,27)
     i01.moveTorso(90,90,90)
     sleep(1)
-    i01.mouth.speakBlocking("so anyone can reproduce me")
+    #i01.mouth.speakBlocking("so anyone can reproduce me")
+    i01.mouth.speakBlocking("de facon a ce que tout le monde puisse me reproduire")
     fullspeed()
     i01.moveHead(80,98)
     i01.moveArm("left",5,90,30,10)
@@ -816,9 +841,11 @@ def madeby():
     i01.moveHand("right",55,2,50,48,30,90)
     i01.moveTorso(90,90,90)
     sleep(1)
-    i01.mouth.speakBlocking("cool, don't you think")
+    #i01.mouth.speakBlocking("cool, don't you think")
+    i01.mouth.speakBlocking("c'est cool, vous ne trouvez pas")
     sleep(1)
-    i01.mouth.speakBlocking("thank you for listening")
+    #i01.mouth.speakBlocking("thank you for listening")
+    i01.mouth.speakBlocking("merci de votre attention")
     i01.moveHead(116,80)
     i01.moveArm("left",85,93,42,16)
     i01.moveArm("right",87,93,37,18)
@@ -1518,9 +1545,45 @@ def heard(data):
         i01.moveHead(60,90,80,90,52)
         sleep(0.8)
         relax()
+   
 
     if (data =="italian hello"):
         italianhello()
+
+    if (data =="are you hungry"):
+        fullspeed()
+        i01.setHeadSpeed(0.85, 0.80, 0.90, 0.90, 1.0)
+        i01.moveHead(60,40,7,85,52)
+        sleep(1)
+        i01.moveHead(80,40,7,85,52)
+        sleep(2)
+        i01.setHeadSpeed(0.92, 0.80, 0.90, 0.90, 1.0)
+        i01.moveHead(100,40,7,85,52)
+        sleep(0.4)
+        i01.moveArm("left",85,106,25,18)
+        i01.moveArm("right",87,107,32,18)
+        i01.moveHand("left",110,62,56,88,81,145)
+        i01.moveHand("right",78,88,101,95,81,27)
+        i01.moveTorso(90,90,90)
+        i01.moveHead(80,40,7,85,52)
+        i01.mouth.speakBlocking("yes, i want some paneer tikka")
+        sleep(1)
+        i01.moveHead(60,90,80,90,52)
+        sleep(0.8)
+        relax()    
+
+    if (data =="do you speak hindi"):
+        i01.mouth.speak("yes, i can speak any language")
+        i01.moveHead(116,80)
+        i01.moveArm("left",85,93,42,16)
+        i01.moveArm("right",87,93,37,18)
+        i01.moveHand("left",124,82,65,81,41,143)
+        i01.moveHand("right",59,53,89,61,36,21)
+        i01.moveTorso(90,90,90)
+        sleep(0.2)
+        sleep(1)
+        relax()
+    
 
     if (data == "where are you from"):
         phonehome()
@@ -1615,7 +1678,32 @@ def heard(data):
         if x == 1:
             i01.mouth.speak("it's okay")
         if x == 2:
-            i01.mouth.speak("sure")    
+            i01.mouth.speak("sure")
+
+    if (data == "go forward"):
+        forwardServo.moveTo(10)
+        
+    if (data == "go backwards"):
+          forwardServo.moveTo(170)
+          
+    if (data == "watch out"):
+          forwardServo.moveTo(93)
+          
+    if (data == "to the left"):
+          directionServo.moveTo(127)
+          
+    if (data == "to the right"):
+          directionServo.moveTo(40)
+          
+    if (data == "go straight"):
+          directionServo.moveTo(83)
+          
+    #elif (data == "disconnect wheel"):
+          #directionServo.detach()
+          #forwardServo.detach()
+    #elif (data == "attach wheel"):
+          #directionServo.attach()
+          #forwardServo.attach()       
  
     if (data == "how do you do"):
         if helvar <= 2:    
@@ -1714,7 +1802,10 @@ def heard(data):
             sleep(4)
             relax()
             global weathervar
-            weathervar += 1       
+            weathervar += 1 
+
+
+             
 
      
 def startkinect():
@@ -2316,13 +2407,13 @@ def shakehand():
   if (data == "shake hand"):
        x = (random.randint(1, 4))
        if x == 1:
-            i01.mouth.speak("Please to meet you")
+            i01.mouth.speak("please to meet you")
        if x == 2:
             i01.mouth.speak("carefull my hand is made out of plastic")
        if x == 3:
             i01.mouth.speak("I am happy to shake a human hand")
        if x == 4:
-            i01.mouth.speak("it is a pleasure to meet you ")
+            i01.mouth.speak("it is a pleasure to meet you")
   i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
@@ -2416,7 +2507,9 @@ def power_up():
         ##leftSerialPort.digitalWrite(53, Arduino.HIGH)
         i01.mouth.speakBlocking("I was sleeping")
         lookrightside()
+        sleep(2)
         lookleftside()
+        sleep(4)
         relax()
         ear.clearLock()
         sleep(2)
@@ -3231,8 +3324,8 @@ def cyclegesture3():
     rest()
     sleep(1)
     relax()
-    
-    def systemcheck():
+
+def systemcheck():
      sleep(2)
      i01.setHeadSpeed(.75,.75)
      i01.moveHead(90,90)
@@ -3306,3 +3399,5 @@ def cyclegesture3():
      i01.mouth.speakBlocking("all servos are functioning properly")
      sleep(1.5)
      i01.mouth.speakBlocking("awaiting your commands")
+     sleep()
+     relax()    
