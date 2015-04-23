@@ -23,9 +23,26 @@ class WalkingThread(threading.Thread):
     self.forwardServo.moveTo(60)
     # while we are running, animate
     while self.running:
-      print "Walking..."
+      print "walking"
+      i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+      i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+      i01.setArmSpeed("right", 0.95, 0.95, 0.95, 0.85)
+      i01.setArmSpeed("left", 0.95, 0.95, 0.95, 0.85)
+      i01.setHeadSpeed(0.75, 0.75)
+      i01.moveHead(70,79,85,85,65)
+      i01.moveArm("left",5,90,23,10)
+      i01.moveArm("right",15,90,30,10)
+      i01.moveHand("left",92,33,37,71,66,25)
+      i01.moveHand("right",81,66,82,60,105,113)
+      i01.moveTorso(75,97,90)
       sleep(2)
-      print "Thread"
+      print "thread..."
+      i01.moveHead(79,100,85,85,65)
+      i01.moveArm("left",15,84,36,15)
+      i01.moveArm("right",5,82,22,20)
+      i01.moveHand("left",92,33,37,71,66,25)
+      i01.moveHand("right",81,66,82,60,105,113)
+      i01.moveTorso(124,83,90)
       sleep(2)
     # we are no longer running, move servo and relax.  
     print "Stopped"
