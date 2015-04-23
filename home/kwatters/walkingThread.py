@@ -1,15 +1,27 @@
 import threading
- 
+
+########################################
+# The Walking Thread
+# This is a thread that you can pass 
+# an inmoov and a servo to.  It will
+# start walking forward and animating in a loop
+########################################
 class WalkingThread(threading.Thread):
+  # constructor for the thread, takes i01 and forwardServo
   def __init__(self,i01,forwardServo):
     super(WalkingThread, self).__init__()
     this.forwardServo = forwardServo
     this.i01 = i01
+    # initially the thread is not running.
     this.running = False
+  # The thread is started this method runs  
   def run(self):
+    # flip the state to running
     this.running = True
+    # move the servo to go forward
     forwardServo.moveTo(60)
-    while True:
+    # while we are running, animate
+    while this.running:
       i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
       i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
       i01.setArmSpeed("right", 0.95, 0.95, 0.95, 0.85)
@@ -29,10 +41,9 @@ class WalkingThread(threading.Thread):
       i01.moveHand("right",81,66,82,60,105,113)
       i01.moveTorso(124,83,90)
       sleep(2)
-      if not this.running:
-        forwardServo.moveTo(93)
-        relax()
-        break
+    # we are no longer running, move servo and relax.  
+    forwardServo.moveTo(93)
+    relax()
  
  
 walkingThread = WalkingThread(i01,forwardServo)
