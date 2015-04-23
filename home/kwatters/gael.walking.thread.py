@@ -1491,9 +1491,8 @@ class WalkingThread(threading.Thread):
         i01.moveTorso(75,97,90)
       except:
         print "Unexpected error(1):", sys.exc_info()[0]
-        
+      sleep(1)
       try:
-        sleep(2)
         print "thread..."
         i01.moveHead(79,100,85,85,65)
         i01.moveArm("left",15,84,36,15)
@@ -1501,11 +1500,10 @@ class WalkingThread(threading.Thread):
         i01.moveHand("left",92,33,37,71,66,25)
         i01.moveHand("right",81,66,82,60,105,113)
         i01.moveTorso(124,83,90)
-        sleep(2)
       except:
         print "Unexpected error(2):", sys.exc_info()[0]
+      sleep(1)
         # self.running = False
-
     # we are no longer running, move servo and relax.  
     print "Stopped"
     forwardServo.moveTo(93)
