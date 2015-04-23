@@ -1489,6 +1489,10 @@ class WalkingThread(threading.Thread):
         i01.moveHand("left",92,33,37,71,66,25)
         i01.moveHand("right",81,66,82,60,105,113)
         i01.moveTorso(75,97,90)
+      except:
+        print "Unexpected error(1):", sys.exc_info()[0]
+        
+      try:
         sleep(2)
         print "thread..."
         i01.moveHead(79,100,85,85,65)
@@ -1499,16 +1503,12 @@ class WalkingThread(threading.Thread):
         i01.moveTorso(124,83,90)
         sleep(2)
       except:
-        print "Unexpected error:", sys.exc_info()[0]
-        self.running = False
+        print "Unexpected error(2):", sys.exc_info()[0]
+        # self.running = False
 
     # we are no longer running, move servo and relax.  
     print "Stopped"
     forwardServo.moveTo(93)
-    self.relax()
-    
-  def relax(self):
-    i01.rest()
 
 #########################################################################           
 
@@ -1742,19 +1742,26 @@ def heard(data):
 
     if (data == "go forward"):
           #forwardServo.moveTo(60)
-          # start the walking thread.
-          if not walkingThread:
-              walkingThread = walkingThread(i01, forwardServo)
-          walkingThread.start()
+          # only start back up if we haven't already started.
+          if not walkingThread.running:
+            walkingThread.start()
         
     if (data == "go backwards"):
           forwardServo.moveTo(110)
           relax()
 
     if (data == "kill the motor"):
-          forwardServo.moveTo(93)
           walkingThread.running = False
-          relax()      
+          forwardServo.moveTo(93)
+          # join the thread / let it stop
+          walkingThread.join()
+          # create a new one
+          walkingThread = WalkingThread(i01, forwardServo)
+          try:
+            relax()
+          except:
+            print "It's difficult to relax..."
+            
           
           
     if (data == "to the left"):
