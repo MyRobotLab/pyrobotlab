@@ -1,8 +1,8 @@
-#AndroidVoiceRecognition combined with Speech & ProgramAB
+#AndroidSpeechRecognition combined with Speech & ProgramAB
 from java.lang import String
  
 #creating services
-avr = Runtime.start("avr", "AndroidVoiceRecognition")
+asr = Runtime.start("asr", "AndroidSpeechRecognition")
 speech = Runtime.start("speech", "Speech")
 pab = Runtime.start("pab", "ProgramAB")
 pab.startSession()
@@ -13,9 +13,9 @@ def heard(data):
  resp = pab.getResponse(data)
  print resp
  #speech.speakBlocking(resp)
- #avr.sendToClient(data)
- avr.startRecognition()
+ #asr.sendToClient(data)
+ asr.startRecognition()
  
 #adding listeners
-avr.addListener("recognized", python.name, "heard", String().getClass())
+asr.addListener("recognized", python.name, "heard", String().getClass())
 pab.addTextListener(speech)
