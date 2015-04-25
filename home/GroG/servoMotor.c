@@ -30,7 +30,11 @@ void setup()               // run once, when the sketch starts
  
 void loop()                // run over and over again
 {
-  motors.setSpeeds(128, 128);
+  //                  M1   M2
+  //motors.setSpeeds(128, 128);
+  
+  // PIN MAPPINGS M1 POWER PD5 == Pin 12
+  analogWrite(12, 128);
    
   leds.red(HIGH);       // turn red LED on
   delay(128);
