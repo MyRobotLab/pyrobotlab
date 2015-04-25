@@ -1,34 +1,40 @@
+#include <OrangutanLEDs.h>
+#include <OrangutanAnalog.h>
+#include <OrangutanMotors.h>
+ 
+ 
 /*
- Fade
- 
- This example shows how to fade an LED on pin 9
- using the analogWrite() function.
- 
- This example code is in the public domain.
+ * OrangutanMotorExample for the 3pi robot, Orangutan LV-168, Orangutan SV-xx8,
+ *   and Baby Orangutan B
+ *
+ * This example uses the OrangutanMotors library to drive
+ * motors in response to the position of user trimmer potentiometer
+ * and blinks the red user LED at a rate determined by the trimmer
+ * potentiometer position.  It uses the OrangutanAnalog library to measure
+ * the trimpot position, and it uses the OrangutanLEDs library to provide
+ * limited feedback with the red user LED.
+ *
+ * http://www.pololu.com/docs/0J17/5.e
+ * http://www.pololu.com
+ * http://forum.pololu.com
  */
-
-int led = 6;           // the pin that the LED is attached to
-int brightness = 0;    // how bright the LED is
-int fadeAmount = 5;    // how many points to fade the LED by
-
-// the setup routine runs once when you press reset:
-void setup()  { 
-  // declare pin 9 to be an output:
-  pinMode(led, OUTPUT);
-} 
-
-// the loop routine runs over and over again forever:
-void loop()  { 
-  // set the brightness of pin 9:
-  analogWrite(led, brightness);    
-
-  // change the brightness for next time through the loop:
-  brightness = brightness + fadeAmount;
-
-  // reverse the direction of the fading at the ends of the fade: 
-  if (brightness == 0 || brightness == 255) {
-    fadeAmount = -fadeAmount ; 
-  }     
-  // wait for 30 milliseconds to see the dimming effect    
-  delay(30);                            
+ 
+OrangutanAnalog analog;
+OrangutanLEDs leds;
+OrangutanMotors motors;
+ 
+void setup()               // run once, when the sketch starts
+{
+ 
+}
+ 
+void loop()                // run over and over again
+{
+  motors.setSpeeds(128, 128);
+   
+  leds.red(HIGH);       // turn red LED on
+  delay(128);
+ 
+  leds.red(LOW);       // turn red LED off
+  delay(128);
 }
