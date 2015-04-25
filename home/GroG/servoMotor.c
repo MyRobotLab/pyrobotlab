@@ -1,22 +1,34 @@
+/*
+ Fade
+ 
+ This example shows how to fade an LED on pin 9
+ using the analogWrite() function.
+ 
+ This example code is in the public domain.
+ */
 
-const int pwrPin = 6;      // the pin that the motor's power is attached to
+int led = 6;           // the pin that the LED is attached to
+int brightness = 0;    // how bright the LED is
+int fadeAmount = 5;    // how many points to fade the LED by
 
-void setup()
-{
-  // initialize the serial communication:
-  Serial.begin(9600);
-  // initialize the pwrPin as an output:
-  pinMode(pwrPin, OUTPUT);
-}
+// the setup routine runs once when you press reset:
+void setup()  { 
+  // declare pin 9 to be an output:
+  pinMode(led, OUTPUT);
+} 
 
-void loop() {
-  byte power;
+// the loop routine runs over and over again forever:
+void loop()  { 
+  // set the brightness of pin 9:
+  analogWrite(led, brightness);    
 
-  // check if data has been sent from the computer:
-  if (Serial.available()) {
-    // read the most recent byte (which will be from 0 to 255):
-    power = Serial.read();
-    // set the power of the LED:
-    analogWrite(pwrPin, power);
-  }
+  // change the brightness for next time through the loop:
+  brightness = brightness + fadeAmount;
+
+  // reverse the direction of the fading at the ends of the fade: 
+  if (brightness == 0 || brightness == 255) {
+    fadeAmount = -fadeAmount ; 
+  }     
+  // wait for 30 milliseconds to see the dimming effect    
+  delay(30);                            
 }
