@@ -474,3 +474,49 @@ i01.speakBlocking("this is takeball")
 takeball()
 i01.speakBlocking("this is studyball")
 studyball()
+
+# print (i01.captureGesture())
+
+def Y():
+  i01.moveHead(99,82,82,78,6)
+  i01.moveArm("left",9,180,57,133)
+  i01.moveArm("right",9,180,30,133)
+  #i01.moveHand("left",61,0,14,38,15,0)
+  #i01.moveHand("right",0,24,54,50,82,180)
+  #i01.moveTorso(90,90,90)
+
+def M():
+  #i01.moveHead(104,80,82,78,6)
+  i01.moveArm("left",129,180,57,133)
+  i01.moveArm("right",124,180,57,133)
+  #i01.moveHand("left",61,0,14,38,15,128)
+  #i01.moveHand("right",0,24,54,50,82,180)
+  #i01.moveTorso(90,90,90)
+
+def C():
+  #i01.moveHead(100,94,82,78,6)
+  i01.moveArm("left",61,180,57,88)
+  i01.moveArm("right",53,180,57,133)
+  #i01.moveHand("left",61,0,14,38,15,128)
+  #i01.moveHand("right",0,24,54,50,82,180)
+  i01.moveTorso(90,36,90)
+
+def A():
+  #i01.moveHead(99,82,82,78,6)
+  i01.moveArm("left",61,180,57,160)
+  i01.moveArm("right",73,178,57,150)
+  #i01.moveHand("left",61,0,14,38,15,134)
+  #i01.moveHand("right",0,0,54,50,82,154)
+  i01.moveTorso(90,90,90)
+  
+
+sleep(2)
+Y()
+sleep(2)
+M()
+sleep(2)
+C()
+sleep(2)
+A()
+sleep(2)
+i01.rest()
