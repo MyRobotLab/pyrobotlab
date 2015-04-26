@@ -405,7 +405,21 @@ def rest():
   i01.moveHand("left",2,2,2,2,2,90)
   i01.moveHand("right",2,2,2,2,2,90)
   i01.moveTorso(90,90,90)
-    
+
+def relax():
+  i01.setHandSpeed("left", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
+  i01.setHandSpeed("right", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
+  i01.setArmSpeed("right", 0.75, 0.85, 0.65, 0.85)
+  i01.setArmSpeed("left", 0.95, 0.65, 0.75, 0.75)
+  i01.setHeadSpeed(0.85, 0.85)
+  i01.setTorsoSpeed(0.75, 0.55, 1.0)
+  i01.moveHead(79,100)
+  i01.moveArm("left",5,84,28,15)
+  i01.moveArm("right",5,82,28,15)
+  i01.moveHand("left",92,33,37,71,66,25)
+  i01.moveHand("right",81,66,82,60,105,113)
+  i01.moveTorso(90,90,90)
+  
 i01.speakBlocking("I think I am ready")
 i01.rest()
 i01.speakBlocking("this is rest")
