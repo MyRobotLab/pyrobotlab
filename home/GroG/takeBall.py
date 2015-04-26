@@ -419,6 +419,52 @@ def relax():
   i01.moveHand("left",92,33,37,71,66,25)
   i01.moveHand("right",81,66,82,60,105,113)
   i01.moveTorso(90,90,90)
+
+# create services
+python = Runtime.start("python", "Python")
+keyboard = Runtime.start("keyboard", "Keyboard")
+
+counter = 0
+ 
+# non blocking event example
+keyboard.addKeyListener(python);
+ 
+def onKey(key):
+    global counter
+    print "you pressed ", key
+    counter = counter + 1
+    print counter
+    i01.speakBlocking("ok")
+
+    if (counter == 1):
+      rest()
+    elif (counter == 2):
+      i01.daVinci()
+    elif (counter == 3):
+      rest()
+    elif (counter == 4):
+      i01.giving()
+    elif (counter == 5):
+      i01.armsFront()
+    elif (counter == 6):
+      i01.armsUp()
+    elif (counter == 7):
+      surrender()
+    elif (counter == 8):
+      rest()
+    elif (counter == 9):
+      i01.victory()
+    elif (counter == 10):
+      rest()
+    elif (counter == 11):
+      cyclegesture3()
+    elif (counter == 12):
+      i01.speakBlocking("are we done? i am not tired. I could do more. my servos are not even hot")
+
+# blocking example
+# print "here waiting"
+# keypress = keyboard.readKey()
+# print "finally you pressed", keypress, "!"
   
 i01.speakBlocking("I think I am ready")
 i01.rest()
