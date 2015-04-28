@@ -528,7 +528,7 @@ bool exists(int array[], int len, int searchValue){
  */
 bool addNewValue(int array[], int& len, int addValue)
 {
-	if (exists(array, len, addValue)){
+	if (!exists(array, len, addValue)){
 		array[len] = addValue;
 		++len;
 		return true;
