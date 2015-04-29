@@ -100,7 +100,8 @@
     </template>
   </category>
 
-  
+  <!-- 
+   TODO: get the rest of these commands worky.
 ear.addCommand("attach eyes", "i01.head.eyeY", "attach")
 ear.addCommand("disconnect eyes", "i01.head.eyeY", "detach")
 ear.addCommand("attach right hand", "i01.rightHand", "attach")
@@ -118,6 +119,6 @@ ear.addCommand("attach torso", "i01.torso", "attach")
 ear.addCommand("disconnect torso", "i01.torso", "detach")
 ear.addCommand("attach jaw", "i01.head.jaw", "attach")
 ear.addCommand("disconnect jaw", "i01.head.jaw", "detach")
-  
+   -->
   
 </aiml>
