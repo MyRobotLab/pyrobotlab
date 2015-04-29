@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+  <!-- The basic InMoov Brain -->
+  <category>
+    <pattern>HELLO</pattern>
+    <pattern>HI</pattern>
+    <pattern>BONJOUR</pattern>
+    <pattern>HOLA</pattern>
+    <pattern>NAMASTE</pattern>
+    <pattern>CIAO</pattern>
+    <pattern>NI HAO</pattern>
+    <pattern>GUTEN TAG</pattern>
+    <template>
+      <random>
+        <li>How are you today?</li>
+        <li>Hi</li>
+        <li>Greetings</li>
+        <li>What's up?</li>
+      </random>
+      <oob>
+        <mrl>
+          <service>i01</service>
+          <method>hello</method>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>ATTACH</pattern>
+    <pattern>ATTACH ALL</pattern>
+    <pattern>ATTACH EVERYTHING</pattern>
+    <template>
+      <random>
+       <li>Attaching all</li>
+       <li>Reconnecting Servos</li>
+       <li>Turning my motors back on.</li>
+      </random> 
+      <oob>
+        <mrl>
+          <service>i01</service>
+          <method>attach</method>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>DETACH</pattern>
+    <pattern>DETACH ALL</pattern>
+    <pattern>DETACH EVERYTHING</pattern>
+    <template>
+      <random>
+       <li>Detach All</li>
+       <li>Detaching</li>
+       <li>Turning my servos off.</li>
+      </random>       
+      <oob>
+        <mrl>
+          <service>i01</service>
+          <method>detach</method>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>ATTACH HEAD</pattern>
+    <pattern>ATTACH YOUR HEAD</pattern>
+    <template>
+      <random>
+       <li>Putting my head on</li>
+       <li>Attaching head</li>
+      </random> 
+      <oob>
+        <mrl>
+          <service>i01.head</service>
+          <method>attach</method>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>DISCONNECT HEAD</pattern>
+    <pattern>DETACH HEAD</pattern>
+    <pattern>DETACH YOUR HEAD</pattern>
+    <template>
+      <random>
+       <li>Turning my head off</li>
+       <li>detaching head</li>
+      </random> 
+      <oob>
+        <mrl>
+          <service>i01.head</service>
+          <method>detach</method>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  
+ear.addCommand("attach eyes", "i01.head.eyeY", "attach")
+ear.addCommand("disconnect eyes", "i01.head.eyeY", "detach")
+ear.addCommand("attach right hand", "i01.rightHand", "attach")
+ear.addCommand("disconnect right hand", "i01.rightHand", "detach")
+ear.addCommand("attach left hand", "i01.leftHand", "attach")
+ear.addCommand("disconnect left hand", "i01.leftHand", "detach")
+
+ear.addCommand("attach everything", "i01", "attach")
+ear.addCommand("disconnect everything", "i01", "detach")
+ear.addCommand("attach left arm", "i01.leftArm", "attach")
+ear.addCommand("disconnect left arm", "i01.leftArm", "detach")
+ear.addCommand("attach right arm", "i01.rightArm", "attach")
+ear.addCommand("disconnect right arm", "i01.rightArm", "detach")
+ear.addCommand("attach torso", "i01.torso", "attach")
+ear.addCommand("disconnect torso", "i01.torso", "detach")
+ear.addCommand("attach jaw", "i01.head.jaw", "attach")
+ear.addCommand("disconnect jaw", "i01.head.jaw", "detach")
+  
+  
+</aiml>
