@@ -7,5 +7,5 @@ myo = Runtime.start("myo", "MyoThalmic")
 myo.connect()
 myo.addPoseListener(python)
 
-onPose(pose):
+def onPose(pose):
   print(pose.getType())
