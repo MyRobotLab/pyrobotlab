@@ -1,5 +1,20 @@
 # start a opencv service
 opencv = Runtime.start("opencv","OpenCV")
+python = Runtime.start("python","Python")
+
+# add python as a listener to OpenCV data
+# this tells the framework - whenever opencv.publishOpenCVData is invoked
+# python.onOpenCVData will get called
+opencv.addListener("publishOpenCVData", "python","onOpenCVData")
+
+# call back - all data from opencv will come back to 
+# this method
+def onOpenCVData(data):
+  # check for a bounding box
+  if data.getBoundingBoxArray() != None:
+    for box in data.getBoundingBoxArray():
+      print("bounding box", box.x, box.y, box.width, box.height)
+
 # to capture from an image on the file system
 # opencv.captureFromImageFile("C:\Users\grperry\Desktop\mars.jpg")
 opencv.capture()
@@ -48,5 +63,11 @@ opencv.invokeFilterMethod("LKOpticalTrack","samplePoint", 0.5, 0.5)
 sleep(4)
 opencv.removeFilters()
 
-opencv.stopCapture()
+opencv.addFilter("FaceDetect")
+opencv.setDisplayFilter("FaceDetect")
+# attempt to set a sample point in the middle 
+# of the video stream - you can 
 
+sleep(4)
+opencv.removeFilters()
+opencv.stopCapture()
