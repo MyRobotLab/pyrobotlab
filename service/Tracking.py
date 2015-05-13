@@ -35,7 +35,7 @@ ypid = tracker.getYPID()
 opencv = tracker.getOpenCV()
 
 # setting camera index to 1 default is 0
-# opencv.setCameraIndex(1) 
+opencv.setCameraIndex(1) 
 
 # connect to the Arduino
 tracker.connect(port)
