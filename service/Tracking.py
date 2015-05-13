@@ -5,7 +5,7 @@
 # all commented code is not necessary but allows custom
 # options
 
-port = "COM15"   #change COM port to your own port
+port = "COM5"   #change COM port to your own port
 xServoPin = 13   #change this to the right servo pin if needed, for inmoov this is right
 yServoPin = 12   #change this to the right servo pin if needed, for inmoov this is right
 
@@ -35,7 +35,7 @@ ypid = tracker.getYPID()
 opencv = tracker.getOpenCV()
 
 # setting camera index to 1 default is 0
-opencv.setCameraIndex(1) 
+# opencv.setCameraIndex(1) 
 
 # connect to the Arduino
 tracker.connect(port)
