@@ -5,7 +5,7 @@
 # all commented code is not necessary but allows custom
 # options
 
-port = "COM5"   #change COM port to your own port
+port = "COM19"   #change COM port to your own port
 xServoPin = 13   #change this to the right servo pin if needed, for inmoov this is right
 yServoPin = 12   #change this to the right servo pin if needed, for inmoov this is right
 
