@@ -14,6 +14,7 @@ import os
 os.chdir("C:/myrobotlab/myrobotlab.1.0.107/audioFile/google/en_gb/audrey")
 
 # the name of the local file
+# remove the file if it already exist in the Audiofile directory
 soundfilename="starting mouth.mp3";
 
 try:
