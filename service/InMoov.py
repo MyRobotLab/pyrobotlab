@@ -1,6 +1,3 @@
-#file : InMoov2.minimal.py
-
-# this will run with versions of MRL above 1695
 # a very minimal script for InMoov
 # although this script is very short you can still
 # do voice control of a right hand or finger box
