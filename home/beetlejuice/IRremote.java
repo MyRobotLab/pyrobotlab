@@ -170,9 +170,9 @@ public class IRremote extends Service {
 	
 	// TODO Add other protocols
 	
-	public void RSsend(int code){RSsendIR(intToBin(code));}
-	public void RSsend(String code){RSsendIR(hexaToBin(code));}
-	public void RSsendIR(String code){ // For robosapien and most other Woowee robot
+	public void RSsend(int code){RSsendBin(intToBin(code));}
+	public void RSsend(String code){RSsendbin(hexaToBin(code));}
+	public void RSsendBin(String code){ // For robosapien and most other Woowee robot
 		char bit ;
 		code = hexaToBin(code);
 		mark(RS_HDR_MARK);
