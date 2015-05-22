@@ -159,8 +159,8 @@ public class IRremote extends Service {
 	// Robosapien V1 Remote
 	int RS_HDR_MARK = 6500;
 	int RS_BIT_MARK = 800;
-	int RS_ONE_SPACE = 3550;
-	int RS_ZERO_SPACE = 950;
+	int RS_ONE = 3550;
+	int RS_ZERO = 950;
 	
 	// End of section
 	
@@ -179,10 +179,10 @@ public class IRremote extends Service {
 		for (int i = 0; i < code.length(); i++){ 
 			bit = code.charAt(i);
 			if (bit == '1'){
-				mark(RS_ONE_SPACE);
+				mark(RS_ONE);
 			}
 			else if (bit == '0'){
-				space(RS_ZERO_SPACE);
+				space(RS_ZERO);
 			}
 		}
 	}
