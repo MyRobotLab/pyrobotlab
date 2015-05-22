@@ -151,17 +151,72 @@ public class IRremote extends Service {
 		
 	}
 	
-	// datas for some signal protocol
+	// datas for some signal protocol unit is microsecond .
 	
-	// TODO Add other datas
-
-	
-	// Robosapien V1 Remote
+	// Robosapien 
 	int RS_HDR_MARK = 6500;
 	int RS_BIT_MARK = 800;
-	int RS_ONE = 3550;
-	int RS_ZERO = 950;
+	int RS_ONE_SPACE = 3550;
+	int RS_ZERO_SPACE = 950;
 	
+	// NEC 
+	int NEC_HDR_MARK = 9000;
+	int NEC_HDR_SPACE = 4500;
+	int NEC_BIT_MARK = 560;
+	int NEC_ONE_SPACE =	1600;
+	int NEC_ZERO_SPACE = 560;
+	int NEC_RPT_SPACE = 2250;
+	
+	// SONY 
+	int SONY_HDR_MARK = 2400;
+	int SONY_HDR_SPACE = 600;
+	int SONY_ONE_MARK = 1200;
+	int SONY_ZERO_MARK = 600;
+	int SONY_RPT_LENGTH = 45000;
+	int SONY_DOUBLE_SPACE_USECS = 500;
+	
+	// RC5
+	int RC5_T1 = 889;
+	int RC5_RPT_LENGTH = 46000;
+	
+	// RC6
+	int RC6_HDR_MARK = 2666;
+	int RC6_HDR_SPACE = 889;
+	int RC6_T1 = 444;
+	int RC6_RPT_LENGTH = 46000;
+	
+	// SHARP
+	int SHARP_BIT_MARK = 245;
+	int SHARP_ONE_SPACE = 1805;
+	int SHARP_ZERO_SPACE = 795;
+	int SHARP_GAP = 600000;
+	int SHARP_TOGGLE_MASK = 0x3FF;
+	int SHARP_RPT_SPACE = 3000;
+	
+	// DISH
+	int DISH_HDR_MARK = 400;
+	int DISH_HDR_SPACE = 6100;
+	int DISH_BIT_MARK = 400;
+	int DISH_ONE_SPACE = 1700;
+	int DISH_ZERO_SPACE = 2800;
+	int DISH_RPT_SPACE = 6200;
+	int DISH_TOP_BIT = 0x8000;
+	
+	//PANASONIC
+	int PANASONIC_HDR_MARK = 3502;
+	int PANASONIC_HDR_SPACE = 1750;
+	int PANASONIC_BIT_MARK = 502;
+	int PANASONIC_ONE_SPACE = 1244;
+	int PANASONIC_ZERO_SPACE = 400;
+	
+	// JVC
+	int JVC_HDR_MARK = 8000;
+	int JVC_HDR_SPACE = 4000;
+	int JVC_BIT_MARK = 600;
+	int JVC_ONE_SPACE = 1600;
+	int JVC_ZERO_SPACE = 550;
+	int JVC_RPT_LENGTH = 60000;
+
 	// End of section
 	
 	
@@ -171,21 +226,25 @@ public class IRremote extends Service {
 	// TODO Add other protocols
 	
 	public void RSsend(int code){RSsendBin(intToBin(code));}
-	public void RSsend(String code){RSsendbin(hexaToBin(code));}
+	public void RSsend(String code){RSsendBin(hexaToBin(code));}
 	public void RSsendBin(String code){ // For robosapien and most other Woowee robot
+		frequency = 39;
 		char bit ;
 		code = hexaToBin(code);
 		mark(RS_HDR_MARK);
 		for (int i = 0; i < code.length(); i++){ 
+			mark(RS_BIT_MARK);
 			bit = code.charAt(i);
 			if (bit == '1'){
-				mark(RS_ONE);
+				space(RS_ONE_SPACE);
 			}
 			else if (bit == '0'){
-				space(RS_ZERO);
+				space(RS_ZERO_SPACE);
 			}
 		}
 	}
+	
+	
 	
 	
 	// end of section
