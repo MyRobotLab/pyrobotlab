@@ -25,7 +25,6 @@ def input(data):
     if (data.getBoundingBoxArray().size() > 0) :
     	rect = data.getBoundingBoxArray().get(0)
     	print 'face found in box ', rect.x, rect.y, rect.width, rect.height
-    	Rectangle 
     	print 'hello!'
     	return object
 
@@ -34,7 +33,3 @@ opencv.addListener("publishOpenCVData", python.name, "input");
 
 # set the input source to the first camera
 opencv.capture()
-
-
-
-
