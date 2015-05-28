@@ -1,12 +1,3 @@
-from java.lang import String
-from java.lang import Class
-from java.awt import Rectangle
-from org.myrobotlab.service import Runtime
-from org.myrobotlab.service import OpenCV
-from org.myrobotlab.opencv import OpenCVData
-from com.googlecode.javacv.cpp.opencv_core import CvPoint;
-from org.myrobotlab.service import OpenCV
-
 # create or get a handle to an OpenCV service
 opencv = Runtime.create("opencv","OpenCV")
 opencv.startService()
@@ -34,14 +25,14 @@ def input():
     opencvData = msg_opencv_publishOpenCVData.data[0]
     print 'h1'
     if (opencvData.getBoundingBoxArray().size() > 0) :
-    	rect = opencvData.getBoundingBoxArray().get(0)
+    	rect = data.getBoundingBoxArray().get(0)
     	print 'face found in box ', rect.x, rect.y, rect.width, rect.height
     	Rectangle 
     	print 'hello!'
     	return object
 
 # create a message route from opencv to python so we can see the coordinate locations
-opencv.addListener("publishOpenCVData", python.name, "input", OpenCVData().getClass()); 
+opencv.addListener("publishOpenCVData", python.name, "input");
 
 # set the input source to the first camera
 opencv.capture()
