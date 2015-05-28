@@ -19,12 +19,10 @@ opencv.addFilter("FaceDetect1", "FaceDetect")
 # the name of the message will be msg_+<sending service name>+_+<sending method name>
 # In this particular case when the service named "opencv" finds a face it will publish
 # a CvPoint.  The CvPoint can be access by msg_opencv_publish.data[0]
-def input():
+def input(data):
 
     #print 'found face at (x,y) ', msg_opencv_publishOpenCVData.data[0].x(), msg_opencv_publish.data[0].y()
-    opencvData = msg_opencv_publishOpenCVData.data[0]
-    print 'h1'
-    if (opencvData.getBoundingBoxArray().size() > 0) :
+    if (data.getBoundingBoxArray().size() > 0) :
     	rect = data.getBoundingBoxArray().get(0)
     	print 'face found in box ', rect.x, rect.y, rect.width, rect.height
     	Rectangle 
