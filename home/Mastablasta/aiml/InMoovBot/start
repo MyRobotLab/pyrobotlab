@@ -86,26 +86,6 @@ i01.mouthControl.setmouth(73,62)
         </mrl>
       </oob></template>
 </category>
-<category><pattern>START DC MOTORS</pattern>
-<template>starting motors
-      <oob>
-        <mrl>
-          <service>python</service>
-          <method>exec</method>
-          <param>       
-testPort = "COM3"
-arduino = Runtime.createAndStart("arduino", "Arduino")
-arduino.connect(testPort) 
-m1 = Runtime.createAndStart("m1","Motor")
-arduino.motorAttach("m1", 5, 6)
-m1.stop()
-m2 = Runtime.createAndStart("m2","Motor")
-arduino.motorAttach("m2", 7, 8)
-m2.stop()
-         </param>
-        </mrl>
-      </oob></template>
-</category>
 <category><pattern>POWER UP</pattern>
 <template>Attach All.
       <oob>
