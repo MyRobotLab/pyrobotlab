@@ -7,4 +7,4 @@ mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&tx
 botname.addTextListener(htmlfilter)
 htmlfilter.addTextListener(mouth)
 holygrail = Runtime.createAndStart("holygrail", "WebGUI")
-
+resp = botname.getResponse("BY YOUR COMMAND")
