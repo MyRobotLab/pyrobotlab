@@ -31,7 +31,7 @@ i01.startAll(leftPort, rightPort)
 i01.startMouthControl(leftPort)
 i01.startMouth()
 #to tweak the default voice
-i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&amp;txt=")
+i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&amp;amp;txt=")
 
 i01.startHead(leftPort)
 # tweaking default settings of eyes
