@@ -71,7 +71,7 @@
         <service>python</service>
         <method>exec</method>
         <param>
-# cut & paste the python code here that you want to run
+# cut &amp; paste the python code here that you want to run
 i01.startMouthControl("COM19")
         </param>
       </mrl>
