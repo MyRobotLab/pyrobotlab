@@ -997,19 +997,19 @@ def rockpaperscissors2():
     elif human == 3:                       # changed from if to  elif              
         stoprockpaperscissors()
         sleep(1)
-    elif inmoov <= 2:                      # changed from if to  elif 
+    elif inmoov &amp;lt;= 2:                      # changed from if to  elif 
         rockpaperscissors2()
-    elif human <= 2:                       # changed from if to  elif 
+    elif human &amp;lt;= 2:                       # changed from if to  elif 
         rockpaperscissors2()   
   
 def stoprockpaperscissors():
     rest()
     sleep(5)
-    if inmoov < human:
+    if inmoov &amp;lt; human:
         i01.mouth.speak("congratulations you won with" + str(human - inmoov) + "points")
         sleep(3)
         i01.mouth.speak(str(human) + "points to you and" + str(inmoov) + "points to me")
-    elif inmoov > human:                                                                                                         # changed from if to  elif
+    elif inmoov &amp;gt; human:                                                                                                         # changed from if to  elif
         i01.mouth.speak("yes yes i won with" + str(inmoov - human) + "points")
         sleep(3)
         i01.mouth.speak("i've got " + str(inmoov) + "points and you got" + str(human) + "points")
@@ -2858,21 +2858,20 @@ def systemcheck():
           </mrl>
         </oob>
       </template>   
-   </category>
-  </category>
+    </category>
   
-  <category>
-    <pattern>START KINECT</pattern>
-    <template>
-      <oob>
-        <mrl>
-          <service>i01</service>
-          <method>copyGesture</method>
-          <param>True</param>
-        </mrl>
-      </oob>
-    </template>
-  </category>
+    <category>
+      <pattern>START KINECT</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>i01</service>
+            <method>copyGesture</method>
+            <param>True</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
   </topic>
 
 </aiml>

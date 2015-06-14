@@ -9,7 +9,7 @@
       <template>
         <random>
           <li>Resting position</li>
-          <li>Relaxing</li>
+          <li>Relaxing</li> 
         </random>
         <oob>
           <mrl>
