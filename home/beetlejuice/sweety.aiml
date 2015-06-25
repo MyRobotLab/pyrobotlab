@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<aiml>
+<!--author: famille-->
+<!--licence: Standard-->
+<!--created with: GaitoBot AIML Editor V2.7.0.37793-->
+<category>
+	<pattern>BONJOUR</pattern>
+	<template>
+		<random>
+			<li>Salut</li>
+			<li>Bonjour</li>
+			<li>hey !</li>
+		</random></template>
+</category>
+<category>
+	<pattern>COMMENT VAS TU</pattern>
+	<template>Je vais bien . Merci</template>
+</category>
+<category>
+	<pattern>SALUT</pattern>
+	<template><srai>Bonjour</srai></template>
+</category>
+<category>
+	<pattern>TARGET BOTSTART</pattern>
+	<template>This is the greeting of a GaitoBot conversation.</template>
+</category>
+<category>
+	<pattern>*</pattern>
+	<template>Desole, mes reponses sont limitees</template>
+</category>
+<category>
+	<pattern>DIS *</pattern>
+	<template><star /></template>
+</category>
+<category>
+	<pattern>QUEL EST TON NOM</pattern>
+	<template>Mon nom est Sweety et toi ? <star /></template>
+</category>
+<category>
+	<pattern>*</pattern><that>MON NOM EST SWEETY ET TOI</that>
+	<template><think><set name="prenom"><star /></set></think>Content de te connaître <star /></template>
+</category>
+<category>
+	<pattern>QUEL EST MON NOM </pattern>
+	<template>Tu t'appelle <get name="prenom" /></template>
+</category>
+</aiml>
