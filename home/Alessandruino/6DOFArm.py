@@ -7,6 +7,21 @@ servo4 = Runtime.createAndStart("servo4","Servo")
 servo5 = Runtime.createAndStart("servo5","Servo")
 servo6 = Runtime.createAndStart("servo6","Servo")
 
+i01 = Runtime.createAndStart("i01", "InMoov")
+i01.startMouth()
+i01.startEar()
+
+ear = i01.ear
+
+ear.addCommand("hello world", "python", "movement1")
+ear.addCommand("position two", "python", "movement2")
+ear.addCommand("rest position", "python", "movement3")
+
+ 
+ 
+ear.addComfirmations("yes", "correct", "yeah", "ya")
+ear.addNegations("no", "wrong", "nope", "nah")
+
 #set your arduino serial port here
 arduino.connect("COM3")
 #wait for one second for connection
@@ -50,10 +65,12 @@ def movement3():
   servo6.moveTo(90)
 
 #execute methods
-
 movement1()
 sleep(2)
 movement2()
 sleep(2)
 movement3()
 sleep(2)
+
+# all commands MUST be before startListening  
+ear.startListening()
