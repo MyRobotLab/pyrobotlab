@@ -1,11 +1,11 @@
 #create arduino and servos servicesservo1.attach(arduino,2)
 arduino = Runtime.createAndStart("arduino","Arduino")
 servo1 = Runtime.createAndStart("servo1","Servo")
-servo2 = Runtime.createAndStart("servo1","Servo")
-servo3 = Runtime.createAndStart("servo1","Servo")
-servo4 = Runtime.createAndStart("servo1","Servo")
-servo5 = Runtime.createAndStart("servo1","Servo")
-servo6 = Runtime.createAndStart("servo1","Servo")
+servo2 = Runtime.createAndStart("servo2","Servo")
+servo3 = Runtime.createAndStart("servo3","Servo")
+servo4 = Runtime.createAndStart("servo4","Servo")
+servo5 = Runtime.createAndStart("servo5","Servo")
+servo6 = Runtime.createAndStart("servo6","Servo")
 
 #set your arduino serial port here
 arduino.connect("COM3")
@@ -13,12 +13,12 @@ arduino.connect("COM3")
 sleep(1)
 
 #attach servos to arduino pins, change pin numbers according to your setup
-servo1.attach(arduino,2)
-servo2.attach(arduino,3)
-servo3.attach(arduino,4)
-servo4.attach(arduino,5)
-servo5.attach(arduino,6)
-servo6.attach(arduino,7)
+servo1.attach("arduino",2)
+servo2.attach("arduino",3)
+servo3.attach("arduino",4)
+servo4.attach("arduino",5)
+servo5.attach("arduino",6)
+servo6.attach("arduino",7)
 
 #define some movements in python methods
 def movement1():
