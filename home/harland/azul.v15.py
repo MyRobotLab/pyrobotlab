@@ -5,6 +5,7 @@
 
 import random
 import time
+from java.lang import String
 
 #laptop uno=right 8  mega=left 9 (pir sensor on 30) and head  eddie 10
 leftPort = "COM9"
@@ -285,16 +286,16 @@ ear.addCommand("phone home", "python", "phonehome")
 ear.addCommand("made by", "python", "madeby")
 ear.addCommand("look around you", "python", "lookaroundyou")
 ear.addCommand("system check", "python", "systemcheck")
-
 ear.addComfirmations("yes","correct","ya","yeah")
 ear.addNegations("no","wrong","nope","nah")
 ear.startListening("sorry | how do you do | hello | bye bye | thanks | thank you | shake hand | nice")
-
 i01.startPIR("leftPort",30)   #now start up pir sensor
 i01.mouth.speak("azuul is ready")
 
 # set up a message route from the ear --to--> python method "heard"
-ear.addListener("recognized", "python", "heard")
+
+ear.addListener("publishText", python.name, "heard", String().getClass());
+# ear.addListener("recognized", "python", "heard")
 
 def finger():
     i01.setHandSpeed("left", 0.85, 0.85, 0.85, 0.85, 0.85, 1.0)
@@ -545,9 +546,8 @@ def thatwasfun():
   i01.moveHand("left",2,2,2,2,2,90)
   i01.moveHand("right",2,2,2,2,2,90)
 
-def heard(self):
-    data = msg_i01_ear_recognized.data[0]
-
+def heard(data):
+    
     if (data == "sorry"):
         x = (random.randint(1, 3))
         if x == 1:
@@ -1236,8 +1236,8 @@ def muscle():
   relax()
 
 def shakehand():
-  data = msg_i01_ear_recognized.data[0]
-##rest
+  # When sphinx recognizes "shake hand" this method is called.
+  ##rest
   i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
@@ -1293,17 +1293,17 @@ def shakehand():
   i01.moveHand("right",180,126,120,145,168,77)
   i01.moveTorso(101,100,90)
   sleep(1)
-##shake hand down
-  if (data == "shake hand"):
-       x = (random.randint(1, 4))
-       if x == 1:
-            i01.mouth.speak("Please to meet you")
-       if x == 2:
-            i01.mouth.speak("carefull my hand is made out of plastic")
-       if x == 3:
-            i01.mouth.speak("I am happy to shake a human hand")
-       if x == 4:
-            i01.mouth.speak("it is a pleasure to meet you ")
+  ##shake hand down
+  x = (random.randint(1, 4))
+  if x == 1:
+    i01.mouth.speak("Please to meet you")
+  elif x == 2:
+    i01.mouth.speak("carefull my hand is made out of plastic")
+  elif x == 3:
+    i01.mouth.speak("I am happy to shake a human hand")
+  else:
+    i01.mouth.speak("it is a pleasure to meet you ")
+    
   i01.mouth.speak("please to meet you")
   i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
@@ -1318,7 +1318,7 @@ def shakehand():
   i01.moveHand("right",180,126,120,145,168,77)
   i01.moveTorso(101,100,90)
   sleep(1)
-##shake hand up
+  ##shake hand up
   i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
@@ -1332,7 +1332,7 @@ def shakehand():
   i01.moveHand("right",180,126,120,145,168,77)
   i01.moveTorso(101,100,90)
   sleep(1)
-##shake hand down
+  ##shake hand down
   i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
@@ -1346,7 +1346,7 @@ def shakehand():
   i01.moveHand("right",180,126,120,145,168,77)
   i01.moveTorso(101,100,90)
   sleep(2)
-## release hand
+  ## release hand
   i01.setHandSpeed("left", 0.65, 0.65, 0.65, 0.65, 0.65, 1.0)
   i01.setHandSpeed("right", 0.95, 0.95, 0.95, 0.95, 0.95, 1.0)
   i01.setArmSpeed("right", 0.75, 0.75, 0.95, 0.85)
@@ -1360,7 +1360,7 @@ def shakehand():
   i01.moveHand("right",20,50,40,20,20,90)
   i01.moveTorso(101,100,90)
   sleep(1)
-##relax
+  ##relax
   i01.setHandSpeed("left", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
   i01.setHandSpeed("right", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
   i01.setArmSpeed("right", 0.75, 0.85, 0.65, 0.85)
@@ -2119,22 +2119,24 @@ def madeby():
 def lookaroundyou(): 
      i01.setHeadSpeed(0.8, 0.8, 0.6, 0.6, 1.0)
      for y in range(0, 3):
-         data = msg_i01_ear_recognized.data[0]
+         # This only gets called if "data" = "look around you"
+         # data = msg_i01_ear_recognized.data[0]
+         data = "look around you"
          if (data == "can i have your attention"):
              i01.mouth.speak("ok you have my attention")
              stopit()
              x = (random.randint(1, 6))
              if x == 1:
                  i01.head.neck.moveTo(90)
-             if x == 2:
+             elif x == 2:
                  i01.head.rothead.moveTo(80)
-             if x == 3:
+             elif x == 3:
                  headdown()
-             if x == 4:
+             elif x == 4:
                  headupp()
-             if x == 5:
+             elif x == 5:
                  headright()
-             if x == 6:
+             elif x == 6:
                  headleft()
              sleep(1)
          x = (random.randint(1, 4))
