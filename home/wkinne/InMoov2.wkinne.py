@@ -36,7 +36,7 @@ i01.mouthControl.setmouth(40, 110)
 #i01.attach()
 
 # auto detaches any attached servos after 120 seconds of inactivity
-i01.autoDetachOnInactivity(120)
+# i01.autoDetachOnInactivity(120)
 
 # purges any "auto" methods
 #i01.purgeAllTasks()
