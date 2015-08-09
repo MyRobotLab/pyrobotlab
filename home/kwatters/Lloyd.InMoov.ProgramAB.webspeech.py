@@ -11,8 +11,9 @@ def heard(data):
 # Create ProgramAB chat bot
 ######################################################################
 lloyd = Runtime.createAndStart("lloyd", "ProgramAB")
-lloyd.startSession("c:/dev/workspace.kmw/pyrobotlab/home/kwatters", "default", "lloyd")
- 
+#lloyd.startSession("c:/dev/workspace.kmw/pyrobotlab/home/kwatters", "default", "lloyd")
+lloyd.startSession("c:/dev/workspace.kmw/myrobotlab/ProgramAB", "kevin", "alice2")
+
 ######################################################################
 # create the speech recognition service
 # Speech recognition is based on WebSpeechToolkit API
@@ -29,7 +30,8 @@ htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 ######################################################################
 # create the speech to text service (named the same as the inmoov's)
 ######################################################################
-mouth = Runtime.createAndStart("i01.mouth", "Speech")
+mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
+# mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
  
 ######################################################################
 # MRL Routing   sphinx -> program ab -> htmlfilter -> inmoov
