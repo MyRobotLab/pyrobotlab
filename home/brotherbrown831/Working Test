@@ -1,0 +1,120 @@
+from org.myrobotlab.service import Arduino
+from org.myrobotlab.service import Servo
+from org.myrobotlab.service import Joystick
+from org.myrobotlab.service import Runtime
+from time import sleep
+import time
+import math
+
+#---------------------------------Create Services----------------------
+arduino = Runtime.createAndStart("arduino","Arduino")
+joystick = Runtime.createAndStart("joystick","Joystick")
+wrist  = Runtime.createAndStart("wrist","Servo")
+grip  = Runtime.createAndStart("grip","Servo")
+elbow  = Runtime.createAndStart("elbow","Servo")
+shoulder  = Runtime.createAndStart("shoulder","Servo")
+headturn = Runtime.createAndStart("headturn","Servo")
+headtilt = Runtime.createAndStart("headtilt","Servo")
+motorleft = Runtime.start("motorleft","Motor")
+motorright = Runtime.start("motorright","Motor")
+
+
+
+#----------------------Connect Peripherals-----------------------------------
+arduino.connect("/dev/ttyACM0");
+joystick.setController(0); #PC only - Pi needs new
+
+#------------------------DEFINE STATIC VALUES-------------------------------
+
+wrist_INIT    = 90 #Define initial servo position(initial Condition) & (initiates when "start" button pressed).
+grip_INIT     = 90
+elbow_INIT    = 90
+shoulder_INIT = 90
+headturn_INIT = 90
+headtilt_INIT = 90
+
+wrist_MIN    = 20 #Define minimum servo angles.
+grip_MIN     = 20
+elbow_MIN    = 20 #EDIT*** : Claw - Change Value to avoid collision
+shoulder_MIN = 20 #EDIT*** : Claw - Change Value to avoid collision
+headturn_MIN = 20
+SERVO6_MIN   = 20
+
+wrist_MAX    = 160 #Define maximum servo angles.
+grip_MAX     = 160
+elbow_MAX    = 160 # EDIT*** : Claw - Change Value to avoid collision
+shoulder_MAX = 160 # EDIT*** : Claw - Change Value to avoid collision 
+headturn_MAX = 160
+headtilt_MAX = 160
+
+
+STICK_CENTER = 0 #Value from controller when sticks are centered (127 for PS3 controller, 0 for xbox controller)
+DEADZONE     = 07500  #Deadzone to prevent unwanted movement. Defined as 7500 for Xbox360 Controller
+
+
+arduino.motorAttach("motorleft", 5, 4) 
+arduino.motorAttach("motorright", 6, 7)
+
+
+
+
+#------------------Define Global Variables----------------------------------------
+
+s1 = wrist_INIT #Define variables to store servo positions and set to initial positions
+s2 = grip_INIT
+s3 = elbow_INIT
+s4 = shoulder_INIT
+s5 = headturn_INIT
+s6 = headtilt_INIT
+
+# attach servos to Arduino
+#wrist.attach(arduino.getName(), 8)
+#grip.attach(arduino.getName(), 11)
+#elbow.attach(arduino.getName(), 3)
+#shoulder.attach(arduino.getName(), 2)
+#headturn.attach(arduino.getName(12), XXXX)
+headtilt.attach(arduino.getName(), 13)
+
+#-----------------------------Primary Loop---------------------------------
+
+#Detach for safety
+wrist.detach()
+grip.detach()
+elbow.detach()
+shoulder.detach()
+headturn.detach()
+#headtilt.detach()
+
+joystick.startPolling(); 
+
+
+#joystick.addListener("publishX", "python", "StickXListener")
+#joystick.addListener("publishY", "python", "StickYListener")
+
+#joystick.addListener("publishRX", "python", "StickRXListener")
+joystick.addListener("publishRY", "python", "StickRYListener")
+
+headtilt.setMinMax(20 , 160)
+headtilt.moveTo(90)
+
+def StickRYListener(value):
+  print "Stick RY :" + str(value) + " Current pos: " + str(headtilt.pos)
+  absValue = math.fabs(value)
+  if (absValue < 0.175):
+    print "Stop sweep"
+    headtilt.stop()
+    return
+  absValue = absValue-0.01
+  print "Set Speed " + str(absValue)
+  headtilt.setSpeed(absValue)
+  delay = int((1-absValue) * 200)
+  if (value > 0.0):
+    if (headtilt.isSweeping()):
+      headtilt.setSweeperDelay(delay)
+    else:    
+      headtilt.sweep(headtilt.pos, headtilt.max, delay, 1, True)
+  else:
+    if (headtilt.isSweeping()):
+      headtilt.setSweeperDelay(delay)
+    else:
+      headtilt.sweep(headtilt.min, headtilt.pos, delay, -1, True)
