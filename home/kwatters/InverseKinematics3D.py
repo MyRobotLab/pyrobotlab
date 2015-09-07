@@ -1,7 +1,10 @@
 from time import sleep
+from org.myrobotlab.service import InMoovArm
 
 # create the  IK3D service.
-ik3d= Runtime.createAndStart("ik3d", "InverseKinematics3d")
+ik3d= Runtime.createAndStart("ik3d", "InverseKinematics3D")
+
+ik3d.setCurrentArm(InMoovArm.getDHRobotArm())
 
 # starting point
 # x , y , z
