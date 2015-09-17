@@ -1,0 +1,191 @@
+#include <ESP8266WiFi.h>
+
+const char WiFiAPPSK[] = "11951195";  // Hamsters WiFi password
+
+String readString;     // this is the working string used as the response from the hamsters web gui
+WiFiServer server(80); // To access the Hamster ESP8266 you listen into 192.168.4.1
+
+int stepdelay=5;       // delay between stepper steps ( 5 is considered minimun)
+
+void setup() 
+{
+  initHardware();
+  setupWiFi();
+  server.begin();
+}
+
+void loop() 
+{
+    // Check if a client has connected
+  WiFiClient client = server.available();
+  if (!client) {
+    return;
+  }
+
+  // Read the first line of the request into the readString
+  
+  String req = client.readStringUntil('\r');
+   
+  if (req.indexOf("0") >0  ) {  MINUS90();  }
+  if (req.indexOf("1") >0  ) {  STOP();     }
+  if (req.indexOf("2") >0  ) {  PLUSS90();  }
+  if (req.indexOf("3") >0  ) {  FWD10();    }
+  if (req.indexOf("4") >0  ) {  BAK10();    }
+  if (req.indexOf("5") >0  ) {  R_F30();    }
+  if (req.indexOf("6") >0  ) {  L_F30();    }  
+  if (req.indexOf("7") >0  ) {  FWD30();    } 
+  if (req.indexOf("8") >0  ) {  BAK30();    } 
+  if (req.indexOf("9") >0  ) {  SQUARE();   } 
+  if (req.indexOf("99")>0  ) {  CIRCLE();   } 
+  
+  client.flush(); // flush out any stray contents 
+  
+  // Prepare the response. Start with the common header:
+   client.println("<HTML>");  client.println("<HEAD>");  client.println("<TITLE>Gareths Wifi setpdelay</TITLE>");  client.println("</HEAD>");  client.println("<BODY>"); 
+  // followed by the HTML for the customised button  GUI. 
+   client.print("<input type=button style=width:100px;height:45px value= R_F30  onmousedown=location.href='/?5'>"); 
+   client.print("<input type=button style=width:100px;height:45px value= FWD30  onmousedown=location.href='/?7'>"); 
+   client.print("<input type=button style=width:100px;height:45px value= L_F30  onmousedown=location.href='/?6'>"); 
+   client.println("<br>"); // new line
+   client.print("<input type=button style=width:100px;height:45px value= -90.0  onmousedown=location.href='/?0'>"); 
+   client.print("<input type=button style=width:100px;height:45px value= STOP   onmousedown=location.href='/?1'>"); 
+   client.print("<input type=button style=width:100px;height:45px value= +90.0  onmousedown=location.href='/?2'>"); 
+   client.println("<br>");
+   client.print("<input type=button style=width:100px;height:45px value= FWD10  onmousedown=location.href='/?3'>"); 
+   client.print("<input type=button style=width:100px;height:45px value= BAK30  onmousedown=location.href='/?8'>"); 
+   client.print("<input type=button style=width:100px;height:45px value= BAK10  onmousedown=location.href='/?4'>"); 
+   client.println("<br>");
+   client.print("<input type=button style=width:100px;height:45px value= SQUARE onmousedown=location.href='/?9'>"); 
+   client.print("<input type=button style=width:100px;height:45px value= CIRCLE onmousedown=location.href='/?99'>"); 
+  // end wrappers 
+   client.println("</BODY>");
+   client.println("</HTML>");
+  //stopping client
+   client.stop();
+}
+
+void setupWiFi()
+{
+  WiFi.mode(WIFI_AP);
+  uint8_t mac[WL_MAC_ADDR_LENGTH];
+  WiFi.softAPmacAddress(mac);
+  String macID = String(mac[WL_MAC_ADDR_LENGTH - 2], HEX) +
+                 String(mac[WL_MAC_ADDR_LENGTH - 1], HEX);
+  macID.toUpperCase();
+  String AP_NameString = "Hamster " + macID;
+
+  char AP_NameChar[AP_NameString.length() + 1];
+  memset(AP_NameChar, 0, AP_NameString.length() + 1);
+
+  for (int i=0; i<AP_NameString.length(); i++)
+    AP_NameChar[i] = AP_NameString.charAt(i);
+
+  WiFi.softAP(AP_NameChar, WiFiAPPSK);
+}
+
+void initHardware()
+{
+  pinMode(0,  OUTPUT);  // stepper Left
+  pinMode(2,  OUTPUT);
+  pinMode(4,  OUTPUT);
+  pinMode(5,  OUTPUT);
+  pinMode(12, OUTPUT);  // stepper Right
+  pinMode(13, OUTPUT);
+  pinMode(14, OUTPUT);
+  pinMode(16, OUTPUT);
+  pinMode(15, INPUT_PULLUP); // spare in our case here....however its needed for leavering the chip into program mode
+}
+void FWD10()
+{   for (int i=0; i <= 180; i++){
+    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(setpdelay);
+    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(setpdelay);
+    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(setpdelay);
+    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(setpdelay);
+   } 
+}  
+void FWD30()
+{   for (int i=0; i <= 180*3; i++){
+    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(setpdelay);
+    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(setpdelay);
+    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(setpdelay);
+    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(setpdelay);
+   } 
+}        
+void BAK10()
+{   for (int i=0; i <= 180; i++){
+    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(setpdelay);
+    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(setpdelay);
+    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(setpdelay);
+    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(setpdelay);
+   }         
+}
+void BAK30()
+{   for (int i=0; i <= 180*3; i++){
+    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(setpdelay);
+    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(setpdelay);
+    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(setpdelay);
+    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(setpdelay);
+   }         
+}
+
+void L_F30()
+{   for (int i=0; i <= 30; i++){ 
+    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   delay(setpdelay);   digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);   delay(setpdelay);
+    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   delay(setpdelay);   digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);   delay(setpdelay);
+    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   delay(setpdelay);   digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);   delay(setpdelay);
+    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   delay(setpdelay);   digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);   delay(setpdelay);
+    }
+ }      
+
+void R_F30()
+{   for (int i=0; i <= 30; i++){ 
+    digitalWrite(12,LOW);   digitalWrite(14,HIGH);   delay(setpdelay);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   delay(setpdelay);
+    digitalWrite(14,LOW);   digitalWrite(12,HIGH);   delay(setpdelay);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   delay(setpdelay);
+    digitalWrite(12,LOW);   digitalWrite(14,HIGH);   delay(setpdelay);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   delay(setpdelay);
+    digitalWrite(14,LOW);   digitalWrite(12,HIGH);   delay(setpdelay);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   delay(setpdelay);       
+   }
+}      
+
+void MINUS90()
+{
+for (int i=0; i <= 180; i++){  
+    digitalWrite(0,LOW);   digitalWrite(5,HIGH);  digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(setpdelay);
+    digitalWrite(4,LOW);   digitalWrite(2,HIGH);  digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(setpdelay);
+    digitalWrite(5,LOW);   digitalWrite(0,HIGH);  digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(setpdelay);
+    digitalWrite(2,LOW);   digitalWrite(4,HIGH);  digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(setpdelay);
+  }
+  }
+void PLUSS90() 
+{
+  for (int i=0; i <= 180; i++){
+    digitalWrite(2,LOW);   digitalWrite(4,HIGH);  digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(setpdelay);
+    digitalWrite(5,LOW);   digitalWrite(0,HIGH);  digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(setpdelay);
+    digitalWrite(4,LOW);   digitalWrite(2,HIGH);  digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(setpdelay);
+    digitalWrite(0,LOW);   digitalWrite(5,HIGH);  digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(setpdelay);
+   } 
+   }
+void CIRCLE() 
+{
+  for (int i=0; i <= 42; i++){
+    R_F30();
+   } 
+   }
+void SQUARE() 
+{
+  for (int i=0; i <= 3; i++){
+    FWD30()
+    PLUS90();
+   } 
+   }     
+void STOP()
+{
+    digitalWrite(12,LOW);
+    digitalWrite(13,LOW);
+    digitalWrite(14,LOW);
+    digitalWrite(16,LOW);
+    digitalWrite(0,LOW);
+    digitalWrite(2,LOW);
+    digitalWrite(4,LOW);
+    digitalWrite(5,LOW);
+}
+
