@@ -40,6 +40,7 @@ void loop()
   
   client.flush(); // flush out any stray contents 
   
+  // Set of the Control Gui 
   // Prepare the response. Start with the common header:
    client.println("<HTML>");  client.println("<HEAD>");  client.println("<TITLE>Gareths Wifi stepdelay</TITLE>");  client.println("</HEAD>");  client.println("<BODY>"); 
   // followed by the HTML for the customised button  GUI. 
