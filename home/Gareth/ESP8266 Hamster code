@@ -41,7 +41,7 @@ void loop()
   client.flush(); // flush out any stray contents 
   
   // Prepare the response. Start with the common header:
-   client.println("<HTML>");  client.println("<HEAD>");  client.println("<TITLE>Gareths Wifi setpdelay</TITLE>");  client.println("</HEAD>");  client.println("<BODY>"); 
+   client.println("<HTML>");  client.println("<HEAD>");  client.println("<TITLE>Gareths Wifi stepdelay</TITLE>");  client.println("</HEAD>");  client.println("<BODY>"); 
   // followed by the HTML for the customised button  GUI. 
    client.print("<input type=button style=width:100px;height:45px value= R_F30  onmousedown=location.href='/?5'>"); 
    client.print("<input type=button style=width:100px;height:45px value= FWD30  onmousedown=location.href='/?7'>"); 
@@ -97,71 +97,71 @@ void initHardware()
 }
 void FWD10()
 {   for (int i=0; i <= 180; i++){
-    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(setpdelay);
-    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(setpdelay);
-    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(setpdelay);
-    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(setpdelay);
+    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(stepdelay);
+    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(stepdelay);
+    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(stepdelay);
+    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(stepdelay);
    } 
 }  
 void FWD30()
 {   for (int i=0; i <= 180*3; i++){
-    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(setpdelay);
-    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(setpdelay);
-    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(setpdelay);
-    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(setpdelay);
+    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(stepdelay);
+    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(stepdelay);
+    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(stepdelay);
+    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(stepdelay);
    } 
 }        
 void BAK10()
 {   for (int i=0; i <= 180; i++){
-    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(setpdelay);
-    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(setpdelay);
-    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(setpdelay);
-    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(setpdelay);
+    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(stepdelay);
+    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(stepdelay);
+    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(stepdelay);
+    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(stepdelay);
    }         
 }
 void BAK30()
 {   for (int i=0; i <= 180*3; i++){
-    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(setpdelay);
-    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(setpdelay);
-    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(setpdelay);
-    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(setpdelay);
+    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(stepdelay);
+    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(stepdelay);
+    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(stepdelay);
+    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(stepdelay);
    }         
 }
 
 void L_F30()
 {   for (int i=0; i <= 30; i++){ 
-    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   delay(setpdelay);   digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);   delay(setpdelay);
-    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   delay(setpdelay);   digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);   delay(setpdelay);
-    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   delay(setpdelay);   digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);   delay(setpdelay);
-    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   delay(setpdelay);   digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);   delay(setpdelay);
+    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   delay(stepdelay);   digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(12,LOW);   digitalWrite(14,HIGH);   delay(stepdelay);
+    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   delay(stepdelay);   digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);   delay(stepdelay);
+    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   delay(stepdelay);   digitalWrite(4, LOW);   digitalWrite(2, HIGH);   digitalWrite(14,LOW);   digitalWrite(12,HIGH);   delay(stepdelay);
+    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   delay(stepdelay);   digitalWrite(2,LOW);    digitalWrite(4, HIGH);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);   delay(stepdelay);
     }
  }      
 
 void R_F30()
 {   for (int i=0; i <= 30; i++){ 
-    digitalWrite(12,LOW);   digitalWrite(14,HIGH);   delay(setpdelay);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   delay(setpdelay);
-    digitalWrite(14,LOW);   digitalWrite(12,HIGH);   delay(setpdelay);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   delay(setpdelay);
-    digitalWrite(12,LOW);   digitalWrite(14,HIGH);   delay(setpdelay);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   delay(setpdelay);
-    digitalWrite(14,LOW);   digitalWrite(12,HIGH);   delay(setpdelay);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   delay(setpdelay);       
+    digitalWrite(12,LOW);   digitalWrite(14,HIGH);   delay(stepdelay);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);    digitalWrite(0, LOW);   digitalWrite(5, HIGH);   delay(stepdelay);
+    digitalWrite(14,LOW);   digitalWrite(12,HIGH);   delay(stepdelay);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);    digitalWrite(4, LOW);   digitalWrite(2, HIGH);   delay(stepdelay);
+    digitalWrite(12,LOW);   digitalWrite(14,HIGH);   delay(stepdelay);   digitalWrite(16,LOW);   digitalWrite(13,HIGH);    digitalWrite(5, LOW);   digitalWrite(0, HIGH);   delay(stepdelay);
+    digitalWrite(14,LOW);   digitalWrite(12,HIGH);   delay(stepdelay);   digitalWrite(13,LOW);   digitalWrite(16,HIGH);    digitalWrite(2,LOW);    digitalWrite(4, HIGH);   delay(stepdelay);       
    }
 }      
 
 void MINUS90()
 {
 for (int i=0; i <= 180; i++){  
-    digitalWrite(0,LOW);   digitalWrite(5,HIGH);  digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(setpdelay);
-    digitalWrite(4,LOW);   digitalWrite(2,HIGH);  digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(setpdelay);
-    digitalWrite(5,LOW);   digitalWrite(0,HIGH);  digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(setpdelay);
-    digitalWrite(2,LOW);   digitalWrite(4,HIGH);  digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(setpdelay);
+    digitalWrite(0,LOW);   digitalWrite(5,HIGH);  digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(stepdelay);
+    digitalWrite(4,LOW);   digitalWrite(2,HIGH);  digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(stepdelay);
+    digitalWrite(5,LOW);   digitalWrite(0,HIGH);  digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(stepdelay);
+    digitalWrite(2,LOW);   digitalWrite(4,HIGH);  digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(stepdelay);
   }
   }
 void PLUSS90() 
 {
   for (int i=0; i <= 180; i++){
-    digitalWrite(2,LOW);   digitalWrite(4,HIGH);  digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(setpdelay);
-    digitalWrite(5,LOW);   digitalWrite(0,HIGH);  digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(setpdelay);
-    digitalWrite(4,LOW);   digitalWrite(2,HIGH);  digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(setpdelay);
-    digitalWrite(0,LOW);   digitalWrite(5,HIGH);  digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(setpdelay);
+    digitalWrite(2,LOW);   digitalWrite(4,HIGH);  digitalWrite(12,LOW);   digitalWrite(14,HIGH);  delay(stepdelay);
+    digitalWrite(5,LOW);   digitalWrite(0,HIGH);  digitalWrite(16,LOW);   digitalWrite(13,HIGH);  delay(stepdelay);
+    digitalWrite(4,LOW);   digitalWrite(2,HIGH);  digitalWrite(14,LOW);   digitalWrite(12,HIGH);  delay(stepdelay);
+    digitalWrite(0,LOW);   digitalWrite(5,HIGH);  digitalWrite(13,LOW);   digitalWrite(16,HIGH);  delay(stepdelay);
    } 
    }
 void CIRCLE() 
