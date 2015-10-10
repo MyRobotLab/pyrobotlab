@@ -211,7 +211,6 @@ int cnt;
 #define ERROR_ALREADY_EXISTS			3
 #define ERROR_DOES_NOT_EXIST			4
 
-#define CUSTOM_MSG                         50
 
 // ------ error types ------
 #define SENSOR_ULTRASONIC				1
