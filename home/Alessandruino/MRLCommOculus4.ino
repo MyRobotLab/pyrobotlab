@@ -1215,6 +1215,30 @@ void loop () {
 		Serial.write((byte)(loadTime >> 8));
 		Serial.write((byte) loadTime & 0xff);
 	}
+	
+	accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+  	gyro.getAngularVelocity(&avx, &avy, &avz);
+  	mag.getHeading(&mx, &my, &mz);
+	float heading = atan2(my, mx);
+  	int16_t headingint = (heading * 180/M_PI);
+  	// process mrl commands
+  	// servo control, sensor, control send & recieve
+  	// oscope, analog polling, digital polling etc..
+  	// mrl messages
+  	//mrl.process();
+ 
+  	// example how to
+  	// send 3 vars to mrl
+  
+  	cnt += 1;
+  	if (cnt%10 == 0) {
+    		startMsg();
+    		append(ay);
+    		append(mx);
+    		append(headingint);
+    		sendMsg();
+    		cnt = 0;
+	}
 
 
 } // end of big loop
