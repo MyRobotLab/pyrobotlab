@@ -17,8 +17,26 @@
 * perhaps avrdude ?
 *
 */
+#include "I2Cdev.h"
+#include "MPU6050.h"
+#include <HMC5883L.h>
+#include <L3G4200D.h>
 
 #include <Servo.h>
+
+MPU6050 accelgyro;
+HMC5883L mag;
+L3G4200D gyro;
+
+
+//MPU6050 accelgyro(0x69); // <-- use for AD0 high
+ 
+int16_t ax, ay, az;
+int16_t gx, gy, gz;
+int16_t ax2, ay2, az2;
+int16_t mx, my, mz;
+int16_t avx, avy, avz;
+int cnt;
 #define MRLCOMM_VERSION				24
 
 // serial protocol functions
