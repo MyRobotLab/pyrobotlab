@@ -211,10 +211,10 @@ int cnt;
 #define ERROR_ALREADY_EXISTS			3
 #define ERROR_DOES_NOT_EXIST			4
 
+#define CUSTOM_MSG                         50
+
 // ------ error types ------
 #define SENSOR_ULTRASONIC				1
-
-#define CUSTOM_MSG						50
 
 // need a method to identify type of board
 // http://forum.arduino.cc/index.php?topic=100557.0
@@ -433,6 +433,18 @@ void startMsg() {
 }
 
 void setup() {
+    // join I2C bus (I2Cdev library doesn't do this automatically)
+    #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
+        Wire.begin();
+    #elif I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_FASTWIRE
+        Fastwire::setup(400, true);
+    #endif
+    
+    accelgyro.initialize();
+    gyro.initialize();
+    mag.initialize();
+    
+    gyro.setFullScale(2000);
 	Serial.begin(57600);        // connect to the serial port
 
 	softReset();
