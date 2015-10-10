@@ -459,7 +459,7 @@ void sendMsg(){
 	Serial.write(MAGIC_NUMBER);
 	Serial.write(paramBuffIndex + 2); // = param buff size + FN + paramCnt
 	//Serial.write(2); // = param buff size + FN + paramCnt
-	Serial.write(CUSTOM_MSG);
+	Serial.write(PUBLISH_CUSTOM_MSG);
 	Serial.write(paramCnt);
 
 	for (int i = 0; i < paramBuffIndex; ++i){
