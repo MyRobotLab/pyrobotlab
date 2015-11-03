@@ -1,3 +1,5 @@
+port = "COM19"
+
 saber = Runtime.start('saber','Sabertooth')
 saber.connect(port)
 sleep(1)
