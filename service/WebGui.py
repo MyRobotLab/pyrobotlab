@@ -1,4 +1,4 @@
-webgui = Runtime.create("webgui","WebGUI")
+webgui = Runtime.create("webgui","WebGui")
 
 # if you don't want the browser to 
 # autostart to homepage
@@ -6,8 +6,8 @@ webgui = Runtime.create("webgui","WebGUI")
 # webgui.autoStartBrowser(false)
 
 # set a different port number to listen to
-# default is 7777
-# webgui.setPort(8080)
+# default is 8888
+# webgui.setPort(7777)
 
 # on startup the webgui will look for a "resources"
 # directory (may change in the future)
