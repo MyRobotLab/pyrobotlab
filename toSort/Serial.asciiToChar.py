@@ -3,8 +3,7 @@ import time
  
 #create a Serial service named serial
 serial = Runtime.createAndStart("serial","Serial")
-def input():
- code = msg_serial_publishByte.data[0]
+def input(code):
  decoded = ''.join(chr(code))
  print decoded
 #have python listening to serial
