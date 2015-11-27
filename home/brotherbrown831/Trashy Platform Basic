@@ -57,6 +57,23 @@ joystick.addListener("publishY", "python", "StickYListener")
 joystick.addListener("publishRX", "python", "StickRXListener")
 joystick.addListener("publishRY", "python", "StickRYListener")
 
+
+#----------------------------------Saftey Locks------------------------------------
+
+def ButtonBListener(value):
+  if (value == 1):
+	headturn.attach()
+	headtilt.attach()
+	arduino.motorAttach("motorleft", 5, 4) 
+	arduino.motorAttach("motorright", 6, 7)
+
+def ButtonAListener(value):
+  if (value == 1):
+	headturn.detach()
+	headtilt.detach()
+	arduino.motorDetach("motorleft", 5, 4) 
+	arduino.motorDetach("motorright", 6, 7)
+
 #-----------------------------------Platform Movement----------------------------
 
 def StickRYListener(value):
@@ -67,8 +84,9 @@ def StickRYListener(value):
   if (absValue < 0.175):
     RYLeft = 0
     RYRight = 0
-  RYLeft = 255*(value)
-  RYRight = 255*(value)
+  else
+    RYLeft = 255*(value)
+    RYRight = 255*(value)
 
 def StickRXListener(value):
   print "Stick RX :" + str(value)
@@ -78,8 +96,9 @@ def StickRXListener(value):
   if (absValue < 0.175):
     RYLeft = 0
     RYRight = 0
-  YLeft = 255*(value)
-  YRight = 255*(value)  
+  else 
+    YLeft = 255*(value)
+    YRight = 255*(value)  
 
 TotalLeft = RYLeft + RXLeft
   if (TotalLeft > 250):
