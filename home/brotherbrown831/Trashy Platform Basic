@@ -32,31 +32,29 @@ headtilt_MAX = 160
 STICK_CENTER = 0 #Value from controller when sticks are centered (127 for PS3 controller, 0 for xbox controller)
 DEADZONE     = 07500  #Deadzone to prevent unwanted movement. Defined as 7500 for Xbox360 Controller
 
-arduino.motorAttach("motorleft", 5, 4) 
-arduino.motorAttach("motorright", 6, 7)
+
 
 #------------------Define Global Variables----------------------------------------
 
-s5 = headturn_INIT
-s6 = headtilt_INIT
-
 # attach servos to Arduino
+headturn.attach(12)
+headtilt.attach(13)
 
-headturn.attach(arduino.getName(12), XXXX)
-headtilt.attach(arduino.getName(), 13)
+arduino.motorAttach("motorleft", 5, 4) 
+arduino.motorAttach("motorright", 6, 7)
 
 #-----------------------------Primary Loop---------------------------------
 
 #Detach for safety
-headturn.detach()
-headtilt.detach()
+#headturn.detach()
+#headtilt.detach()
 
 joystick.startPolling(); 
 
-#joystick.addListener("publishX", "python", "StickXListener")
-#joystick.addListener("publishY", "python", "StickYListener")
+joystick.addListener("publishX", "python", "StickXListener")
+joystick.addListener("publishY", "python", "StickYListener")
 
-#joystick.addListener("publishRX", "python", "StickRXListener")
+joystick.addListener("publishRX", "python", "StickRXListener")
 joystick.addListener("publishRY", "python", "StickRYListener")
 
 #-----------------------------------Platform Movement----------------------------
@@ -68,8 +66,7 @@ def StickRYListener(value):
   absValue = math.fabs(value)
   if (absValue < 0.175):
     RYLeft = 0
-	RYRight = 0
-	return
+    RYRight = 0
   RYLeft = 255*(value)
   RYRight = 255*(value)
 
@@ -80,8 +77,7 @@ def StickRXListener(value):
   absValue = math.fabs(value)
   if (absValue < 0.175):
     RYLeft = 0
-	RYRight = 0
-	return
+    RYRight = 0
   YLeft = 255*(value)
   YRight = 255*(value)  
 
@@ -100,7 +96,7 @@ TotalRight = RYRight + RXRight
 motorleft.move(TotalLeft)
 motorright.move(TotalRight)
   
-#-----------------------------------Headtilt----------------------------
+#-----------------------------------Head Tilt----------------------------
 
 headtilt.setMinMax(40 , 120)
 headtilt.moveTo(80)
@@ -126,3 +122,30 @@ def StickYListener(value):
       headtilt.setSweeperDelay(delay)
     else:
       headtilt.sweep(headtilt.min, headtilt.pos, delay, -1, True)
+      
+------------------------------------Head Turn----------------------------------
+
+headturn.setMinMax(40 , 120)
+headturn.moveTo(80)
+
+def StickXListener(value):
+  print "Stick X :" + str(value) + " Current pos: " + str(headturn.pos)
+  absValue = math.fabs(value)
+  if (absValue < 0.175):
+    print "Stop sweep"
+    headturn.stop()
+    return
+  absValue = absValue-0.01
+  print "Set Speed " + str(absValue)
+  headturn.setSpeed(absValue)
+  delay = int((1-absValue) * 200)
+  if (value > 0.0):
+    if (headturn.isSweeping()):
+      headturn.setSweeperDelay(delay)
+    else:    
+      headturn.sweep(headturn.pos, headturn.max, delay, 1, True)
+  else:
+    if (headturn.isSweeping()):
+      headturn.setSweeperDelay(delay)
+    else:
+      headturn.sweep(headturn.min, headturn.pos, delay, -1, True)
