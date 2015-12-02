@@ -18,14 +18,20 @@ arduino.motorAttach("motorleft", 5, 4)
 #----------------------Define callback function for Joystick-----------
 def onJoystickInput(data):
   global float(ryValue)
+  
   if (data.id == 'A' and float(data.value) == 1.0):
     print "Attatch MotorLeft"
   if (data.id == 'B' and float(data.value) == 1.0):
     print "Detach MotorLeft"
   if (data.id == 'ry'):
     ryValue = float(data.value) 
+    printValue(ryValue)
+    moveLeftMotor(ryValue)
   
 #-----------------------Main Loop----------------------------------------
-def print "the value of ry is" (ryValue)# this number could easily be used in other speed control functions
+def printValue(ryValue):
+  # this number could easily be used in other speed control functions
+  print "the value of ry is" + str(ryValue)
 
-def motorLeft.move(255*(ryValue):
+def moveLeftMotor(ryValue):
+  motorleft.move(255*(ryValue))
