@@ -1,0 +1,63 @@
+import random
+from java.lang import String
+from time import sleep
+from org.myrobotlab.net import BareBonesBrowserLaunch
+from org.myrobotlab.service import Speech
+from org.myrobotlab.service import Sphinx
+
+arduino = Runtime.start("arduino", "Arduino")
+arduino.connect("COM8") 
+
+python = Runtime.start("python","Python")
+sr04 = Runtime.create("sr04", "UltrasonicSensor")
+sr04.reserveRootAs("sr04.arduino", "arduino");
+sr04.startService()
+sr04.attach("COM8", 10, 9)
+sr04.addRangeListener(python)
+sr04.stopRanging()
+
+distance = 0
+
+def onRange(distancedata):
+   global distance
+   distance = distancedata
+#   print "distance to next object ", distance*1.8, " cm"
+#   if (distance <= 20) and (distance >= 1):
+#      sr04.stopRanging()
+#      mouth.audioFile.playFile("D:/Sounds/R2D2BEEP.mp3")
+#      print "stopped, only ", distance*1.8, " cm to next object"
+#      sr04.startRanging()
+
+ear = Runtime.createAndStart("ear","Sphinx")
+mouth = Runtime.createAndStart("mouth","Speech")
+
+ear.startListening("what is your name | hello r two | walk | stop")
+
+ear.addListener("recognized", "python", "heard")
+
+ear.addComfirmations("yes","correct","ya","yeah")
+ear.addNegations("no","wrong","nope","nah")
+
+
+def heard(data):
+    global distance
+    if (data == "what is your name"):
+        mouth.audioFile.playFile("D:/Sounds/R2D2.mp3")
+
+    if (data == "hello r two"):
+        mouth.audioFile.playFile("D:/Sounds/R2D2SCREAM.mp3")
+
+    if (data == "walk"):
+        global distance
+        sr04.startRanging()
+        print "distance to next object ", distance, " cm"
+        if (distance <= 50) and (distance >= 1):
+            print "motors stopped, object in the way!"
+            mouth.audioFile.playFile("D:/Sounds/R2D2BEEP.mp3")
+            sr04.stopRanging()
+
+    if (data == "stop"):
+        sr04.stopRanging()
+
+        
+
