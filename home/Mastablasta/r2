@@ -16,7 +16,11 @@ sr04.attach("COM8", 10, 9)
 sr04.addRangeListener(python)
 sr04.stopRanging()
 
-def onRange(distance):
+distance = 0
+
+def onRange(distancedata):
+   global distance
+   distance = distancedata
    print "distance to next object ", distance*1.8, " cm"
    if (distance <= 15) and (distance >= 1):
       sr04.stopRanging()
@@ -36,6 +40,7 @@ ear.addNegations("no","wrong","nope","nah")
 
 
 def heard(data):
+    global distance
     if (data == "what is your name"):
         mouth.audioFile.playFile("D:/Sounds/R2D2.mp3")
 
