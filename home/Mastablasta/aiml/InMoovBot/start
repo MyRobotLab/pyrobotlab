@@ -2,7 +2,7 @@
 <aiml>
 <!-- File: start.aiml -->
 <!-- Author: Mastablasta -->
-<!-- Last modified: M䲺 10, 2015 -->
+<!-- Last modified: March 10, 2015 -->
 <!--  -->
 <!-- This AIML file is part of the ELIAS unknown chat bot knowledge base. -->
 <!--  -->
@@ -16,17 +16,24 @@
 <!--  -->
 <!-- For more information see http://www.alicebot.org -->
 <!--  -->
+
 <category><pattern>BY YOUR COMMAND</pattern>
-<template>Powering up
+    <template>I am all powered up. Ready to serve.
       <oob>
         <mrl>
           <service>python</service>
           <method>exec</method>
           <param>
+a = <get name="from"/>
+sleep(30)
+b = <get name="to"/>
+sleep(30)
+BT()
 leftPort = "COM8"
 rightPort = "COM4"
 i01 = Runtime.create("i01", "InMoov")
 rh = Runtime.create("i01.rightHand","InMoovHand")
+i01.setMute(True)
 rh.thumb.setRest(30)
 rh.index.setRest(30)
 rh.majeure.setRest(40)
@@ -90,23 +97,18 @@ torso.topStom.setRest(94)
 opencv = i01.startOpenCV()
 i01.startEyesTracking(leftPort)
 i01.startHeadTracking(leftPort)
-i01.eyesTracking.xpid.setPID(12.0,12.0,0.1)
-i01.eyesTracking.ypid.setPID(12.0,12.0,0.1)
-i01.headTracking.xpid.setPID(12.0,12.0,0.1)
-i01.headTracking.ypid.setPID(12.0,12.0,0.1)
-i01.eyesTracking.ypid.invert()
-<think><set name="from"><date format="%M" jformat="m"/></set><set name="to"><date format="%M" jformat="m"/></set></think>
+i01.eyesTracking.pid.setPID("x",12.0,12.0,0.1)
+i01.eyesTracking.pid.setPID("y",12.0,12.0,0.1)
+i01.headTracking.pid.setPID("x",12.0,12.0,0.1)
+i01.headTracking.pid.setPID("y",12.0,12.0,0.1)
+i01.eyesTracking.pid.invert("y")
 i01.startMouth()
 i01.startMouthControl(leftPort)
 i01.mouthControl.setmouth(73,62)
-a = <get name="from"/>
-sleep(30)
-b = <get name="to"/>
-sleep(30)
-BT()
          </param>
         </mrl>
-      </oob></template>
+      </oob>
+<think><set name="from"><date jformat="mm"/></set><set name="to"><date jformat="mm"/></set></think>
+</template>
 </category>
 </aiml>
-
