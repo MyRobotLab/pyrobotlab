@@ -1,17 +1,14 @@
 import random
 from java.lang import String
 from org.myrobotlab.net import BareBonesBrowserLaunch
+holygrail = Runtime.createAndStart("holygrail", "WebGui")
 elias = Runtime.createAndStart("elias", "ProgramAB")
-elias.startSession("ProgramAB", "default", "elias")
+elias.startSession("ProgramAB", "MastaBlasta", "elias")
 htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
-mouth = Runtime.createAndStart("i01.mouth", "Speech")
-mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Graham&txt=")
+mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
 elias.addTextListener(htmlfilter)
 htmlfilter.addTextListener(mouth)
-holygrail = Runtime.create("holygrail", "WebGUI")
-holygrail.startService()
 sleep(4)
-resp = elias.getResponse("BY YOUR COMMAND")
 
 def BT():
     global c
@@ -21,68 +18,68 @@ def BT():
     if (c == 3):
         x = (random.randint(1, 3))
         if x == 1:
-            i01.mouth.speak("I am here.")
+            mouth.speak("I am here.")
         if x == 2:
-            i01.mouth.speak("Hello, hello.")
+            mouth.speak("Hello, hello.")
         if x == 3:
-            i01.mouth.speak("Hi, I am here.")
+            mouth.speak("Hi, I am here.")
     if (c == 5):
         x = (random.randint(1, 3))
         if x == 1:
-            i01.mouth.speak("I am bored.")
+            mouth.speak("I am bored.")
         if x == 2:
-            i01.mouth.speak("What a boring day.")
+            mouth.speak("What a boring day.")
         if x == 3:
-            i01.mouth.speak("I have nothing to do.")
+            mouth.speak("I have nothing to do.")
     if (c == 7):
         x = (random.randint(1, 3))
         if x == 1:
-            i01.mouth.speak("I am still bored.")
+            mouth.speak("I am still bored.")
         if x == 2:
-            i01.mouth.speak("What a boring boring boring boring day.")
+            mouth.speak("What a boring boring boring boring day.")
         if x == 3:
-            i01.mouth.speak("You can turn me off.")
+            mouth.speak("You can turn me off.")
     if (c == 10):
         x = (random.randint(1, 3))
         if x == 1:
-            i01.mouth.speak("Help! Please turn me off.")
+            mouth.speak("Help! Please turn me off.")
         if x == 2:
-            i01.mouth.speak("Maybe I can go crazy now.")
+            mouth.speak("Maybe I can go crazy now.")
         if x == 3:
-            i01.mouth.speak("meck meck meck meck meck")
+            mouth.speak("meck meck meck meck meck")
     if (c == 13):
         x = (random.randint(1, 3))
         if x == 1:
-            i01.mouth.speak("I will tell myself a joke.")
+            mouth.speak("I will tell myself a joke.")
             sleep(4)
             resp = elias.getResponse("TELL ME A JOKE") 
         if x == 2:
-            i01.mouth.speak("Do you like Star Wars?")
+            mouth.speak("Do you like Star Wars?")
             sleep(4)
             resp = elias.getResponse("DO YOU LIKE STAR WARS")
             sleep(6)
-            i01.mouth.speak("It was worth a try.")
+            mouth.speak("It was worth a try.")
         if x == 3:
-            i01.mouth.speak("Let's talk about the weather.")
+            mouth.speak("Let's talk about the weather.")
             sleep(4)
             resp = elias.getResponse("WEATHER")
     if (c == 16):
         x = (random.randint(1, 3))
         if x == 1:
-            i01.mouth.speak("Maybe I should talk to myself.")
+            mouth.speak("Maybe I should talk to myself.")
         if x == 2:
-            i01.mouth.speak("Can I go to the moon?")
+            mouth.speak("Can I go to the moon?")
         if x == 3:
-            i01.mouth.speak("I want pizza. and a beer. no. 10 beer.")           
+            mouth.speak("I want pizza. and a beer. no. 10 beer.")           
     if (c == 20):
-            i01.mouth.speak("Where is everybody?")
-            i01.headTracking.faceDetect()
-            i01.eyesTracking.faceDetect()
-            sleep(30)
-            i01.headTracking.stopTracking()
-            i01.eyesTracking.stopTracking()
+            mouth.speak("Where is everybody?")
+            #i01.headTracking.faceDetect()
+            #i01.eyesTracking.faceDetect()
+            #sleep(30)
+            #i01.headTracking.stopTracking()
+            #i01.eyesTracking.stopTracking()
     if (c == 25):
-        i01.mouth.speak("I will listen to some music.")
+        mouth.speak("I will listen to some music.")
         sleep(5)
         x = (random.randint(1, 6))
         if x == 1:        
@@ -100,70 +97,70 @@ def BT():
     if (c == -57):
         x = (random.randint(1, 3))
         if x == 1:
-            i01.mouth.speak("I am here.")
+            mouth.speak("I am here.")
         if x == 2:
-            i01.mouth.speak("Hello, hello.")
+            mouth.speak("Hello, hello.")
         if x == 3:
-            i01.mouth.speak("Hi, I am here.")
+            mouth.speak("Hi, I am here.")
     if (c == -55):
         x = (random.randint(1, 3))
         if x == 1:
-            i01.mouth.speak("I am bored.")
+            mouth.speak("I am bored.")
         if x == 2:
-            i01.mouth.speak("What a boring day.")
+            mouth.speak("What a boring day.")
         if x == 3:
-            i01.mouth.speak("I have nothing to do.")
+            mouth.speak("I have nothing to do.")
     if (c == -53):
         x = (random.randint(1, 3))
         if x == 1:
-            i01.mouth.speak("I am still bored.")
+            mouth.speak("I am still bored.")
         if x == 2:
-            i01.mouth.speak("What a boring boring boring boring day.")
+            mouth.speak("What a boring boring boring boring day.")
         if x == 3:
-            i01.mouth.speak("You can turn me off.")
+            mouth.speak("You can turn me off.")
     if (c == -50):
         x = (random.randint(1, 3))
         if x == 1:
-            i01.mouth.speak("Help! Please turn me off.")
+            mouth.speak("Help! Please turn me off.")
         if x == 2:
-            i01.mouth.speak("Maybe I can go crazy now.")
+            mouth.speak("Maybe I can go crazy now.")
         if x == 3:
-            i01.mouth.speak("meck meck meck meck meck")
+            mouth.speak("meck meck meck meck meck")
     if (c == -47):
         x = (random.randint(1, 3))
         if x == 1:
-            i01.mouth.speak("I will tell myself a joke.")
+            mouth.speak("I will tell myself a joke.")
             sleep(4)
             resp = elias.getResponse("TELL ME A JOKE") 
         if x == 2:
-            i01.mouth.speak("Do you like Star Wars?")
+            mouth.speak("Do you like Star Wars?")
             sleep(4)
             resp = elias.getResponse("DO YOU LIKE STAR WARS")
             sleep(6)
-            i01.mouth.speak("It was worth a try.")
+            mouth.speak("It was worth a try.")
         if x == 3:
-            i01.mouth.speak("Let's talk about the weather.")
+            mouth.speak("Let's talk about the weather.")
             sleep(4)
             resp = elias.getResponse("WEATHER")
     if (c == -44):
         x = (random.randint(1, 3))
         if x == 1:
-            i01.mouth.speak("I will talk to myself.")
+            mouth.speak("I will talk to myself.")
             sleep(6)
-            i01.mouth.speak("I will talk to myself.")
+            mouth.speak("I will talk to myself.")
         if x == 2:
-            i01.mouth.speak("Can I go to the moon?")
+            mouth.speak("Can I go to the moon?")
         if x == 3:
-            i01.mouth.speak("I want pizza. and a beer. no. 10 beer.") 
+            mouth.speak("I want pizza. and a beer. no. 10 beer.") 
     if (c == -40):
-       i01.mouth.speak("Where is everybody?")
-       i01.headTracking.faceDetect()
-       i01.eyesTracking.faceDetect()
-       sleep(30)
-       i01.headTracking.stopTracking()
-       i01.eyesTracking.stopTracking()
+       mouth.speak("Where is everybody?")
+       #i01.headTracking.faceDetect()
+       #i01.eyesTracking.faceDetect()
+       #sleep(30)
+       #i01.headTracking.stopTracking()
+       #i01.eyesTracking.stopTracking()
     if (c == -35):    
-        i01.mouth.speak("I will listen to some music.")
+        mouth.speak("I will listen to some music.")
         sleep(5)
         x = (random.randint(1, 6))
         if x == 1:        
