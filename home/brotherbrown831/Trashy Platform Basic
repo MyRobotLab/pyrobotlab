@@ -6,7 +6,7 @@ from time import sleep
 arduino = Runtime.createAndStart("arduino","Arduino")
 joystick = Runtime.createAndStart("joystick","Joystick")
 motorleft = Runtime.start("motorleft","Motor")
-motorleft = Runtime.start("motorright","Motor")
+motorright = Runtime.start("motorright","Motor")
 
 #----------------------Connect Peripherals-----------------------------------
 joystick.setController(0); #PC only - Pi needs new
@@ -21,9 +21,7 @@ arduino.motorAttach("motorleft", 5, 4)
 arduino.motorAttach("motorright", 6, 7) 
 
 #----------------------Define callback function for Joystick-----------
-def onJoystickInput(data):
-  global float(ryValue)
-  
+def onJoystickInput(data):  
   if (data.id == 'A' and float(data.value) == 1.0):
     print "Attatch MotorLeft"
   if (data.id == 'B' and float(data.value) == 1.0):
@@ -31,24 +29,21 @@ def onJoystickInput(data):
   if (data.id == 'ry'):
     ryValue = float(data.value) 
     printRYValue(ryValue)
-#   moveLeftMotor(ryValue)
+    moveLeftMotor(ryValue)
   if (data.id == 'y'):
-    yValue = float(data.value) 
+    yValue = float(data.value)*-1 
     printYValue(yValue)
-#   moverightMotor(yValue)
+    moveRightMotor(yValue)
     
 #-----------------------Main Loop----------------------------------------
 def printRYValue(ryValue):
   print "the value of ry is" + str(ryValue)
 
-def printValue(yValue):
+def printYValue(yValue):
   print "the value of y is" + str(yValue)  
 
-
-'''
 def moveLeftMotor(ryValue):
   motorleft.move(ryValue)
 
-def moveRighttMotor(yValue):
+def moveRightMotor(yValue):
   motorright.move(yValue)
-'''
