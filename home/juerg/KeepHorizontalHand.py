@@ -3,14 +3,16 @@ hand = i01.startRightHand("COM15")
 arduino = Runtime.getService("i01.right")
 
 keepHorizontalOutPin = 13
-boolean keepHorizontal = False
+keepHorizontal = False
 
 def keepHorizontalStart():
+  global keepHorizontal
   arduino.digitalWrite(keepHorizontalOutPin, 1)
-  keepHorizontal = True;
+  keepHorizontal = True
   i01.rightHand.wrist.detach()
   
 def keepHorizontalStop():
+  global keepHorizontal
   arduino.digitalWrite(keepHorizontalOutPin, 0)
-  keepHorizontal = False;
+  keepHorizontal = False
   i01.rightHand.wrist.attach()
