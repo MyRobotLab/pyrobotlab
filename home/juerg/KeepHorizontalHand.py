@@ -16,3 +16,5 @@ def keepHorizontalStop():
   arduino.digitalWrite(keepHorizontalOutPin, 0)
   keepHorizontal = False
   i01.rightHand.wrist.attach()
+  
+// then you can just call the keepHorizontalStart() and keepHorizontalStop() in python
