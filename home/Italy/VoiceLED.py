@@ -6,7 +6,7 @@ arduino.connect("COM3")
 
 speech.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Vittorio&txt=")
 
-specch.speak("italiano")
+speech.speak("italiano")
 
 
 def onText(data):
