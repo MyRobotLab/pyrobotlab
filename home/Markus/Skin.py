@@ -14,13 +14,18 @@ speech.speak("hello")
  
 serial1.connect('COM8')
 serial2.connect('COM6')
- 
-python.subscribe('serial1','publishRX')
-python.subscribe('serial2','publishRX')
+
+# this subscribe is easy shorthand method
+# python.subscribe('serial1','publishRX')
+# python.subscribe('serial2','publishRX')
+# this subscribe with 4 parameters has all details - subscribe to and callback info
+# we subscribe to one service's topic to one method and the other to a different method
+python.subscribe('serial1','publishRX', python.getName(), 'serial1RX'); 
+python.subscribe('serial2','publishRX', python.getName(), 'serial2RX'); 
  
 #  i want this to be the data from serial1
  
-def publishRX(data):
+def serial1RX(data):
     print(data)
     num = data
     #num = chr(data)
@@ -52,7 +57,7 @@ def publishRX(data):
  
 #  and this to be the data from serial2
  
-def publishRX(data):
+def serial2RX(data):
     print(data)
     num = data
     #num = chr(data)
