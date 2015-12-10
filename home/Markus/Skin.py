@@ -1,5 +1,6 @@
 from time import sleep
 from org.myrobotlab.service import Speech
+from org.myrobotlab.framework import MRLListener
  
  
 # Name it "speech".
@@ -20,8 +21,16 @@ serial2.connect('COM6')
 # python.subscribe('serial2','publishRX')
 # this subscribe with 4 parameters has all details - subscribe to and callback info
 # we subscribe to one service's topic to one method and the other to a different method
-python.subscribe('serial1','publishRX', python.getName(), 'serial1RX'); 
-python.subscribe('serial2','publishRX', python.getName(), 'serial2RX'); 
+
+# this is how its done in latest mrl - nice no ?
+# python.subscribe('serial1','publishRX', python.getName(), 'serial1RX')
+# python.subscribe('serial2','publishRX', python.getName(), 'serial2RX')
+
+# this is how its done in 119
+listener1 = MRLListener('publishRX', 'serial1', 'serial1RX', None)
+python.addListener(listener1)
+listener2 = MRLListener('publishRX', 'serial2', 'serial2RX', None)
+python.addListener(listener2)
  
 #  i want this to be the data from serial1
  
