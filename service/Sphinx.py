@@ -9,10 +9,14 @@ mouth = Runtime.createAndStart("mouth","Speech")
  
 # start listening for the words we are interested in
 ear.startListening("hello world|happy monkey|go forward|stop")
- 
+
+ear.addComfirmations("yes","correct","yeah","ya")
+ear.addNegations("no","wrong","nope","nah")
+
+ear.addCommand("hello world", "python", "helloworld")
  
 # set up a message route from the ear --to--> python method "heard"
-ear.addListener("recognized", python.name, "heard", String().getClass()); 
+ear.addListener("recognized", python.name, "heard"); 
  
 # this method is invoked when something is 
 # recognized by the ear - in this case we
@@ -25,3 +29,6 @@ def heard(phrase):
 # recognition when speaking - default behavior
 # when attaching an ear to a mouth :)
 ear.attach(mouth)
+
+def helloworld(phrase):
+    print "This is hello world in python."
