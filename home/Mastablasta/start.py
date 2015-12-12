@@ -2,13 +2,14 @@ import random
 from java.lang import String
 from org.myrobotlab.net import BareBonesBrowserLaunch
 holygrail = Runtime.createAndStart("holygrail", "WebGui")
+wksr = Runtime.createAndStart("webkitspeechrecognition", "WebkitSpeechRecognition")
 elias = Runtime.createAndStart("elias", "ProgramAB")
 elias.startSession("ProgramAB", "MastaBlasta", "elias")
 htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
+wksr.addTextListener(elias)
 elias.addTextListener(htmlfilter)
 htmlfilter.addTextListener(mouth)
-sleep(4)
 
 def BT():
     global c
@@ -73,11 +74,11 @@ def BT():
             mouth.speak("I want pizza. and a beer. no. 10 beer.")           
     if (c == 20):
             mouth.speak("Where is everybody?")
-            #i01.headTracking.faceDetect()
-            #i01.eyesTracking.faceDetect()
-            #sleep(30)
-            #i01.headTracking.stopTracking()
-            #i01.eyesTracking.stopTracking()
+            i01.headTracking.faceDetect()
+            i01.eyesTracking.faceDetect()
+            sleep(30)
+            i01.headTracking.stopTracking()
+            i01.eyesTracking.stopTracking()
     if (c == 25):
         mouth.speak("I will listen to some music.")
         sleep(5)
@@ -91,7 +92,7 @@ def BT():
         if x == 4:        
            BareBonesBrowserLaunch.openURL("https://www.youtube.com/watch?v=DZiJQL9OLqI")
         if x == 5:        
-           BareBonesBrowserLaunch.openURL("https://www.youtube.com/watch?v=fpWNimba344")  
+           BareBonesBrowserLaunch.openURL("https://www.youtube.com/watch?v=hD4KMp22jBg")  
         if x == 6:        
            BareBonesBrowserLaunch.openURL("https://www.youtube.com/watch?v=tFXYuw96d0c")   
     if (c == -57):
@@ -183,3 +184,28 @@ def BT():
 
 def PO():
     i01.powerUp()
+
+def detachall():
+    i01.detach()
+
+def attachall():
+    i01.attach()
+
+def detachhead():
+    i01.head.detach()
+
+def attachhead():
+    i01.head.attach()
+
+def detachrighthand():
+    i01.rightHand.detach()
+
+def attachrighthand():
+    i01.rightHand.attach()
+
+def detachrightarm():
+    i01.rightArm.detach()
+
+def attachrightarm():
+    i01.rightArm.attach()
+
