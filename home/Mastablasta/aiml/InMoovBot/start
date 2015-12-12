@@ -2,11 +2,11 @@
 <aiml>
 <!-- File: start.aiml -->
 <!-- Author: Mastablasta -->
-<!-- Last modified: March 10, 2015 -->
+<!-- Last modified: Dezember 09, 2015 -->
 <!--  -->
 <!-- This AIML file is part of the ELIAS unknown chat bot knowledge base. -->
 <!--  -->
-<!-- The ELIAS brain is Copyright &copy; 2015 by MBDaR. -->
+<!-- The ELIAS brain is Copyright &copy; 2015 by M.B.D.R.. -->
 <!--  -->
 <!-- The ELIAS brain is released under the terms of the GNU Lesser General -->
 <!-- Public License, as published by the Free Software Foundation. -->
@@ -18,19 +18,10 @@
 <!--  -->
 
 <category><pattern>BY YOUR COMMAND</pattern>
-    <template>I am all powered up. Ready to serve.
-      <oob>
-        <mrl>
-          <service>python</service>
-          <method>exec</method>
-          <param>
-a = <get name="from"/>
-sleep(30)
-b = <get name="to"/>
-sleep(30)
-BT()
-leftPort = "COM8"
-rightPort = "COM4"
+<template>I am all powered up. Ready to serve.
+<oob><mrl><service>python</service><method>exec</method><param>
+leftPort = "COM10"
+rightPort = "COM9"
 i01 = Runtime.create("i01", "InMoov")
 rh = Runtime.create("i01.rightHand","InMoovHand")
 i01.setMute(True)
@@ -102,13 +93,27 @@ i01.eyesTracking.pid.setPID("y",12.0,12.0,0.1)
 i01.headTracking.pid.setPID("x",12.0,12.0,0.1)
 i01.headTracking.pid.setPID("y",12.0,12.0,0.1)
 i01.eyesTracking.pid.invert("y")
-i01.startMouth()
-i01.startMouthControl(leftPort)
-i01.mouthControl.setmouth(73,62)
-         </param>
-        </mrl>
-      </oob>
-<think><set name="from"><date jformat="mm"/></set><set name="to"><date jformat="mm"/></set></think>
-</template>
+#i01.startMouth()
+#i01.startMouthControl(leftPort)
+#i01.mouthControl.setmouth(73,62)
+<think><set name="from"><date format="%M" jformat="m"/></set><set name="to"><date format="%M" jformat="m"/></set></think>
+a = <get name="from"/>
+sleep(30)
+b = <get name="to"/>
+sleep(30)
+BT()
+</param></mrl></oob></template>
 </category>
+
+<category>
+<pattern>WAKE UP</pattern>
+<template><srai>BY YOUR COMMAND</srai></template>
+</category>
+
+<category>
+<pattern>POWER UP</pattern>
+<template><srai>BY YOUR COMMAND</srai></template>
+</category>
+
+
 </aiml>
