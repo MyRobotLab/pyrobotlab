@@ -1,39 +1,39 @@
 from time import sleep
 from org.myrobotlab.service import Speech
 from org.myrobotlab.framework import MRLListener
- 
- 
+  
+  
+# this subscribe is easy shorthand method
 # Name it "speech".
 speech = Runtime.create("speech","Speech")
 speech.startService()
+  
+speech.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Laura&txt=") 
+  
 serial1 = Runtime.start('serial1','Serial')
 serial2 = Runtime.start('serial2','Serial')
- 
-speech.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Laura&txt=") 
- 
 speech.speak("hello")
- 
+  
 serial1.connect('COM8')
 serial2.connect('COM6')
-
-# this subscribe is easy shorthand method
+ 
 # python.subscribe('serial1','publishRX')
 # python.subscribe('serial2','publishRX')
 # this subscribe with 4 parameters has all details - subscribe to and callback info
 # we subscribe to one service's topic to one method and the other to a different method
-
+ 
 # this is how its done in latest mrl - nice no ?
 # python.subscribe('serial1','publishRX', python.getName(), 'serial1RX')
 # python.subscribe('serial2','publishRX', python.getName(), 'serial2RX')
-
+ 
 # this is how its done in 119
-listener1 = MRLListener('publishRX', 'serial1', 'serial1RX', None)
-python.addListener(listener1)
-listener2 = MRLListener('publishRX', 'serial2', 'serial2RX', None)
-python.addListener(listener2)
- 
+listener1 = MRLListener('publishRX', 'python', 'serial1RX', None)
+serial1.addListener(listener1)
+listener2 = MRLListener('publishRX', 'python', 'serial2RX', None)
+serial2.addListener(listener2)
+  
 #  i want this to be the data from serial1
- 
+  
 def serial1RX(data):
     print(data)
     num = data
@@ -63,9 +63,9 @@ def serial1RX(data):
        speech.speak("11")
     if (num == 12):
        speech.speak("12")
- 
+  
 #  and this to be the data from serial2
- 
+  
 def serial2RX(data):
     print(data)
     num = data
