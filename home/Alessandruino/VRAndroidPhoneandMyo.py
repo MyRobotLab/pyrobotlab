@@ -4,6 +4,7 @@ sleep(2)
 arduino.connect("/dev/ttyACM0")
 
 remote = Runtime.start("remote","RemoteAdapter")
+myo = Runtime.start("myo","MyoThalmic")
 neck = Runtime.createAndStart("neck","Servo")
 rothead = Runtime.createAndStart("rothead", "Servo")
 
@@ -27,7 +28,7 @@ def onOculusData(data):
 
 def onMyoData(myodata):
   if (myodata.currentPose == WAVE_OUT):
-    
+     arduino2.analogWrite(60,11)
 
 oculus.addOculusDataListener(python)
 remote.startListening()
