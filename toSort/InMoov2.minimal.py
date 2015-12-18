@@ -5,14 +5,14 @@
 # e.g. you say -> open hand, InMoov will ask -> "Did you say open hand?", you will need to
 # respond with a confirmation ("yes","correct","yeah","ya")
  
-rightPort = "COM8"
+rightPort = "COM31"
  
 i01 = Runtime.createAndStart("i01", "InMoov")
 # starting parts
 i01.startEar()
 i01.startMouth()
 #to tweak the default voice
-i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
+# i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
 ##############
 i01.startRightHand(rightPort)
 # tweaking defaults settings of right hand
@@ -30,7 +30,9 @@ i01.startRightHand(rightPort)
  
 # verbal commands
 ear = i01.ear
- 
+mouth = i01.mouth
+ear.attach(mouth)
+
 ear.addCommand("attach right hand", "i01.rightHand", "attach")
 ear.addCommand("disconnect right hand", "i01.rightHand", "detach")
 ear.addCommand("rest", i01.getName(), "rest")
