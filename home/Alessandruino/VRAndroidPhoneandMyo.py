@@ -1,3 +1,5 @@
+from org.myrobotlab.math import Mapper
+
 arduino = Runtime.createAndStart("arduino","Arduino")
 arduino.serial.refresh()
 sleep(2)
