@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Short example for bot memory. It will save the topic.-->
+<!-- Use SAVE AIML at the ProgramAB GUI!-->
+<!-- For the python script please use: MEMO() = def MEMO(): resp = alice2.getResponse("MEMOTRIGGER")-->
+
+<category><pattern># STAR WARS</pattern>
+<template>I like Star Wars, my favorite character is R2D2.
+<think>
+<set name="memo1">STARWARS</set>
+<set name="topic">STARWARS</set>
+<set name="timeset"><date format="%B %d" jformat="MMMMMMMMM dd"/></set></think>
+</template>
+</category>
+
+<category><pattern># YESTERDAY</pattern>
+<template><think>
+<set name="timeset2"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<learn>
+<category>
+<pattern>MEMOTRIGGER</pattern>
+<template><think>
+<set name="time">
+<interval><jformat>MMMMMMMMM dd</jformat>
+<style>days</style>
+<from><get name="timeset"/></from>
+<to><get name="timeset2"/></to>
+</interval></set></think>
+<condition name="memo1">
+<li value="STARWARS">
+<condition name="time">
+    <li value="1">We talked about Star Wars</li>
+    <li>Nothing important, otherwise I would remember.</li>
+    </condition></li></condition>
+</template>
+</category>
+</learn></think>
+<oob><mrl><service>python</service><method>exec</method><param>
+MEMO()
+</param></mrl></oob>
+</template>
+</category>
+
+</aiml>
