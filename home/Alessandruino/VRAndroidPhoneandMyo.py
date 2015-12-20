@@ -1,7 +1,7 @@
 arduino = Runtime.createAndStart("arduino","Arduino")
 arduino.serial.refresh()
 sleep(2)
-arduino.connect("/dev/ttyACM0")
+arduino.connect("/dev/ttyUSB0")
 
 i01 = Runtime.start("i01","InMoov")
 i01.startHead("/dev/ttyACM0")
@@ -10,8 +10,8 @@ remote = Runtime.start("remote","RemoteAdapter")
 myo = Runtime.start("myo","MyoThalmic")
 mL = Runtime.start("mL","Motor")
 mR = Runtime.start("mR","Motor")
-mL.setType2Pwm(5,10)
-mR.setType2Pwm(6,11)
+mR.setType2Pwm(6,5)
+mL.setType2Pwm(10,11)
 mL.attach(arduino);
 mR.attach(arduino);
 
@@ -28,7 +28,11 @@ def onOculusData(data):
 
 def onMyoData(myodata):
   if (myodata.currentPose == WAVE_OUT):
-     m1.move(0.2)
+     mL.move(0.3)
+     mR.move(0.3)
+  elif :
+     mL.move(0.0)
+     mR.move(0.0)
 
 oculus.addOculusDataListener(python)
 remote.startListening()
