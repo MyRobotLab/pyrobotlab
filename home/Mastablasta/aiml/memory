@@ -4,6 +4,7 @@
 <!-- Short example for bot memory. It will save the topic.-->
 <!-- Use SAVE AIML at the ProgramAB GUI!-->
 <!-- For the python script please use: MEMO() = def MEMO(): resp = alice2.getResponse("MEMOTRIGGER")-->
+<!-- Enjoy! MastaBlasta-->
 
 <category><pattern># STAR WARS</pattern>
 <template>I like Star Wars, my favorite character is R2D2.
