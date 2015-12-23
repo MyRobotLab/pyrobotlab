@@ -37,4 +37,6 @@ def onMyoData(myodata):
      mR.move(0.0)
 
 oculus.addOculusDataListener(python)
+myo.addMyoDataListener(python)
 remote.startListening()
+
