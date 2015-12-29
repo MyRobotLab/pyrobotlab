@@ -1,286 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<aiml version="2.0">
+import random
+from java.lang import String
+from org.myrobotlab.net import BareBonesBrowserLaunch
+holygrail = Runtime.createAndStart("holygrail", "WebGui")
+wksr = Runtime.createAndStart("webkitspeechrecognition", "WebkitSpeechRecognition")
+alice2 = Runtime.createAndStart("alice2", "ProgramAB")
+alice2.startSession("C:/mrl2/myrobotlab/ProgramAB", "default", "alice2")
+htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
+mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
+wksr.addTextListener(alice2)
+alice2.addTextListener(htmlfilter)
+htmlfilter.addTextListener(mouth)
 
-<category><pattern>RETRIGGER1</pattern>
-<template>
-<think>
-<set name="memo1">STARWARS</set>
-<set name="memo1+">STARWARS</set>
-<set name="think">ok</set>
-<set name="timeset1"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
-</think>
-</template>
-</category>
+meco1 = 0
+meco2 = 0
+meco3 = 0
 
-<category><pattern>RETRIGGER2</pattern>
-<template>
-<think>
-<set name="memo2">ANIMALS</set>
-<set name="memo2+">ANIMALS</set>
-<set name="think">ok</set>
-<set name="timeset2"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
-</think>
-</template>
-</category>
+def COUNTER1():
+    global meco1
+    meco1 = meco1 + 1
+    if (meco1 == 4):
+       resp = elias.getResponse("RETRIGGER1")
 
-<category><pattern>RETRIGGER3</pattern>
-<template>
-<think>
-<set name="memo3">SPORTS</set>
-<set name="memo3+">SPORTS</set>
-<set name="think">ok</set>
-<set name="timeset3"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
-</think>
-</template>
-</category>
+def COUNTER2():
+    global meco2
+    meco2 = meco2 + 1
+    if (meco2 == 4):
+       resp = elias.getResponse("RETRIGGER2")
 
-<category><pattern># YESTERDAY</pattern>
-<template><think>
-<set name="timeget1"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
-<set name="timeget2"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
-<set name="timeget3"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
-<learn>
-<category>
-<pattern>MEMOTRIGGER</pattern>
-<template><think>
-<set name="time1">
-<interval><jformat>MMMMMMMMM dd</jformat>
-<style>days</style>
-<from><get name="timeset1"/></from>
-<to><get name="timeget1"/></to>
-</interval></set>
-<set name="time2">
-<interval><jformat>MMMMMMMMM dd</jformat>
-<style>days</style>
-<from><get name="timeset2"/></from>
-<to><get name="timeget2"/></to>
-</interval></set>
-<set name="time3">
-<interval><jformat>MMMMMMMMM dd</jformat>
-<style>days</style>
-<from><get name="timeset3"/></from>
-<to><get name="timeget3"/></to>
-</interval></set></think>
-<condition name="think">
-<li value="ok">
-<condition name="time1">
-<li value="1">
-<condition name="time2">
-<li value="1">
-<condition name="time3">
-<li value="1">
-<condition name="memo1">
-<li value="STARWARS">
-<condition name="memo2">
-<li value="ANIMALS">
-<condition name="memo3">
-<li value="SPORTS">We talked about Star Wars, animals and sports.
-<think><set name="memo1+">NULL</set>
-<set name="memo2+">NULL</set>
-<set name="memo3+">NULL</set></think>
-</li></condition></li></condition></li></condition></li></condition></li></condition></li></condition>
-<condition name="time1">
-<li value="1">
-<condition name="time2">
-<li value="1">
-<condition name="memo1+">
-<li value="STARWARS">
-<condition name="memo2+">
-<li value="ANIMALS">We talked about Star Wars and animals.
-<think><set name="memo1+">NULL</set>
-<set name="memo2+">NULL</set>
-<set name="memo3+">NULL</set></think></li></condition></li></condition></li></condition></li></condition>
-<condition name="time2">
-<li value="1">
-<condition name="time3">
-<li value="1">
-<condition name="memo2+">
-<li value="ANIMALS">
-<condition name="memo3+">
-<li value="SPORTS">We talked about animals and sports.
-<think><set name="memo2+">NULL</set>
-<set name="memo3+">NULL</set></think></li></condition></li></condition></li></condition></li></condition>
-<condition name="time1">
-<li value="1">
-<condition name="time3">
-<li value="1">
-<condition name="memo1+">
-<li value="STARWARS">
-<condition name="memo3+">
-<li value="SPORTS">We talked about Star Wars and sports.
-<think><set name="memo1+">NULL</set>
-<set name="memo3+">NULL</set></think></li></condition></li></condition></li></condition></li></condition>
-<condition name="time1">
-<li value="1">
-<condition name="memo1+">
-<li value="STARWARS">We talked about Star Wars.</li></condition></li></condition>
-<condition name="time2">
-<li value="1">
-<condition name="memo2+">
-<li value="ANIMALS">We talked about animals.</li></condition></li></condition>
-<condition name="time3">
-<li value="1">
-<condition name="memo3+">
-<li value="SPORTS">We talked about sports.</li></condition></li></condition></li></condition>
-</template></category>
-</learn></think>
-<oob><mrl><service>python</service><method>exec</method><param>
-GETMEMO()
-</param></mrl></oob>
-</template></category>
+def COUNTER3():
+    global meco3
+    meco3 = meco3 + 1
+    if (meco3 == 4):
+       resp = elias.getResponse("RETRIGGER3")
 
-<category><pattern># 1 WEEK AGO</pattern>
-<template><think>
-<set name="timeget1"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
-<set name="timeget2"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
-<set name="timeget3"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
-<learn>
-<category>
-<pattern>MEMOTRIGGER</pattern>
-<template><think>
-<set name="time1">
-<interval><jformat>MMMMMMMMM dd</jformat>
-<style>days</style>
-<from><get name="timeset1"/></from>
-<to><get name="timeget1"/></to>
-</interval></set>
-<set name="time2">
-<interval><jformat>MMMMMMMMM dd</jformat>
-<style>days</style>
-<from><get name="timeset2"/></from>
-<to><get name="timeget2"/></to>
-</interval></set>
-<set name="time3">
-<interval><jformat>MMMMMMMMM dd</jformat>
-<style>days</style>
-<from><get name="timeset3"/></from>
-<to><get name="timeget3"/></to>
-</interval></set>
-</think>
-<condition name="think">
-<li value="ok">
-<condition name="time1">
-<li value="7">
-<condition name="time2">
-<li value="7">
-<condition name="time3">
-<li value="7">
-<condition name="memo1">
-<li value="STARWARS">
-<condition name="memo2">
-<li value="ANIMALS">
-<condition name="memo3">
-<li value="SPORTS">We talked about Star Wars, animals and sports.
-<think>
-<set name="memo1+">NULL</set>
-<set name="memo2+">NULL</set>
-<set name="memo3+">NULL</set>
-</think>
-</li>
-</condition>
-</li>
-</condition>
-</li>
-</condition>
-</li>
-</condition>
-</li>
-</condition>
-</li>
-</condition>
-<condition name="time1">
-<li value="7">
-<condition name="time2">
-<li value="7">
-<condition name="memo1+">
-<li value="STARWARS">
-<condition name="memo2+">
-<li value="ANIMALS">We talked about Star Wars and animals.
-<think>
-<set name="memo1+">NULL</set>
-<set name="memo2+">NULL</set>
-</think>
-</li>
-</condition>
-</li>
-</condition>
-</li>
-</condition>
-</li>
-</condition>
-<condition name="time2">
-<li value="7">
-<condition name="time3">
-<li value="7">
-<condition name="memo2+">
-<li value="ANIMALS">
-<condition name="memo3+">
-<li value="SPORTS">We talked about animals and sports.
-<think>
-<set name="memo2+">NULL</set>
-<set name="memo3+">NULL</set>
-</think>
-</li>
-</condition>
-</li>
-</condition>
-</li>
-</condition>
-</li>
-</condition>
-<condition name="time1">
-<li value="7">
-<condition name="time3">
-<li value="7">
-<condition name="memo1+">
-<li value="STARWARS">
-<condition name="memo3+">
-<li value="SPORTS">We talked about Star Wars and sports.
-<think>
-<set name="memo1+">NULL</set>
-<set name="memo3+">NULL</set>
-</think>
-</li>
-</condition>
-</li>
-</condition>
-</li>
-</condition>
-</li>
-</condition>
-<condition name="time1">
-<li value="7">
-<condition name="memo1+">
-<li value="STARWARS">We talked about Star Wars.
-</li>
-</condition>
-</li>
-</condition>
-<condition name="time2">
-<li value="7">
-<condition name="memo2+">
-<li value="ANIMALS">We talked about animals.
-</li>
-</condition>
-</li>
-</condition>
-<condition name="time3">
-<li value="7">
-<condition name="memo3+">
-<li value="SPORTS">We talked about sports.
-</li>
-</condition>
-</li>
-</condition>
-</li>
-</condition>
-</template>
-</category>
-</learn></think>
-<oob><mrl><service>python</service><method>exec</method><param>
-GETMEMO()
-</param></mrl></oob>
-</template>
-</category>
-
-</aiml>
+def GETMEMO():
+    resp = elias.getResponse("MEMOTRIGGER")
