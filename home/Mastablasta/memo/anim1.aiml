@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category><pattern># ANIMALS</pattern>
+<template>I like animals, I want to have a dog.
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER2()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern>WHY DO YOU WANT A DOG</pattern>
+<template><random>
+<li>Because a dog is a good friend.</li>
+<li>I can play with a dog..</li>
+</random>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER2()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern># CATS</pattern>
+<template><random>
+<li>I prefer a dog.</li>
+<li>I don't like cats.</li>
+</random>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER2()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern>DO YOU WANT A MONKEY</pattern>
+<template><random>
+<li>Monkeys are funny.</li>
+<li>Can I have a chimpanse? I will name him Caesar.</li>
+</random>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER2()
+</param></mrl></oob>
+</template>
+</category>
+
+</aiml>
