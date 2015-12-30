@@ -19,19 +19,19 @@ def COUNTER1():
     global meco1
     meco1 = meco1 + 1
     if (meco1 == 4):
-       resp = elias.getResponse("RETRIGGER1")
+       resp = alice2.getResponse("RETRIGGER1")
 
 def COUNTER2():
     global meco2
     meco2 = meco2 + 1
     if (meco2 == 4):
-       resp = elias.getResponse("RETRIGGER2")
+       resp = alice2.getResponse("RETRIGGER2")
 
 def COUNTER3():
     global meco3
     meco3 = meco3 + 1
     if (meco3 == 4):
-       resp = elias.getResponse("RETRIGGER3")
+       resp = alice2.getResponse("RETRIGGER3")
 
 def GETMEMO():
-    resp = elias.getResponse("MEMOTRIGGER")
+    resp = alice2.getResponse("MEMOTRIGGER")
