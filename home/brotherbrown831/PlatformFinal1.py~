@@ -29,8 +29,8 @@ joystick.startPolling()
 arduino.connect("/dev/ttyACM0");
 
 # attach servos to Arduino
-headturn.attach(arduino.getName(), 11)
-headtilt.attach(arduino.getName(), 10)
+headturn.attach(arduino.getName(), 10)
+headtilt.attach(arduino.getName(), 11)
 arduino.motorAttach("motorleft", 5, 4) 
 arduino.motorAttach("motorright", 6, 7) 
 
@@ -38,16 +38,16 @@ arduino.motorAttach("motorright", 6, 7)
 headturn.detach()
 headtilt.detach()
 
-#------------------------DEFINE STATICVALUES--------------------------
+#------------------------DEFINE STATIC VALUES-------------------------------
 '''
 headturn_INIT = 90
 headtilt_INIT = 90
 
-headturn_MIN = 10
+headturn_MIN = 30
 headtilt_MIN = 30
 
-headturn_MAX = 170
-headtilt_MAX = 130
+headturn_MAX = 150
+headtilt_MAX = 150
 '''
 
 #----------------------Define callback function for Joystick-----------
