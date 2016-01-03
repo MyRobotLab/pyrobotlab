@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<category><pattern>WHAT IS THE TOPIC</pattern>
+<template>The topic is <get name="topic"/></template>
+</category>
+<category><pattern>BOOT UP MODE</pattern>
+<template>Entering into the boot up topic.
+      <think>
+        <set name="topic">BOOTUP</set>
+      </think></template>
+</category>
+<category><pattern>GESTURES</pattern>
+<template>Entering into the gestures topic.
+      <think>
+        <set name="topic">GESTURES</set>
+      </think></template>
+</category>
+<category><pattern>HELLO</pattern>
+<template><random>
+        <li>How are you today?</li>
+        <li>Hi</li>
+        <li>Greetings</li>
+        <li>What's up?</li>
+      </random>
+      <oob>
+        <mrl>
+          <service>i01</service>
+          <method>hello</method>
+        </mrl>
+      </oob></template>
+</category>
+<category><pattern>DETACH ALL</pattern>
+<template>Detach All
+      <oob>
+        <mrl>
+          <service>i01</service>
+          <method>detach</method>
+        </mrl>
+      </oob></template>
+</category>
+<category><pattern>ATTACH ALL</pattern>
+<template>Attaching all
+      <oob>
+        <mrl>
+          <service>i01</service>
+          <method>attach</method>
+        </mrl>
+      </oob></template>
+</category>
+
+<category>
+  <pattern>ATTACH JAW WITH TAG</pattern>
+  <template>Attaching all
+    <oob>
+      <mrl>
+        <service>i01</service>
+        <method>startMouthControl</method>
+        <param>COM19</param>
+      </mrl>
+    </oob>
+  </template>
+</category>
+
+<category>
+  <pattern>ATTACH JAW WITH PYTHON</pattern>
+  <template>Attaching all
+    <oob>
+      <mrl>
+        <service>python</service>
+        <method>exec</method>
+        <param>
+# cut &amp;amp; paste the python code here that you want to run
+i01.startMouthControl("COM19")
+        </param>
+      </mrl>
+    </oob>
+  </template>
+</category>
+
+</aiml>

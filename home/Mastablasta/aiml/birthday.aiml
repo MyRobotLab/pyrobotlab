@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category><pattern>ANYTHING SPECIAL TODAY</pattern>
+<template><think>
+<set var="days">
+<interval>
+<jformat>MMMMMMMMM dd</jformat>
+<style>days</style>
+<from>November 28</from>
+<to><date jformat="MMMMMMMMM dd"/></to>
+</interval>
+</set>
+</think>
+<think><get var="days"/></think>
+<condition>
+<li value="0" var="days">Happy birthday Stupid!</li>
+</condition>
+<think>
+<set var="days">
+<interval>
+<jformat>MMMMMMMMM dd</jformat>
+<style>days</style>
+<from>February 01</from>
+<to><date jformat="MMMMMMMMM dd"/></to>
+</interval>
+</set>
+</think>
+<think><get var="days"/></think>
+<condition>
+<li value="0" var="days">Happy birthday wife!</li>
+</condition>
+<think>
+<set var="days">
+<interval>
+<jformat>MMMMMMMMM dd</jformat>
+<style>days</style>
+<from>February 01</from>
+<to><date jformat="MMMMMMMMM dd"/></to>
+</interval>
+</set>
+</think>
+<think><get var="days"/></think>
+<condition>
+<li value="0" var="days">Happy birthday brother!</li>
+</condition>
+<think>
+<set var="days">
+<interval>
+<jformat>MMMMMMMMM dd</jformat>
+<style>days</style>
+<from>December 03</from>
+<to><date jformat="MMMMMMMMM dd"/></to>
+</interval>
+</set>
+</think>
+<think><get var="days"/></think>
+<condition>
+<li value="0" var="days">Happy birthday universe!</li>
+</condition></template>
+</category>
+
+</aiml>

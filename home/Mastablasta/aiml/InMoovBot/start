@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!-- File: start.aiml -->
+<!-- Author: Mastablasta -->
+<!-- Last modified: Dezember 09, 2015 -->
+<!--  -->
+<!-- This AIML file is part of the ELIAS unknown chat bot knowledge base. -->
+<!--  -->
+<!-- The ELIAS brain is Copyright &copy; 2015 by M.B.D.R.. -->
+<!--  -->
+<!-- The ELIAS brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see http://www.alicebot.org -->
+<!--  -->
+
+<category><pattern>BY YOUR COMMAND</pattern>
+<template>I am all powered up. Ready to serve.
+<oob><mrl><service>python</service><method>exec</method><param>
+leftPort = "COM10"
+rightPort = "COM9"
+i01 = Runtime.create("i01", "InMoov")
+rh = Runtime.create("i01.rightHand","InMoovHand")
+i01.setMute(True)
+rh.thumb.setRest(30)
+rh.index.setRest(30)
+rh.majeure.setRest(40)
+rh.ringFinger.setRest(40)
+rh.pinky.setRest(20)
+rh.wrist.setRest(90)
+rh.thumb.setMinMax(0,160)
+rh.index.setMinMax(10,160)
+rh.majeure.setMinMax(40,170)
+rh.ringFinger.setMinMax(30,150)
+rh.pinky.setMinMax(0,160)
+rh.wrist.setMinMax(0,180)
+rh.thumb.map(0,180,0,160)
+rh.index.map(0,180,10,160)
+rh.majeure.map(0,180,40,170)
+rh.ringFinger.map(0,180,30,150)
+rh.pinky.map(0,180,0,160)
+rh.wrist.map(0,180,0,180)
+i01.startRightHand(rightPort)
+la = Runtime.create("i01.leftArm","InMoovArm")
+la.bicep.setRest(0)
+la.rotate.setRest(105)
+la.shoulder.setRest(95)
+la.omoplate.setRest(0)
+la.bicep.setMinMax(0,120)
+la.rotate.setMinMax(40,168)
+la.shoulder.setMinMax(0,180)
+la.omoplate.setMinMax(99,170)
+i01.startLeftArm(leftPort)
+ra = Runtime.create("i01.rightArm","InMoovArm") 
+ra.bicep.setMinMax(0,120) 
+ra.rotate.setMinMax(65,150) 
+ra.shoulder.setMinMax(20,160) 
+ra.omoplate.setMinMax(0,120)
+ra.bicep.setRest(0)
+ra.rotate.setRest(105)
+ra.shoulder.setRest(95)
+ra.omoplate.setRest(0)
+ra.bicep.map(0,180,0,70)
+ra.rotate.map(0,180,40,168)
+ra.shoulder.map(0,180,20,160)
+ra.omoplate.map(0,180,0,100)
+i01.startRightArm(rightPort)
+hd = Runtime.create("i01.head","InMoovHead")
+hd.neck.setRest(90)
+hd.rothead.setRest(90)
+hd.jaw.setRest(62)
+hd.eyeY.setRest(90)
+hd.eyeX.setRest(115)
+hd.eyeY.setMinMax(80,100)
+hd.eyeY.map(0,180,80,100)
+hd.eyeX.setMinMax(100,130)
+hd.eyeX.map(0,180,100,130)
+hd.neck.setMinMax(0,180)
+hd.rothead.setMinMax(0,180)
+hd.jaw.setMinMax(73,62)
+i01.startHead(leftPort)
+torso = i01.startTorso(leftPort)
+torso.topStom.setMinMax(60,120)
+torso.topStom.setRest(94)
+opencv = i01.startOpenCV()
+i01.startEyesTracking(leftPort)
+i01.startHeadTracking(leftPort)
+i01.eyesTracking.pid.setPID("x",12.0,12.0,0.1)
+i01.eyesTracking.pid.setPID("y",12.0,12.0,0.1)
+i01.headTracking.pid.setPID("x",12.0,12.0,0.1)
+i01.headTracking.pid.setPID("y",12.0,12.0,0.1)
+i01.eyesTracking.pid.invert("y")
+#i01.startMouth()
+#i01.startMouthControl(leftPort)
+#i01.mouthControl.setmouth(73,62)
+<think><set name="from"><date format="%M" jformat="m"/></set><set name="to"><date format="%M" jformat="m"/></set></think>
+a = <get name="from"/>
+sleep(30)
+b = <get name="to"/>
+sleep(30)
+BT()
+</param></mrl></oob></template>
+</category>
+
+<category>
+<pattern>WAKE UP</pattern>
+<template><srai>BY YOUR COMMAND</srai></template>
+</category>
+
+<category>
+<pattern>POWER UP</pattern>
+<template><srai>BY YOUR COMMAND</srai></template>
+</category>
+
+
+</aiml>
