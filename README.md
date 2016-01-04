@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# Trashy
+
 =======
 pyrobotlab
 ==========
