@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!-- File: relax.aiml -->
+<!-- Author: Mastablasta -->
+<!-- Last modified: MB 10, 2015 -->
+<!--  -->
+<!-- This AIML file is part of the ELIAS unknown chat bot knowledge base. -->
+<!--  -->
+<!-- The ELIAS brain is Copyright &copy; 2015 by MBDaR. -->
+<!--  -->
+<!-- The ELIAS brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see http://www.alicebot.org -->
+<!--  -->
+<category><pattern>YOU CAN RELAX NOW</pattern>
+<template>Thanks for the break
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>
+i01.setArmSpeed("left", 0.9, 0.9, 0.9, 0.9)
+i01.setArmSpeed("right", 0.9, 0.9, 0.9, 0.9)
+i01.setHandSpeed("right", 0.9, 0.9, 0.9, 0.9, 0.9, 0.9)
+i01.setHeadSpeed(0.9, 0.9, 0.9, 1, 1)
+i01.moveHand("right",0,20,30,40,20,90)
+i01.moveArm("right",0,105,95,0)
+i01.moveTorso(94,94,94)
+i01.moveHead(90,90,80,80,73)
+i01.moveArm("left",0,90,96,99)
+</param>
+        </mrl>
+      </oob>
+<srai>RESET</srai></template>
+</category>
+
+<category><pattern>DISCONNECT EVERYTHING</pattern>
+<template>Powering down
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>
+i01.detach()
+</param>
+        </mrl>
+      </oob>
+</template>
+</category>
+
+
+<category><pattern>POWER UP</pattern>
+<template>Powering up
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>
+i01.attach()
+</param>
+        </mrl>
+      </oob>
+</template>
+</category>
+
+<category><pattern>PLEASE RELAX</pattern>
+<template><srai>YOU CAN RELAX NOW</srai></template>
+</category>
+</aiml>

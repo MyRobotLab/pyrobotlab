@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category><pattern># STAR WARS</pattern>
+<template>I like Star Wars, my favorite character is R2D2.
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER1()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern># KNOW DARTH VADER</pattern>
+<template><random>
+<li>Darth Vader is a character from Star Wars.</li>
+<li>Darth Vader is the evil guy from Star Wars.</li>
+</random>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER1()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern># LUKE SKYWALKER</pattern>
+<template><random>
+<li>Luke is a character from Star Wars.</li>
+<li>The son of Darth Vader.</li>
+</random>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER1()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern># HAN SOLO</pattern>
+<template><random>
+<li>Han Solo is a character from Star Wars.</li>
+<li>Han Solo is the captain of the Millenium Falcon.</li>
+</random>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER1()
+</param></mrl></oob>
+</template>
+</category>
+
+</aiml>

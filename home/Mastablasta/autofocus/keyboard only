@@ -1,0 +1,170 @@
+import random
+rightPort = "COM3"
+
+from java.lang import String
+from org.myrobotlab.service import Speech
+from org.myrobotlab.service import Sphinx
+from org.myrobotlab.service import Runtime
+mouth = Runtime.createAndStart("mouth","Speech")
+
+arduino = Runtime.createAndStart("arduino", "Arduino")
+arduino.connect(rightPort) 
+m1 = Runtime.createAndStart("m1","Motor")
+arduino.motorAttach("m1", 5, 6)
+m1.move(-0.01)
+
+keyboard = Runtime.start("keyboard", "Keyboard")
+keyboard.addCommand("Links", "python", "Links", "Links")    ########### I have a German keyboard !!! ###########
+keyboard.addCommand("Rechts", "python", "Rechts", "Rechts")
+keyboard.addCommand("Oben", "python", "Oben", "Oben")
+keyboard.addCommand("Unten", "python", "Unten", "Unten")
+keyboard.addCommand("Umschalt", "python", "Umschalt", "Umschalt")
+
+ms = 1
+
+sleep(2)
+mouth.speak("my name is venus")
+sleep(2)
+mouth.speak("I am your personal telescope focus assistant")
+
+def Links(cmd):
+    global keyboardInput
+    keyboardInput = "Links"
+    print "Focus left"
+    mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/k1.mp3", False)
+    if ms == 1:
+       m1.move(0.9)
+    if ms == 2:
+       m1.move(0.8)
+    if ms == 3:
+       m1.move(0.7)
+    if ms == 4:
+       m1.move(0.6)
+    if ms == 5:
+       m1.move(0.5)
+    if ms == 6:
+       m1.move(0.4)
+    if ms == 7:
+       m1.move(0.3)
+    if ms == 8:
+       m1.move(0.2)
+    if ms == 9:
+       m1.move(0.1)
+    if ms >= 9:
+       m1.move(0.1)
+
+def Umschalt(cmd):
+    global keyboardInput
+    keyboardInput = "Umschalt"
+    mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/stop.mp3", False)
+    print "Stop"
+    if ms >= 1:
+       m1.move(-0.01)
+
+def Rechts(cmd):
+    global keyboardInput
+    keyboardInput = "Rechts"
+    print "Focus right"
+    mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/k2.mp3", False)
+    if ms == 1:
+       m1.move(-0.1)
+    if ms == 2:
+       m1.move(-0.2)
+    if ms == 3:
+       m1.move(-0.3)
+    if ms == 4:
+       m1.move(-0.4)
+    if ms == 5:
+       m1.move(-0.5)
+    if ms == 6:
+       m1.move(-0.6)
+    if ms == 7:
+       m1.move(-0.7)
+    if ms == 8:
+       m1.move(-0.8)
+    if ms == 9:
+       m1.move(-0.9)
+    if ms >= 9:
+       m1.move(-0.9)
+
+def Oben(cmd):
+    global keyboardInput
+    keyboardInput = "Oben"
+    global ms
+    ms += 1
+    if ms == 1:
+       print "Speed set to 1"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/1.mp3", False)
+    if ms == 2:
+       print "Speed set to 2"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/2.mp3", False)
+    if ms == 3:
+       print "Speed set to 3"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/3.mp3", False)
+    if ms == 4:
+       print "Speed set to 4"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/4.mp3", False)
+    if ms == 5:
+       print "Speed set to 5"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/5.mp3", False)
+    if ms == 6:
+       print "Speed set to 6"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/6.mp3", False)
+    if ms == 7:
+       print "Speed set to 7"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/7.mp3", False)
+    if ms == 8:
+       print "Speed set to 8"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/8.mp3", False)
+    if ms == 9:
+       print "Speed set to 9"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/9.mp3", False)
+    if ms <= 0:
+       print "Limit slow"
+       mouth.speak("limit reached")
+       ms = 1
+    if ms >= 10:
+       print "Limit fast"
+       mouth.speak("limit reached")
+       ms = 9
+
+def Unten(cmd):
+    global keyboardInput
+    keyboardInput = "Unten"
+    global ms
+    ms -= 1
+    if ms == 1:
+       print "Speed set to 1"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/1.mp3", False)
+    if ms == 2:
+       print "Speed set to 2"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/2.mp3", False)
+    if ms == 3:
+       print "Speed set to 3"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/3.mp3", False)
+    if ms == 4:
+       print "Speed set to 4"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/4.mp3", False)
+    if ms == 5:
+       print "Speed set to 5"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/5.mp3", False)
+    if ms == 6:
+       print "Speed set to 6"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/6.mp3", False)
+    if ms == 7:
+       print "Speed set to 7"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/7.mp3", False)
+    if ms == 8:
+       print "Speed set to 8"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/8.mp3", False)
+    if ms == 9:
+       print "Speed set to 9"
+       mouth.audioFile.playFile("F:/mrlneu/scripts/sounds/9.mp3", False)
+    if ms <= 0:
+       print "Limit slow"
+       mouth.speak("limit reached")
+       ms = 1
+    if ms >= 10:
+       print "Limit fast"
+       mouth.speak("limit reached")
+       ms = 9

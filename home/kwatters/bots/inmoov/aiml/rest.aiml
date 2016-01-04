@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <!-- This is the Rest gesture file.  It will invoke the following python code when triggered -->
+  <category>
+    <pattern>DA VINCI</pattern>
+    <template>
+      <random>
+        <li>Leonardo Da Vinci</li>
+        <li>The perfect robot form</li>
+      </random>
+      <oob>
+        <service>i01</service>
+        <method>daVinci</method>
+      </oob>
+    </template>
+  </category>
+</aiml>

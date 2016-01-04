@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<topic name="THUMBRFI2">
+<category><pattern>ADD ANOTHER PART</pattern>
+<template>
+<think><set name="RHS2">ok</set><set name="topic">MOTION1</set></think>Alright, which one?
+<condition name="ORDER1">
+<li value="0"><think><set name="ORDER1">1</set><set name="LIST1a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW1a">ok</set></think>
+<think><set name="ORDER1">1</set><set name="LIST1b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW1b">ok</set></think>
+<think><set name="ORDER1">1</set><set name="LIST2c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW1c">ok</set></think>
+</li>
+<li value="1"><think><set name="ORDER1">2</set><set name="LIST2a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW2a">ok</set></think>
+<think><set name="ORDER1">2</set><set name="LIST2b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW2b">ok</set></think>
+<think><set name="ORDER1">2</set><set name="LIST2c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW2c">ok</set></think>
+</li>
+<li value="2"><think><set name="ORDER1">3</set><set name="LIST3a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW3a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST3b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW3b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST3c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW3c">ok</set></think>
+</li>
+<li value="3"><think><set name="ORDER1">4</set><set name="LIST4a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW4a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST4b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW4b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST4c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW4c">ok</set></think>
+</li>
+<li value="4"><think><set name="ORDER1">5</set><set name="LIST5a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW5a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST5b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW5b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST5c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW5c">ok</set></think>
+</li>
+<li value="5"><think><set name="ORDER1">6</set><set name="LIST6a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW6a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST6b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW6b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST6c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW6c">ok</set></think>
+</li>
+<li value="6"><think><set name="ORDER1">7</set><set name="LIST7a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW7a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST7b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW7b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST7c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW7c">ok</set></think>
+</li>
+<li value="7"><think><set name="ORDER1">8</set><set name="LIST8a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW8a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST8b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW8b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST8c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW8c">ok</set></think>
+</li>
+<li value="8"><think><set name="ORDER1">9</set><set name="LIST9a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW9a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST9b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW9b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST9c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW9c">ok</set></think>
+</li>
+<li value="9"><think><set name="ORDER1">10</set><set name="LIST10a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW10a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST10b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW10b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST10c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW10c">ok</set></think>
+</li>
+<li value="10"><think><set name="ORDER1">11</set><set name="LIST11a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW11a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST11b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW11b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST11c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW11c">ok</set></think>
+</li>
+<li value="11"><think><set name="ORDER1">12</set><set name="LIST12a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW12a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST12b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW12b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST12c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW12c">ok</set></think>
+</li>
+<li value="12"><think><set name="ORDER1">13</set><set name="LIST13a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW13a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST13b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW13b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST13c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW13c">ok</set></think>
+</li>
+<li value="13"><think><set name="ORDER1">14</set><set name="LIST14a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW14a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST14b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW14b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST14c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW14c">ok</set></think>
+</li>
+<li value="14"><think><set name="ORDER1">15</set><set name="LIST15a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW15a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST15b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW15b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST15c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW15c">ok</set></think>
+</li>
+<li value="15"><think><set name="ORDER1">16</set><set name="LIST16a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW16a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST16b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW16b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST16c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW16c">ok</set></think>
+</li>
+<li value="16"><think><set name="ORDER1">17</set><set name="LIST17a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW17a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST17b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW17b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST17c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW17c">ok</set></think>
+</li>
+<li value="17"><think><set name="ORDER1">18</set><set name="LIST18a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW18a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST18b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW18b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST18c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW18c">ok</set></think>
+</li>
+<li value="18"><think><set name="ORDER1">19</set><set name="LIST19a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW19a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST19b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW19b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST19c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW19c">ok</set></think>
+</li>
+<li value="19"><think><set name="ORDER1">20</set><set name="LIST20a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW20a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST20b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW20b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST20c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW20c">ok</set></think>
+</li>
+<li value="20"><think><set name="ORDER1">21</set><set name="LIST21a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW21a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST21b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW21b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST21c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW21c">ok</set></think>
+</li>
+<li value="21"><think><set name="ORDER1">22</set><set name="LIST21a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW22a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST22b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW22b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST22c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW22c">ok</set></think>
+</li>
+<li value="22"><think><set name="ORDER1">23</set><set name="LIST23a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW23a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST23b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW23b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST23c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW23c">ok</set></think>
+</li>
+<li value="23"><think><set name="ORDER1">24</set><set name="LIST24a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW24a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST24b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW24b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST24c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW24c">ok</set></think>
+</li>
+</condition></template></category></topic>
+
+<topic name="THUMBRFI2">
+<category><pattern>SAVE MOTION</pattern>
+<template>Please enter motion name.
+<think><set name="RHS2">ok</set><set name="topic">SAVING1</set></think>
+<condition name="ORDER1">
+<li value="0"><think><set name="ORDER1">1</set><set name="LIST1a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW1a">ok</set></think>
+<think><set name="ORDER1">1</set><set name="LIST1b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW1b">ok</set></think>
+<think><set name="ORDER1">1</set><set name="LIST2c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW1c">ok</set></think>
+</li>
+<li value="1"><think><set name="ORDER1">2</set><set name="LIST2a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW2a">ok</set></think>
+<think><set name="ORDER1">2</set><set name="LIST2b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW2b">ok</set></think>
+<think><set name="ORDER1">2</set><set name="LIST2c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW2c">ok</set></think>
+</li>
+<li value="2"><think><set name="ORDER1">3</set><set name="LIST3a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW3a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST3b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW3b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST3c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW3c">ok</set></think>
+</li>
+<li value="3"><think><set name="ORDER1">4</set><set name="LIST4a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW4a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST4b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW4b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST4c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW4c">ok</set></think>
+</li>
+<li value="4"><think><set name="ORDER1">5</set><set name="LIST5a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW5a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST5b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW5b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST5c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW5c">ok</set></think>
+</li>
+<li value="5"><think><set name="ORDER1">6</set><set name="LIST6a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW6a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST6b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW6b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST6c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW6c">ok</set></think>
+</li>
+<li value="6"><think><set name="ORDER1">7</set><set name="LIST7a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW7a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST7b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW7b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST7c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW7c">ok</set></think>
+</li>
+<li value="7"><think><set name="ORDER1">8</set><set name="LIST8a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW8a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST8b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW8b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST8c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW8c">ok</set></think>
+</li>
+<li value="8"><think><set name="ORDER1">9</set><set name="LIST9a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW9a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST9b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW9b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST9c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW9c">ok</set></think>
+</li>
+<li value="9"><think><set name="ORDER1">10</set><set name="LIST10a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW10a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST10b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW10b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST10c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW10c">ok</set></think>
+</li>
+<li value="10"><think><set name="ORDER1">11</set><set name="LIST11a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW11a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST11b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW11b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST11c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW11c">ok</set></think>
+</li>
+<li value="11"><think><set name="ORDER1">12</set><set name="LIST12a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW12a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST12b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW12b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST12c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW12c">ok</set></think>
+</li>
+<li value="12"><think><set name="ORDER1">13</set><set name="LIST13a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW13a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST13b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW13b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST13c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW13c">ok</set></think>
+</li>
+<li value="13"><think><set name="ORDER1">14</set><set name="LIST14a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW14a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST14b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW14b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST14c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW14c">ok</set></think>
+</li>
+<li value="14"><think><set name="ORDER1">15</set><set name="LIST15a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW15a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST15b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW15b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST15c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW15c">ok</set></think>
+</li>
+<li value="15"><think><set name="ORDER1">16</set><set name="LIST16a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW16a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST16b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW16b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST16c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW16c">ok</set></think>
+</li>
+<li value="16"><think><set name="ORDER1">17</set><set name="LIST17a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW17a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST17b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW17b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST17c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW17c">ok</set></think>
+</li>
+<li value="17"><think><set name="ORDER1">18</set><set name="LIST18a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW18a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST18b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW18b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST18c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW18c">ok</set></think>
+</li>
+<li value="18"><think><set name="ORDER1">19</set><set name="LIST19a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW19a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST19b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW19b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST19c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW19c">ok</set></think>
+</li>
+<li value="19"><think><set name="ORDER1">20</set><set name="LIST20a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW20a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST20b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW20b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST20c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW20c">ok</set></think>
+</li>
+<li value="20"><think><set name="ORDER1">21</set><set name="LIST21a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW21a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST21b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW21b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST21c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW21c">ok</set></think>
+</li>
+<li value="21"><think><set name="ORDER1">22</set><set name="LIST21a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW22a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST22b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW22b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST22c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW22c">ok</set></think>
+</li>
+<li value="22"><think><set name="ORDER1">23</set><set name="LIST23a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW23a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST23b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW23b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST23c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW23c">ok</set></think>
+</li>
+<li value="23"><think><set name="ORDER1">24</set><set name="LIST24a">
+<condition name="SRHS2" value="ok">i01.setHandSpeed("right",<get name="sfi2-1"/>,<get name="sfi2-2"/>,<get name="sfi2-3"/>,<get name="sfi2-4"/>,<get name="sfi2-5"/>,<get name="sfi2-6"/>)</condition>
+</set><set name="ROW24a">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST24b">
+<condition name="RHS2" value="ok">i01.moveHand("right",<get name="fi2-1"/>,<get name="fi2-2"/>,<get name="fi2-3"/>,<get name="fi2-4"/>,<get name="fi2-5"/>,<get name="fi2-6"/>)</condition>
+</set><set name="ROW24b">ok</set></think>
+<think><set name="ORDER1">3</set><set name="LIST24c">
+<condition name="PRHS2" value="ok">sleep(<get name="prh2-1"/>)</condition>
+</set><set name="ROW24c">ok</set></think>
+</li>
+</condition></template></category></topic>
+    
+</aiml>
