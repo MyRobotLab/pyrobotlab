@@ -1,0 +1,3 @@
+http://myipaddress:49451/data_request?id=lu_action&output_format=xml&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=11
+
+example of VERA command 
