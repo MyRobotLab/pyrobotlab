@@ -1,7 +1,6 @@
 #http://myipaddress:49451/data_request?id=lu_action&output_format=xml&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=11
-
-# example of VERA command in AIML
-
+#
+# example of sending an HTTP command to VERA LITE iniated by AIML
 
   <category>
     <pattern>LIGHTS ON</pattern>
@@ -16,6 +15,7 @@
           <service>python</service>
           <method>exec</method>
           <paragm>
+          import urllib
           urllib.urlopen("http://myipaddress:49451/data_request?id=lu_action&output_format=xml&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=11").read() 
           </param>
         </mrl>
