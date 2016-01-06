@@ -1,3 +1,24 @@
-http://myipaddress:49451/data_request?id=lu_action&output_format=xml&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=11
+#http://myipaddress:49451/data_request?id=lu_action&output_format=xml&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=11
 
-example of VERA command 
+# example of VERA command in AIML
+
+
+  <category>
+    <pattern>LIGHTS ON</pattern>
+     <template>
+      <random>
+       <li>Turning lights on</li>
+       <li>Yes Sir</li>
+       <li>Lights are now on</li>
+      </random> 
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <paragm>
+          urllib.urlopen("http://myipaddress:49451/data_request?id=lu_action&output_format=xml&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=11").read() 
+          </param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
