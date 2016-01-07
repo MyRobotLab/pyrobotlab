@@ -121,24 +121,24 @@ COUNTER()
                 <condition name="time3">
                     <li value="0">
                         <condition name="time5">
-                    <li value="0">
-                        <condition name="subnumber1">
-                            <li value="2">
-                                <condition name="subnumber3">
+                            <li value="0">
+                                <condition name="subnumber1">
                                     <li value="2">
-                                <condition name="subnumber4">
-                                    <li value="2">We talked about <get name="subject1"/>, <get name="subject3"/> and <get name="subject4"/><think><set name="ANSWER">false</set></think></li>
+                                        <condition name="subnumber3">
+                                            <li value="2">
+                                                <condition name="subnumber4">
+                                                    <li value="2">We talked about <get name="subject1"/>, <get name="subject3"/> and <get name="subject4"/><think><set name="ANSWER">false</set></think></li>
+                                                </condition>
+                                            </li>    
+                                        </condition>
+                                    </li>
                                 </condition>
-                            </li>    
+                            </li>
                         </condition>
                     </li>
                 </condition>
             </li>
         </condition>
-    </li>
-</condition>
-    </li>
-</condition>
     </li>
 </condition>
 <condition name="ANSWER">
@@ -198,7 +198,6 @@ COUNTER()
         </condition>
     </li>
 </condition>
-
 <condition name="ANSWER">
     <li value="ok">
         <condition name="time1">
