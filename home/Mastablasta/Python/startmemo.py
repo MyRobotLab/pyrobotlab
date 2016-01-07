@@ -1,3 +1,6 @@
+# add this part to your python script.
+# change botname if necessary.
+
 subject = 0
 
 def COUNTER():
