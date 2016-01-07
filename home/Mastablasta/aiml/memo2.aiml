@@ -59,12 +59,27 @@ COUNTER()
 </template>
 </category>
 
+<category><pattern>SUBJECT5</pattern>
+<template>
+<think>
+<condition name="subject">
+<li><value><get name="subject1"/></value><set name="subject"><get name="subject1"/></set><set name="subnumber1">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject2"/></value><set name="subject"><get name="subject2"/></set><set name="subnumber2">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject3"/></value><set name="subject"><get name="subject3"/></set><set name="subnumber3">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject4"/></value><set name="subject"><get name="subject4"/></set><set name="subnumber4">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><set name="timeset5"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="subject5"><get name="subject"/></set><set name="subnumber5">1</set></li></condition>
+</think>
+</template>
+</category>
+
 <category><pattern># YESTERDAY</pattern>
 <template><think>
 <set name="timeget1"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
 <set name="timeget2"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
 <set name="timeget3"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
 <set name="timeget4"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="timeget5"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
 <learn><category>
 <pattern>MEMOTRIGGER</pattern>
 <template><think>
@@ -92,7 +107,59 @@ COUNTER()
         <from><get name="timeset4"/></from>
         <to><get name="timeget4"/></to>
         </interval></set>
+    <set name="time5">
+        <interval><jformat>MMMMMMMMM dd</jformat>
+        <style>days</style>
+        <from><get name="timeset5"/></from>
+        <to><get name="timeget5"/></to>
+        </interval></set>
     </think>
+<condition name="ANSWER">
+    <li value="ok">
+        <condition name="time1">
+            <li value="0">
+                <condition name="time3">
+                    <li value="0">
+                        <condition name="time5">
+                    <li value="0">
+                        <condition name="subnumber1">
+                            <li value="2">
+                                <condition name="subnumber3">
+                                    <li value="2">
+                                <condition name="subnumber4">
+                                    <li value="2">We talked about <get name="subject1"/>, <get name="subject3"/> and <get name="subject4"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>    
+                        </condition>
+                    </li>
+                </condition>
+            </li>
+        </condition>
+    </li>
+</condition>
+    </li>
+</condition>
+    </li>
+</condition>
+<condition name="ANSWER">
+    <li value="ok">
+        <condition name="time1">
+            <li value="0">
+                <condition name="time4">
+                    <li value="0">
+                        <condition name="subnumber1">
+                            <li value="2">
+                                <condition name="subnumber4">
+                                    <li value="2">We talked about <get name="subject1"/> and <get name="subject4"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>    
+                        </condition>
+                    </li>
+                </condition>
+            </li>
+        </condition>
+    </li>
+</condition>
 <condition name="ANSWER">
     <li value="ok">
         <condition name="time1">
@@ -131,6 +198,7 @@ COUNTER()
         </condition>
     </li>
 </condition>
+
 <condition name="ANSWER">
     <li value="ok">
         <condition name="time1">
