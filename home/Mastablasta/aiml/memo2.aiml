@@ -13,6 +13,32 @@ COUNTER()
 </template>
 </category>
 
+<category><pattern>DO YOU LIKE #</pattern>
+<template><random>
+<li>Yes, I like <star/></li>
+<li>Sure I like <star/></li>
+<li>I like <star/></li>
+<li>Of course I like <star/></li></random>
+<think><set name="subject"><star/></set></think>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern>LETS TALK ABOUT #</pattern>
+<template><random>
+<li>Ok, what do you want to know about <star/></li>
+<li><star/> is a interesting subject.</li>
+<li><star/> sound good to me.</li>
+<li>Ok, now we talk about <star/></li></random>
+<think><set name="subject"><star/></set></think>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER()
+</param></mrl></oob>
+</template>
+</category>
+
 <category><pattern>SUBJECT1</pattern>
 <template>
 <think>
