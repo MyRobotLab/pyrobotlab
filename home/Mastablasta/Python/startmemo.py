@@ -1,37 +1,26 @@
-import random
-from java.lang import String
-from org.myrobotlab.net import BareBonesBrowserLaunch
-holygrail = Runtime.createAndStart("holygrail", "WebGui")
-wksr = Runtime.createAndStart("webkitspeechrecognition", "WebkitSpeechRecognition")
-elias = Runtime.createAndStart("elias", "ProgramAB")
-elias.startSession("ProgramAB", "MastaBlasta", "elias")
-htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
-mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
-wksr.addTextListener(elias)
-elias.addTextListener(htmlfilter)
-htmlfilter.addTextListener(mouth)
+subject = 0
 
-meco1 = 0
-meco2 = 0
-meco3 = 0
-
-def COUNTER1():
-    global meco1
-    meco1 = meco1 + 1
-    if (meco1 == 4):
-       resp = elias.getResponse("RETRIGGER1")
-
-def COUNTER2():
-    global meco2
-    meco2 = meco2 + 1
-    if (meco2 == 4):
-       resp = elias.getResponse("RETRIGGER2")
-
-def COUNTER3():
-    global meco3
-    meco3 = meco3 + 1
-    if (meco3 == 4):
-       resp = elias.getResponse("RETRIGGER3")
-
+def COUNTER():
+    global subject
+    subject = subject + 1
+    if (subject == 1):
+       print "subject", subject
+       resp = alice2.getResponse("SUBJECT1")
+    if (subject == 2):
+       print "subject", subject
+       resp = alice2.getResponse("SUBJECT2")
+    if (subject == 3):
+       print "subject", subject
+       resp = alice2.getResponse("SUBJECT3")
+    if (subject == 4):
+       print "subject", subject
+       resp = alice2.getResponse("SUBJECT4")
+    if (subject == 5):
+       print "subject", subject
+       resp = alice2.getResponse("SUBJECT5")
+    if (subject == 6):
+       print "subject", subject
+       resp = alice2.getResponse("SUBJECT6")
+  
 def GETMEMO():
-    resp = elias.getResponse("MEMOTRIGGER")
+    resp = alice2.getResponse("MEMOTRIGGER")
