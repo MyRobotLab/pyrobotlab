@@ -1,14 +1,21 @@
-#script to connect turn and twist motion of head servos to joystick movement
-#instead of servo motion being tied directly to servo position the servos will hold thier last position when
+
+#script to connect pan and tilt motion of head servos to joystick movement
+#instead of the servo motion being tied directly to servo position the servos will hold thier last position when
 #control sticks return to center. Thanks to Kwatters for the syntax on the servo sweeping
 #Nolan B. 1/4/16
-
 
 from org.myrobotlab.service import Joystick
 from org.myrobotlab.service import Arduino
 from org.myrobotlab.service import Runtime
 from org.myrobotlab.service import Servo
 from time import sleep
+
+
+#----------------------------------Web Gui--------------------------
+webgui = Runtime.create("webgui", "WebGui")
+webgui.autoStartBrowser(False)
+Runtime.start("webgui", "WebGui")
+
 #---------------------------------Create Services----------------------
 arduino = Runtime.createAndStart("arduino","Arduino")
 joystick = Runtime.createAndStart("joystick","Joystick")
