@@ -1,4 +1,3 @@
-
 #script to connect turn and twist motion of head servos to joystick movement
 #instead of servo motion being tied directly to servo position the servos will hold thier last position when
 #control sticks return to center. Thanks to Kwatters for the syntax on the servo sweeping
@@ -13,12 +12,12 @@ from time import sleep
 #---------------------------------Create Services----------------------
 arduino = Runtime.createAndStart("arduino","Arduino")
 joystick = Runtime.createAndStart("joystick","Joystick")
-servo01 = Runtime.start("servo01","Servo")
-servo02 = Runtime.start("servo02","Servo")
+servo01 = Runtime.start("servo01","Servo") #Head Tilt Servo
+servo02 = Runtime.start("servo02","Servo") #Head Pan Servo
 
 #------------------------Create Static Values-------------------------------
-servo01Pin = 10
-servo02Pin = 11
+servo01Pin = 10 
+servo02Pin = 11 
 comPort = "/dev/ttyACM0"
 servo01.setMinMax(30, 130)
 servo02.setMinMax(30, 130)
@@ -72,48 +71,48 @@ def DetatchAll(value):
     servo01.detach()
     Servo02.detach()
 
-#Headtilt Listener		
+#Head Tilt Listener		
 def StickYListener(value):
-  print "Stick Y :" + str(value) + " Current pos: " + str(headtilt.pos)
+  print "Stick Y :" + str(value) + " Current pos: " + str(servo01.pos)
   absValue = math.fabs(value)
   if (absValue < 0.175):
     print "Stop sweep"
-    headtilt.stop()
+    servo01.stop()
     return
   absValue = absValue-0.01
   print "Set Speed " + str(absValue)
-  headtilt.setSpeed(absValue)
+  servo01.setSpeed(absValue)
   delay = int((1-absValue) * 200)
   if (value > 0.0):
-    if (headtilt.isSweeping()):
-      headtilt.setSweeperDelay(delay)
+    if (servo01.isSweeping()):
+      servo01.setSweeperDelay(delay)
     else:    
-      headtilt.sweep(headtilt.pos, headtilt.max, delay, 1, True)
+      servo01.sweep(servo01.pos, servo01.max, delay, 1, True)
   else:
-    if (headtilt.isSweeping()):
-      headtilt.setSweeperDelay(delay)
+    if (servo01.isSweeping()):
+      servo01.setSweeperDelay(delay)
     else:
-      headtilt.sweep(headtilt.min, headtilt.pos, delay, -1, True)
+      servo01.sweep(servo01.min, servo01.pos, delay, -1, True)
 	  
-#Head Turn Listener
+#Head Pan Listener
 def StickXListener(value):
-  print "Stick X :" + str(value) + " Current pos: " + str(headturn.pos)
+  print "Stick X :" + str(value) + " Current pos: " + str(servo02.pos)
   absValue = math.fabs(value)
   if (absValue < 0.175):
     print "Stop sweep"
-    headturn.stop()
+    servo02.stop()
     return
   absValue = absValue-0.01
   print "Set Speed " + str(absValue)
-  headturn.setSpeed(absValue)
+  servo02.setSpeed(absValue)
   delay = int((1-absValue) * 200)
   if (value > 0.0):
-    if (headturn.isSweeping()):
-      headturn.setSweeperDelay(delay)
+    if (servo02.isSweeping()):
+      servo02.setSweeperDelay(delay)
     else:    
-      headturn.sweep(headturn.pos, headturn.max, delay, 1, True)
+      servo02.sweep(servo02.pos, servo02.max, delay, 1, True)
   else:
-    if (headturn.isSweeping()):
-      headturn.setSweeperDelay(delay)
+    if (servo02.isSweeping()):
+      servo02.setSweeperDelay(delay)
     else:
-      headtilt.sweep(headturn.min, headturn.pos, delay, -1, True)
+      servo02.sweep(servo02.min, servo02.pos, delay, -1, True)
