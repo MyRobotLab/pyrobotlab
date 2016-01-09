@@ -26,14 +26,15 @@ def heard(data):
 ######################################################################
 sarah = Runtime.createAndStart("sarah", "ProgramAB")
 # start the session for the chat bot
-sarah.startSession(aimlDir, "nolan", "sarah")
+sarah.startSession(aimlDir, userName, botName)
 
 ######################################################################
 # create the speech recognition service
 # Speech recognition is based on WebSpeechToolkit API
 # So this just means we need the web gui, it's part of the programAB 
 # service now.
-wksr = Runtime.start("webkitspeechrecognition","WebkitSpeechRecognition")
+webkitspeechrecognition = Runtime.start("webkitspeechrecognition","WebkitSpeechRecognition")
+webkitspeechrecognition.addListener("publishText","python","onText")
 wksr.addTextListener(sarah)
 
 
