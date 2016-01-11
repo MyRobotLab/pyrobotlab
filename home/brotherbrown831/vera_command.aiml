@@ -12,15 +12,6 @@
        <li>Yes Sir. Turning on lights now</li>
        <li>the lights are now on</li>
       </random> 
-      <oob>
-        <mrl>
-          <service>python</service>
-          <method>exec</method>
-          <paragm>
-          import urllib
-          urllib.urlopen("http:veraip:xx.command_syntax_goes_here").read() 
-          </param>
-        </mrl>
-      </oob>
+      <oob><url>http://ip_address:3480/data_request?id=action&output_format=xml&DeviceNum=6&serviceId=urn:upnp-org:serviceId:SwitchPower1&action=SetTarget&newTargetValue=0</url></oob>
     </template>
   </category>
