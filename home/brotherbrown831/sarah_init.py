@@ -53,6 +53,7 @@ htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 ######################################################################
 mouth = Runtime.createAndStart("mouth", "MarySpeech")
 # mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
+acapelaSpeech = Runtime.createAndStart("speech", "AcapelaSpeech")
 #can acapela work here? 
  
 ######################################################################
@@ -61,7 +62,7 @@ mouth = Runtime.createAndStart("mouth", "MarySpeech")
 # Add route from Program AB to html filter
 sarah.addTextListener(htmlfilter)
 # Add route from html filter to mouth
-htmlfilter.addTextListener(mouth)
+htmlfilter.addTextListener(acapelaSpeech)
  
 # make sure the ear knows if it's speaking.
 # TODO: how does this jive with webspeech ?!
