@@ -1,14 +1,16 @@
-#http://myipaddress:49451/data_request?id=lu_action&output_format=xml&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=11
-#
+# Information can be found here:
+#http://wiki.micasaverde.com/index.php/Luup_Requests#status
 # example of sending an HTTP command to VERA LITE iniated by AIML
-
+#http://ip_address:3480/data_request?id=action&output_format=xml&DeviceNum=6&serviceId=urn:upnp-org:serviceId:SwitchPower1&action=SetTarget&newTargetValue=0 
+  
+  
   <category>
-    <pattern>LIGHTS ON</pattern>
+    <pattern>OUTSIDE LIGHTS ON</pattern>
      <template>
       <random>
        <li>Turning lights on</li>
-       <li>Yes Sir</li>
-       <li>Lights are now on</li>
+       <li>Yes Sir. Turning on lights now</li>
+       <li>the lights are now on</li>
       </random> 
       <oob>
         <mrl>
@@ -16,7 +18,7 @@
           <method>exec</method>
           <paragm>
           import urllib
-          urllib.urlopen("http://myipaddress:49451/data_request?id=lu_action&output_format=xml&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=11").read() 
+          urllib.urlopen("http:veraip:xx.command_syntax_goes_here").read() 
           </param>
         </mrl>
       </oob>
