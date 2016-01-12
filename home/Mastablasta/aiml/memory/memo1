@@ -1,0 +1,2919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category><pattern>WHAT IS <set>setlist1</set></pattern>
+<template>
+<star/> is a planet of <map name="maplist1"><star/></map>
+<think><set name="subject"><map name="maplist1"><star/></map></set></think>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern>WHO IS <set>setlist2</set></pattern>
+<template>
+<star/> is a character from <map name="maplist2"><star/></map>
+<think><set name="subject"><map name="maplist2"><star/></map></set></think>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern>WHAT IS A <set>setlist3</set></pattern>
+<template>
+a <star/> is a <map name="singular"><map name="maplist3"><star/></map></map>
+<think><set name="subject"><map name="maplist3"><star/></map></set></think>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern>WHAT IS ^</pattern>
+<template>
+I don't know what <star/> is. But I will remember we talked about it.
+<think><set name="subject"><star/></set></think>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern>WEATHER IN FRANKFURT</pattern>
+<template><sraix service="pannous">WEATHER IN FRANKFURT</sraix>
+<think><set name="subject">the weather</set></think>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern>THAT IS VERY COLD</pattern>
+<template>But at least we have fresh air.
+<think><set name="subject">the weather</set></think>
+<oob><mrl><service>python</service><method>exec</method><param>
+COUNTER()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern>RESET MEMORY</pattern>
+<template>I don't like it but I reset my brain.
+<oob><mrl><service>python</service><method>exec</method><param>
+RESETMEMO()
+</param></mrl></oob>
+</template>
+</category>
+
+<category><pattern>SUBJECT1</pattern>
+<template>
+<think>
+<set name="timeset1"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="subject1"><get name="subject"/></set>
+<set name="subnumber1">1</set>
+</think>
+</template>
+</category>
+
+<category><pattern>SUBJECT2</pattern>
+<template>
+<think>
+<condition name="subject">
+<li><value><get name="subject1"/></value><set name="subject"><get name="subject1"/></set><set name="subnumber1">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><set name="timeset2"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="subject2"><get name="subject"/></set><set name="subnumber2">1</set></li></condition>
+</think>
+</template>
+</category>
+
+<category><pattern>SUBJECT3</pattern>
+<template>
+<think>
+<condition name="subject">
+<li><value><get name="subject1"/></value><set name="subject"><get name="subject1"/></set><set name="subnumber1">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject2"/></value><set name="subject"><get name="subject2"/></set><set name="subnumber2">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><set name="timeset3"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="subject3"><get name="subject"/></set><set name="subnumber3">1</set></li></condition>
+</think>
+</template>
+</category>
+
+<category><pattern>SUBJECT4</pattern>
+<template>
+<think>
+<condition name="subject">
+<li><value><get name="subject1"/></value><set name="subject"><get name="subject1"/></set><set name="subnumber1">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject2"/></value><set name="subject"><get name="subject2"/></set><set name="subnumber2">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject3"/></value><set name="subject"><get name="subject3"/></set><set name="subnumber3">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><set name="timeset4"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="subject4"><get name="subject"/></set><set name="subnumber4">1</set></li></condition>
+</think>
+</template>
+</category>
+
+<category><pattern>SUBJECT5</pattern>
+<template>
+<think>
+<condition name="subject">
+<li><value><get name="subject1"/></value><set name="subject"><get name="subject1"/></set><set name="subnumber1">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject2"/></value><set name="subject"><get name="subject2"/></set><set name="subnumber2">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject3"/></value><set name="subject"><get name="subject3"/></set><set name="subnumber3">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject4"/></value><set name="subject"><get name="subject4"/></set><set name="subnumber4">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><set name="timeset5"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="subject5"><get name="subject"/></set><set name="subnumber5">1</set></li></condition>
+</think>
+</template>
+</category>
+
+<category><pattern>SUBJECT6</pattern>
+<template>
+<think>
+<condition name="subject">
+<li><value><get name="subject1"/></value><set name="subject"><get name="subject1"/></set><set name="subnumber1">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject2"/></value><set name="subject"><get name="subject2"/></set><set name="subnumber2">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject3"/></value><set name="subject"><get name="subject3"/></set><set name="subnumber3">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject4"/></value><set name="subject"><get name="subject4"/></set><set name="subnumber4">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject5"/></value><set name="subject"><get name="subject5"/></set><set name="subnumber5">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><set name="timeset6"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="subject6"><get name="subject"/></set><set name="subnumber6">1</set></li></condition>
+</think>
+</template>
+</category>
+
+<category><pattern>SUBJECT7</pattern>
+<template>
+<think>
+<condition name="subject">
+<li><value><get name="subject1"/></value><set name="subject"><get name="subject1"/></set><set name="subnumber1">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject2"/></value><set name="subject"><get name="subject2"/></set><set name="subnumber2">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject3"/></value><set name="subject"><get name="subject3"/></set><set name="subnumber3">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject4"/></value><set name="subject"><get name="subject4"/></set><set name="subnumber4">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject5"/></value><set name="subject"><get name="subject5"/></set><set name="subnumber5">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject6"/></value><set name="subject"><get name="subject6"/></set><set name="subnumber6">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><set name="timeset7"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="subject7"><get name="subject"/></set><set name="subnumber7">1</set></li></condition>
+</think>
+</template>
+</category>
+
+<category><pattern>SUBJECT8</pattern>
+<template>
+<think>
+<condition name="subject">
+<li><value><get name="subject1"/></value><set name="subject"><get name="subject1"/></set><set name="subnumber1">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject2"/></value><set name="subject"><get name="subject2"/></set><set name="subnumber2">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject3"/></value><set name="subject"><get name="subject3"/></set><set name="subnumber3">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject4"/></value><set name="subject"><get name="subject4"/></set><set name="subnumber4">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject5"/></value><set name="subject"><get name="subject5"/></set><set name="subnumber5">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject6"/></value><set name="subject"><get name="subject6"/></set><set name="subnumber6">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><value><get name="subject7"/></value><set name="subject"><get name="subject7"/></set><set name="subnumber7">2</set><think><set name="ANSWER">ok</set></think></li>
+<li><set name="timeset8"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="subject8"><get name="subject"/></set><set name="subnumber8">1</set></li></condition>
+</think>
+</template>
+</category>
+
+<category><pattern># YESTERDAY</pattern>
+<template><think><think><set name="ANSWER">ok</set></think>
+<set name="timeget1"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="timeget2"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="timeget3"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="timeget4"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="timeget5"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="timeget6"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="timeget7"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<set name="timeget8"><date format="%B %d" jformat="MMMMMMMMM dd"/></set>
+<learn><category>
+<pattern>MEMOTRIGGER</pattern>
+<template><think>
+    <set name="time8">
+        <interval><jformat>MMMMMMMMM dd</jformat>
+        <style>days</style>
+        <from><get name="timeset8"/></from>
+        <to><get name="timeget8"/></to>
+        </interval></set>
+    <set name="time7">
+        <interval><jformat>MMMMMMMMM dd</jformat>
+        <style>days</style>
+        <from><get name="timeset7"/></from>
+        <to><get name="timeget7"/></to>
+        </interval></set>
+    <set name="time6">
+        <interval><jformat>MMMMMMMMM dd</jformat>
+        <style>days</style>
+        <from><get name="timeset6"/></from>
+        <to><get name="timeget6"/></to>
+        </interval></set>
+    <set name="time5">
+        <interval><jformat>MMMMMMMMM dd</jformat>
+        <style>days</style>
+        <from><get name="timeset5"/></from>
+        <to><get name="timeget5"/></to>
+        </interval></set>
+    <set name="time4">
+        <interval><jformat>MMMMMMMMM dd</jformat>
+        <style>days</style>
+        <from><get name="timeset4"/></from>
+        <to><get name="timeget4"/></to>
+        </interval></set>
+    <set name="time3">
+        <interval><jformat>MMMMMMMMM dd</jformat>
+        <style>days</style>
+        <from><get name="timeset3"/></from>
+        <to><get name="timeget3"/></to>
+        </interval></set>
+    <set name="time2">
+        <interval><jformat>MMMMMMMMM dd</jformat>
+        <style>days</style>
+        <from><get name="timeset2"/></from>
+        <to><get name="timeget2"/></to>
+        </interval></set>
+    <set name="time1">
+        <interval><jformat>MMMMMMMMM dd</jformat>
+        <style>days</style>
+        <from><get name="timeset1"/></from>
+        <to><get name="timeget1"/></to>
+        </interval></set>
+    </think>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time3">
+            <li value="1">
+                <condition name="time4">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber2">
+                        <li value="2">
+                            <condition name="subnumber3">
+                            <li value="2">
+                                <condition name="subnumber4">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/>, <get name="subject3"/> and <get name="subject4"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time3">
+            <li value="1">
+                <condition name="time5">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber2">
+                        <li value="2">
+                            <condition name="subnumber3">
+                            <li value="2">
+                                <condition name="subnumber5">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/>, <get name="subject3"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time3">
+            <li value="1">
+                <condition name="time6">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber2">
+                        <li value="2">
+                            <condition name="subnumber3">
+                            <li value="2">
+                                <condition name="subnumber6">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/>, <get name="subject3"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time3">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber2">
+                        <li value="2">
+                            <condition name="subnumber3">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/>, <get name="subject3"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time4">
+            <li value="1">
+                <condition name="time5">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber2">
+                        <li value="2">
+                            <condition name="subnumber4">
+                            <li value="2">
+                                <condition name="subnumber5">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/>, <get name="subject4"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time4">
+            <li value="1">
+                <condition name="time6">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber2">
+                        <li value="2">
+                            <condition name="subnumber4">
+                            <li value="2">
+                                <condition name="subnumber6">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/>, <get name="subject4"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time4">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber2">
+                        <li value="2">
+                            <condition name="subnumber4">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/>, <get name="subject4"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="time6">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber2">
+                        <li value="2">
+                            <condition name="subnumber5">
+                            <li value="2">
+                                <condition name="subnumber6">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/>, <get name="subject5"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber2">
+                        <li value="2">
+                            <condition name="subnumber5">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/>, <get name="subject5"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber2">
+                        <li value="2">
+                            <condition name="subnumber6">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/>, <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time4">
+            <li value="1">
+                <condition name="time5">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber3">
+                        <li value="2">
+                            <condition name="subnumber4">
+                            <li value="2">
+                                <condition name="subnumber5">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject3"/>, <get name="subject4"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time4">
+            <li value="1">
+                <condition name="time6">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber3">
+                        <li value="2">
+                            <condition name="subnumber4">
+                            <li value="2">
+                                <condition name="subnumber6">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject3"/>, <get name="subject4"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time4">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber3">
+                        <li value="2">
+                            <condition name="subnumber4">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject3"/>, <get name="subject4"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="time6">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber3">
+                        <li value="2">
+                            <condition name="subnumber5">
+                            <li value="2">
+                                <condition name="subnumber6">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject3"/>, <get name="subject5"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber3">
+                        <li value="2">
+                            <condition name="subnumber5">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject3"/>, <get name="subject5"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber3">
+                        <li value="2">
+                            <condition name="subnumber6">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject3"/>, <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time4">
+            <li value="1">
+                <condition name="time5">
+                <li value="1">
+                <condition name="subnumber2">
+                <li value="2">
+                    <condition name="subnumber3">
+                    <li value="2">
+                        <condition name="subnumber4">
+                        <li value="2">
+                            <condition name="subnumber5">
+                            <li value="2">We talked about <get name="subject2"/>, <get name="subject3"/>, <get name="subject4"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time4">
+            <li value="1">
+                <condition name="time6">
+                <li value="1">
+                    <condition name="subnumber2">
+                    <li value="2">
+                        <condition name="subnumber3">
+                        <li value="2">
+                            <condition name="subnumber4">
+                            <li value="2">
+                                <condition name="subnumber6">
+                                <li value="2">We talked about <get name="subject2"/>, <get name="subject3"/>, <get name="subject4"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time4">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber2">
+                    <li value="2">
+                        <condition name="subnumber3">
+                        <li value="2">
+                            <condition name="subnumber4">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject2"/>, <get name="subject3"/>, <get name="subject4"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="time6">
+                <li value="1">
+                    <condition name="subnumber2">
+                    <li value="2">
+                        <condition name="subnumber3">
+                        <li value="2">
+                            <condition name="subnumber5">
+                            <li value="2">
+                                <condition name="subnumber6">
+                                <li value="2">We talked about <get name="subject2"/>, <get name="subject3"/>, <get name="subject5"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber2">
+                    <li value="2">
+                        <condition name="subnumber3">
+                        <li value="2">
+                            <condition name="subnumber5">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject2"/>, <get name="subject3"/>, <get name="subject5"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber2">
+                    <li value="2">
+                        <condition name="subnumber3">
+                        <li value="2">
+                            <condition name="subnumber6">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject2"/>, <get name="subject3"/>, <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="time6">
+                <li value="1">
+                    <condition name="subnumber2">
+                    <li value="2">
+                        <condition name="subnumber4">
+                        <li value="2">
+                            <condition name="subnumber5">
+                            <li value="2">
+                                <condition name="subnumber6">
+                                <li value="2">We talked about <get name="subject2"/>, <get name="subject4"/>, <get name="subject5"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber2">
+                    <li value="2">
+                        <condition name="subnumber4">
+                        <li value="2">
+                            <condition name="subnumber5">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject2"/>, <get name="subject4"/>, <get name="subject5"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                <condition name="subnumber2">
+                <li value="2">
+                    <condition name="subnumber4">
+                    <li value="2">
+                        <condition name="subnumber6">
+                        <li value="2">
+                            <condition name="subnumber7">
+                            <li value="2">We talked about <get name="subject2"/>, <get name="subject4"/>, <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time3">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="time6">
+                <li value="1">
+                    <condition name="subnumber3">
+                    <li value="2">
+                        <condition name="subnumber4">
+                        <li value="2">
+                            <condition name="subnumber5">
+                            <li value="2">
+                                <condition name="subnumber6">
+                                <li value="2">We talked about <get name="subject3"/>, <get name="subject4"/>, <get name="subject5"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time3">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber3">
+                    <li value="2">
+                        <condition name="subnumber4">
+                        <li value="2">
+                            <condition name="subnumber5">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject3"/>, <get name="subject4"/>, <get name="subject5"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time3">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber3">
+                    <li value="2">
+                        <condition name="subnumber4">
+                        <li value="2">
+                            <condition name="subnumber6">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject3"/>, <get name="subject4"/>, <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time4">
+    <li value="1">
+        <condition name="time5">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber4">
+                    <li value="2">
+                        <condition name="subnumber5">
+                        <li value="2">
+                            <condition name="subnumber6">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject4"/>, <get name="subject5"/>, <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="time6">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber4">
+                        <li value="2">
+                            <condition name="subnumber5">
+                            <li value="2">
+                                <condition name="subnumber6">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject4"/>, <get name="subject5"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber4">
+                        <li value="2">
+                            <condition name="subnumber5">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject4"/>, <get name="subject5"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber4">
+                        <li value="2">
+                            <condition name="subnumber6">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject4"/>, <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time5">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="time7">
+                <li value="1">
+                    <condition name="subnumber1">
+                    <li value="2">
+                        <condition name="subnumber5">
+                        <li value="2">
+                            <condition name="subnumber6">
+                            <li value="2">
+                                <condition name="subnumber7">
+                                <li value="2">We talked about <get name="subject1"/>, <get name="subject5"/>, <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                                </condition>
+                            </li>
+                            </condition>
+                        </li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time3">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber2">
+                    <li value="2">
+                        <condition name="subnumber3">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/> and <get name="subject3"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time4">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber2">
+                    <li value="2">
+                        <condition name="subnumber4">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/> and <get name="subject4"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber2">
+                    <li value="2">
+                        <condition name="subnumber5">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber2">
+                    <li value="2">
+                        <condition name="subnumber6">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber2">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject2"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time4">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber3">
+                    <li value="2">
+                        <condition name="subnumber4">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject3"/> and <get name="subject4"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber3">
+                    <li value="2">
+                        <condition name="subnumber5">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject3"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber3">
+                    <li value="2">
+                        <condition name="subnumber6">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject3"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber3">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject3"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber4">
+                    <li value="2">
+                        <condition name="subnumber5">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject4"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber4">
+                    <li value="2">
+                        <condition name="subnumber6">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject4"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber4">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject4"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time5">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber5">
+                    <li value="2">
+                        <condition name="subnumber6">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject5"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time5">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber5">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject5"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time6">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber1">
+                <li value="2">
+                    <condition name="subnumber6">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject1"/>, <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time4">
+            <li value="1">
+                <condition name="subnumber2">
+                <li value="2">
+                    <condition name="subnumber3">
+                    <li value="2">
+                        <condition name="subnumber4">
+                        <li value="2">We talked about <get name="subject2"/>, <get name="subject3"/> and <get name="subject4"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="subnumber2">
+                <li value="2">
+                    <condition name="subnumber3">
+                    <li value="2">
+                        <condition name="subnumber5">
+                        <li value="2">We talked about <get name="subject2"/>, <get name="subject3"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="subnumber2">
+                <li value="2">
+                    <condition name="subnumber3">
+                    <li value="2">
+                        <condition name="subnumber6">
+                        <li value="2">We talked about <get name="subject2"/>, <get name="subject3"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber2">
+                <li value="2">
+                    <condition name="subnumber3">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject2"/>, <get name="subject3"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="subnumber2">
+                <li value="2">
+                    <condition name="subnumber4">
+                    <li value="2">
+                        <condition name="subnumber5">
+                        <li value="2">We talked about <get name="subject2"/>, <get name="subject4"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="subnumber2">
+                <li value="2">
+                    <condition name="subnumber4">
+                    <li value="2">
+                        <condition name="subnumber6">
+                        <li value="2">We talked about <get name="subject2"/>, <get name="subject4"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber2">
+                <li value="2">
+                    <condition name="subnumber4">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject2"/>, <get name="subject4"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time5">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="subnumber2">
+                <li value="2">
+                    <condition name="subnumber5">
+                    <li value="2">
+                        <condition name="subnumber6">
+                        <li value="2">We talked about <get name="subject2"/>, <get name="subject5"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time5">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber2">
+                <li value="2">
+                    <condition name="subnumber5">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject2"/>, <get name="subject5"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time6">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber2">
+                <li value="2">
+                    <condition name="subnumber6">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject2"/>, <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time3">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="subnumber3">
+                <li value="2">
+                    <condition name="subnumber4">
+                    <li value="2">
+                        <condition name="subnumber5">
+                        <li value="2">We talked about <get name="subject3"/>, <get name="subject4"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time3">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="subnumber3">
+                <li value="2">
+                    <condition name="subnumber4">
+                    <li value="2">
+                        <condition name="subnumber6">
+                        <li value="2">We talked about <get name="subject3"/>, <get name="subject4"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber3">
+                <li value="2">
+                    <condition name="subnumber4">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject3"/>, <get name="subject4"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time3">
+    <li value="1">
+        <condition name="time5">
+        <li value="1">
+            <condition name="time6">
+            <li value="1">
+                <condition name="subnumber3">
+                <li value="2">
+                    <condition name="subnumber5">
+                    <li value="2">
+                        <condition name="subnumber6">
+                        <li value="2">We talked about <get name="subject3"/>, <get name="subject5"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time3">
+    <li value="1">
+        <condition name="time5">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber3">
+                <li value="2">
+                    <condition name="subnumber5">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject3"/>, <get name="subject5"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time3">
+    <li value="1">
+        <condition name="time6">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber3">
+                <li value="2">
+                    <condition name="subnumber6">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject3"/>, <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time4">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="time5">
+            <li value="1">
+                <condition name="subnumber6">
+                <li value="2">
+                    <condition name="subnumber5">
+                    <li value="2">
+                        <condition name="subnumber6">
+                        <li value="2">We talked about <get name="subject4"/>, <get name="subject5"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time4">
+    <li value="1">
+        <condition name="time5">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber4">
+                <li value="2">
+                    <condition name="subnumber5">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject4"/>, <get name="subject5"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time4">
+    <li value="1">
+        <condition name="time6">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber4">
+                <li value="2">
+                    <condition name="subnumber6">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject4"/>, <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time5">
+    <li value="1">
+        <condition name="time6">
+        <li value="1">
+            <condition name="time7">
+            <li value="1">
+                <condition name="subnumber5">
+                <li value="2">
+                    <condition name="subnumber6">
+                    <li value="2">
+                        <condition name="subnumber7">
+                        <li value="2">We talked about <get name="subject5"/>, <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                        </condition>
+                    </li>
+                    </condition>
+                </li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time2">
+        <li value="1">
+            <condition name="subnumber1">
+            <li value="2">
+                <condition name="subnumber2">
+                <li value="2">We talked about <get name="subject1"/> and <get name="subject2"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="subnumber1">
+            <li value="2">
+                <condition name="subnumber3">
+                <li value="2">We talked about <get name="subject1"/> and <get name="subject3"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="subnumber1">
+            <li value="2">
+                <condition name="subnumber4">
+                <li value="2">We talked about <get name="subject1"/> and <get name="subject4"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time5">
+        <li value="1">
+            <condition name="subnumber1">
+            <li value="2">
+                <condition name="subnumber5">
+                <li value="2">We talked about <get name="subject1"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time6">
+        <li value="1">
+            <condition name="subnumber1">
+            <li value="2">
+                <condition name="subnumber6">
+                <li value="2">We talked about <get name="subject1"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="time7">
+        <li value="1">
+            <condition name="subnumber1">
+            <li value="2">
+                <condition name="subnumber7">
+                <li value="2">We talked about <get name="subject1"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time3">
+        <li value="1">
+            <condition name="subnumber2">
+            <li value="2">
+                <condition name="subnumber3">
+                <li value="2">We talked about <get name="subject2"/> and <get name="subject3"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="subnumber2">
+            <li value="2">
+                <condition name="subnumber4">
+                <li value="2">We talked about <get name="subject2"/> and <get name="subject4"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time5">
+        <li value="1">
+            <condition name="subnumber2">
+            <li value="2">
+                <condition name="subnumber5">
+                <li value="2">We talked about <get name="subject2"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time6">
+        <li value="1">
+            <condition name="subnumber2">
+            <li value="2">
+                <condition name="subnumber6">
+                <li value="2">We talked about <get name="subject2"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="time7">
+        <li value="1">
+            <condition name="subnumber2">
+            <li value="2">
+                <condition name="subnumber7">
+                <li value="2">We talked about <get name="subject2"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time3">
+    <li value="1">
+        <condition name="time4">
+        <li value="1">
+            <condition name="subnumber3">
+            <li value="2">
+                <condition name="subnumber4">
+                <li value="2">We talked about <get name="subject3"/> and <get name="subject4"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time3">
+    <li value="1">
+        <condition name="time5">
+        <li value="1">
+            <condition name="subnumber3">
+            <li value="2">
+                <condition name="subnumber5">
+                <li value="2">We talked about <get name="subject3"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time3">
+    <li value="1">
+        <condition name="time6">
+        <li value="1">
+            <condition name="subnumber3">
+            <li value="2">
+                <condition name="subnumber6">
+                <li value="2">We talked about <get name="subject3"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time3">
+    <li value="1">
+        <condition name="time7">
+        <li value="1">
+            <condition name="subnumber3">
+            <li value="2">
+                <condition name="subnumber7">
+                <li value="2">We talked about <get name="subject3"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time4">
+    <li value="1">
+        <condition name="time5">
+        <li value="1">
+            <condition name="subnumber4">
+            <li value="2">
+                <condition name="subnumber5">
+                <li value="2">We talked about <get name="subject4"/> and <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time4">
+    <li value="1">
+        <condition name="time6">
+        <li value="1">
+            <condition name="subnumber4">
+            <li value="2">
+                <condition name="subnumber6">
+                <li value="2">We talked about <get name="subject4"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time4">
+    <li value="1">
+        <condition name="time7">
+        <li value="1">
+            <condition name="subnumber4">
+            <li value="2">
+                <condition name="subnumber7">
+                <li value="2">We talked about <get name="subject4"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time5">
+    <li value="1">
+        <condition name="time6">
+        <li value="1">
+            <condition name="subnumber5">
+            <li value="2">
+                <condition name="subnumber6">
+                <li value="2">We talked about <get name="subject5"/> and <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time6">
+    <li value="1">
+        <condition name="time7">
+        <li value="1">
+            <condition name="subnumber6">
+            <li value="2">
+                <condition name="subnumber7">
+                <li value="2">We talked about <get name="subject6"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time5">
+    <li value="1">
+        <condition name="time7">
+        <li value="1">
+            <condition name="subnumber5">
+            <li value="2">
+                <condition name="subnumber7">
+                <li value="2">We talked about <get name="subject5"/> and <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+                </condition>
+            </li>
+            </condition>
+        </li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time1">
+    <li value="1">
+        <condition name="subnumber1">
+        <li value="2">We talked about <get name="subject1"/><think><set name="ANSWER">false</set></think></li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time2">
+    <li value="1">
+        <condition name="subnumber2">
+        <li value="2">We talked about <get name="subject2"/><think><set name="ANSWER">false</set></think></li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time3">
+    <li value="1">
+        <condition name="subnumber3">
+        <li value="2">We talked about <get name="subject3"/><think><set name="ANSWER">false</set></think></li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time4">
+    <li value="1">
+        <condition name="subnumber4">
+        <li value="2">We talked about <get name="subject4"/><think><set name="ANSWER">false</set></think></li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time5">
+    <li value="1">
+        <condition name="subnumber5">
+        <li value="2">We talked about <get name="subject5"/><think><set name="ANSWER">false</set></think></li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time6">
+    <li value="1">
+        <condition name="subnumber6">
+        <li value="2">We talked about <get name="subject6"/><think><set name="ANSWER">false</set></think></li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+<condition name="ANSWER">
+<li value="ok">
+    <condition name="time7">
+    <li value="1">
+        <condition name="subnumber7">
+        <li value="2">We talked about <get name="subject7"/><think><set name="ANSWER">false</set></think></li>
+        </condition>
+    </li>
+    </condition>
+</li>
+</condition>
+
+</template></category></learn></think>
+<oob><mrl><service>python</service><method>exec</method><param>
+GETMEMO()
+</param></mrl></oob>
+</template></category>
+
+</aiml>
