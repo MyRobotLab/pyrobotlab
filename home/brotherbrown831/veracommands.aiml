@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  Information can be found here: -->
+<!--http://wiki.micasaverde.com/index.php/Luup_Requests#status-->
+<!--example of sending an HTTP command to VERA LITE iniated by AIML-->
+<!--http://ip_address:3480/data_request?id=action&output_format=xml&DeviceNum=6&serviceId=urn:upnp-org:serviceId:SwitchPower1&action=SetTarget&newTargetValue=0 -->
+<!--  -->
+<category>
+  <pattern>GARAGE LIGHTS ON</pattern>
+  <template>Turning garage lights on
+    <oob>
+      <mrl>
+        <service>pyhton</service>
+        <method>exec</method>
+        <param>
+from org.myrobotlab.net import BareBonesBrowserLaunch
+BareBonesBrowserLaunch.openURL("http://192.168.1.78:3480/data_request?id=action&ampoutput_format=xml&ampDeviceNum=14&ampserviceId=urn:upnp-org:serviceId:SwitchPower1&ampaction=SetTarget&newTargetValue=01")
+        </param>
+      </mrl>
+    </oob>
+  </template>
+</category>
+  <pattern>GARAGE LIGHTS OFF</pattern>
+  <template>Turning garage lights off
+    <oob>
+      <mrl>
+        <service>pyhton</service>
+        <method>exec</method>
+        <param>
+from org.myrobotlab.net import BareBonesBrowserLaunch
+BareBonesBrowserLaunch.openURL("http://192.168.1.78:3480/data_request?id=action&ampoutput_format=xml&ampDeviceNum=14&ampserviceId=urn:upnp-org:serviceId:SwitchPower1&ampaction=SetTarget&newTargetValue=00")
+        </param>
+      </mrl>
+    </oob>
+  </template>
+</category>
+</aiml>
+
+  
+  
+  
