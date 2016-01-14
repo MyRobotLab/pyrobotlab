@@ -49,7 +49,9 @@ htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 # TODO: consider a different voice?
 ######################################################################
 acapelaSpeech = Runtime.createAndStart("speech", "AcapelaSpeech")
-#can acapela work here? 
+voices = acapelaSpeech.getVoices()
+for voice in voices:
+    acapelaSpeech.setVoice("Ryan") 
  
 ######################################################################
 # MRL Routing   webgui (speech recognition) -> program ab -> htmlfilter -> inmoov
