@@ -12,7 +12,7 @@ htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 mouth = Runtime.createAndStart("mouth", "AcapelaSpeech")
 
 # add a link between the webkit speech to publish to ProgramAB
-wksr.addTextListener(programab)
+wksr.addTextListener(ab)
 # Add route from Program AB to html filter
 ab.addTextListener(htmlfilter)
 # Add route from html filter to mouth
