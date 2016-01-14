@@ -34,9 +34,6 @@ sarah.startSession(aimlDir, "nolan", "sarah")
 # So this just means we need the web gui, it's part of the programAB 
 # service now.
 wksr = Runtime.start("webkitspeechrecognition","WebkitSpeechRecognition")
-wksr.addTextListener(sarah)
-
-
 
 ######################################################################
 # Start the REST API for MRL
@@ -51,14 +48,14 @@ htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 # create the speech to text service (named the same as the inmoov's)
 # TODO: consider a different voice?
 ######################################################################
-mouth = Runtime.createAndStart("mouth", "MarySpeech")
-# mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
 acapelaSpeech = Runtime.createAndStart("speech", "AcapelaSpeech")
 #can acapela work here? 
  
 ######################################################################
 # MRL Routing   webgui (speech recognition) -> program ab -> htmlfilter -> inmoov
 ######################################################################
+# Add route from webspeach to ProgramAB(sarah)
+wksr.addTextListener(sarah)
 # Add route from Program AB to html filter
 sarah.addTextListener(htmlfilter)
 # Add route from html filter to mouth
