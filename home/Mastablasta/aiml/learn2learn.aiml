@@ -145,4 +145,24 @@ Yes <eval><star/></eval> is a <eval><star index="2"/></eval>.</template>
 </template>
 </category>
 
+<category>
+<pattern>IS A * A *</pattern>
+<template>No!</template>
+</category>
+
+<category>
+<pattern>IS AN * A *</pattern>
+<template>No!</template>
+</category>
+
+<category>
+<pattern>IS A * AN *</pattern>
+<template>No!</template>
+</category>
+
+<category>
+<pattern>IS AN * AN *</pattern>
+<template>No!</template>
+</category>
+
 </aiml>
