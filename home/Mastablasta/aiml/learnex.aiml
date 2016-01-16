@@ -351,7 +351,7 @@ Ok, <star/> is also a <star index="2"/>.
 <learn>
 <category><pattern>WHAT IS <eval><star/></eval></pattern>
 <template>
-<eval><star/></eval> is a <eval><star index="2"/></eval> and an <get name="pair2b"/>.
+<eval><star/></eval> is a <eval><star index="2"/></eval> and a <get name="pair2b"/>.
 </template>
 </category>
 </learn>
