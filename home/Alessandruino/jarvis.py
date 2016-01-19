@@ -16,8 +16,8 @@ for voice in voices:
     mouth.setVoice("Vittorio")
 
 # add a link between the webkit speech to publish to ProgramAB
-wksr.addTextListener(ab)
+wksr.addTextListener(jarvis)
 # Add route from Program AB to html filter
-ab.addTextListener(htmlfilter)
+jarvis.addTextListener(htmlfilter)
 # Add route from html filter to mouth
 htmlfilter.addTextListener(mouth)
