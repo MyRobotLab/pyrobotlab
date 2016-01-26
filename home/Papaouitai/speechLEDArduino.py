@@ -7,12 +7,13 @@ arduino.publishState()
 arduino.pinMode(13, Arduino.OUTPUT)
 acapelaSpeech = Runtime.createAndStart("speech", "AcapelaSpeech")
 voices = acapelaSpeech.getVoices()
-for voice in voices:
-    acapelaSpeech.setVoice("Ryan") 
+acapelaSpeech.setVoice("Ryan")
 python.subscribe("speech", "publishStartSpeaking") 
-def onStartSpeaking(text): 
+def onStartSpeaking(text):
+    print "Start Speaking"
     arduino.digitalWrite(13,1)
 
-python.subscribe("speech", "publishStopSpeaking")
-def onStopSpeaking(text): 
+python.subscribe("speech", "publishEndSpeaking")
+def onEndSpeaking(text): 
+    print "Stop speaking"
     arduino.digitalWrite(13,0)
