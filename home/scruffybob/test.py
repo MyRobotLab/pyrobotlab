@@ -6,16 +6,21 @@ mouth = Runtime.createAndStart("mouth", "AcapelaSpeech")
 alice = Runtime.createAndStart("alice","ProgramAB")
 webGui = Runtime.createAndStart("webGui","WebGui")
  
-voices = mouth.getVoices()
-for voice in voices:
-    mouth.setVoice("will")
+#voices = mouth.getVoices()
+mouth.setVoice("will")
  
 # add a link between the webkit speech to publish to ProgramAB
 wksr.addTextListener(alice)
+
 # Add route from Program AB to html filter
 alice.addTextListener(htmlfilter)
+
 # Add route from html filter to mouth
 htmlfilter.addTextListener(mouth)
+
+# Add route from ear to mouth to keep it from talking to itself
+wksr.attach(mouth)
+
 python.subscribe('htmlfilter', 'publishText')
  
 # talk function
