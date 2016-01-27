@@ -25,3 +25,12 @@ def CTI():
 # def CTG(): changes the voice to german
 # def CTE(): to english
 # def CTI(): to italian
+################################################
+# Using AIML to call the def's
+# <category>
+# <pattern>SPRICHST DU DEUTSCH</pattern>
+# <template>Selbstverständlich spreche ich deutsch.
+# <oob><mrl><service>python</service><method>exec</method><param>
+# CTG()
+# </param></mrl></oob></template>
+# </category>
