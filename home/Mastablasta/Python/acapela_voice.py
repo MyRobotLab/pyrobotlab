@@ -11,7 +11,7 @@ def CTG():
 
 def CTE():
     for voice in voices:
-        acapelaSpeech.setVoice("Graham")
+        acapelaSpeech.setVoice("Ryan")
 
 def CTI():
     for voice in voices:
