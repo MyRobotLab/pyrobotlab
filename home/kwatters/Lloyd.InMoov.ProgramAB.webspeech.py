@@ -12,7 +12,7 @@ def heard(data):
 ######################################################################
 lloyd = Runtime.createAndStart("lloyd", "ProgramAB")
 #lloyd.startSession("c:/dev/workspace.kmw/pyrobotlab/home/kwatters", "default", "lloyd")
-lloyd.startSession("c:/mrl/develop/ProgramAB", "kevin", "alice2")
+lloyd.startSession("kevin", "alice2")
 
 ######################################################################
 # create the speech recognition service
