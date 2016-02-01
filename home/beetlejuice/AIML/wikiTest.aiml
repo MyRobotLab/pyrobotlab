@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<category><pattern>*</pattern>
+<template>I don't know  </template>
+</category>
+
+<category><pattern>SAY *</pattern>
+<template><star/></template>
+</category>
+
+<category><pattern>WHAT IS THE *</pattern>
+	<template>
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>askWiki("The ",&quot;<formal><star/></formal>&quot;)</param>
+			</mrl>
+      </oob>
+	  </template>
+</category>
+<category><pattern>WHAT IS *</pattern>
+	<template>
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>askWiki("A ",&quot;<formal><star/></formal>&quot;)</param>
+			</mrl>
+      </oob>
+	  </template>
+</category>
+<category><pattern>WHAT IS A *</pattern>
+	<template>
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>askWiki("A ",&quot;<formal><star/></formal>&quot;)</param>
+			</mrl>
+      </oob>
+	  </template>
+</category>
+<category><pattern>WHAT IS AN *</pattern>
+	<template>
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>askWiki("An ",&quot;<formal><star/></formal>&quot;)</param>
+			</mrl>
+      </oob>
+	  </template>
+</category>
+<category><pattern>WHO IS *</pattern>
+	<template>
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>askWiki(" ",&quot;<formal><star/></formal>&quot;)</param>
+			</mrl>
+      </oob>
+	  </template>
+</category>
+<category><pattern>WHERE WAS BORN *</pattern>
+	<template>
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty(&quot;<formal><star/></formal>&quot;,"P19", " was born in " )</param>
+			</mrl>
+      </oob>
+	  </template>
+</category>
+<category><pattern>WHAT IS THE BIRTHDATE OF *</pattern>
+	<template>
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getDate(&quot;<formal><star/></formal>&quot;,"P569")</param>
+			</mrl>
+      </oob>
+	  </template>
+</category>
+<category><pattern>WHO DISCOVERED *</pattern>
+	<template>
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty(&quot;<formal><star/></formal>&quot;,"P61", " was discovered by " )</param>
+			</mrl>
+      </oob>
+	  </template>
+</category>
+<category><pattern>WHO INVENTED *</pattern>
+	<template>
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty(&quot;<formal><star/></formal>&quot;,"P61", " was invented by " )</param>
+			</mrl>
+      </oob>
+	  </template>
+</category>
+</aiml>
