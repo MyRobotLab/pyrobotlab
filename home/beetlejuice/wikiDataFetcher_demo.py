@@ -3,7 +3,7 @@
 
 wdf = Runtime.createAndStart("wikiDataFetcher", "WikiDataFetcher")
 
-query = "Adam Sandler"
+query = "Eiffel Tower"
 wdf.setWebSite("enwiki") 
 
 # Display the label
@@ -21,16 +21,27 @@ wdf.setLanguage("fr")
 print "Description FR : " + wdf.getDescription(query)
 
 # Display the identification number of the document
-print "Identification number : " + wdf.getId(query)
+print "Identification number of the Eiffel Tower is : " + wdf.getId(query)
 
-# Display the description from document identification number
+# Display the description from document identification number ( South pole )
 wdf.setLanguage("en")
-print "Label from ID Q933 : " + wdf.getLabelById("Q933")
+print "Label from ID Q933 is : " + wdf.getLabelById("Q933")
 
-# Display the description from document identification number
+# Display the description from document identification number ( South pole )
 wdf.setLanguage("en")
 print "Description from ID Q933 : " + wdf.getDescriptionById("Q933")
 
 # Display Date or time  (day, month, year, hour, minute, second, after, before
+# This one don't work for the Eiffel Tower so : Not Found !
 ID = "P569"
 print "BirthDate : " + wdf.getTime(query,ID,"day") +"/" + wdf.getTime(query,ID,"month") + "/" + wdf.getTime(query,ID,"year")
+
+# Display Date or time  (day, month, year, hour, minute, second, after, before
+ID = "P571"
+print "Built in : " + wdf.getTime(query,ID,"year")
+
+# Display a property ( high of the eiffel tower )2048
+print "high : " + wdf.getQuantity(query,"P2048")
+
+# Display the official website url
+print "Url : " + wdf.getUrl(query,"P856")
