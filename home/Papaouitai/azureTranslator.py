@@ -150,14 +150,13 @@ def translate (access_token, text, to_lang, from_lang=None):
         else:
             data = { 'text' : to_bytestring(text), 'to' : to_lang }
 
-            #if from_lang:
-                # if from_lang not in supported_languages.keys():
-                #    print 'Sorry, the API cannot translate from', from_lang
-                #    print 'Please use one of these instead:'
-                #    print print_supported_languages()
-                #    return
-                #else:
-            data['from'] = from_lang
+            if from_lang:
+                 if from_lang not in supported_languages.keys():
+                    azure.getResponse("Say I haven't learned this language")
+                    print print_supported_languages()
+                    return
+                else:
+                    data['from'] = from_lang
 
             try:
 
