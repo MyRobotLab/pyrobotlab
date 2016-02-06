@@ -142,23 +142,22 @@ def to_bytestring (s):
 
 def translate (access_token, text, to_lang, from_lang=None):
     if not access_token:
-        print 'Sorry, the access token is invalid'
+        azure.getResponse('Say Sorry, the access token is invalid'
     else:
         if to_lang not in supported_languages.keys():
-            print 'Sorry, the API cannot translate to', to_lang
-            print 'Please use one of these instead:'
+            azure.getResponse("Say I haven't learned this language")
             print print_supported_languages()
         else:
             data = { 'text' : to_bytestring(text), 'to' : to_lang }
 
-            if from_lang:
-                if from_lang not in supported_languages.keys():
-                    print 'Sorry, the API cannot translate from', from_lang
-                    print 'Please use one of these instead:'
-                    print print_supported_languages()
-                    return
-                else:
-                    data['from'] = from_lang
+            #if from_lang:
+                # if from_lang not in supported_languages.keys():
+                #    print 'Sorry, the API cannot translate from', from_lang
+                #    print 'Please use one of these instead:'
+                #    print print_supported_languages()
+                #    return
+                #else:
+            data['from'] = from_lang
 
             try:
 
