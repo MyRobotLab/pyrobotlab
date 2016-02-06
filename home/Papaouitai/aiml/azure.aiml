@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <category>
+    <pattern>TRANSLATE * IN *</pattern>
+    <template>
+	<oob><mrl><service>python</service><method>exec</method><param>translateText("<star/>","<star index="2"/>")</param></mrl></oob>
+    </template>
+	</category>
+	  <category>
+<pattern>SAY *</pattern>
+<template><star /></template>
+</category>
+</aiml>
