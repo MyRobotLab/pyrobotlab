@@ -19,7 +19,7 @@ alice.addTextListener(htmlfilter)
 htmlfilter.addTextListener(mouth)
 
 # Add route from ear to mouth to keep it from talking to itself
-wksr.attach(mouth)
+wksr.addMouth(mouth)
 
 python.subscribe('htmlfilter', 'publishText')
  
