@@ -63,6 +63,21 @@ void setup() {
 }
 
 void loop() {
+
+  startValue1 = ((startValue1 * 19) + analogRead(analogInPin1)) / 20;
+  startValue2 = ((startValue2 * 19) + analogRead(analogInPin2)) / 20;
+  startValue3 = ((startValue3 * 19) + analogRead(analogInPin3)) / 20;
+  startValue4 = ((startValue4 * 19) + analogRead(analogInPin4)) / 20;
+  startValue5 = ((startValue5 * 19) + analogRead(analogInPin5)) / 20;
+  startValue6 = ((startValue6 * 19) + analogRead(analogInPin6)) / 20;
+  startValue7 = ((startValue7 * 19) + analogRead(analogInPin7)) / 20;
+  startValue8 = ((startValue8 * 19) + analogRead(analogInPin8)) / 20;
+  startValue9 = ((startValue9 * 19) + analogRead(analogInPin9)) / 20;
+  startValue10 = ((startValue10 * 19) + analogRead(analogInPin10)) / 20;
+  startValue11 = ((startValue11 * 19) + analogRead(analogInPin11)) / 20;
+  startValue12 = ((startValue12 * 19) + analogRead(analogInPin12)) / 20;
+
+  
   // read the analog in value:
   sensorValue1 = analogRead(analogInPin1);
   sensorValue2 = analogRead(analogInPin2);
@@ -77,15 +92,15 @@ void loop() {
   sensorValue11 = analogRead(analogInPin11);
   sensorValue12 = analogRead(analogInPin12);
   
-  if (sensorValue1 <= startValue1 - 100){
+  if (sensorValue1 <= startValue1 - 50){
       Serial.write(1);
       delay(200);
   }
-  if (sensorValue2 <= startValue2 - 100){
+  if (sensorValue2 <= startValue2 - 50){
       Serial.write(2);
       delay(200);
   }
-  if (sensorValue3 <= startValue3 - 100){
+  if (sensorValue3 <= startValue3 - 50){
       Serial.write(3);
       delay(200);
   }
@@ -97,34 +112,35 @@ void loop() {
       Serial.write(5);
       delay(200);
   }
-  if (sensorValue6 <= startValue6 - 100){
+  if (sensorValue6 <= startValue6 - 50){
       Serial.write(6);
       delay(200);
   }
-  if (sensorValue7 <= startValue7 - 100){
+  if (sensorValue7 <= startValue7 - 50){
       Serial.write(7);
       delay(200);
   }
-  if (sensorValue8 <= startValue8 - 100){
+  if (sensorValue8 <= startValue8 - 50){
       Serial.write(8);
       delay(200);
   }
-  if (sensorValue9 <= startValue9 - 100){
+  if (sensorValue9 <= startValue9 - 50){
       Serial.write(9);
       delay(200);
   }
-  if (sensorValue10 <= startValue10 - 100){
+  if (sensorValue10 <= startValue10 - 50){
       Serial.write(10);
       delay(200);
   }
-  if (sensorValue11 <= startValue11 - 100){
+  if (sensorValue11 <= startValue11 - 50){
       Serial.write(11);
       delay(200);
   }
-  if (sensorValue12 <= startValue12 - 100){
+  if (sensorValue12 <= startValue12 - 50){
       Serial.write(12);
       delay(200);
   }
-//  Serial.println(sensorValue1);
+//  Serial.println(sensorValue5);
+//  Serial.println(startValue5);
   delay(20);
 }
