@@ -15,15 +15,16 @@ tracker = Runtime.createAndStart("tracker", "Tracking")
 servoX = tracker.getX()
 servoX.setPin(xServoPin)
 servoX.setMinMax(30, 150)  #minimum and maximum settings for the X servo
+# servoX.setInverted(True) # invert if necessary
 
 servoY = tracker.getY()
 servoY.setPin(yServoPin)
 servoY.setMinMax(30, 150)  #minimum and maximum settings for the Y servo
+# servoY.setInverted(True) # invert if necessary
 
 # changing PID values change the 
 # speed and "jumpyness" of the Servos
-xpid = tracker.getXPID()
-ypid = tracker.getYPID()
+# pid = tracker.getPID()
 
 # these are default setting
 # adjust to make more smooth
