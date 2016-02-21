@@ -1,0 +1,53 @@
+    private void jButton_SucheGPSActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        
+        DefaultTableModel model=(DefaultTableModel) jTable_GPS.getModel();
+        model.getDataVector().removeAllElements();
+        model.fireTableDataChanged();        
+        
+        String sql1;
+        String uniqueId = jTextField_GPSID.getText();
+        String name = jTextField_GPSTour.getText();
+        String fahrer = jTextField_GPSFahrer.getText();
+        String kfz = jTextField_GPSKFZ.getText();
+        String telfahrer = jTextField_GPSTelFahrer.getText();
+        
+        try{
+            sql1 ="select * from devices where name=? OR uniqueID=? OR fahrer=? OR kfz =? OR telfahrer=?";
+            pst=con.prepareStatement(sql1);
+            pst.setString(1, name);
+            pst.setString(2, uniqueId);
+            pst.setString(3, fahrer);
+            pst.setString(4, kfz);
+            pst.setString(5, telfahrer);            
+            rs=pst.executeQuery();
+
+            while (rs.next()){
+                String add1=rs.getString("name");
+                String add4=rs.getString("status");
+                String add5=rs.getString("uniqueID");
+                String add6=rs.getString("fahrer");
+                String add7=rs.getString("kfz");
+                String add8=rs.getString("telfahrer");      
+                
+                jTextField_GPSTour.setText(add1);
+                jTextField_GPSID.setText(add5);
+                jTextField_GPSFahrer.setText(add6);
+                jTextField_GPSKFZ.setText(add7);
+                jTextField_GPSTelFahrer.setText(add8);
+              
+                jTextArea1.append("Tour:           "+rs.getString("name")+ "\n");
+                jTextArea1.append("Kennung:  "+rs.getString("uniqueID")+ "\n");
+                jTextArea1.append("Fahrer:       "+rs.getString("fahrer")+ "\n");
+                jTextArea1.append("KFZ:            "+rs.getString("kfz")+ "\n");
+                jTextArea1.append("Tel.:             "+rs.getString("telfahrer")+ "\n"+ "\n");
+
+                model.addRow(new Object[]{rs.getString("name"),rs.getString("status"),rs.getString("status"),rs.getString("status"),rs.getString("uniqueID")});              
+
+            }
+        }
+        catch(SQLException | HeadlessException e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    } 
