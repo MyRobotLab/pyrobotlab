@@ -1,6 +1,6 @@
 #file : InMoov3.full.byGael.Langevin.1.py
 
-
+#for MRL version above 1.0.1XXX
 # this script is provided as a basic guide
 # most parts can be run by uncommenting them
 # InMoov now can be started in modular pieces
