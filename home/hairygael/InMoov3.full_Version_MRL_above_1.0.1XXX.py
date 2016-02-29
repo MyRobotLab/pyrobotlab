@@ -16,7 +16,7 @@ i01 = Runtime.createAndStart("i01", "InMoov")
 directionServo = Runtime.start("directionServo","Servo")
 forwardServo = Runtime.start("forwardServo","Servo") 
 right = Runtime.start("i01.right", "Arduino")
-right.connect("COM7")
+right.connect(rightPort)
 #cleverbot = Runtime.createAndStart("cleverbot","CleverBot")
 
 # starts everything
@@ -60,7 +60,7 @@ i01.startHeadTracking(leftPort)
 ##############
 i01.startEar()
 ##############
-torso = i01.startTorso("COM20")
+torso = i01.startTorso(leftPort)
 # tweaking default torso settings
 torso.topStom.setMinMax(0,180)
 torso.topStom.map(0,180,70,120)
@@ -132,7 +132,7 @@ i01.headTracking.pid.setPID("neck",12.0,5.0,0.1)
 ############################################################
 
 
-i01.startPIR("COM20",30)
+i01.startPIR(leftPort,30)
  
  
  
@@ -325,7 +325,6 @@ ear.addCommand("system check", "python", "systemcheck")
 ear.addCommand("demonstrate your balance", "python", "balance")
 #ear.addCommand("watch out", "python", "watch out")
 
-
 ear.addComfirmations("yes","correct","ya","yeah", "yes please", "yes of course")
 ear.addNegations("no","wrong","nope","nah","no thank you", "no thanks")
 
@@ -333,6 +332,7 @@ ear.startListening("yes | no | very good, thank you | it's okay | no thanks | no
  
 # set up a message route from the ear --to--> python method "heard"
 ear.addListener("recognized", "python", "heard")
+# ear.addVoiceRecognitionListener("python")
 #inmoov.addTextListener(i01.mouth)
 
 
@@ -364,8 +364,7 @@ def stopit():
     if (data == "pause"):
         i01.mouth.speak("yes")
         
-def playsong():
-    data = msg_i01_ear_recognized.data[0]
+def playsong(data):
     if (data == "can i have your attention"):
             i01.mouth.speak("ok you have my attention")
             stopit()
@@ -1244,20 +1243,19 @@ def guesswhat():
     i01.mouth.speak("and now I'm really cool")
 
 
-def rockpaperscissors():
+def rockpaperscissors(data):
     fullspeed()
     i01.mouth.speak("lets play first to 3 points win")
     sleep(4)
-    rockpaperscissors2()
+    rockpaperscissors2(data)
 
-def rockpaperscissors2():
+def rockpaperscissors2(data):
     x = (random.randint(1, 3))
     if x == 1:
         ready()
         sleep(2)
         rock()
         sleep(2)
-        data = msg_i01_ear_recognized.data[0]
         if (data == "i have rock"):
             x = (random.randint(1, 3))
             if x == 1:
@@ -1296,7 +1294,6 @@ def rockpaperscissors2():
         sleep(2)
         paper()
         sleep(2)
-        data = msg_i01_ear_recognized.data[0]
         if (data == "i have rock"):
             x = (random.randint(1, 3))
             if x == 1:
@@ -1335,7 +1332,6 @@ def rockpaperscissors2():
         sleep(2)
         scissors()
         sleep(2)
-        data = msg_i01_ear_recognized.data[0]
         if (data == "i have rock"):
             x = (random.randint(1, 3))
             if x == 1:
@@ -1374,9 +1370,9 @@ def rockpaperscissors2():
         stoprockpaperscissors()
         sleep(1)
     elif inmoov <= 2:                      # changed from if to  elif 
-        rockpaperscissors2()
+        rockpaperscissors2(data)
     elif human <= 2:                       # changed from if to  elif 
-        rockpaperscissors2()   
+        rockpaperscissors2(data)   
   
 def stoprockpaperscissors():
     rest()
@@ -1399,11 +1395,10 @@ def stoprockpaperscissors():
     sleep(2)
     i01.mouth.speak("do you want to play again")
     sleep(10)
-    data = msg_i01_ear_recognized.data[0]
     if (data == "yes let's play again"):
-        rockpaperscissors2()
+        rockpaperscissors2(data)
     elif (data == "yes"):                                                                              # changed from if to  elif
-        rockpaperscissors2()
+        rockpaperscissors2(data)
     elif (data == "no thanks"):                                                                  # changed from if to  elif
         i01.mouth.speak("maybe some other time")
         sleep(4)
@@ -1567,32 +1562,31 @@ def scissors():
     if x == 2:
         i01.mouth.speakBlocking("what do you have")
 
-def lookaroundyou(): 
+def lookaroundyou(data): 
     i01.setHeadSpeed(0.8, 0.8, 0.6, 0.6, 1.0)
     for y in range(0, 3):
-        data = msg_i01_ear_recognized.data[0]
         if (data == "can i have your attention"):
             i01.mouth.speak("ok you have my attention")
             stopit()
             x = (random.randint(1, 6))
             if x == 1:
                 i01.head.neck.moveTo(90)
-                eyeslooking()
+                eyeslooking(data)
             if x == 2:
                 i01.head.rothead.moveTo(80)
-                eyeslooking()
+                eyeslooking(data)
             if x == 3:
                 headdown()
-                eyeslooking()
+                eyeslooking(data)
             if x == 4:
                 headupp()
-                eyeslooking()
+                eyeslooking(data)
             if x == 5:
                 headright()
-                eyeslooking()
+                eyeslooking(data)
             if x == 6:
                 headleft()
-                eyeslooking()
+                eyeslooking(data)
             sleep(1)
         x = (random.randint(1, 4))
         if x == 1:
@@ -1620,9 +1614,8 @@ def lookaroundyou():
                 sleep(3)
                 relax()
  
-def eyeslooking():
+def eyeslooking(data):
     for y in range(0, 5):
-        data = msg_i01_ear_recognized.data[0]
         if (data == "can i have your attention"):
             i01.mouth.speak("ok you have my attention")
             stopit()
@@ -1718,8 +1711,10 @@ walkingThread = WalkingThread(i01,forwardServo)
 def heard(data):
     global walkingThread
 
+    print("Heard Called :" + str(data))
+
     if (data == "hi there"):
-        lookaroundyou()
+        lookaroundyou(data)
 
     if (data == "are you okay"):
         x = (random.randint(1, 2))
@@ -1913,7 +1908,7 @@ def heard(data):
             if x == 1:
                 fullspeed()
                 i01.head.neck.moveTo(90)
-                eyeslooking()
+                eyeslooking(data)
                 sleep(2)
                 trackHumans()
                 sleep(10)
@@ -1921,7 +1916,7 @@ def heard(data):
             if x == 2:
                 fullspeed()
                 i01.head.rothead.moveTo(80)
-                eyeslooking()
+                eyeslooking(data)
                 sleep(2)
                 trackHumans()
                 sleep(10)
@@ -2874,9 +2869,8 @@ def muscle():
   relax()
   sleep(1)
 
-def shakehand():
-  data = msg_i01_ear_recognized.data[0]
-##rest
+def shakehand(data):
+  ##rest
   i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
@@ -2890,7 +2884,7 @@ def shakehand():
   i01.moveHand("right",2,2,2,2,2,90)
   i01.moveTorso(110,90,90)
   sleep(1)
-##move arm and hand
+  ##move arm and hand
   i01.setHandSpeed("left", 0.65, 0.65, 0.65, 0.65, 0.65, 1.0)
   i01.setHandSpeed("right", 0.65, 0.65, 0.65, 0.65, 0.65, 1.0)
   i01.setArmSpeed("right", 0.75, 0.85, 0.95, 0.85)
@@ -2904,7 +2898,7 @@ def shakehand():
   i01.moveHand("right",50,50,40,20,20,90)
   i01.moveTorso(120,100,90)
   sleep(1)
-##close the hand
+  ##close the hand
   i01.setHandSpeed("left", 0.65, 0.65, 0.65, 0.65, 0.65, 1.0)
   i01.setHandSpeed("right", 0.85, 0.85, 0.85, 0.85, 0.85, 1.0)
   i01.setArmSpeed("right", 0.75, 0.85, 0.95, 0.85)
@@ -2918,7 +2912,7 @@ def shakehand():
   i01.moveHand("right",180,126,120,145,168,77)
   i01.moveTorso(101,100,90)
   sleep(3)
-##shake hand up
+  ##shake hand up
   i01.setHandSpeed("left", 0.65, 0.65, 0.65, 0.65, 0.65, 1.0)
   i01.setHandSpeed("right", 0.85, 0.85, 0.85, 0.85, 0.85, 1.0)
   i01.setArmSpeed("right", 0.75, 0.85, 0.95, 0.85)
@@ -2932,7 +2926,7 @@ def shakehand():
   i01.moveHand("right",180,126,120,145,168,77)
   i01.moveTorso(101,100,90)
   sleep(1)
-##shake hand down
+  ##shake hand down
   if (data == "shake hand"):
        x = (random.randint(1, 4))
        if x == 1:
@@ -2960,7 +2954,7 @@ def shakehand():
   i01.moveHand("right",180,126,120,145,168,77)
   i01.moveTorso(101,100,90)
   sleep(1)
-##shake hand up
+  ##shake hand up
   i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
@@ -2974,7 +2968,7 @@ def shakehand():
   i01.moveHand("right",180,126,120,145,168,77)
   i01.moveTorso(101,100,90)
   sleep(1)
-##shake hand down
+  ##shake hand down
   i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
@@ -2988,7 +2982,7 @@ def shakehand():
   i01.moveHand("right",180,126,120,145,168,77)
   i01.moveTorso(101,100,90)
   sleep(2)
-## release hand  
+  ## release hand  
   i01.setHandSpeed("left", 0.65, 0.65, 0.65, 0.65, 0.65, 1.0)
   i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setArmSpeed("right", 0.95, 0.95, 0.95, 0.85)
@@ -3002,7 +2996,7 @@ def shakehand():
   i01.moveHand("right",20,50,40,20,20,90)
   i01.moveTorso(101,100,90)
   sleep(1)
-##relax
+  ##relax
   i01.setHandSpeed("left", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
   i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 0.85)
   i01.setArmSpeed("right", 0.85, 0.85, 0.85, 0.85)
