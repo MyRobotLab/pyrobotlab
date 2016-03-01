@@ -1,26 +1,21 @@
-import time 
-
+from time import sleep
  
 keyboard = Runtime.createAndStart("keyboard", "Keyboard")
 keyboard.addListener("keyCommand", python.getName(), "input")
 
-on = 0
+loopControl = 0
 
 ##################################################################
- 
- 
 def input(cmd):
+  global loopControl
+  if (cmd == "C"):
+    loopControl = 1
+  if (cmd == "B"):
+    loopControl = 0
 
-
-            
-    if (cmd == "C"):
-        global on 
-        on = 1
-        while on == 1:
-            print (on)
-            sleep (1)
- 
-
-    if (cmd == "B"):
-        global on 
-        on = 0    
+while True:
+  if loopControl == 1:
+    print "The loop is on.."
+  else:
+    print "the loop is off"
+  sleep (1)
