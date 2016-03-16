@@ -11,7 +11,8 @@ def heard(data):
 # Create ProgramAB chat bot
 ######################################################################
 lloyd = Runtime.createAndStart("lloyd", "ProgramAB")
-#lloyd.startSession("c:/dev/workspace.kmw/pyrobotlab/home/kwatters", "default", "lloyd")
+# this starts a session between username "kevin" and the chat bot named
+# "alice2"  (AIML for the bots are in the develop/ProgramAB/bots directory.
 lloyd.startSession("kevin", "alice2")
 
 ######################################################################
@@ -23,35 +24,34 @@ webgui = Runtime.createAndStart("webgui","WebGui")
 
 ######################################################################
 # Create the webkit speech recognition gui
+# This service works in Google Chrome only with the WebGui
 ######################################################################
 wksr = Runtime.createAndStart("webkitspeechrecognition", "WebkitSpeechRecognition")
 ######################################################################
 # create the html filter to filter the output of program ab
+# this service will strip out any html markup and return only the text
+# from the output of ProgramAB
 ######################################################################
 htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
  
 ######################################################################
 # create the speech to text service (named the same as the inmoov's)
+# This service will listen to the output from the htmlfilter and
+# call out to the Acapela group to get the an MP3 that represents the
+# text to be spoken.  That mp3 will be played back by an AudioFile 
+# service.
 ######################################################################
-mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
-# mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
- 
-######################################################################
-# MRL Routing webkitspeechrecognition -> program ab -> htmlfilter -> inmoov
-######################################################################
-# add a route from Sphinx to ProgramAB
-# sphinx.addTextListener(lloyd)
-# debugging in python route.
-# sphinx.addListener("publishText", python.name, "heard", String().getClass());
- 
-# add a link between the webkit speech to publish to ProgramAB
-wksr.addTextListener(lloyd)
-# Add route from Program AB to html filter
-lloyd.addTextListener(htmlfilter)
-# Add route from html filter to mouth
-htmlfilter.addTextListener(mouth)
- 
-# make sure the ear knows if it's speaking.
-# TODO: how does this jive with webspeech ?!
-# sphinx.attach(mouth)
+mouth = Runtime.createAndStart("i01.mouth", "AcapelaSpeech")
 
+# debugging in python route.
+# wksr.addListener("publishText", python.name, "heard", String().getClass());
+
+######################################################################
+# MRL Routing webkitspeechrecognition -> program ab -> htmlfilter -> mouth
+######################################################################
+# add a link between the webkit speech to publish text to ProgramAB
+wksr.addTextListener(lloyd)
+# Add route from Program AB to publish text to the html filter
+lloyd.addTextListener(htmlfilter)
+# Add route to publish text from html filter to mouth
+htmlfilter.addTextListener(mouth)
