@@ -3,7 +3,7 @@
 
 wdf = Runtime.createAndStart("wikiDataFetcher", "WikiDataFetcher")
 
-query = "Eiffel Tower"
+query = "eiffel tower"
 wdf.setWebSite("enwiki") 
 
 # Display the label
@@ -40,8 +40,11 @@ print "BirthDate : " + wdf.getTime(query,ID,"day") +"/" + wdf.getTime(query,ID,"
 ID = "P571"
 print "Built in : " + wdf.getTime(query,ID,"year")
 
-# Display a property ( high of the eiffel tower )2048
+# Display a property ( high of the eiffel tower )
 print "high : " + wdf.getQuantity(query,"P2048")
 
 # Display the official website url
 print "Url : " + wdf.getUrl(query,"P856")
+
+# Display a monolingual value
+print "Birthname of Adam Sandler : " + wdf.getMonolingualValue("Adam Sandler","P1477")

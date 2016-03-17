@@ -15,7 +15,7 @@ def askWiki(start,query):
 	chatBot.getResponse("say " + answer)
 
 def getProperty(query, ID, what):
-	answer = ( query +" " + what + " " + wdf.getProperty(query,ID))
+	answer = ( query +" " + what + " " + wdf.getData(query,ID))
 	print " send aswer to the bot : " + answer
 	chatBot.getResponse("say " + answer)
 
