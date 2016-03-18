@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<aiml>
+<!--author: beetlejuice-->
+
+<category>
+	<pattern>BONJOUR</pattern>
+	<template>
+		<random>
+			<li>Salut</li>
+			<li>Bonjour</li>
+			<li>hey !</li>
+		</random></template>
+</category>
+<category>
+	<pattern>COMMENT VAS-TU</pattern>
+	<template>Je vais bien . Merci</template>
+</category>
+<category>
+	<pattern>SALUT</pattern>
+	<template><srai>Bonjour</srai></template>
+</category>
+<category>
+	<pattern>*</pattern>
+	<template> - </template>
+</category>
+<category>
+	<pattern>DIS *</pattern>
+	<template><star /></template>
+</category>
+<category>
+	<pattern>QUEL EST TON NOM</pattern>
+	<template>Mon nom est Souyty.</template>
+</category>
+<category>
+	<pattern>QUEL EST MON NOM</pattern>
+	<template>
+		<condition name="name">
+			<li value="unknow">Je ne sais pas</li>
+			<li value="*">Tu t'appelles <get name="name" /></li>
+			</condition>
+	</template>
+</category>
+<category>
+	<pattern>MON NOM EST *</pattern>
+	<template><think><set name="name"><star /></set></think>Content de te connaître <star /></template>
+</category>
+<category>
+	<pattern>JE M'APPELLE *</pattern>
+	<template><srai>mon nom est <star /></srai></template>
+</category>
+<category>
+	<pattern>J'AIME * ET *</pattern>
+	<template>Moi j'aime <star index="1" /> mais pas trop <star index="2" />.</template>
+</category>
+<category>
+	<pattern>QUI ES TU</pattern>
+	<template><srai>quel est ton nom</srai></template>
+</category>
+<category>
+	<pattern>TU ES QUOI</pattern>
+	<template>Je suis un robot ! Tu le vois bien !</template>
+</category>
+<category>
+	<pattern>QU'EST-CE QUE TU ES</pattern>
+	<template><srai>tu es quoi</srai></template>
+</category>
+<category>
+	<pattern>COMMENT JE M'APPELLE</pattern>
+	<template><srai>quel est mon nom</srai></template>
+</category>
+<category>
+	<pattern>* COMMENT JE M'APPELLE</pattern>
+	<template><srai>comment je m'appelle</srai></template>
+</category>
+<category>
+	<pattern>JE SUIS UN GARÇON</pattern>
+	<template>ok <think><set name="sexe">masculin</set></think></template>
+</category>
+<category>
+	<pattern>JE SUIS UNE FILLE</pattern>
+	<template>ok <think><set name="sexe">feminin</set></think></template>
+</category>
+<category>
+	<pattern>JE SUIS UN HOMME</pattern>
+	<template><srai>je suis un garçon</srai></template>
+</category>
+<category>
+	<pattern>JE SUIS UNE FEMME</pattern>
+	<template><srai>je suis une fille</srai></template>
+</category>
+</aiml>
