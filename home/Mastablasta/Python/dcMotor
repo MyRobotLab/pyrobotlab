@@ -2,7 +2,8 @@ from java.lang import String
 arduino = Runtime.createAndStart("arduino", "Arduino")
 arduino.connect("COM8") 
 m1 = Runtime.createAndStart("m1","Motor")
-m1.setTypePulseStep(5,6)
+# m1.setTypePulseStep(5,6)
+m1.setType2Pwm(5,6)
 m1.attach(arduino)
 
 keyboard = Runtime.createAndStart("keyboard", "Keyboard")
