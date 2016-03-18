@@ -1,6 +1,11 @@
 # Dans le repertoire "myrobotlab/programAB/bots" , creez un dossier au nom de votre chatbot (pour moi Sweety)
 # Puis dans ce dossier, creez un nouveau dossier nomme "aiml" . Enfin placez votre/vos fichiers AIML dedans
 # Au premier lancement, programAB creera d'autre dossier dans le dossier du chatbot, pas de souci c est normal
+# Vous pouvez tester avec ce petit fichier qui et le premier que j ai fais pour Sweety : 
+# https://github.com/MyRobotLab/pyrobotlab/blob/master/home/beetlejuice/AIML/sweety.aiml
+# Aller on s amuse ! dans chrome, cliquez sur "ear" dans le menu , choisissez "francais" puis un petit clic sur le micro
+# et on dit "bonjour","salut","quel est mon nom","je m appelle ...
+# 
 
 
 # On creer et on demarre les services
