@@ -9,8 +9,7 @@ thumb = Runtime.createAndStart("Thumb", "Servo")
 sleep(1)
 elbow = Runtime.createAndStart("Elbow", "Servo")
 sleep(1)
-# attach it to the pwm board - pin 3
-adaFruitRight.attach(thumb,3)
+# attach it to the pwm board - pin 3 & 8
 sleep(1)
 thumb.attach(adaFruitRight,3)
 elbow.attach(adaFruitRight,8)
