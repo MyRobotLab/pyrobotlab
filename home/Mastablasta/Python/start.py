@@ -1,86 +1,52 @@
 import random
+from org.myrobotlab.service import Arduino
+from org.myrobotlab.service import Servo
+from org.myrobotlab.service import Runtime
 from java.lang import String
+from time import sleep
 from org.myrobotlab.net import BareBonesBrowserLaunch
+wdf = Runtime.createAndStart("wikiDataFetcher", "WikiDataFetcher")
 holygrail = Runtime.createAndStart("holygrail", "WebGui")
 wksr = Runtime.createAndStart("webkitspeechrecognition", "WebkitSpeechRecognition")
 elias = Runtime.createAndStart("elias", "ProgramAB")
-elias.startSession("ProgramAB", "MastaBlasta", "elias")
+elias.startSession("elias")
 htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
-mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
+acapelaSpeech = Runtime.createAndStart("speech", "AcapelaSpeech")
+voices = acapelaSpeech.getVoices()
+for voice in voices:
+    acapelaSpeech.setVoice("Graham")
 wksr.addTextListener(elias)
 elias.addTextListener(htmlfilter)
-htmlfilter.addTextListener(mouth)
+htmlfilter.addTextListener(acapelaSpeech)
 
 def BT():
     global c
     c = b - a
     sleep(2)
     print c
-    if (c == 3):
-        x = (random.randint(1, 3))
-        if x == 1:
-            mouth.speak("I am here.")
-        if x == 2:
-            mouth.speak("Hello, hello.")
-        if x == 3:
-            mouth.speak("Hi, I am here.")
-    if (c == 5):
-        x = (random.randint(1, 3))
-        if x == 1:
-            mouth.speak("I am bored.")
-        if x == 2:
-            mouth.speak("What a boring day.")
-        if x == 3:
-            mouth.speak("I have nothing to do.")
-    if (c == 7):
-        x = (random.randint(1, 3))
-        if x == 1:
-            mouth.speak("I am still bored.")
-        if x == 2:
-            mouth.speak("What a boring boring boring boring day.")
-        if x == 3:
-            mouth.speak("You can turn me off.")
+    if (c == 2):
+       resp = elias.getResponse("AUTORESPOND1")          
+    if (c == 4):
+	  resp = elias.getResponse("AUTORESPOND2")           
+    if (c == 6):
+       resp = elias.getResponse("AUTORESPOND3")           
+    if (c == 8):
+       resp = elias.getResponse("AUTORESPOND4")        
     if (c == 10):
-        x = (random.randint(1, 3))
-        if x == 1:
-            mouth.speak("Help! Please turn me off.")
-        if x == 2:
-            mouth.speak("Maybe I can go crazy now.")
-        if x == 3:
-            mouth.speak("meck meck meck meck meck")
-    if (c == 13):
-        x = (random.randint(1, 3))
-        if x == 1:
-            mouth.speak("I will tell myself a joke.")
-            sleep(4)
-            resp = elias.getResponse("TELL ME A JOKE") 
-        if x == 2:
-            mouth.speak("Do you like Star Wars?")
-            sleep(4)
-            resp = elias.getResponse("DO YOU LIKE STAR WARS")
-            sleep(6)
-            mouth.speak("It was worth a try.")
-        if x == 3:
-            mouth.speak("Let's talk about the weather.")
-            sleep(4)
-            resp = elias.getResponse("WEATHER")
+       speech.speakBlocking("I will tell myself a joke.")
+       sleep(4)
+       resp = elias.getResponse("TELL ME A JOKE")
+    if (c == 12):
+       resp = elias.getResponse("AUTORESPOND5")          
+    if (c == 14):
+       resp = elias.getResponse("AUTORESPOND6")
+            #i01.headTracking.faceDetect()
+            #i01.eyesTracking.faceDetect()
+            #sleep(30)
+            #i01.headTracking.stopTracking()
+            #i01.eyesTracking.stopTracking()
     if (c == 16):
-        x = (random.randint(1, 3))
-        if x == 1:
-            mouth.speak("Maybe I should talk to myself.")
-        if x == 2:
-            mouth.speak("Can I go to the moon?")
-        if x == 3:
-            mouth.speak("I want pizza. and a beer. no. 10 beer.")           
-    if (c == 20):
-            mouth.speak("Where is everybody?")
-            i01.headTracking.faceDetect()
-            i01.eyesTracking.faceDetect()
-            sleep(30)
-            i01.headTracking.stopTracking()
-            i01.eyesTracking.stopTracking()
-    if (c == 25):
-        mouth.speak("I will listen to some music.")
+        speech.speakBlocking("I will listen to some music.")
         sleep(5)
         x = (random.randint(1, 6))
         if x == 1:        
@@ -92,76 +58,32 @@ def BT():
         if x == 4:        
            BareBonesBrowserLaunch.openURL("https://www.youtube.com/watch?v=DZiJQL9OLqI")
         if x == 5:        
-           BareBonesBrowserLaunch.openURL("https://www.youtube.com/watch?v=hD4KMp22jBg")  
+           BareBonesBrowserLaunch.openURL("https://www.youtube.com/watch?v=fpWNimba344")  
         if x == 6:        
            BareBonesBrowserLaunch.openURL("https://www.youtube.com/watch?v=tFXYuw96d0c")   
-    if (c == -57):
-        x = (random.randint(1, 3))
-        if x == 1:
-            mouth.speak("I am here.")
-        if x == 2:
-            mouth.speak("Hello, hello.")
-        if x == 3:
-            mouth.speak("Hi, I am here.")
-    if (c == -55):
-        x = (random.randint(1, 3))
-        if x == 1:
-            mouth.speak("I am bored.")
-        if x == 2:
-            mouth.speak("What a boring day.")
-        if x == 3:
-            mouth.speak("I have nothing to do.")
-    if (c == -53):
-        x = (random.randint(1, 3))
-        if x == 1:
-            mouth.speak("I am still bored.")
-        if x == 2:
-            mouth.speak("What a boring boring boring boring day.")
-        if x == 3:
-            mouth.speak("You can turn me off.")
+    if (c == -58):
+       resp = elias.getResponse("AUTORESPOND1")  
+    if (c == -56):
+       resp = elias.getResponse("AUTORESPOND2")  
+    if (c == -54):
+       resp = elias.getResponse("AUTORESPOND3")  
+    if (c == -52):
+       resp = elias.getResponse("AUTORESPOND4")  
     if (c == -50):
-        x = (random.randint(1, 3))
-        if x == 1:
-            mouth.speak("Help! Please turn me off.")
-        if x == 2:
-            mouth.speak("Maybe I can go crazy now.")
-        if x == 3:
-            mouth.speak("meck meck meck meck meck")
-    if (c == -47):
-        x = (random.randint(1, 3))
-        if x == 1:
-            mouth.speak("I will tell myself a joke.")
-            sleep(4)
-            resp = elias.getResponse("TELL ME A JOKE") 
-        if x == 2:
-            mouth.speak("Do you like Star Wars?")
-            sleep(4)
-            resp = elias.getResponse("DO YOU LIKE STAR WARS")
-            sleep(6)
-            mouth.speak("It was worth a try.")
-        if x == 3:
-            mouth.speak("Let's talk about the weather.")
-            sleep(4)
-            resp = elias.getResponse("WEATHER")
-    if (c == -44):
-        x = (random.randint(1, 3))
-        if x == 1:
-            mouth.speak("I will talk to myself.")
-            sleep(6)
-            mouth.speak("I will talk to myself.")
-        if x == 2:
-            mouth.speak("Can I go to the moon?")
-        if x == 3:
-            mouth.speak("I want pizza. and a beer. no. 10 beer.") 
-    if (c == -40):
-       mouth.speak("Where is everybody?")
+       speech.speakBlocking("I will tell myself a joke.")
+       sleep(4)
+       resp = elias.getResponse("TELL ME A JOKE")
+    if (c == -48):
+       resp = elias.getResponse("AUTORESPOND5") 
+    if (c == -46):
+       resp = elias.getResponse("AUTORESPOND6") 
        #i01.headTracking.faceDetect()
        #i01.eyesTracking.faceDetect()
        #sleep(30)
        #i01.headTracking.stopTracking()
        #i01.eyesTracking.stopTracking()
-    if (c == -35):    
-        mouth.speak("I will listen to some music.")
+    if (c == -44):    
+        speech.speakBlocking("I will listen to some music.")
         sleep(5)
         x = (random.randint(1, 6))
         if x == 1:        
@@ -208,4 +130,3 @@ def detachrightarm():
 
 def attachrightarm():
     i01.rightArm.attach()
-
