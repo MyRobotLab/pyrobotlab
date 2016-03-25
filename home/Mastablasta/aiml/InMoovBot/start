@@ -18,7 +18,7 @@
 <!--  -->
 
 <category><pattern>BY YOUR COMMAND</pattern>
-<template>I am all powered up. Ready to serve.
+<template>Powering up. Give me a minute and I will be ready to serve.
 <oob><mrl><service>python</service><method>exec</method><param>
 leftPort = "COM10"
 rightPort = "COM9"
@@ -93,10 +93,10 @@ i01.eyesTracking.pid.setPID("y",12.0,12.0,0.1)
 i01.headTracking.pid.setPID("x",12.0,12.0,0.1)
 i01.headTracking.pid.setPID("y",12.0,12.0,0.1)
 i01.eyesTracking.pid.invert("y")
-#i01.startMouth()
-#i01.startMouthControl(leftPort)
-#i01.mouthControl.setmouth(73,62)
 <think><set name="from"><date format="%M" jformat="m"/></set><set name="to"><date format="%M" jformat="m"/></set></think>
+#i01.startMouth()
+i01.startMouthControl(leftPort)
+i01.mouthControl.setmouth(73,62)
 a = <get name="from"/>
 sleep(30)
 b = <get name="to"/>
