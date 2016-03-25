@@ -1,5 +1,11 @@
 webgui = Runtime.create("webgui","WebGui")
 
+webgui.hide('cli')
+sleep(1)
+webgui.show('cli')
+sleep(1)
+webgui.set('cli', 400, 400, 999)
+
 # if you don't want the browser to 
 # autostart to homepage
 #
