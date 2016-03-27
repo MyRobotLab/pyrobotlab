@@ -7,7 +7,7 @@ from time import sleep
 holygrail = Runtime.createAndStart("holygrail", "WebGui")
 wksr = Runtime.createAndStart("webkitspeechrecognition", "WebkitSpeechRecognition")
 simple = Runtime.createAndStart("simple", "ProgramAB")
-simple.startSession("simple")
+simple.startSession("default", "simple")
 htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 acapelaSpeech = Runtime.createAndStart("speech", "AcapelaSpeech")
 voices = acapelaSpeech.getVoices()
