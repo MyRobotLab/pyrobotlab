@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<!-- -->
+<category><pattern>WHAT IS THE TOPIC</pattern>
+<template>The topic is <get name="topic"/></template>
+</category>
+<category><pattern>BOOT UP MODE</pattern>
+<template>Entering into the boot up topic.
+      <think>
+        <set name="topic">BOOTUP</set>
+      </think></template>
+</category>
+<category><pattern>GESTURES</pattern>
+<template>Entering into the gestures topic.
+      <think>
+        <set name="topic">GESTURES</set>
+      </think></template>
+</category>
+
+
+<category><pattern>BODY CONTROL</pattern>
+<template>controlling body
+<think>
+<set name="topic">BODYCONTROL</set>
+</think></template>
+</category>
+
+
+<category>
+<pattern>HELLO </pattern>
+<template><random>
+<li>how do you do</li>
+<li>nice to see you</li>
+<li>great to see you</li>
+<li>hello</li>
+<li>hi</li>
+<li>hi there</li>
+<li>hello there</li>
+</random></template>
+</category>
+
+<category>
+<pattern>HI</pattern>
+<template><srai>HELLO</srai></template>
+</category>
+
+<category>
+<pattern>HOW DO YOU DO</pattern>
+<template><srai>HELLO</srai></template>
+</category>
+
+<category>
+<pattern>HEY</pattern>
+<template><srai>HELLO</srai></template>
+</category>
+
+<category>
+<pattern>FINE AND YOU</pattern>
+<template><random>
+<li>very good</li>
+<li>not so good</li>
+<li>i am sick</li>
+<li>i was feeling lonely</li>
+</random>
+</template>
+</category>
+
+
+
+
+
+<category>
+<pattern>PLEASE CLOSE YOUR RIGHT HAND</pattern>
+<template><random>
+<li>I am closing my right hand</li>
+<li>hurts my muscles</li>
+<li>okay</li>
+</random>
+<oob><mrl><service>python</service><method>exec</method>
+<param>closerighthand()</param>
+</mrl></oob> 
+</template>
+</category>
+
+
+<category>
+<pattern>OPEN YOUR RIGHT HAND</pattern>
+<template>opening my right hand
+<oob><mrl><service>python</service><method>exec</method>
+<param>openrighthand()</param>
+</mrl></oob> 
+</template>
+</category>
+
+
+
+<category>
+<pattern>GO TO REST</pattern>
+<template>I am going to rest position
+<oob><mrl><service>python</service><method>exec</method>
+<param>rest()</param>
+</mrl></oob> 
+</template>
+</category>
+
+
+
+</aiml>
