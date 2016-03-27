@@ -1,4 +1,3 @@
-
 import random
 from org.myrobotlab.service import Arduino
 from org.myrobotlab.service import Servo
