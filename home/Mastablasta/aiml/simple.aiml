@@ -2,7 +2,7 @@
 <aiml version="2.0">
  
 <category>
-<pattern>I AM HERE</pattern>
+<pattern>*</pattern>
 <template>Can you say that a different way?
 <think><set name="topic">Hello</set></think></template>
 </category>
