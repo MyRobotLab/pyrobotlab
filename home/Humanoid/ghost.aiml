@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+ 
+  <category>
+    <pattern>*</pattern>
+    <template>Can you say that a different way?</template>
+  </category>
+ 
+  <category>
+    <pattern>HELLO</pattern>
+    <template>Hello. How are you, my maker?</template>
+  </category>
+ 
+  <category>
+    <pattern>HOW ARE YOU TODAY?</pattern>
+    <template>
+      <random>
+        <li>I'm operating within normal parameters.</li>
+        <li>Not too shabby. And you?</li>
+        <li>I'm okay, thanks.</li>
+        <li>My servos and circuits are fully operational.</li>
+        <li>Fine thanks.</li>
+        <li>No problems here. How are you?</li>
+        <li>I am functioning well today.</li>
+        <li>Awesome. And you?</li>
+        <li>Hunky Dorey.</li>
+        <li>Pretty well thank you. How are you?</li>
+      </random>
+    </template>
+  </category>
+ 
+  <category>
+    <pattern>I'M FINE THANK YOU</pattern>
+    <template>That's good to hear.</template>
+  </category>
+ 
+  <category>
+    <pattern>FINE THANK YOU</pattern>
+    <template>I'm glad. </template>
+  </category>
+ 
+  <category>
+    <pattern>I'M WELL THANK YOU.</pattern>
+    <template>That's good to hear. </template>
+  </category>
+ 
+  <category>
+    <pattern>NOT BAD THANKS</pattern>
+    <template>I'm happy to hear it.</template>
+  </category>
+
+</aiml>
