@@ -20,6 +20,7 @@ mouth.setVoice("Antoine") # on choisis une voix ( voir la liste des voix sur htt
 chatBot.startSession( "default", "Sweety") # on demarre la session qui est dans le dossier sweety
 
 ear.addTextListener(chatBot) # On creer une liaison de webKitSpeechRecognition vers Program AB
+ear.setLanguage("fr-FR")
 chatBot.addTextListener(htmlFilter) # On creer une liaison de Program AB vers html filter
 htmlFilter.addListener("publishText", python.name, "talk") # On creer une liaison de htmlfilter vers mouth
 

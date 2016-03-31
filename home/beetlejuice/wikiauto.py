@@ -33,13 +33,11 @@ def getProperty(query, what):
     		if line_textes[0]== what:
 	    		ID= line_textes[1]
 	f.close()
-	print "query : "+ query
-	print "property : " + what
-	print "ID : "+ ID
 	wikiAnswer= wdf.getData(query,ID)
-	answer = ( query +" " + what + " " + wikiAnswer)
+	answer = ( what +" de " + query + " est " + wikiAnswer)
 	print " send aswer to the bot : " + answer
 	chatBot.getResponse("say " + answer)
+	return answer
 
 def getDate(query, ID):
 	answer = ( wdf.getTime(query,ID,"day") +" " +wdf.getTime(query,ID,"month") + " " + wdf.getTime(query,ID,"year"))
