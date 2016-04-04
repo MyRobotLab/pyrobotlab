@@ -1,11 +1,19 @@
 from time import sleep
 import codecs
-Runtime.createAndStart("chatBot", "ProgramAB")
+Runtime.createAndStart("chatBot", "ProgramAB") # On lance la gestion des chatBots
 sleep (1)
-chatBot.startSession( "default", "wikiAuto")
-wdf = Runtime.createAndStart("wikiDataFetcher", "WikiDataFetcher")
-wdf.setLanguage("fr")
-wdf.setWebSite("frwiki")
+chatBot.startSession( "default", "wikiAuto") # On demarre une session chatbot wikiAuto avec utilisateur par defaut
+wdf = Runtime.createAndStart("wikiDataFetcher", "WikiDataFetcher") # WikiDataFetcher cherche des données sur les sites wiki
+wdf.setLanguage("fr") # on cherche en français
+wdf.setWebSite("frwiki") # On fait des recherches sur le site français de wikidata
+Runtime.createAndStart("ear", "WebkitSpeechRecognition") # La reconnaissance vocale ( necessite le navigateur Chrome par default )
+Runtime.createAndStart("webGui", "WebGui") # Webgui "installe" MRL dans une page Web
+Runtime.createAndStart("mouth", "AcapelaSpeech") # AcapelaSpeech ce connecte net et rapatrie les texte converti en mp3
+Runtime.createAndStart("htmlFilter", "HtmlFilter") # htmlFilter nettoye le texte AIML en retirant les balises avant de le lire
+
+mouth.setLanguage("FR") # on parle francais !
+mouth.setVoice("Antoine") # on choisis une voix ( voir la liste des voix sur http://www.acapela-group.com/?lang=fr
+
 
 	
 def talk(data):
@@ -15,6 +23,7 @@ def talk(data):
 
 def askWiki(query):
 	query = unicode(query,'utf-8')
+	print query
 	word = wdf.cutStart(query)
 	start = wdf.grabStart(query)
 	answer = ( query + " est " + wdf.getDescription(word))
@@ -35,8 +44,11 @@ def getProperty(query, what):
 	f.close()
 	wikiAnswer= wdf.getData(query,ID)
 	answer = ( what +" de " + query + " est " + wikiAnswer)
-	print " send aswer to the bot : " + answer
+	
+	if wikiAnswer == "Not Found !":
+		answer = "Je ne sais pas"
 	chatBot.getResponse("say " + answer)
+	print " send aswer to the bot : " + answer
 	return answer
 
 def getDate(query, ID):

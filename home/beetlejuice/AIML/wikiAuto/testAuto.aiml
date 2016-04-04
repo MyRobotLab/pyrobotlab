@@ -3,7 +3,7 @@
 <!--  -->
 <!--  -->
 <category><pattern>*</pattern>
-<template>Je ne sais pas</template>
+<template></template>
 </category>
 <category><pattern>SAY *</pattern>
 <template><star/>
@@ -18,6 +18,18 @@
 <category><pattern>QU'EST-CE QUE *</pattern>
 <template><srai>c'est quoi <star/></srai></template>
 </category>
+<category><pattern>QU'EST-CE QUE l'*</pattern>
+<template><srai>c'est quoi l'<star/></srai></template>
+</category>
+<category><pattern>C'EST QUOI l'*</pattern>
+<template>apostrophe ok<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>askWiki("l' <star/>")</param>
+			</mrl>
+      </oob></template>
+</category>
 <category><pattern>C'EST QUOI *</pattern>
 <template><oob>
 			<mrl>
@@ -27,6 +39,7 @@
 			</mrl>
       </oob></template>
 </category>
+
 <category><pattern>QUI EST *</pattern>
 <template><oob>
 			<mrl>
@@ -43,6 +56,256 @@
 				<service>python</service>
 				<method>exec</method>
 				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST LA * DE *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST LA * DU *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUEL EST LE * DE *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUEL EST LE * DU *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST LA * DE L' *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUEL EST LE * DE L' *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST LE * DU *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST L' * DE LA *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST L' * DU *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUEL EST LE * DE LA *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUI EST LE * DE LA *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUI EST LA * DE LA *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUI EST LE * DU *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUI EST LA * DU *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUI EST LE * DES *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUI EST LA * DES *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUI EST LE * DE *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUI EST LA * DE *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST LA * DE * DE *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "3"/>" , "<star index = "1"/> de <star index = "2"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUEL EST LE * DE * DE *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "3"/>" , "<star index = "1"/> de <star index = "2"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST LA * DE * DES *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "3"/>" , "<star index = "1"/> de <star index = "2"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUEL EST LE * DE * DES *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "3"/>" , "<star index = "1"/> de <star index = "2"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST LA * DE * DU *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "3"/>" , "<star index = "1"/> de <star index = "2"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUEL EST LE * DE * DU *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "3"/>" , "<star index = "1"/> de <star index = "2"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST LA * DE * DE LA *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "3"/>" , "<star index = "1"/> de <star index = "2"/>" )</param>
 			</mrl>
       </oob></template>
 </category>

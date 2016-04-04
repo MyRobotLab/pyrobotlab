@@ -1,44 +1,44 @@
-﻿ISBN-13:P212
-identifiant ISNI:P213
+﻿isbn-13:P212
+identifiant isni:P213
 type spectral:P215
 numéro d'inventaire:P217
-séquence de Hubble:P223
+séquence de hubble:P223
 nom scientifique du taxon:P225
-code AITA de compagnie aérienne:P229
-code OACI des compagnies aériennes:P230
-numéro CAS:P231
-numéro EINECS:P232
-SMILES canonique:P233
-InChI:P234
-InChIKey:P235
-ISSN:P236
-code AITA:P238
-code OACI:P239
-code FAA:P240
-identifiant OCLC:P243
+code aita de compagnie aérienne:P229
+code oaci des compagnies aériennes:P230
+numéro cas:P231
+numéro einecs:P232
+smiles canonique:P233
+inchi:P234
+inchikey:P235
+issn:P236
+code aita:P238
+code oaci:P239
+code faa:P240
+identifiant oclc:P243
 symbole chimique:P246
 code mnémonique:P249
-code ATC:P267
-identifiant CALIS:P270
+code atc:P267
+identifiant calis:P270
 formule chimique:P274
-GOST 7.75-97:P278
+gost 7.75-97:P278
 code postal:P281
 code de gare:P296
-code ISO 3166-1 alpha-2 du pays:P297
-code ISO 3166-1 alpha-3:P298
-ISO 3166-1 numérique:P299
-ISO 3166-2:P300
-numéro EE:P303
+code iso 3166-1 alpha-2 du pays:P297
+code iso 3166-1 alpha-3:P298
+iso 3166-1 numérique:P299
+iso 3166-2:P300
+numéro ee:P303
 page:P304
-code de langue IETF:P305
+code de langue ietf:P305
 version:P348
 bac à sable chaîne:P370
-catégorie Commons:P373
+catégorie commons:P373
 numéro d'édition:P393
 plaque d'immatriculation:P395
-relation OpenStreetMap:P402
+relation openstreetmap:P402
 symbole de la quantité:P416
-code de langue Wikimedia:P424
+code de langue wikimedia:P424
 immatriculation de l'aéronef:P426
 abréviation d'auteur en botanique:P428
 indicatif d'appel:P432
@@ -48,536 +48,536 @@ couleur:P465
 indicatif téléphonique local:P473
 indicatif téléphonique national:P474
 tome:P478
-code IMA:P484
-identifiant MeSH:P486
-caractère Unicode:P487
+code ima:P484
+identifiant mesh:P486
+caractère unicode:P487
 désignation provisoire:P490
-identifiant OMIM:P492
-code CIM-9:P493
-code CIM-10:P494
-identifiant HURDAT:P502
-norme ISO:P503
-ISO 15924:P506
-Länskod:P507
+identifiant omim:P492
+code cim-9:P493
+code cim-10:P494
+identifiant hurdat:P502
+norme iso:P503
+iso 15924:P506
+länskod:P507
 nom de naissance:P513
 identifiant de municipalité suédoise:P525
 numéro de catalogue:P528
 piste d'aviation:P529
 nom du compte sur le réseau social:P554
 bilan en double:P555
-DiseasesDB:P557
+diseasesdb:P557
 symbole d’unité:P558
-code OTAN:P561
-ICD-O:P563
+code otan:P561
+icd-o:P563
 bilan en simple:P564
-nomenclature EC:P591
-Homologene ID:P593
-identifiant Gene Ensembl:P594
-identifiant Medline Plus:P604
-référence Ordnance Survey:P613
+nomenclature ec:P591
+homologene id:P593
+identifiant gene ensembl:P594
+identifiant medline plus:P604
+référence ordnance survey:P613
 numéro de chantier:P617
-identifiant UICN:P627
-numéro E:P628
-numéro propriété culturelle de Biélorussie:P632
-identiant RefSeq de la protéine:P637
-identifiant PDB:P638
-RNA-ID:P639
-départ GenLoc:P644
-fin GenLoc:P645
-RefSeq:P656
-numéro RTECS:P657
-identifiant CISP 2:P667
-identifiant GeneReviews:P668
+identifiant uicn:P627
+numéro e:P628
+numéro propriété culturelle de biélorussie:P632
+identiant refseq de la protéine:P637
+identifiant pdb:P638
+rna-id:P639
+départ genloc:P644
+fin genloc:P645
+refseq:P656
+numéro rtecs:P657
+identifiant cisp 2:P667
+identifiant genereviews:P668
 numéro de voirie:P670
-arborescence MeSH:P672
-eMedicine:P673
-identifiant BHL:P687
-numéro ONU:P695
-identifiant de transcription Ensembl:P704
-identifiant Ensembl de la protéine:P705
-identifiant Historic Scotland:P709
-Strunz 8:P711
-Strunz 9:P712
-Strunz 10:P713
-code d'observatoire du MPC:P717
-mention de danger SGH:P728
-identifiant BGS Lexicon:P732
+arborescence mesh:P672
+emedicine:P673
+identifiant bhl:P687
+numéro onu:P695
+identifiant de transcription ensembl:P704
+identifiant ensembl de la protéine:P705
+identifiant historic scotland:P709
+strunz 8:P711
+strunz 9:P712
+strunz 10:P713
+code d'observatoire du mpc:P717
+mention de danger sgh:P728
+identifiant bgs lexicon:P732
 pseudonyme:P742
 identifiant patrimoine culturel tchèque:P762
-identifiant ISIL:P791
+identifiant isil:P791
 chapitre:P792
 identifiant militaire:P798
-spécification du Air Ministry:P799
-classification arXiv:P820
+spécification du air ministry:P799
+classification arxiv:P820
 abréviation d'auteur habituelle hors botanique:P835
-identifiant IMSLP:P839
-code UBIGEO:P844
-identifiant de la United States Navy:P847
+identifiant imslp:P839
+code ubigeo:P844
+identifiant de la united states navy:P847
 désignation d'aéronef militaire japonais:P849
-code métier ROME:P867
-classe de danger ONU:P874
-code de classification ONU:P875
-groupe d'emballage ONU:P876
-code NFPA spécial:P877
+code métier rome:P867
+classe de danger onu:P874
+code de classification onu:P875
+groupe d'emballage onu:P876
+code nfpa spécial:P877
 numéro de fanion:P879
-FIPS 5-2:P883
+fips 5-2:P883
 identifiant du registre d'état de l'eau:P884
-identifiant SSRN:P893
-désignation d'aéronef de l'armée des États-Unis:P897
-transcription API:P898
-SOC Occupation Code:P919
-galerie Commons:P935
-phrase de précaution SGH:P940
-identifiant ISIN:P946
-code CITP:P952
-ISBN-10:P957
+identifiant ssrn:P893
+désignation d'aéronef de l'armée des états-unis:P897
+transcription api:P898
+soc occupation code:P919
+galerie commons:P935
+phrase de précaution sgh:P940
+identifiant isin:P946
+code citp:P952
+isbn-10:P957
 référence de document:P958
 numéro de division:P965
 adresse:P969
-code NFPA santé:P993
-code NFPA feu:P994
-code NFPA réactivité:P995
-ARICNS:P999
-identifiant Iran statistics:P1010
+code nfpa santé:P993
+code nfpa feu:P994
+code nfpa réactivité:P995
+aricns:P999
+identifiant iran statistics:P1010
 feu maritime:P1030
 référence législative:P1031
-classification décimale de Dewey:P1036
-identifiant KOATUU:P1077
-identifiant Patrimoine classé de Wallonie:P1133
-classe pour la Bibliothèque du Congrès:P1149
-classification Regensburg:P1150
-code d'auteur dans Scopus:P1153
-EID Scopus:P1154
-identifiant d'affiliation Scopus:P1155
-abbréviation Z39.5:P1161
-abbréviation Bluebook:P1162
-type de média Internet:P1163
-identifiant USB:P1167
-code de municipalité du Danemark:P1168
-Geokod:P1172
-identifiant LIBRIS:P1182
-code Gewässerkennzahl:P1183
-identifiant de personne Dharma Drum Buddhist College:P1187
-identifiant de lieu Dharma Drum Buddhist College:P1188
-classification des bibliothèques Chinoises:P1189
-Classification Décimale Universelle:P1190
+classification décimale de dewey:P1036
+identifiant koatuu:P1077
+identifiant patrimoine classé de wallonie:P1133
+classe pour la bibliothèque du congrès:P1149
+classification regensburg:P1150
+code d'auteur dans scopus:P1153
+eid scopus:P1154
+identifiant d'affiliation scopus:P1155
+abbréviation z39.5:P1161
+abbréviation bluebook:P1162
+type de média internet:P1163
+identifiant usb:P1167
+code de municipalité du danemark:P1168
+geokod:P1172
+identifiant libris:P1182
+code gewässerkennzahl:P1183
+identifiant de personne dharma drum buddhist college:P1187
+identifiant de lieu dharma drum buddhist college:P1188
+classification des bibliothèques chinoises:P1189
+classification décimale universelle:P1190
 extension de fichier:P1195
 identifiant de municipalité finnois:P1203
-International Standard Music Number:P1208
-CN:P1209
-identifiant Atlas:P1212
-identifiant NLC:P1213
-identifiant National Heritage List for England:P1216
-identifiant de personne de la NARA:P1222
-ID d'organisation de la NARA:P1223
-identifiant géographique de la NARA:P1224
-identifiant des sujets contemporains de la NARA:P1225
-identifiant des types d'enregistrement de la NARA:P1226
-identifiant Openpolis:P1229
-identifiant de document de la NARA:P1231
-identifiant Linguist list:P1232
-code Parsons:P1236
-ID de l'Association Suédoise de Football:P1238
-niveau de l'Indicateur Bibliométrique de Recherche Danois:P1240
-identifiant de club de l'Association Suisse de Football:P1241
-ID de pièce Theatricalia:P1242
-International Standard Recording Code:P1243
-sens défini OmegaWiki:P1245
+international standard music number:P1208
+cn:P1209
+identifiant atlas:P1212
+identifiant nlc:P1213
+identifiant national heritage list for england:P1216
+identifiant de personne de la nara:P1222
+id d'organisation de la nara:P1223
+identifiant géographique de la nara:P1224
+identifiant des sujets contemporains de la nara:P1225
+identifiant des types d'enregistrement de la nara:P1226
+identifiant openpolis:P1229
+identifiant de document de la nara:P1231
+identifiant linguist list:P1232
+code parsons:P1236
+id de l'association suédoise de football:P1238
+niveau de l'indicateur bibliométrique de recherche danois:P1240
+identifiant de club de l'association suisse de football:P1241
+id de pièce theatricalia:P1242
+international standard recording code:P1243
+sens défini omegawiki:P1245
 numéro de brevet:P1246
-identifiant ABS ASCL:P1251
-identifiant AUSTLANG:P1252
-identifiant BCU écrivain vaudois:P1253
-identifiant Helveticarchives:P1255
-identifiant Iconclass:P1256
-élément Iconclass représenté:P1257
-identifiant K-samsök:P1260
-Rundata:P1261
-RAÄ-nummer:P1262
-Norway Database for Statistics on Higher education periodical ID:P1270
-Norway Database for Statistics on Higher education publisher ID:P1271
-Norway Import Service and Registration Authority periodical code:P1272
-Norway Import Service and Registration Authority publisher code:P1275
-identifiant DIJU:P1276
-identifiant Jufo:P1277
-Identifiant légal d'une entité:P1278
-WOEID:P1281
-clé et étiquette OpenStreetMap:P1282
-KDG Komponisten der Gegenwart:P1287
-KLG Kritisches Lexikon der Gegenwartsliteratur:P1288
-KLfG Kritisches Lexikon der fremdsprachigen Gegenwartsliteratur:P1289
-identifiant Auteurs de Suisse:P1291
-identifiant DNB:P1292
-Royal Aero Club Aviator's Certificate ID:P1293
-code eco-région WWF:P1294
-IRS Employer Identification Number:P1297
+identifiant abs ascl:P1251
+identifiant austlang:P1252
+identifiant bcu écrivain vaudois:P1253
+identifiant helveticarchives:P1255
+identifiant iconclass:P1256
+élément iconclass représenté:P1257
+identifiant k-samsök:P1260
+rundata:P1261
+raä-nummer:P1262
+norway database for statistics on higher education periodical id:P1270
+norway database for statistics on higher education publisher id:P1271
+norway import service and registration authority periodical code:P1272
+norway import service and registration authority publisher code:P1275
+identifiant diju:P1276
+identifiant jufo:P1277
+identifiant légal d'une entité:P1278
+woeid:P1281
+clé et étiquette openstreetmap:P1282
+kdg komponisten der gegenwart:P1287
+klg kritisches lexikon der gegenwartsliteratur:P1288
+klfg kritisches lexikon der fremdsprachigen gegenwartsliteratur:P1289
+identifiant auteurs de suisse:P1291
+identifiant dnb:P1292
+royal aero club aviator's certificate id:P1293
+code eco-région wwf:P1294
+irs employer identification number:P1297
 bibcode:P1300
-identifiant Skyscraper Center:P1305
-identifiant du Parlement suisse:P1307
-identifiant EGAXA:P1309
+identifiant skyscraper center:P1305
+identifiant du parlement suisse:P1307
+identifiant egaxa:P1309
 identifiant lostbridges.org:P1311
-OpenCorporates ID:P1320
+opencorporates id:P1320
 numéro de téléphone:P1329
-identifiant de l'Assemblée parlementaire du Conseil de l'Europe:P1331
-EPSG ID:P1338
+identifiant de l'assemblée parlementaire du conseil de l'europe:P1331
+epsg id:P1338
 orthographe originale:P1353
-numéro de particule Monte Carlo:P1360
-Dictionnaire du théâtre en Suisse:P1362
-identifiant ITTF:P1364
-code IHSI:P1370
-identifiant ASI:P1371
-code gare MTR Hong Kong:P1377
-code TMIS:P1378
+numéro de particule monte carlo:P1360
+dictionnaire du théâtre en suisse:P1362
+identifiant ittf:P1364
+code ihsi:P1370
+identifiant asi:P1371
+code gare mtr hong kong:P1377
+code tmis:P1378
 identifiant uglybridges.com:P1380
 identifiant bridgehunter.com:P1381
-identifiant Enciclopédia Açoriana:P1385
-Japanese High School Code:P1386
-Clé des régions allemandes:P1388
-identifiant ComicBookDB:P1392
-identifiant NCI:P1395
+identifiant enciclopédia açoriana:P1385
+japanese high school code:P1386
+clé des régions allemandes:P1388
+identifiant comicbookdb:P1392
+identifiant nci:P1395
 code linguasphère:P1396
-identifiant Catalogue d'État des dénominations géographiques:P1397
-identifiant FCC Facility:P1400
-référence FMA:P1402
-identifiant World Glacier Inventory:P1404
-Sandrart.net ID:P1422
-identifiant Lost Art:P1428
-ID de la Jewish Encyclopedia:P1438
+identifiant catalogue d'état des dénominations géographiques:P1397
+identifiant fcc facility:P1400
+référence fma:P1402
+identifiant world glacier inventory:P1404
+sandrart.net id:P1422
+identifiant lost art:P1428
+id de la jewish encyclopedia:P1438
 identifiant catholic.ru:P1453
-identifiant Cadw:P1459
-identifiant NIEA:P1460
-ID Patientplus:P1461
-code de lecte WALS:P1467
-code de genre WALS:P1467
-code de famille WALS:P1468
+identifiant cadw:P1459
+identifiant niea:P1460
+id patientplus:P1461
+code de lecte wals:P1467
+code de genre wals:P1467
+code de famille wals:P1468
 reporting mark:P1471
-palette de créateur Commons:P1472
+palette de créateur commons:P1472
 identifiant vici.org:P1481
 identifiant kulturnoe-nasledie.ru:P1483
-identifiant Glad:P1529
-Federal Register Document Number:P1544
+identifiant glad:P1529
+federal register document number:P1544
 ordre dans la série:P1545
-identifiant Orphanet:P1550
-identifiant Patrimoine exceptionnel de Wallonie:P1551
-identifiant UBERON:P1554
+identifiant orphanet:P1550
+identifiant patrimoine exceptionnel de wallonie:P1551
+identifiant uberon:P1554
 numéro de décret présidentiel:P1555
-code INS:P1567
-identifiant BBC Genome:P1573
-catalogue RISS:P1575
-numéro Gmelin:P1578
-Beilstein Registry Number:P1579
-identifiant Université de Barcelone:P1580
-identifiant MalaCards:P1583
-code municipal du Brésil:P1585
-Desa code of Indonesia:P1588
+code ins:P1567
+identifiant bbc genome:P1573
+catalogue riss:P1575
+numéro gmelin:P1578
+beilstein registry number:P1579
+identifiant université de barcelone:P1580
+identifiant malacards:P1583
+code municipal du brésil:P1585
+desa code of indonesia:P1588
 numéro d'espérantiste:P1601
-identifiant BBC Your Paintings d'un lieu d'art:P1602
-Dialnet author ID:P1607
-identifiant de livre sur Dialnet:P1608
-identifiant de journal sur Dialnet:P1609
-identifiant d'article sur Dialnet:P1610
-modèle Institution sur Commons:P1612
-identifiant History of Parliament:P1614
-numéro SIREN:P1616
-BBC Things identifer:P1617
+identifiant bbc your paintings d'un lieu d'art:P1602
+dialnet author id:P1607
+identifiant de livre sur dialnet:P1608
+identifiant de journal sur dialnet:P1609
+identifiant d'article sur dialnet:P1610
+modèle institution sur commons:P1612
+identifiant history of parliament:P1614
+numéro siren:P1616
+bbc things identifer:P1617
 numéro sportif:P1618
-identifiant de port MarineTraffic:P1624
-identifiant patrimoine culturel de  Thaïlande:P1626
-code Ethnologue.com:P1627
-format de l'URL:P1630
-notation de Hermann-Mauguin:P1632
-identifiant NIST/CODATA:P1645
-BBF identifier:P1650
-identifiant de la vidéo YouTube:P1651
-Préfixe DOI:P1662
-identifiant ProCyclingStats:P1663
-identifiant Cycling Database:P1664
-Chess Club ID:P1666
-code ATCvet:P1668
-identifiant CONA:P1669
+identifiant de port marinetraffic:P1624
+identifiant patrimoine culturel de  thaïlande:P1626
+code ethnologue.com:P1627
+format de l'url:P1630
+notation de hermann-mauguin:P1632
+identifiant nist/codata:P1645
+bbf identifier:P1650
+identifiant de la vidéo youtube:P1651
+préfixe doi:P1662
+identifiant procyclingstats:P1663
+identifiant cycling database:P1664
+chess club id:P1666
+code atcvet:P1668
+identifiant cona:P1669
 numéro d'itinéraire:P1671
 general formula:P1673
-numéro dans le navigateur Pokémon:P1685
-identifiant AniDB:P1688
-ICD-10-PCS:P1690
+numéro dans le navigateur pokémon:P1685
+identifiant anidb:P1688
+icd-10-pcs:P1690
 operations and procedures key:P1691
-ICD-9-CM:P1692
-Terminologia Embryologica:P1693
-Terminologia Histologica:P1694
-identifiant SkyscraperPage:P1699
-identifiant SIPA:P1700
-identifiant IGESPAR:P1702
-identifiant DAAO:P1707
-identifiant des objets du LfDS:P1708
-identifiant Jounalisted:P1714
-identifiant Sandre:P1717
+icd-9-cm:P1692
+terminologia embryologica:P1693
+terminologia histologica:P1694
+identifiant skyscraperpage:P1699
+identifiant sipa:P1700
+identifiant igespar:P1702
+identifiant daao:P1707
+identifiant des objets du lfds:P1708
+identifiant jounalisted:P1714
+identifiant sandre:P1717
 pinyin:P1721
-Musées florentines Inventario 1890 ID:P1726
-Naturbase ID:P1732
-Comedien.ch identifier:P1735
-identifiant d'artiste du Information Center for Israeli Art:P1736
-index des monographies de Merck:P1738
-identifiant de livres CiNii:P1739
-numéro de la liste de contrôle de Bradley et Fletcher:P1743
-numéro de la liste de contrôle d'Agassiz et al.:P1744
-identifiant NCI Thesaurus:P1748
-identifiant de collection d'art UK:P1751
-identifiant d'une description d'accident de Aviation Safety Network:P1755
-Aviation Safety Network Wikibase Occurrence:P1760
-identifiant Watson &amp; Dallwitz families:P1761
-classification Hornbostel-Sachs:P1762
-identifiant du National Pipe Organ Register:P1763
-identifiant Onroerend Erfgoed du "relict":P1764
-denkXweb identifier:P1769
+musées florentines inventario 1890 id:P1726
+naturbase id:P1732
+comedien.ch identifier:P1735
+identifiant d'artiste du information center for israeli art:P1736
+index des monographies de merck:P1738
+identifiant de livres cinii:P1739
+numéro de la liste de contrôle de bradley et fletcher:P1743
+numéro de la liste de contrôle d'agassiz et al.:P1744
+identifiant nci thesaurus:P1748
+identifiant de collection d'art uk:P1751
+identifiant d'une description d'accident de aviation safety network:P1755
+aviation safety network wikibase occurrence:P1760
+identifiant watson &amp; dallwitz families:P1761
+classification hornbostel-sachs:P1762
+identifiant du national pipe organ register:P1763
+identifiant onroerend erfgoed du "relict":P1764
+denkxweb identifier:P1769
 prénom social:P1782
 nom de temple:P1785
 nom posthume:P1786
 nom d'artiste:P1787
-identifiant d'auteur BioStor:P1790
+identifiant d'auteur biostor:P1790
 expression régulière:P1793
-numéro de dossier bureau du patrimoine de Seine-Saint-Denis:P1794
-International Standard Industrial Classification code:P1796
-identifiant EMLO de personne:P1802
-identifiant de personnes de l'Université de Masaryk:P1803
-numéro ABoK:P1806
-Great Aragonese Encyclopedia ID:P1807
+numéro de dossier bureau du patrimoine de seine-saint-denis:P1794
+international standard industrial classification code:P1796
+identifiant emlo de personne:P1802
+identifiant de personnes de l'université de masaryk:P1803
+numéro abok:P1806
+great aragonese encyclopedia id:P1807
 identifiant sénateur français:P1808
 crédité comme:P1810
 nom en kanas:P1814
-identifiant de livres RSL:P1815
-identifiant Kaiserhof:P1818
-additif alimentaire sur Open Food Facts:P1820
-catégorie Open Food Facts:P1821
-identifiant d'objets DSH:P1822
-identifiant BAnQ:P1823
+identifiant de livres rsl:P1815
+identifiant kaiserhof:P1818
+additif alimentaire sur open food facts:P1820
+catégorie open food facts:P1821
+identifiant d'objets dsh:P1822
+identifiant banq:P1823
 numéro de route:P1824
-identifiant Baseball-Reference.com d'un joueur de ligue mineure:P1826
-ISWC:P1827
-code IPI:P1828
-indice Roud Folk Song:P1829
-Place de repêchage:P1836
-identifiant Gaoloumi:P1837
-identifiant PSS:P1838
-US Federal Election Commission identifier:P1839
-identifiant HathiTrust:P1844
+identifiant baseball-reference.com d'un joueur de ligue mineure:P1826
+iswc:P1827
+code ipi:P1828
+indice roud folk song:P1829
+place de repêchage:P1836
+identifiant gaoloumi:P1837
+identifiant pss:P1838
+us federal election commission identifier:P1839
+identifiant hathitrust:P1844
 anti-virus alias:P1845
-identifiant Nasjonalbiblioteket d'un photographe:P1847
-code INPN:P1848
-SSR WrittenForm ID:P1849
-SSR Name ID:P1850
-Perry Index:P1852
-texte d'exemple Wikidata:P1858
-identifiant de diocèse sur Catholic Hierarchy:P1866
-identifiant Hall of Valor:P1869
-Name Assigning Authority Number:P1870
-identifiant Consortium of European Research Libraries:P1871
-Declarator.org ID:P1883
-Dictionary of Medieval Names from European Sources entry:P1888
-identifiant BNC:P1890
-identifiant de plaque commémorative OpenPlaques:P1893
-identifiant EAGLE:P1900
-BALaT person/organisation id:P1901
-Commonwealth War Graves Commission person identifier:P1908
-identifiant d'écoles du ministère de l'Éducation du Chili:P1919
-identifiant Commonwealth War Graves Commission:P1920
-structure de l'URL pour les ressources RDF:P1921
-identifiant VIOLIN:P1925
-identifiant Vaccine Ontology:P1928
-ClinVar accession:P1929
-DSM V:P1930
-identifiant NPG:P1931
+identifiant nasjonalbiblioteket d'un photographe:P1847
+code inpn:P1848
+ssr writtenform id:P1849
+ssr name id:P1850
+perry index:P1852
+texte d'exemple wikidata:P1858
+identifiant de diocèse sur catholic hierarchy:P1866
+identifiant hall of valor:P1869
+name assigning authority number:P1870
+identifiant consortium of european research libraries:P1871
+declarator.org id:P1883
+dictionary of medieval names from european sources entry:P1888
+identifiant bnc:P1890
+identifiant de plaque commémorative openplaques:P1893
+identifiant eagle:P1900
+balat person/organisation id:P1901
+commonwealth war graves commission person identifier:P1908
+identifiant d'écoles du ministère de l'éducation du chili:P1919
+identifiant commonwealth war graves commission:P1920
+structure de l'url pour les ressources rdf:P1921
+identifiant violin:P1925
+identifiant vaccine ontology:P1928
+clinvar accession:P1929
+dsm v:P1930
+identifiant npg:P1931
 indiqué comme:P1932
-identifiant MobyGames:P1933
-identifiant DBCS:P1935
-Digital Atlas of the Roman Empire ID:P1936
-UN/LOCODE:P1937
+identifiant mobygames:P1933
+identifiant dbcs:P1935
+digital atlas of the roman empire id:P1936
+un/locode:P1937
 identifiant conifers.org:P1940
-romanisation McCune-Reischauer:P1942
+romanisation mccune-reischauer:P1942
 clé de rue:P1945
-identifiant Mapillary:P1947
-identifiant BerlPap:P1948
-identifiant CulturaItalia:P1949
-identifiant label Discogs:P1955
-identifiant Trismegistos:P1958
-identifiant du Comité des travaux historiques et scientifiques:P1961
-numéro de catalogue de la Bibliothèque nationale du Chili:P1966
-Identifiant Open Hub:P1972
-RSL editions:P1973
-INEGI locality identifier:P1976
+identifiant mapillary:P1947
+identifiant berlpap:P1948
+identifiant culturaitalia:P1949
+identifiant label discogs:P1955
+identifiant trismegistos:P1958
+identifiant du comité des travaux historiques et scientifiques:P1961
+numéro de catalogue de la bibliothèque nationale du chili:P1966
+identifiant open hub:P1972
+rsl editions:P1973
+inegi locality identifier:P1976
 identifiant lesarchivesduspectacle:P1977
-numéro NBD USDA:P1978
-identifiant PolSys:P1980
-code MCN:P1987
-identifiant Delarge:P1988
-identifiant Encyclopaedia Metallum d'un artiste:P1989
-représentation TeX:P1993
-identifiant Facebook de lieu:P1997
-code UCI:P1998
-identifiant CPDL:P2000
+numéro nbd usda:P1978
+identifiant polsys:P1980
+code mcn:P1987
+identifiant delarge:P1988
+identifiant encyclopaedia metallum d'un artiste:P1989
+représentation tex:P1993
+identifiant facebook de lieu:P1997
+code uci:P1998
+identifiant cpdl:P2000
 romanisation révisée:P2001
-identifiant NALT:P2004
-identifiant Zoobank d'un auteur:P2006
-identifiant IPNI d'une publication:P2008
-désignation du modèle dans l'EXIF:P2009
-désignation du fabricant dans l'EXIF:P2010
-identifiant Catalogus Professorum Academiae Groninganae:P2016
-SMILES isomérique:P2017
-identifiant Teuchos:P2018
+identifiant nalt:P2004
+identifiant zoobank d'un auteur:P2006
+identifiant ipni d'une publication:P2008
+désignation du modèle dans l'exif:P2009
+désignation du fabricant dans l'exif:P2010
+identifiant catalogus professorum academiae groninganae:P2016
+smiles isomérique:P2017
+identifiant teuchos:P2018
 identifiant de race d'élevage allemande:P2024
-identifiant Colour Index International:P2027
-United States Armed Forces service number:P2028
-identifiant Dictionary of Ulster Biography:P2029
-identifiant NASA d'une personne:P2030
-identifiant ResearchGate:P2038
-identifiant Hazardous Substances Data Bank:P2062
-identifiant NIAID ChemDB:P2065
-identifiant Membre de la Royal Society:P2070
-Mémoire des hommes:P2071
-identifiant CDB Chemical:P2072
+identifiant colour index international:P2027
+united states armed forces service number:P2028
+identifiant dictionary of ulster biography:P2029
+identifiant nasa d'une personne:P2030
+identifiant researchgate:P2038
+identifiant hazardous substances data bank:P2062
+identifiant niaid chemdb:P2065
+identifiant membre de la royal society:P2070
+mémoire des hommes:P2071
+identifiant cdb chemical:P2072
 identifiant internetmedicin.se:P2074
-identifiant BLDAM d'un objet:P2081
-code M.49:P2082
-identifiant Leadscope:P2083
-identifiant ZINC:P2084
-identifiant Nikkaji:P2085
-identifiant CDD Public:P2086
-identifiant CrunchBase d'une personne:P2087
-identifiant CrunchBase d'une organisation:P2088
-identifiant Library of Congress JukeBox:P2089
-identifiant Power of 10 d'un athlète:P2090
-identifiant Bildindex:P2092
+identifiant bldam d'un objet:P2081
+code m.49:P2082
+identifiant leadscope:P2083
+identifiant zinc:P2084
+identifiant nikkaji:P2085
+identifiant cdd public:P2086
+identifiant crunchbase d'une personne:P2087
+identifiant crunchbase d'une organisation:P2088
+identifiant library of congress jukebox:P2089
+identifiant power of 10 d'un athlète:P2090
+identifiant bildindex:P2092
 nom d'auteur court:P2093
-RXNO Ontology:P2106
-romanisation selon la méthode Hepburn modifiée:P2125
+rxno ontology:P2106
+romanisation selon la méthode hepburn modifiée:P2125
 système national de romanisation du géorgien:P2126
-PubChem Substance ID:P2153
-Cell line ontology ID:P2158
-code Guthrie:P2161
-identifiant Deutsche Ultramarathon-Vereinigung:P2162
-code UNSPSC:P2167
-Hansard:currents session identifier:P2170
-Parliamentary record identifier:P2172
-identifiant BBC News Democracy Live:P2173
-ISO 9:1995:P2183
-identifiant DLI:P2185
-identifiant Wiki Loves Monuments:P2186
-BiblioNet publication identifier:P2187
-BiblioNet author identifier:P2188
-identifiant d'éditeur BiblioNet:P2189
+pubchem substance id:P2153
+cell line ontology id:P2158
+code guthrie:P2161
+identifiant deutsche ultramarathon-vereinigung:P2162
+code unspsc:P2167
+hansard:currents session identifier:P2170
+parliamentary record identifier:P2172
+identifiant bbc news democracy live:P2173
+iso 9:1995:P2183
+identifiant dli:P2185
+identifiant wiki loves monuments:P2186
+biblionet publication identifier:P2187
+biblionet author identifier:P2188
+identifiant d'éditeur biblionet:P2189
 identifiant endangeredlanguages.com:P2192
-identifiant Soccerbase d'un manager:P2195
-identifiant Spotify d'un album:P2205
-identifiant Discogs de sortie:P2206
-projet SourceForge:P2209
-identifiant de catalogues des Musées de Florence:P2242
-identifiant Refseq Genome:P2249
-DfE URN:P2253
-identifiant Debrett's People of Today:P2255
+identifiant soccerbase d'un manager:P2195
+identifiant spotify d'un album:P2205
+identifiant discogs de sortie:P2206
+projet sourceforge:P2209
+identifiant de catalogues des musées de florence:P2242
+identifiant refseq genome:P2249
+dfe urn:P2253
+identifiant debrett's people of today:P2255
 code pays pour mobile:P2258
 mobile network code:P2259
-identifiant ISOCAT:P2263
-identifiant Fashion Model Directory:P2266
-identifiant Emporis pour un complexe immobilier:P2270
-article Hederich:P2272
-identifiant de l'Académie des sciences et des humanités de Heidelberg:P2273
-Magdeburger Biographisches Lexikon:P2277
+identifiant isocat:P2263
+identifiant fashion model directory:P2266
+identifiant emporis pour un complexe immobilier:P2270
+article hederich:P2272
+identifiant de l'académie des sciences et des humanités de heidelberg:P2273
+magdeburger biographisches lexikon:P2277
 identifiant de membre du parlement héllénique:P2278
 namespace:P2307
 indicatif:P2317
 identifiant d'article:P2322
-identifiant  d'athlète du Comité olympique suédois:P2323
-GNS Unique Feature Identifier:P2326
-identifiant SFDb d'une entreprise:P2335
-identifiant SFDb d'une bande son:P2336
-identifiant SFDb d'un groupe:P2337
-identifiant Musopen de compositeur:P2338
-identifiant BoardGameGeek:P2339
-identifiant AGORHA d'événement:P2345
-identifiant YSO:P2347
-identifiant Stuttgart Database of Scientific Illustrators:P2349
-identifiant Speedskatingbase.eu:P2350
-identifiant UNESCO d'une langue en danger:P2355
-code Classification of Instructional Programs:P2357
+identifiant  d'athlète du comité olympique suédois:P2323
+gns unique feature identifier:P2326
+identifiant sfdb d'une entreprise:P2335
+identifiant sfdb d'une bande son:P2336
+identifiant sfdb d'un groupe:P2337
+identifiant musopen de compositeur:P2338
+identifiant boardgamegeek:P2339
+identifiant agorha d'événement:P2345
+identifiant yso:P2347
+identifiant stuttgart database of scientific illustrators:P2349
+identifiant speedskatingbase.eu:P2350
+identifiant unesco d'une langue en danger:P2355
+code classification of instructional programs:P2357
 code de production:P2364
-identifiant Australian Stratigraphic Units Database:P2367
-identifiant d'artiste Genius:P2373
-identifiant Répertoire de sculpture française:P2380
-identifiant The Academic Family Tree:P2381
-identifiant Chemins de mémoire:P2382
+identifiant australian stratigraphic units database:P2367
+identifiant d'artiste genius:P2373
+identifiant répertoire de sculpture française:P2380
+identifiant the academic family tree:P2381
+identifiant chemins de mémoire:P2382
 identifiant architecte diocésain:P2385
-identifiant OKPO:P2391
-symbole Mouse Genome Informatics d'un gène:P2394
-identifiant British Council d'un artiste:P2399
-identifiant Six Degrees of Francis Bacon:P2401
-identifiant d'article CiNii:P2409
-identifiant WikiPathways:P2410
-Artsy gene:P2411
-identifiant de designer Fashion Model Directory:P2412
-identifiant de magazine Fashion Model Directory:P2413
-identifiant Structurae de personne:P2418
-Prosopographia Attica:P2421
-identifiant FIE:P2423
-identifiant d'espèce Xeno-canto:P2426
+identifiant okpo:P2391
+symbole mouse genome informatics d'un gène:P2394
+identifiant british council d'un artiste:P2399
+identifiant six degrees of francis bacon:P2401
+identifiant d'article cinii:P2409
+identifiant wikipathways:P2410
+artsy gene:P2411
+identifiant de designer fashion model directory:P2412
+identifiant de magazine fashion model directory:P2413
+identifiant structurae de personne:P2418
+prosopographia attica:P2421
+identifiant fie:P2423
+identifiant d'espèce xeno-canto:P2426
 grid global research id:P2427
-identifiant court RePEc:P2428
-identifiant Panarctic Flora:P2434
+identifiant court repec:P2428
+identifiant panarctic flora:P2434
 translittération:P2440
-identifiant de manager de la Fédération de Turquie de football:P2449
-identifiant Encyclopædia Britannica:P2450
-ROM MAME:P2451
-code d'élément GeoNames:P2452
-identifiant Species Profile and Threats Database:P2455
+identifiant de manager de la fédération de turquie de football:P2449
+identifiant encyclopædia britannica:P2450
+rom mame:P2451
+code d'élément geonames:P2452
+identifiant species profile and threats database:P2455
 identifiant dblp:P2456
-identifiant d'épave de l'Australian National Shipwreck Database:P2457
-Persons of Ancient Athens:P2460
-identifiant ComLaw:P2461
+identifiant d'épave de l'australian national shipwreck database:P2457
+persons of ancient athens:P2460
+identifiant comlaw:P2461
 identifiant d'organisation elibrary.ru:P2463
-identifiant BugGuide:P2464
-Theatricalia theatre ID:P2468
-identifiant de personne Theatricalia:P2469
-identifiant Talouselämän vaikuttajat:P2470
-identifiant Models.com:P2471
-identifiant radiophonique ACMA:P2472
-identifiant BRL:P2473
-identifiant CDLI:P2474
-identifiant NAVA:P2475
-identifiant HNI de la personne/de l'institution:P2476
-identifiant TBRC:P2477
-identifiant SPDX:P2479
-numéro de terme dans le dictionnaire S-32:P2480
+identifiant bugguide:P2464
+theatricalia theatre id:P2468
+identifiant de personne theatricalia:P2469
+identifiant talouselämän vaikuttajat:P2470
+identifiant models.com:P2471
+identifiant radiophonique acma:P2472
+identifiant brl:P2473
+identifiant cdli:P2474
+identifiant nava:P2475
+identifiant hni de la personne/de l'institution:P2476
+identifiant tbrc:P2477
+identifiant spdx:P2479
+numéro de terme dans le dictionnaire s-32:P2480
 identifiant du joueur sur eliteprospects.com:P2481
-identifiant SABR:P2482
-identifiant NCES du district:P2483
-identifiant NCES de l'école:P2484
-identifiant Fashion Model Directory du photographe:P2485
-identifiant Fashion Model Directory de la marque:P2486
-page sur le site internet du Belarus Geocenter:P2487
+identifiant sabr:P2482
+identifiant nces du district:P2483
+identifiant nces de l'école:P2484
+identifiant fashion model directory du photographe:P2485
+identifiant fashion model directory de la marque:P2486
+page sur le site internet du belarus geocenter:P2487
 page hram.by:P2489
-page OSTIS:P2490
-identifiant Radzima.org:P2491
-identifiant d'auteur MTMT:P2492
-identifiant OM:P2493
-identifiant GOV:P2503
+page ostis:P2490
+identifiant radzima.org:P2491
+identifiant d'auteur mtmt:P2492
+identifiant om:P2493
+identifiant gov:P2503
 identifiant de municipalité:P2504
-identifiant DNCI:P2510
-identifiant Jamendo pour un album:P2513
-numéro SEED:P2524
-identifiant WomenWriters:P2533
-Free Software Directory entry:P2537
-classification Aarne-Thompson-Uther:P2540
+identifiant dnci:P2510
+identifiant jamendo pour un album:P2513
+numéro seed:P2524
+identifiant womenwriters:P2533
+free software directory entry:P2537
+classification aarne-thompson-uther:P2540
 quantitative metrical pattern:P2552
-hashtag Twitter:P2572
+hashtag twitter:P2572
 numéro de série:P2598
-identifiant PlayStation:P2606
-Valencian Property of Local Relevance id:P2608
-formatterURL for Wikidata ID:P2617
+identifiant playstation:P2606
+valencian property of local relevance id:P2608
+formatterurl for wikidata id:P2617
 coordonnées géographiques:P625
-Bac à sable - coordonnée géographique:P626
+bac à sable - coordonnée géographique:P626
 coordonnées du point de vue:P1259
 coordonnées du point le plus au nord:P1332
 coordonnées du point le plus au sud:P1333
 coordonnées du point le plus à l'est:P1334
 coordonnées du point le plus à l'ouest:P1335
-exemple de coordonnées géographiques sur Wikidata:P1865
+exemple de coordonnées géographiques sur wikidata:P1865
 date de naissance:P569
 date de décès:P570
 date de fondation/création:P571
@@ -585,7 +585,7 @@ date de description scientifique:P574
 date de découverte:P575
 date de dissolution:P576
 date de publication:P577
-Bac à sable-TimeValue:P578
+bac à sable-timevalue:P578
 date de début:P580
 date de fin:P582
 date:P585
@@ -606,7 +606,7 @@ jusqu'à cette date:P1326
 date d'ouverture officielle:P1619
 date de baptême:P1636
 oath of office date:P1734
-exemple Wikidata de temps:P1861
+exemple wikidata de temps:P1861
 début de la période d'activité:P2031
 fin de la période d'activité:P2032
 periapsis date:P2285
@@ -627,7 +627,7 @@ conjoint:P26
 pays de nationalité:P27
 continent:P30
 nature de l'élément:P31
-chef d'État:P35
+chef d'état:P35
 capitale:P36
 langue officielle:P37
 monnaie:P38
@@ -662,7 +662,9 @@ parti politique:P102
 langue maternelle:P103
 rang taxinomique:P105
 occupation:P106
+métier:P106
 employeur:P108
+patron:P108
 illustrateur:P110
 grandeur physique mesurée:P111
 fondateur:P112
@@ -685,7 +687,7 @@ genre:P136
 opérateur:P137
 nommé en référence à:P138
 religion:P140
-statut de conservation UICN:P141
+statut de conservation uicn:P141
 importé de:P143
 adapté de:P144
 style architectural:P149
@@ -699,7 +701,7 @@ producteur:P162
 drapeau:P163
 distinction:P166
 structure remplacée par:P167
-PDG:P169
+pdg:P169
 créateur:P170
 taxon supérieur:P171
 groupe ethnique:P172
@@ -763,7 +765,7 @@ plate-forme:P400
 se jette dans:P403
 mode de jeu:P404
 auteur taxonomique:P405
-album BO:P406
+album bo:P406
 langue de l'œuvre:P407
 moteur:P408
 grade militaire:P410
@@ -783,6 +785,10 @@ site de lancement:P448
 diffuseur original:P449
 mission de l'astronaute:P450
 partenaire:P451
+époux:P451
+épouse:P451
+mari:P451
+femme:P451
 secteur d'activité:P452
 rôle:P453
 texte fondateur:P457
@@ -846,7 +852,7 @@ habitus du cristal:P565
 basionyme:P566
 mur:P567
 toit:P568
-statut IMA:P579
+statut ima:P579
 réfrigérant:P588
 groupe ponctuel:P589
 commandement:P598
@@ -868,13 +874,13 @@ repêché par:P647
 direction relative au lieu:P654
 traducteur:P655
 liste des chansons:P658
-assemblage GenLoc:P659
-classification EC:P660
+assemblage genloc:P659
+classification ec:P660
 organisateur:P664
 voie:P669
 personnages:P674
 parolier:P676
-Incertae sedis:P678
+incertae sedis:P678
 fonction moléculaire:P680
 composant cellulaire:P681
 processus biologique:P682
@@ -934,7 +940,7 @@ affirmation détaillée dans:P805
 séparé de:P807
 seconde spécialité d'études:P811
 principale spécialité d'étude:P812
-catégorie des aires protégées de l'UICN:P814
+catégorie des aires protégées de l'uicn:P814
 se désintègre spontanément en:P816
 mode de rayonnement radioactif:P817
 mascotte:P822
@@ -949,8 +955,8 @@ dépôt ferroviaire:P834
 jour de l'année:P837
 lieu de l'action:P840
 fête:P841
-évaluation ESRB:P852
-évaluation CERO:P853
+évaluation esrb:P852
+évaluation cero:P853
 sponsor:P859
 plat traditionnellement associé:P868
 instrumentation musicale:P870
@@ -961,13 +967,13 @@ processeur:P880
 type d'étoile variable:P881
 source:P885
 déterminé par l'heuristique:P887
-classification PEGI:P908
+classification pegi:P908
 catégorie:P910
 équipement:P912
 notation:P913
-évaluation USK:P914
+évaluation usk:P914
 lieu du tournage:P915
-cote GSRR:P916
+cote gsrr:P916
 sujet de l'œuvre:P921
 effet magnétique:P922
 examens possibles:P923
@@ -1004,7 +1010,7 @@ décerné par:P1027
 donné par:P1028
 équipage:P1029
 système de mesures techniques de protection:P1032
-terme de signalement SGH:P1033
+terme de signalement sgh:P1033
 source principale de nourriture:P1034
 titre de civilité:P1035
 dirigeant:P1037
@@ -1033,8 +1039,8 @@ statut de la nomenclature:P1135
 résolu par:P1136
 fossiles trouvés:P1137
 idéologie politique:P1142
-point de Lagrange:P1145
-portail Wikimedia:P1151
+point de lagrange:P1145
+portail wikimedia:P1151
 site d'atterrissage:P1158
 monde d'origine:P1165
 signal transmis:P1170
@@ -1046,7 +1052,7 @@ mode de transmission:P1199
 catégorie du bassin hydrogaphique:P1200
 remorqueur spatial:P1201
 instruments embarqués:P1202
-sujet du portail Wikimedia:P1204
+sujet du portail wikimedia:P1204
 système de suralimentation:P1210
 type d'alimentation en carburant:P1211
 type de compresseur:P1221
@@ -1098,11 +1104,11 @@ forme géométrique:P1419
 synonyme taxonomique:P1420
 sujet principal d'un modèle:P1423
 modèle principal d'un sujet:P1424
-écorégion WWF:P1425
+écorégion wwf:P1425
 point de départ:P1427
 animal de compagnie:P1429
 producteur délégué:P1431
-face B:P1432
+face b:P1432
 publié dans:P1433
 décrit l'univers de fiction:P1434
 statut patrimonial:P1435
@@ -1149,11 +1155,11 @@ consécrateur:P1598
 niveau de sécurité biologique:P1604
 a pour réservoir naturel:P1605
 réservoir naturel de:P1606
-code OTAN de grade:P1611
+code otan de grade:P1611
 demandeur:P1620
 conduite à:P1622
 contient une mélodie de:P1625
-élément Wikidata associé:P1629
+élément wikidata associé:P1629
 train d'atterrissage:P1637
 pendant de:P1639
 conservateur:P1640
@@ -1162,7 +1168,7 @@ conditions de départ:P1643
 arbitre:P1652
 configuration d'aile:P1654
 dévoilé par:P1656
-MPAA film rating:P1657
+mpaa film rating:P1657
 has index case:P1660
 ce taxon produit:P1672
 index case of:P1677
@@ -1172,7 +1178,7 @@ pollénisation:P1703
 pollinisateur de:P1704
 avec:P1706
 marque:P1716
-Fach:P1731
+fach:P1731
 catégorie pour les films tournés à cet endroit:P1740
 fête du prénom:P1750
 liste relative à la catégorie:P1753
@@ -1195,12 +1201,12 @@ propriétaire de:P1830
 recherché par:P1840
 ensemble de départ:P1851
 groupe sanguin:P1853
-exemple d'utilisation Wikidata:P1855
+exemple d'utilisation wikidata:P1855
 valeur de l'exemple d'utilisation:P1859
 représenté par:P1875
 véhicule spatial:P1876
 d'après une œuvre de:P1877
-Vox-ATypI classification:P1878
+vox-atypi classification:P1878
 mesuré par:P1880
 liste des personnages:P1881
 couleur des cheveux:P1884
@@ -1210,7 +1216,7 @@ signataire:P1891
 note la plus haute:P1897
 note la plus basse:P1898
 indice d'explosivité volcanique:P1903
-fonction occupée par le chef d'État:P1906
+fonction occupée par le chef d'état:P1906
 effet secondaire:P1909
 decreased expression in:P1910
 increased expression in:P1911
@@ -1227,12 +1233,12 @@ second nom de famille dans un nom espagnol:P1950
 investor:P1951
 décollage et atterrissage:P1956
 mécène:P1962
-FSK film rating:P1981
+fsk film rating:P1981
 espèce conservée:P1990
 spécialité médicale:P1995
-statut UNESCO d'une langue:P1999
+statut unesco d'une langue:P1999
 cuisine:P2012
-Catégorie des photos prises avec ce modèle:P2033
+catégorie des photos prises avec ce modèle:P2033
 dépositaire:P2058
 format d'image:P2061
 méthode de fabrication:P2079
@@ -1241,8 +1247,8 @@ copilote:P2095
 substitute/deputy/replacement of office/officeholder:P2098
 échelle internationale des événements nucléaires:P2127
 antiparticule:P2152
-Solid solution series with:P2155
-Pseudo crystal habit:P2156
+solid solution series with:P2155
+pseudo crystal habit:P2156
 lithography:P2157
 résoud:P2159
 maladie traitée:P2175
@@ -1280,13 +1286,13 @@ prénom romain:P2358
 nomen:P2359
 audience cible:P2360
 service en ligne:P2361
-classement de film NMHH:P2363
+classement de film nmhh:P2363
 cognomen:P2365
 agnomen:P2366
-statut FAO:P2371
+statut fao:P2371
 a comme superpartenaire:P2375
 superpartenaire de:P2376
-point d'entrée Mediawiki:P2377
+point d'entrée mediawiki:P2377
 délivré par:P2378
 obsolète depuis la version:P2379
 formule décrivant:P2384
@@ -1326,9 +1332,9 @@ recording or performance of:P2550
 métrique utilisée:P2551
 in work:P2553
 chef décorateur:P2554
-GPU:P2560
+gpu:P2560
 super-pouvoir:P2563
-classification du climat de Köppen:P2564
+classification du climat de köppen:P2564
 amendé par:P2567
 abrogé par:P2568
 uncertainty corresponds to:P2571
@@ -1339,12 +1345,12 @@ discipline d'étude:P2579
 a le phonème:P2587
 grammatical option indicates:P2591
 culture:P2596
-coloration de Gram:P2597
-appréciation BBFC:P2629
+coloration de gram:P2597
+appréciation bbfc:P2629
 lieu de détention:P2632
 géographie:P2633
 modèle:P2634
-RARS rating:P2637
+rars rating:P2637
 formule:P2534
 expression mathématique:P2535
 nom officiel:P1448
@@ -1363,15 +1369,15 @@ inscription:P1684
 nom dans la langue originale:P1705
 nom court:P1813
 nom vernaculaire:P1843
-exemple Wikidata de texte monolingue:P1864
-FundRef registry name:P1905
+exemple wikidata de texte monolingue:P1864
+fundref registry name:P1905
 incipit:P1922
 légende d'image:P2096
 dénomination commune international des substances pharmaceutiques:P2275
 commentaire:P2315
 traduction littérale:P2441
 forme féminine d'un libellé:P2521
-instructions d'usage sur Wikidata:P2559
+instructions d'usage sur wikidata:P2559
 nom:P2561
 nom de femme mariée:P2562
 vidéo:P10
@@ -1389,11 +1395,11 @@ carte de répartition:P181
 carte bathymétrique:P207
 carte de localisation:P242
 symbole astronomique:P367
-Bac à sable-Fichier multimédia de Commons:P368
+bac à sable-fichier multimédia de commons:P368
 prononciation:P443
 diagramme d'orbite:P491
-image du Gene Atlas:P692
-bannière Wikivoyage:P948
+image du gene atlas:P692
+bannière wikivoyage:P948
 fichier audio de l'élément:P989
 enregistrement vocal:P990
 fac-similé:P996
@@ -1403,7 +1409,7 @@ carte détaillée:P1621
 panneau du nom du lieu:P1766
 image de la plaque commémorative:P1801
 carte de distribution:P1846
-exemple Wikidata de fichier multimédia:P1856
+exemple wikidata de fichier multimédia:P1856
 carte géographique:P1943
 carte géographique du relief:P1944
 playing range image:P2343
@@ -1413,9 +1419,9 @@ sous-propriété de:P1647
 voir aussi:P1659
 propriété associée:P1687
 inverse de:P1696
-exemple Wikidata de valeur de propriété:P1863
+exemple wikidata de valeur de propriété:P1863
 propriétés pour ce type:P1963
-exemple de propriété Wikidata pour propriétés:P2271
+exemple de propriété wikidata pour propriétés:P2271
 grouper par:P2304
 propriété:P2306
 propriété bac à sable:P2368
@@ -1423,13 +1429,13 @@ indice de développement humain:P1081
 population:P1082
 capacité:P1083
 numéro atomique:P1086
-points ELO:P1087
-dureté Mohs:P1088
+points elo:P1087
+dureté mohs:P1088
 décalage vers le rouge:P1090
 quantité produite:P1092
 jauge brute:P1093
 excentricité orbitale:P1096
-facteur de Landé:P1097
+facteur de landé:P1097
 nombre de locuteurs:P1098
 nombre de mâts:P1099
 nombre de cylindres:P1100
@@ -1443,16 +1449,16 @@ proportion:P1107
 indice de réfraction:P1109
 nombre de spectateurs:P1110
 voix reçues:P1111
-numéro dans le Pokédex:P1112
+numéro dans le pokédex:P1112
 nombre d'épisodes:P1113
 nombre:P1114
-pKa:P1117
+pka:P1117
 nombre de décès:P1120
 état d'oxydation:P1121
 spin:P1122
 parité:P1123
 équivalent vingt pieds:P1124
-coefficient de Gini:P1125
+coefficient de gini:P1125
 nombre quantique de l'isospin:P1126
 composante z de l'isospin:P1127
 employés:P1128
@@ -1495,7 +1501,7 @@ ratio de la finesse maximale:P1470
 nombre de ménages:P1538
 nombre de femmes:P1539
 nombre d'hommes:P1540
-nombre de Strahler maximal:P1548
+nombre de strahler maximal:P1548
 nombre de survivants:P1561
 nombre d'arêtes:P1569
 nombre de sommets:P1570
@@ -1503,23 +1509,23 @@ nombre de  victimes:P1590
 nombre de cas:P1603
 port:P1641
 nombre de faces:P1658
-rang Alexa:P1661
+rang alexa:P1661
 number confirmed:P1674
 number probable:P1675
 number suspected:P1676
-dette du gouvernement central en pourcentage du PIB:P1689
+dette du gouvernement central en pourcentage du pib:P1689
 nombre de votes valides:P1697
 battements par minute:P1725
 échelle:P1752
 électorat:P1831
 nombre d'utilisateurs/contributeurs enregistrés:P1833
-exemple Wikidata de quantité:P1862
+exemple wikidata de quantité:P1862
 nombre d'électeurs:P1867
 votes exprimés:P1868
 nombre minimum de joueurs:P1872
 nombre maximum de joueurs:P1873
 nombre d'enfants:P1971
-nombre d'Erdős:P2021
+nombre d'erdős:P2021
 longueur:P2043
 élévation au-dessus du niveau des mers:P2044
 inclinaison orbitale:P2045
@@ -1528,7 +1534,7 @@ durée:P2047
 hauteur:P2048
 largeur:P2049
 envergure:P2050
-M sin i:P2051
+m sin i:P2051
 vitesse:P2052
 superficie du bassin versant:P2053
 masse volumique:P2054
@@ -1561,10 +1567,10 @@ rayon:P2120
 prix en argent:P2121
 nombre de membres:P2124
 point d'éclair:P2128
-IDLH:P2129
+idlh:P2129
 coût:P2130
 produit intérieur brut nominal:P2131
-PIB par habitant:P2132
+pib par habitant:P2132
 total debt:P2133
 total reserves:P2134
 total exports:P2135
@@ -1582,7 +1588,7 @@ période orbitale:P2146
 période de rotation:P2147
 distance de l'embouchure ou du confluent:P2148
 fréquence d'horloge:P2149
-FSB speed:P2150
+fsb speed:P2150
 distance focale:P2151
 énergie de liaison:P2154
 défaut de masse:P2160
@@ -1637,7 +1643,7 @@ balance courante:P2294
 bénéfice net:P2295
 masse monétaire:P2296
 emploi par secteur économique:P2297
-PIB par habitant:P2299
+pib par habitant:P2299
 dose létale minimale:P2300
 quantité maximale:P2312
 quantité minimale:P2313
@@ -1646,7 +1652,7 @@ nombre de personnes enterrées:P2324
 anomalie moyenne:P2325
 nombre de tombes:P2351
 durée d'élévation:P2362
-conversion vers l'unité SI:P2370
+conversion vers l'unité si:P2370
 abondance naturelle:P2374
 diamètre:P2386
 total expenditure:P2402
@@ -1662,7 +1668,7 @@ tension électrique:P2436
 nombre de saisons:P2437
 conversion vers l'unité standard:P2442
 échelle de magnitude du moment:P2527
-magnitude sur l'échelle de Richter:P2528
+magnitude sur l'échelle de richter:P2528
 plus basse pression atmosphérique:P2532
 dose journalière admissible:P2542
 périmètre:P2547
@@ -1670,42 +1676,42 @@ taxe:P2555
 bore:P2556
 stroke:P2557
 potentiel de réchauffement global:P2565
-Saros:P2570
+saros:P2570
 nombre d'enfants non scolarisés:P2573
-distance à la Terre:P2583
+distance à la terre:P2583
 pente maximale:P2595
 taille du bloc:P2599
 épaisseur:P2610
 coût des dommages:P2630
 nombre de parties d'une œuvre:P2635
-URL :P854
-bac à sable - URL :P855
+url :P854
+bac à sable - url :P855
 site officiel :P856
 texte intégral disponible sur :P953
 url du média :P963
 courriel :P968
-décrit à l'URL :P973
+décrit à l'url :P973
 url  de syndication de contenu :P1019
-archive de l'URL :P1065
-numéro de téléphone - URL:P1244
+archive de l'url :P1065
+numéro de téléphone - url:P1244
 dépôt du code source :P1324
 site externe de données :P1325
-url AlgaeBase :P1348
+url algaebase :P1348
 système de suivi des bogues :P1401
-url GRIN :P1421
-tag Stack Exchange :P1482
+url grin :P1421
+tag stack exchange :P1482
 blog officiel :P1581
-Internet Relay Chat :P1613
+internet relay chat :P1613
 propriété équivalente :P1628
 classe équivalente :P1709
-biographie du Deutscher Bundestag :P1713
-exemple d'URL de Wikidata :P1860
-URL de référence de la propriété :P1896
-page d'index Wikisource :P1957
-url LPSN :P1991
-profil LinkedIn :P2035
+biographie du deutscher bundestag :P1713
+exemple d'url de wikidata :P1860
+url de référence de la propriété :P1896
+page d'index wikisource :P1957
+url lpsn :P1991
+profil linkedin :P2035
 lien vers le mode d'emploi :P2078
 super-propriété externe :P2235
 sous-propriété externe :P2236
-page sur le site internet du Belarus Globe :P2488
-url Réserves de biosphère de l'UNESCO :P2520			
+page sur le site internet du belarus globe :P2488
+url réserves de biosphère de l'unesco :P2520			
