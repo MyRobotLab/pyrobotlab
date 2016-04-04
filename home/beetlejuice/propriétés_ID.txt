@@ -642,7 +642,10 @@ membre de l'équipe de sport:P54
 réalisateur/metteur en scène:P57
 scénariste:P58
 constellation:P59
-découvreur ou inventeur:P61
+découvreur:P61
+découvert:P61
+inventé:P61
+inventeur:P61
 lieu de découverte astronomique:P65
 foyer ancestral:P66
 scolarité:P69
@@ -816,8 +819,8 @@ cause de décès:P509
 titre honorifique:P511
 diplôme:P512
 s'imbrique avec:P514
-état de la matière:P515
 origine mécanique de l'énergie:P516
+état de la matière:P515
 interaction:P517
 partie concernée:P518
 armement:P520

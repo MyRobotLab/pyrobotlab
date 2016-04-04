@@ -10,15 +10,20 @@ Runtime.createAndStart("ear", "WebkitSpeechRecognition") # La reconnaissance voc
 Runtime.createAndStart("webGui", "WebGui") # Webgui "installe" MRL dans une page Web
 Runtime.createAndStart("mouth", "AcapelaSpeech") # AcapelaSpeech ce connecte net et rapatrie les texte converti en mp3
 Runtime.createAndStart("htmlFilter", "HtmlFilter") # htmlFilter nettoye le texte AIML en retirant les balises avant de le lire
-
+sleep(1)
 mouth.setLanguage("FR") # on parle francais !
 mouth.setVoice("Antoine") # on choisis une voix ( voir la liste des voix sur http://www.acapela-group.com/?lang=fr
+ear.addTextListener(chatBot) # On creer une liaison de webKitSpeechRecognition vers Program AB
+ear.setLanguage("fr-FR")
+chatBot.addTextListener(htmlFilter) # On creer une liaison de Program AB vers html filter
+htmlFilter.addListener("publishText", python.name, "talk") # On creer une liaison de htmlfilter vers mouth
 
 
 	
 def talk(data):
-	sweety.mouth.speak(data)
-  	print "Saying :", data
+	if data!="":
+		mouth.speak(data)
+  		print "chatbot :", data
 
 
 def askWiki(query):
@@ -27,15 +32,15 @@ def askWiki(query):
 	word = wdf.cutStart(query)
 	start = wdf.grabStart(query)
 	answer = ( query + " est " + wdf.getDescription(word))
-	print " send aswer to the bot : " + answer
 	chatBot.getResponse("say " + answer)
 
 def getProperty(query, what):
 	query = unicode(query,'utf-8')
 	what = unicode(what,'utf-8')
-	query = wdf.cutStart(query)
-	what = wdf.cutStart(what)
-	
+	if query[1]== "\'" :
+		query = query[2:len(presentation)]
+	if what[1]== "\'" :
+		what = what[2:len(presentation)]
 	ID = "error"
 	f = codecs.open(u"C:/Users/papa/git/pyrobotlab/home/beetlejuice/propriétés_ID.txt",'r',"utf-8") # set you propertiesID.txt path
 	
@@ -50,7 +55,6 @@ def getProperty(query, what):
 	if wikiAnswer == "Not Found !":
 		answer = "Je ne sais pas"
 	chatBot.getResponse("say " + answer)
-	print " send aswer to the bot : " + answer
 	return answer
 
 def getDate(query, ID):
