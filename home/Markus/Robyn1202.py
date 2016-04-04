@@ -1,34 +1,30 @@
-# File : Robyn Inmoov 1107
+# File : Robyn Inmoov
 
 import random
+
 from org.myrobotlab.framework import MRLListener
 
 #create a Serial service named serial
 serial = Runtime.createAndStart("serial","Serial")
-serial.connect('COM4')
+serial.connect('COM7')
 
 teensyL = Runtime.createAndStart("teensyL","Serial")
 teensyR = Runtime.createAndStart("teensyR","Serial")
 
-teensyL.connect('COM8')
-#teensyL.setSampleRate(3000)
+teensyL.connect('COM4')
+teensyR.connect('COM5')
 
-teensyR.connect('COM9')
-#teensyR.setSampleRate(3000)
-"""
-listener1 = MRLListener('publishRX', 'python', 'serial1RX', None)
+listener1 = MRLListener('publishRX', 'python', 'serial1RX')
 teensyL.addListener(listener1)
 
-listener2 = MRLListener('publishRX', 'python', 'serial2RX', None)
+listener2 = MRLListener('publishRX', 'python', 'serial2RX')
 teensyR.addListener(listener2)
-"""
+
 keyboard = Runtime.createAndStart("keyboard", "Keyboard")
 keyboard.addListener("keyCommand", python.getName(), "input")
 
 leftPort = "COM3"
-rightPort = "COM7"
-
-
+rightPort = "COM6"
 
 i01 = Runtime.createAndStart("i01", "InMoov")
 
@@ -38,6 +34,11 @@ torso = i01.startTorso("COM3")
 
 left = Runtime.getService("i01.left")
 right = Runtime.getService("i01.right")
+
+left.pinMode(42,"OUTPUT")
+left.pinMode(43,"OUTPUT")
+left.pinMode(44,"OUTPUT")
+left.pinMode(45,"OUTPUT")
 
 right.setBoard("mega2560") # atmega168 | mega2560 | etc
 
@@ -66,6 +67,30 @@ majeurefine.moveTo(0)
 i01.mouth.speak("okay you can do a system check now")
 sleep(3)
 #############################################################################################
+
+
+i01.mouth.setVoice("Laura")
+
+######################################################################
+
+def heard(data):
+  print "Speech Recognition Data:", data
+ 
+lloyd = Runtime.createAndStart("lloyd", "ProgramAB")
+lloyd.startSession("markus", "alice2")
+webgui = Runtime.create("WebGui","WebGui")
+webgui.autoStartBrowser(False)
+webgui.startService()
+wksr = Runtime.createAndStart("webkitspeechrecognition", "WebkitSpeechRecognition")
+htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
+i01.mouth.speak("Testing to speak")
+wksr.addTextListener(lloyd)
+lloyd.addTextListener(htmlfilter)
+htmlfilter.addTextListener(i01.mouth)
+
+i01.mouth.speak("okay i am ready for conversation")
+
+######################################################################
 # Markus Mod
 
 i01.leftArm.omoplate.map(10,80,65,15)
@@ -78,38 +103,33 @@ i01.leftArm.bicep.map(5,90,90,20)
 i01.rightArm.bicep.map(5,90,90,20)
 i01.head.rothead.map(30,150,150,30)
 i01.torso.topStom.map(60,120,83,118)
-i01.head.eyeX.setMinMax(45,95)
-i01.head.eyeX.map(60,100,45,95)
+i01.head.eyeX.setMinMax(50,100)
+i01.head.eyeX.map(60,100,55,100)
 #lefteye.setMinMax(40,90)
 #lefteye.map(60,100,40,90)
-i01.head.eyeY.map(50,100,140,20)
+i01.head.eyeY.map(50,100,95,60)
 i01.head.neck.map(20,160,160,20)
 i01.leftHand.thumb.map(0,180,20,160)
 i01.leftHand.index.map(0,180,30,160)
-i01.leftHand.majeure.map(0,180,0,150)
+i01.leftHand.majeure.map(0,180,0,170)
 i01.leftHand.ringFinger.map(0,180,0,120)
-i01.leftHand.pinky.map(0,180,60,180)
+i01.leftHand.pinky.map(0,180,40,180)
+
+i01.rightHand.majeure.map(0,180,20,180)
+
 thumbfine.map(0,180,138,0)
 indexfine.map(0,180,138,0)
 majeurefine.map(0,180,138,0)
 
 ############################################################
 #to tweak the default PID values
-"""
-i01.headTracking.xpid.setPID(10.0,5.0,0.1)
-i01.headTracking.ypid.setPID(10.0,5.0,0.1)
-i01.eyesTracking.xpid.setPID(15.0,5.0,0.1)
-i01.eyesTracking.ypid.setPID(15.0,5.0,0.1)
-"""
-############################################################
 
-i01.mouth.setVoice("Laura")
+i01.eyesTracking.pid.setPID("eyeX",20.0,5.0,0.1)
+i01.eyesTracking.pid.setPID("eyeY",20.0,5.0,0.1)
+i01.headTracking.pid.setPID("rothead",12.0,5.0,0.1)
+i01.headTracking.pid.setPID("neck",12.0,5.0,0.1)
 
 ############################################################
-
-ear = i01.ear
-
-##################################################################
 
 dance1 = 1
 dance2 = 1
@@ -124,7 +144,7 @@ blind = 1
 
 drive = 0
 
-openclosehands = 1
+openclosehands = 3
 
 opencloselefthand = 0
 
@@ -142,58 +162,94 @@ i01.setTorsoSpeed(1.0, 1.0, 1.0)
 i01.moveArm("left",5,90,30,10)
 i01.moveArm("right",5,90,30,15)
 i01.moveTorso(90,90,90)
+thumbfine.moveTo(0)
+indexfine.moveTo(0)
+majeurefine.moveTo(0)
 
 i01.mouth.speak("working on full speed")
 
-##################################################################
-
-ear.addCommand("save this", "python", "printCapture")
-ear.addCommand("servo", "python", "servos")
-
-ear.addComfirmations("yes","correct","ya") 
-ear.addNegations("no","wrong","nope","nah")
- 
-ear.startListening("very good | thanks | thank you | nice | goodbye")
- 
- # set up a message route from the ear --to--> python method "heard"
-ear.addListener("recognized", "python", "heard")
-
 ##########################################################################################
 
-def heard(data):
-    data = msg_i01_ear_recognized.data[0]
+wksr.addListener("publishText","python","onText")
 
-    if (data == "very good"):
-        i01.mouth.speak("thanks")
-
-    if (data == "thanks"):
-        x = (random.randint(1, 2))
-        if x == 1:
-            i01.mouth.speak("it's okay")
-        if x == 2:
-            i01.mouth.speak("sure") 
-
-    if (data == "thank you"):
-        x = (random.randint(1, 3))
-        if x == 1:
-            i01.mouth.speak("you are welcome")
-        if x == 2:
-            i01.mouth.speak("my pleasure")
-        if x == 3:
-            i01.mouth.speak("it's okay")
-
-    if (data == "nice"):
-        x = (random.randint(1, 3))
-        if x == 1:
-            i01.mouth.speak("I know")
-        if x == 2:
-            i01.mouth.speak("yes, indeed")
-        if x == 3:
-            i01.mouth.speak("you are damn right")
-
-    if (data == "goodbye"):
-        goodbye()
-
+def onText(data):
+     print "User.  " + data
+     if (data == "just use your head") or (data == " just use your head"):
+         i01.detach()
+         i01.head.attach()
+     if (data == "disconnect everything") or (data == " disconnect everything"):
+         i01.detach()
+     if (data == "attach everything") or (data == " attach everything"):
+         i01.attach()
+     if (data == "drive the car") or (data == " drive the car"):
+         drivecar()
+#     if (data == "put your arms down") or (data == " put your arms down") or ("put down your arms") or (data == " put down your arms"):
+#         armsdown() 
+     if (data == "look straight forward") or (data == " look straight forward"):
+         headfront()
+         eyesfront()    
+     if (data == "look to your left") or (data == " look to your left"):
+         headleft()   
+     if (data == "look to your right") or (data == " look to your right"):
+         headright()
+     if (data == "look up") or (data == " look up"):
+         headupp() 
+     if (data == "look down") or (data == " look down"):
+         headdown()
+     if (data == "open your hands") or (data == " open your hands"):
+         handopen()    
+     if (data == "close your hands") or (data == " close your hands"):
+         handclose()   
+     if (data == "open your left hand") or (data == " open your left hand"):
+         lefthandopen() 
+     if (data == "close your left hand") or (data == " close your left hand"):
+         lefthandclose()
+     if (data == "open your right hand") or (data == " open your right hand"):
+         righthandopen()  
+     if (data == "close your right hand") or (data == " close your right hand"):
+         righthandclose() 
+     if (data == "how many fingers do you have") or (data == " how many fingers do you have"):
+         sleep(6)
+         howmanyfingersdoihave()
+     if (data == "how are you able to move") or (data == " how are you able to move"):
+         sleep(3)
+         servos()
+     if (data == "who are you") or (data == " who are you"):
+         madeby2()
+     if (data == "tell me something about yourself") or (data == " tell me something about yourself"):
+         sleep(3)
+         hello()
+     if (data == "go forward") or (data == " go forward"):
+         serial.write("8")
+     if (data == "go back") or (data == " go back"):
+         serial.write("2")   
+     if (data == "turn left") or (data == " turn left"):
+         serial.write("4")
+     if (data == "turn right") or (data == " turn right"):
+         serial.write("6")
+     if (data == "go left") or (data == " go left"):
+         serial.write("7")
+     if (data == "go right") or (data == " go right"):
+         serial.write("6")
+     if (data == "you have to stop") or (data == " you have to stop"):
+         serial.write("5")
+     if (data == "change to drive mode") or (data == " change to drive mode"):
+         sleep(3)
+         drivemode()
+     if (data == "change to gesture mode") or (data == " change to gesture mode"):
+         sleep(3)
+         gesturemode()
+     if (data == "change to autonomous mode") or (data == " change to autonomous mode"):
+         sleep(3)
+         autonomousmode()         
+     if (data == "red light") or (data == " red light"):
+         red()  
+     if (data == "green light") or (data == " green light"):
+         green()    
+     if (data == "blue light") or (data == " blue light"):
+         blue()   
+     if (data == "turn off the lights") or (data == " turn off the lights"):
+         ledoff()                 
 ##########################################################################################
 
 def serial1RX(data):
@@ -203,16 +259,13 @@ def serial1RX(data):
     global listener2, teensyR  
     
     if drive == 0:
-      
       if (num == 1):
         i01.moveHead(100,110)
            
       if (num == 2):
-        teensyL.removeListener(listener1)
         i01.moveHead(100,110)    
         opencloseleftH()
         sleep(2)
-        teensyL.addListener(listener1)
       
       if (num == 3):
         i01.moveHead(100,110)
@@ -244,12 +297,8 @@ def serial1RX(data):
       if (num == 12):
         i01.moveHead(100,110)
 
-      teensyL.removeListener(listener1)
-      teensyR.removeListener(listener2)
       reactarmL()
-      sleep(3)
-      teensyL.addListener(listener1) 
-      teensyR.addListener(listener2) 
+      fullspeed()
 
     elif drive == 1: 
      
@@ -257,10 +306,8 @@ def serial1RX(data):
         i01.mouth.speak("1")
               
       if (num == 2):
-        teensyL.removeListener(listener1)
         opencloseleftH()
         sleep(2)
-        teensyL.addListener(listener1) 
               
       if (num == 3):
         i01.mouth.speak("3")
@@ -296,53 +343,53 @@ def serial1RX(data):
     
       if (num == 1):
         i01.setArmSpeed("left", 0.7, 1.0, 1.0, 1.0)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() - 5) 
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() - 5) 
               
       if (num == 2):
-        teensyL.removeListener(listener1)
+#        teensyL.removeListener(listener1)
         opencloseleftH()
         sleep(2)
-        teensyL.addListener(listener1) 
+#        teensyL.addListener(listener1) 
        
       if (num == 3):
         i01.setArmSpeed("left", 1.0, 0.7, 1.0, 1.0)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() + 4)    
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() + 4)    
           
       if (num == 4):
         i01.setArmSpeed("left", 1.0, 1.0, 1.0, 0.7)
-        i01.leftArm.omoplate.moveTo(i01.leftArm.omoplate.getPosFloat() - 5) 
+        i01.leftArm.omoplate.moveTo(i01.leftArm.omoplate.getPos() - 5) 
                      
       if (num == 5):
         i01.mouth.speak("5")  
        
       if (num == 6):
-        teensyL.removeListener(listener1)
+#        teensyL.removeListener(listener1)
         print( i01.captureGesture()) 
         sleep(2)
-        teensyL.addListener(listener1) 
+#        teensyL.addListener(listener1) 
        
       if (num == 7):
         i01.setArmSpeed("left", 1.0, 1.0, 1.0, 0.8)
-        i01.leftArm.omoplate.moveTo(i01.leftArm.omoplate.getPosFloat() + 5) 
+        i01.leftArm.omoplate.moveTo(i01.leftArm.omoplate.getPos() + 5) 
        
       if (num == 8):
         i01.setArmSpeed("left", 1.0, 0.7, 1.0, 1.0)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() - 4)
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() - 4)
        
       if (num == 9):
         i01.setArmSpeed("left", 1.0, 1.0, 0.7, 1.0)
-        i01.leftArm.shoulder.moveTo(i01.leftArm.shoulder.getPosFloat() - 2)
+        i01.leftArm.shoulder.moveTo(i01.leftArm.shoulder.getPos() - 2)
        
       if (num == 10):
         i01.mouth.speak("10")
        
       if (num == 11):
         i01.setArmSpeed("left", 1.0, 1.0, 0.8, 1.0)
-        i01.leftArm.shoulder.moveTo(i01.leftArm.shoulder.getPosFloat() + 2)  
+        i01.leftArm.shoulder.moveTo(i01.leftArm.shoulder.getPos() + 2)  
        
       if (num == 12):
         i01.setArmSpeed("left", 0.8, 1.0, 1.0, 0.8)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() + 5) 
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() + 5) 
 
 def serial2RX(data):
 #     print(data)
@@ -351,7 +398,6 @@ def serial2RX(data):
     global listener2, teensyR
     
     if drive == 0:
-
       if (num == 1):
         i01.moveHead(100,50)
    
@@ -377,11 +423,9 @@ def serial2RX(data):
         i01.moveHead(100,50)
    
       if (num == 9):
-        teensyR.removeListener(listener2)
         i01.moveHead(100,50)     
         opencloserightH()
         sleep(2)
-        teensyR.addListener(listener2) 
  
       if (num == 10):
         i01.moveHead(100,50)
@@ -392,13 +436,9 @@ def serial2RX(data):
       if (num == 12):
         i01.moveHead(100,50)
 
-      teensyL.removeListener(listener1)
-      teensyR.removeListener(listener2)
       reactarmR()
-      sleep(3)
-      teensyL.addListener(listener1)
-      teensyR.addListener(listener2) 
-
+      fullspeed()
+      
     elif drive == 1:
 
       if (num == 1):
@@ -409,6 +449,7 @@ def serial2RX(data):
                 
       if (num == 3):
         i01.mouth.speak("3")
+        serial.write("4")
        
       if (num == 4):
         serial.write("9")
@@ -426,10 +467,10 @@ def serial2RX(data):
         serial.write("5")
   
       if (num == 9):
-        teensyR.removeListener(listener2)    
+#        teensyR.removeListener(listener2)    
         opencloserightH()
         sleep(2)
-        teensyR.addListener(listener2) 
+#        teensyR.addListener(listener2) 
 
       if (num == 10):
         serial.write("2")
@@ -447,50 +488,50 @@ def serial2RX(data):
        
       if (num == 2):
         i01.setArmSpeed("right", 1.0, 0.7, 1.0, 1.0)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() - 4)
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() - 4)
                 
       if (num == 3):       
-        teensyR.removeListener(listener2)    
+#        teensyR.removeListener(listener2)    
         print( i01.captureGesture())
         sleep(2)
-        teensyR.addListener(listener2)   
+#        teensyR.addListener(listener2)   
        
       if (num == 4):
         i01.setArmSpeed("right", 1.0, 1.0, 1.0, 0.8)
-        i01.rightArm.omoplate.moveTo(i01.rightArm.omoplate.getPosFloat() + 5) 
+        i01.rightArm.omoplate.moveTo(i01.rightArm.omoplate.getPos() + 5) 
                   
       if (num == 5):
         i01.mouth.speak("5")
     
       if (num == 6):
         i01.setArmSpeed("right", 1.0, 1.0, 1.0, 0.7)
-        i01.rightArm.omoplate.moveTo(i01.rightArm.omoplate.getPosFloat() - 5) 
+        i01.rightArm.omoplate.moveTo(i01.rightArm.omoplate.getPos() - 5) 
                   
       if (num == 7):
         i01.setArmSpeed("right", 0.7, 1.0, 1.0, 1.0)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() - 5) 
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() - 5) 
          
       if (num == 8):
         i01.setArmSpeed("right", 1.0, 0.7, 1.0, 1.0)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() + 4)          
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() + 4)          
     
       if (num == 9):
-        teensyR.removeListener(listener2)    
+#        teensyR.removeListener(listener2)    
         opencloserightH()
         sleep(2)
-        teensyR.addListener(listener2)  
+#        teensyR.addListener(listener2)  
 
       if (num == 10):
         i01.setArmSpeed("right", 1.0, 1.0, 0.7, 1.0)
-        i01.rightArm.shoulder.moveTo(i01.rightArm.shoulder.getPosFloat() - 2)         
+        i01.rightArm.shoulder.moveTo(i01.rightArm.shoulder.getPos() - 2)         
                
       if (num == 11):
         i01.setArmSpeed("right", 1.0, 1.0, 0.8, 1.0)
-        i01.rightArm.shoulder.moveTo(i01.rightArm.shoulder.getPosFloat() + 2)      
+        i01.rightArm.shoulder.moveTo(i01.rightArm.shoulder.getPos() + 2)      
 
       if (num == 12):
         i01.setArmSpeed("right", 0.8, 1.0, 1.0, 0.8)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() + 5) 
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() + 5) 
        
 
 ############################################################
@@ -518,28 +559,13 @@ def input(cmd):
     if (cmd == "NumPad-9"):
         serial.write("9") 
 
-    if (cmd == "Upp"):
+    if (cmd == "Esc"):
         if drive == 0:
-            stopTracking()
-            global blind
-            blind = 1
-            global drive
-            drive = 1
-            green()
-            i01.mouth.speakBlocking("drive mode")
+            drivemode()
         elif drive == 1:
-            global drive
-            drive = 2
-            green()
-            i01.mouth.speakBlocking("gesture mode")
+            gesturemode()
         elif drive == 2:
-            global drive
-            drive = 0
-            blue()
-            trackHumans()
-            global blind
-            blind = 0 
-            i01.mouth.speakBlocking("autonomous mode")
+            autonomousmode()
 
     if (cmd == "R"):
         if openclosehands == 1:
@@ -580,23 +606,23 @@ def input(cmd):
             global picture
             picture = 1
 
-    if (cmd == "O"):
-        i01.head.neck.moveTo(i01.head.neck.getPosFloat() + 1)
-        i01.head.eyeY.moveTo(i01.head.eyeY.getPosFloat() + 0.3)
+    if (cmd == "Upp"):
+        i01.head.neck.moveTo(i01.head.neck.getPos() + 1)
+        i01.head.eyeY.moveTo(i01.head.eyeY.getPos() + 1)
 
-    if (cmd == "Kommatecken"):
-        i01.head.neck.moveTo(i01.head.neck.getPosFloat() - 1)
-        i01.head.eyeY.moveTo(i01.head.eyeY.getPosFloat() - 0.3)
+    if (cmd == "Nedpil"):
+        i01.head.neck.moveTo(i01.head.neck.getPos() - 1)
+        i01.head.eyeY.moveTo(i01.head.eyeY.getPos() - 1)
 
-    if (cmd == "J"):
-        i01.head.rothead.moveTo(i01.head.rothead.getPosFloat() + 1)
-        i01.head.eyeX.moveTo(i01.head.eyeX.getPosFloat() + 0.4)            
+    if (cmd == u"Vänster"):
+        i01.head.rothead.moveTo(i01.head.rothead.getPos() + 1)
+        i01.head.eyeX.moveTo(i01.head.eyeX.getPos() + 1)            
   
-    if (cmd == "L"):
-        i01.head.rothead.moveTo(i01.head.rothead.getPosFloat() - 1)
-        i01.head.eyeX.moveTo(i01.head.eyeX.getPosFloat() - 0.4)
+    if (cmd == u"Höger"):
+        i01.head.rothead.moveTo(i01.head.rothead.getPos() - 1)
+        i01.head.eyeX.moveTo(i01.head.eyeX.getPos() - 1)
 
-    if (cmd == "K"):
+    if (cmd == "1"):
         headfront()
         eyesfront()  
 
@@ -619,24 +645,35 @@ def input(cmd):
         serial.write("6")
 
     if (cmd == "S"):
-        serial.write("5")
-
-    if (cmd == "Nedpil"):
-        serial.write("5")        
+        serial.write("5")     
     
     if (cmd == "Y"):
         i01.mouth.speakBlocking("yes")
 
+    if (cmd == "F"):
+        i01.mouth.speakBlocking("goodbye")
+        x = (random.randint(1, 4))
+        if x == 1:
+          i01.mouth.speak("see you soon")
+        if x == 2:
+          i01.mouth.speak("thanks for visiting me")
+        if x == 3:
+          i01.mouth.speak("i am so glad you stopped by")
+        if x == 4:
+          i01.mouth.speak("have a nice day")
+                    
     if (cmd == "N"):
-        i01.mouth.speakBlocking("no")
+        i01.mouth.speak("no")
                 
     if (cmd == "U"):
         servos()
 
     if (cmd == "B"):
-        facetrack()
+#        facetrack()
+        trackPoint()
 
     if (cmd == "Mellanslag") or (cmd =="Blanksteg"):
+        i01.head.jaw.attach("i01.left", 26)
         i01.head.jaw.moveTo(50)
         sleep(0.2)
         i01.head.jaw.moveTo(10)
@@ -648,12 +685,27 @@ def input(cmd):
         hello()
 
     if (cmd == "I"):
-        x = (random.randint(1, 2))
+        x = (random.randint(1, 5))
+        if x == 1:
+          i01.mouth.speak("hello")
+        if x == 2:
+          i01.mouth.speak("hi")
+        if x == 3:
+          i01.mouth.speak("welcome") 
+        if x == 4:
+          i01.mouth.speak("nice to meet you")
+        if x == 5:
+          i01.mouth.speak("what a lovely day")
+        x = (random.randint(1, 4))
         if x == 1:
           i01.mouth.speak("i'm robyn inmoov")
         if x == 2:
           i01.mouth.speak("my name is robyn") 
-
+        if x == 3:
+          i01.mouth.speak("my name is robyn inmoov")
+        if x == 4:
+          i01.mouth.speak("i'm robyn") 
+          
     if (cmd == "M"):
         if mic == 1:
             ear.lockOutAllGrammarExcept("robin")
@@ -669,32 +721,72 @@ def input(cmd):
     if (cmd == "G"):
         doit()
 
+
+        
     if (cmd == "X"):
         pose()
 
-    if (cmd == "C"):
+    if (cmd == "T"):
         armsdown()
 
+    if (cmd == "V"):
+        follow()
+
+       
 ############################################################
 
-def doit():   
-    x = (random.randint(1, 6))
+def drivemode():
+    teensyL.write("1") 
+    teensyR.write("1") 
+#    stopTracking()
+    global blind
+    blind = 1
+    global drive
+    drive = 1
+    green()
+    i01.mouth.speakBlocking("drive mode")
+
+def gesturemode():
+    teensyL.write("1") 
+    teensyR.write("1") 
+    global drive
+    drive = 2
+    green()
+    i01.mouth.speakBlocking("gesture mode")
+
+def autonomousmode():
+    teensyL.write("2") 
+    teensyR.write("2") 
+    global drive
+    drive = 0
+    blue()
+#    trackHumans()
+    global blind
+    blind = 0 
+    i01.mouth.speakBlocking("autonomous mode")
+
+def doit(): 
+    i01.setHeadSpeed(0.9, 0.9)  
+    x = (random.randint(1, 7))
     if x == mem:
       doit()
-    if x == 1:
-      muscle()
-    if x == 2:
-      comehere()
-    if x == 3:
-      madeby()
-    if x == 4:
-      howmanyfingersdoihave()
-    if x == 5:
-      littleteapot()
-    if x == 6:
-      discotime()
-    global mem
-    mem = x
+    else :
+      if x == 1:
+        muscle()
+      elif x == 2:
+        drivecar()
+      elif x == 3:
+        madeby()
+      elif x == 4:
+        howmanyfingersdoihave()
+      elif x == 5:
+        littleteapot()
+      elif x == 6:
+        discotime()
+      elif x == 7:
+        wonderful()        
+      global mem
+      mem = x
     
 def pose(): 
     x = (random.randint(1, 6))
@@ -713,7 +805,9 @@ def pose():
     pose2()
     
 def pose2(): 
+    i01.setHeadSpeed(0.9, 0.9)
     x = (random.randint(1, 6))
+    sleep(0.2)
     if mem == x:
       pose2()
     if x == 1:
@@ -763,6 +857,51 @@ def pose2():
           
 ############################################################
 
+def wonderful():
+      i01.moveArm("left",85,159,32,70)
+      i01.moveArm("right",70,159,35,70)
+      sleep(2)
+      i01.mouth.speak("this is a wonderful life")
+      sleep(4)
+      armsdown()
+
+def drivecar():
+    i01.moveHead(90,80,80,90,10)
+    i01.moveArm("left",60,82,68,35)
+    i01.moveArm("right",35,90,70,30)
+    i01.moveHand("left",180,180,180,180,180,90)
+    i01.moveHand("right",180,180,180,180,180,90)
+    i01.moveTorso(90,90,90)
+    sleep(2)
+    i01.mouth.speak("sometimes i pretend that i am driving a car")
+    sleep(3)
+    i01.mouth.speak("turning right")
+    i01.moveHead(120,50,80,90,10)
+    i01.moveArm("left",80,82,76,65)
+    i01.moveArm("right",35,80,70,15)
+    i01.moveHand("left",180,180,180,180,180,66)
+    i01.moveHand("right",180,180,180,180,180,21)
+    i01.moveTorso(75,90,90)
+    sleep(1)
+    serial.write("6")
+    sleep(2)
+    serial.write("5")
+    i01.mouth.speak("turning left")
+    i01.moveHead(120,120,80,90,10)
+    i01.moveArm("left",55,70,69,10)
+    i01.moveArm("right",65,90,87,45)
+    i01.moveHand("left",180,180,180,180,180,180)
+    i01.moveHand("right",180,180,180,180,180,180)
+    i01.moveTorso(115,90,90)
+    sleep(1)
+    serial.write("4")
+    sleep(2)
+    serial.write("5")
+    i01.moveHead(90,80,80,90,10)
+    i01.moveTorso(90,90,90)
+    i01.moveHand("left",180,180,180,180,180,90)
+    i01.moveHand("right",180,180,180,180,180,90)
+    armsdown()
 
 def discotime():
     global dance2
@@ -774,7 +913,7 @@ def discotime():
     sleep(2)
 #    nexa2off()
     sleep(1)
-    i01.mouth.audioFile.playFile("C:\Users\Markus\Music\Get the Party Started.mp3", False)
+    i01.mouth.audioFile.playFile("C:\Users\markus\Music\Get the Party Started.mp3", False)
     sleep(1.0)
 #    nexa3on()
     sleep(1)
@@ -801,7 +940,7 @@ def discotime():
         sleep(0.4)
         i01.head.neck.moveTo(110)
         sleep(0.5)
-    ear.clearLock()
+    serial.write("5")
 #    nexa1on()
     sleep(0.5)
 #    nexa2on()
@@ -821,29 +960,36 @@ def discodance1():
         i01.moveTorso(100,90,90)
         global dance1
         dance1 = 2
-
+        
     elif dance1 == 2: 
         i01.moveTorso(80,90,90)
         global dance1
         dance1 = 1
+        
 
 def discodance2():
 
     if dance2 >= 0 and dance2 <= 9 or dance2 >= 17 and dance2 <= 26 or dance2 >= 42 and dance2 <= 52  :  
-        if dance1 == 2: 
+        if dance1 == 2:
+            for y in range(0, 8): 
+                serial.write("6") 
             i01.moveArm("left",60,90,30,10)
             i01.moveArm("right",60,90,30,10)
-        elif dance1 == 1:                            
+        elif dance1 == 1:
+            for y in range(0, 8):
+                serial.write("4")                            
             i01.moveArm("left",30,90,30,10)
             i01.moveArm("right",30,90,30,10)
         global dance2
         dance2 += 1
 
     if dance2 >= 9 and dance2 <= 17 :  
-        if dance1 == 2: 
+        if dance1 == 2:
+            serial.write("9") 
             i01.moveArm("left",60,60,30,10)
             i01.moveArm("right",60,120,30,10)
-        elif dance1 == 1:                           
+        elif dance1 == 1: 
+            serial.write("7")                          
             i01.moveArm("left",30,60,30,10)
             i01.moveArm("right",30,120,30,10)
         global dance2
@@ -851,9 +997,11 @@ def discodance2():
 
     if dance2 >= 26 and dance2 <= 34 :  
         if dance1 == 2: 
+            serial.write("6")
             i01.moveArm("left",60,120,30,10)
             i01.moveArm("right",60,60,30,10)
         elif dance1 == 1: 
+            serial.write("4")
             i01.moveArm("left",30,120,30,10)
             i01.moveArm("right",30,60,30,10)
         global dance2
@@ -861,19 +1009,23 @@ def discodance2():
 
     if dance2 >= 34 and dance2 <= 42 or dance2 >= 60 and dance2 <= 68 :  
         if dance1 == 2: 
+            serial.write("9")
             i01.moveArm("left",25,94,79,10)
             i01.moveArm("right",90,107,43,15)
-        elif dance1 == 1: 
+        elif dance1 == 1:
+            serial.write("7") 
             i01.moveArm("left",65,94,73,10)
             i01.moveArm("right",37,107,72,15)
         global dance2
         dance2 += 1
 
     if dance2 >= 52 and dance2 <= 60 or dance2 >= 68 and dance2 <= 76 or dance2 >= 84 and dance2 <= 92 :  
-        if dance1 == 2: 
+        if dance1 == 2:
+            serial.write("6") 
             i01.moveArm("left",5,90,30,10)
             i01.moveArm("right",5,130,30,30)
         elif dance1 == 1: 
+            serial.write("4")
             i01.moveArm("left",5,130,30,30)
             i01.moveArm("right",5,90,30,10)
         global dance2
@@ -881,19 +1033,23 @@ def discodance2():
 
     if dance2 >= 76 and dance2 <= 84 or dance2 >= 92 and dance2 <= 102 :  
         if dance1 == 2: 
+            serial.write("9")
             i01.moveArm("left",90,90,30,19)
             i01.moveArm("right",87,104,30,10)
         elif dance1 == 1: 
+            serial.write("7")
             i01.moveArm("left",90,136,30,10)
             i01.moveArm("right",87,69,30,25)
         global dance2
         dance2 += 1
 
     if dance2 >= 102 and dance2 <= 111 or dance2 >= 119 and dance2 <= 128 or dance2 >= 146 and dance2 <= 154  :  
-        if dance1 == 2: 
+        if dance1 == 2:
+            serial.write("6") 
             i01.moveArm("left",30,90,30,10)
             i01.moveArm("right",60,90,30,10)
         elif dance1 == 1: 
+            serial.write("4")
             i01.moveArm("left",60,90,30,10)
             i01.moveArm("right",30,90,30,10)
         global dance2
@@ -901,9 +1057,11 @@ def discodance2():
 
     if dance2 >= 111 and dance2 <= 119 :  
         if dance1 == 2: 
+            serial.write("9")
             i01.moveArm("left",30,60,30,10)
             i01.moveArm("right",60,120,30,10)
         elif dance1 == 1: 
+            serial.write("7")
             i01.moveArm("left",60,60,30,10)
             i01.moveArm("right",30,120,30,10)
         global dance2
@@ -911,9 +1069,11 @@ def discodance2():
 
     if dance2 >= 128 and dance2 <= 138 :  
         if dance1 == 2: 
+            serial.write("6")
             i01.moveArm("left",30,120,30,10)
             i01.moveArm("right",60,60,30,10)
         elif dance1 == 1: 
+            serial.write("4")
             i01.moveArm("left",60,120,30,10)
             i01.moveArm("right",30,60,30,10)
         global dance2
@@ -921,19 +1081,23 @@ def discodance2():
 
     if dance2 >= 138 and dance2 <= 146 or dance2 >= 164 and dance2 <= 172 :  
         if dance1 == 2: 
+            serial.write("9")
             i01.moveArm("left",25,94,79,10)
             i01.moveArm("right",90,107,43,15)
         elif dance1 == 1: 
+            serial.write("7")
             i01.moveArm("left",65,94,73,10)
             i01.moveArm("right",37,107,72,15)
         global dance2
         dance2 += 1
 
     if dance2 >= 154 and dance2 <= 164 or dance2 >= 172 and dance2 <= 180 or dance2 >= 188 and dance2 <= 196 :  
-        if dance1 == 2: 
+        if dance1 == 2:
+            serial.write("6") 
             i01.moveArm("left",5,90,30,10)
             i01.moveArm("right",60,130,30,30)
-        elif dance1 == 1: 
+        elif dance1 == 1:
+            serial.write("4") 
             i01.moveArm("left",60,130,30,30)
             i01.moveArm("right",5,90,30,10)
         global dance2
@@ -941,9 +1105,11 @@ def discodance2():
 
     if dance2 >= 180 and dance2 <= 188 or dance2 >= 196 and dance2 <= 212 :  
         if dance1 == 2: 
+            serial.write("9")
             i01.moveArm("left",90,90,30,19)
             i01.moveArm("right",87,104,30,10)
-        elif dance1 == 1: 
+        elif dance1 == 1:
+            serial.write("7") 
             i01.moveArm("left",90,136,30,10)
             i01.moveArm("right",87,69,30,25)
         global dance2
@@ -1226,7 +1392,7 @@ def littleteapot():
 def howmanyfingersdoihave():
      blue()
      fullspeed()
-     i01.moveHead(49,74)
+     i01.moveHead(49,80)
      i01.moveArm("left",75,83,79,24)
      i01.moveArm("right",65,82,71,24)
      i01.moveHand("left",140,168,168,168,158,90)
@@ -1248,7 +1414,7 @@ def howmanyfingersdoihave():
      i01.mouth.speakBlocking("six")
      sleep(1)
      i01.setHeadSpeed(.70,.70)
-     i01.moveHead(40,105)
+     i01.moveHead(40,95)
      i01.moveArm("left",75,83,79,24)
      i01.moveArm("right",65,82,71,24)
      i01.moveHand("left",0,0,0,0,0,180)
@@ -1278,7 +1444,7 @@ def howmanyfingersdoihave():
      i01.mouth.speakBlocking("that doesn't seem right")
      sleep(2)
      i01.mouth.speakBlocking("I think I better try that again")
-     i01.moveHead(40,105)
+     i01.moveHead(40,95)
      i01.moveArm("left",75,83,79,24)
      i01.moveArm("right",65,82,71,24)
      i01.moveHand("left",140,168,168,168,158,90)
@@ -1300,7 +1466,7 @@ def howmanyfingersdoihave():
      i01.mouth.speakBlocking("five")
      sleep(.1)
      i01.setHeadSpeed(0.65,0.65)
-     i01.moveHead(53,65)
+     i01.moveHead(53,80)
      i01.moveArm("right",48,80,78,11)
      i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
      i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
@@ -1360,6 +1526,39 @@ def madeby():
     i01.moveHand("right",114,146,125,113,117,109)
     i01.moveTorso(90,90,90)
     i01.mouth.speakBlocking("my name is robyn inmoov")
+    madeby3()
+
+def madeby2():
+    i01.moveHead(80,86)
+    i01.moveArm("left",5,90,30,10)
+    i01.moveArm("right",5,90,30,10)
+    i01.moveHand("left",45,40,30,25,35,90)
+    i01.moveHand("right",55,2,50,48,30,90)
+    i01.moveTorso(90,90,90)
+    sleep(2)
+    i01.moveHead(80,98)
+    i01.moveArm("left",5,90,30,10)
+    i01.moveArm("right",5,90,30,10)
+    i01.moveHand("left",45,40,30,25,35,90)
+    i01.moveHand("right",55,2,50,48,30,90)
+    i01.moveTorso(90,90,90)
+    sleep(1)
+    i01.moveHead(90,89)
+    i01.moveArm("left",42,104,30,10)
+    i01.moveArm("right",33,116,30,10)
+    i01.moveHand("left",45,40,30,25,35,120)
+    i01.moveHand("right",55,2,50,48,30,40)
+    i01.moveTorso(90,90,90)
+    sleep(1)
+    i01.moveHead(80,98)
+    i01.moveArm("left",5,99,30,16)
+    i01.moveArm("right",5,94,30,16)
+    i01.moveHand("left",120,116,110,115,98,73)
+    i01.moveHand("right",114,146,125,113,117,109)
+    i01.moveTorso(90,90,90)
+    madeby3()
+
+def madeby3():
     i01.moveHead(68,90)
     i01.moveArm("left",5,99,30,16)
     i01.moveArm("right",85,102,38,16)
@@ -1493,69 +1692,6 @@ def madeby():
     i01.mouth.speakBlocking("cool, don't you think")
     armsdown()
 
-def comehere():
-    fullspeed()
-##look around
-    i01.moveHead(80,66)
-    sleep(3)
-    i01.moveHead(80,110)
-    sleep(3)
-##raise arm point finger
-    i01.setHandSpeed("left", 0.85, 0.85, 0.85, 0.85, 0.85, 1.0)
-    i01.setHandSpeed("right", 1.0, 0.85, 1.0, 1.0, 1.0, 1.0)
-    i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
-    i01.setArmSpeed("right", 0.90, 1.0, 1.0, 1.0)
-    i01.setHeadSpeed(1.0, 0.90)
-    i01.setTorsoSpeed(1.0, 1.0, 1.0)
-    i01.moveHead(80,86,85,85,52)
-    i01.moveArm("left",5,94,30,10)
-    i01.moveArm("right",7,74,92,10)
-    i01.moveHand("left",180,180,180,180,180,90)
-    i01.moveHand("right",180,2,175,160,165,180)
-    i01.moveTorso(90,90,90)
-    sleep(4.5)
-##move finger
-    i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-    i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-    i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
-    i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
-    i01.setHeadSpeed(1.0, 1.0)
-    i01.setTorsoSpeed(1.0, 1.0, 1.0)
-    i01.moveHead(80,86)
-    i01.moveArm("left",5,94,30,10)
-    i01.moveArm("right",48,74,92,10)
-    i01.moveHand("left",180,180,180,180,180,90)
-    i01.moveHand("right",180,2,175,160,165,20)
-    i01.moveTorso(90,90,90)
-    sleep(2)
-    i01.setHeadSpeed(0.80, 0.80)
-    i01.moveHead(80,80)
-    i01.moveHand("right",180,164,175,160,165,20)
-    sleep(1)
-    i01.moveHead(80,80)
-    i01.moveHand("right",180,2,175,160,165,20)
-    sleep(1)
-    i01.moveHead(118,80)
-    i01.moveHand("right",180,164,175,160,165,20)
-    sleep(1)
-    i01.mouth.speak("come closer")
-    i01.moveHead(60,80)
-    i01.moveHand("right",180,2,175,160,165,20)
-    sleep(1)
-    i01.moveHead(118,80)
-    i01.moveHand("right",180,164,175,160,165,20)
-    sleep(1)
-    i01.moveHead(60,80)
-    i01.moveArm("right",90,65,10,25)
-    i01.mouth.speak("bu")
-    sleep(3)
-    i01.mouth.speak("ha ha")
-    fullspeed()
-    sleep(0.3)
-    armsdown()
-    sleep(3)
-    fullspeed()
-
 def muscle():
   i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
   i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
@@ -1585,6 +1721,7 @@ def muscle():
   i01.moveTorso(60,75,90)
   sleep(5)
   i01.mouth.speakBlocking("not bad either, don't you think")
+  i01.moveHead(90,80,80,90,10)
   armsdown()
   i01.moveTorso(90,90,90)
   sleep(1)
@@ -1608,23 +1745,16 @@ def picturerightside():
     i01.moveArm("right",10,135,-13,68)
 
 def servos():  
-    ear.pauseListening()
-    teensyL.removeListener(listener1)
-    teensyR.removeListener(listener2)
+    handclose()
     sleep(1)
-    i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-    i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
     i01.setArmSpeed("right", 0.85, 0.85, 0.85, 0.85)
     i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
     i01.setHeadSpeed(0.65, 0.65)
     i01.moveHead(79,100)
     i01.moveArm("left",5,119,28,15)
     i01.moveArm("right",5,111,28,15)
-    i01.moveHand("left",42,58,87,55,71,35)
-    i01.moveHand("right",81,20,82,60,105,113)
     i01.mouth.speakBlocking("I currently have 31  hobby servos installed in my body to give me life")
-    i01.setHandSpeed("left", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
-    i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+    i01.setHandSpeed("left", 0.85, 0.90, 0.85, 0.85, 0.85, 0.85)
     i01.setArmSpeed("right", 0.85, 0.85, 0.85, 0.85)
     i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
     i01.setHeadSpeed(0.65, 0.65)
@@ -1632,11 +1762,10 @@ def servos():
     i01.moveArm("left",89,94,91,35)
     i01.moveArm("right",20,67,31,22)
     i01.moveHand("left",106,0,161,147,138,90)
-    i01.moveHand("right",0,0,0,54,91,90)
+    sleep(0.5)
     i01.mouth.speakBlocking("there's one servo  for moving my mouth up and down")
     sleep(1)
     i01.setHandSpeed("left", 0.85, 0.85, 1.0, 0.85, 0.85, 0.85)
-    i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
     i01.setArmSpeed("right", 0.85, 0.85, 0.85, 0.85)
     i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
     i01.setHeadSpeed(0.65, 0.65)
@@ -1644,7 +1773,6 @@ def servos():
     i01.moveArm("left",89,106,103,35);
     i01.moveArm("right",35,67,31,22);
     i01.moveHand("left",106,0,0,147,138,7);
-    i01.moveHand("right",0,0,0,54,91,90);
     i01.mouth.speakBlocking("two for my eyes")
     sleep(0.2)
     i01.setHandSpeed("left", 0.85, 0.85, 1.0, 1.0, 1.0, 0.85)
@@ -1652,7 +1780,6 @@ def servos():
     i01.mouth.speakBlocking("and two more for my head")
     sleep(0.5)
     i01.setHandSpeed("left", 0.85, 0.9, 0.9, 0.9, 0.9, 0.85)
-    i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
     i01.setArmSpeed("right", 0.85, 0.85, 0.85, 0.85)
     i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
     i01.setHeadSpeed(0.65, 0.65)
@@ -1660,7 +1787,6 @@ def servos():
     i01.moveArm("left",89,106,103,35);
     i01.moveArm("right",35,67,31,20);
     i01.moveHand("left",106,140,140,140,140,7);
-    i01.moveHand("right",0,0,0,54,91,90);
     i01.mouth.speakBlocking("so i can look around")
     sleep(0.5)
     i01.setHeadSpeed(0.65, 0.65)
@@ -1671,19 +1797,15 @@ def servos():
     i01.setHeadSpeed(0.65, 0.65)
     i01.moveHead(40,56);
     sleep(0.5)
-    i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
-    i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
     i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0);
     i01.setArmSpeed("right", 0.5, 0.6, 0.5, 0.6);
     i01.moveArm("left",87,41,64,11)
     i01.moveArm("right",5,95,40,11)
     i01.moveHand("left",98,150,160,160,160,104)
-    i01.moveHand("right",0,0,50,54,91,90);
     i01.mouth.speakBlocking("there's three servos  in each shoulder")
     i01.moveHead(40,67);
     sleep(2)
     i01.setHandSpeed("left", 0.8, 0.9, 0.8, 0.8, 0.8, 0.8)
-    i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
     i01.setArmSpeed("right", 0.85, 0.85, 0.85, 0.85)
     i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
     i01.setHeadSpeed(0.8, 0.8)
@@ -1691,21 +1813,20 @@ def servos():
     i01.moveArm("left",87,41,64,11)
     i01.moveArm("right",5,95,40,42)
     i01.moveHand("left",42,0,100,80,113,35)
-    i01.moveHand("left",42,10,160,160,160,35)
-    i01.moveHand("right",81,20,82,60,105,113)
+    i01.moveHand("left",42,10,160,180,160,35)
     i01.mouth.speakBlocking("here is the first servo movement")
     sleep(1)
     i01.moveHead(37,60);
     i01.setHandSpeed("left", 1.0, 1.0, 0.9, 0.9, 1.0, 0.8)
     i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
     i01.moveArm("right",5,95,67,42)
-    i01.moveHand("left",42,10,10,160,160,30)
+    i01.moveHand("left",42,0,0,150,160,30)
     i01.mouth.speakBlocking("this is the second one")
     sleep(1)
     i01.moveHead(43,69);
     i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
     i01.moveArm("right",5,134,67,42)
-    i01.moveHand("left",42,10,10,10,160,35)
+    i01.moveHand("left",42,0,0,0,160,35)
     i01.mouth.speakBlocking("now you see the third")
     sleep(1)
     i01.setArmSpeed("right", 0.8, 0.8, 0.8, 0.8)
@@ -1718,9 +1839,7 @@ def servos():
     i01.moveArm("left",90,44,66,11)
     i01.moveArm("right",90,100,67,26)
     i01.moveHand("left",42,80,100,80,113,35)
-    i01.moveHand("right",81,0,82,60,105,69)
     i01.mouth.speakBlocking("but, i have only  one servo, to move each elbow")
-    i01.setHandSpeed("left", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
     i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
     i01.setArmSpeed("right", 0.85, 0.85, 0.85, 0.85)
     i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
@@ -1728,35 +1847,61 @@ def servos():
     i01.moveHead(45,62)
     i01.moveArm("left",72,90,90,11)
     i01.moveArm("right",90,95,68,15)
-    i01.moveHand("left",42,0,100,80,113,35)
-    i01.moveHand("right",81,0,82,60,105,0)
+    i01.moveHand("right",20,0,180,180,180,0)
     i01.mouth.speakBlocking("that, leaves me, with one servo per wrist")
     i01.moveHead(40,60)
     i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-    i01.setHandSpeed("right", 0.9, 0.9, 0.9, 0.9, 0.9, 0.9)
-    i01.moveArm("left",72,90,90,9)
-    i01.moveArm("right",60,95,68,15)
-    i01.moveHand("left",42,0,100,80,113,35)
-    i01.moveHand("right", 10, 140,82,60,105,10)
-    i01.mouth.speakBlocking("and one servo for each finger.")
+    i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+    i01.mouth.speak("and one servo for each finger.")
+    i01.moveHead(90,90)
+    
+    i01.moveHand("right",10,120,120,120,120,90)
     sleep(0.5)
-    i01.moveHand("left",42,0,100,80,113,35)
-    i01.moveHand("right", 50, 51, 15,23, 30,140);
-    i01.mouth.speakBlocking("these servos are located in my forearms")
-    i01.setHandSpeed("left", 0.8, 0.8, 0.8, 0.8,0.8, 0.8)
-    i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-    i01.moveHand("left", 36, 52, 8,22, 20);
-    i01.moveHand("right", 120, 147, 130,110, 125);
-    i01.setHandSpeed("left", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
-    i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+    i01.moveHand("right",20,0,180,180,180,0)
+    sleep(0.5)
+    i01.moveHand("right",10,10,10,120,120,90)
+    sleep(0.5)
+    i01.moveHand("right",10,10,10,10,120,90)
+    sleep(0.5)
+    i01.moveHand("right",10,10,10,10,10,90)
+    sleep(0.5)
+    i01.moveHand("right",10,10,10,10,180,90)
+    sleep(0.3)
+    i01.moveHand("right",10,10,10,180,180,90)
+    sleep(0.3)
+    i01.moveHand("right",10,10,180,180,180,90)
+    sleep(0.3)
+    i01.moveHand("right",10,180,180,180,180,90)
+    sleep(0.3) 
+           
+    i01.mouth.speak("these servos are located in my forearms")
+    
+    i01.moveHand("left",10,140,168,168,158,90)
+    sleep(0.3)
+    i01.moveHand("left",10,10,168,168,158,90)
+    sleep(0.3)
+    i01.moveHand("left",10,10,0,168,158,90)
+    sleep(0.3)
+    i01.moveHand("left",10,10,0,10,158,90)
+    sleep(0.3)
+    i01.moveHand("left",10,10,0,10,10,90)
+    sleep(0.5)
+    i01.moveHand("left",10,10,10,10,158,90)
+    sleep(0.3)
+    i01.moveHand("left",10,10,10,168,158,90)        
+    sleep(0.3)
+    i01.moveHand("left",10,10,168,168,158,90)
+    sleep(0.3)
+    i01.moveHand("left",10,140,168,168,158,90)
+    
+    handclose()
     i01.setArmSpeed("right", 0.75, 0.85, 0.95, 0.85)
     i01.setArmSpeed("left", 0.95, 0.65, 0.75, 0.75)
     i01.setHeadSpeed(0.75, 0.75)
     i01.moveHead(20,100)
     i01.moveArm("left",71,94,41,31)
     i01.moveArm("right",5,82,28,15)
-    i01.moveHand("left",60,43,45,34,34,35)
-    i01.moveHand("right",20,40,40,30,30,72)
+    sleep(1)
     i01.mouth.speakBlocking("in my left forearm i have 4 extra servos that i am testing")
     i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
     lefthandopen()
@@ -1766,9 +1911,9 @@ def servos():
     majeurefine.moveTo(90)
     sleep(1)
     i01.setHandSpeed("left", 0.9, 0.9, 0.8, 0.9, 0.9, 1.0)
-    i01.moveHand("left",95,2,2,40,40,90)
+    i01.moveHand("left",180,2,2,40,40,90)
     sleep(2)
-    i01.moveHand("left",115,75,55,40,40,90)
+    i01.moveHand("left",180,75,55,40,40,90)
     i01.mouth.speakBlocking("they increase my fine motor skills")
     sleep(1)
     i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
@@ -1788,8 +1933,9 @@ def servos():
     i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0);
     sleep(2)
     i01.mouth.speak("i also have 2 servos in my waist so i can move sideways")
+    handclose()
     Torso()
-    sleep(3)
+    sleep(2)
     i01.moveArm("left",90,45,52,10)
     i01.moveArm("right",20,67,72,22)
     i01.moveHand("left",106,0,161,147,138,90)
@@ -1799,48 +1945,153 @@ def servos():
     i01.mouth.speak("so i can feel when you are touching me")
     sleep(3)
     armsdown()
-    lefthandclose()
-    righthandclose()
+    handclose()
     i01.mouth.speak("and as you can see i now have wheels")
     sleep(5)
     serial.write("8") 
+    serial.write("8")
+    serial.write("8")
+    serial.write("8")
+    serial.write("8")
+    serial.write("8")
+    serial.write("8")
+    serial.write("8")
+    serial.write("8")
+    serial.write("8")
     sleep(2)
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
     i01.mouth.speak("i can drive forward and backward")
+    serial.write("2") 
+    serial.write("2") 
+    serial.write("2") 
+    serial.write("2") 
+    serial.write("2") 
+    serial.write("2") 
+    serial.write("2") 
+    serial.write("2") 
     serial.write("2") 
     sleep(2.5)
     serial.write("5")
-    sleep(3)
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    sleep(1)
     i01.mouth.speak("turn left and right")
     serial.write("4") 
+    serial.write("4") 
+    serial.write("4") 
+    serial.write("4") 
+    serial.write("4") 
+    serial.write("4") 
+    serial.write("4")
+    serial.write("4") 
+    serial.write("4") 
     sleep(2)
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("5")
+    serial.write("6") 
+    serial.write("6") 
+    serial.write("6") 
+    serial.write("6") 
+    serial.write("6") 
+    serial.write("6") 
+    serial.write("6") 
+    serial.write("6") 
     serial.write("6") 
     sleep(2.5)
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5")
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
     serial.write("5") 
     i01.mouth.speak("with these special wheels i also can go sideways.")
     sleep(4)
     serial.write("9") 
+    serial.write("9") 
+    serial.write("9") 
+    serial.write("9") 
+    serial.write("9") 
+    serial.write("9") 
+    serial.write("9") 
+    serial.write("9") 
+    serial.write("9") 
+    serial.write("9") 
     sleep(2)
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
     serial.write("7") 
+    serial.write("7")
+    serial.write("7") 
+    serial.write("7")
+    serial.write("7") 
+    serial.write("7")
+    serial.write("7")
+    serial.write("7")
+    serial.write("7")
     sleep(2.5)
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
+    serial.write("5") 
     serial.write("5") 
     i01.mouth.speak("it feels good to be able to move around")
     sleep(2)
-    relax()
     sleep(2)
+    fullspeed()
     armsdown()
-    ear.resumeListening()
-    teensyL.addListener(listener1)
-    teensyR.addListener(listener2) 
 
 ##########################################################################################
 
-def trackHumans():
-    i01.headTracking.faceDetect()
-    i01.eyesTracking.faceDetect()
-
-def stopTracking():
-    i01.headTracking.stopTracking()
-    i01.eyesTracking.stopTracking()
 
 def relax():
   i01.setHandSpeed("left", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
@@ -1940,7 +2191,24 @@ def hello():
       i01.mouth.speak("i am having so much fun") 
   if x == 5:
       i01.mouth.speak("take a look on my videos on youtube")
-      
+
+def follow():
+    for y in range(0, 40): 
+        if i01.head.rothead.getPos() >= 100:
+            serial.write("4") 
+            sleep(0.5)
+            serial.write("5") 
+            sleep(0.5)
+        elif i01.head.rothead.getPos() <= 60:
+            serial.write("6") 
+            sleep(0.5)
+            serial.write("5") 
+            sleep(0.5)            
+        else : 
+            sleep(1)   
+        print (i01.head.rothead.getPos())
+    i01.mouth.speak("ok")    
+    
 ##########################################################################################
 
 def handopen():
@@ -1996,15 +2264,15 @@ def headleft():
     i01.head.rothead.moveTo(140)
 
 def eyesfront():
-    i01.head.eyeX.moveTo(80)
+    i01.head.eyeX.moveTo(70)
 #    lefteye.moveTo(80)
-    i01.head.eyeY.moveTo(80)
+    i01.head.eyeY.moveTo(85)
     
 def eyesfrontY():
-    i01.head.eyeY.moveTo(80)
+    i01.head.eyeY.moveTo(85)
 
 def eyesfrontX():
-    i01.head.eyeX.moveTo(80)
+    i01.head.eyeX.moveTo(70)
 #    lefteye.moveTo(80)
     
 def eyesdown():
@@ -2053,6 +2321,23 @@ def facetrack():
         global blind
         blind = 1
 
+def trackHumans():
+     i01.mouth.speak("facetrack on")
+     i01.headTracking.faceDetect()
+#     i01.eyesTracking.faceDetect()
+     fullspeed()
+
+def trackPoint():
+     i01.headTracking.startLKTracking()
+     i01.eyesTracking.startLKTracking()
+     fullspeed()
+
+def stopTracking():
+     i01.mouth.speak("facetrack off")
+     i01.headTracking.stopTracking()
+#     i01.eyesTracking.stopTracking()
+
+
 def opencloseleftH():
     if opencloselefthand == 0:
         lefthandclose()
@@ -2077,259 +2362,155 @@ def printCapture():
     print(i01.captureGesture())     
 
 def reactarmL():
-    x = (random.randint(1, 16))
+    x = (random.randint(1, 11))
     if x == 1:
-        i01.mouth.speak("left side")
-    if x == 2:
         i01.mouth.speak("yes")
-    if x == 3:
-        i01.mouth.speak("it's ok")
-    if x == 4:
-        i01.mouth.speak("you are touching my left arm")
-    if x == 5:
-        i01.mouth.speak("arm sensors working")
-    if x == 6:
-        i01.mouth.speak("i can feel you touching me")
-    if x == 7:
-        i01.mouth.speak("cool")
-    if x == 8:
-        i01.mouth.speak("you got my attention")
-    if x == 9:
-        i01.mouth.speak("it is working")
-    if x == 10:
-        i01.mouth.speak("lowly")
-    if x == 11:
-        i01.mouth.speak("this feels great")
-    if x == 12:
-        i01.mouth.speak("very good")
-    if x == 13:
-        i01.mouth.speak("good")
-    if x == 14:
-        i01.mouth.speak("nice")
-    if x == 15:
-        i01.mouth.speak("ok")
-    if x == 16:
-        i01.mouth.speak("i am so happy to have this sensors")
-
-    x = (random.randint(1, 16))
-    if x == 1:
-        i01.mouth.speak("left side")
     if x == 2:
-        i01.mouth.speak("yes")
-    if x == 3:
         i01.mouth.speak("it's ok")
-    if x == 4:
-        i01.mouth.speak("you are touching my left arm")
-    if x == 5:
+    if x == 3:
         i01.mouth.speak("arm sensors working")
-    if x == 6:
+    if x == 4:
         i01.mouth.speak("i can feel you touching me")
-    if x == 7:
+    if x == 5:
         i01.mouth.speak("cool")
-    if x == 8:
+    if x == 6:
         i01.mouth.speak("you got my attention")
-    if x == 9:
-        i01.mouth.speak("it is working")
-    if x == 10:
+    if x == 7:
         i01.mouth.speak("lowly")
-    if x == 11:
-        i01.mouth.speak("this feels great")
-    if x == 12:
+    if x == 8:
         i01.mouth.speak("very good")
-    if x == 13:
+    if x == 9:
         i01.mouth.speak("good")
-    if x == 14:
+    if x == 10:
         i01.mouth.speak("nice")
-    if x == 15:
+    if x == 11:
         i01.mouth.speak("ok")
-    if x == 16:
-        i01.mouth.speak("i am so happy to have this sensors")
         
     x = (random.randint(1, 8))
     if x == 1:
         i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() - 10)
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() - 10)
         sleep(2)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() + 10)
-        sleep(2)
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() + 10)
     if x == 2:
         i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() + 10)
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() + 10)
         sleep(2)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() - 10)
-        sleep(2)
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() - 10)
     if x == 3:
         i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() - 10)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() + 10)
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() - 10)
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() + 10)
         sleep(2)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() + 10)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() - 10)
-        sleep(2)
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() + 10)
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() - 10)
     if x == 4:
         i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() - 10)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() - 10)
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() - 10)
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() - 10)
         sleep(2)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() + 10)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() + 10)
-        sleep(2)
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() + 10)
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() + 10)
     if x == 5:
         i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() + 10)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() + 10)
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() + 10)
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() + 10)
         sleep(2)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() - 10)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() - 10)
-        sleep(2)
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() - 10)
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() - 10)
     if x == 6:
         i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() + 10)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() - 10)
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() + 10)
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() - 10)
         sleep(2)
-        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPosFloat() - 10)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() + 10)
-        sleep(2)
+        i01.leftArm.rotate.moveTo(i01.leftArm.rotate.getPos() - 10)
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() + 10)
     if x == 7:
         i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() + 10)
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() + 10)
         sleep(2)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() - 10)
-        sleep(2)
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() - 10)
     if x == 8:
         i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() - 10)
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() - 10)
         sleep(2)
-        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPosFloat() + 10)
-        sleep(2)
+        i01.leftArm.bicep.moveTo(i01.leftArm.bicep.getPos() + 10)
     headfront()    
         
 def reactarmR():
-    x = (random.randint(1, 16))
+    x = (random.randint(1, 11))
     if x == 1:
-        i01.mouth.speak("right side")
-    if x == 2:
         i01.mouth.speak("yes")
-    if x == 3:
-        i01.mouth.speak("it's ok")
-    if x == 4:
-        i01.mouth.speak("you are touching my right arm")
-    if x == 5:
-        i01.mouth.speak("arm sensors working")
-    if x == 6:
-        i01.mouth.speak("i can feel you touching me")
-    if x == 7:
-        i01.mouth.speak("cool")
-    if x == 8:
-        i01.mouth.speak("you got my attention")
-    if x == 9:
-        i01.mouth.speak("it is working")
-    if x == 10:
-        i01.mouth.speak("lowly")
-    if x == 11:
-        i01.mouth.speak("this feels great")
-    if x == 12:
-        i01.mouth.speak("very good")
-    if x == 13:
-        i01.mouth.speak("good")
-    if x == 14:
-        i01.mouth.speak("nice")
-    if x == 15:
-        i01.mouth.speak("ok")
-    if x == 16:
-        i01.mouth.speak("i am so happy to have this sensors")
-
-    x = (random.randint(1, 16))
-    if x == 1:
-        i01.mouth.speak("right side")
     if x == 2:
-        i01.mouth.speak("yes")
-    if x == 3:
         i01.mouth.speak("it's ok")
-    if x == 4:
-        i01.mouth.speak("you are touching my right arm")
-    if x == 5:
+    if x == 3:
         i01.mouth.speak("arm sensors working")
-    if x == 6:
+    if x == 4:
         i01.mouth.speak("i can feel you touching me")
-    if x == 7:
+    if x == 5:
         i01.mouth.speak("cool")
-    if x == 8:
+    if x == 6:
         i01.mouth.speak("you got my attention")
-    if x == 9:
-        i01.mouth.speak("it is working")
-    if x == 10:
+    if x == 7:
         i01.mouth.speak("lowly")
-    if x == 11:
-        i01.mouth.speak("this feels great")
-    if x == 12:
+    if x == 8:
         i01.mouth.speak("very good")
-    if x == 13:
+    if x == 9:
         i01.mouth.speak("good")
-    if x == 14:
+    if x == 10:
         i01.mouth.speak("nice")
-    if x == 15:
+    if x == 11:
         i01.mouth.speak("ok")
-    if x == 16:
-        i01.mouth.speak("i am so happy to have this sensors")
 
     x = (random.randint(1, 8))
     if x == 1:
         i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() - 10)
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() - 10)
         sleep(2)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() + 10)
-        sleep(2)
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() + 10)
     if x == 2:
         i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() + 10)
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() + 10)
         sleep(2)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() - 10)
-        sleep(2)
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() - 10)
     if x == 3:
         i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() - 10)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() + 10) 
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() - 10)
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() + 10) 
         sleep(2)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() + 10)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() - 10) 
-        sleep(2)
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() + 10)
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() - 10) 
     if x == 4:
         i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() - 10)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() - 10) 
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() - 10)
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() - 10) 
         sleep(2)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() + 10)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() + 10) 
-        sleep(2)
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() + 10)
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() + 10) 
     if x == 5:
         i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() + 10)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() + 10) 
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() + 10)
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() + 10) 
         sleep(2)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() - 10)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() - 10) 
-        sleep(2)
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() - 10)
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() - 10) 
     if x == 6:
         i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() + 10)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() - 10) 
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() + 10)
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() - 10) 
         sleep(2)
-        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPosFloat() - 10)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() + 10) 
-        sleep(2)
+        i01.rightArm.rotate.moveTo(i01.rightArm.rotate.getPos() - 10)
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() + 10) 
     if x == 7:
         i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() + 10) 
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() + 10) 
         sleep(2)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() - 10) 
-        sleep(2)
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() - 10) 
     if x == 8:
         i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() - 10) 
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() - 10) 
         sleep(2)
-        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPosFloat() + 10) 
-        sleep(2)
+        i01.rightArm.bicep.moveTo(i01.rightArm.bicep.getPos() + 10) 
     headfront()
 
 def fullspeed():
