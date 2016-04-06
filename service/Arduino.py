@@ -7,8 +7,8 @@ from org.myrobotlab.service import Arduino
 arduino = Runtime.createAndStart("arduino","Arduino")
 
 #you have to replace COMX with your arduino serial port number
-# arduino.connect("/dev/ttyUSB0",57600,8,1,0) - Linux way
-arduino.connect("COM3",57600,8,1,0)
+# arduino.connect("/dev/ttyUSB0") - Linux way
+arduino.connect("COM3")
 
 # give it a second for the serial device to get ready
 sleep(1)
