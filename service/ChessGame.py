@@ -3,7 +3,7 @@ chessgame = Runtime.start("chessgame","ChessGame")
 sleep(6)
 
 # subscribes to the game engines move method
-python.subscribe(chessgame, "makeHMove", "printMove")
+python.subscribe(chessgame, "makeHMove")
 
 print("game has started !")
 
@@ -11,5 +11,5 @@ print("game has started !")
 chessgame.move("b2-b3")
 
 # prints out all moves
-def printMove(move):
-  print(move)
+def onMakeHMove(move):
+  print('move is ', move)
