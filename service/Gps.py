@@ -1,9 +1,9 @@
 from time import sleep
 
 
-gps1 = Runtime.start("gps1", "GPS")
+gps1 = Runtime.start("gps1", "Gps")
 
-gps1.connect("/dev/tty.palmOneGPS-GPSSerialOut")
+gps1.connect("COM3")
 sleep(1)
 
 # define some points ... 
