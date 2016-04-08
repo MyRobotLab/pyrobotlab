@@ -1,5 +1,7 @@
 # Sweety's service
 import random
+import codecs
+import socket
 from java.lang import String
 
 comPort = "COM3"
@@ -7,15 +9,17 @@ board = "atmega2560"
 
 Runtime.createAndStart("sweety", "Sweety")
 sweety.chatBot.startSession("ProgramAB", "sweety", "sweety")
-
-
-# Add route from webKitSpeechRecognition to Program AB
-sweety.ear.addTextListener(sweety.chatBot)
-# Add route from Program AB to html filter
-sweety.chatBot.addTextListener(sweety.htmlFilter)
-# Add route from html filter to mouth
-sweety.htmlFilter.addListener("publishText", python.name, "talk");
- 
+wdf = Runtime.createAndStart("wikiDataFetcher", "WikiDataFetcher") # WikiDataFetcher cherche des données sur les sites wiki
+wdf.setLanguage("fr") # on cherche en français
+wdf.setWebSite("frwiki") # On fait des recherches sur le site français de wikidata
+sleep(2)
+sweety.mouth.setLanguage("FR") # on parle francais !
+sweety.mouth.setVoice("Antoine") # on choisis une voix ( voir la liste des voix sur http://www.acapela-group.com/?lang=fr
+sweety.ear.addTextListener(sweety.chatBot) # On creer une liaison de webKitSpeechRecognition vers Program AB
+sweety.ear.setLanguage("fr-FR")
+sweety.chatBot.addTextListener(sweety.htmlFilter) # On creer une liaison de Program AB vers html filter
+sweety.htmlFilter.addListener("publishText", python.name, "talk") # On creer une liaison de htmlfilter vers mouth
+sweety.chatBot.setPredicate("sweety","prenom","unknow")
 sweety.arduino.setBoard(board)
 sweety.connect(comPort)
 sleep(1) # give a second to the arduino for connect
@@ -30,8 +34,9 @@ sweety.setdelays(50,200,50)
 
 
 def talk(data):
-	sweety.mouth.speak(data)
-  	print "Saying :", data
+	if data!="":
+		sweety.mouth.speak(data)
+  		print "chatbot :", data
   		
 def handOpen():
 	sweety.rightArm(-1, -1, -1, -1, 75)
@@ -46,3 +51,50 @@ def trackFace():
 	sweety.eyesTracker.findFace()
 def stopTracking():
 	sweety.stopTrack()
+def askWiki(query):
+	query = unicode(query,'utf-8')
+	print query
+	word = wdf.cutStart(query)
+	start = wdf.grabStart(query)
+	wikiAnswer = wdf.getDescription(word)
+	answer = ( query + " est " + wikiAnswer)
+	if wikiAnswer == "Description not found":
+		answer = "Je ne sais pas"
+	sweety.chatBot.getResponse("say " + answer)
+
+def getProperty(query, what):
+	query = unicode(query,'utf-8')
+	what = unicode(what,'utf-8')
+	if query[1]== "\'" :
+		query2 = query[2:len(query)]
+		query = query2
+	if what[1]== "\'" :
+		what2 = what[2:len(what)]
+		what = what2
+		print "what = " + what + " - what2 = " + what2
+	ID = "error"
+	f = codecs.open(u"C:/Users/papa/git/pyrobotlab/home/beetlejuice/propriétés_ID.txt",'r',"utf-8") # set you propertiesID.txt path
+	
+	for line in f:
+    		line_textes=line.split(":")
+    		if line_textes[0]== what:
+	    		ID= line_textes[1]
+	f.close()
+	print "query = " + query + " - what = " + what + " - ID = " + ID
+	wikiAnswer= wdf.getData(query,ID)
+	answer = ( what +" de " + query + " est " + wikiAnswer)
+	
+	if wikiAnswer == "Not Found !":
+		answer = "Je ne sais pas"
+	sweety.chatBot.getResponse("say " + answer)
+	return answer
+
+def getDate(query, ID):
+	answer = ( wdf.getTime(query,ID,"day") +" " +wdf.getTime(query,ID,"month") + " " + wdf.getTime(query,ID,"year"))
+	print " La date est : " + answer
+	sweety.chatBot.getResponse("say Le " + answer)
+def getIp():
+	ip = str(socket.gethostbyname(socket.gethostname()))
+	ip = ip.replace('.',' point ')
+	sweety.chatBot.getResponse("say Mon adresse IP est  " + ip)
+	

@@ -31,16 +31,19 @@ def askWiki(query):
 	print query
 	word = wdf.cutStart(query)
 	start = wdf.grabStart(query)
-	answer = ( query + " est " + wdf.getDescription(word))
+	wikiAnswer = wdf.getDescription(word)
+	answer = ( query + " est " + wikiAnswer)
+	if wikiAnswer == "Description not Found":
+		answer = "Je ne sais pas"
 	chatBot.getResponse("say " + answer)
 
 def getProperty(query, what):
 	query = unicode(query,'utf-8')
 	what = unicode(what,'utf-8')
 	if query[1]== "\'" :
-		query = query[2:len(presentation)]
+		query = query[2:len(query)]
 	if what[1]== "\'" :
-		what = what[2:len(presentation)]
+		what = what[2:len(what)]
 	ID = "error"
 	f = codecs.open(u"C:/Users/papa/git/pyrobotlab/home/beetlejuice/propriétés_ID.txt",'r',"utf-8") # set you propertiesID.txt path
 	

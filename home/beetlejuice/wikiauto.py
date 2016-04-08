@@ -33,8 +33,6 @@ def askWiki(query):
 def getProperty(query, what):
 	query = unicode(query,'utf-8')
 	what = unicode(what,'utf-8')
-	query = wdf.cutStart(query)
-	what = wdf.cutStart(what)
 	
 	ID = "error"
 	f = codecs.open(u"C:/Users/papa/git/pyrobotlab/home/beetlejuice/propriétés_ID.txt",'r',"utf-8") # set you propertiesID.txt path

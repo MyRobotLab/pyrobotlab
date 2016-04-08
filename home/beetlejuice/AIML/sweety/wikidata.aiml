@@ -128,6 +128,16 @@
 			</mrl>
       </oob></template>
 </category>
+<category><pattern>QUELLE EST * DE *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index = "2"/>" , "<star index = "1"/>" )</param>
+			</mrl>
+      </oob></template>
+</category>
 <category><pattern>QUELLE EST * DU *</pattern>
 <template>  
 		<oob>
