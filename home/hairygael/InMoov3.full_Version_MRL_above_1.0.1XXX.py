@@ -7,8 +7,16 @@
 import random
 import threading
 import itertools
-leftPort = "COM20"
-rightPort = "COM7"
+leftPort = "COM21"
+rightPort = "COM31"
+
+# mapping for the jaw servos
+jawMin = 65
+jawMax = 90
+
+
+# InMoov3 uses webgui
+webgui = Runtime.createAndStart("webgui", "WebGui")
  
 i01 = Runtime.createAndStart("i01", "InMoov")
 #inmoov = Runtime.createAndStart("alice", "ProgramAB") 
@@ -37,7 +45,7 @@ i01.startMouthControl(leftPort)
 #i01.startHead(leftPort)
 ##############
 # tweaking default settings of jaw
-i01.head.jaw.setMinMax(65,90)
+i01.head.jaw.setMinMax(jawMin,jawMax)
 #i01.head.jaw.map(0,180,10,35)
 i01.mouthControl.setmouth(65,90)
 i01.head.jaw.setRest(90)
@@ -194,7 +202,7 @@ human = 0
  
 # verbal commands
 ear = i01.ear
-ear.attach(mouth)
+ear.addMouth(mouth)
  
 ear.addCommand("rest", "python", "rest")
 
@@ -334,8 +342,6 @@ ear.startListening("yes | no | very good, thank you | it's okay | no thanks | no
 ear.addListener("recognized", "python", "heard")
 # ear.addVoiceRecognitionListener("python")
 #inmoov.addTextListener(i01.mouth)
-
-
     
 def carrybaby():
     i01.moveHead(18,111,85,85,5)
