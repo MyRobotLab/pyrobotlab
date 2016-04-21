@@ -12,14 +12,15 @@ leftPort = "COM21"
 rightPort = "COM31"
 headPort = leftPort
 
+gesturesPath = "c:/dev/workspace.kmw/pyrobotlab/home/kwatters/harry/gestures"
+
 aimlPath = "c:/dev/workspace.kmw/pyrobotlab/home/kwatters/harry"
 aimlBotName = "harry"
 aimlUserName = "Kevin"
 botVoice = "Rod"
 
 ######################################################################
-# A helper function to print the recognized text to the python window.
-# semi-useful for debugging.
+# helper function help debug the recognized text from webkit/sphinx
 ######################################################################
 def heard(data):
   print "Speech Recognition Data:"+str(data)
@@ -72,5 +73,13 @@ i01.startAll(leftPort, rightPort)
 webgui = Runtime.createAndStart("webgui","WebGui")
 
 ######################################################################
-# END
+# END MAIN SERVICE SETUP SECTION
 ######################################################################
+
+
+######################################################################
+# Helper functions and various gesture definitions
+######################################################################
+i01.loadGestures(gesturesPath)
+
+
