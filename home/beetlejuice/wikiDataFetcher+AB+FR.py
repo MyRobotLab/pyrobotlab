@@ -11,7 +11,7 @@ mouth=Runtime.createAndStart("mouth", "AcapelaSpeech")
 htmlFilter=Runtime.createAndStart("htmlFilter", "HtmlFilter")
 webgui=Runtime.createAndStart("webgui", "WebGui")
 
-chatBot.startSession("ProgramAB", "sweety", "sweety")
+chatBot.startSession("ProgramAB", "default", "wikidata")
 wdf=Runtime.createAndStart("wdf", "WikiDataFetcher") # WikiDataFetcher cherche des données sur les sites wiki
 wdf.setLanguage("fr") # on cherche en français
 wdf.setWebSite("frwiki") # On fait des recherches sur le site français de wikidata
