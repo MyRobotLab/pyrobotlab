@@ -24,8 +24,8 @@ sweety.arduino.setBoard(board)
 sweety.connect(comPort)
 sleep(1) # give a second to the arduino for connect
 sweety.startServos()
-sweety.attach()
-sweety.posture("neutral")
+#sweety.attach()
+#sweety.posture("neutral")
 #sweety.startUltraSonic()
 sweety.mouthState("smile")
 sleep(1)
@@ -35,7 +35,8 @@ sweety.setdelays(50,200,50)
 
 def talk(data):
 	if data!="":
-		sweety.mouth.speak(data)
+		sweety.saying(data)
+		#sweety.mouth.speak(data)
   		print "chatbot :", data
   		
 def handOpen():
@@ -58,7 +59,7 @@ def askWiki(query):
 	start = wdf.grabStart(query)
 	wikiAnswer = wdf.getDescription(word)
 	answer = ( query + " est " + wikiAnswer)
-	if wikiAnswer == "Description not found":
+	if wikiAnswer == "Not Found !":
 		answer = "Je ne sais pas"
 	sweety.chatBot.getResponse("say " + answer)
 

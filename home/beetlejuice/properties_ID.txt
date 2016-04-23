@@ -1,0 +1,505 @@
+﻿instance of:P31
+subclass of:P279
+part of:P361
+has part:P527
+named after:P138
+owned by:P127
+approved by:P790
+category's main topic:P301
+topic's main category:P910
+discoverer or inventor:P61
+is a list of:P360
+follows:P155
+followed by:P156
+quantity symbol:P416
+opposite of:P461
+said to be the same as:P460
+color:P462
+sRGB color hex triplet:P465
+archives at:P485
+Unicode character:P487
+applies to part:P518
+use:P366
+time of discovery:P575
+patent number:P1246
+facet of:P1269
+proved by:P1318
+described by source:P1343
+shape:P1419
+sourcing circumstances:P1480
+name in kana:P1814
+different from:P1889
+Authority control
+GND ID:P227
+ISNI:P213
+LCAuth ID:P244
+ULAN ID:P245
+VIAF ID:P214
+BnF ID:P268
+SUDOC authorities:P269
+CALIS:P270
+CiNii author ID:P271
+NDL ID:P349
+SBN ID:P396
+NLA Australia ID:P409
+HURDAT identifier:P502
+ISO standard:P503
+ORCID:P496
+CBDB ID:P497
+BNCF Thesaurus:P508
+Léonore ID:P640
+Freebase ID:P646
+NKCR AUT ID:P691
+Historic Scotland ID:P709
+Canmore ID:P718
+DBNL ID:P723
+Internet Archive ID:P724
+Europeana ID:P727
+Low German Bibliography and Biography ID:P745
+DPLA ID:P760
+ISIL ID:P791
+Open Library ID:P648
+RSL ID Person:P947
+PTBNP ID:P1005
+National Thesaurus for Author Names ID:P1006
+BAV ID:P1017
+IDEO Job ID:P1043
+PSH ID:P1051
+Portuguese Job Code CPP-2010:P1052
+ResearcherID:P1053
+NDL bib id:P1054
+ERA Journal ID:P1058
+Dharma Drum Buddhist College person ID:P1187
+Dharma Drum Buddhist College place ID:P1188
+ISMN:P1208
+CN:P1209
+National Heritage List for England number:P1216
+Internet Broadway Database venue ID:P1217
+Internet Broadway Database production ID:P1218
+Internet Broadway Database show ID:P1219
+Internet Broadway Database person ID:P1220
+Linguist list code:P1232
+ISFDB author ID:P1233
+ISFDB publication ID:P1234
+ISFDB series ID:P1235
+Swedish Football Association ID:P1238
+ISFDB publisher ID:P1239
+International Standard Recording Code:P1243
+OmegaWiki Defined Meaning:P1245
+Danish Bibliometric Research Indicator:P1250
+ABS ASCL code:P1251
+AUSTLANG code:P1252
+BCU Ecrivainsvd:P1253
+Helveticarchives ID:P1255
+Norway Database for Statistics on Higher education periodical ID:P1270
+Norway Database for Statistics on Higher education publisher ID:P1271
+Norway Import Service and Registration Authority periodical code:P1272
+CANTIC:P1273
+ISFDB title ID:P1274
+Norway Import Service and Registration Authority publisher code:P1275
+Jufo ID:P1277
+CONOR ID:P1280
+WOEID:P1281
+Munzinger IBA:P1284
+Munzinger Sport number:P1285
+Munzinger Pop ID:P1286
+KDG Komponisten der Gegenwart:P1287
+KLG Kritisches Lexikon der Gegenwartsliteratur:P1288
+KLfG Kritisches Lexikon der fremdsprachigen Gegenwartsliteratur:P1289
+DNB editions:P1292
+Royal Aero Club Aviator's Certificate ID:P1293
+Gran Enciclopèdia Catalana ID:P1296
+IRS Employer ID:P1297
+EGAXA ID:P1309
+statement disputed by:P1310
+NSK ID:P1375
+Enciclopédia Açoriana ID:P1385
+Japanese High School Code:P1386
+Index Fungorum ID:P1391
+ComicBookDB ID:P1392
+Glottolog code:P1394
+National Cancer Institute ID:P1395
+FCC Facility ID:P1400
+Oxford Biography Index Number:P1415
+Jewish Encyclopedia ID Russian:P1438
+Norsk filmografi ID:P1439
+Sports Reference ID:P1447
+catholic.ru ID:P1453
+Patientplus ID:P1461
+WALS lect code:P1466
+Esperantist ID:P1601
+Slovenska biografija ID:P1254
+NNDB people ID:P1263
+Association Authors of Switzerland ID:P1291
+Swiss parliament ID:P1307
+PACE member ID:P1331
+Parlement &amp; Politiek ID:P1749
+Masaryk University person ID:P1803
+image:P18
+audio:P51
+video:P10
+Commons category:P373
+pronunciation audio:P443
+spoken text audio:P989
+scanned file on Wikimedia Commons:P996
+Google Books ID:P675
+start time:P580
+end time:P582
+point in time:P585
+valid in period:P1264
+coordinate location:P625
+sex:P21
+gender:P21
+date of birth:P569
+place of birth:P19
+birth name:P1477
+date of death:P570
+place of death:P20
+cause of death:P509
+manner of death:P1196
+killed by:P157
+place of burial:P119
+image of grave:P1442
+name in native language:P1559
+ancestral home:P66
+member of:P463
+ethnic group:P172
+native language:P103
+country of citizenship:P27
+educated at:P69
+occupation:P106
+field of work:P101
+notable work:P800
+employer:P108
+award received:P166
+position held:P39
+member of political party:P102
+official residence:P263
+religion:P140
+sexual orientation:P91
+coat of arms image:P94
+coat of arms:P237
+signature:P109
+doctoral advisor:P184
+doctoral student:P185
+student of:P1066
+student:P802
+canonization status:P411
+voice type:P412
+shooting handedness:P423
+astronaut mission:P450
+dan/kyu rank:P468
+Eight Banner register:P470
+noble family:P53
+noble title:P97
+honorific prefix:P511
+academic degree:P512
+handedness:P552
+website account on:P553
+honorific suffix:P1035
+family name:P734
+given name:P735
+pseudonym:P742
+feast day:P841
+audio recording of the subject's spoken voice:P990
+manager/director:P1037
+filmography:P1283
+instrument:P1303
+eye color:P1340
+participant of:P1344
+convicted of:P1399
+languages spoken or written:P1412
+affiliation:P1416
+pet:P1429
+Commons Creator page:P1472
+Project Gutenberg author ID:P1938
+Relationship
+father:P22
+mother:P25
+brother:P7
+sister:P9
+spouse:P26
+partner:P451
+child:P40
+stepfather:P43
+stepmother:P44
+relative:P1038
+godparent:P1290
+Dictionary of Art Historians ID:P2332
+Sportspeople
+member of sports team:P54
+position played on team:P413
+doubles record:P555
+singles record:P564
+ranking:P1352
+country for sport:P1532
+Swedish Olympic Committee athlete ID:P2323
+IMDb ID:P345
+AlloCiné person ID:P1266
+KMDb person ID:P1649
+MovieMeter director ID:P1969
+AllMovie artist ID:P2019
+SFDb person ID:P2168
+Elonet actor ID:P2387
+PORT person ID:P2435
+Scope.dk person ID:P2519
+Kinopoisk person ID:P2604
+ČSFD person ID:P2605
+DNF person ID:P2626
+military branch:P241
+military rank:P410
+commander of:P598
+conflict:P607
+coat of arms image:P94
+coat of arms:P237
+logo image:P154
+headquarters location:P159
+industry:P452
+separated from:P807
+product:P1056
+image:P18
+instance of:P31
+foundational text:P457
+inception:P571
+official website:P856
+dissolved or abolished:P576
+founder:P112
+location of formation:P740
+number of seats:P1342
+political alignment:P1387
+licensed to broadcast to:P1408
+number of representatives in an organization/legislature:P1410
+office held by head of government:P1313
+airline hub:P113
+airline alliance:P114
+item operated:P121
+IATA airline designator:P229
+ICAO airline designator:P230
+callsign of airline:P432
+home venue:P115
+league:P118
+head coach:P286
+general manager:P505
+captain:P634
+mascot:P822
+military branch:P241
+chief executive officer:P169
+chairperson:P488
+business division:P199
+subsidiary:P355
+represents organisation:P1268
+Legal Entity ID:P1278
+officeholder:P1308
+employees:P1128
+ticker symbol:P249
+stock exchange:P414
+OpenCorporates ID:P1320
+legal form:P1454
+location:P276
+organizer:P664
+participant:P710
+public holiday:P832
+attendance:P1110
+winner:P1346
+number of missing:P1446
+has immediate cause:P1478
+has contributing factor:P1479
+end cause:P1534
+used by:P1535
+immediate cause of:P1536
+contributing factor of:P1537
+frequency of event:P2257
+candidate:P726
+successful candidate:P991
+votes received:P1111
+office contested:P541
+total valid votes:P1697
+eligible voters:P1867
+elector:P2319
+electorate:P1831
+based on:P144
+genre:P136
+movement:P135
+series:P179
+narrative location:P840
+license:P275
+title:P1476
+original language of work:P364
+presenter:P371
+language of work or name:P407
+distribution:P437
+review score:P444
+score by:P447
+original network:P449
+character role:P453
+country of origin:P495
+characters:P674
+cover artist:P736
+contributor:P767
+edition:P747
+distributor:P750
+dedicated to:P825
+Danish Bibliometric Research Indicator level:P1240
+depicted by:P1299
+SMDB ID:P1316
+catalog code:P528
+collection or exhibition size:P1436
+standards body:P1462
+manifestation of:P1557
+working title:P1638
+Metacritic ID:P1712
+choreographer:P1809
+list of episodes:P1811
+Netflix ID:P1874
+stated as:P1932
+creator:P170
+architect:P84
+occupant:P466
+commissioned by:P88
+architectural style:P149
+depicts:P180
+material used:P186
+location of discovery:P189
+collection:P195
+inventory number:P217
+location:P276
+inscription:P1684
+Chinese Library Classification:P1189
+pendant of:P1639
+attributed to:P1773
+workshop of:P1774
+follower of:P1775
+circle of:P1776
+manner of:P1777
+forgery after:P1778
+possible creator:P1779
+school of:P1780
+Joconde ID:P347
+RKDimages:P350
+Rijksmonument ID:P359
+Mérimée ID:P380
+PCP reference number:P381
+Canadian Register of Historic Places ID:P477
+cultural properties of Belarus reference number:P632
+Québec cultural heritage directory ID:P633
+World Heritage Site id:P757
+Kulturminne ID:P758
+Alberta Register of Historic Places ID:P759
+PEI Register of Historic Places ID:P763
+code Bien de Interés Cultural:P808
+Saskatchewan Register of Heritage Property ID:P845
+DGO4 identifier:P1133
+Atlas ID:P1212
+JSTOR journal code:P1230
+depicts Iconclass notation:P1257
+bibcode:P1300
+Lost Art-ID:P1428
+kulturnoe-nasledie.ru ID:P1483
+Exceptional heritage of Wallonia ID:P1551
+SIPA ID:P1700
+LfDS object ID:P1708
+Florentine musea Inventario 1890 ID:P1726
+DSH object ID:P1822
+author:P50
+translator:P655
+editor:P98
+illustrator:P110
+author of foreword:P2679
+author of afterword:P2680
+edition number:P393
+place of publication:P291
+publisher:P123
+ISBN-10:P957
+ISBN-13:P212
+ISSN:P236
+LCOC LCCN bibliographic:P1144
+OCLC control number:P243
+DOI:P356
+publication date:P577
+Open Library ID:P648
+number of pages:P1104
+Chinese Library Classification:P1189
+Universal Decimal Classification:P1190
+LibraryThing work ID:P1085
+Theatricalia play ID:P1242
+present in work:P1441
+first performance:P1191
+Project Gutenberg ebook ID:P2034
+performer:P175
+composer:P86
+librettist:P87
+producer:P162
+record label:P264
+discography:P358
+MusicBrainz artist ID:P434
+MusicBrainz release group ID:P436
+MusicBrainz work ID:P435
+tracklist:P658
+lyrics by:P676
+tonality:P826
+IMSLP ID:P839
+Parsons code:P1236
+b-side:P1432
+first performance:P1191
+director:P57
+screenwriter:P58
+producer:P162
+executive producer:P1431
+director of photography:P344
+film editor:P1040
+composer:P86
+soundtrack album:P406
+cast member:P161
+voice actor:P725
+production company:P272
+named as:P1810
+FSK film rating:P1981
+MPAA film rating:P1657
+Film IDs for movie databases
+IMDb ID:P345
+FilmAffinity ID:P480
+PORT film ID:P905
+Box Office Mojo film ID:P1237
+Rotten Tomatoes ID:P1258
+AlloCiné movie ID:P1265
+Norsk filmografi ID:P1439
+AllMovie movie ID:P1562
+DNF film ID:P1804
+Animator.ru film ID:P1934
+MovieMeter movie ID:P1970
+SFDb movie ID:P2334
+Elonet movie ID:P2346
+JMDb film ID:P2400
+allcinema film ID:P2465
+KINENOTE film ID:P2508
+Movie Walker ID:P2509
+Scope.dk film ID:P2518
+ČSFD film ID:P2529
+Kinopoisk film ID:P2603
+radio format:P415
+Law legislation NOR:P464
+legislated by:P467
+legal citation of this text:P1031
+plaintiff:P1620
+defendant:P1591
+charge:P1595
+plea:P1437
+penalty:P1596
+judge:P1594
+defender:P1593
+prosecutor:P1592
+ESRB rating:P852
+CERO rating:P853
+PEGI rating:P908
+USK rating:P914
+GSRR rating:P916
+Steam Application ID:P1733
+MobyGames ID:P1933
+currency symbol description:P489
+ISO 4217 code:P498
+taxon author:P405
+taxon name:P225
+parent taxon:P171
+taxon rank:P105
+IUCN conservation status:P141
+regulates molecular biology:P128
