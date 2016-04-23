@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<aiml>
+<!--author: beetlejuice-->
+<!--licence: Standard-->
+<!--created with: GaitoBot AIML Editor V2.7.0.37793-->
+
+<category><pattern>SHOW ME *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>FindImage("<star />")</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>MONTRE MOI *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>FindImage("<star />")</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>MONTRE-MOI *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>FindImage("<star />")</param>
+			</mrl>
+      </oob></template>
+</category>
+</aiml>
