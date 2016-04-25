@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+
+
 <aiml>
 
 <!--MyAIBOT TEST-->
 <!--http://www.myai.cloud/-->
-
-
-<category><pattern>LOOK AT *</pattern>
-<template><oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>FindImage("<star />")</param>
-			</mrl>
-      </oob></template>
-</category>
 <category><pattern>SHOW ME *</pattern>
 <template><oob>
 			<mrl>
@@ -38,6 +30,24 @@
 				<service>python</service>
 				<method>exec</method>
 				<param>FindImage("<star />")</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>RACONTE MOI UNE BLAGUE</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>Joke("<star />")</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>RACONTE-MOI UNE BLAGUE</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>Joke("<star />")</param>
 			</mrl>
       </oob></template>
 </category>
