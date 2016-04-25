@@ -8,9 +8,11 @@
 #Jokes only works in FRENCH for now please send me CSV !
 lang="FR"
 BotURL="http://myai.cloud/bot1.php"
-JokeType="CARAMBAR" # JokeType=BLONDES / CUL / CARAMBAR
-#désolé c'est vraiment des blagues pouries niveau CM2... faites tourner en csv pour alimenter
-#pas d'aprentissage pour le moment ca va venir . peut etre
+JokeType="RANDOM" # JokeType=RANDOM / BLONDES / CUL / CARAMBAR
+#RAMDOM=Tout sauf cul, ca vole pas bien haut mais il peut y avoir des enfants...
+#désolé c'est vraiment des blagues tres pouries niveau CM2... j ai trouvé que ça
+#si vous en avez peu importe le format, n hesitez pas !
+#pas d'aprentissage blagues pour le moment ca va venir . peut etre
 
 # ##############################################################################
 
@@ -22,12 +24,12 @@ import itertools
 import random
 
 
-BotURL=BotURL+"?lang="+lang
+BotURL=BotURL+"?lang="+lang+"?FixPhpCache="+str(random.randint(0,99999999))
 
 
 #french margaux voice laugh emotions
-laugh = ["#LAUGH01#", "#LAUGH02#", "#LAUGH03#", ""]
-troat = ["#THROAT01#", "#THROAT02#", "#THROAT03#", ""]
+laugh = [" #LAUGH01# ", " #LAUGH02# ", " #LAUGH03# ", " ", " "]
+troat = [" #THROAT01# ", " #THROAT02# ", " #THROAT03# ", " : ", " : ", " : "]
 
 http = Runtime.createAndStart("http","HttpClient")
 Runtime.createAndStart("chatBot", "ProgramAB")
@@ -56,5 +58,5 @@ def FindImage(image):
 	Image.display(a)
 	
 def Joke():
-	a = http.get(BotURL+"&type=joke").replace(" : ", random.choice(troat)).decode( "utf8" )
-	mouth.speak(a+random.choice(laugh))
+	a = http.get(BotURL+"&type=joke&genre="+JokeType).replace(":", random.choice(troat)).decode( "utf8" )
+	mouth.speak(a+' '+random.choice(laugh))
