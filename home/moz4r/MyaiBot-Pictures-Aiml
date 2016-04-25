@@ -38,7 +38,7 @@
 			<mrl>
 				<service>python</service>
 				<method>exec</method>
-				<param>Joke("<star />")</param>
+				<param>Joke()</param>
 			</mrl>
       </oob></template>
 </category>
