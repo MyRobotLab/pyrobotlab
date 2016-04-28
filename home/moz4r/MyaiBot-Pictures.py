@@ -4,13 +4,18 @@
 #Your language ( FR/EN )
 lang="EN"
 BotURL="http://myai.cloud/bot1.php"
+#jokeBOT:
 JokeType="RANDOM" # JokeType=RANDOM / BLONDES / CUL / CARAMBAR
+#WeatherBOT -> Your city :
+CITY="paris"
+units="metric" # or : imperial
+# ##
 #LONK AT http://www.myai.cloud/
 #FOR SERVER NAME AND BOT STATUS
 #
 #IF YOU WANT INMOOV MOUTH CONTROL ( inmoov ) set inmoov=1
 #IF YOU DIDNT HAVE MOTORS set inmoov=0 
-IsInmoov=1
+IsInmoov=0
 leftPort = "COM3"
 rightPort = "COM4"
 jawMin = 45
@@ -19,6 +24,12 @@ jawMax = 70
 # ##############################################################################
 #  						*** END SETUP ***
 # ##############################################################################
+
+
+
+
+
+
 
 from java.lang import String
 import random
@@ -90,14 +101,28 @@ def FindImage(image):
 	Image.exitFS()
 	if IsInmoov==1:
 		i01.moveHead(80,86,82,78,76)
+		
 def Joke():
 	if IsInmoov==1:
 		i01.moveHead(80,70)
-	a = http.get(BotURL+"&type=joke&genre="+JokeType).replace(":", random.choice(troat))
+	a = http.get(BotURL+"&type=joke&genre="+JokeType).replace(" : ", random.choice(troat))
 	try:
 		a = a.decode( "utf8" )
 	except: 
 		pass
 	mouth.speakBlocking(a+' '+random.choice(laugh))
+	if IsInmoov==1:
+		i01.moveHead(80,86,82,78,76)
+
+def Meteo():
+	if IsInmoov==1:
+		i01.moveHead(80,70)
+	a = http.get(BotURL+"&type=meteo&units="+units+"&city="+CITY.replace(" ", "%20")).replace(" : ", random.choice(troat))
+	try:
+		a = a.decode( "utf8" )
+	except: 
+		pass
+	mouth.speakBlocking(a)
+	print(a)
 	if IsInmoov==1:
 		i01.moveHead(80,86,82,78,76)
