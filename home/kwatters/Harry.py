@@ -20,6 +20,9 @@ aimlBotName = "harry"
 aimlUserName = "Kevin"
 botVoice = "Rod"
 
+# toggle to only load program ab  and skip the inmoov services
+startInMoov = False
+
 ######################################################################
 # helper function help debug the recognized text from webkit/sphinx
 ######################################################################
@@ -65,7 +68,15 @@ htmlfilter.addTextListener(mouth)
 # Start up the inmoov and attach stuff.
 ######################################################################
 i01 = Runtime.createAndStart("i01", "InMoov")
-i01.startAll(leftPort, rightPort)
+i01.setMute(True)
+if startInMoov:
+  i01.startAll(leftPort, rightPort)
+else:
+  i01.mouth = mouth
+    
+# Harry doesn't have a forward servo, but i'm adding it here as a 
+# place holder
+forwardServo = Runtime.start("forwardServo","Servo")
 
 ######################################################################
 # Launch the web gui and create the webkit speech recognition gui

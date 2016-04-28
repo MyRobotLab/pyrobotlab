@@ -72,6 +72,10 @@
       </template>
     </category>
     <category>
+      <pattern>ATTACHED RIGHT HAND</pattern>
+      <template><srai>ATTACH RIGHT HAND</srai></template>
+    </category>
+    <category>
       <pattern>DISCONNECT RIGHT HAND</pattern>
       <template>DISCONNECT RIGHT HAND
         <oob>
@@ -160,6 +164,10 @@
       </template>
     </category>
     <category>
+      <pattern>ATTACHED RIGHT ARM</pattern>
+      <template><srai>ATTACH RIGHT ARM</srai></template>
+    </category>
+    <category>
       <pattern>DISCONNECT RIGHT ARM</pattern>
       <template>DISCONNECT RIGHT ARM
         <oob>
@@ -182,6 +190,10 @@
       </template>
     </category>
     <category>
+      <pattern>ATTACHED OR SO</pattern>
+      <template><srai>ATTACH TORSO</srai></template>
+    </category>
+    <category>
       <pattern>DISCONNECT TORSO</pattern>
       <template>DISCONNECT TORSO
         <oob>
@@ -191,6 +203,10 @@
           </mrl>
         </oob>
       </template>
+    </category>
+     <category>
+      <pattern>DISCONNECT OR SO</pattern>
+      <template><srai>DISCONNECT TORSO</srai></template>
     </category>
     <category>
       <pattern>ATTACH JAW</pattern>
