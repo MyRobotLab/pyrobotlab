@@ -8,11 +8,13 @@ comPort = "COM3"
 board = "atmega2560"
 
 Runtime.createAndStart("sweety", "Sweety")
+sweety.arduino.setBoard(board)
+sweety.connect(comPort)
+sleep(2)
 sweety.chatBot.startSession("ProgramAB", "sweety", "sweety")
 wdf = Runtime.createAndStart("wikiDataFetcher", "WikiDataFetcher") # WikiDataFetcher cherche des données sur les sites wiki
 wdf.setLanguage("fr") # on cherche en français
 wdf.setWebSite("frwiki") # On fait des recherches sur le site français de wikidata
-sleep(2)
 sweety.mouth.setLanguage("FR") # on parle francais !
 sweety.mouth.setVoice("Antoine") # on choisis une voix ( voir la liste des voix sur http://www.acapela-group.com/?lang=fr
 sweety.ear.addTextListener(sweety.chatBot) # On creer une liaison de webKitSpeechRecognition vers Program AB
@@ -20,10 +22,10 @@ sweety.ear.setLanguage("fr-FR")
 sweety.chatBot.addTextListener(sweety.htmlFilter) # On creer une liaison de Program AB vers html filter
 sweety.htmlFilter.addListener("publishText", python.name, "talk") # On creer une liaison de htmlfilter vers mouth
 sweety.chatBot.setPredicate("sweety","prenom","unknow")
-sweety.arduino.setBoard(board)
-sweety.connect(comPort)
+
 sleep(1) # give a second to the arduino for connect
-sweety.startServos()
+#sweety.startServos()
+
 #sweety.attach()
 #sweety.posture("neutral")
 #sweety.startUltraSonic()
@@ -35,8 +37,8 @@ sweety.setdelays(50,200,50)
 
 def talk(data):
 	if data!="":
-		sweety.saying(data)
-		#sweety.mouth.speak(data)
+		#sweety.saying(data)
+		sweety.mouth.speak(data)
   		print "chatbot :", data
   		
 def handOpen():
@@ -98,4 +100,14 @@ def getIp():
 	ip = str(socket.gethostbyname(socket.gethostname()))
 	ip = ip.replace('.',' point ')
 	sweety.chatBot.getResponse("say Mon adresse IP est  " + ip)
-	
+
+def math(text):
+	text = unicode(text,'utf-8')
+	if isinstance(text, basestring):
+		text = text.lower()
+		print "string"
+		text = text.replace('x','*')
+		text = text.replace(u'divisé par','/')
+		text = eval(text)
+	print text
+	sweety.chatBot.getResponse("say  " + str(text))

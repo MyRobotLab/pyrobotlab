@@ -15,7 +15,7 @@ sweety.mouth.setLanguage("EN");
 sweety.mouth.setVoice("Laura");
 
 def talk(data):
-	sweety.mouth.speak(data)
+	sweety.mouth.speakBlocking(data)
   	print "Saying :", data
 
 

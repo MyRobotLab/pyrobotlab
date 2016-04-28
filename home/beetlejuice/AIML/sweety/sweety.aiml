@@ -93,4 +93,18 @@
 	<pattern>JE SUIS UNE FEMME</pattern>
 	<template><srai>je suis une fille</srai></template>
 </category>
+<category><pattern>CALCUL *</pattern>
+<template>  
+		<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>math('<star/>')</param>
+			</mrl>
+      </oob></template>
+</category>
+<category>
+	<pattern>COMBIEN FONT *</pattern>
+	<template><srai>calcul  <star/></srai></template>
+</category>
 </aiml>
