@@ -42,6 +42,27 @@
 			</mrl>
       </oob></template>
 </category>
+<category><pattern>WEATHER</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>Meteo()</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>Météo</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>Meteo()</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>GREAT</pattern>
+<template>THANK YOU DUDE</template>
+</category>
 <category><pattern>RACONTE MOI UNE BLAGUE</pattern>
 <template><oob>
 			<mrl>
