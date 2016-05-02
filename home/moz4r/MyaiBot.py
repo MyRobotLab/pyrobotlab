@@ -30,7 +30,7 @@ jawMax = 70
 
 
 
-
+import urllib2
 from java.lang import String
 import random
 import threading
@@ -46,8 +46,6 @@ BotURL=BotURL+"?lang="+lang+"&FixPhpCache="+str(time.time())
 laugh = [" #LAUGH01# ", " #LAUGH02# ", " #LAUGH03# ", " ", " "]
 troat = [" #THROAT01# ", " #THROAT02# ", " #THROAT03# ", " : ", " : ", " : "]
 
-
-http = Runtime.createAndStart("http","HttpClient")
 Runtime.createAndStart("chatBot", "ProgramAB")
 Runtime.createAndStart("ear", "WebkitSpeechRecognition") 
 Runtime.createAndStart("webGui", "WebGui")
@@ -93,9 +91,11 @@ def FindImage(image):
 	#PLEASE USE REAL LANGUAGE PARAMETER :
 	#lang=XX ( FR/EN/RU/IT etc...)
 	#A FAKE LANGUAGE WORKS BUT DATABASE WILL BROKE
-	a = String(http.get(BotURL+"&type=pic&pic="+image.replace(" ", "%20")))
+	a = String(urllib2.urlopen(BotURL+"&type=pic&pic="+image.replace(" ", "%20")).read())
+	time.sleep(2)
 	if IsInmoov==1:
 		i01.moveHead(39,70)
+	print(a)
 	Image.displayFullScreen(a)
 	time.sleep(5)
 	Image.exitFS()
@@ -105,7 +105,8 @@ def FindImage(image):
 def Joke():
 	if IsInmoov==1:
 		i01.moveHead(80,70)
-	a = http.get(BotURL+"&type=joke&genre="+JokeType).replace(" : ", random.choice(troat))
+	a = urllib2.urlopen(BotURL+"&type=joke&genre="+JokeType).read().replace(" : ", random.choice(troat))
+	time.sleep(1)
 	try:
 		a = a.decode( "utf8" )
 	except: 
@@ -117,7 +118,8 @@ def Joke():
 def Meteo():
 	if IsInmoov==1:
 		i01.moveHead(80,70)
-	a = http.get(BotURL+"&type=meteo&units="+units+"&city="+CITY.replace(" ", "%20")).replace(" : ", random.choice(troat))
+	a = urllib2.urlopen(BotURL+"&type=meteo&units="+units+"&city="+CITY.replace(" ", "%20")).read().replace(" : ", random.choice(troat))
+	time.sleep(1)
 	try:
 		a = a.decode( "utf8" )
 	except: 
