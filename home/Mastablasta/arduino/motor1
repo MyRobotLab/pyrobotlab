@@ -1,6 +1,6 @@
 #include <AFMotor.h>
      
-AF_DCMotor motor(2, MOTOR12_64KHZ); // create motor #2, 64KHz pwm
+AF_DCMotor motor(2, MOTOR12_64KHZ);
 
 const int buttonPin1 = 7;
 const int buttonPin2 = 6;
