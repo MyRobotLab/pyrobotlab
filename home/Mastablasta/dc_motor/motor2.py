@@ -14,8 +14,9 @@ keyboard = Runtime.createAndStart("keyboard", "Keyboard")
 keyboard.addCommand("Links", "python", "Links", "Links")
 keyboard.addCommand("Rechts", "python", "Rechts", "Rechts")
 
+global keyboardInput
+
 def Links(cmd):
-    global keyboardInput
     keyboardInput = "Links"
     print "motor left"
     m1.move(1.0)
@@ -23,7 +24,6 @@ def Links(cmd):
     m1.move(0.0)
 
 def Rechts(cmd):
-    global keyboardInput
     keyboardInput = "Rechts"
     print "motor right"
     m1.move(-1.0)
