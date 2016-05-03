@@ -1,6 +1,6 @@
 #include <AFMotor.h>
      
-AF_DCMotor motor(2, MOTOR12_64KHZ);
+AF_DCMotor motor(2, MOTOR12_64KHZ); // create motor #2, 64KHz pwm
 
 const int buttonPin1 = 7;
 const int buttonPin2 = 6;
@@ -22,14 +22,16 @@ void loop(){
 
  buttonState1 = digitalRead(buttonPin1);
  
- if (buttonState1 == LOW) {    
+ if (buttonState1 == LOW) {
+      Serial.print("motor left");   
       motor.run(FORWARD);
       delay(1000); 
       }
       
  buttonState2 = digitalRead(buttonPin2);
   
- if (buttonState2 == LOW) {    
+ if (buttonState2 == LOW) {
+      Serial.print("motor right");   
       motor.run(BACKWARD);
       delay(1000); 
       }
