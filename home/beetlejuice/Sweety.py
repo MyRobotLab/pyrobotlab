@@ -20,7 +20,7 @@ sweety.mouth.setVoice("Antoine") # on choisis une voix ( voir la liste des voix 
 sweety.ear.addTextListener(sweety.chatBot) # On creer une liaison de webKitSpeechRecognition vers Program AB
 sweety.ear.setLanguage("fr-FR")
 sweety.chatBot.addTextListener(sweety.htmlFilter) # On creer une liaison de Program AB vers html filter
-sweety.htmlFilter.addListener("publishText", python.name, "talk") # On creer une liaison de htmlfilter vers mouth
+sweety.htmlFilter.addListener("publishText", python.name, "talk") # On creer une liaison de htmlfilter vers talk
 sweety.chatBot.setPredicate("sweety","prenom","unknow")
 
 sleep(1) # give a second to the arduino for connect
@@ -37,8 +37,8 @@ sweety.setdelays(50,200,50)
 
 def talk(data):
 	if data!="":
-		#sweety.saying(data)
-		sweety.mouth.speak(data)
+		sweety.saying(data)
+		#sweety.mouth.speak(data)
   		print "chatbot :", data
   		
 def handOpen():
