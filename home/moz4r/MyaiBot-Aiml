@@ -33,6 +33,15 @@
 			</mrl>
       </oob></template>
 </category>
+<category><pattern>QUESTION *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>question("<star />")</param>
+			</mrl>
+      </oob></template>
+</category>
 <category><pattern>TELL ME A JOKE</pattern>
 <template><oob>
 			<mrl>
@@ -83,6 +92,15 @@
 </category>
 <category>
 	<pattern>*</pattern>
-	<template> </template>
+	<template>
+	<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>No("#NO#")</param>
+			</mrl>
+      </oob>
+	</template>
+	
 </category>
 </aiml>
