@@ -7,7 +7,7 @@
 # Wikidatafetcher By Beetlejuice
 # -----------------------------------
 #Your language ( FR/EN )
-lang="FR"
+lang="EN"
 BotURL="http://myai.cloud/bot1.php"
 #jokeBOT:
 JokeType="RANDOM" # JokeType=RANDOM / BLONDES / CUL / CARAMBAR
@@ -20,13 +20,13 @@ units="metric" # or : imperial
 #
 #IF YOU WANT INMOOV MOUTH CONTROL ( inmoov ) set inmoov=1
 #IF YOU DIDNT HAVE MOTORS set inmoov=0 
-IsInmoov=1
+IsInmoov=0
 leftPort = "COM3"
 rightPort = "COM4"
 jawMin = 45
 jawMax = 60
 # Ligh if you have
-IhaveLights = 1
+IhaveLights = 0
 MASSE=27
 ROUGE=29
 VERT=28
@@ -63,19 +63,22 @@ BotURL=BotURL+"?lang="+lang+"&FixPhpCache="+str(time.time())
 laugh = [" #LAUGH01# ", " #LAUGH02# ", " #LAUGH03# ", " ", " "]
 troat = [" #THROAT01# ", " #THROAT02# ", " #THROAT03# ", " ", " ", " "]
 
+Runtime.createAndStart("servicegui", "GUIService")
+Image=Runtime.createAndStart("ImageWebGui", "ImageDisplay")
+Image.startService()
 Runtime.createAndStart("chatBot", "ProgramAB")
 Runtime.createAndStart("ear", "WebkitSpeechRecognition") 
 Runtime.createAndStart("webGui", "WebGui")
 Runtime.createAndStart("htmlFilter", "HtmlFilter")
-Runtime.createAndStart("Image", "ImageDisplay") 
 wdf=Runtime.createAndStart("wdf", "WikiDataFetcher")
-sleep(2)
+
 
 
 
 
 if IsInmoov==0:
 	Runtime.createAndStart("mouth", "AcapelaSpeech")
+	sleep(2)
 else:
 	i01 = Runtime.createAndStart("i01", "InMoov")
 	i01.startLeftHand(leftPort,"atmega2560")
@@ -115,12 +118,14 @@ if IhaveLights==1:
 
 if lang=="FR":
    NoNo="Je ne comprend pas"
+   LANGfind="Je vais faire une recherche sur internet"
    voiceType="Margaux"
    ear.setLanguage("fr-FR")
    wdf.setLanguage("fr")
    wdf.setWebSite("frwiki")
 else:
    voiceType="Ryan"
+   LANGfind="I do a search on internet"
    NoNo="I don't understand"
    wdf.setLanguage("en")
    wdf.setWebSite("enwiki")
@@ -131,7 +136,7 @@ sleep(2)
 mouth.setVoice(voiceType)
 mouth.setLanguage(lang)
 ear.addTextListener(chatBot)
-chatBot.startSession( "default", "rachel") 
+chatBot.startSession( "ProgramAB", "default", "rachel") 
 chatBot.addTextListener(htmlFilter) 
 htmlFilter.addListener("publishText", python.name, "talk") 
 
@@ -178,9 +183,13 @@ def askWiki(query): # retourne la description du sujet (query)
 	start = wdf.grabStart(query) # on garde que le déterminant ( je ne sais plus pourquoi j'ai eu besoin de ça, mais la fonction existe ...)
 	wikiAnswer = wdf.getDescription(word) # récupère la description su wikidata
 	answer = ( query + " est " + wikiAnswer)
-	if wikiAnswer == "Not Found !": # Si le document n'ai pas trouvé , on réponds "je ne sais pas"
-		answer = "Je ne sais pas"
-	chatBot.getResponse("say " + answer)	
+	if (wikiAnswer == "Not Found !") or (unicode(wikiAnswer[-9:],'utf-8') == u"Wikimédia") : # Si le document n'ai pas trouvé , on réponds "je ne sais pas"
+		answer = LANGfind
+		chatBot.getResponse("say " + answer)
+		question(query)
+	else:
+		chatBot.getResponse("say " + answer)	
+		print query+u" est page d'homonymie d'un projet Wikimédia"
 	Light(1,1,1)
 	
 
@@ -198,7 +207,7 @@ def getProperty(query, what): # retourne la valeur contenue dans la propriété 
 		print "what = " + what + " - what2 = " + what2
 	ID = "error"
 	# le fichier propriété.txt contient les conversions propriété -> ID . wikidata n'utilise pas des mots mais des codes (monnaie -> P38)	f = codecs.open(unicode('os.getcwd().replace("develop", "").replace("\", "/") + "/propriétés_ID.txt','r',"utf-8") #
-	f = codecs.open(u'c:/mrl/proprietes_ID.txt','r','utf-8') #os.getcwd().replace("develop", "").replace("\\", "/") set you propertiesID.txt path
+	f = codecs.open(u'c:/mrlL/prop.txt','r','utf-8') #os.getcwd().replace("develop", "").replace("\\", "/") set you propertiesID.txt path
 	
 	for line in f:
     		line_textes=line.split(":")
@@ -210,9 +219,10 @@ def getProperty(query, what): # retourne la valeur contenue dans la propriété 
 	answer = ( what +" de " + query + " est " + wikiAnswer)
 	
 	if wikiAnswer == "Not Found !":
-		answer = "Je ne sais pas"
+		answer = LANGfind
 	chatBot.getResponse("say " + answer)
 	return answer
+	question(query+" "+what)
 	Light(1,1,1)
 	
 def getDate(query, ID):# Cette fonction permet d'afficher une date personnalisée (mardi, le 10 juin, 1975, 12h38 .....)
@@ -232,7 +242,9 @@ def FindImage(image):
 	a = Parse(BotURL+"&type=pic&pic="+urllib2.quote(image).replace(" ", "%20"))
 	Light(1,1,0)
 	MoveHead()
-	Image.displayFullScreen(a,1)
+	Image.startService()
+	print a
+	Image.display(a,1)
 	Light(1,1,1)
 	time.sleep(5)
 	Image.exitFS()
@@ -268,7 +280,7 @@ def No(data):
 	Light(1,1,1)
 	if IsInmoov==1:
 		i01.moveHead(80,90,90,78,40)
-	mouth.speakBlocking(random.choice(troat))
+	mouth.speakBlocking(random.choice(troat).decode( "utf8" ))
 	if IsInmoov==1:
 		i01.head.jaw.rest()
 		i01.detach()
@@ -308,5 +320,6 @@ def question(data):
 		mouth.speakBlocking(a[0:299])
 		mouth.speakBlocking(a[300:599])
 	MoveHead()
-i01.detach()
+if IsInmoov==1:
+	i01.detach()
 Light(1,1,1)
