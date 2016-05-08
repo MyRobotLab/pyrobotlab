@@ -16,8 +16,6 @@ servodriver.attach(tracker.arduino)
 servodriver.startService()
 servodriver.arduino.connect(port)
 
-tracker.startService()
-
 # Connect the servos to the pins
 print "Attaching servos"
 servoX.setMinMax(40,140)
@@ -29,4 +27,5 @@ servoY.setInverted(True)
 servoY.attach(servodriver,yServoPin)
 
 # Start face tracking
+tracker.startService()
 tracker.faceDetect()
