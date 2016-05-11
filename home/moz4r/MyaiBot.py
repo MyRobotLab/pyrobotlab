@@ -7,7 +7,8 @@
 # Wikidatafetcher By Beetlejuice
 # -----------------------------------
 #Your language ( FR/EN )
-lang="EN"
+lang="FR"
+WikiFile="prop.txt"
 BotURL="http://myai.cloud/bot1.php"
 #jokeBOT:
 JokeType="RANDOM" # JokeType=RANDOM / BLONDES / CUL / CARAMBAR
@@ -20,13 +21,13 @@ units="metric" # or : imperial
 #
 #IF YOU WANT INMOOV MOUTH CONTROL ( inmoov ) set inmoov=1
 #IF YOU DIDNT HAVE MOTORS set inmoov=0 
-IsInmoov=0
+IsInmoov=1
 leftPort = "COM3"
 rightPort = "COM4"
-jawMin = 45
+jawMin = 55
 jawMax = 60
 # Ligh if you have
-IhaveLights = 0
+IhaveLights = 1
 MASSE=27
 ROUGE=29
 VERT=28
@@ -81,14 +82,23 @@ if IsInmoov==0:
 	sleep(2)
 else:
 	i01 = Runtime.createAndStart("i01", "InMoov")
-	i01.startLeftHand(leftPort,"atmega2560")
+	right = Runtime.start("i01.right", "Arduino")
+	right.setBoard("mega2560")
+	right.publishState()
+	right.connect(rightPort)
+	left = Runtime.start("i01.left", "Arduino")
+	left.setBoard("mega2560")
+	left.publishState()
+	left.connect(leftPort)
+	sleep(1)
+	i01.startRightHand(rightPort,"atmega2560")
+	i01.startHead(leftPort,"atmega2560")
 	i01.startMouth()
-	sleep(2)
 	mouth = i01.mouth
 	i01.startMouthControl(leftPort)
 	i01.head.jaw.setMinMax(jawMin,jawMax)
-	i01.mouthControl.setmouth(45,70)
-	i01.head.jaw.setRest(40)
+	i01.mouthControl.setmouth(jawMin,jawMax)
+	i01.head.jaw.setRest(jawMin)
 	i01.setHeadSpeed(0.5, 0.5)
 	i01.moveHead(80,86,40,78,76)
 	i01.head.jaw.rest()
@@ -100,17 +110,11 @@ else:
 	i01.head.eyeX.rest()
 
 if IhaveLights==1:
-	i01.startLeftHand(rightPort,"atmega2560")
-	right = Runtime.start("i01.right", "Arduino")
-	right.setBoard("mega2560")
-	right.connect(rightPort)
-	sleep(2)
 	right.pinMode(MASSE, Arduino.OUTPUT)
 	right.pinMode(ROUGE, Arduino.OUTPUT)
 	right.pinMode(VERT, Arduino.OUTPUT)
 	right.pinMode(BLEU, Arduino.OUTPUT)
 	
-	right.publishState()
 	right.digitalWrite(MASSE,1)
 	right.digitalWrite(ROUGE,1)
 	right.digitalWrite(VERT,0)
@@ -119,7 +123,7 @@ if IhaveLights==1:
 if lang=="FR":
    NoNo="Je ne comprend pas"
    LANGfind="Je vais faire une recherche sur internet"
-   voiceType="Margaux"
+   voiceType="MargauxSad"
    ear.setLanguage("fr-FR")
    wdf.setLanguage("fr")
    wdf.setWebSite("frwiki")
@@ -137,8 +141,13 @@ mouth.setVoice(voiceType)
 mouth.setLanguage(lang)
 ear.addTextListener(chatBot)
 chatBot.startSession( "ProgramAB", "default", "rachel") 
-chatBot.addTextListener(htmlFilter) 
-htmlFilter.addListener("publishText", python.name, "talk") 
+
+def talk(data):
+	if IsInmoov==0:
+		mouth.speak(data)
+	else:
+		mouth.speakBlocking(data)
+  	print "chatbot dit :", data
 
 def Parse(utfdata):
 	Light(1,1,0)
@@ -148,19 +157,20 @@ def Parse(utfdata):
 		utfdata = utfdata.decode( "utf8" ).replace(" : ", random.choice(troat))
 	except: 
 		pass
+	print utfdata
 	Light(1,1,1)
 	return utfdata;
 
 def MoveHead():
 	if IsInmoov==1:
-		i01.attach()
+		#i01.attach()
 		i01.setHeadSpeed(0.5, 0.5)
 		i01.moveHead(20,120,40,78,76)
 		time.sleep(2)
 		i01.moveHead(150,30,40,78,76)
 		time.sleep(2)
 		i01.moveHead(80,90,40,78,76)
-		i01.detach()
+		#i01.detach()
 		
 def Light(ROUGE_V,VERT_V,BLEU_V):
 	if IhaveLights==1:
@@ -168,9 +178,7 @@ def Light(ROUGE_V,VERT_V,BLEU_V):
 		right.digitalWrite(VERT,VERT_V)
 		right.digitalWrite(BLEU,BLEU_V)
 
-def talk(data):
-	mouth.speak(data)
-  	print "chatbot dit :", data
+
 	
 def askWiki(query): # retourne la description du sujet (query)
 	Light(1,0,0)
@@ -185,11 +193,13 @@ def askWiki(query): # retourne la description du sujet (query)
 	answer = ( query + " est " + wikiAnswer)
 	if (wikiAnswer == "Not Found !") or (unicode(wikiAnswer[-9:],'utf-8') == u"Wikimédia") : # Si le document n'ai pas trouvé , on réponds "je ne sais pas"
 		answer = LANGfind
-		chatBot.getResponse("say " + answer)
-		question(query)
+		talk(LANGfind)	
+		sleep(1);
+		answer=(question(query))
+		sleep(1);
+		talk(answer)
 	else:
-		chatBot.getResponse("say " + answer)	
-		print query+u" est page d'homonymie d'un projet Wikimédia"
+		talk(answer)
 	Light(1,1,1)
 	
 
@@ -207,23 +217,28 @@ def getProperty(query, what): # retourne la valeur contenue dans la propriété 
 		print "what = " + what + " - what2 = " + what2
 	ID = "error"
 	# le fichier propriété.txt contient les conversions propriété -> ID . wikidata n'utilise pas des mots mais des codes (monnaie -> P38)	f = codecs.open(unicode('os.getcwd().replace("develop", "").replace("\", "/") + "/propriétés_ID.txt','r',"utf-8") #
-	f = codecs.open(u'c:/mrlL/prop.txt','r','utf-8') #os.getcwd().replace("develop", "").replace("\\", "/") set you propertiesID.txt path
+	f = codecs.open(os.getcwd().replace("develop", "").replace("\\", "/")+WikiFile,'r','utf-8') #os.getcwd().replace("develop", "").replace("\\", "/") set you propertiesID.txt path
 	
 	for line in f:
     		line_textes=line.split(":")
     		if line_textes[0]== what:
 	    		ID= line_textes[1]
 	f.close()
-	print "query = " + query + " - what = " + what + " - ID = " + ID
+	#print "query = " + query + " - what = " + what + " - ID = " + ID
 	wikiAnswer= wdf.getData(query,ID) # récupère la valeur de la propriété si elle existe dans le document
 	answer = ( what +" de " + query + " est " + wikiAnswer)
 	
 	if wikiAnswer == "Not Found !":
 		answer = LANGfind
-	chatBot.getResponse("say " + answer)
-	return answer
-	question(query+" "+what)
+		talk(LANGfind)	
+		sleep(1);
+		answer=(question(query+" "+what))
+		sleep(1);
+		talk(answer)
+	else:
+		talk(answer)
 	Light(1,1,1)
+	return answer
 	
 def getDate(query, ID):# Cette fonction permet d'afficher une date personnalisée (mardi, le 10 juin, 1975, 12h38 .....)
 	answer = ( wdf.getTime(query,ID,"day") +" " +wdf.getTime(query,ID,"month") + " " + wdf.getTime(query,ID,"year"))
@@ -243,7 +258,7 @@ def FindImage(image):
 	Light(1,1,0)
 	MoveHead()
 	Image.startService()
-	print a
+	print BotURL+"&type=pic&pic="+urllib2.quote(image).replace(" ", "%20")
 	Image.display(a,1)
 	Light(1,1,1)
 	time.sleep(5)
@@ -257,8 +272,8 @@ def Joke():
 def No(data):
 	if data=="#NO#":
 		data=NoNo
-	if IsInmoov==1:
-		i01.attach()
+	if IsInmoov==999:
+		#i01.attach()
 		i01.setHeadSpeed(1, 1)
 		i01.moveHead(80,90,0,80,40)
 		sleep(2)
@@ -283,7 +298,7 @@ def No(data):
 	mouth.speakBlocking(random.choice(troat).decode( "utf8" ))
 	if IsInmoov==1:
 		i01.head.jaw.rest()
-		i01.detach()
+		#i01.detach()
 	
 def Yes(data):
 	i01.attach()
@@ -316,10 +331,12 @@ def Meteo():
 
 def question(data):
 	a = Parse(BotURL+"&type=question&question="+urllib2.quote(data).replace(" ", "%20"))
-	if a[0:299]<>"":
-		mouth.speakBlocking(a[0:299])
-		mouth.speakBlocking(a[300:599])
-	MoveHead()
-if IsInmoov==1:
-	i01.detach()
+	print BotURL+"&type=question&question="+urllib2.quote(data).replace(" ", "%20")
+	if a[0]=="0":
+		return(NoNo)
+	elif a[0:299]<>"":
+		return(a[0:299])
+	else:
+		return(NoNo)
+i01.detach()
 Light(1,1,1)
