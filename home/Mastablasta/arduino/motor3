@@ -1,0 +1,68 @@
+#include <AFMotor.h>
+     
+AF_DCMotor motor(2, MOTOR12_64KHZ);
+AF_DCMotor motor2(3, MOTOR12_64KHZ);
+
+int buttonPin = 0;
+int buttonPin2 = 11;
+
+int buttonPin3 = 1;
+int buttonPin4 = 10;
+
+int buttonState;
+
+void setup() {
+  Serial.begin(9600);           
+      
+  motor.setSpeed(200);     
+  motor2.setSpeed(200);
+  
+  pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(buttonPin2, INPUT_PULLUP); 
+  pinMode(buttonPin3, INPUT_PULLUP);
+  pinMode(buttonPin4, INPUT_PULLUP);   
+}
+
+void loop(){
+  
+ buttonState = digitalRead(buttonPin2);
+
+ if (buttonState == LOW) {
+      Serial.print("motor right"); 
+      Serial.print('\n');     
+      motor.run(FORWARD);
+      delay(100); 
+      motor.run(RELEASE);
+      }
+      
+ buttonState = digitalRead(buttonPin);
+     
+ if (buttonState == LOW) {
+      Serial.print("motor left");
+      Serial.print('\n');  
+      motor.run(BACKWARD);
+      delay(100); 
+      motor.run(RELEASE);
+      }
+      
+ buttonState = digitalRead(buttonPin3);
+
+ if (buttonState == LOW) {
+      Serial.print("motor right"); 
+      Serial.print('\n');     
+      motor2.run(FORWARD);
+      delay(100); 
+      motor2.run(RELEASE);
+      }
+      
+ buttonState = digitalRead(buttonPin4);
+     
+ if (buttonState == LOW) {
+      Serial.print("motor left");
+      Serial.print('\n');  
+      motor2.run(BACKWARD);
+      delay(100); 
+      motor2.run(RELEASE);
+      }      
+}
+
