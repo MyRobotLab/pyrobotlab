@@ -21,13 +21,13 @@ units="metric" # or : imperial
 #
 #IF YOU WANT INMOOV MOUTH CONTROL ( inmoov ) set inmoov=1
 #IF YOU DIDNT HAVE MOTORS set inmoov=0 
-IsInmoov=1
+IsInmoov=0
 leftPort = "COM3"
 rightPort = "COM4"
 jawMin = 55
 jawMax = 60
 # Ligh if you have
-IhaveLights = 1
+IhaveLights = 0
 MASSE=27
 ROUGE=29
 VERT=28
@@ -63,10 +63,8 @@ BotURL=BotURL+"?lang="+lang+"&FixPhpCache="+str(time.time())
 #voice emotions
 laugh = [" #LAUGH01# ", " #LAUGH02# ", " #LAUGH03# ", " ", " "]
 troat = [" #THROAT01# ", " #THROAT02# ", " #THROAT03# ", " ", " ", " "]
-
-Runtime.createAndStart("servicegui", "GUIService")
-Image=Runtime.createAndStart("ImageWebGui", "ImageDisplay")
-Image.startService()
+image=Runtime.createAndStart("ImageDisplay", "ImageDisplay")
+sleep(1)
 Runtime.createAndStart("chatBot", "ProgramAB")
 Runtime.createAndStart("ear", "WebkitSpeechRecognition") 
 Runtime.createAndStart("webGui", "WebGui")
@@ -256,14 +254,10 @@ def FindImage(image):
 	#A FAKE LANGUAGE WORKS BUT DATABASE WILL BROKE
 	a = Parse(BotURL+"&type=pic&pic="+urllib2.quote(image).replace(" ", "%20"))
 	Light(1,1,0)
-	MoveHead()
-	Image.startService()
+	DisplayPic(a)
 	print BotURL+"&type=pic&pic="+urllib2.quote(image).replace(" ", "%20")
-	Image.display(a,1)
 	Light(1,1,1)
-	time.sleep(5)
-	Image.exitFS()
-		
+			
 def Joke():
 	MoveHead()
 	a = Parse(BotURL+"&type=joke&genre="+JokeType).replace(" : ", random.choice(troat))
@@ -338,5 +332,15 @@ def question(data):
 		return(a[0:299])
 	else:
 		return(NoNo)
-i01.detach()
+if IsInmoov==1:
+	i01.detach()
 Light(1,1,1)
+
+
+def DisplayPic(pic):
+	image.displayFullScreen(pic,1)
+	time.sleep(0.1)
+	image.displayFullScreen(pic,1)
+	time.sleep(2)
+	image.exitFS()
+	image.closeAll()
