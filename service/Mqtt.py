@@ -2,7 +2,7 @@ from time import sleep
 
 topic = "mrl"
 qos = 2
-broker = "tcp://iot.eclipse.org:1883" //if you have your own just change the hostname/IP
+broker = "tcp://iot.eclipse.org:1883" #if you have your own just change the hostname/IP
 clientID = "MRL MQTT python"
 
 mqtt1 = Runtime.createAndStart("mqtt", "Mqtt")
