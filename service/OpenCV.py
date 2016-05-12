@@ -5,7 +5,8 @@ python = Runtime.start("python","Python")
 # add python as a listener to OpenCV data
 # this tells the framework - whenever opencv.publishOpenCVData is invoked
 # python.onOpenCVData will get called
-opencv.addListener("publishOpenCVData", "python","onOpenCVData")
+python.subscribe("publishOpenCVData")
+
 
 # call back - all data from opencv will come back to 
 # this method
