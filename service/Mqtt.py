@@ -5,7 +5,7 @@ qos = 2
 broker = "tcp://iot.eclipse.org:1883" //if you have your own just change the hostname/IP
 clientID = "MRL MQTT python"
 
-mqtt1 = Runtime.createAndStart("mqtt", "MQTT")
+mqtt1 = Runtime.createAndStart("mqtt", "Mqtt")
 mqtt1.startService()
 print mqtt1.getDescription()
 
