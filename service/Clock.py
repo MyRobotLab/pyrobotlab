@@ -1,5 +1,5 @@
-
 # start the services
+python = Runtime.start("python","Python")
 clock = Runtime.start("clock","Clock")
 log   = Runtime.start("log","Log")
 audio = Runtime.start("audio","AudioFile")
