@@ -456,7 +456,7 @@
 			</mrl>
       </oob></template>
 </category>
-<category><pattern>WEATHER</pattern>
+<category><pattern>WEATHER *</pattern>
 <template><oob>
 			<mrl>
 				<service>python</service>
