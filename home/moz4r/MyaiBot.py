@@ -7,8 +7,7 @@
 # Wikidatafetcher By Beetlejuice
 # -----------------------------------
 #Your language ( FR/EN )
-lang="FR"
-WikiFile="prop.txt"
+lang="EN"
 BotURL="http://myai.cloud/bot1.php"
 #jokeBOT:
 JokeType="RANDOM" # JokeType=RANDOM / BLONDES / CUL / CARAMBAR
@@ -121,14 +120,18 @@ if IhaveLights==1:
 if lang=="FR":
    NoNo="Je ne comprend pas"
    LANGfind="Je vais faire une recherche sur internet"
+   LANGimage="Désolé, Je rencontre un problème pour te montrer cette image"
    voiceType="MargauxSad"
+   WikiFile="prop.txt"
    ear.setLanguage("fr-FR")
    wdf.setLanguage("fr")
    wdf.setWebSite("frwiki")
 else:
    voiceType="Ryan"
    LANGfind="I do a search on internet"
+   LANGimage="There is a problem to show the picture I am so sorry"
    NoNo="I don't understand"
+   WikiFile="propEN.txt"
    wdf.setLanguage("en")
    wdf.setWebSite("enwiki")
 
@@ -142,9 +145,9 @@ chatBot.startSession( "ProgramAB", "default", "rachel")
 
 def talk(data):
 	if IsInmoov==0:
-		mouth.speak(data)
+		mouth.speak(unicode(data,'utf-8'))
 	else:
-		mouth.speakBlocking(data)
+		mouth.speakBlocking(unicode(data,'utf-8'))
   	print "chatbot dit :", data
 
 def Parse(utfdata):
@@ -338,9 +341,17 @@ Light(1,1,1)
 
 
 def DisplayPic(pic):
-	image.displayFullScreen(pic,1)
+	r=0
+	try:
+		r=image.displayFullScreen(pic,1)
+	except: 
+		talk(LANGimage)
+		pass
 	time.sleep(0.1)
-	image.displayFullScreen(pic,1)
+	try:
+		r=image.displayFullScreen(pic,1)
+	except:
+		pass
 	time.sleep(2)
 	image.exitFS()
 	image.closeAll()
