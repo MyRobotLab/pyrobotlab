@@ -9,8 +9,8 @@ import threading
 # the bot.
 #############################################################
 # All bot specific hardware configuration goes here.
-leftPort = "COM21"
-rightPort = "COM31"
+leftPort = "COM31"
+rightPort = "COM21"
 headPort = leftPort
 
 gesturesPath = "c:/dev/workspace.kmw/pyrobotlab/home/kwatters/harry/gestures"
@@ -21,7 +21,7 @@ aimlUserName = "Kevin"
 botVoice = "Rod"
 
 # toggle to only load program ab  and skip the inmoov services
-startInMoov = False
+startInMoov = True
 
 ######################################################################
 # helper function help debug the recognized text from webkit/sphinx
@@ -34,6 +34,9 @@ def heard(data):
 # MAIN ENTRY POINT  - Start and wire together all the services.
 #
 ######################################################################
+
+# launch the swing gui?
+# gui = Runtime.createAndStart("gui", "GUIService");
 
 ######################################################################
 # Create ProgramAB chat bot ( This is the inmoov "brain" )

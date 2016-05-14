@@ -6,7 +6,11 @@
   <!-- end of gestures topic responses -->
       <category>
       <pattern>REST</pattern>
-      <template>REST
+      <template>
+        <random>
+          <li>Ah, relaxing.</li>
+          <li>Taking a rest</li>
+        </random>
         <oob>
           <mrl>
             <service>python</service>
@@ -18,7 +22,7 @@
     </category>
     <category>
       <pattern>ATTACH HEAD</pattern>
-      <template>ATTACH HEAD
+      <template>I'm attaching my head.
         <oob>
           <mrl>
             <service>i01.head</service>
@@ -29,7 +33,7 @@
     </category>
     <category>
       <pattern>DISCONNECT HEAD</pattern>
-      <template>DISCONNECT HEAD
+      <template>I'm disconnecting my head.
         <oob>
           <mrl>
             <service>i01.head</service>
@@ -40,7 +44,7 @@
     </category>
     <category>
       <pattern>ATTACH EYES</pattern>
-      <template>ATTACH EYES
+      <template>My eyes are now attached.
         <oob>
           <mrl>
             <service>i01.head.eyeY</service>
@@ -51,7 +55,7 @@
     </category>
     <category>
       <pattern>DISCONNECT EYES</pattern>
-      <template>DISCONNECT EYES
+      <template>Disconnecting my eye servos
         <oob>
           <mrl>
             <service>i01.head.eyeY</service>
@@ -62,7 +66,7 @@
     </category>
     <category>
       <pattern>ATTACH RIGHT HAND</pattern>
-      <template>ATTACH RIGHT HAND
+      <template>Connecting my right hand.
         <oob>
           <mrl>
             <service>i01.rightHand</service>
@@ -77,7 +81,7 @@
     </category>
     <category>
       <pattern>DISCONNECT RIGHT HAND</pattern>
-      <template>DISCONNECT RIGHT HAND
+      <template>Detaching my right hand.
         <oob>
           <mrl>
             <service>i01.rightHand</service>
@@ -88,7 +92,7 @@
     </category>
     <category>
       <pattern>ATTACH LEFT HAND</pattern>
-      <template>ATTACH LEFT HAND
+      <template>Connecting my left hand.
         <oob>
           <mrl>
             <service>i01.leftHand</service>
@@ -99,7 +103,7 @@
     </category>
     <category>
       <pattern>DISCONNECT LEFT HAND</pattern>
-      <template>DISCONNECT LEFT HAND
+      <template>Detaching my left hand.
         <oob>
           <mrl>
             <service>i01.leftHand</service>
@@ -110,7 +114,7 @@
     </category>
     <category>
       <pattern>ATTACH EVERYTHING</pattern>
-      <template>ATTACH EVERYTHING
+      <template>I'm connecting all servos now.
         <oob>
           <mrl>
             <service>i01</service>
@@ -121,7 +125,7 @@
     </category>
     <category>
       <pattern>DISCONNECT EVERYTHING</pattern>
-      <template>DISCONNECT EVERYTHING
+      <template>I'm detaching everything now.
         <oob>
           <mrl>
             <service>i01</service>
@@ -132,7 +136,7 @@
     </category>
     <category>
       <pattern>ATTACH LEFT ARM</pattern>
-      <template>ATTACH LEFT ARM
+      <template>Connecting my left arm.
         <oob>
           <mrl>
             <service>i01.leftArm</service>
@@ -143,7 +147,7 @@
     </category>
     <category>
       <pattern>DISCONNECT LEFT ARM</pattern>
-      <template>DISCONNECT LEFT ARM
+      <template>Detaching my left arm.
         <oob>
           <mrl>
             <service>i01.leftArm</service>
@@ -154,7 +158,7 @@
     </category>
     <category>
       <pattern>ATTACH RIGHT ARM</pattern>
-      <template>ATTACH RIGHT ARM
+      <template>Connect my right arm.
         <oob>
           <mrl>
             <service>i01.rightArm</service>
@@ -169,7 +173,7 @@
     </category>
     <category>
       <pattern>DISCONNECT RIGHT ARM</pattern>
-      <template>DISCONNECT RIGHT ARM
+      <template>Detach right arm.
         <oob>
           <mrl>
             <service>i01.rightArm</service>
@@ -180,7 +184,7 @@
     </category>
     <category>
       <pattern>ATTACH TORSO</pattern>
-      <template>ATTACH TORSO
+      <template>Connecting the servo in my torso.
         <oob>
           <mrl>
             <service>i01.torso</service>
@@ -195,7 +199,7 @@
     </category>
     <category>
       <pattern>DISCONNECT TORSO</pattern>
-      <template>DISCONNECT TORSO
+      <template>Detaching the servo in my torso.
         <oob>
           <mrl>
             <service>i01.torso</service>
@@ -210,7 +214,7 @@
     </category>
     <category>
       <pattern>ATTACH JAW</pattern>
-      <template>ATTACH JAW
+      <template>Connecting my jaw.
         <oob>
           <mrl>
             <service>i01.head.jaw</service>
@@ -221,7 +225,7 @@
     </category>
     <category>
       <pattern>DISCONNECT JAW</pattern>
-      <template>DISCONNECT JAW
+      <template>Detaching my jaw servo.
         <oob>
           <mrl>
             <service>i01.head.jaw</service>
@@ -232,10 +236,14 @@
     </category>
     <category>
       <pattern>ATTACH WHEEL</pattern>
-      <template>ATTACH WHEEL
+      <template>I don't have a wheel to attach, sorry.
         <oob>
           <mrl>
-            <service>directionServo,forwardServo</service>
+            <service>forwardServo</service>
+            <method>attach</method>
+          </mrl>
+          <mrl>
+            <service>directionServo</service>
             <method>attach</method>
           </mrl>
         </oob>
@@ -243,10 +251,14 @@
     </category>
     <category>
       <pattern>DISCONNECT WHEEL</pattern>
-      <template>DISCONNECT WHEEL
+      <template>I don't have a wheel.
         <oob>
           <mrl>
-            <service>directionServo,forwardServo</service>
+            <service>directionServo</service>
+            <method>detach</method>
+          </mrl>
+          <mrl>
+            <service>forwardServo</service>
             <method>detach</method>
           </mrl>
         </oob>
@@ -254,7 +266,7 @@
     </category>
     <category>
       <pattern>SEARCH HUMANS</pattern>
-      <template>SEARCH HUMANS
+      <template>I'm looking for faces.
         <oob>
           <mrl>
             <service>python</service>
@@ -266,7 +278,7 @@
     </category>
     <category>
       <pattern>QUIT SEARCH</pattern>
-      <template>QUIT SEARCH
+      <template>Stopping my search.
         <oob>
           <mrl>
             <service>python</service>
@@ -278,7 +290,7 @@
     </category>
     <category>
       <pattern>TRACK</pattern>
-      <template>TRACK
+      <template>Following the point.
         <oob>
           <mrl>
             <service>python</service>
@@ -290,7 +302,7 @@
     </category>
     <category>
       <pattern>FREEZE TRACK</pattern>
-      <template>FREEZE TRACK
+      <template>Stopping my tracking
         <oob>
           <mrl>
             <service>python</service>
@@ -302,7 +314,7 @@
     </category>
     <category>
       <pattern>ATTACH SENSOR</pattern>
-      <template>ATTACH SENSOR
+      <template>Starting the PIR sensor.
         <oob>
           <mrl>
             <service>i01</service>
@@ -313,7 +325,7 @@
     </category>
     <category>
       <pattern>DISCONNECT SENSOR</pattern>
-      <template>DISCONNECT SENSOR
+      <template>Stopping the PIR sensor.
         <oob>
           <mrl>
             <service>i01</service>
@@ -336,7 +348,7 @@
     </category>
     <category>
       <pattern>CLOSE HAND</pattern>
-      <template>CLOSE HAND
+      <template>Closing my hand.
         <oob>
           <mrl>
             <service>python</service>
@@ -348,7 +360,7 @@
     </category>
     <category>
       <pattern>CAMERA ON</pattern>
-      <template>CAMERA ON
+      <template>I turn my camera on.
         <oob>
           <mrl>
             <service>i01</service>
@@ -359,7 +371,7 @@
     </category>
     <category>
       <pattern>OFF CAMERA</pattern>
-      <template>OFF CAMERA
+      <template>Turning my camera off.
         <oob>
           <mrl>
             <service>i01</service>
@@ -369,8 +381,13 @@
       </template>
     </category>
     <category>
+      <pattern>CAMERA OFF</pattern>
+      <template><srai>OFF CAMERA</srai></template>
+    </category>
+    
+    <category>
       <pattern>CAPTURE GESTURE</pattern>
-      <template>CAPTURE GESTURE
+      <template>Now I will try to capture a gesture.
         <oob>
           <mrl>
             <service>i01</service>
@@ -392,7 +409,12 @@
     </category>
     <category>
       <pattern>FIGHTER</pattern>
-      <template>FIGHTER
+      <template>
+        <random>
+          <li>I can pose like a boxer</li>
+          <li>Move like a butterfly, sting like a bee.</li>
+          <li>Bring it on.</li>
+        </random>
         <oob>
           <mrl>
             <service>i01</service>
@@ -403,7 +425,7 @@
     </category>
     <category>
       <pattern>FIST HIPS</pattern>
-      <template>FIST HIPS
+      <template>Putting my fists on my hips.
         <oob>
           <mrl>
             <service>python</service>
@@ -415,7 +437,7 @@
     </category>
     <category>
       <pattern>LOOK AT THIS</pattern>
-      <template>LOOK AT THIS
+      <template>What do you have there?  I'm looking.
         <oob>
           <mrl>
             <service>i01</service>
@@ -426,7 +448,7 @@
     </category>
     <category>
       <pattern>VICTORY</pattern>
-      <template>VICTORY
+      <template>It's good to win.
         <oob>
           <mrl>
             <service>i01</service>
@@ -437,7 +459,11 @@
     </category>
     <category>
       <pattern>ARMS UP</pattern>
-      <template>ARMS UP
+      <template>
+      <random>
+        <li>I've got my arms up.</li>
+        <li>Don't shoot!</li>
+      </random>
         <oob>
           <mrl>
             <service>python</service>
@@ -449,7 +475,7 @@
     </category>
     <category>
       <pattern>ARMS FRONT</pattern>
-      <template>ARMS FRONT
+      <template>Holding my arms in front of me.
         <oob>
           <mrl>
             <service>i01</service>
@@ -460,7 +486,7 @@
     </category>
     <category>
       <pattern>DA VINCI</pattern>
-      <template>DA VINCI
+      <template>This is the pose from Leonardo Da Vinci's drawings.
         <oob>
           <mrl>
             <service>i01</service>
@@ -469,12 +495,18 @@
         </oob>
       </template>
     </category>
+    
+    <category>
+      <pattern>DAVINCI</pattern>
+      <template><srai>DA VINCI</srai></template>
+    </category>
+    
     <category>
       <pattern>MANUAL</pattern>
-      <template>MANUAL
+      <template>There is no manual, sorry.
         <oob>
           <mrl>
-            <service>i01,ear</service>
+            <service>i01.ear</service>
             <method>lockOutAllGrammarExcept</method>
           </mrl>
         </oob>
@@ -482,10 +514,10 @@
     </category>
     <category>
       <pattern>VOICE CONTROL</pattern>
-      <template>VOICE CONTROL
+      <template>I'm listening.
         <oob>
           <mrl>
-            <service>i01,ear</service>
+            <service>i01.ear</service>
             <method>clearLock</method>
           </mrl>
         </oob>
@@ -493,7 +525,7 @@
     </category>
     <category>
       <pattern>STOP LISTENING</pattern>
-      <template>STOP LISTENING
+      <template>I'm not going to listen to you.
         <oob>
           <mrl>
             <service>i01,ear</service>
@@ -504,7 +536,7 @@
     </category>
     <category>
       <pattern>FULL SPEED</pattern>
-      <template>FULL SPEED
+      <template>Servos are set to full speed now.
         <oob>
           <mrl>
             <service>python</service>
@@ -516,7 +548,7 @@
     </category>
     <category>
       <pattern>GRAB THE BOTTLE</pattern>
-      <template>GRAB THE BOTTLE
+      <template>Let me take that bottle.
         <oob>
           <mrl>
             <service>python</service>
@@ -528,7 +560,7 @@
     </category>
     <category>
       <pattern>TAKE THE GLASS</pattern>
-      <template>TAKE THE GLASS
+      <template>Give me that glass.
         <oob>
           <mrl>
             <service>python</service>
@@ -540,7 +572,7 @@
     </category>
     <category>
       <pattern>POOR BOTTLE</pattern>
-      <template>POOR BOTTLE
+      <template>Here, I can pour you a drink.
         <oob>
           <mrl>
             <service>python</service>
@@ -552,7 +584,7 @@
     </category>
     <category>
       <pattern>GIVE THE BOTTLE</pattern>
-      <template>GIVE THE BOTTLE
+      <template>Here's the bottle.
         <oob>
           <mrl>
             <service>python</service>
@@ -564,7 +596,7 @@
     </category>
     <category>
       <pattern>GIVE THE GLASS</pattern>
-      <template>GIVE THE GLASS
+      <template>Take the glass from me.
         <oob>
           <mrl>
             <service>python</service>
