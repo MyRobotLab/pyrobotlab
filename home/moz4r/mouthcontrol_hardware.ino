@@ -41,6 +41,7 @@ void setup()
    
   Serial.begin(9600);  
   Serial.println("--- Start DEBUG ---");
+  
   myservo.attach(servoPin);
   myservo.write(50);
   delay(1000);
@@ -79,6 +80,11 @@ void loop()
       if (BoucheStatus == 0 && ActionBouche == 0)
 
       {
+           if (Repos==0)
+        {
+        myservo.attach(servoPin);
+        delay(1);
+        }
       //Serial.println(val);
       ActionBouche = 1;
       //myservo.attach(9);
@@ -94,11 +100,7 @@ void loop()
       if (BoucheStatus == 1 && ActionBouche == 1)
       {
         
-        if (Repos==0)
-        {
-        myservo.attach(servoPin);
-        delay(10);
-        }
+     
         
        
        myservo.write(90);
