@@ -21,11 +21,13 @@
 
 Servo myservo;                 
 
-int     MIN = 100; 
-int     SecondDetection = 1; // 
+int     MIN = 10; 
+int     SecondDetection = 2; // 
 int     val = 0;     // variable to store the read value
 int     i = 0;
-int     pos = 75;    // variable to store the servo position 
+int     posMax = 75;    // variable to store the servo position
+int     posMin = 50;
+int     MouthTimer = 20; 
 int     BoucheStatus = 0;
 int     ActionBouche = 0;
 int     Repos = 0;
@@ -54,6 +56,24 @@ void loop()
 
      
     val = analogRead(HPpin);
+    posMax=55;
+    posMin=50;
+    MouthTimer=20;
+    if (val>200) {
+    posMin=50;
+    posMax=60;
+    }
+    if (val>500) {
+    posMin=60;
+    posMax=75;
+    MouthTimer=40;
+    }
+    if (val>700) {
+    posMin=90;
+    posMax=110;
+    MouthTimer=80;
+    }
+   
 //Serial.println(val);
 //Serial.print('\n');
     if (val > MIN ) // if values detected : speaker voltage
@@ -85,16 +105,16 @@ void loop()
         myservo.attach(servoPin);
         delay(1);
         }
-      //Serial.println(val);
+      Serial.println(val);
       ActionBouche = 1;
       //myservo.attach(9);
-      delay(10);
+      //delay(10);
       
      
-      myservo.write(100);
+      myservo.write(posMax);
       
       CompteurRepos=0;
-      delay(100);
+      delay(MouthTimer);
       
       }
       if (BoucheStatus == 1 && ActionBouche == 1)
@@ -103,11 +123,11 @@ void loop()
      
         
        
-       myservo.write(90);
+       myservo.write(posMin);
        Repos = 0;
        CompteurRepos = 0;
        ActionBouche =0;
-       delay(100);
+       delay(20);
        //digitalWrite(servoPin, LOW);
       }
 
@@ -124,8 +144,8 @@ void loop()
        myservo.detach(); 
        Repos=1;
       }
- dbg="a" + String(CompteurRepos) + "a" + String(ActionBouche) + "b" + String(BoucheStatus);
- Serial.println(dbg);
+ //dbg="a" + String(CompteurRepos) + "a" + String(ActionBouche) + "b" + String(BoucheStatus);
+ //Serial.println(dbg);
 CompteurRepos+=1;    
 delay(1);
     
