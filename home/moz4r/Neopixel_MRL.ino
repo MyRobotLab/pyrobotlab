@@ -1,28 +1,140 @@
 #include <Adafruit_NeoPixel.h>
-#define PIN 3
-#define NUM_LEDS 16
-int voltPin = 2;
-// Parameter 1 = number of pixels in strip
-// Parameter 2 = pin number (most are valid)
-// Parameter 3 = 5V volt pin
+#define PIN 3 //neo pin number
+#define NUM_LEDS 16 //number of pixels in strip
+int voltPin = 2; // 5V output
+int MRLval = 0;
+int Animation=1;
 
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRB + NEO_KHZ800);
 
 void setup() {
   pinMode(voltPin, OUTPUT);
-   digitalWrite(voltPin, HIGH);
+  digitalWrite(voltPin, HIGH);
+  analogReference(DEFAULT);
   strip.begin();
-
   strip.show(); // Initialize all pixels to 'off'
+  Serial.begin(9600);  
+  Serial.println("--- Start DEBUG ---");
 }
 
 
 
 void loop() {
+  MRLval = Serial.read();
+  Serial.println(MRLval);
+  switch (MRLval) {
+    case 1:
+    Animation=1;
+    break;
+    case 2:
+    Animation=2;
+    break;
+    case 3:
+    Animation=3;
+    break;
+    case 9:
+    Animation=0;
+    break;
+  }
 
+  switch (Animation) {
+  case 1: 
+  CylonBounce(0xff, 0, 0, 2, 100, 50);
+  break;
+  case 2: 
   Fire(55,120,15);
+  break;
+  case 3: 
+  Strobe(0xff, 0xff, 0xff, 10, 50, 1000);
+  break;
+  case 0: 
+  strip.show();
+  break;
+  }
+  
+  //
 }
+
+
+void Strobe(byte red, byte green, byte blue, int StrobeCount, int FlashDelay, int EndPause){
+
+  for(int j = 0; j < StrobeCount; j++) {
+
+    setAll(red,green,blue);
+
+    showStrip();
+
+    delay(FlashDelay);
+
+    setAll(0,0,0);
+
+    showStrip();
+
+    delay(FlashDelay);
+
+  }
+
+ 
+
+ delay(EndPause);
+}
+
+
+void CylonBounce(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay){
+
+
+  for(int i = 0; i < NUM_LEDS-EyeSize-2; i++) {
+
+    setAll(0,0,0);
+
+    setPixel(i, red/10, green/10, blue/10);
+
+    for(int j = 1; j <= EyeSize; j++) {
+
+      setPixel(i+j, red, green, blue); 
+
+    }
+
+    setPixel(i+EyeSize+1, red/10, green/10, blue/10);
+
+    showStrip();
+
+    delay(SpeedDelay);
+
+  }
+
+
+  delay(ReturnDelay);
+
+
+  for(int i = NUM_LEDS-EyeSize-2; i > 0; i--) {
+
+    setAll(0,0,0);
+
+    setPixel(i, red/10, green/10, blue/10);
+
+    for(int j = 1; j <= EyeSize; j++) {
+
+      setPixel(i+j, red, green, blue); 
+
+    }
+
+    setPixel(i+EyeSize+1, red/10, green/10, blue/10);
+
+    showStrip();
+
+    delay(SpeedDelay);
+
+  }
+
+  
+
+  delay(ReturnDelay);
+}
+
+
+
 
 void Fire(int Cooling, int Sparking, int SpeedDelay) {
 
