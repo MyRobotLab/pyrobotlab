@@ -7,7 +7,7 @@
 # Wikidatafetcher By Beetlejuice
 # -----------------------------------
 #Your language ( FR/EN )
-lang="EN"
+lang="FR"
 BotURL="http://myai.cloud/bot1.php"
 #jokeBOT:
 JokeType="RANDOM" # JokeType=RANDOM / BLONDES / CUL / CARAMBAR
@@ -67,7 +67,7 @@ sleep(1)
 Runtime.createAndStart("chatBot", "ProgramAB")
 Runtime.createAndStart("ear", "WebkitSpeechRecognition") 
 Runtime.createAndStart("webGui", "WebGui")
-Runtime.createAndStart("htmlFilter", "HtmlFilter")
+
 wdf=Runtime.createAndStart("wdf", "WikiDataFetcher")
 
 
@@ -105,6 +105,8 @@ else:
 	i01.head.eyeY.setRest(90)
 	i01.head.eyeY.rest()
 	i01.head.eyeX.rest()
+	
+Runtime.createAndStart("htmlFilter", "HtmlFilter")
 
 if IhaveLights==1:
 	right.pinMode(MASSE, Arduino.OUTPUT)
@@ -140,8 +142,11 @@ else:
 sleep(2)
 mouth.setVoice(voiceType)
 mouth.setLanguage(lang)
+
+chatBot.startSession("default", "rachel")
 ear.addTextListener(chatBot)
-chatBot.startSession( "ProgramAB", "default", "rachel") 
+chatBot.addTextListener(htmlFilter)
+htmlFilter.addListener("publishText", python.name, "talk") 
 
 def talk(data):
 	if IsInmoov==0:
