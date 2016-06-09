@@ -62,6 +62,14 @@ BotURL=BotURL+"?lang="+lang+"&FixPhpCache="+str(time.time())
 #voice emotions
 laugh = [" #LAUGH01# ", " #LAUGH02# ", " #LAUGH03# ", " ", " "]
 troat = [" #THROAT01# ", " #THROAT02# ", " #THROAT03# ", " ", " ", " "]
+
+#phrases
+phrase_pascomprisFR = ["Je ne comprend pas", "tu m as dis quoi la", " je comprends rien a ce que tu me dis"]
+phrase_pascomprisEN = ["I don t understand","what did you say ?"]
+phrase_jeRechercheFR = ["Je cherche sur le net", "je me renseigne, bouge pas"]
+phrase_jeRechercheEN = ["I do a search on internet", "I m asking god"]
+
+
 image=Runtime.createAndStart("ImageDisplay", "ImageDisplay")
 sleep(1)
 Runtime.createAndStart("chatBot", "ProgramAB")
@@ -120,8 +128,6 @@ if IhaveLights==1:
 	right.digitalWrite(BLEU,1)	
 
 if lang=="FR":
-   NoNo="Je ne comprend pas"
-   LANGfind="Je vais faire une recherche sur internet"
    LANGimage="Désolé, Je rencontre un problème pour te montrer cette image"
    voiceType="MargauxSad"
    WikiFile="prop.txt"
@@ -130,9 +136,7 @@ if lang=="FR":
    wdf.setWebSite("frwiki")
 else:
    voiceType="Ryan"
-   LANGfind="I do a search on internet"
    LANGimage="There is a problem to show the picture I am so sorry"
-   NoNo="I don't understand"
    WikiFile="propEN.txt"
    wdf.setLanguage("en")
    wdf.setWebSite("enwiki")
@@ -143,12 +147,13 @@ sleep(2)
 mouth.setVoice(voiceType)
 mouth.setLanguage(lang)
 
-chatBot.startSession("default", "rachel")
+chatBot.startSession("ProgramAB", "default", "rachel")
 ear.addTextListener(chatBot)
 chatBot.addTextListener(htmlFilter)
 htmlFilter.addListener("publishText", python.name, "talk") 
 
 def talk(data):
+	sleep(1);
 	if IsInmoov==0:
 		mouth.speak(unicode(data,'utf-8'))
 	else:
@@ -198,6 +203,10 @@ def askWiki(query): # retourne la description du sujet (query)
 	wikiAnswer = wdf.getDescription(word) # récupère la description su wikidata
 	answer = ( query + " est " + wikiAnswer)
 	if (wikiAnswer == "Not Found !") or (unicode(wikiAnswer[-9:],'utf-8') == u"Wikimédia") : # Si le document n'ai pas trouvé , on réponds "je ne sais pas"
+		if lang=="FR":
+			LANGfind=random.choice(phrase_jeRechercheFR).decode( "utf8" )
+		else:
+			LANGfind=random.choice(phrase_jeRechercheER).decode( "utf8" )
 		answer = LANGfind
 		talk(LANGfind)	
 		sleep(1);
@@ -235,6 +244,10 @@ def getProperty(query, what): # retourne la valeur contenue dans la propriété 
 	answer = ( what +" de " + query + " est " + wikiAnswer)
 	
 	if wikiAnswer == "Not Found !":
+		if lang=="FR":
+			LANGfind=random.choice(phrase_jeRechercheFR).decode( "utf8" )
+		else:
+			LANGfind=random.choice(phrase_jeRechercheEN).decode( "utf8" )
 		answer = LANGfind
 		talk(LANGfind)	
 		sleep(1);
@@ -273,7 +286,10 @@ def Joke():
 	
 def No(data):
 	if data=="#NO#":
-		data=NoNo
+		if lang=="FR":
+			data=random.choice(phrase_pascomprisFR).decode( "utf8" )
+		else:
+			data=random.choice(phrase_pascomprisEN).decode( "utf8" )
 	if IsInmoov==999:
 		#i01.attach()
 		i01.setHeadSpeed(1, 1)
@@ -335,11 +351,17 @@ def question(data):
 	a = Parse(BotURL+"&type=question&question="+urllib2.quote(data).replace(" ", "%20"))
 	print BotURL+"&type=question&question="+urllib2.quote(data).replace(" ", "%20")
 	if a[0]=="0":
-		return(NoNo)
+		if lang=="FR":
+			return(random.choice(phrase_pascomprisFR).decode( "utf8" ))
+		else:
+			return(random.choice(phrase_pascomprisEN).decode( "utf8" ))
 	elif a[0:299]<>"":
 		return(a[0:299])
 	else:
-		return(NoNo)
+		if lang=="FR":
+			return(random.choice(phrase_pascomprisFR).decode( "utf8" ))
+		else:
+			return(random.choice(phrase_pascomprisEN).decode( "utf8" ))
 if IsInmoov==1:
 	i01.detach()
 Light(1,1,1)
