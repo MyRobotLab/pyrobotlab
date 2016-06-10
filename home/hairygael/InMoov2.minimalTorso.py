@@ -4,33 +4,17 @@
 # a very minimal script for InMoov
 # although this script is very short you can still
 # do voice control of a right Arm
-# for any command which you say - you will be required to say a confirmation
-# e.g. you say -> test stomach, InMoov will ask -> "Did you say test stomach?", you will need to
-# respond with a confirmation ("yes","correct","yeah","ya")
-from java.lang import String
-from org.myrobotlab.service import Runtime
-import urllib2
-import os
+# It uses WebkitSpeechRecognition, so you need to use Chrome as your default browser for this script to work
 
-# To set a directory
-# Modify this line according to your directory and version of MRL
-os.chdir("C:/myrobotlab/myrobotlab.1.0.107/audioFile/google/en_gb/audrey")
+# Start the webgui service without starting the browser
+webgui = Runtime.create("WebGui","WebGui")
+webgui.autoStartBrowser(False)
+webgui.startService()
+# Then start the browsers and show the WebkitSpeechRecognition service named i01.ear
+webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
 
-# the name of the local file
-# remove the file if it already exist in the Audiofile directory
-soundfilename="starting mouth.mp3";
-
-try:
-	mp3file = urllib2.urlopen('http://www.inmoov.fr/wp-content/uploads/2015/05/starting-mouth.mp3')
-	output = open(soundfilename,'wb')
-	output.write(mp3file.read())
-	output.close()
-except IOError:
-	print "Check access right on the directory"
-except Exception:
-	print "Can't get the sound File ! Check internet Connexion"
-
-
+# As an alternative you can use the line below to show all services in the browser. In that case you should comment out all lines above that starts with webgui. 
+# webgui = Runtime.createAndStart("webgui","WebGui")
 
 leftPort = "COM20"  #modify port according to your board
 
@@ -39,6 +23,8 @@ i01.startEar()
 
 mouth = Runtime.createAndStart("mouth","Speech")
 i01.startMouth()
+#to tweak the default voice
+i01.mouth.setVoice("Ryan")
 ##############
 torso = i01.startTorso("COM20")  #modify port according to your board
 # tweaking default torso settings
@@ -65,7 +51,9 @@ ear.addCommand("capture gesture", ear.getName(), "captureGesture")
 ear.addCommand("manual", ear.getName(), "lockOutAllGrammarExcept", "voice control")
 ear.addCommand("voice control", ear.getName(), "clearLock")
 ear.addCommand("test your stomach", "python", "teststomach")
- 
+
+ # Confirmations and Negations are not supported yet in WebkitSpeechRecognition
+# So commands will execute immediatley
 ear.addComfirmations("yes","correct","ya","yeah", "yes please", "yes of course")
 ear.addNegations("no","wrong","nope","nah","no thank you", "no thanks")
 
