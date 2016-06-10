@@ -1,3 +1,6 @@
+#
+# Voices can be found here : http://www.acapela-group.com/?lang=en
+#
 speech = Runtime.createAndStart("Speech","AcapelaSpeech")
 speech.setVoice("Sharon")
 speech.speakBlocking("Hello world")
