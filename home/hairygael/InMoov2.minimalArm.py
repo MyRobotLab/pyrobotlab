@@ -4,10 +4,17 @@
 # a very minimal script for InMoov
 # although this script is very short you can still
 # do voice control of a right Arm
-# for any command which you say - you will be required to say a confirmation
-# e.g. you say -> arm front, InMoov will ask -> "Did you say arm front?", you will need to
-# respond with a confirmation ("yes","correct","yeah","ya")
+# It uses WebkitSpeechRecognition, so you need to use Chrome as your default browser for this script to work
 
+# Start the webgui service without starting the browser
+webgui = Runtime.create("WebGui","WebGui")
+webgui.autoStartBrowser(False)
+webgui.startService()
+# Then start the browsers and show the WebkitSpeechRecognition service named i01.ear
+webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
+
+# As an alternative you can use the line below to show all services in the browser. In that case you should comment out all lines above that starts with webgui. 
+# webgui = Runtime.createAndStart("webgui","WebGui")
 leftPort = "COM13"  #modify port according to your board
 rightPort = "COM17" #modify port according to your board
 
@@ -17,7 +24,7 @@ i01.startEar()
 # starting parts
 i01.startMouth()
 #to tweak the default voice
-i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
+i01.mouth.setVoice("Ryan")
 ##############
 i01.startLeftArm(leftPort)
 #tweak defaults LeftArm
@@ -48,7 +55,9 @@ ear.addCommand("da vinci", i01.getName(), "daVinci")
 ear.addCommand("capture gesture", ear.getName(), "captureGesture")
 ear.addCommand("manual", ear.getName(), "lockOutAllGrammarExcept", "voice control")
 ear.addCommand("voice control", ear.getName(), "clearLock")
- 
+
+# Confirmations and Negations are not supported yet in WebkitSpeechRecognition
+# So commands will execute immediatley
 ear.addComfirmations("yes","correct","ya","yeah", "yes please", "yes of course")
 ear.addNegations("no","wrong","nope","nah","no thank you", "no thanks")
 
