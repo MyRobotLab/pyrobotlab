@@ -1084,10 +1084,10 @@ void processDigitalPinArray(sensor_type& sensor) {
 
 	if (sensor.pins.size() > 0) {
 		Serial.write(MAGIC_NUMBER);
-		Serial.write(2 + sensor.pins.size() * 2);
+		Serial.write(2 + sensor.pins.size() * 1);
 		Serial.write(PUBLISH_SENSOR_DATA);
 		Serial.write(sensor.index);
-		Serial.write(sensor.pins.size() * 2); // size of sensor data
+		Serial.write(sensor.pins.size() * 1); // size of sensor data
 
 		for (int i = 0; i < sensor.pins.size(); ++i) {
 			pin_type& pin = sensor.pins.get(i);
