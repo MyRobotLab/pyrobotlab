@@ -1076,7 +1076,6 @@ void processAnalogPinArray(sensor_type& sensor) {
 			Serial.write(pin.value >> 8);   // MSB
 			Serial.write(pin.value & 0xff); // LSB
 		}
-
 	}
 }
 
@@ -1093,69 +1092,49 @@ void processDigitalPinArray(sensor_type& sensor) {
 			pin_type& pin = sensor.pins.get(i);
 
 			pin.value = digitalRead(pin.address);
-			// Serial.write(pin.value >> 8);   // MSB
 			Serial.write(pin.value & 0xff); // LSB
 		}
-
 	}
 }
 
 // This function updates the sensor data (both analog and digital reading here.)
 void updateSensors() {
-  unsigned long ts;
 
   // iterate through our list of sensors
   for (int i = 0; i < sensorList.size(); i++) {
 
 	sensor_type& sensor = sensorList.get(i);
 
-    switch (pin.sensorType) {
-      case SENSOR_TYPE_ANALOG_PIN_ARRAY:
+    switch (sensor.type) {
+      case SENSOR_TYPE_ANALOG_PIN_ARRAY:{
     	  processAnalogPinArray(sensor);
         break;
+      }
 
-      case SENSOR_TYPE_DIGITAL_PIN_ARRAY:
+      case SENSOR_TYPE_DIGITAL_PIN_ARRAY:{
     	  processDigitalPinArray(sensor);
         break;
-        // if my value is different from last time - send it
-        // if (pin.lastValue != pin.value || !pin.s) //TODO - SEND_DELTA_MIN_DIFF
-        //if (pin.lastValue != pin.value || (loopCount%pin.rateModulus) == 0) {
-          //sendMsg(4, ANALOG_VALUE, analogReadPin[i], readValue >> 8, readValue & 0xff);
-          //publishSensorData(pin.sensorIndex, pin.address, pin.value);
-        //}
-        // set the last input value of this pin  (This is a type cast error?! why cast to unsigned long here?)
-        //pin.lastValue = pin.value;
-        // publishDebug("PUBDONE");
+      }
 
-      case SENSOR_TYPE_ULTRASONIC:
-        publishDebug("US1");
-        // FIXME - handle in own function - the overhead is worth not having
-        // 200+ lines of code inlined here !
-        // we are running & have an ultrasonic (ping) pin
-        // check to see what state we  are in
-        handleUltrasonicPing(pin, ts);
-        publishDebug("US2");
+      case SENSOR_TYPE_ULTRASONIC:{
+    	  processUltrasonic(sensor);
         break;
-      // because pin pulse & pulsing are so closely linked
-      // the pulse will be handled here as well even if the
-      // read data sent back on serial is disabled
-      case SENSOR_TYPE_PULSE:
-        publishDebug("PT1");
-        // TODO - implement - rate = modulo speed
-        // if (loopCount%rate == 0) {
-        // toggle pin state
-        handlePulseType(pin);
-        publishDebug("PT2");
+      }
+
+      case SENSOR_TYPE_PULSE:{
+        processPulse(sensor);
         break;
+      }
+
       default:
         publishDebug("UNK1");
         sendError(ERROR_UNKOWN_SENSOR);
         publishDebug("UNK2");
         break;
-    }
-    //publishDebug("SPD " + String(i));
+    } // end switch(sensor.type)
+
   } // end for each pin
-  publishDebug("USDONE");
+
 }
 
 
@@ -1600,8 +1579,8 @@ void handlePulseType(pin_type& pin) {
 
 }
 
-
-void handleUltrasonicPing(pin_type& pin, unsigned long ts) {
+// sensor type processing begin
+void processUltrasonic(pin_type& pin, unsigned long ts) {
   if (pin.state == ECHO_STATE_START) {
     // trigPin prepare - start low for an
     // upcoming high pulse
