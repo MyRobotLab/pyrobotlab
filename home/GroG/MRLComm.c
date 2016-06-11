@@ -586,29 +586,37 @@ byte msgBuf[64];
 typedef struct
 {
   // general
-  int sensorIndex; // the all important index of the sensor - equivalent to the "name" - used in callbacks
-  // FIXME - THIS NEEDS TO BE NORMALIZED IN CODE GENERATOR / BINDER
-  int sensorType; // SENSOR_TYPE_DIGITAL_PIN_READER |  SENSOR_TYPE_ANALOG_PIN_READER | SENSOR_TYPE_DIGITAL_PIN | SENSOR_TYPE_PULSE | SENSOR_TYPE_ULTRASONIC
+
+  int pinType; // might be useful in control
   int address; // pin #
-  int state; // state - single at the moment to handle all the finite states of the sensor
   int value;
+  int state; // state of the pin - not sure if needed - reading | writing | some other state ?
+  int readModulus; // rate of reading or publish sensor data
 
-  // FYI - creating unions "might" make things a little more readable
-  // MAKE NOTE !! - Pins will need to "reference" one another
-  // so that when they are processed the "lead" pin in say a stepper
-  // will "activate" the next pin in sequence so that the correct sequence will be
-  // pulsed
-
-  // int mode; // input or output - not needed - Arduino service should handle it
-  bool isActive;
-  int rateModulus; // sample rate or feedback control with modulus
   int debounce; // long lastDebounceTime - minDebounceTime
-  int rate;
-  unsigned long count;
+
+  // number of reads ?
   unsigned long target;
+
+}  pin_type;
+
+
+typedef struct
+{
+  int sensorIndex; // the all important index of the sensor - equivalent to the "name" - used in callbacks
+  int state; // state - single at the moment to handle all the finite states of the sensor
+  int sensorType; // SENSOR_TYPE_DIGITAL_PIN_READER |  SENSOR_TYPE_ANALOG_PIN_READER | SENSOR_TYPE_DIGITAL_PIN | SENSOR_TYPE_PULSE | SENSOR_TYPE_ULTRASONIC
+  // bool isActive; - not currently needed as inactive sensors are removed from the sensorList
+  int readModulus; // rate of reading or publish sensor data
+
+  LinkedList<pin_type> pins; // the pins currently assigned to this sensor 0 to many
+
+  LinkedList<int> memory; // additional memory for the sensor if needed
+
 
   // next pin in a multi-pin process - e.g.
   // UltrasonicSensor - trigger pin's nextPin would be the echo pin
+  /* -- these things will be defined in the sensorTypeMethod - and may require the use of Sensor memory
   int nextPin;
 
   // srf05
@@ -617,15 +625,9 @@ typedef struct
   int timeoutUS;
   unsigned long ts;
   unsigned long lastValue;
+  */
 
-}  pin_type;
 
-pin_type pins[SENSORS_MAX];
-
-typedef struct
-{
-  int index;
-  LinkedList<pin_type> pins;
 } sensor;
 
 LinkedList<sensor> sensorList = LinkedList<sensor>();
