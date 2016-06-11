@@ -587,11 +587,11 @@ typedef struct
 {
   // general
 
-  int pinType; // might be useful in control
+  int type; // might be useful in control
   int address; // pin #
   int value;
   int state; // state of the pin - not sure if needed - reading | writing | some other state ?
-  int readModulus; // rate of reading or publish sensor data
+  // int readModulus; // rate of reading or publish sensor data
 
   int debounce; // long lastDebounceTime - minDebounceTime
 
@@ -603,11 +603,11 @@ typedef struct
 
 typedef struct
 {
-  int sensorIndex; // the all important index of the sensor - equivalent to the "name" - used in callbacks
+  int index; // the all important index of the sensor - equivalent to the "name" - used in callbacks
   int state; // state - single at the moment to handle all the finite states of the sensor
-  int sensorType; // SENSOR_TYPE_DIGITAL_PIN_READER |  SENSOR_TYPE_ANALOG_PIN_READER | SENSOR_TYPE_DIGITAL_PIN | SENSOR_TYPE_PULSE | SENSOR_TYPE_ULTRASONIC
+  int type; // SENSOR_TYPE_DIGITAL_PIN_READER |  SENSOR_TYPE_ANALOG_PIN_READER | SENSOR_TYPE_DIGITAL_PIN | SENSOR_TYPE_PULSE | SENSOR_TYPE_ULTRASONIC
   // bool isActive; - not currently needed as inactive sensors are removed from the sensorList
-  int readModulus; // rate of reading or publish sensor data
+  // int readModulus; // rate of reading or publish sensor data
 
   LinkedList<pin_type> pins; // the pins currently assigned to this sensor 0 to many
 
@@ -735,22 +735,10 @@ void softReset() {
       s.servo->detach();
     }
   }
-  for (int i = 0; i < SENSORS_MAX - 1; ++i) {
-    resetPin(i);
-  }
+
   loopCount = 0;
 }
 
-void resetPin(int pinIndex) {
-  pin_type& pin = pins[pinIndex];
-  pin.isActive = false;
-  pin.address = pinIndex; // pin #
-  pin.sensorIndex = 0; // all pins initially belong to Arduino service
-  pin.rateModulus = 1; // full feedback/sample rate
-  pin.count = 0;
-  pin.target = 0;
-  pin.nextPin = -1;
-}
 
 unsigned long toUnsignedLongfromBigEndian(unsigned char* buffer, int start) {
   return (((unsigned long)buffer[start] << 24) + ((unsigned long)buffer[start + 1] << 16) + (buffer[start + 2] << 8) + buffer[start + 3]);
@@ -1072,46 +1060,62 @@ void updateSensorsNew() {
   }
 }
 
+void processAnalogPinArray(sensor_type& sensor) {
+
+	if (sensor.pins.size() > 0) {
+		Serial.write(MAGIC_NUMBER);
+		Serial.write(2 + sensor.pins.size() * 2);
+		Serial.write(PUBLISH_SENSOR_DATA);
+		Serial.write(sensor.index);
+		Serial.write(sensor.pins.size() * 2); // size of sensor data
+
+		for (int i = 0; i < sensor.pins.size(); ++i) {
+			pin_type& pin = sensor.pins.get(i);
+
+			pin.value = analogRead(pin.address);
+			Serial.write(pin.value >> 8);   // MSB
+			Serial.write(pin.value & 0xff); // LSB
+		}
+
+	}
+}
+
+void processDigitalPinArray(sensor_type& sensor) {
+
+	if (sensor.pins.size() > 0) {
+		Serial.write(MAGIC_NUMBER);
+		Serial.write(2 + sensor.pins.size() * 2);
+		Serial.write(PUBLISH_SENSOR_DATA);
+		Serial.write(sensor.index);
+		Serial.write(sensor.pins.size() * 2); // size of sensor data
+
+		for (int i = 0; i < sensor.pins.size(); ++i) {
+			pin_type& pin = sensor.pins.get(i);
+
+			pin.value = digitalRead(pin.address);
+			// Serial.write(pin.value >> 8);   // MSB
+			Serial.write(pin.value & 0xff); // LSB
+		}
+
+	}
+}
+
 // This function updates the sensor data (both analog and digital reading here.)
 void updateSensors() {
   unsigned long ts;
-  for (int i = 0; i < SENSORS_MAX; i++) {
-    pin_type& pin = pins[i];
-    if (!pin.isActive) {
-      continue;
-    }
-    publishDebug("INDX:" + String(i) + " ADDR:" + String(pin.address));
+
+  // iterate through our list of sensors
+  for (int i = 0; i < sensorList.size(); i++) {
+
+	sensor_type& sensor = sensorList.get(i);
+
     switch (pin.sensorType) {
-      case SENSOR_TYPE_ANALOG_PIN_READER:
-        publishDebug("AR1" + String(pin.address));
-        pin.value = analogRead(pin.address);
-        // pin.value = analogRead(pin.address);
-        publishDebug("AR2:" + String(pin.sensorIndex));
-        publishDebug("AR3:" + String(pin.address));
-        publishDebug("AR4:" + String(pin.value));
-        publishSensor(pin.sensorIndex, pin.sensorType, pin.address, pin.value);
-        //Serial.flush();
-        //Serial.write(MAGIC_NUMBER);
-        //Serial.write(5); // size
-        //Serial.write(PUBLISH_SENSOR_DATA);
-        //Serial.write((byte)pin.sensorIndex);
-        //Serial.write((byte)14);
-        //Serial.write((byte)0);
-        //Serial.write((byte)123);
-        //Serial.write(sensorIndex);
-        //Serial.write(address);
-       // Serial.write(value >> 8);   // MSB
-        //Serial.write(value & 0xff); // LSB
-        Serial.flush();
-        publishDebug("AR5:" + String(pin.address));
+      case SENSOR_TYPE_ANALOG_PIN_ARRAY:
+    	  processAnalogPinArray(sensor);
         break;
-      case SENSOR_TYPE_DIGITAL_PIN_READER:
-        publishDebug("DR1");
-        // read the pin
-        pin.value = digitalRead(pin.address);
-        publishDebug("DR2");
-        publishSensor(pin.sensorIndex, pin.sensorType, pin.address, pin.value);
-        publishDebug("DR3");
+
+      case SENSOR_TYPE_DIGITAL_PIN_ARRAY:
+    	  processDigitalPinArray(sensor);
         break;
         // if my value is different from last time - send it
         // if (pin.lastValue != pin.value || !pin.s) //TODO - SEND_DELTA_MIN_DIFF
@@ -1527,25 +1531,6 @@ void sensorAttach() {
   publishDebug("ESAM");
 }
 
-// SENSOR_POLLING_START
-void sensorPollingStart() {
-  // FIXME - this is the same as DIGITAL PIN POLLING START
-  int sensorIndex = ioCmd[1];
-  pin_type& pin = pins[sensorIndex];
-  pin.isActive = true;
-  // I'm used to ms - and would need to change some
-  // interfaces if i was to support inbound longs
-  //pin.timeoutUS = ioCmd[2] * 1000;
-  pin.timeoutUS = 20000; // 20 ms
-  pin.state = ECHO_STATE_START;
-}
-
-// SENSOR_POLLING_STOP
-void sensorPollingStop() {
-  int sensorIndex = ioCmd[1];
-  pin_type& pin = pins[sensorIndex];
-  pin.isActive = false;
-}
 
 // Adafruit commands
 // AF_BEGIN
