@@ -533,23 +533,26 @@ void LinkedList<T>::clear(){
 #define ERROR_DOES_NOT_EXIST    4
 #define ERROR_UNKOWN_SENSOR     5
 
+// ==============================================
+// GLOBAL DEVICE TYPES BEGIN
+// THESE ARE MICROCONTROLLER AGNOSTIC !
+// and defined in org.myrobotlab.service.interface.Device
+// These values "must" align with the Device class
+// TODO - find a way to auto sync this
+#define SENSOR_TYPE_ANALOG_PIN_ARRAY  	0
+#define SENSOR_TYPE_DIGITAL_PIN_ARRAY  	1
+#define SENSOR_TYPE_PULSE  				2
+#define SENSOR_TYPE_ULTRASONIC  		3
 
-// ------ sensor types ------
-// refer to - org.myrobotlab.service.interfaces.SensorDataSink
-// TODO: fully flush these out. digita/analog pin etc..
-// there are multiple references to this.
-// if it's in here, it should be in the arduino msg codec...
-#define SENSOR_TYPE_PIN             0
-#define SENSOR_TYPE_ULTRASONIC      4
-#define SENSOR_TYPE_PULSE           2
+#define DEVICE_TYPE_STEPPER  			4
+#define DEVICE_TYPE_MOTOR  				5
+#define DEVICE_TYPE_SERVO  				6
+// GLOBAL DEVICE TYPES END
+// ==============================================
+
 
 // need a method to identify type of board
 // http://forum.arduino.cc/index.php?topic=100557.0
-
-#define COMMUNICATION_RESET    252
-#define PUBLISH_MESSAGE_ACK    127
-#define PUBLISH_DEBUG          126
-#define NOP            255
 
 // ----------  MRLCOMM FUNCTION INTERFACE END -----------
 
@@ -558,10 +561,6 @@ void LinkedList<T>::clear(){
 // TODO - BOARD IDENTIFICATION - PIN IDENTIFICATION
 // #define NUM_DIGITAL_PINS            20
 // #define NUM_ANALOG_INPUTS           6
-
-// #define SENSORS_MAX  NUM_DIGITAL_PINS // this is max number of pins (analog included)
-// TODO: Setting to value larger than 32 causes TX/RX errors in MRL. (Make sensor loop faster to fix.)
-#define SENSORS_MAX  3
 
 #define DIGITAL_PIN_COUNT
 
@@ -581,8 +580,8 @@ int msgSize = 0; // the NUM_BYTES of current message
 unsigned int debounceDelay = 50; // in ms
 byte msgBuf[64];
 
-// FIXME - make union of struct pins
-// all start with general / common section - with "type" :)
+#define MAX_DEVICES		30
+
 typedef struct
 {
   // general
@@ -603,16 +602,18 @@ typedef struct
 
 typedef struct
 {
+
   int index; // the all important index of the sensor - equivalent to the "name" - used in callbacks
   int state; // state - single at the moment to handle all the finite states of the sensor
   int type; // SENSOR_TYPE_DIGITAL_PIN_READER |  SENSOR_TYPE_ANALOG_PIN_READER | SENSOR_TYPE_DIGITAL_PIN | SENSOR_TYPE_PULSE | SENSOR_TYPE_ULTRASONIC
-  // bool isActive; - not currently needed as inactive sensors are removed from the sensorList
+  // bool isActive; - not currently needed as inactive sensors are removed from the deviceList
   // int readModulus; // rate of reading or publish sensor data
 
   LinkedList<pin_type> pins; // the pins currently assigned to this sensor 0 to many
 
   LinkedList<int> memory; // additional memory for the sensor if needed
 
+  Servo* servo; // servo pointer - in case our device is a servo
 
   // next pin in a multi-pin process - e.g.
   // UltrasonicSensor - trigger pin's nextPin would be the echo pin
@@ -628,12 +629,13 @@ typedef struct
   */
 
 
-} sensor;
+} device_type;
 
-LinkedList<sensor> sensorList = LinkedList<sensor>();
-
+LinkedList<device_type> deviceList;
+// device_type* deviceList[MAX_DEVICES];
 
 // Servos
+/*
 typedef struct
 {
   Servo* servo;
@@ -658,6 +660,7 @@ typedef struct
 
 
 servo_type servos[MAX_SERVOS];
+*/
 
 unsigned long loopCount = 0;
 unsigned long lastMicros = 0;
@@ -678,9 +681,11 @@ unsigned int sampleRate = 1; // 1 - 65,535 modulus of the loopcount - allowing y
 
 // define any functions that pass structs into them.
 void sendServoEvent(servo_type& s, int eventType);
-unsigned long getUltrasonicRange(pin_type& pin);
-void handleUltrasonicPing(pin_type& pin, unsigned long ts);
 void handlePulseType(pin_type& pin);
+
+// sensor handlers
+void handleUltrasonic(sensor_type&);
+
 
 bool debug = false;
 
@@ -706,25 +711,15 @@ void loop() {
   publishDebug("Main" + String(loopCount));
   // get a command and process it from the serial port (if available.)
   if (getCommand()) {
-    publishDebug("GotCMD");
     processCommand();
-    publishDebug("ProcCMD");
   }
-  // update servo positions
-  publishDebug("UpdateServos");
-  updateServos();
-  // publishDebug("UpdateServos");
-  // update analog sensor data stuffs
-  // updateSensors();
-  publishDebug("UpdateSensors Start");
-  updateSensorsNew();
-  publishDebug("UpdateSensors End");
-  // publishDebug("UpdateSensors");
+
+  // update devices
+  updateDevices();
 
   // update and report timing metrics
   updateStats();
-  // publishDebug("UpdatedStat");
-  // Serial.flush();
+
 } // end of big loop
 
 void softReset() {
@@ -940,10 +935,8 @@ void processCommand() {
   case SOFT_RESET:
     softReset();
     break;
-  case SENSOR_ATTACH:
-    publishDebug("SA_NEW_BEGIN");
-    sensorAttachNew();
-    publishDebug("SA_NEW_END");
+  case ADD_SENSOR_DATA_LISTENER:
+    addSensorDataListener();
     break;
   case SENSOR_POLLING_START:
     sensorPollingStart();
@@ -963,9 +956,6 @@ void processCommand() {
     break;
   case AF_SET_SERVO:
     afSetServo();
-    break;
-  case NOP:
-    // No Operation
     break;
   case SET_DEBUG:
     debug = ioCmd[1];
@@ -1030,13 +1020,13 @@ void updateSensorsNew() {
   // TODO: publish data from pins that are publishing data.
   // TODO: I'd much prefer use an iterator over the linked list of sensors!
 
-  int numSensors = sensorList.size();
+  int numSensors = deviceList.size();
   if (numSensors > 0) {
     publishDebug("Update Sensors : " + String(numSensors));
   }
   for (int sIdx = 0; sIdx < numSensors; sIdx++) {
     publishDebug("Update Sensor " + String(sIdx));
-    sensor s = sensorList.get(sIdx);
+    sensor s = deviceList.get(sIdx);
     // update the values of the pins for each sensor we have.
     int numPins = s.pins.size();
     for (int pIdx = 0; pIdx < numPins; pIdx++) {
@@ -1060,64 +1050,29 @@ void updateSensorsNew() {
   }
 }
 
-void processAnalogPinArray(sensor_type& sensor) {
 
-	if (sensor.pins.size() > 0) {
-		Serial.write(MAGIC_NUMBER);
-		Serial.write(2 + sensor.pins.size() * 2);
-		Serial.write(PUBLISH_SENSOR_DATA);
-		Serial.write(sensor.index);
-		Serial.write(sensor.pins.size() * 2); // size of sensor data
-
-		for (int i = 0; i < sensor.pins.size(); ++i) {
-			pin_type& pin = sensor.pins.get(i);
-
-			pin.value = analogRead(pin.address);
-			Serial.write(pin.value >> 8);   // MSB
-			Serial.write(pin.value & 0xff); // LSB
-		}
-	}
-}
-
-void processDigitalPinArray(sensor_type& sensor) {
-
-	if (sensor.pins.size() > 0) {
-		Serial.write(MAGIC_NUMBER);
-		Serial.write(2 + sensor.pins.size() * 1);
-		Serial.write(PUBLISH_SENSOR_DATA);
-		Serial.write(sensor.index);
-		Serial.write(sensor.pins.size() * 1); // size of sensor data
-
-		for (int i = 0; i < sensor.pins.size(); ++i) {
-			pin_type& pin = sensor.pins.get(i);
-
-			pin.value = digitalRead(pin.address);
-			Serial.write(pin.value & 0xff); // LSB
-		}
-	}
-}
 
 // This function updates the sensor data (both analog and digital reading here.)
 void updateSensors() {
 
   // iterate through our list of sensors
-  for (int i = 0; i < sensorList.size(); i++) {
+  for (int i = 0; i < deviceList.size(); i++) {
 
-	sensor_type& sensor = sensorList.get(i);
+	sensor_type& sensor = deviceList.get(i);
 
     switch (sensor.type) {
       case SENSOR_TYPE_ANALOG_PIN_ARRAY:{
-    	  processAnalogPinArray(sensor);
+    	  handleAnalogPinArray(sensor);
         break;
       }
 
       case SENSOR_TYPE_DIGITAL_PIN_ARRAY:{
-    	  processDigitalPinArray(sensor);
+    	  handleDigitalPinArray(sensor);
         break;
       }
 
       case SENSOR_TYPE_ULTRASONIC:{
-    	  processUltrasonic(sensor);
+    	  handleUltrasonic(sensor);
         break;
       }
 
@@ -1127,9 +1082,7 @@ void updateSensors() {
       }
 
       default:
-        publishDebug("UNK1");
         sendError(ERROR_UNKOWN_SENSOR);
-        publishDebug("UNK2");
         break;
     } // end switch(sensor.type)
 
@@ -1152,20 +1105,6 @@ void updateStats() {
   }
 }
 
-unsigned long getUltrasonicRange(pin_type& pin) {
-  // added for pins which have single pin !
-  pinMode(pin.trigPin, OUTPUT);
-  digitalWrite(pin.trigPin, LOW);
-  delayMicroseconds(2);
-  digitalWrite(pin.trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(pin.trigPin, LOW);
-  // added for pins which have single pin !
-  pinMode(pin.echoPin, INPUT);
-  // CHECKING return pulseIn(pin.echoPin, HIGH, pin.timeoutUS);
-  // TODO - adaptive timeout ? - start big - pull in until valid value - push out if range is coming close
-  return pulseIn(pin.echoPin, HIGH);
-}
 
 // Start of Adafruit16CServoDriver methods
 // I2C write
@@ -1327,7 +1266,7 @@ void analogReadPollingStartNew() {
   // add the pin to the sensor
   s.pins.add(p);
   // add the sensor to the global list of sensors.
-  sensorList.add(s);
+  deviceList.add(s);
 }
 // ANALOG_READ_POLLING_START
 void analogReadPollingStart() {
@@ -1432,8 +1371,42 @@ void setSampleRate() {
   } // avoid /0 error - FIXME - time estimate param
 }
 
-// SENSOR_ATTACH
-void sensorAttachNew() {
+// MSG STRUCTURE
+// ATTACH_DEVICE|DEVICE_TYPE|CONFIG_MSG_SIZE|DATA0|DATA1|....
+// Device types are defined in org.myrobotlab.service.interface.Device
+void attachDevice(){
+	// TODO GET SERVICE NAME
+	int deviceType   = ioCmd[1];
+	void* deviceIndex = 0;
+	switch(deviceType){
+	case SENSOR_TYPE_ANALOG_PIN_ARRAY:{
+		deviceIndex = attachAnalogPinArray();
+		break;
+	}
+	}
+
+	publishDeviceAttached(deviceIndex);
+
+	Serial.write()
+}
+
+
+void publishDeviceAttached(unsigned long ptr){
+	// PUBLISH_ATTACHED_DEVICE | NAME_STR_SIZE | NAME | NEW_DEVICE_INDEX
+	  Serial.write(PUBLISH_ATTACHED_DEVICE);
+	  Serial.write(2); // size
+	  ioCmd[2]
+	  Serial.write(PUBLISH_VERSION);
+	  Serial.write((byte)MRLCOMM_VERSION);
+	  Serial.flush();
+}
+
+void* attachAnalogPinArray(){
+
+
+}
+
+void addSensorDataListener() {
 
   int sensorIndex    = ioCmd[1];
   int sensorType     = ioCmd[2];
@@ -1461,8 +1434,8 @@ void sensorAttachNew() {
   publishDebug("adding pins.");
   s.pins = sensorPins;
   publishDebug("Adding sensors");
-  sensorList.add(s);
-  publishDebug("NUM SENS:"+String(sensorList.size()));
+  deviceList.add(s);
+  publishDebug("NUM SENS:"+String(deviceList.size()));
   publishDebug("Done with sensor attach.");
 }
 
@@ -1548,39 +1521,116 @@ void afSetServo() {
   setPWM(ioCmd[1], ioCmd[2], 0, (ioCmd[3] << 8) + ioCmd[4]);
 }
 
-void handlePulseType(pin_type& pin) {
-  pin.lastValue = (pin.lastValue == 0) ? 1 : 0;
-  // leading edge ... 0 to 1
-  if (pin.lastValue == 1) {
-    pin.count++;
-    if (pin.count >= pin.target) {
-      pin.state = PUBLISH_PULSE_STOP;
-    }
-  }
-  // change state of pin
-  digitalWrite(pin.address, pin.lastValue);
-  // move counter/current position
-  // see if feedback rate is valid
-  // if time to send feedback do it
-  // if (loopCount%feedbackRate == 0)
-  // 0--to-->1 counting leading edge only
-  // pin.method == PUBLISH_PULSE_PIN &&
-  // stopped on the leading edge
-  if (pin.state != PUBLISH_PULSE_STOP && pin.lastValue == 1) {
-    publishPulseStop(pin.state, pin.sensorIndex, pin.address, pin.count);
-    // deactivate
-    // lastDebounceTime[digitalReadPin[i]] = millis();
-  }
-  if (pin.state == PUBLISH_PULSE_STOP) {
-    pin.isActive = false;
-  }
-  // publish the pulse!
-  publishPulse(pin.state, pin.sensorIndex, pin.address, pin.count);
+
+
+// send an error message/code back to MRL.
+void sendError(int type) {
+  Serial.write(MAGIC_NUMBER);
+  Serial.write(2); // size = 1 FN + 1 TYPE
+  Serial.write(PUBLISH_MRLCOMM_ERROR);
+  Serial.write(type);
+}
+
+// publish a servo event.
+void sendServoEvent(servo_type& s, int eventType) {
+  // check type of event - STOP vs CURRENT POS
+  Serial.write(MAGIC_NUMBER);
+  Serial.write(5); // size = 1 FN + 1 INDEX + 1 eventType + 1 curPos
+  Serial.write(PUBLISH_SERVO_EVENT);
+  Serial.write(s.index); // send my index
+  // write the long value out
+  Serial.write(eventType);
+  Serial.write(s.currentPos);
+  Serial.write(s.targetPos);
+}
+
+void publishVersion() {
+  Serial.write(MAGIC_NUMBER);
+  Serial.write(2); // size
+  Serial.write(PUBLISH_VERSION);
+  Serial.write((byte)MRLCOMM_VERSION);
+  Serial.flush();
 
 }
 
-// sensor type processing begin
-void processUltrasonic(pin_type& pin, unsigned long ts) {
+void publishLoadTimingEvent(unsigned long loadTime) {
+  Serial.write(MAGIC_NUMBER);
+  Serial.write(5); // size 1 FN + 4 bytes of unsigned long
+  Serial.write(PUBLISH_LOAD_TIMING_EVENT);
+  // write the long value out
+  Serial.write((byte)(loadTime >> 24));
+  Serial.write((byte)(loadTime >> 16));
+  Serial.write((byte)(loadTime >> 8));
+  Serial.write((byte)loadTime & 0xff);
+}
+
+void sendCommandAck() {
+  Serial.write(MAGIC_NUMBER);
+  Serial.write(2); // size 1 FN + 1 bytes (the function that we're acking.)
+  Serial.write(PUBLISH_MESSAGE_ACK);
+  // the function that we're ack-ing
+  Serial.write(ioCmd[0]);
+  Serial.flush();
+}
+
+// This method will publish a string back to the Arduino service
+// for debugging purproses.
+// NOTE:  If this method gets called excessively
+// I have seen memory corruption in the arduino where
+// it seems to be getting a null string passed in as "message"
+// very very very very very odd..  I suspect a bug in the arduino hard/software
+void publishDebug(String message) {
+  if (debug) {
+    Serial.flush();
+    Serial.write(MAGIC_NUMBER);
+    Serial.write(1+message.length());
+    Serial.write(PUBLISH_DEBUG);
+    Serial.print(message);
+    Serial.flush();
+  }
+}
+
+
+//========== sensor handlers begin ==================
+
+void handleAnalogPinArray(sensor_type& sensor) {
+
+	if (sensor.pins.size() > 0) {
+		Serial.write(MAGIC_NUMBER);
+		Serial.write(2 + sensor.pins.size() * 2);
+		Serial.write(PUBLISH_SENSOR_DATA);
+		Serial.write(sensor.index);
+		Serial.write(sensor.pins.size() * 2); // size of sensor data
+
+		for (int i = 0; i < sensor.pins.size(); ++i) {
+			pin_type& pin = sensor.pins.get(i);
+
+			pin.value = analogRead(pin.address);
+			Serial.write(pin.value >> 8);   // MSB
+			Serial.write(pin.value & 0xff); // LSB
+		}
+	}
+}
+
+void handleDigitalPinArray(sensor_type& sensor) {
+
+	if (sensor.pins.size() > 0) {
+		Serial.write(MAGIC_NUMBER);
+		Serial.write(2 + sensor.pins.size() * 1);
+		Serial.write(PUBLISH_SENSOR_DATA);
+		Serial.write(sensor.index);
+		Serial.write(sensor.pins.size() * 1); // size of sensor data
+
+		for (int i = 0; i < sensor.pins.size(); ++i) {
+			pin_type& pin = sensor.pins.get(i);
+
+			pin.value = digitalRead(pin.address);
+			Serial.write(pin.value & 0xff); // LSB
+		}
+	}
+}
+
+void handleUltrasonic(sensor_type& sensor) {
   if (pin.state == ECHO_STATE_START) {
     // trigPin prepare - start low for an
     // upcoming high pulse
@@ -1639,148 +1689,38 @@ void processUltrasonic(pin_type& pin, unsigned long ts) {
   } // end else if
 }
 
-
-// send an error message/code back to MRL.
-void sendError(int type) {
-  Serial.write(MAGIC_NUMBER);
-  Serial.write(2); // size = 1 FN + 1 TYPE
-  Serial.write(PUBLISH_MRLCOMM_ERROR);
-  Serial.write(type);
-}
-
-// publish a servo event.
-void sendServoEvent(servo_type& s, int eventType) {
-  // check type of event - STOP vs CURRENT POS
-  Serial.write(MAGIC_NUMBER);
-  Serial.write(5); // size = 1 FN + 1 INDEX + 1 eventType + 1 curPos
-  Serial.write(PUBLISH_SERVO_EVENT);
-  Serial.write(s.index); // send my index
-  // write the long value out
-  Serial.write(eventType);
-  Serial.write(s.currentPos);
-  Serial.write(s.targetPos);
-}
-
-void publishVersion() {
-  Serial.write(MAGIC_NUMBER);
-  Serial.write(2); // size
-  Serial.write(PUBLISH_VERSION);
-  Serial.write((byte)MRLCOMM_VERSION);
-  Serial.flush();
-
-}
-
-
-void publishSensor(sensor s) {
-  int numPins = s.pins.size();
-  // sensor data will be
-  // magic + size
-  // publish_sensor_data
-  // index
-  // int array (10 bit values = 2 bytes per pin are returned.)
-
-  int msgSize = 2 + numPins*2;
-
-  Serial.flush();
-  Serial.write(MAGIC_NUMBER);
-  Serial.write(msgSize); //size
-  Serial.write(PUBLISH_SENSOR_DATA);
-  Serial.write(s.index);
-  for (int i = 0; i < numPins; i++) {
-    pin_type pin = s.pins.get(i);
-    Serial.write(pin.value >> 8);   // MSB
-    Serial.write(pin.value & 0xff); // LSB
+void handlePulse(sensor_type& sensor) {
+  pin.lastValue = (pin.lastValue == 0) ? 1 : 0;
+  // leading edge ... 0 to 1
+  if (pin.lastValue == 1) {
+    pin.count++;
+    if (pin.count >= pin.target) {
+      pin.state = PUBLISH_PULSE_STOP;
+    }
   }
-  Serial.flush();
-
-}
-
-// PUBLISH_SENSOR_DATA
-void publishSensor(int sensorIndex, int sensorType, int address, int value) {
-  Serial.flush();
-  Serial.write(MAGIC_NUMBER);
-  Serial.write(6); //size
-  Serial.write(PUBLISH_SENSOR_DATA);
-  Serial.write(sensorIndex);
-  Serial.write(sensorType);
-  Serial.write(address);
-  Serial.write(value >> 8);   // MSB
-  Serial.write(value & 0xff); // LSB
-  Serial.flush();
-}
-
-// TODO: maybe this can be merged with above?
-void publishSensorDataLong(int address, unsigned long lastValue) {
-  Serial.write(MAGIC_NUMBER);
-  Serial.write(6); // size 1 FN + 4 bytes of unsigned long
-  Serial.write(PUBLISH_SENSOR_DATA);
-  Serial.write(address);
-  // write the long value out
-  Serial.write((byte)(lastValue >> 24));
-  Serial.write((byte)(lastValue >> 16));
-  Serial.write((byte)(lastValue >> 8));
-  Serial.write((byte)lastValue & 0xff);
-}
-
-void publishPulseStop(int state, int sensorIndex, int address, unsigned long count) {
-  Serial.write(MAGIC_NUMBER);
-  Serial.write(7); // size
-  //Serial.write(PUBLISH_PULSE_STOP);  ?!?! commented out?
-  Serial.write(state);
-  Serial.write(sensorIndex);   // pin service
-  Serial.write(address);       // Pin#
-  Serial.write(count >> 24);   // MSB zoddly
-  Serial.write(count >> 16);   // MSB
-  Serial.write(count >> 8);    // MSB
-  Serial.write(count & 0xff);  // LSB
-}
-
-void publishPulse(int state, int sensorIndex, int address, unsigned long count) {
-  Serial.write(MAGIC_NUMBER);
-  Serial.write(7); // size
-  //Serial.write(PUBLISH_PULSE);  commented out ?!?!
-  Serial.write(state);
-  Serial.write(sensorIndex);// pin service
-  Serial.write(address);// Pin#
-  Serial.write(count >> 24);   // MSB zoddly
-  Serial.write(count >> 16);   // MSB
-  Serial.write(count >> 8);  // MSB
-  Serial.write(count & 0xff);  // LSB
-}
-
-void publishLoadTimingEvent(unsigned long loadTime) {
-  Serial.write(MAGIC_NUMBER);
-  Serial.write(5); // size 1 FN + 4 bytes of unsigned long
-  Serial.write(PUBLISH_LOAD_TIMING_EVENT);
-  // write the long value out
-  Serial.write((byte)(loadTime >> 24));
-  Serial.write((byte)(loadTime >> 16));
-  Serial.write((byte)(loadTime >> 8));
-  Serial.write((byte)loadTime & 0xff);
-}
-
-void sendCommandAck() {
-  Serial.write(MAGIC_NUMBER);
-  Serial.write(2); // size 1 FN + 1 bytes (the function that we're acking.)
-  Serial.write(PUBLISH_MESSAGE_ACK);
-  // the function that we're ack-ing
-  Serial.write(ioCmd[0]);
-  Serial.flush();
-}
-
-// This method will publish a string back to the Arduino service
-// for debugging purproses.
-// NOTE:  If this method gets called excessively
-// I have seen memory corruption in the arduino where
-// it seems to be getting a null string passed in as "message"
-// very very very very very odd..  I suspect a bug in the arduino hard/software
-void publishDebug(String message) {
-  if (debug) {
-    Serial.flush();
-    Serial.write(MAGIC_NUMBER);
-    Serial.write(1+message.length());
-    Serial.write(PUBLISH_DEBUG);
-    Serial.print(message);
-    Serial.flush();
+  // change state of pin
+  digitalWrite(pin.address, pin.lastValue);
+  // move counter/current position
+  // see if feedback rate is valid
+  // if time to send feedback do it
+  // if (loopCount%feedbackRate == 0)
+  // 0--to-->1 counting leading edge only
+  // pin.method == PUBLISH_PULSE_PIN &&
+  // stopped on the leading edge
+  if (pin.state != PUBLISH_PULSE_STOP && pin.lastValue == 1) {
+    publishPulseStop(pin.state, pin.sensorIndex, pin.address, pin.count);
+    // deactivate
+    // lastDebounceTime[digitalReadPin[i]] = millis();
   }
+  if (pin.state == PUBLISH_PULSE_STOP) {
+    pin.isActive = false;
+  }
+  // publish the pulse!
+  publishPulse(pin.state, pin.sensorIndex, pin.address, pin.count);
+
 }
+
+
+
+
+//========== sensor handlers end ==================
