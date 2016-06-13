@@ -64,7 +64,7 @@ laugh = [" #LAUGH01# ", " #LAUGH02# ", " #LAUGH03# ", " ", " "]
 troat = [" #THROAT01# ", " #THROAT02# ", " #THROAT03# ", " ", " ", " "]
 
 #phrases
-phrase_pascomprisFR = ["Je ne comprend pas", "tu m as dis quoi la", " je comprends rien a ce que tu me dis"]
+phrase_pascomprisFR = ["Je ne comprend pas", "tu m as dis quoi la"," je comprends rien a ce que tu me dis"]
 phrase_pascomprisEN = ["I don t understand","what did you say ?"]
 phrase_jeRechercheFR = ["Je cherche sur le net", "je me renseigne, bouge pas"]
 phrase_jeRechercheEN = ["I do a search on internet", "I m asking god"]
@@ -154,12 +154,9 @@ htmlFilter.addListener("publishText", python.name, "talk")
 
 def talk(data):
 	sleep(1);
-	if IsInmoov==0:
+	if data!="":
 		mouth.speak(unicode(data,'utf-8'))
-	else:
-		mouth.speakBlocking(unicode(data,'utf-8'))
-  	print "chatbot dit :", data
-
+		
 def Parse(utfdata):
 	Light(1,1,0)
 	utfdata = urllib2.urlopen(utfdata).read()
@@ -203,13 +200,6 @@ def askWiki(query): # retourne la description du sujet (query)
 	wikiAnswer = wdf.getDescription(word) # récupère la description su wikidata
 	answer = ( query + " est " + wikiAnswer)
 	if (wikiAnswer == "Not Found !") or (unicode(wikiAnswer[-9:],'utf-8') == u"Wikimédia") : # Si le document n'ai pas trouvé , on réponds "je ne sais pas"
-		if lang=="FR":
-			LANGfind=random.choice(phrase_jeRechercheFR).decode( "utf8" )
-		else:
-			LANGfind=random.choice(phrase_jeRechercheER).decode( "utf8" )
-		answer = LANGfind
-		talk(LANGfind)	
-		sleep(1);
 		answer=(question(query))
 		sleep(1);
 		talk(answer)
@@ -244,13 +234,6 @@ def getProperty(query, what): # retourne la valeur contenue dans la propriété 
 	answer = ( what +" de " + query + " est " + wikiAnswer)
 	
 	if wikiAnswer == "Not Found !":
-		if lang=="FR":
-			LANGfind=random.choice(phrase_jeRechercheFR).decode( "utf8" )
-		else:
-			LANGfind=random.choice(phrase_jeRechercheEN).decode( "utf8" )
-		answer = LANGfind
-		talk(LANGfind)	
-		sleep(1);
 		answer=(question(query+" "+what))
 		sleep(1);
 		talk(answer)
@@ -342,12 +325,22 @@ def Yes(data):
 	i01.head.jaw.rest()
 	i01.detach()
 	
+def SaveMemory():
+	chatBot.savePredicates()
+	chatBot.writeAIMLIF()
+	talk("Je sauvegarde dans ma mémoire à long terme, je n'ai pas encore la science infuse")
+	
 def Meteo():
 	a = Parse(BotURL+"&type=meteo&units="+units+"&city="+CITY.replace(" ", "%20"))
 	mouth.speakBlocking(a)
 	MoveHead()
 
 def question(data):
+	if lang=="FR":
+		LANGfind=random.choice(phrase_jeRechercheFR).decode( "utf8" )
+	else:
+		LANGfind=random.choice(phrase_jeRechercheEN).decode( "utf8" )
+	talk(LANGfind)
 	a = Parse(BotURL+"&type=question&question="+urllib2.quote(data).replace(" ", "%20"))
 	print BotURL+"&type=question&question="+urllib2.quote(data).replace(" ", "%20")
 	if a[0]=="0":
