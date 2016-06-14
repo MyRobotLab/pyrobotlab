@@ -1,4 +1,4 @@
-#file : InMoov2.minimal.py
+#file : InMoov3.minimal.py
 
 # this will run with versions of MRL above 1695
 # a very minimal script for InMoov
