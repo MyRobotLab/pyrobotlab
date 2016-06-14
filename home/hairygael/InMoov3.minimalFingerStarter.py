@@ -53,9 +53,12 @@ i01.startRightHand(rightPort)
 
 def fingeropen():
   i01.moveHand("right",0,0,0,0,0)
+  i01.mouth.speak("ok I open my finger")
 
 def fingerclose():
   i01.moveHand("right",180,180,180,180,180)
+  i01.mouth.speak("my finger is closed")
 
 def fingermiddle():
   i01.moveHand("right",90,90,90,90,90)
+  i01.mouth.speak("ok you have my attention")
