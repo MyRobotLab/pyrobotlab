@@ -52,10 +52,10 @@ ear.startListening()
 i01.startRightHand(rightPort)
 
 def fingeropen():
-  i01.moveIndex("left",0,0,0,0,0)
+  i01.moveHand("right",0,0,0,0,0)
 
 def fingerclose():
-  i01.moveIndex("left",180,180,180,180,180)
+  i01.moveHand("right",180,180,180,180,180)
 
 def fingermiddle():
-  i01.moveIndex("left",90,90,90,90,90)
+  i01.moveHand("right",90,90,90,90,90)
