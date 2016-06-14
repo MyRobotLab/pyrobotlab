@@ -1,6 +1,6 @@
 #file : InMoov2.minimalArm.py
 
-# this will run with versions of MRL above 1695
+# this will run with versions of MRL 1.0.107
 # a very minimal script for InMoov
 # although this script is very short you can still
 # do voice control of a right Arm
