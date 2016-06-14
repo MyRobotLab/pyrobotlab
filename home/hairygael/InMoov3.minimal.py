@@ -17,7 +17,7 @@ webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
 # webgui = Runtime.createAndStart("webgui","WebGui")
 
 # Change to the port that you use
-rightPort = "COM4"
+rightPort = "COM7"
 
 i01 = Runtime.createAndStart("i01", "InMoov")
 i01.startEar()
@@ -59,12 +59,12 @@ ear.addComfirmations("yes","correct","yeah","ya")
 ear.addNegations("no","wrong","nope","nah")
 
 ear.startListening()
-i01.startRightHand(rightPort)
 
-def handopen():
-  i01.moveHand("left",0,0,0,0,0)
+
+def handopen()
   i01.moveHand("right",0,0,0,0,0)
+  i01.mouth.speak("ok I open my hand")
 
 def handclose():
-  i01.moveHand("left",180,180,180,180,180)
   i01.moveHand("right",180,180,180,180,180)
+  i01.mouth.speak("a nice and wide open hand that is")
