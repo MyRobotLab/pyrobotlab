@@ -44,11 +44,11 @@ i01.startRightHand(rightPort)
 # verbal commands
 ear = i01.ear
 
-ear.addCommand("attach right hand", "i01.rightHand", "attach")
-ear.addCommand("disconnect right hand", "i01.rightHand", "detach")
+ear.addCommand("attach your right hand", "i01.rightHand", "attach")
+ear.addCommand("disconnect your right hand", "i01.rightHand", "detach")
 ear.addCommand("rest", i01.getName(), "rest")
-ear.addCommand("open hand", "python", "handopen")
-ear.addCommand("close hand", "python", "handclose")
+ear.addCommand("open your hand", "python", "handopen")
+ear.addCommand("close your hand", "python", "handclose")
 ear.addCommand("capture gesture", ear.getName(), "captureGesture")
 ear.addCommand("manual", ear.getName(), "lockOutAllGrammarExcept", "voice control")
 ear.addCommand("voice control", ear.getName(), "clearLock")
