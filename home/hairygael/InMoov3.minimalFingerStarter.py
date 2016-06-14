@@ -49,7 +49,7 @@ ear.addComfirmations("yes","correct","yeah","ya")
 ear.addNegations("no","wrong","nope","nah")
 
 ear.startListening()
-i01.righthand.attach()
+i01.startRightHand(rightPort)
 
 def fingeropen():
   i01.moveIndex("left",0,0,0,0,0)
