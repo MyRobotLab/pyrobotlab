@@ -33,8 +33,8 @@ i01.mouth.setVoice("Ryan")
 # verbal commands
 ear = i01.ear
 
-ear.addCommand("attach finger", "i01.rightHand.Index", "attach")
-ear.addCommand("disconnect finger", "i01.rightHand.Index", "detach")
+ear.addCommand("attach finger", "i01.rightHand.index", "attach")
+ear.addCommand("disconnect finger", "i01.rightHand.index", "detach")
 ear.addCommand("rest", i01.getName(), "rest")
 ear.addCommand("open finger", "python", "fingeropen")
 ear.addCommand("close finger", "python", "fingerclose")
