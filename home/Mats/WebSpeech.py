@@ -2,7 +2,7 @@
 # It starts the webkitspeechrecognition, the chatbot and the webgui
 # Only works with Chrome Browser !!!!
 # To connect to the webgui use this link:
-# http://<pi ip-address>:8888/#service/webkitspeechrecognition
+# http://<pi ip-address>:8888/#/service/webkitspeechrecognition
 # Replace <pi ip-address> with the ip-address of your PI
 # TODO
 # Testing on Adriod tablet Chrome Pro is almost working. 
