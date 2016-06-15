@@ -3,10 +3,11 @@
 # Only works with Chrome Browser !!!!
 # To connect to the webgui use this link:
 # http://<pi ip-address>:8888/#service/webkitspeechrecognition
-# Replace <pi ip-address> wityh the ip-address of your PI
+# Replace <pi ip-address> with the ip-address of your PI
 # TODO
-# Testing on Adriod tablet Chrome Pro is almost working. It reads and translate from speech to text, but I don't think it's posting the content back
-# Testing on iPhone Chrome,  nothing shows
+# Testing on Adriod tablet Chrome Pro is almost working. 
+# It reads and translate from speech to text, but I don't think it's posting the content back.
+# Testing on iPhone Chrome,  nothing shows in the GUI
 ######################################################################
 # A helper function to print the recognized text to the python window.
 # semi-useful for debugging.
