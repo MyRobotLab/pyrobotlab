@@ -1,8 +1,9 @@
 # This script is working 2016-02-22
 # It starts the webkitspeechrecognition, the chatbot and the webgui
-# Only works with Chrome !!!!
+# Only works with Chrome Browser !!!!
 # To connect to the webgui use this link:
-# http://<thishostname:8888/#service/webkitspeechrecognition
+# http://<pi ip-address>:8888/#service/webkitspeechrecognition
+# Replace <pi ip-address> wityh the ip-address of your PI
 # TODO
 # Testing on Adriod tablet Chrome Pro is almost working. It reads and translate from speech to text, but I don't think it's posting the content back
 # Testing on iPhone Chrome,  nothing shows
