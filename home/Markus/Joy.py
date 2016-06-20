@@ -7,5 +7,5 @@ joystick.setController(1)
 
 def onJoystickInput(data):
   print(data)
-  if (data == "H"):
+  if (data.id== "H" and data.value == 1.0):
     print("Hello")
