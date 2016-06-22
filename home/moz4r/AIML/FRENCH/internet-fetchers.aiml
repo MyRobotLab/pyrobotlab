@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<category><pattern>MONTRE *</pattern>
+<template><oob>
+<mrl>
+<service>python</service>
+<method>exec</method>
+<param>FindImage("<star />")</param>
+</mrl>
+</oob></template>
+</category>
+
+<category><pattern>MONTRE MOI *</pattern>
+<template><srai>MONTRE <star /></srai></template>
+</category>
+
+<category><pattern>MONTRE-MOI *</pattern>
+<template><srai>MONTRE <star /></srai></template>
+</category>
+
+<category><pattern>QUESTION *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>question("<star />")</param>
+			</mrl>
+      </oob></template>
+</category>
+
+
+
+<category><pattern># Météo à *</pattern>
+<template>
+<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>Meteo("<star index="2" />")</param>
+			</mrl>
+      </oob></template>
+</category>
+
+
+<category><pattern>quel temps fait-il à *</pattern>
+<template>
+<srai># Météo à <star /></srai>
+</template>
+</category>
+
+<category><pattern># Météo de *</pattern>
+<template>
+<srai># Météo à <star index="2" /></srai>
+</template>
+</category>
+
+
+
+
+<category><pattern># Météo</pattern>
+<template>
+La météo du monde ? eh bien ça se réchauffe. Pour quelle ville souhaites tu connaitre la météo?
+</template>
+</category>
+
+<category> 
+<pattern> à * </pattern>
+<that># Pour quelle ville souhaites tu connaitre la météo #</that>
+<template> 
+<srai># Météo de <star /></srai>
+</template>
+</category>
+
+<category> 
+<pattern> * </pattern>
+<that># Pour quelle ville souhaites tu connaitre la météo #</that>
+<template> 
+<srai># Météo de <star /></srai>
+</template>
+</category>
+
+
+
+
+</aiml>

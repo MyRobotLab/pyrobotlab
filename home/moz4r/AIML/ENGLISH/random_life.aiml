@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!-- this sentences are run randomly  -->
+
+
+
+<category>
+		<pattern>ALEATOIRE</pattern>
+<template>
+	<random>
+		<li>this is sample</li>
+		<li>this is sample 2</li>
+	</random>
+</template>
+</category>
+
+ 
+<category>
+<pattern>ALEATOIRE2</pattern>
+<template>
+.
+<srai>ALEATOIRE</srai>
+</template>
+</category>
+
+</aiml>

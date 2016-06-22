@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<category><pattern># APPRENTISSAGE #</pattern>
+<template><random>
+<li>J'aime apprendre de nouvelle chose, je t'écoute</li>
+<li>Je suis prêt à apprendre</li>
+</random>
+<think><set name="topic">LEARN1</set></think></template>
+</category>
+<topic name="LEARN1">
+<category><pattern>UN * EST UN *</pattern>
+<template><random>
+<li>Ok, un <star/> est un <star index="2"/>.</li>
+<li>Maintenant je sais que un <star/> est un <star index="2"/>.</li>
+</random>
+<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>SaveMemory()</param>
+			</mrl>
+      </oob>
+<learn>
+<category><pattern>C'EST QUOI UN <eval><star/></eval></pattern>
+<template>
+UN <eval><star/></eval> est UN <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>EST-CE QUE UN <eval><star/></eval> EST UN <eval><star index="2"/></eval></pattern>
+<template>
+OUI un <eval><star/></eval> est un <eval><star index="2"/></eval>.</template>
+</category>
+</learn></template>
+</category>
+
+
+
+
+<category><pattern>UNE * EST UNE *</pattern>
+<template><random>
+<li>Ok, une <star/> est une <star index="2"/>.</li>
+<li>Maintenant je sais qu'une <star/> est une <star index="2"/>.</li>
+</random>
+<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>SaveMemory()</param>
+			</mrl>
+      </oob>
+<learn>
+<category><pattern>C'EST QUOI UNE <eval><star/></eval></pattern>
+<template>
+UNE <eval><star/></eval> est UNE <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>EST-CE QU'UNE <eval><star/></eval> EST UNE <eval><star index="2"/></eval></pattern>
+<template>
+OUI une <eval><star/></eval> est une <eval><star index="2"/></eval>.</template>
+</category>
+</learn></template>
+</category>
+
+
+
+
+
+<category><pattern>LE * EST *</pattern>
+<template><random>
+<li>Ok, le <star/> est  <star index="2"/>.</li>
+<li>Maintenant je sais que le <star/> est  <star index="2"/>.</li>
+</random>
+<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>SaveMemory()</param>
+			</mrl>
+      </oob>
+<learn>
+<category><pattern>COMMENT EST LE <eval><star/></eval></pattern>
+<template>
+LE <eval><star/></eval> EST <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>EST-CE QUE LE <eval><star/></eval> EST <eval><star index="2"/></eval></pattern>
+<template>
+OUI le <eval><star/></eval> est <eval><star index="2"/></eval>.</template>
+</category>
+</learn></template>
+</category>
+
+
+
+<category><pattern>LE * ET *</pattern>
+<template><random>
+<li>Ok, le <star/> est  <star index="2"/>.</li>
+<li>Maintenant je sais que le <star/> est  <star index="2"/>.</li>
+</random>
+<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>SaveMemory()</param>
+			</mrl>
+      </oob>
+<learn>
+<category><pattern>COMMENT ET LE <eval><star/></eval></pattern>
+<template>
+LE <eval><star/></eval> EST <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>EST-CE QUE LE <eval><star/></eval> ET <eval><star index="2"/></eval></pattern>
+<template>
+OUI le <eval><star/></eval> est <eval><star index="2"/></eval>.</template>
+</category>
+</learn></template>
+</category>
+
+
+
+
+<category><pattern>LA * EST *</pattern>
+<template><random>
+<li>Ok, la <star/> est  <star index="2"/>.</li>
+<li>Maintenant je sais que la <star/> est  <star index="2"/>.</li>
+</random>
+<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>SaveMemory()</param>
+			</mrl>
+      </oob>
+<learn>
+<category><pattern>COMMENT EST LA <eval><star/></eval></pattern>
+<template>
+LA <eval><star/></eval> EST <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>EST-CE QUE LA <eval><star/></eval> EST <eval><star index="2"/></eval></pattern>
+<template>
+OUI lA <eval><star/></eval> est <eval><star index="2"/></eval>.</template>
+</category>
+</learn></template>
+</category>
+
+
+
+<category><pattern>LA * ET *</pattern>
+<template><random>
+<li>Ok, la <star/> est  <star index="2"/>.</li>
+<li>Maintenant je sais que la <star/> est  <star index="2"/>.</li>
+</random>
+<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>SaveMemory()</param>
+			</mrl>
+      </oob>
+<learn>
+<category><pattern>COMMENT ET LA <eval><star/></eval></pattern>
+<template>
+LA <eval><star/></eval> EST <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>EST-CE QUE LA <eval><star/></eval> ET <eval><star index="2"/></eval></pattern>
+<template>
+OUI la <eval><star/></eval> est <eval><star index="2"/></eval>.</template>
+</category>
+</learn></template>
+</category>
+
+
+
+
+<category><pattern>LA * EST *</pattern>
+<template><random>
+<li>Ok, la <star/> est  <star index="2"/>.</li>
+<li>Maintenant je sais que la <star/> est  <star index="2"/>.</li>
+</random>
+<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>SaveMemory()</param>
+			</mrl>
+      </oob>
+<learn>
+<category><pattern>COMMENT EST LA <eval><star/></eval></pattern>
+<template>
+LA <eval><star/></eval> EST <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>EST-CE QUE LA <eval><star/></eval> EST <eval><star index="2"/></eval></pattern>
+<template>
+OUI lA <eval><star/></eval> est <eval><star index="2"/></eval>.</template>
+</category>
+</learn></template>
+</category>
+
+
+
+<category><pattern>LES * SONT *</pattern>
+<template><random>
+<li>Ok, les <star/> sont  <star index="2"/>.</li>
+<li>Maintenant je sais que les <star/> sont  <star index="2"/>.</li>
+</random>
+<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>SaveMemory()</param>
+			</mrl>
+      </oob>
+<learn>
+<category><pattern>COMMENT SONT LES <eval><star/></eval></pattern>
+<template>
+LES <eval><star/></eval> SONT <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>EST-CE QUE LES <eval><star/></eval> SONT <eval><star index="2"/></eval></pattern>
+<template>
+OUI les <eval><star/></eval> sont <eval><star index="2"/></eval>.</template>
+</category>
+</learn></template>
+</category>
+
+
+<category><pattern>MA * S'APPELLE *</pattern>
+<template><random>
+<li>Ok, ta <star/> s'appelle <star index="2"/>.</li>
+<li>Maintenant je sais que ta <star/> s'appelle <star index="2"/>.</li>
+</random>
+<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>SaveMemory()</param>
+			</mrl>
+      </oob>
+<learn>
+<category><pattern>COMMENT S'APPELLE MA <eval><star/></eval></pattern>
+<template>
+TA <eval><star/></eval> S'APPELLE <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>EST-CE QUE MA <eval><star/></eval> S'APPELLE <eval><star index="2"/></eval></pattern>
+<template>
+OUI TA <eval><star/></eval> S'APPELLE <eval><star index="2"/></eval>.</template>
+</category>
+</learn></template>
+</category>
+
+
+<category><pattern>MON * S'APPELLE *</pattern>
+<template><random>
+<li>Ok, ton <star/> s'appelle <star index="2"/>.</li>
+<li>Maintenant je sais que ton <star/> s'appelle <star index="2"/>.</li>
+</random>
+<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>SaveMemory()</param>
+			</mrl>
+      </oob>
+<learn>
+<category><pattern>COMMENT S'APPELLE MON <eval><star/></eval></pattern>
+<template>
+TON <eval><star/></eval> S'APPELLE <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>EST-CE QUE MON <eval><star/></eval> S'APPELLE <eval><star index="2"/></eval></pattern>
+<template>
+OUI TON <eval><star/></eval> S'APPELLE <eval><star index="2"/></eval>.</template>
+</category>
+</learn></template>
+</category>
+
+
+
+<category><pattern>EST-CE QUE UNE * EST UNE *</pattern>
+<template>Non ! Un <star/> n'est pas un <star index="2"/>!</template>
+</category>
+
+<category><pattern>EST-CE QUE UN * EST UN *</pattern>
+<template>Non ! Un <star/> n'est pas un <star index="2"/>!</template>
+</category>
+
+<category><pattern>EST-CE QUE LE * EST *</pattern>
+<template>Non ! Le <star/> n'est pas <star index="2"/>!</template>
+</category>
+
+<category><pattern>EST-CE QUE LA * EST *</pattern>
+<template>Non ! La <star/> n'est pas <star index="2"/>!</template>
+</category>
+
+<category><pattern>EST-CE QUE LES * SONT *</pattern>
+<template>Non ! Les <star/> ne sont pas <star index="2"/>!</template>
+</category>
+
+
+</topic>
+</aiml>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<category><pattern>MONTRE *</pattern>
+<template><oob>
+<mrl>
+<service>python</service>
+<method>exec</method>
+<param>FindImage("<star />")</param>
+</mrl>
+</oob></template>
+</category>
+
+
+
+<category><pattern>QUESTION *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>question("<star />")</param>
+			</mrl>
+      </oob></template>
+</category>
+
+<category><pattern>WEATHER *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>Meteo("<star />")</param>
+			</mrl>
+      </oob></template>
+</category>
+
+<category><pattern>SHOW ME *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>FindImage("<star />")</param>
+			</mrl>
+      </oob></template>
+</category>
+</aiml>

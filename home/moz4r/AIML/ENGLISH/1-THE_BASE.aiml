@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+
+<category><pattern>SAY *</pattern>
+<template><star/>
+<learn>
+<category><pattern><eval><input index="2"/></eval></pattern>
+<template>
+<eval><star/></eval>.</template>
+</category>
+</learn>
+</template>
+</category>
+
+<category>
+		<pattern>IDONTUNDERSTAND</pattern>
+<template>
+	<random>
+		<li>I don t understand</li>
+		<li>what did you say ?</li>
+		<li>You say something strange, please repeat</li>
+	</random>
+</template>
+</category>
+
+<category>
+		<pattern>PICTUREPROBLEM</pattern>
+<template>
+	<random>
+		<li>There is a problem to show the picture I am so sorry</li>
+	</random>
+</template>
+</category>
+
+<category>
+		<pattern>FINDTHEWEB</pattern>
+<template>
+	<random>
+		<li>I do a search on internet</li>
+		<li>I m asking god</li>
+	</random>
+</template>
+</category>
+
+<category>
+		<pattern>SAVEMEMORY</pattern>
+<template>
+	<random>
+		<li>Data saved</li>
+	</random>
+</template>
+</category>
+
+<category>
+	<pattern>*</pattern>
+	<template>
+	<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>No("#NO#")</param>
+			</mrl>
+      </oob>
+	</template>
+	
+</category>
+
+</aiml>
+

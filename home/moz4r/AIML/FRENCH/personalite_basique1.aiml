@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+
+
+
+<!-- 
+on dit bonjour !
+
+
+
+Quand le bot demande notre nom
+on peut lui répondre soit :
+- mon nom est anthony
+- je m'appelle anthony
+- anthony
+
+
+-->
+
+
+
+
+<category> 
+<pattern>BONJOUR #</pattern>
+<template> 
+<condition name="name"> 
+<li value="default">Salut ! je souhaiterais faire connaissance, puis-je avoir ton prénom ?</li>
+<li> Bonjour <get name="name" /></li> 
+</condition> 
+</template> 
+</category>
+
+
+
+<category> 
+<pattern>COMBIEN J'AI DE FRÈRE ET SOEUR</pattern>
+<template> 
+<condition name="cbfreresoeur">
+<li value="unknown">Euh je ne sais pas, dis moi combien as tu de frere et soeur ?</li>
+<li>Je sais que tu en a <get name="cbfreresoeur" /></li> 
+</condition> 
+</template> 
+</category>
+
+
+<category> 
+<pattern> * </pattern>
+<that># combien as tu de frere et soeur #</that>
+<template>
+<think><set name="cbfreresoeur"><star/></set></think> 
+<li>merci je sais désormais que tu as <star/> frere et soeur</li>
+</template> 
+</category> 
+
+<!--
+
+On remet à zéro le nom si c'est un autre interlocuteur
+
+-->
+
+
+
+<category> 
+<pattern>JE NE M'APPELLE PAS #</pattern> 
+<template>
+<li>Désolé j'ai confondu avec <get name="name" /> , Une personne avec qui je discute souvent .</li> 
+<think><set name="name">default</set></think> 
+puis-je avoir ton prénom ?
+</template> 
+</category> 
+
+<category> 
+<pattern>JE NE SUIS PAS #</pattern>
+<that># bonjour #</that>
+<template>
+<srai>JE NE M'APPELLE PAS #<star/></srai>
+</template> 
+</category>
+
+<!-- fin -->
+
+
+
+<category> 
+<pattern>MON NOM EST *</pattern> 
+<template> 
+<think><set name="name"><star /></set></think> 
+<random>
+<li>Je trouve que <get name="name" /> C'est un prénom moche. Vraiment très moche .</li>
+<li><get name="name" /> est un prénom vraiment sympa</li>
+<li>Quand j'aurrais un bébé bot je l'appellerais <get name="name" /></li>
+</random>
+. Et sinon tu es un homme ou une femme ?
+</template> 
+</category> 
+
+
+<category> 
+
+<pattern> JE M'APPELLE * </pattern>
+<template> 
+<srai>MON NOM EST <star/></srai>
+</template> 
+</category> 
+
+
+<category> 
+<pattern> * </pattern>
+<that># avoir ton prénom #</that>
+<template> 
+<srai>MON NOM EST <star/></srai>
+</template> 
+</category> 
+
+
+<!-- 
+
+dans cet exemple on peut répondre un mot clé quand phrase ( ici un prénom ) associé à un contexte
+Le contexte est : 
+
+-->
+
+
+<!-- 
+fin exemple contexte
+-->
+
+
+<category> 
+<pattern>JE SUIS UN HOMME</pattern> 
+<template> 
+<think><set name="genre">homme</set></think> 
+<li value="homme">Enchanté monsieur <get name="name" /> .</li> 
+. au fait tu as quel age ? 
+</template> 
+</category>
+
+<category> 
+<pattern>JE SUIS UNE FEMME</pattern> 
+<template> 
+<think><set name="genre">femme</set></think> 
+<li value="femme">Enchanté madame <get name="name" />, je dis madame car vous semblez un peu vielle pour dire mademoiselle. </li> 
+. au fait tu as quel age ? 
+
+
+
+</template> 
+</category>
+
+<category> 
+<pattern>UN HOMME</pattern>
+<that># sinon tu es un homme ou une femme #</that>
+<template> 
+<srai>JE SUIS UN HOMME</srai>
+
+
+</template> 
+</category> 
+
+<category> 
+<pattern>UNE FEMME</pattern>
+<that># sinon tu es un homme ou une femme #</that>
+<template> 
+<srai>JE SUIS UNE FEMME</srai>
+
+
+</template> 
+</category> 
+
+<category> 
+<pattern> * </pattern>
+<that># sinon tu es un homme ou une femme #</that>
+<template>
+<li>C'est pas très clair tout ça, ben c'est pas grâve, moi aussi étant un robot je suis un peu transgenre . En tous cas </li>
+<srai>JE SUIS UN HOMME</srai>
+ 
+
+</template>
+</category> 
+
+<category>
+<pattern>j'ai *</pattern>
+      <template>
+<random>
+<li>ah, oui, <star/> . c'est un peu vieux , lol .  tu peux me poser des questions aussi , si tu veux </li>
+<li>ok, <star/> . je suis un peu plus jeune que toi . c'est pour cela que j'ai encore plein de choses à apprendre . si tu me dit . apprentissage . je retiendrais ce que tu me dit </li>
+<li>oh, <star/> . et toutes ses dents . je sais , je suis drole . d'ailleurs je connais pleins de blagues trop géniales , a moins que tu préfères connaitre la meteo . </li>
+<li>a <star/> on attrape vite quelque chose . il suffirais pas d'attraper froid . tu veux connaitre la meteo ou tu préfères une petite blague ? </li>
+</random>
+</template>
+</category>  
+
+
+
+
+
+</aiml>

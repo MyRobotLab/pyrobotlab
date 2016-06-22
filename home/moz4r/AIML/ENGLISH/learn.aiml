@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<category><pattern># LEARN #</pattern>
+<template><random>
+<li>I like to learn</li>
+</random>
+<think><set name="topic">LEARN1</set></think></template>
+</category>
+<topic name="LEARN1">
+<category><pattern>A *IS A *</pattern>
+<template><random>
+<li>Ok, a <star/> is a <star index="2"/>.</li>
+</random>
+<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>SaveMemory()</param>
+			</mrl>
+      </oob>
+<learn>
+<category><pattern>WHAT IS A <eval><star/></eval></pattern>
+<template>
+A <eval><star/></eval> IS A <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>DOES A <eval><star/></eval> IS A <eval><star index="2"/></eval></pattern>
+<template>
+YES a <eval><star/></eval> is a <eval><star index="2"/></eval>.</template>
+</category>
+</learn></template>
+</category>
+
+
+
+
+
+<category><pattern>DOES A * IS A *</pattern>
+<template>No ! a <star/> is not a <star index="2"/>!</template>
+</category>
+
+</topic>
+</aiml>
