@@ -7,11 +7,12 @@
 # It will use ProgramAB & Webkit for all interactions with
 # the bot.
 #############################################################
+import threading
+
 # All bot specific hardware configuration goes here.
 leftPort = "/dev/ttyACM0"
 rightPort = "/dev/ttyACM1"
 headPort = rightPort
-
 gesturesPath = "/home/pi/myrobotlab/pyrobotlab/home/kwatters/harry/gestures"
 
 aimlPath = "/home/pi/myrobotlab/pyrobotlab/home/kwatters/harry"
@@ -76,7 +77,7 @@ if startInMoov:
   left.connect(leftPort)
   right = Runtime.start("i01.right", "Arduino")
   right.connect(rightPort)
-  #i01.startHead(headPort);
+  i01.startHead(headPort);
   # print "Left Port: " + leftPort + " Right Port : " + rightPort + " Head Port: " + headPort
   i01.startAll(leftPort, rightPort)
   #i01.startMouth();
@@ -122,5 +123,6 @@ webgui = Runtime.createAndStart("webgui","WebGui")
 remote = Runtime.createAndStart("remote", "RemoteAdapter")
 remote.startListening()
 
-
+### Load the python gestures for harry.
+i01.loadGestures(gesturesPath)
 
