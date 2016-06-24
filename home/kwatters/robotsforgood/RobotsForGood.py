@@ -40,7 +40,7 @@ def onOculusData(data):
     # To account for gear ratio of neck piston in inmoov (adjust as needed) 
     pitch =  -1 * data.pitch * 3
     # the center position for the neck is 90 degre3es
-    neckOffset = 110
+    neckOffset = 130
     neckPos = int(pitch + neckOffset)
     # update the neck position
     neckUrl = "http://192.168.4.112:8888/api/service/i01.head.neck/moveTo/" + str(neckPos)
@@ -89,3 +89,7 @@ rift.initContext()
     
 # add the callback to python from the rift.
 rift.addListener("publishOculusData", "python", "onOculusData")
+
+
+# lets add a joystick that can handle some inputs to the arms.
+

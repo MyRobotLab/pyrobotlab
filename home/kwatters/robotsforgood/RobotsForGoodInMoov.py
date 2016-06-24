@@ -12,7 +12,7 @@ import threading
 # All bot specific hardware configuration goes here.
 leftPort = "/dev/ttyACM0"
 rightPort = "/dev/ttyACM1"
-headPort = rightPort
+headPort = leftPort
 gesturesPath = "/home/pi/myrobotlab/pyrobotlab/home/kwatters/harry/gestures"
 
 aimlPath = "/home/pi/myrobotlab/pyrobotlab/home/kwatters/harry"
@@ -80,26 +80,14 @@ if startInMoov:
   i01.startHead(headPort);
   # print "Left Port: " + leftPort + " Right Port : " + rightPort + " Head Port: " + headPort
   i01.startAll(leftPort, rightPort)
-  #i01.startMouth();
-  #sleep(2)
-  #i01.startEar();
-  #sleep(2)
-  #i01.startHead(headPort);
-  #sleep(2)
-  #i01.startMouthControl(rightPort);
-  #sleep(2)
-  #i01.startLeftHand(leftPort);
-  #sleep(2)
-  #i01.startRightHand(rightPort);
-  #sleep(2)
-  #i01.startLeftArm(leftPort);
-  #sleep(2)
-  #i01.startRightArm(rightPort);
-  #sleep(2)
-  #i01.startHeadTracking(headPort);
-  #sleep(2)
-  #i01.startEyesTracking(headPort);
-  #sleep(2)
+  # calibrate harry specific stuff. 
+  i01.head.rothead.detach()
+  i01.head.neck.detach()
+  i01.head.rothead.setController("i01.right")
+  i01.head.neck.setController("i01.right")
+  i01.head.rothead.attach()
+  i01.head.neck.attach()  
+  
 else:
   i01.mouth = mouth
     
