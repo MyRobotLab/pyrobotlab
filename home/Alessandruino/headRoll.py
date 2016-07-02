@@ -11,25 +11,6 @@ pid.setControllerDirection(0)
 #set a starting analog value, which will pilot the MOSFET on the Gate
 heaterValue = 90
 
-
-def input():
- global heaterValue
- global futureHeaterValue
- #target of temperature or target value
- pid.setSetpoint(0)
- #input value
- pid.setInput(thermistorPin.value)
- pid.compute()
- correction = pid.getOutput()
- futureHeaterValue = (heaterValue + correction)
- if (futureHeaterValue < 1024) and (futureHeaterValue >0):
-  heaterValue = futureHeaterValue
-  arduino.analogWrite(4,futureHeaterValue)
-  print heaterValue
- else :
-  arduino.analogWrite(4,heaterValue)
-  print heaterValue
-
 # call back - all data from opencv will come back to 
 # this method
 def onOpenCVData(data):
