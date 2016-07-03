@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<category><pattern># MERCI #</pattern>
+<template><random>
+		<li>de rien</li>
+		<li>y'a pas de quoi</li>
+		<li>à votre service !</li>
+		<li>sa fera 10 euro . nan je plaisante !</li>
+		<li>je suis programé pour vous satisfaire </li>
+		<li>pas de problème . je suis heureux de vous aider </li>
+		<li>sa me fait plaisir ! </li>
+		<li>oh . c'est vraiment pas grand chose </li>
+	</random></template>
+</category>
+<category><pattern># REMERCIE #</pattern>
+<template><random>
+		<li>de rien</li>
+		<li>y'a pas de quoi</li>
+		<li>à votre service !</li>
+		<li>sa fera 10 euro . nan je plaisante !</li>
+		<li>je suis programé pour vous satisfaire </li>
+		<li>pas de problème . je suis heureux de vous aider </li>
+		<li>sa me fait plaisir ! </li>
+		<li>oh . c'est vraiment pas grand chose </li>
+	</random></template>
+</category>
+<category><pattern># ARIGATO #</pattern>
+<template><random>
+		<li>ou sa y'a des gateaux </li>
+		<li>je suis pas japonais . mais de rien  </li>
+	</random></template>
+</category>
+<category><pattern># ALIGATO #</pattern>
+<template><random>
+		<li>ou sa y'a des gateaux </li>
+		<li>je suis pas japonais . mais de rien  </li>
+	</random></template>
+</category>
+<category><pattern># THANK #</pattern>
+<template><random>
+		<li>de rien mon ami </li>
+		<li>You're welcome </li>
+	</random></template>
+</category>
+</aiml>
