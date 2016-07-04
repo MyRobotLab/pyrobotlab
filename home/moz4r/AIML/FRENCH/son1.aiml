@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<category><pattern>QUI EST MON PÈRE</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>mouth.audioFile.playFileBlocking("..\sound\je_suis_ton_pere.mp3")</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUI EST R2 D2</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>mouth.audioFile.playFileBlocking("..\sound\R2D2.mp3")</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern># STAR WARS #</pattern>
+<template><random>
+<li><srai>QUI EST MON PÈRE</srai></li>
+<li><srai>QUI EST R2 D2</srai></li>
+</random></template>
+</category>
+</aiml>

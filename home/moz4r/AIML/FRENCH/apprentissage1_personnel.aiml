@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<category><pattern>COMMENT S'APPELLE MA MÈRE</pattern>
+<template><condition name="mother">
+            <li value="unknown">Dis moi comment s'appelle ta mère</li>
+            <li>
+               <get name="mother"/>
+            </li>
+         </condition></template>
+</category>
+<category><pattern>COMMENT S'APPELLE MON CHIEN</pattern>
+<template><condition name="monchien">
+            <li value="unknown">En siflant lol, sinon dis moi comment s'appelle ton chien</li>
+            <li>
+               <get name="monchien"/>
+            </li>
+         </condition></template>
+</category>
+<category><pattern>*</pattern><that># DIS MOI COMMENT S'APPELLE TON CHIEN #</that>
+<template><think><set name="monchien"><star/></set></think>
+		 <li>Au pied, <star/></li>
+		 <srai>SAVEPREDICATES</srai>
+		 </template>
+</category>
+<category><pattern>*</pattern><that># DIS MOI COMMENT S'APPELLE TA MÈRE #</that>
+<template><think>
+            <set name="mother"><star/></set>
+         </think>
+		 <li>Un peu de respect, pas de blague sur l'ancêtre <star/>.</li>
+		 <srai>SAVEPREDICATES</srai>		
+		 </template>
+ 
+</category>
+
+
+<category><pattern>SAVEPREDICATES</pattern>
+<template><oob>
+            <mrl>
+               <service>python</service>
+               <method>exec</method>
+               <param>SaveMemory(0,0,0,1)</param>
+			   
+            </mrl>
+         </oob></template>
+</category>
+</aiml>
+
