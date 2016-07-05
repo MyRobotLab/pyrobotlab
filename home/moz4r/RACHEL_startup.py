@@ -1,10 +1,10 @@
 # ##############################################################################
 # 							*** SETUP / INSTALLATION ***
 # ##############################################################################
-# STABLE FILES : https://github.com/MyRobotLab/aiml/tree/master/bots/ [ RACHEL AIML + PYTHON ]
-# UPDATED DEV FILES : https://github.com/MyRobotLab/pyrobotlab/tree/master/home/moz4r [ RACHEL AIML + PYTHON ]
+# STABLE FILES : https://github.com/MyRobotLab/pyrobotlab/tree/master/home/moz4r  [ RACHEL AIML + PYTHON ]
+# UPDATED DEV FILES :  https://github.com/MyRobotLab/aiml/tree/master/bots/ [ RACHEL AIML + PYTHON ]
 # -----------------------------------
-# - Inmoov-Life Version 1.3 By Moz4r
+# - Inmoov-Life Version 1.4 By Moz4r
 # - Credit :
 # - Rachel the humanoïde
 # - Wikidatafetcher By Beetlejuice
@@ -22,17 +22,25 @@
 #
 # ------>
 #
+#Robot Name
+#please, there is no verifications ! don't use an other used robot name ( usefull to use Inmoov Messenger )
+myBotname=""
 #Your language / votre langue( FR/EN )
 lang="FR"
+Voice="Margaux"
 # To fetch weather etc [ adresse du serveur fetcher meteo etc ...]
 BotURL="http://myai.cloud/bot1.php"
 units="metric" # or : imperial
 # ##
 #
 #IF YOU DIDNT HAVE MOTORS set inmoov=0 / Si vous n'avez pas de servo : inmoov=0
-IsInmoov=0
+IsInmoovLeft=0
+IsInmoovRight=0
+MRLmouthControl=0
+BoardType="atmega2560" # atmega168 | atmega328 | atmega328p | atmega2560 | atmega1280 | atmega32u4
 leftPort = "COM3"
 rightPort = "COM4"
+
 
 #Eyeleads / paupieres
 IhaveEyelids=0
@@ -45,6 +53,9 @@ ROUGE=29
 VERT=28
 BLEU=30
 
+#tracking for testing
+tracking=0
+
 
 # ###
 # 
@@ -55,7 +66,8 @@ BLEU=30
 
 
 
-
+version=15
+IcanStartToEar=0
 
 import urllib2
 from java.lang import String
@@ -70,8 +82,10 @@ import codecs
 import socket
 import os
 import shutil
+import hashlib
 
-
+global Ispeak
+Ispeak=1
 
 oridir=os.getcwd().replace("\\", "/")
 try:
@@ -92,28 +106,31 @@ troat = [" #THROAT01# ", " #THROAT02# ", " #THROAT03# ", " ", " ", " "]
 
 image=Runtime.createAndStart("ImageDisplay", "ImageDisplay")
 sleep(1)
+
+
 Runtime.createAndStart("chatBot", "ProgramAB")
 wdf=Runtime.createAndStart("wdf", "WikiDataFetcher")
 
 i01 = Runtime.createAndStart("i01", "InMoov")
 i01.setMute(1)
-i01.startEar()
+
+
 i01.startMouth()
 
 mouth = i01.mouth
-ear = i01.ear
+
 
 webgui = Runtime.create("WebGui","WebGui")
-webgui.autoStartBrowser(True)
+webgui.autoStartBrowser(False)
 webgui.startService()
-#webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
-webgui.start()
+webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
+r=image.displayFullScreen("https://i.ytimg.com/vi/tIk1Mc170yg/maxresdefault.jpg",1)
 
-if IsInmoov==1:
+#webgui.start()
 
-	
+if IsInmoovRight==1:
+
 	right = Runtime.start("i01.right", "Arduino")
-	right.setBoard("mega2560")
 	right.publishState()
 	right.connect(rightPort)
 	sleep(1)
@@ -127,16 +144,22 @@ if IsInmoov==1:
 		right.digitalWrite(ROUGE,1)
 		right.digitalWrite(VERT,0)
 		right.digitalWrite(BLEU,1)
+	
+	
+	i01.startRightArm(rightPort)
+	i01.startRightHand(rightPort,BoardType)
+	
+	
+if IsInmoovLeft==1:	
+	
 	left = Runtime.start("i01.left", "Arduino")
-	left.setBoard("mega2560")
 	left.publishState()
 	left.connect(leftPort)
 	sleep(1)
-	
-	i01.startRightArm(rightPort)
-	i01.startRightHand(rightPort,"atmega2560")
-	i01.startLeftHand(leftPort,"atmega2560")
-	i01.startHead(leftPort,"atmega2560")
+	i01.startLeftHand(leftPort,"")
+	i01.startHead(leftPort,BoardType)
+	if MRLmouthControl==1:
+		i01.startMouthControl(leftPort)
 	i01.startLeftArm(leftPort)
 	torso = i01.startTorso(leftPort)
 	i01.setHeadSpeed(0.5, 0.5)
@@ -152,7 +175,6 @@ if IsInmoov==1:
 	i01.head.eyeX.rest()
 	i01.startEyesTracking(leftPort)
 	i01.startHeadTracking(leftPort)
-	
 	i01.eyesTracking.pid.setPID("eyeX",20.0,5.0,0.1)
 	i01.eyesTracking.pid.setPID("eyeY",20.0,5.0,0.1)
 	i01.headTracking.pid.setPID("rothead",12.0,5.0,0.1)
@@ -166,28 +188,30 @@ if IsInmoov==1:
 Runtime.createAndStart("htmlFilter", "HtmlFilter")
 
 
-	
+voiceType=Voice
 
 
 if lang=="FR":
-   voiceType="MargauxSad"
    WikiFile="prop.txt"
-   ear.setLanguage("fr-FR")
    wdf.setLanguage("fr")
    wdf.setWebSite("frwiki")
 else:
-   voiceType="Ryan"
    WikiFile="propEN.txt"
    wdf.setLanguage("en")
    wdf.setWebSite("enwiki")
 
 
-sleep(2)
+sleep(1)
 mouth.setVoice(voiceType)
 mouth.setLanguage(lang)
-ear.startListening()
 
 
+
+
+chatBot.startSession("ProgramAB", "default", "rachel")
+#ear.addTextListener(chatBot)
+chatBot.addTextListener(htmlFilter)
+htmlFilter.addListener("publishText", python.name, "talk") 
 
 def SaveMemory(question,reponse,silent,justPredicates):
 	chatBot.savePredicates()
@@ -212,27 +236,38 @@ execfile('../RACHEL_INC_vie_aleatoire-standby_life.py')
 #on bloque le micro quand le robot parle
 
 def onEndSpeaking(text):
-	ear.startListening()
+	global Ispeak
+	Ispeak=0
 	global TimeNoSpeak
 	VieAleatoire.startClock()
 	TimeNoSpeak="OFF"
-	sleep(0.1)
 	Light(0,0,0)
-	ear.startListening()
+	if IcanStartToEar==1:
+		try:
+			ear.startListening()
+		except: 
+			pass
 
 def onStartSpeaking(text):
-	ear.stopListening()
+	global Ispeak
+	Ispeak=1
+	try:
+		ear.stopListening()
+	except: 
+		pass
 	global TimeNoSpeak
 	TimeNoSpeak="OFF"
 	VieAleatoire.stopClock()
-	Light(0,0,0)
+	Light(1,1,1)
+	
 	
 #ear.addTextListener(chatBot)	
 def onText(text):
+	ear.stopListening()	
 	print text.replace("'", " ")
 	chatBot.getResponse(text.replace("'", " "))
 	
-python.subscribe(ear.getName(),"publishText")
+
 
 	
 	
@@ -243,13 +278,29 @@ python.subscribe(mouth.getName(),"publishEndSpeaking")
 
 
 
-i01.setMute(0)
+
+WebkitSpeachReconitionFix = Runtime.start("WebkitSpeachReconitionFix","Clock")
+WebkitSpeachReconitionFix.setInterval(10000)
+
+def WebkitSpeachReconitionON(timedata):
+	global Ispeak
+	if Ispeak==0:
+		ear.startListening()
+	
+WebkitSpeachReconitionFix.addListener("pulse", python.name, "WebkitSpeachReconitionON")
+# start the clock
+
+
 		
 def talk(data):
 	sleep(1)
 	#VieAleatoire.stopClock()
 	
 	if data!="":
+		try:
+			ear.stopListening()
+		except: 
+			pass
 		mouth.speak(unicode(data,'utf-8'))
 
 
@@ -267,7 +318,7 @@ def Parse(utfdata):
 	return utfdata;
 
 def MoveHead():
-	if IsInmoov==1:
+	if IsInmoovLeft==1:
 		#i01.attach()
 		i01.setHeadSpeed(0.5, 0.5)
 		i01.moveHead(20,120,40,78,76)
@@ -278,7 +329,7 @@ def MoveHead():
 		#i01.detach()
 		
 def Light(ROUGE_V,VERT_V,BLEU_V):
-	if IhaveLights==1 and IsInmoov==1:
+	if IhaveLights==1 and IsInmoovRight==1:
 		right.digitalWrite(ROUGE,ROUGE_V)
 		right.digitalWrite(VERT,VERT_V)
 		right.digitalWrite(BLEU,BLEU_V)
@@ -365,7 +416,7 @@ def Joke():
 	mouth.speakBlocking(a+' '+random.choice(laugh))
 	
 def No(data):
-	if IsInmoov==999:
+	if IsInmoovLeft==1:
 		#i01.attach()
 		i01.setHeadSpeed(1, 1)
 		i01.moveHead(80,90,0,80,40)
@@ -375,20 +426,20 @@ def No(data):
 		i01.moveHead(80,90,90,80,40)
 		sleep(0.5)
 	#Light(0,1,1)
-	if IsInmoov==1:
+	if IsInmoovLeft==1:
 		i01.moveHead(81,50,90,78,40)
 		sleep(0.5)
 		i01.moveHead(79,120,90,78,40)
 	chatBot.getResponse("IDONTUNDERSTAND")
-	if IsInmoov==1:
+	if IsInmoovLeft==1:
 		i01.moveHead(80,50,90,78,40)
 		sleep(0.5)
 		i01.moveHead(83,120,90,78,40)
 	sleep(0.5)
-	Light(1,1,1)
-	if IsInmoov==1:
+	#Light(1,1,1)
+	if IsInmoovLeft==1:
 		i01.moveHead(80,90,90,78,40)
-	if IsInmoov==1:
+	if IsInmoovLeft==1:
 		i01.head.jaw.rest()
 		#i01.detach()
 	
@@ -424,7 +475,30 @@ def ClearMemory():
 	chatBot.setPredicate("default","QUESTION_sujet","")
 	chatBot.setPredicate("default","QUESTION_action","")
 	
-
+def UpdateBotName(botname):
+	if str(chatBot.getPredicate("default","bot_id"))=="unknown":
+		bot_id=hashlib.md5(str(time.time()).encode('utf-8')).hexdigest()
+	else:
+		bot_id=str(chatBot.getPredicate("default","bot_id"))
+	RetourServer=Parse("http://www.myai.cloud/shared_memory.php?action=UpdateBotName&bot_id="+urllib2.quote(bot_id)+"&botname="+urllib2.quote(botname.replace("'", " ")))
+	print "http://www.myai.cloud/shared_memory.php?action=UpdateBotName&bot_id="+urllib2.quote(bot_id)+"&botname="+urllib2.quote(botname.replace("'", " "))
+	chatBot.setPredicate("default","bot_id",bot_id)
+	chatBot.setPredicate("default","botname",botname)
+	chatBot.savePredicates()
+	
+def GetUnreadMessageNumbers():
+	RetourServer=Parse("http://www.myai.cloud/shared_memory.php?action=GetUnreadMessageNumbers&bot_id="+str(chatBot.getPredicate("default","bot_id")))
+	print "http://www.myai.cloud/shared_memory.php?action=GetUnreadMessageNumbers&bot_id="+str(chatBot.getPredicate("default","bot_id"))
+	chatBot.getResponse(RetourServer+ " MESSAGE")
+	
+def CheckVersion():
+	RetourServer=Parse("http://www.myai.cloud/version.html")
+	print str(RetourServer)+' '+str(version)
+	if str(RetourServer)==str(version):
+		chatBot.getResponse("IAMUPDATED")
+	else:
+		chatBot.getResponse("INEEDUPDATE")
+	
 		
 def QueryMemory(question,retour):
 	RetourServer=Parse("http://www.myai.cloud/shared_memory.php?action=select&question="+urllib2.quote(question))
@@ -475,19 +549,23 @@ def DisplayPic(pic):
 
 
 def rest():
-	if IsInmoov==1:
+	if IsInmoovLeft==1:
 		i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-		i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 		i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
-		i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
 		i01.setHeadSpeed(1.0, 1.0)
 		i01.setTorsoSpeed(1.0, 1.0, 1.0)
 		i01.moveHead(80,86,82,78,76)
 		i01.moveArm("left",5,90,0,10)
-		i01.moveArm("right",5,90,0,12)
 		i01.moveHand("left",2,2,2,2,2,90)
-		i01.moveHand("right",2,2,2,2,2,90)
 		i01.moveTorso(80,90,80)
+		
+	if IsInmoovRight==1:
+		i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+		i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
+		i01.moveArm("right",5,90,0,12)
+		i01.moveHand("right",2,2,2,2,2,90)
+	
+	if IsInmoovLeft==1 or IsInmoovRight==1:
 		i01.detach()
   
 def trackHumans():
@@ -496,15 +574,30 @@ def trackHumans():
 	i01.headTracking.faceDetect()
 	#i01.eyesTracking.faceDetect()
 	
+# program start :
 
 
-	
 ClearMemory()
-
+if myBotname!="":
+	UpdateBotName(myBotname)
 #print gesturesPath
+CheckVersion()
 chatBot.getResponse("WAKE_UP")
+if str(chatBot.getPredicate("default","bot_id"))!="unknown":
+	chatBot.getResponse("MESSAGESCHECK")
 
 rest()
-if IsInmoov==1:
+if IsInmoovLeft==1 and tracking==1:
 	i01.head.attach()
 	trackHumans()
+
+sleep(5)
+i01.startEar()
+ear = i01.ear
+
+if lang=="FR":
+   ear.setLanguage("fr-FR")
+python.subscribe(ear.getName(),"publishText")
+IcanStartToEar=1
+WebkitSpeachReconitionFix.startClock()
+#r=image.displayFullScreen("http://vignette2.wikia.nocookie.net/worldsofsdn/images/7/7a/Tyrell-corp.jpg",1)

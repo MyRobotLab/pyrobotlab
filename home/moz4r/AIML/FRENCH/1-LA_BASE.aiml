@@ -53,6 +53,16 @@
 		<li>Pour info je syncronise cette information avec mes paires</li>
 	</random></template>
 </category>
+<category><pattern>IAMUPDATED</pattern>
+<template><random>
+		<li>Mon programme est à jour, c'est super</li>
+</random></template>
+</category>
+<category><pattern>INEEDUPDATE</pattern>
+<template><random>
+		<li>Mon programme à besoin d'une mise à jour, dès que possible</li>
+</random></template>
+</category>
 <category><pattern>*</pattern>
 <template><oob>
 			<mrl>

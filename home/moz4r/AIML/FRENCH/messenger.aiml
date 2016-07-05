@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+   <category>
+      <pattern>SYSTEMREADMESSAGE</pattern>
+      <template>
+			<oob>
+				<mrl>
+				   <service>python</service>
+				   <method>exec</method>
+				   <param>GetUnreadMessageNumbers(GetUnreadMessageNumbers,"nomessage")</param>
+				 </mrl>
+			</oob>
+			
+   	</template>
+   </category>
+   
+      <category>
+      <pattern>MESSAGESCHECK</pattern>
+      <template>
+			<oob>
+				<mrl>
+				   <service>python</service>
+				   <method>exec</method>
+				   <param>GetUnreadMessageNumbers()</param>
+				 </mrl>
+			</oob>
+			
+   	</template>
+   </category>
+   
+
+   
+            <category>
+      <pattern>* MESSAGE</pattern>
+      <template>
+	  <think><set name="nbmessage"><star/></set></think>
+	  <condition name="nbmessage">
+            <li value="0">Je n'ai pas de nouveaux messages à délivrer, je vérifierai régulairement Inmoov méssènegeure</li>
+			<li>J'ai <star/> nouveau message. Veux tu que je lise ce message ?</li>
+		</condition>
+			</template>
+   </category>
+   
+<category><pattern>LIRE LES MESSAGES</pattern>
+<template><srai>MESSAGESCHECK</srai></template>
+</category>    
+
+<category><pattern>OUI</pattern><that># lise ce message #</that>
+<template><srai>SYSTEMREADMESSAGE</srai></template>
+</category> 
+
+
+</aiml>
