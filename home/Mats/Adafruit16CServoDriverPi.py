@@ -10,7 +10,7 @@ adaFruit16c.setController("RasPi")
 thumb = Runtime.createAndStart("Thumb", "Servo")
 elbow = Runtime.createAndStart("Elbow", "Servo")
 # attach it to the pwm board - pin 3 & 8
-adaFruit16c.attach(thumb,3)
-adaFruit16c.attach(elbow,8)
+thumb.attach(adaFruit16c,3)
+elbow.attach(adaFruit16c,8)
 # When this script has been executed you should be able to 
 # move the servos using the GUI or using python
