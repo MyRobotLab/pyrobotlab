@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 <!--  -->
 <!--  -->
@@ -39,16 +39,25 @@
 <category>
 <pattern>*</pattern>
 <that># quel est mon nom #</that>
-<template>Merci <set name="botname"><star/></set> c'est un joli nom que tu m'as donné, puis-je avoir ton prénom ?</template>
+<template>
+<oob>
+				<mrl>
+				   <service>python</service>
+				   <method>exec</method>
+				   <param>UpdateBotName("<star/>")</param>
+				 </mrl>
+			</oob>
+Merci. <set name="botname"><star/></set> , c'est un joli nom que tu m'as donné, puis-je avoir ton prénom ?</template>
 </category>
 
 <category><pattern>DEBOUT</pattern>
 <template>
-<condition name="botname">
+<condition name="bot_id">
             <li value="unknown">
 Bonjour mammifère , ceci est ma première initialisation.
-s il te plait, j'ai besoin de quelques informations essentielles.
-Tu pourra les corriger dans le répertoire config.
+N'oublie pas de sauvegarder le répertoire config dans program.a.b.
+Si jamais tu réinstalle mon programme ou si tu veux me clonner.
+Ce répertoire contient toutes mes informations personnelles.
 je t écoute , quel est mon nom ?
 </li>
            

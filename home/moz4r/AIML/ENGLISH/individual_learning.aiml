@@ -1,34 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 <!--  -->
 <!--  -->
-<category><pattern>COMMENT S'APPELLE MA MÈRE</pattern>
+<category><pattern>WHAT IS MY MOTHER S NAME</pattern>
 <template><condition name="mother">
-            <li value="unknown">Dis moi comment s'appelle ta mère</li>
+            <li value="unknown">I listen, what is your mothers name</li>
             <li>
                <get name="mother"/>
             </li>
          </condition></template>
 </category>
-<category><pattern>COMMENT S'APPELLE MON CHIEN</pattern>
+<category><pattern>WHAT IS MY DOG S NAME</pattern>
 <template><condition name="monchien">
-            <li value="unknown">En siflant lol, sinon dis moi comment s'appelle ton chien</li>
+            <li value="unknown">I listen, what is your dogs name</li>
             <li>
                <get name="monchien"/>
             </li>
          </condition></template>
 </category>
-<category><pattern>*</pattern><that># COMMENT S'APPELLE TON CHIEN #</that>
+<category><pattern>*</pattern><that># what is your dogs name #</that>
 <template><think><set name="monchien"><star/></set></think>
-		 <li>Au pied, <star/></li>
+		 <li>Sleep, <star/></li>
 		 <srai>SAVEPREDICATES</srai>
 		 </template>
 </category>
-<category><pattern>*</pattern><that># COMMENT S'APPELLE TA MÈRE #</that>
-<template><think>
-            <set name="mother"><star/></set>
-         </think>
-		 <li>Un peu de respect, pas de blague sur l'ancêtre <star/>.</li>
+<category><pattern>*</pattern><that># what is your mothers name #</that>
+<template><think><set name="mother"><star/></set></think>
+		 <li>No jokes about <star/>.</li>
 		 <srai>SAVEPREDICATES</srai>		
 		 </template>
  
@@ -41,8 +39,7 @@
                <service>python</service>
                <method>exec</method>
                <param>SaveMemory(0,0,0,1)</param>
-			   
-            </mrl>
+			</mrl>
          </oob></template>
 </category>
 </aiml>

@@ -2,18 +2,33 @@
 <aiml>
 <!--  -->
 <!--  -->
-<category><pattern>QU'EST-CE QUE *</pattern>
-<template><srai>c'est quoi <star/></srai></template>
+<category><pattern>QU EST-CE QUE *</pattern>
+<template><srai>c est quoi <star/></srai></template>
 </category>
-<category><pattern>C'EST QUOI *</pattern>
-<template><oob>
+<category><pattern>C EST QUOI *</pattern>
+<template><think>
+<set name="QUESTION_WhoOrWhat"><star/></set> <set name="QUESTION_action">C EST QUOI </set>
+</think>
+<oob>
 			<mrl>
 				<service>python</service>
 				<method>exec</method>
-				<param>askWiki("<star/>")</param>
+				<param>askWiki("<star/>","C EST QUOI <star/>","JENESAISPASWIKI")</param>
 			</mrl>
       </oob></template>
 </category>
+
+
+
+
+
+
+
+
+
+
+
+
 <category><pattern>QUI EST *</pattern>
 <template><oob>
 			<mrl>
@@ -69,7 +84,7 @@
       </oob></template>
 </category>
 
-<category><pattern>QUELLE EST LA * DE L'*</pattern>
+<category><pattern>QUELLE EST LA * DE L *</pattern>
 <template><oob>
 			<mrl>
 				<service>python</service>
@@ -79,9 +94,18 @@
       </oob></template>
 </category>
 
-<category><pattern>TEST L'*</pattern>
-<template><li>ok</li></template>
+
+<category><pattern>QUELLE EST LE * DE L *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" )</param>
+			</mrl>
+      </oob></template>
 </category>
+
+
 
 <category><pattern>QUELLE EST LE * DU *</pattern>
 <template><oob>

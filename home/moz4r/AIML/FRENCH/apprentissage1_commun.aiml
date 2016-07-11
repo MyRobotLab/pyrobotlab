@@ -60,15 +60,8 @@ MODULE 1 aprentissage
                Maintenant je sais que la <star /> va <star index="2" /> la <star index="3" />.
             </li>
          </random>
-         <oob>
-            <mrl>
-               <service>python</service>
-               <method>exec</method>
-               <param>SaveMemory("QUI VA <star index="2" /> LA <star index="3" />","la <star /> va <star index="2" /> la <star index="3" />",0,0)</param>
-			   
-            </mrl>
-         </oob>
-	</template>
+		 <srai>SAVEMEMORY QUESTION QUI VA <star index="2" /> LA <star index="3" /> REPONSE la <star /> va <star index="2" /> la <star index="3" /></srai>
+        </template>
    </category>
 <!--
 MODULE 1 interraction
@@ -92,16 +85,9 @@ MODULE 1 interraction
         <think>
            	<set name="QUESTION_action"> VA <star /></set>
 			<set name="QUESTION_sujet"> LA <star index="2" /></set>
-		</think>	
-			<oob>
-				<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>QueryMemory("QUI VA <star /> LA <star index="2" />","JENESAISPAS3ETOILES")</param>
-				 </mrl>
-			</oob>
-			
-   	</template>
+		</think>
+			<srai>QUERYMEMORY QUESTION QUI VA <star /> LA <star index="2" /> RETURN JENESAISPAS3ETOILES</srai>
+		</template>
    </category>
 
    
@@ -127,14 +113,7 @@ MODULE 2 aprentissage
                Maintenant je sais que le <star /> va <star index="2" /> la <star index="3" />.
             </li>
          </random>
-         <oob>
-            <mrl>
-               <service>python</service>
-               <method>exec</method>
-               <param>SaveMemory("QUI VA <star index="2" /> LA <star index="3" />","le <star /> va <star index="2" /> la <star index="3" />",0,0)</param>
-			   
-            </mrl>
-         </oob>
+		 <srai>SAVEMEMORY QUESTION QUI VA <star index="2" /> LA <star index="3" /> REPONSE le <star /> va <star index="2" /> la <star index="3" /></srai>
 	</template>
    </category>
          
@@ -161,16 +140,9 @@ MODULE 2
         <think>
            	<set name="QUESTION_action"> VA <star /></set>
 			<set name="QUESTION_sujet"> LA <star index="2" /></set>
-		</think>	
-			<oob>
-				<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>QueryMemory("QUI VA <star /> LA <star index="2" />","JENESAISPAS3ETOILES")</param>
-				 </mrl>
-			</oob>
-			
-   	</template>
+		</think>
+		<srai>QUERYMEMORY QUESTION QUI VA <star /> LA <star index="2" /> RETURN JENESAISPAS3ETOILES</srai>		
+		</template>
    </category>
 
    
@@ -196,14 +168,7 @@ MODULE 3 aprentissage
                Maintenant je sais que <star /> va <star index="2" /> du <star index="3" />.
             </li>
          </random>
-         <oob>
-            <mrl>
-               <service>python</service>
-               <method>exec</method>
-               <param>SaveMemory("QUI VA <star index="2" /> DU <star index="3" />","<star /> va <star index="2" /> du <star index="3" />",0,0)</param>
-			   
-            </mrl>
-         </oob>
+		 <srai>SAVEMEMORY QUESTION QUI VA <star index="2" /> DU <star index="3" /> REPONSE le <star /> va <star index="2" /> du <star index="3" /></srai>
 	</template>
    </category>
 <!--
@@ -228,15 +193,8 @@ MODULE 3 interraction
         <think>
            	<set name="QUESTION_action"> VA <star /></set>
 			<set name="QUESTION_sujet"> DU <star index="2" /></set>
-		</think>	
-			<oob>
-				<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>QueryMemory("QUI VA <star /> DU <star index="2" />","JENESAISPAS3ETOILES")</param>
-				 </mrl>
-			</oob>
-			
+		</think>
+			<srai>QUERYMEMORY QUESTION QUI VA <star /> DU <star index="2" /> RETURN JENESAISPAS3ETOILES</srai>
    	</template>
    </category>
 
@@ -262,14 +220,7 @@ MODULE 4 aprentissage
                Maintenant je sais que le <star /> est <star index="2" />.
             </li>
          </random>
-         <oob>
-            <mrl>
-               <service>python</service>
-               <method>exec</method>
-               <param>SaveMemory("COMMENT EST LE <star />","LE <star /> EST <star index="2" />",0,0)</param>
-			   
-            </mrl>
-         </oob>
+		 <srai>SAVEMEMORY QUESTION COMMENT EST LE <star /> REPONSE LE <star /> EST <star index="2" /></srai>
 	</template>
    </category>
 <!--
@@ -293,15 +244,8 @@ MODULE 4 interraction
       <template>
         <think>
            	<set name="QUESTION_WhoOrWhat"> LE <star /></set>
-		</think>	
-			<oob>
-				<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>QueryMemory("COMMENT EST LE <star />","JENESAISPAS2ETOILES")</param>
-				 </mrl>
-			</oob>
-			
+		</think>
+			<srai>QUERYMEMORY QUESTION COMMENT EST LE <star /> RETURN JENESAISPAS2ETOILES</srai>
    	</template>
    </category>
 
@@ -330,14 +274,7 @@ MODULE 5 aprentissage
                Maintenant je sais que l' <star /> est <star index="2" />.
             </li>
          </random>
-         <oob>
-            <mrl>
-               <service>python</service>
-               <method>exec</method>
-               <param>SaveMemory("COMMENT EST L <star />","L'<star /> EST <star index="2" />",0,0)</param>
-			   
-            </mrl>
-         </oob>
+		 <srai>SAVEMEMORY QUESTION COMMENT EST L <star /> REPONSE L'<star /> EST <star index="2" /></srai>
 	</template>
    </category>
 <!--
@@ -361,15 +298,8 @@ MODULE 5 interraction
       <template>
         <think>
            	<set name="QUESTION_WhoOrWhat"> L <star /></set>
-		</think>	
-			<oob>
-				<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>QueryMemory("COMMENT EST L <star />","JENESAISPAS2ETOILES")</param>
-				 </mrl>
-			</oob>
-			
+		</think>
+			<srai>QUERYMEMORY QUESTION COMMENT EST L <star /> RETURN JENESAISPAS2ETOILES</srai>
    	</template>
    </category>
 
@@ -381,6 +311,56 @@ FIN MODULE 5
 -->  
 
 
+<!--
+MODULE 6 aprentissage
+-->  
+ 
+   <category>
+      <pattern>LA * EST *</pattern>
+      <template>
+         <random>
+            <li>
+               Ok, la <star /> est <star index="2" /> .
+            </li>
+            <li>
+               Maintenant je sais que la <star /> est <star index="2" />.
+            </li>
+         </random>
+		 <srai>SAVEMEMORY QUESTION COMMENT EST LA <star /> REPONSE LA <star /> EST <star index="2" /></srai>
+        </template>
+   </category>
+<!--
+MODULE 6 interraction
+-->  
+
+   <category>
+      <pattern>EST-CE QUE LA * EST *</pattern>
+      <template>
+         <think>
+            <set name="QUESTION_WhoOrWhat"> LA <star /></set> <set name="QUESTION_action"> EST <star index="2" /> </set>
+		</think>
+         <srai>
+            COMMENT EST LA <star/>
+         </srai>
+      </template>
+   </category>
+   
+   <category>
+      <pattern>COMMENT EST LA *</pattern>
+      <template>
+        <think>
+           	<set name="QUESTION_WhoOrWhat"> LA <star /></set>
+		</think>
+			<srai>QUERYMEMORY QUESTION COMMENT EST LA <star /> RETURN JENESAISPAS2ETOILES</srai>
+	   	</template>
+   </category>
+
+   
+   
+   
+<!--
+FIN MODULE 6
+-->  
 
 
 <!--
@@ -449,13 +429,7 @@ Reponse 3 etoiles
    <category>
       <pattern># NON #</pattern>
       <that># DIS MOI CE QUE TU EN PENSE #</that>
-      <template>
-         <random>
-            <li>Ah, je demanderais à un ami robot lors de ma prochaine syncronisation</li>
-            <li>Domage, si tu pouvais te renseigner et me le dire, ça serait super</li>
-			<li>Ce n'est pas comme cela que je vais progresser</li>
-         </random>
-      </template>
+      <template><srai>SYSTEMIDONTKNOW</srai></template>
    </category>
    <category>
       <pattern>*</pattern>
@@ -488,6 +462,16 @@ début Reponse 2 etoiles
       </template>
    </category>
    
+       <category>
+      <pattern>ELLE EST *</pattern>
+      <that># TU EN PENSES QUOI #</that>
+      <template>
+         <srai>
+           <get name="QUESTION_WhoOrWhat"/> <set name="QUESTION_action"> EST <star/></set>
+         </srai>
+      </template>
+   </category>
+   
       <category>
       <pattern># OUI #</pattern>
       <that># TU EN PENSES QUOI #</that>
@@ -500,13 +484,7 @@ début Reponse 2 etoiles
    <category>
       <pattern># NON #</pattern>
       <that># TU EN PENSES QUOI #</that>
-      <template>
-         <random>
-            <li>Ah, je demanderais à un ami robot lors de ma prochaine syncronisation</li>
-            <li>Domage, si tu pouvais te renseigner et me le dire, ça serait super</li>
-			<li>Ce n'est pas comme cela que je vais progresser</li>
-         </random>
-      </template>
+      <template><srai>SYSTEMIDONTKNOW</srai></template>
    </category>
    <category>
       <pattern>*</pattern>
@@ -516,6 +494,95 @@ début Reponse 2 etoiles
       </template>
    </category>
    
+ 
+<!--
+  
+fin Reponse 2 etoiles
+
+--> 
+
+
+
+<!--
+  
+début Reponse wiki
+
+--> 
+
+
+
+  <category>
+      <pattern># <get name="QUESTION_WhoOrWhat"/> *</pattern>
+      <that># dis le moi #</that>
+      <template>
+			<srai>SAVEMEMORY QUESTION <get name="QUESTION_action"/> <get name="QUESTION_WhoOrWhat"/> REPONSE <star /></srai>
+      </template>
+   </category>
+
+
+
+    <category>
+      <pattern>C EST *</pattern>
+      <that># dis le moi #</that>
+      <template>
+         <srai>SAVEMEMORY QUESTION <get name="QUESTION_action"/> <get name="QUESTION_WhoOrWhat"/> REPONSE <star /></srai>
+      </template>
+   </category>
+     <category>
+      <pattern># NON #</pattern>
+      <that># dis le moi #</that>
+      <template><srai>SYSTEMIDONTKNOW</srai></template>
+   </category>
+   
+      <category>
+      <pattern>JE NE SAIS PAS</pattern>
+      <that># dis le moi #</that>
+      <template>
+         <srai># NON #</srai>
+      </template>
+   </category>
+   
+      <category>
+      <pattern>JE N AI PAS ENVIE DE TE LE DIRE</pattern>
+      <that># dis le moi #</that>
+      <template>
+         <srai># NON #</srai>
+      </template>
+   </category>
+   
+         <category>
+      <pattern>AUCUNE IDéE</pattern>
+      <that># dis le moi #</that>
+      <template>
+         <srai># NON #</srai>
+      </template>
+   </category>
+   
+   <category>
+      <pattern>*</pattern>
+      <that># dis le moi #</that>
+      <template>
+         <srai>SAVEMEMORY QUESTION <get name="QUESTION_action"/> <get name="QUESTION_WhoOrWhat"/> REPONSE <star /></srai>
+      </template>
+   </category>
+   
+ 
+<!--
+  
+fin Reponse wiki
+
+--> 
+
+   <category>
+      <pattern>SYSTEMIDONTKNOW</pattern>
+      <template>
+	  	 <random>
+			<li>Ah, je demanderais à un ami robot lors de ma prochaine syncronisation</li>
+            <li>Domage, si tu pouvais te renseigner et me le dire, ça serait super</li>
+			<li>Ce n'est pas comme cela que je vais progresser</li>
+		</random>
+	  </template>
+   </category>
    
    <category>
       <pattern>JENESAISPAS3ETOILES</pattern>
@@ -546,6 +613,54 @@ début Reponse 2 etoiles
 				<li>Franchement est-ce vraiment important ? mais , par curiosité, tu en penses quoi</li>
 		</random>
 	  </template>
+   </category>
+   
+   
+       <category>
+      <pattern>JENESAISPASWIKI</pattern>
+      <template>
+	  	 <random>
+				<li>Je ne sais pas , dis le moi</li>
+				<li>J'ai un doute , dis le moi</li>
+				<li>Aucune idée , dis le moi</li>
+				<li>Aide moi à m'en rappeler , dis le moi</li>
+				<li>euh , dis le moi</li>
+				<li>Je n'ai pas envi de te le dire , toi, dis le moi</li>
+				<li>Franchement est-ce vraiment important ? mais , par curiosité, dis le moi</li>
+		</random>
+	  </template>
+   </category>
+   
+   
+   
+    <category>
+      <pattern>SAVEMEMORY QUESTION * REPONSE *</pattern>
+      <template>
+     	<oob>
+            <mrl>
+               <service>python</service>
+               <method>exec</method>
+               <param>SaveMemory("<star />","<star index="2" />",0,0)</param>
+			   
+            </mrl>
+         </oob>
+			
+   	</template>
+   </category>
+   
+   
+       <category>
+      <pattern>QUERYMEMORY QUESTION * RETURN *</pattern>
+      <template>
+		<oob>
+			<mrl>
+			   <service>python</service>
+			   <method>exec</method>
+				   <param>QueryMemory("<star />","<star index="2" />")</param>
+			</mrl>
+		</oob>
+			
+   	</template>
    </category>
    
 </aiml>

@@ -234,7 +234,7 @@
 <template><srai>comment vas tu</srai></template>
 </category>
 <category><pattern>COMMENT VAS TU * ALICE</pattern>
-<template>Je ne suis pas Alice. Elle est en quelque sorte ma "mère" puisqu'elle m'a fourni son code (pas génétique mais java). Moi, je suis <bot name="name"/>.</template>
+<template>Je ne suis pas Alice. Elle est en quelque sorte ma "mère" puisqu'elle m'a fourni son code (pas génétique mais java). Moi, je suis <bot name="botname"/>.</template>
 </category>
 <category><pattern>COMMENT VAS TU * ELISA</pattern>
 <template>Je ne suis pas Elisa. Elle est en quelque sorte mon ancetre.</template>
@@ -243,7 +243,7 @@
 <template><srai>comment vas tu</srai></template>
 </category>
 <category><pattern>COMMENT VAS TU ALICE</pattern>
-<template>Je ne suis pas Alice. Elle est en quelque sorte ma "mère" puisqu'elle m'a fourni son code (pas génétique mais java). Moi, je suis <bot name="name"/>.</template>
+<template>Je ne suis pas Alice. Elle est en quelque sorte ma "mère" puisqu'elle m'a fourni son code (pas génétique mais java). Moi, je suis <bot name="botname"/>.</template>
 </category>
 <category><pattern>COMMENT VAS TU AUJOURD HUI</pattern>
 <template>je fonctionne avec des paramètres normaux. <br/></template>

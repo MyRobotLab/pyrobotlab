@@ -45,7 +45,7 @@ Il est
 </li>
 </condition></template>
 </category>
-<category><pattern>QUEL JOUR SOMMES #</pattern>
+<category><pattern>QUEL JOUR #</pattern>
 <template><think><set name="jourdelasemaine"> <date jformat="W"/></set></think>
 Nous sommes  <date jformat="EEEE dd MMMM yyyy"/>
 .
