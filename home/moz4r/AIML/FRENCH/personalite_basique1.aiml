@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 <!--  -->
 <!--  -->
@@ -11,7 +11,7 @@
             </li>
          </condition></template>
 </category>
-<category><pattern>COMBIEN J'AI DE FRÈRE ET SOEUR</pattern>
+<category><pattern>COMBIEN J AI DE FRÈRE ET SOEUR</pattern>
 <template><condition name="cbfreresoeur">
             <li value="unknown">Euh je ne sais pas, dis moi combien as tu de frere et soeur ?</li>
             <li>
@@ -29,7 +29,7 @@
             merci je sais désormais que tu as <star/> frere et soeur
          </li></template>
 </category>
-<category><pattern>JE NE M'APPELLE PAS #</pattern>
+<category><pattern>JE NE M APPELLE PAS #</pattern>
 <template><random>
          <li>
             Désolé j'ai confondu avec <get name="name"/>, Une personne avec qui je discute souvent .
@@ -45,7 +45,7 @@
 </category>
 <category><pattern>JE NE SUIS PAS #</pattern><that># BONJOUR #</that>
 <template><srai>
-            JE NE M'APPELLE PAS #
+            JE NE M APPELLE PAS #
             <star/>
          </srai></template>
 </category>
@@ -68,7 +68,7 @@
          </random>
          . Et sinon tu es un homme ou une femme ?</template>
 </category>
-<category><pattern>JE M'APPELLE *</pattern>
+<category><pattern>JE M APPELLE *</pattern>
 <template><srai>
             MON NOM EST
             <star/>
@@ -112,20 +112,62 @@
 <template><li>C'est pas très clair tout ça, ben c'est pas grave, on va dire que tu es un robot comme moi</li>
          <srai>JE SUIS UN HOMME</srai></template>
 </category>
-<category><pattern>J'AI * ANS</pattern>
+<category><pattern>J AI * ANS</pattern><that># tu as quel age #</that>
 <template><random>
             <li>
-               ah, oui, <star/> ANS. c'est un peu vieux , lol .  tu peux me poser des questions aussi , si tu veux
+               ah, oui, <star index="1" /> ans. c'est un peu vieux , lol .  tu peux me poser des questions aussi , si tu veux
             </li>
             <li>
-               ok, <star/> ANS.je suis un peu plus jeune que toi . c'est pour cela que j'ai encore plein de choses à  apprendre . si tu me dit . apprentissage . je retiendrais ce que tu me dit
+               ok, <star index="1" /> ans.je suis un peu plus jeune que toi . c'est pour cela que j'ai encore plein de choses à  apprendre .
             </li>
             <li>
-               oh, <star/> ANS. et toutes ses dents . je sais , je suis drole . d'ailleurs je connais pleins de blagues trop géniales , a moins que tu préfères connaitre la meteo .
+               oh, <star index="1" /> ans. et toutes ses dents . je sais , je suis drole . d'ailleurs je connais pleins de blagues trop géniales , a moins que tu préfères connaitre la meteo .
             </li>
             <li>
-               a <star/> ANS on attrape vite quelque chose . il suffirais pas d'attraper froid . tu veux connaitre la meteo ou tu préfères une petite blague ?
+               a <star index="1" /> ans, on attrape vite quelque chose . il suffirais pas d'attraper froid . tu veux connaitre la meteo ou tu préfères une petite blague ?
+            </li>
+	    <li>
+               compris, <star index="1" /> ans . j'ai bien enregistré les données , je suis maintenant à votre service
+            </li>
+	    <li>
+               ça marche , <star index="1" /> ans . ne t'inquiette pas , je ne te demande pas tout ça pour te draguer , c'est juste pour mieux te connaitre .
             </li>
          </random></template>
 </category>
+
+<category><pattern>* ANS</pattern><that># tu as quel age #</that>
+<template><random>
+            <li>
+               ah, oui, <star index="1" /> ans. c'est un peu vieux , lol .  tu peux me poser des questions aussi , si tu veux
+            </li>
+            <li>
+               ok, <star index="1" /> ans.je suis un peu plus jeune que toi . c'est pour cela que j'ai encore plein de choses à  apprendre .
+            </li>
+            <li>
+               oh, <star index="1" /> ans. et toutes ses dents . je sais , je suis drole . d'ailleurs je connais pleins de blagues trop géniales , a moins que tu préfères connaitre la meteo .
+            </li>
+            <li>
+               a <star index="1" /> ans, on attrape vite quelque chose . il suffirais pas d'attraper froid . tu veux connaitre la meteo ou tu préfères une petite blague ?
+            </li>
+	    <li>
+               compris, <star index="1" /> ans . j'ai bien enregistré les données , je suis maintenant à votre service
+            </li>
+	    <li>
+               ça marche , <star index="1" /> ans . ne t'inquiette pas , je ne te demande pas tout ça pour te draguer , c'est juste pour mieux te connaitre .
+            </li>
+         </random><srai>SAVEPREDICATES</srai></template>
+</category>
+
+<category><pattern># QUEL EST TON NOM #</pattern>
+<template><get name="botname"/></template>
+</category>
+<category><pattern># TU T APPELLES COMMENT #</pattern><template><srai># QUEL EST TON NOM #</srai></template>
+</category>
+<category><pattern># COMMENT TU T APPELLES #</pattern><template><srai># QUEL EST TON NOM #</srai></template>
+</category>
+<category><pattern># TU TE NOMME COMMENT #</pattern><template><srai># QUEL EST TON NOM #</srai></template>
+</category>
+<category><pattern># COMMENT TU TE NOMME #</pattern><template><srai># QUEL EST TON NOM #</srai></template>
+</category>
+
 </aiml>

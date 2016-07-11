@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<category><pattern>BONJOUR #</pattern>
+<template><condition name="name">
+            <li value="default">Hi ! I want to know you, what is your name ?</li>
+            <li>
+               Hi
+               <get name="name"/>
+            </li>
+         </condition></template>
+</category>
+<category><pattern>HOW MANY BROTHERS AND SISTERS I HAVE</pattern>
+<template><condition name="cbfreresoeur">
+            <li value="unknown">I don't know tell me how many BROTHERS AND SISTERS you have ?</li>
+            <li>
+               I know you have <get name="cbfreresoeur"/>
+            </li>
+         </condition></template>
+</category>
+<category><pattern>*</pattern><that># how many BROTHERS AND SISTERS you have #</that>
+<template><think>
+            <set name="cbfreresoeur">
+               <star/>
+            </set>
+         </think>
+         <li>
+            Now I know you have <star/> brothers and sisters
+         </li></template>
+</category>
+<category><pattern>MY NAME IS NOT #</pattern>
+<template><random>
+         <li>
+            sorry <get name="name"/>, is a friend i was thiking it was you.
+         </li>
+		  <li>
+            You a liar .
+         </li>
+		 </random>
+         <think>
+            <set name="name">default</set>
+         </think>
+         what is your name ?</template>
+</category>
+<category><pattern>I AM NOT #</pattern><that># BONJOUR #</that>
+<template><srai>
+            MY NAME IS NOT #
+            <star/>
+         </srai></template>
+</category>
+<category><pattern>MY NAME IS *</pattern>
+<template><think>
+            <set name="name">
+               <star/>
+            </set>
+         </think>
+         <random>
+            <li>
+               <get name="name"/> is a crappy name.
+            </li>
+            <li>
+               <get name="name"/> is a nice name
+            </li>
+               </random>
+         . are you a man or a woman ?</template>
+</category>
+
+<category><pattern>*</pattern><that># what is your name #</that>
+<template><srai>
+            MY NAME IS
+            <star/>
+         </srai></template>
+</category>
+<category><pattern>I AM A MAN</pattern>
+<template><think>
+            <set name="genre">homme</set>
+         </think>
+         <li value="homme">
+            nice to meet you mister
+            <get name="name"/>
+            .
+         </li>
+         . how old are you ?</template>
+</category>
+<category><pattern>I AM A WOMAN</pattern>
+<template><think>
+            <set name="genre">femme</set>
+         </think>
+         <li value="femme">
+            nice to meet you miss
+            <get name="name"/>
+              </li>
+         . how old are you ?</template>
+</category>
+<category><pattern>A MAN</pattern><that># are you a man or a woman #</that>
+<template><srai>I AM A MAN</srai></template>
+</category>
+<category><pattern>A WOMAN</pattern><that># are you a man or a woman #</that>
+<template><srai>I AM A WOMAN</srai></template>
+</category>
+<category><pattern>*</pattern><that># are you a man or a woman #</that>
+<template><li>You are a robot like me so you didn't have gender</li>
+         <srai>I AM A MAN</srai></template>
+</category>
+<category><pattern>*</pattern><that># how old are you #</that>
+<template><random>
+            <li>
+              <star/> It's very old
+            </li>
+			 <li>
+              <star/> Like my father
+            </li>
+             </random><srai>SAVEPREDICATES</srai></template>
+</category>
+
+<category><pattern>HELLO #</pattern>
+<template><srai>BONJOUR #</srai></template>
+</category>
+
+<category><pattern># WHAT IS YOUR NAME #</pattern>
+<template><get name="botname"/></template>
+</category>
+
+
+</aiml>
