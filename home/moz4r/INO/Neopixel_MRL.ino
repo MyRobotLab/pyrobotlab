@@ -21,7 +21,7 @@ void setup() {
 
 
 void loop() {
-  MRLval = Serial.read();
+  MRLval = Serial.parseInt();
   Serial.println(MRLval);
   switch (MRLval) {
     case 1:
