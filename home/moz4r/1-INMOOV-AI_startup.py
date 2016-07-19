@@ -1,10 +1,11 @@
+
 # ##############################################################################
 # 							*** SETUP / INSTALLATION ***
 # ##############################################################################
 # STABLE FILES : https://github.com/MyRobotLab/pyrobotlab/tree/master/home/moz4r  [ RACHEL AIML + PYTHON ]
 # UPDATED DEV FILES :  https://github.com/MyRobotLab/aiml/tree/master/bots/ [ RACHEL AIML + PYTHON ]
 # -----------------------------------
-# - Inmoov-Life Version 1.4 By Moz4r
+# - Inmoov-AI Version 1.5 By Moz4r
 # - Credit :
 # - Rachel the humanoïde
 # - Wikidatafetcher By Beetlejuice
@@ -14,47 +15,18 @@
 # -----------------------------------
 # !!! INSTALL : !!!
 # !!! PLEASE copy all aiml files to : develop\ProgramAB\bots\rachel\aiml !!!
-# !!! AND https://github.com/MyRobotLab/aiml/tree/master/bots/BOTS-FRENCH/Rachel/TXT to the root of MRL
-# !!! + https://github.com/MyRobotLab/aiml/tree/master/bots/BOTS-ENGLISH/Rachel/TXT
+# !!! AND https://github.com/MyRobotLab/aiml/tree/master/bots/BOTS-FRENCH/INMOOV_AI/TXT to the root of MRL
+# !!! + https://github.com/MyRobotLab/aiml/tree/master/bots/BOTS-ENGLISH/INMOOV_AI/TXT
 #
 # 
-# I use realTime voice syncronisation not mouthcontrol : https://github.com/MyRobotLab/pyrobotlab/blob/master/home/moz4r/mouthcontrol_hardware.ino
-#
-# ------>
-#
-#Robot Name
-#please, there is no verifications ! don't use an other used robot name ( usefull to use Inmoov Messenger )
-myBotname=""
-#Your language / votre langue( FR/EN )
-lang="EN"
-Voice="Ryan"
-# To fetch weather etc [ adresse du serveur fetcher meteo etc ...]
-BotURL="http://myai.cloud/bot1.php"
-units="metric" # or : imperial
-# ##
-#
-#IF YOU DIDNT HAVE MOTORS set inmoov=0 / Si vous n'avez pas de servo : inmoov=0
-IsInmoovLeft=0
-IsInmoovRight=0
-MRLmouthControl=0
-BoardType="atmega2560" # atmega168 | atmega328 | atmega328p | atmega2560 | atmega1280 | atmega32u4
-leftPort = "COM3"
-rightPort = "COM4"
+# I use realTime voice syncronisation but you can check mouthcontrol=1 in 2-INMOOV-AI_config.py 
+# https://github.com/MyRobotLab/pyrobotlab/blob/master/home/moz4r/mouthcontrol_hardware.ino
+# -
+#  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#  !!!!!!!!!!!!!!!! CONFIG INSIDE THIS FILE !!! / ENTREZ VOS PARAMETRES DANS CE FICHIER  !!!!!!!!!!
+#  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
-#Eyeleads / paupieres
-IhaveEyelids=0
-PaupiereServoPin = 27
-
-# Ligh if you have / led RGB with pins
-IhaveLights = 0
-
-ROUGE=29
-VERT=28
-BLEU=30
-
-#tracking for testing
-tracking=0
+# 						2-INMOOV-AI_config.py
 
 
 # ###
@@ -66,7 +38,7 @@ tracking=0
 
 
 
-version=16
+version=17
 IcanStartToEar=0
 
 import urllib2
@@ -87,13 +59,21 @@ import hashlib
 global Ispeak
 Ispeak=1
 
+
 oridir=os.getcwd().replace("\\", "/")
+#fix programab aimlif problems
 try:
 	shutil.rmtree(oridir+'/ProgramAB/bots/rachel/aimlif')
 except: 
 	pass
 
-
+# check if a config file exist or create default one
+if os.path.isfile(os.getcwd().replace("develop", "").replace("\\", "/")+'2-INMOOV-AI_config.py'):
+	print("ok")
+else:
+	shutil.copyfile(os.getcwd().replace("develop", "").replace("\\", "/")+'2-INMOOV-AI_config.py.default',os.getcwd().replace("develop", "").replace("\\", "/")+'2-INMOOV-AI_config.py')
+execfile('../2-INMOOV-AI_config.py')
+	
 gesturesPath = os.getcwd().replace("develop", "").replace("\\", "/")+"gestures"
 BotURL=BotURL+"?lang="+lang+"&FixPhpCache="+str(time.time())
 
@@ -105,7 +85,6 @@ troat = [" #THROAT01# ", " #THROAT02# ", " #THROAT03# ", " ", " ", " "]
 
 
 image=Runtime.createAndStart("ImageDisplay", "ImageDisplay")
-sleep(1)
 
 
 Runtime.createAndStart("chatBot", "ProgramAB")
@@ -123,10 +102,14 @@ mouth = i01.mouth
 webgui = Runtime.create("WebGui","WebGui")
 webgui.autoStartBrowser(False)
 webgui.startService()
-webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
-#r=image.displayFullScreen("https://i.ytimg.com/vi/tIk1Mc170yg/maxresdefault.jpg",1)
 
+#r=image.displayFullScreen("https://i.ytimg.com/vi/tIk1Mc170yg/maxresdefault.jpg",1)
+sleep(0.5)
+#r=image.displayFullScreen(os.getcwd().replace("develop", "")+'pictures\loading.jpg',1)
+#r=image.displayFullScreen(os.getcwd().replace("develop", "")+'pictures\loading.jpg',1)
 #webgui.start()
+
+# inmoov init
 
 if IsInmoovRight==1:
 
@@ -160,11 +143,16 @@ if IsInmoovLeft==1:
 	i01.startHead(leftPort,BoardType)
 	if MRLmouthControl==1:
 		i01.startMouthControl(leftPort)
+		i01.head.jaw.setMinMax(JawMIN,JawMAX)
+		i01.mouthControl.setmouth(JawMIN,JawMAX)
+		i01.head.jaw.setRest(JawMIN)
 	i01.startLeftArm(leftPort)
 	torso = i01.startTorso(leftPort)
 	i01.setHeadSpeed(0.5, 0.5)
 	i01.head.neck.setMinMax(0,180)
+	i01.head.neck.map(0,180,MinNeck,MaxNeck)
 	i01.head.rothead.setMinMax(0,180)
+	i01.head.rothead.map(0,180,MinRotHead,MaxRotHead)
 	i01.moveHead(80,86,40,78,76)
 	i01.setHeadSpeed(1, 1)
 	i01.head.eyeX.setMinMax(0,180)
@@ -182,7 +170,18 @@ if IsInmoovLeft==1:
 		
 	
 	
+if IsInmoovLeft==1 or IsInmoovRight==1:
+	opencv = i01.opencv
+else:
+	opencv = Runtime.createAndStart("opencv","OpenCV")	
 	
+
+
+ 
+
+
+
+
 	
 
 Runtime.createAndStart("htmlFilter", "HtmlFilter")
@@ -229,6 +228,17 @@ chatBot.startSession("ProgramAB", "default", "rachel")
 chatBot.addTextListener(htmlFilter)
 htmlFilter.addListener("publishText", python.name, "talk") 
 
+if Neopixel!="COMX":
+	serial = Runtime.createAndStart("serial","Serial")
+	serial.connect(Neopixel, 9600, 8, 1, 0)
+
+def NeoPixelF(valNeo):
+	if Neopixel!="COMX":
+		serial.write(valNeo)
+	else:
+		print(valNeo)
+
+NeoPixelF(3)
 
 def No(data):
 	if IsInmoovLeft==1:
@@ -259,7 +269,7 @@ def No(data):
 		#i01.detach()
 		
 def talk(data):
-	sleep(1)
+	sleep(0.1)
 	#VieAleatoire.stopClock()
 	
 	if data!="":
@@ -269,24 +279,35 @@ def talk(data):
 			pass
 		mouth.speak(unicode(data,'utf-8'))
 
+def talkBlocking(data):
+	sleep(0.1)
+	#VieAleatoire.stopClock()
+	
+	if data!="":
+		try:
+			ear.stopListening()
+		except: 
+			pass
+		mouth.speakBlocking(unicode(data,'utf-8'))
+
 
 
 if IhaveEyelids==1:
-	execfile('../RACHEL_INC_paupieres_eyeleads.py')
-execfile('../RACHEL_INC_vie_aleatoire-standby_life.py')
-
-
+	execfile('../INMOOV-AI_paupieres_eyeleads.py')
+execfile('../INMOOV-AI_vie_aleatoire-standby_life.py')
+if IsInmoovLeft==1:
+	execfile('../INMOOV-AI_opencv.py')
+execfile('../INMOOV-AI_move_head_random.py')
 #on bloque le micro quand le robot parle
 
-
-
 def onEndSpeaking(text):
+	MoveHeadTimer.stopClock()
 	global Ispeak
 	Ispeak=0
 	global TimeNoSpeak
 	VieAleatoire.startClock()
 	TimeNoSpeak="OFF"
-	Light(0,0,0)
+	#Light(0,0,0)
 	if IcanStartToEar==1:
 		try:
 			ear.startListening()
@@ -294,6 +315,7 @@ def onEndSpeaking(text):
 			pass
 
 def onStartSpeaking(text):
+	MoveHeadTimer.startClock()
 	global Ispeak
 	Ispeak=1
 	try:
@@ -303,7 +325,7 @@ def onStartSpeaking(text):
 	global TimeNoSpeak
 	TimeNoSpeak="OFF"
 	VieAleatoire.stopClock()
-	Light(1,1,1)
+	#Light(1,1,1)
 	
 	
 #ear.addTextListener(chatBot)	
@@ -315,6 +337,7 @@ def onText(text):
 
 
 	
+
 	
 #on bloque le micro quand le robot parle
 		
@@ -351,16 +374,7 @@ def Parse(utfdata):
 	#Light(1,1,1)
 	return utfdata;
 
-def MoveHead():
-	if IsInmoovLeft==1:
-		#i01.attach()
-		i01.setHeadSpeed(0.5, 0.5)
-		i01.moveHead(20,120,40,78,76)
-		time.sleep(2)
-		i01.moveHead(150,30,40,78,76)
-		time.sleep(2)
-		i01.moveHead(80,90,40,78,76)
-		#i01.detach()
+
 		
 def Light(ROUGE_V,VERT_V,BLEU_V):
 	if IhaveLights==1 and IsInmoovRight==1:
@@ -495,6 +509,14 @@ def UpdateBotName(botname):
 def GetUnreadMessageNumbers():
 	RetourServer=Parse("http://www.myai.cloud/shared_memory.php?action=GetUnreadMessageNumbers&bot_id="+str(chatBot.getPredicate("default","bot_id")))
 	print "http://www.myai.cloud/shared_memory.php?action=GetUnreadMessageNumbers&bot_id="+str(chatBot.getPredicate("default","bot_id"))
+	if RetourServer!="0":
+		Light(0,1,1)
+		r=image.displayFullScreen(os.getcwd().replace("develop", "")+'pictures\message.jpg',1)
+		r=image.displayFullScreen(os.getcwd().replace("develop", "")+'pictures\message.jpg',1)
+	else:
+		Light(1,1,1)
+		r=image.displayFullScreen(os.getcwd().replace("develop", "")+'pictures\logo.jpg',1)
+		r=image.displayFullScreen(os.getcwd().replace("develop", "")+'pictures\logo.jpg',1)
 	chatBot.getResponse("SYSTEM "+RetourServer+ " MESSAGE")
 	
 def GetMessage():
@@ -518,7 +540,8 @@ def CheckVersion():
 	RetourServer=Parse("http://www.myai.cloud/version.html")
 	print str(RetourServer)+' '+str(version)
 	if str(RetourServer)==str(version):
-		chatBot.getResponse("IAMUPDATED")
+		print "software is OK"
+		#chatBot.getResponse("IAMUPDATED")
 	else:
 		chatBot.getResponse("INEEDUPDATE")
 	
@@ -553,6 +576,16 @@ def question(data):
 	#i01.detach()
 #Light(1,1,1)
 
+
+
+def loto(phrase,the,lucky):
+	talkBlocking(phrase)
+	talkBlocking(the+str(random.randint(1,49)))
+	talkBlocking(the+str(random.randint(1,49)))
+	talkBlocking(the+str(random.randint(1,49)))
+	talkBlocking(the+str(random.randint(1,49)))
+	talkBlocking(the+str(random.randint(1,49)))
+	talkBlocking(lucky+str(random.randint(1,10)))
 
 def DisplayPic(pic):
 	r=0
@@ -592,15 +625,81 @@ def rest():
 		i01.detach()
   
 def trackHumans():
-	#i01.headTracking.findFace()
+	i01.headTracking.findFace()
 	#i01.opencv.SetDisplayFilter
-	i01.headTracking.faceDetect()
-	#i01.eyesTracking.faceDetect()
+	#i01.headTracking.faceDetect()
+	i01.eyesTracking.faceDetect()
+	print "test"
+
+
+
+	
+
+	
+def TakePhoto(messagePhoto):
+	talkBlocking(messagePhoto)
+	global FaceDetected
+	global FaceDetectedCounter
+	global startTimerFunction
+	FaceDetectedCounter=0
+	FaceDetected=0
+	Light(0,0,0)
+	startTimerFunction=0
+	NoFaceDetectedTimer.startClock()
+	#opencv.setInputSource("camera")
+	#opencv.setCameraIndex(0)
+	#opencv.addFilter("pdown","PyramidDown")
+	#opencv.setDisplayFilter("pdown")
+	#opencv.capture()
+	#sleep(1)
+	#photoFileName = opencv.recordSingleFrame()
+	#print "name file is" , photoFileName
+
+def PhotoProcess(messagePhoto):
+	global FaceDetected
+	Light(1,1,1)
+	FaceDetectedCounter=0
+	FaceDetected=1
+	NoFaceDetectedTimer.stopClock()
+	NeoPixelF(3)
+	talkBlocking(messagePhoto)
+	Light(1,1,1)
+	talkBlocking("chi i i i i i i i i ize")
+	sleep(0.5)
+	Light(0,0,0)
+	sleep(0.1)
+	Light(1,1,1)
+	sleep(0.1)
+	Light(0,0,0)
+	sleep(0.1)
+	Light(1,1,1)
+	sleep(0.1)
+	i01.stopTracking()
+	opencv.removeFilters()
+	opencv.stopCapture()
+	sleep(1)
+	opencv.setInputSource("camera")
+	opencv.setCameraIndex(0)
+	opencv.capture()
+	sleep(0.5)
+	Light(0,0,0)
+	photoFileName = opencv.recordSingleFrame()
+	print "name file is" , os.getcwd()+'\\'+str(photoFileName)
+	Light(1,1,1)
+	NeoPixelF(1)
+	DisplayPic(os.getcwd()+'\\'+str(photoFileName))
+	opencv.removeFilters()
+	opencv.stopCapture()
+	i01.startEyesTracking(leftPort)
+	i01.startHeadTracking(leftPort)
+	i01.eyesTracking.faceDetect()
+	
+	
 	
 # ##########################################################	
 # program start :
 
-
+Light(1,1,0)
 ClearMemory()
 if myBotname!="":
 	UpdateBotName(myBotname)
@@ -610,14 +709,17 @@ chatBot.getResponse("WAKE_UP")
 
 
 rest()
-if IsInmoovLeft==1 and tracking==1:
+if IsInmoovLeft==1:
 	i01.head.attach()
+if IsInmoovLeft==1 and tracking==1:
 	trackHumans()
 
 sleep(5)
+
 i01.startEar()
 ear = i01.ear
-
+webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
+Light(1,1,1)
 if lang=="FR":
    ear.setLanguage("fr-FR")
 python.subscribe(ear.getName(),"publishText")
@@ -627,5 +729,11 @@ WebkitSpeachReconitionFix.startClock()
 
 if str(chatBot.getPredicate("default","botname"))!="unknown" and str(chatBot.getPredicate("default","botname"))!="default" and str(chatBot.getPredicate("default","botname"))!="":
 	UpdateBotName(str(chatBot.getPredicate("default","botname")))
-if str(chatBot.getPredicate("default","bot_id"))!="unknown":
-	chatBot.getResponse("MESSAGESCHECK")
+#if str(chatBot.getPredicate("default","bot_id"))!="unknown":
+	#chatBot.getResponse("MESSAGESCHECK")
+sleep(0.5)
+r=image.displayFullScreen(os.getcwd().replace("develop", "")+'pictures\logo.jpg',1)
+r=image.displayFullScreen(os.getcwd().replace("develop", "")+'pictures\logo.jpg',1)
+Light(1,1,1)
+NeoPixelF(1)
+

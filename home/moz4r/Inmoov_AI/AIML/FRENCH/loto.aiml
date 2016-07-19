@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<category><pattern># loto #</pattern>
+<template>
+	<oob>
+					<mrl>
+				   <service>python</service>
+				   <method>exec</method>
+				   <param>loto("Voci les numéros du loto, ","Le ","Et le numéro chance le, ")</param>
+				 </mrl>
+			</oob>
+</template>
+</category> 
+
+
+
+   
+  
+  
+
+</aiml>
+
