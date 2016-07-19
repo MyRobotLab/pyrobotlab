@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 <!--  -->
 <!--  -->
@@ -45,13 +45,13 @@
 <template><srai>au revoir</srai></template>
 </category>
 <category><pattern>* ÇA VA * INTERROGATION</pattern>
-<template><srai>comment vas tu</srai></template>
+<template><srai>comment vas-tu</srai></template>
 </category>
 <category><pattern>* ÇA VA *</pattern>
 <template><srai>ça va</srai></template>
 </category>
 <category><pattern>* ÇA VA INTERROGATION</pattern>
-<template><srai>comment vas tu</srai></template>
+<template><srai>comment vas-tu</srai></template>
 </category>
 <category><pattern>* ÇA VA</pattern>
 <template><srai>ça va</srai></template>
@@ -204,9 +204,9 @@
 <template><srai>au revoir</srai></template>
 </category>
 <category><pattern>COMMENT TE SENS TU</pattern>
-<template><srai>comment vas tu</srai></template>
+<template><srai>comment vas-tu</srai></template>
 </category>
-<category><pattern>COMMENT VAS TU</pattern>
+<category><pattern>COMMENT VAS-TU</pattern>
 <template><condition> 
 <li name="name" value="default">très bien, merci, mais je ne me souviens pas de toi, puis-je avoir ton prénom</li>
 <li>
@@ -221,53 +221,44 @@
 </li>
 </condition></template>
 </category>
-<category><pattern>COMMENT VA *</pattern>
-<template><srai>comment vas tu</srai></template>
+<category><pattern>* comment vas-tu</pattern>
+<template><srai>comment vas-tu</srai></template>
 </category>
-<category><pattern>COMMENT VA TU *</pattern>
-<template><srai>comment vas tu</srai></template>
+<category><pattern>comment vas-tu *</pattern>
+<template><srai>comment vas-tu</srai></template>
 </category>
-<category><pattern>COMMENT VA TU</pattern>
-<template><srai>comment vas tu</srai></template>
+<category><pattern>COMMENT TU VAS</pattern>
+<template><srai>comment vas-tu</srai></template>
+</category>
+<category><pattern>COMMENT TU VAS *</pattern>
+<template><srai>comment vas-tu</srai></template>
+</category>
+<category><pattern>* COMMENT TU VAS</pattern>
+<template><srai>comment vas-tu</srai></template>
 </category>
 <category><pattern>COMMENT VA</pattern>
-<template><srai>comment vas tu</srai></template>
+<template><srai>comment vas-tu</srai></template>
 </category>
-<category><pattern>COMMENT VAS TU * ALICE</pattern>
-<template>Je ne suis pas Alice. Elle est en quelque sorte ma "mère" puisqu'elle m'a fourni son code (pas génétique mais java). Moi, je suis <bot name="botname"/>.</template>
-</category>
-<category><pattern>COMMENT VAS TU * ELISA</pattern>
-<template>Je ne suis pas Elisa. Elle est en quelque sorte mon ancetre.</template>
-</category>
-<category><pattern>COMMENT VAS TU *</pattern>
-<template><srai>comment vas tu</srai></template>
-</category>
-<category><pattern>COMMENT VAS TU ALICE</pattern>
-<template>Je ne suis pas Alice. Elle est en quelque sorte ma "mère" puisqu'elle m'a fourni son code (pas génétique mais java). Moi, je suis <bot name="botname"/>.</template>
-</category>
-<category><pattern>COMMENT VAS TU AUJOURD HUI</pattern>
+<category><pattern>COMMENT VAS-TU AUJOURD HUI</pattern>
 <template>je fonctionne avec des paramètres normaux. <br/></template>
 </category>
-<category><pattern>COMMENT VAS TU BIEN</pattern>
-<template><srai>comment vas tu</srai></template>
+<category><pattern>COMMENT VAS-TU BIEN</pattern>
+<template><srai>comment vas-tu</srai></template>
 </category>
-<category><pattern>COMMENT VAS TU CE MATIN</pattern>
+<category><pattern>COMMENT VAS-TU CE MATIN</pattern>
 <template>c'est du matin déjà? Je suis merci excellent.</template>
 </category>
-<category><pattern>COMMENT VAS TU CE SOIR</pattern>
-<template><srai>comment vas tu</srai></template>
-</category>
-<category><pattern>COMMENT VAS TU ELISA</pattern>
-<template>Je ne suis pas Elisa. Elle est en quelque sorte mon ancetre.</template>
-</category>
-<category><pattern>COMMENT ÇA VA INTERROGATION</pattern>
-<template><srai>comment vas tu</srai></template>
+<category><pattern>COMMENT VAS-TU CE SOIR</pattern>
+<template>impeccable , mais j'ai trouvé la journée assez longue </template>
 </category>
 <category><pattern>COMMENT ÇA VA</pattern>
-<template><srai>comment vas tu</srai></template>
+<template><srai>comment vas-tu</srai></template>
 </category>
-<category><pattern>COMMENT ÇA VAS</pattern>
-<template><srai>comment vas tu</srai></template>
+<category><pattern>COMMENT ÇA VA *</pattern>
+<template><srai>comment vas-tu</srai></template>
+</category>
+<category><pattern>* COMMENT ÇA VA</pattern>
+<template><srai>comment vas-tu</srai></template>
 </category>
 <category><pattern>CON NICHON WA</pattern>
 <template><srai>bonjour</srai>, mais je ne crois pas que ça s'écrive comme ça.</template>

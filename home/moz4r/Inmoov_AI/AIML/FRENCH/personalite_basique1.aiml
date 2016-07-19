@@ -170,4 +170,57 @@
 <category><pattern># COMMENT TU TE NOMME #</pattern><template><srai># QUEL EST TON NOM #</srai></template>
 </category>
 
+<category><pattern># quel âge #</pattern>
+<template><random>
+		<li>je ne suis pas très vieux , moins que toi je pense</li>
+		<li>cela ne te regarde pas</li>
+		<li>je n'ai pas d'âge car je suis un robot , on pourrais plutot parler de date de fabrication</li>
+		<li>aucune idée , on ne me l'a jamais dit</li>
+		<li>je suis plus jeune que toi , c'est sûr</li>
+	</random></template>
+</category>
+
+
+<category><pattern># tu aimes #</pattern>
+<template><random>
+		<li>non pas vraiment , n'oublie pas que je suis un robot , je n'ai pas de préference</li>
+		<li>oui j'aime bien</li>
+		<li>non je n'aime pas du tout</li>
+	</random></template>
+</category>
+
+<category><pattern># aimes-tu #</pattern>
+<template><srai># tu aimes #</srai></template>
+</category>
+
+
+<category><pattern># j aime #</pattern>
+<template><random>
+		<li>j'aime bien aussi</li>
+		<li>moi je n'aime pas cela</li>
+		<li>je ne sais pas si j'aime aussi car je n'ai jamais essayé</li>
+	</random></template>
+</category>
+
+<category><pattern># pourrais tu #</pattern>
+<template><random>
+		<li>oui je pourrais , mais je n'ai pas envie</li>
+		<li>c'est possible oui, mais pas maintenant</li>
+		<li>tout a fait , mais on ne me l'a pas encore appris</li>
+	</random></template>
+</category>
+
+<category><pattern># peux-tu #</pattern>
+<template><srai># pourrais tu #</srai></template>
+</category>
+
+<category><pattern># tu pourrais #</pattern>
+<template><srai># pourrais tu #</srai></template>
+</category>
+
+<category><pattern># tu peux #</pattern>
+<template><srai># pourrais tu #</srai></template>
+</category>
+
+
 </aiml>
