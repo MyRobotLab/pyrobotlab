@@ -1,0 +1,124 @@
+#include <NewPing.h>
+
+#define  TRIGGER_PIN  11
+#define  ECHO_PIN     12
+#define MAX_DISTANCE 200
+
+NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
+
+int DistanceCm;
+
+int inputPin = 3;
+int inputPin2 = 8;
+
+int pirState = LOW;
+int pirState2 = LOW;
+
+int val = 0;
+int val2 = 0;
+
+int RPWM_Output = 5;
+int LPWM_Output = 6;
+
+void setup() 
+{
+	pinMode(inputPin, INPUT);
+	pinMode(inputPin2, INPUT);
+
+	pinMode(RPWM_Output, OUTPUT);
+	pinMode(LPWM_Output, OUTPUT);
+
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	delay(50);
+	DistanceCm = sonar.ping_cm();
+	Serial.println(DistanceCm);  
+	int sensorValue = digitalRead(inputPin);
+	val = digitalRead(inputPin);
+	if (val == HIGH)
+	{
+	if (pirState == LOW)
+	{
+	Serial.println("Door open");
+	pirState = HIGH;
+	int reversePWM = 511;
+	analogWrite(LPWM_Output, 0);
+	analogWrite(RPWM_Output, reversePWM);
+	delay(5000);
+	reversePWM = 512;
+	analogWrite(LPWM_Output, 0);
+	analogWrite(RPWM_Output, reversePWM);
+	delay(1000);
+	}
+	} 
+	else 
+	{
+	if (pirState == HIGH)
+	{
+	if (DistanceCm <= 10)
+	{
+	Serial.println("Achtung!");
+	delay(5000);
+	}
+	else
+	{
+	Serial.println("Door closed");
+	pirState = LOW;
+	int forwardPWM = 1023;
+	analogWrite(LPWM_Output, forwardPWM);
+	analogWrite(RPWM_Output, 0);
+	delay(5000);
+	forwardPWM = 512;
+	analogWrite(LPWM_Output, forwardPWM);
+	analogWrite(RPWM_Output, 0);
+	delay(1000);
+	}
+	}
+}
+
+int sensorValue2 = digitalRead(inputPin2);
+val2 = digitalRead(inputPin2);
+if (val2 == HIGH) 
+	{
+	if (pirState2 == LOW) 
+	{
+	Serial.println("Door open");
+	pirState2 = HIGH;
+	int reversePWM = 511;
+	analogWrite(LPWM_Output, 0);
+	analogWrite(RPWM_Output, reversePWM);
+	delay(5000);
+	reversePWM = 512;
+	analogWrite(LPWM_Output, 0);
+	analogWrite(RPWM_Output, reversePWM);
+	delay(1000);
+	}
+	} 
+	else
+	{
+	if (pirState2 == HIGH)
+	{
+	if (DistanceCm <= 10)
+	{
+	Serial.println("Achtung!");
+	delay(5000);
+	}
+	else
+	{  
+	Serial.println("Door closed");
+	pirState2 = LOW;
+	int forwardPWM = 1023;
+	analogWrite(LPWM_Output, forwardPWM);
+	analogWrite(RPWM_Output, 0);
+	delay(5000);
+	forwardPWM = 512;
+	analogWrite(LPWM_Output, forwardPWM);
+	analogWrite(RPWM_Output, 0);
+	delay(1000);
+	}
+	}
+	}
+}
