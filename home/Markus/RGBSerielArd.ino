@@ -56,14 +56,14 @@ void loop() {
       analogWrite(redPin, red);
       analogWrite(greenPin, green);
       analogWrite(bluePin, blue);
-
-      // print the three numbers in one string as hexadecimal:
-      Serial.print(red);
-      Serial.print(',');
-      Serial.print(green);
-      Serial.print(',');
-      Serial.println(blue);
     }
+
+    Serial.print(red);
+    Serial.print(',');
+    Serial.print(green);
+    Serial.print(',');
+    Serial.println(blue);
+
     Serial.println("Data received");
   }
 }
