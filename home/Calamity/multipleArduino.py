@@ -10,4 +10,7 @@ arduino1.connect(arduino,"Serial1")
 servo = Runtime.createAndStart("servo","Servo")
 servo.attach(arduino1,5)
 
+#attaching procedure take a bit more time to do, wait a little before using it
+sleep(1)
+
 servo.moveTo(90)
