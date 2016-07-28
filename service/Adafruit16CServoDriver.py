@@ -6,12 +6,12 @@ adaFruit16c = Runtime.createAndStart("AdaFruit16C","Adafruit16CServoDriver")
 # Change COM4 to the port where your Arduino is connected
 arduino = Runtime.createAndStart("Arduino","Arduino")
 arduino.connect("COM4")
-adaFruit16c.setController("Arduino","1","x040")
+adaFruit16c.setController("Arduino","1","0x40")
 #
 # This part of the script is if you use the GPOI pins of the Raspberry PI
 # Comment it out or delete it if you use an Arduino
 raspi = Runtime.createAndStart("RasPi","RasPi")
-adaFruit16c.setController("RasPi","1","x040")
+adaFruit16c.setController("RasPi","1","0x40")
 #
 # This part is common for both devices and creates two servo instances
 # on port 3 and 8 on the Adafruit16CServoDriver
