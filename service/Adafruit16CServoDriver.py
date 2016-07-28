@@ -14,7 +14,7 @@ raspi = Runtime.createAndStart("RasPi","RasPi")
 adaFruit16c.setController("RasPi","1","x040")
 #
 # This part is common for both devices and creates two servo instances
-# on port 3 and 8 on the Adaafruit16CServoDriver
+# on port 3 and 8 on the Adafruit16CServoDriver
 # Change the names of the servos and the pin numbers to your usage
 thumb = Runtime.createAndStart("Thumb", "Servo")
 elbow = Runtime.createAndStart("Elbow", "Servo")
