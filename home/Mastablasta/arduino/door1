@@ -2,7 +2,7 @@
 
 #define  TRIGGER_PIN  11
 #define  ECHO_PIN     12
-#define MAX_DISTANCE 200
+#define MAX_DISTANCE  90
 
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
 
@@ -63,7 +63,7 @@ void loop()
     int reversePWM = 511;
     analogWrite(LPWM_Output, 0);
     analogWrite(RPWM_Output, reversePWM);
-    delay(2900);
+    delay(2750);
     reversePWM = 512;
     analogWrite(LPWM_Output, 0);
     analogWrite(RPWM_Output, reversePWM);
@@ -74,10 +74,21 @@ void loop()
     }
     if (perOpen == 0)
     {
+    if (open1time == 1)
+    {
     Serial.println("----------Permanent off----------"); 
     pir1 = 0;
     pir2 = 0;
     open1time = 0;
+    int forwardPWM = 1023;
+    analogWrite(LPWM_Output, forwardPWM);
+    analogWrite(RPWM_Output, 0);
+    delay(2750);
+    forwardPWM = 512;
+    analogWrite(LPWM_Output, forwardPWM);
+    analogWrite(RPWM_Output, 0);
+    delay(1000);
+    }
     }
   
   delay(100);
@@ -112,7 +123,7 @@ void loop()
   int reversePWM = 511;
   analogWrite(LPWM_Output, 0);
   analogWrite(RPWM_Output, reversePWM);
-  delay(2900);
+  delay(2750);
   reversePWM = 512;
   analogWrite(LPWM_Output, 0);
   analogWrite(RPWM_Output, reversePWM);
@@ -123,7 +134,7 @@ void loop()
   {
   if (pirState == HIGH)
   {
-  if (DistanceCm < 10)
+  if (DistanceCm < 70)
   {
   Serial.println("Achtung!");
   //delay(1000);
@@ -136,7 +147,7 @@ void loop()
   int forwardPWM = 1023;
   analogWrite(LPWM_Output, forwardPWM);
   analogWrite(RPWM_Output, 0);
-  delay(2900);
+  delay(2750);
   forwardPWM = 512;
   analogWrite(LPWM_Output, forwardPWM);
   analogWrite(RPWM_Output, 0);
@@ -163,7 +174,7 @@ void loop()
   int reversePWM = 511;
   analogWrite(LPWM_Output, 0);
   analogWrite(RPWM_Output, reversePWM);
-  delay(2900);
+  delay(2750);
   reversePWM = 512;
   analogWrite(LPWM_Output, 0);
   analogWrite(RPWM_Output, reversePWM);
@@ -174,7 +185,7 @@ void loop()
   {
   if (pirState2 == HIGH)
   {
-  if (DistanceCm < 10)
+  if (DistanceCm < 70)
   {
   Serial.println("Achtung!");
   //delay(1000);
@@ -187,7 +198,7 @@ void loop()
   int forwardPWM = 1023;
   analogWrite(LPWM_Output, forwardPWM);
   analogWrite(RPWM_Output, 0);
-  delay(2900);
+  delay(2750);
   forwardPWM = 512;
   analogWrite(LPWM_Output, forwardPWM);
   analogWrite(RPWM_Output, 0);
@@ -211,7 +222,7 @@ void loop()
     int reversePWM = 511;
     analogWrite(LPWM_Output, 0);
     analogWrite(RPWM_Output, reversePWM);
-    delay(2900);
+    delay(2750);
     reversePWM = 512;
     analogWrite(LPWM_Output, 0);
     analogWrite(RPWM_Output, reversePWM);
@@ -219,7 +230,7 @@ void loop()
     keeptrigger = 0;
   }
 
-  if (DistanceCm < 10)
+  if (DistanceCm < 70)
   {
   Serial.println("Achtung!");
   //delay(1000);
@@ -231,7 +242,7 @@ void loop()
   int forwardPWM = 1023;
   analogWrite(LPWM_Output, forwardPWM);
   analogWrite(RPWM_Output, 0);
-  delay(2900);
+  delay(2750);
   forwardPWM = 512;
   analogWrite(LPWM_Output, forwardPWM);
   analogWrite(RPWM_Output, 0);
