@@ -1,0 +1,243 @@
+#include <NewPing.h>
+
+#define  TRIGGER_PIN  11
+#define  ECHO_PIN     12
+#define MAX_DISTANCE 200
+
+NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
+
+int DistanceCm;
+
+int inputPin = 3;
+int inputPin2 = 8;
+
+int pirState = LOW;
+int pirState2 = LOW;
+
+int val = 0;
+int val2 = 0;
+
+int keeptrigger = 0;           
+
+int pir1 = 0;  
+int pir2 = 0;
+
+int oc = 1;
+int open1time = 0;
+
+int RPWM_Output = 5;
+int LPWM_Output = 6;
+
+void setup() 
+{
+  pinMode(inputPin, INPUT);
+  pinMode(inputPin2, INPUT);
+
+  pinMode(RPWM_Output, OUTPUT);
+  pinMode(LPWM_Output, OUTPUT);
+
+  pinMode(9, INPUT);
+  pinMode(7, INPUT);
+  pinMode(4, INPUT);
+  
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int perOpen = digitalRead(4);
+  Serial.println(perOpen);
+  if (perOpen == 1)
+    {
+    Serial.println("Door permanent open");
+    if (oc == 0)
+    {
+    pir1 = 1;
+    pir2 = 1;
+    }
+    else if (open1time == 0)
+    {
+    pir1 = 1;
+    pir2 = 1;      
+    Serial.println("permanent, opening door");
+    int reversePWM = 511;
+    analogWrite(LPWM_Output, 0);
+    analogWrite(RPWM_Output, reversePWM);
+    delay(2900);
+    reversePWM = 512;
+    analogWrite(LPWM_Output, 0);
+    analogWrite(RPWM_Output, reversePWM);
+    delay(6000);
+    oc = 1;
+    open1time = 1; 
+    }
+    }
+    if (perOpen == 0)
+    {
+    Serial.println("----------Permanent off----------"); 
+    pir1 = 0;
+    pir2 = 0;
+    open1time = 0;
+    }
+  
+  delay(100);
+  DistanceCm = sonar.ping_cm();
+  Serial.print("Distance:  ");
+  Serial.println(DistanceCm);
+
+  int sensValue = digitalRead(9);       // SensValue Umschalten automatisch oder manuell
+  Serial.print("Auto 0, Manuell 1:  ");
+  Serial.println(sensValue);
+
+  int sensValue2 = digitalRead(7);      // SensValue2 Push Button zum öffnen bei manuell
+  Serial.print("Button 1, Aus 0, An 1:  ");
+  Serial.println(sensValue2); 
+    
+  if (sensValue == 0)                   // Vorgang automatisch
+  {
+
+  if (pir1 == 0)
+  {
+
+  int sensorValue = digitalRead(inputPin);
+  val = digitalRead(inputPin);
+  if (val == HIGH)
+  {
+  if (pirState == LOW)
+  {
+  Serial.println("----------PIR 1 Door open----------");
+  pir2 = 1;
+  oc = 0;
+  pirState = HIGH;
+  int reversePWM = 511;
+  analogWrite(LPWM_Output, 0);
+  analogWrite(RPWM_Output, reversePWM);
+  delay(2900);
+  reversePWM = 512;
+  analogWrite(LPWM_Output, 0);
+  analogWrite(RPWM_Output, reversePWM);
+  delay(6000);
+  }
+  } 
+  else 
+  {
+  if (pirState == HIGH)
+  {
+  if (DistanceCm < 10)
+  {
+  Serial.println("Achtung!");
+  //delay(1000);
+  }
+  else
+  {
+  delay(3000);
+  Serial.println("----------PIR 1 Door closed----------");
+  pirState = LOW;
+  int forwardPWM = 1023;
+  analogWrite(LPWM_Output, forwardPWM);
+  analogWrite(RPWM_Output, 0);
+  delay(2900);
+  forwardPWM = 512;
+  analogWrite(LPWM_Output, forwardPWM);
+  analogWrite(RPWM_Output, 0);
+  delay(1000);
+  pir2 = 0;
+  oc = 1;
+  }
+  }
+  }
+  }
+
+  if (pir2 == 0)
+  {
+  int sensorValue2 = digitalRead(inputPin2);
+  val2 = digitalRead(inputPin2);
+  if (val2 == HIGH) 
+  {
+  if (pirState2 == LOW) 
+  {
+  Serial.println("----------PIR 2 Door open----------");
+  pir1 = 1;
+  oc = 0;
+  pirState2 = HIGH;
+  int reversePWM = 511;
+  analogWrite(LPWM_Output, 0);
+  analogWrite(RPWM_Output, reversePWM);
+  delay(2900);
+  reversePWM = 512;
+  analogWrite(LPWM_Output, 0);
+  analogWrite(RPWM_Output, reversePWM);
+  delay(6000);
+  }
+  } 
+  else
+  {
+  if (pirState2 == HIGH)
+  {
+  if (DistanceCm < 10)
+  {
+  Serial.println("Achtung!");
+  //delay(1000);
+  }
+  else
+  {
+  delay(3000);
+  Serial.println("----------PIR 2 Door closed----------");
+  pirState2 = LOW;
+  int forwardPWM = 1023;
+  analogWrite(LPWM_Output, forwardPWM);
+  analogWrite(RPWM_Output, 0);
+  delay(2900);
+  forwardPWM = 512;
+  analogWrite(LPWM_Output, forwardPWM);
+  analogWrite(RPWM_Output, 0);
+  delay(1000);
+  pir1 = 0; 
+  oc = 1;
+  }
+  }
+  }
+  }
+  }
+
+  
+  else                                // Vorgang manuell
+  {
+  Serial.println("Manueller Modus aktiviert");
+  }
+  if (sensValue2 == 1)
+  {
+    Serial.println("----------Button 1 Door open----------");
+    int reversePWM = 511;
+    analogWrite(LPWM_Output, 0);
+    analogWrite(RPWM_Output, reversePWM);
+    delay(2900);
+    reversePWM = 512;
+    analogWrite(LPWM_Output, 0);
+    analogWrite(RPWM_Output, reversePWM);
+    delay(6000);
+    keeptrigger = 0;
+  }
+
+  if (DistanceCm < 10)
+  {
+  Serial.println("Achtung!");
+  //delay(1000);
+  }
+  else if (keeptrigger == 0)
+  {
+  delay(3000);     
+  Serial.println("----------Button 1 Door closed----------");
+  int forwardPWM = 1023;
+  analogWrite(LPWM_Output, forwardPWM);
+  analogWrite(RPWM_Output, 0);
+  delay(2900);
+  forwardPWM = 512;
+  analogWrite(LPWM_Output, forwardPWM);
+  analogWrite(RPWM_Output, 0);
+  delay(1000);
+  keeptrigger = 1;
+  }
+}
+
+
