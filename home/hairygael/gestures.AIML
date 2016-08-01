@@ -1437,7 +1437,7 @@
     <category>
       <pattern>WHAT ABOUT STAR WARS</pattern>
       <template>
-        <oob>
+        </oob>
           <mrl>
             <service>python</service>
             <method>exec</method>
