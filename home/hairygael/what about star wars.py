@@ -1,6 +1,5 @@
-def whataboutstarwars(data = "what about star wars"):
-  if (data == "what about star wars"):
-       x = (random.randint(1, 2))
+def whataboutstarwars():
+  x = (random.randint(1, 2))
        if x == 1:
            fullspeed()
            i01.moveHead(130,149,87,80,100)
