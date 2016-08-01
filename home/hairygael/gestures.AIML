@@ -1436,7 +1436,7 @@
     </category>
     <category>
       <pattern>WHAT ABOUT STAR WARS</pattern>
-      <template>WHAT ABOUT STAR WARS
+      <template>
         <oob>
           <mrl>
             <service>python</service>
