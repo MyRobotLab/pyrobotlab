@@ -1,4 +1,4 @@
-def whataboutstarwars(data):
+def whataboutstarwars(data = "what about star wars"):
   if (data == "what about star wars"):
        x = (random.randint(1, 2))
        if x == 1:
