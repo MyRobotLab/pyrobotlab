@@ -43,6 +43,8 @@
 *
 * Requirements: MyRobotLab running on a computer & a serial connection
 *
+*  TODO - need a method to identify type of board http://forum.arduino.cc/index.php?topic=100557.0
+*
 */
 
 // FIXME FIXME FIXME - ALL defines are defined ONLY in Java - all other files need to be
@@ -377,8 +379,6 @@ void LinkedList<T>::clear(){
 #endif
 
 
-
-
 #include <Servo.h>
 #define WIRE Wire
 #include <Wire.h>
@@ -507,10 +507,11 @@ void LinkedList<T>::clear(){
 
 // ----- MRLCOMM FUNCTION GENERATED INTERFACE END -----------
 
+// FIXME  - remove AF DEFINES
 // Start of Adafruit16CServoDriver defines
 // FIXME : MOVING AF_BEGIN to 70 for some room to not collide with the bindings generator
 // Mats has said he will convert to I2C reads and writes and these will be removed...
-// FIXME  - remove AF DEFINES
+
 #define AF_BEGIN 70
 #define AF_SET_PWM_FREQ 71
 #define AF_SET_PWM 72
@@ -523,6 +524,7 @@ void LinkedList<T>::clear(){
 #define LED0_ON_L 0x6
 // End of Adafruit16CServoDriver defines
 
+// servo event types
 #define  SERVO_EVENT_STOPPED          1
 #define  SERVO_EVENT_POSITION_UPDATE  2
 
@@ -550,19 +552,6 @@ void LinkedList<T>::clear(){
 // GLOBAL DEVICE TYPES END
 // ==============================================
 
-
-// need a method to identify type of board
-// http://forum.arduino.cc/index.php?topic=100557.0
-
-// ----------  MRLCOMM FUNCTION INTERFACE END -----------
-
-// MAX definitions
-// MAX_SERVOS defined by boardtype/library
-// TODO - BOARD IDENTIFICATION - PIN IDENTIFICATION
-// #define NUM_DIGITAL_PINS            20
-// #define NUM_ANALOG_INPUTS           6
-
-#define DIGITAL_PIN_COUNT
 
 // ECHO FINITE STATE MACHINE - NON BLOCKING PULSIN
 #define ECHO_STATE_START 1
@@ -634,33 +623,6 @@ typedef struct
 LinkedList<device_type> deviceList;
 // device_type* deviceList[MAX_DEVICES];
 
-// Servos
-/*
-typedef struct
-{
-  Servo* servo;
-  int index; // index of this servo
-  int speed;
-  int targetPos;
-  int currentPos;
-  bool isMoving;
-
-  int step; // affects speed usually 1
-
-  // sweep related
-  int min;
-  int max;
-  // int delay; - related to speed
-  int increment;
-  bool isSweeping;
-
-  // event related
-  bool eventsEnabled;
-} servo_type;
-
-
-servo_type servos[MAX_SERVOS];
-*/
 
 unsigned long loopCount = 0;
 unsigned long lastMicros = 0;
@@ -739,71 +701,6 @@ unsigned long toUnsignedLongfromBigEndian(unsigned char* buffer, int start) {
   return (((unsigned long)buffer[start] << 24) + ((unsigned long)buffer[start + 1] << 16) + (buffer[start + 2] << 8) + buffer[start + 3]);
 }
 
-/**
-* checks the existence of the searched value in the array
-* - good for not adding to a dynamic list of values if it
-* already exists
-*/
-bool exists(int array[], int len, int searchValue) {
-  for (int i = 0; i < len; ++i) {
-    if (searchValue == array[i]) {
-      return true;
-    }
-  }
-  return false;
-}
-
-/**
-* adds new value to a pseudo dynamic array/list
-* if successful - if value already exists on list
-* sends back an error
-*/
-bool addNewValue(int array[], int& len, int addValue) {
-  if (!exists(array, len, addValue)) {
-    array[len] = addValue;
-    ++len;
-    return true;
-  } else {
-    sendError(ERROR_ALREADY_EXISTS);
-    return false;
-  }
-}
-
-// Will Be Depricated
-bool removeAndShift(int array[], int& len, int removeValue) {
-  if (!exists(array, len, removeValue)) {
-    sendError(ERROR_DOES_NOT_EXIST);
-    return false;
-  }
-  int pos = -1;
-  if (len == 0) {
-    // "should" never happen
-    // would be calling remove on an empty list
-    // the error ERROR_DOES_NOT_EXIST - "should" be called
-    return true;
-  }
-  // find position of value
-  for (int i = 0; i < len; ++i) {
-    if (removeValue == array[i]) {
-      pos = i;
-      break;
-    }
-  }
-  // if at the end just decrement size
-  if (pos == len - 1) {
-    --len;
-    return true;
-  }
-
-  // if found somewhere else shift left
-  if (pos < len && pos > -1) {
-    for (int j = pos; j < len - 1; ++j) {
-      array[j] = array[j + 1];
-    }
-    --len;
-  }
-  return true;
-}
 
 bool getCommand() {
   // handle serial data begin
@@ -1016,44 +913,13 @@ void updateServos() {
   }
 }
 
-void updateSensorsNew() {
-  // TODO: publish data from pins that are publishing data.
-  // TODO: I'd much prefer use an iterator over the linked list of sensors!
-
-  int numSensors = deviceList.size();
-  if (numSensors > 0) {
-    publishDebug("Update Sensors : " + String(numSensors));
-  }
-  for (int sIdx = 0; sIdx < numSensors; sIdx++) {
-    publishDebug("Update Sensor " + String(sIdx));
-    sensor s = deviceList.get(sIdx);
-    // update the values of the pins for each sensor we have.
-    int numPins = s.pins.size();
-    for (int pIdx = 0; pIdx < numPins; pIdx++) {
-      pin_type pin = s.pins.get(pIdx);
-      switch (pin.sensorType) {
-        case SENSOR_TYPE_ANALOG_PIN_READER:
-          publishDebug("ANALOG_PIN UPDATE");
-          pin.value = analogRead(pin.address);
-          break;
-        case SENSOR_TYPE_DIGITAL_PIN_READER:
-          publishDebug("DIGITAL PIN UPDATE");
-          pin.value = digitalRead(pin.address);
-          break;
-        default:
-          // TODO: maybe publish debug?
-          publishDebug("UNKNOWN_SENSOR_TYPE");
-      }
-    }
-    // TODO: what if the pins are not active?
-    publishSensor(s);
-  }
-}
 
 
-
-// This function updates the sensor data (both analog and digital reading here.)
-void updateSensors() {
+/**
+ * updateDevices updates each type of device put on the device list
+ * depending on their type.
+ */
+void updateDevices() {
 
   // iterate through our list of sensors
   for (int i = 0; i < deviceList.size(); i++) {
@@ -1062,22 +928,22 @@ void updateSensors() {
 
     switch (sensor.type) {
       case SENSOR_TYPE_ANALOG_PIN_ARRAY:{
-    	  handleAnalogPinArray(sensor);
+    	  updateAnalogPinArray(sensor);
         break;
       }
 
       case SENSOR_TYPE_DIGITAL_PIN_ARRAY:{
-    	  handleDigitalPinArray(sensor);
+    	  updateDigitalPinArray(sensor);
         break;
       }
 
       case SENSOR_TYPE_ULTRASONIC:{
-    	  handleUltrasonic(sensor);
+    	  updateUltrasonic(sensor);
         break;
       }
 
       case SENSOR_TYPE_PULSE:{
-        processPulse(sensor);
+        updatePulse(sensor);
         break;
       }
 
@@ -1591,9 +1457,9 @@ void publishDebug(String message) {
 }
 
 
-//========== sensor handlers begin ==================
+//========== device update methods begin ==================
 
-void handleAnalogPinArray(sensor_type& sensor) {
+void updateAnalogPinArray(sensor_type& sensor) {
 
 	if (sensor.pins.size() > 0) {
 		Serial.write(MAGIC_NUMBER);
@@ -1612,7 +1478,7 @@ void handleAnalogPinArray(sensor_type& sensor) {
 	}
 }
 
-void handleDigitalPinArray(sensor_type& sensor) {
+void updateDigitalPinArray(sensor_type& sensor) {
 
 	if (sensor.pins.size() > 0) {
 		Serial.write(MAGIC_NUMBER);
@@ -1630,7 +1496,7 @@ void handleDigitalPinArray(sensor_type& sensor) {
 	}
 }
 
-void handleUltrasonic(sensor_type& sensor) {
+void updateUltrasonic(sensor_type& sensor) {
   if (pin.state == ECHO_STATE_START) {
     // trigPin prepare - start low for an
     // upcoming high pulse
@@ -1689,7 +1555,7 @@ void handleUltrasonic(sensor_type& sensor) {
   } // end else if
 }
 
-void handlePulse(sensor_type& sensor) {
+void updatePulse(sensor_type& sensor) {
   pin.lastValue = (pin.lastValue == 0) ? 1 : 0;
   // leading edge ... 0 to 1
   if (pin.lastValue == 1) {
@@ -1723,4 +1589,4 @@ void handlePulse(sensor_type& sensor) {
 
 
 
-//========== sensor handlers end ==================
+//========== device update methods end ==================
