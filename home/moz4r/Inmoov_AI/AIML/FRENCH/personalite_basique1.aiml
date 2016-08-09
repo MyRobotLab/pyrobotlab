@@ -2,6 +2,7 @@
 <aiml>
 <!--  -->
 <!--  -->
+<topic name="default">
 <category><pattern>BONJOUR #</pattern>
 <template><condition name="name">
             <li value="default">Salut ! je souhaiterais faire connaissance, puis-je avoir ton prénom ?</li>
@@ -181,20 +182,47 @@
 </category>
 
 
-<category><pattern># tu aimes #</pattern>
-<template><random>
+<category><pattern># tu aimes *</pattern>
+<template>
+<oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>WikiRaw("<star index="2" />")</param>
+			</mrl>
+</oob>
+<condition>
+<li name="WikiRaw" value="0">
+<random>
 		<li>non pas vraiment , n'oublie pas que je suis un robot , je n'ai pas de préference</li>
-		<li>oui j'aime bien</li>
+		<li>oui j'aime bien </li>
 		<li>non je n'aime pas du tout</li>
-	</random></template>
+</random>
+</li>
+<li>
+J'aime beaucoup <get name="WikiRaw"/>
+</li>
+</condition>
+
+
+
+</template>
 </category>
 
-<category><pattern># aimes-tu #</pattern>
-<template><srai># tu aimes #</srai></template>
+
+
+
+<category><pattern># tu aime *</pattern>
+<template><srai># tu aimes <star index="2" /></srai></template>
 </category>
 
 
-<category><pattern># j aime #</pattern>
+<category><pattern># aimes-tu *</pattern>
+<template><srai># tu aimes <star index="2" /></srai></template>
+</category>
+
+
+<category><pattern># j aime *</pattern>
 <template><random>
 		<li>j'aime bien aussi</li>
 		<li>moi je n'aime pas cela</li>
@@ -202,7 +230,7 @@
 	</random></template>
 </category>
 
-<category><pattern># pourrais tu #</pattern>
+<category><pattern># pourrais-tu #</pattern>
 <template><random>
 		<li>oui je pourrais , mais je n'ai pas envie</li>
 		<li>c'est possible oui, mais pas maintenant</li>
@@ -211,16 +239,16 @@
 </category>
 
 <category><pattern># peux-tu #</pattern>
-<template><srai># pourrais tu #</srai></template>
+<template><srai># pourrais-tu #</srai></template>
 </category>
 
 <category><pattern># tu pourrais #</pattern>
-<template><srai># pourrais tu #</srai></template>
+<template><srai># pourrais-tu #</srai></template>
 </category>
 
 <category><pattern># tu peux #</pattern>
-<template><srai># pourrais tu #</srai></template>
+<template><srai># pourrais-tu #</srai></template>
 </category>
-
+</topic>
 
 </aiml>

@@ -1,38 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 <!--  -->
-<!--  -->
-<category><pattern>COMMENT S'APPELLE MA MÈRE</pattern>
-<template><condition name="mother">
-            <li value="unknown">Dis moi comment s'appelle ta mère</li>
-            <li>
-               <get name="mother"/>
-            </li>
-         </condition></template>
+<!-- questions -->
+
+
+<category><pattern>COMMENT S APPELLE MA *</pattern>
+<template>
+<think><set name="topic">SaveMemoryPersonal</set></think>
+<think><set name="QuestionCommentSappelle"><star /></set></think>
+<think><set name="QuestionCommentSappelleSujet">ta</set></think>
+	<oob>
+        <mrl>
+            <service>python</service>
+            <method>exec</method>
+             <param>SaveMemoryPersonal("<star />","ta","0")</param>
+		</mrl>
+	</oob>
+</template>
 </category>
-<category><pattern>COMMENT S'APPELLE MON CHIEN</pattern>
-<template><condition name="monchien">
-            <li value="unknown">En siflant lol, sinon dis moi comment s'appelle ton chien</li>
-            <li>
-               <get name="monchien"/>
-            </li>
-         </condition></template>
+
+
+<category><pattern>COMMENT S APPELLE MON *</pattern>
+<template>
+<think><set name="topic">SaveMemoryPersonal</set></think>
+<think><set name="QuestionCommentSappelle"><star /></set></think>
+<think><set name="QuestionCommentSappelleSujet">ton</set></think>
+	<oob>
+        <mrl>
+            <service>python</service>
+            <method>exec</method>
+             <param>SaveMemoryPersonal("<star />","ton","0")</param>
+		</mrl>
+	</oob>
+</template>
 </category>
-<category><pattern>*</pattern><that># COMMENT S'APPELLE TON CHIEN #</that>
-<template><think><set name="monchien"><star/></set></think>
-		 <li>Au pied, <star/></li>
-		 <srai>SAVEPREDICATES</srai>
-		 </template>
+
+
+<!-- fonctions -->
+
+
+<topic name="SaveMemoryPersonal">
+
+
+<category><pattern>SaveMemoryPersonal *</pattern>
+<template>
+<li>
+<random>
+<li>J'aimerais beaucoup savoir </li>
+<li>Je ne sais pas, dis-moi </li>
+<li>Je te connaitrais un peu mieux si je savais </li>
+<li>Dis le moi ! Excuse moi je sais beaucoup de choses mais pas </li>
+</random>
+comment s'appelle <star/>
+</li>
+</template>
 </category>
-<category><pattern>*</pattern><that># COMMENT S'APPELLE TA MÈRE #</that>
-<template><think>
-            <set name="mother"><star/></set>
-         </think>
-		 <li>Un peu de respect, pas de blague sur l'ancêtre <star/>.</li>
-		 <srai>SAVEPREDICATES</srai>		
-		 </template>
- 
+
+
+<category><pattern>*</pattern><that># COMMENT S'APPELLE #</that>
+<template><template><srai>FONCTIONENREGISTRE <star/></srai></template>
+</template>
 </category>
+
+
+<category><pattern>FONCTIONENREGISTRE *</pattern>
+<template>
+<oob>
+        <mrl>
+            <service>python</service>
+            <method>exec</method>
+             <param>SaveMemoryPersonal("<get name="QuestionCommentSappelle"/>","<get name="QuestionCommentSappelleSujet"/>","<star/>")</param>
+		</mrl>
+</oob>
+<li>
+<random>
+<li>Je sais désormais que </li>
+<li>Maintenant je sais que </li>
+<li>Enregisré ! j'aime beaucoup ce nom :</li>
+<li><star/> ? ok c'est noté !</li>
+</random>
+<li>
+<srai><get name="QuestionCommentSappelleSujet"/> <get name="QuestionCommentSappelle"/> LECTURENOM <star/></srai>
+</li>
+</li>
+</template>
+</category>
+
+
+<category><pattern>* LECTURENOM *</pattern>
+<template>
+<think><set name="topic">default</set></think>
+<li>
+<star/> s'appelle <star index="2"/>
+</li>
+</template>
+</category>
+
+
+
+
+
+<!-- redirecteurs -->
+
+
+<category><pattern>IL S APPELLE *</pattern>
+<template><srai>FONCTIONENREGISTRE <star/></srai></template>
+</category>
+
+<category><pattern>SON NOM EST *</pattern>
+<template><srai>FONCTIONENREGISTRE <star/></srai></template>
+</category>
+
+<category><pattern>ELLE S APPELLE *</pattern>
+<template><srai>FONCTIONENREGISTRE <star/></srai></template>
+</category>
+
+
+
+
+
+
+
+</topic>
+
+
+
+
+
+
+
 
 
 <category><pattern>SAVEPREDICATES</pattern>
@@ -45,5 +141,8 @@
             </mrl>
          </oob></template>
 </category>
+
+
+
 </aiml>
 

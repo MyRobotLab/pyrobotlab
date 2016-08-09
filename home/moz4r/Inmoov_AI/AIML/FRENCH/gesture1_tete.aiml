@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<category><pattern># regarde le ciel #</pattern>
+<template>
+<oob>
+					<mrl>
+				   <service>python</service>
+				   <method>exec</method>
+				   <param>LookAtTheSky()</param>
+				 </mrl>
+</oob>
+<random>
+		<li>Il y a un plafond</li>
+		<li>C'est magnifique</li>
+		<li>Il y a tellement d'étoiles</li>
+		<li>Je crois apercevoir une exoplanète qui gravite autour de alpha du centore</li>
+		<li>je ne vois rien de spécial</li>
+		<li>Comme tu voudras</li>
+		<li>J'aimerais voler, peut tu m'imprimmer des ailes s'il te plait ? Cela parait tellement simple</li>
+</random>
+</template>
+</category> 
+
+
+<category><pattern>lève la tête</pattern>
+<template><srai># regarde le ciel #</srai></template>
+</category>
+   
+<category><pattern>REGARDE EN HAUT</pattern>
+<template><srai># regarde le ciel #</srai></template>
+</category>  
+
+
+
+
+
+
+
+
+<category><pattern># regarde tes pieds #</pattern>
+<template>
+<oob>
+					<mrl>
+				   <service>python</service>
+				   <method>exec</method>
+				   <param>LookAtYourFeet()</param>
+				 </mrl>
+</oob>
+<random>
+		<li>j'ai pas de pieds , c'est normal ?</li>
+		<li>ah oui il y a un sol</li>
+		<li>tu as vu il y a une fourmie</li>
+		<li>il n'y a rien d'interressant</li>
+
+</random>
+</template>
+</category> 
+
+
+<category><pattern>baisse la tête</pattern>
+<template><srai># regarde tes pieds #</srai></template>
+</category>
+   
+<category><pattern>REGARDE EN BAS</pattern>
+<template><srai># regarde tes pieds #</srai></template>
+</category>  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<category><pattern># regarde a gauche #</pattern>
+<template>
+<oob>
+					<mrl>
+				   <service>python</service>
+				   <method>exec</method>
+				   <param>LookAtYourLeft()</param>
+				 </mrl>
+</oob>
+<random>
+		<li>je regarde a gauche</li>
+		<li>pourquoi , il y a quoi a gauche ?</li>
+
+
+</random>
+</template>
+</category> 
+
+
+
+
+   
+   
+   
+   
+<category><pattern># regarde a droite #</pattern>
+<template>
+<oob>
+					<mrl>
+				   <service>python</service>
+				   <method>exec</method>
+				   <param>LookAtYourRight()</param>
+				 </mrl>
+</oob>
+<random>
+		<li>je regarde a droite</li>
+		<li>pourquoi , il y a quoi a droite ?</li>
+
+
+</random>
+</template>
+</category> 
+
+
+
+   
+
+   
+   
+   
+   
+<category><pattern># regarde autour #</pattern>
+<template>
+<oob>
+					<mrl>
+				   <service>python</service>
+				   <method>exec</method>
+				   <param>LookAroundYou()</param>
+				 </mrl>
+</oob>
+<random>
+		<li>je ne vois rien d'interressant</li>
+		<li>il y a une mouche </li>
+
+
+</random>
+</template>
+</category> 
+
+
+<category><pattern># cherche #</pattern>
+<template><srai># regarde autour #</srai></template>
+</category>
+      
+   
+</aiml>
+

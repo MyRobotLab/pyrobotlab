@@ -1,8 +1,10 @@
 #Robot Name
 #please, there is no verifications ! don't use an other used robot name ( usefull to use Inmoov Messenger )
 myBotname=""
+myAimlFolder="rachel" # dossier ou se trouvent vos aiml pas d'accent svp
 # LANGUAGE ( FR/EN )
 lang="EN"
+global Voice
 Voice="Ryan" # antoine en francais
 # To fetch weather etc [ adresse du serveur fetcher meteo etc ...]
 BotURL="http://myai.cloud/bot1.php"
@@ -51,6 +53,7 @@ MinNeck=0
 MaxNeck=180
 JawMIN=0
 JawMAX=180
+JawInverted=0
 EyeXMIN=0
 EyeXMAX=180
 EyeYMIN=0
@@ -95,6 +98,12 @@ pinkyRightMIN=0
 pinkyRightMAX=0
 WristRightMIN=0
 WristRightMAX=180
+# translator : https://datamarket.azure.com/dataset/bing/microsofttranslator 
+global Azure_client_id
+global Azure_client_secret
+Azure_client_id = 'your client id'
+Azure_client_secret = 'your client secret'
+ 
 param1=0
 param2=0
 param3=0

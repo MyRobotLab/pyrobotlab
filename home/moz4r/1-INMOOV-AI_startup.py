@@ -5,13 +5,16 @@
 # STABLE FILES : https://github.com/MyRobotLab/pyrobotlab/tree/master/home/moz4r  [ RACHEL AIML + PYTHON ]
 # UPDATED DEV FILES :  https://github.com/MyRobotLab/aiml/tree/master/bots/ [ RACHEL AIML + PYTHON ]
 # -----------------------------------
-# - Inmoov-AI Version 1.5 By Moz4r
+# - Inmoov-AI Version 1.7.2 By Moz4r
 # - Credit :
 # - Rachel the humanoïde
 # - Wikidatafetcher By Beetlejuice
+# - Azure translator by Papaoutai
 # - Grog / Kwatters / and All MRL team
 # - HairyGael
-# - heisenberg333 for help to construct french AIML brain
+# - Heisenberg
+# - Grattounet
+# - Lecagnois
 # -----------------------------------
 # !!! INSTALL : !!!
 # !!! PLEASE copy all aiml files to : develop\ProgramAB\bots\rachel\aiml !!!
@@ -55,9 +58,15 @@ import socket
 import os
 import shutil
 import hashlib
+import subprocess
+import json
+ 
+from subprocess import Popen, PIPE
 
 global Ispeak
 Ispeak=1
+global MoveHeadRandom
+MoveHeadRandom=1
 
 
 oridir=os.getcwd().replace("\\", "/")
@@ -95,7 +104,8 @@ i01.setMute(1)
 
 
 i01.startMouth()
-
+i01.startEar()
+ear = i01.ear
 mouth = i01.mouth
 
 
@@ -140,22 +150,51 @@ if IsInmoovLeft==1:
 	left.connect(leftPort)
 	sleep(1)
 	i01.startLeftHand(leftPort,"")
-	i01.startHead(leftPort,BoardType)
+	head = Runtime.create("i01.head","InMoovHead")
 	if MRLmouthControl==1:
+		head.jaw.setMinMax(JawMIN,JawMAX)
+		head.jaw.map(0,180,JawMIN,JawMAX)
+		head.jaw.setRest(0)
 		i01.startMouthControl(leftPort)
-		i01.head.jaw.setMinMax(JawMIN,JawMAX)
-		i01.mouthControl.setmouth(JawMIN,JawMAX)
-		i01.head.jaw.setRest(JawMIN)
-	i01.startLeftArm(leftPort)
-	torso = i01.startTorso(leftPort)
+		i01.mouthControl.setmouth(0,180)
 	i01.setHeadSpeed(0.5, 0.5)
+	i01.startHead(leftPort,BoardType)
+	i01.startLeftArm(leftPort)
+		
+	i01.leftHand.thumb.setMinMax(ThumbLeftMIN,ThumbLeftMAX) 
+	i01.leftHand.index.setMinMax(IndexLeftMIN,IndexLeftMAX) 
+	i01.leftHand.majeure.setMinMax(majeureLeftMIN,majeureLeftMAX) 
+	i01.leftHand.ringFinger.setMinMax(ringFingerLeftMIN,ringFingerLeftMAX) 
+	i01.leftHand.pinky.setMinMax(pinkyLeftMIN,pinkyLeftMAX) 
+	i01.leftHand.thumb.map(0,180,ThumbLeftMIN,ThumbLeftMAX) 
+	i01.leftHand.index.map(0,180,IndexLeftMIN,IndexLeftMAX) 
+	i01.leftHand.majeure.map(0,180,majeureLeftMIN,majeureLeftMAX) 
+	i01.leftHand.ringFinger.map(0,180,ringFingerLeftMIN,ringFingerLeftMAX) 
+	i01.leftHand.pinky.map(0,180,majeureLeftMIN,majeureLeftMAX) 
+
+	
+	torso = i01.startTorso(leftPort)
+	
+	i01.head.neck.setMinMax(MinNeck,MaxNeck)
+	if param1==1: #param1 = inversion du servo du cou
+		i01.head.neck.map(0,180,MaxNeck,MinNeck)
+	else:
+		i01.head.neck.map(0,180,MinNeck,MaxNeck)
 	i01.head.neck.setMinMax(0,180)
-	i01.head.neck.map(0,180,MinNeck,MaxNeck)
+	
+	i01.head.rothead.setMinMax(MinRotHead,MinRotHead)
+	if param2==1: #param2 = inversion du servo du cou
+		i01.head.rothead.map(0,180,MaxRotHead,MinRotHead)
+	else:
+		i01.head.rothead.map(0,180,MinRotHead,MaxRotHead)
+		
 	i01.head.rothead.setMinMax(0,180)
-	i01.head.rothead.map(0,180,MinRotHead,MaxRotHead)
 	i01.moveHead(80,86,40,78,76)
-	i01.setHeadSpeed(1, 1)
+	i01.head.eyeX.setMinMax(EyeXMIN,EyeXMAX)
+	i01.head.eyeX.map(0,180,EyeXMIN,EyeXMAX)
 	i01.head.eyeX.setMinMax(0,180)
+	i01.head.eyeY.setMinMax(EyeYMIN,EyeYMAX)
+	i01.head.eyeY.map(0,180,EyeYMIN,EyeYMAX)
 	i01.head.eyeY.setMinMax(0,180)
 	i01.head.eyeX.setRest(90)
 	i01.head.eyeY.setRest(90)
@@ -172,8 +211,6 @@ if IsInmoovLeft==1:
 	
 if IsInmoovLeft==1 or IsInmoovRight==1:
 	opencv = i01.opencv
-else:
-	opencv = Runtime.createAndStart("opencv","OpenCV")	
 	
 
 
@@ -221,6 +258,18 @@ def SaveMemory(question,reponse,silent,justPredicates):
 		print "http://www.myai.cloud/shared_memory.php?action=update&question="+urllib2.quote(question)+"&reponse="+urllib2.quote(reponse.replace("'", " "))
 		if silent<>1:
 			chatBot.getResponse("SAVEMEMORY")
+			
+def SaveMemoryPersonal(question,ReturnSubject,record):
+	if str(record)=="0":
+		valueQuestion=chatBot.getPredicate("default",question).decode( "utf8" )
+		if valueQuestion=="unknown":
+			chatBot.getResponse("SaveMemoryPersonal "+ReturnSubject+" "+unicode(question,'utf-8'))
+		else:
+			chatBot.getResponse(ReturnSubject + " " + unicode(question,'utf-8') + " LECTURENOM " + " " + unicode(valueQuestion,'utf-8'))
+	else:
+		chatBot.setPredicate("default",question,record)
+		chatBot.savePredicates()
+			
 
 
 chatBot.startSession("ProgramAB", "default", "rachel")
@@ -241,36 +290,63 @@ def NeoPixelF(valNeo):
 NeoPixelF(3)
 
 def No(data):
+	global MoveHeadRandom
+	MoveHeadRandom=0
 	if IsInmoovLeft==1:
 		#i01.attach()
-		i01.setHeadSpeed(1, 1)
-		i01.moveHead(80,90,0,80,40)
-		sleep(2)
-		i01.moveHead(80,90,180,80,40)
-		sleep(1)
-		i01.moveHead(80,90,90,80,40)
+		i01.setHeadSpeed(0.98, 0.98)
+		i01.moveHead(80,130)
+		sleep(0.5)
+		i01.moveHead(80,90)
+		sleep(0.5)
+		i01.moveHead(80,50)
 		sleep(0.5)
 	#Light(0,1,1)
 	if IsInmoovLeft==1:
-		i01.moveHead(81,50,90,78,40)
+		i01.moveHead(81,90)
 		sleep(0.5)
-		i01.moveHead(79,120,90,78,40)
-	chatBot.getResponse("IDONTUNDERSTAND")
+		i01.moveHead(79,130)
 	if IsInmoovLeft==1:
-		i01.moveHead(80,50,90,78,40)
+		i01.moveHead(80,90)
 		sleep(0.5)
-		i01.moveHead(83,120,90,78,40)
+		i01.moveHead(83,50)
 	sleep(0.5)
 	#Light(1,1,1)
 	if IsInmoovLeft==1:
-		i01.moveHead(80,90,90,78,40)
+		i01.moveHead(80,90)
 	if IsInmoovLeft==1:
 		i01.head.jaw.rest()
-		#i01.detach()
-		
+
+def Yes(data):
+	global MoveHeadRandom
+	MoveHeadRandom=0
+	if IsInmoovLeft==1:
+		#i01.attach()
+		i01.setHeadSpeed(0.98, 0.98)
+		i01.moveHead(130,90)
+		sleep(0.5)
+		i01.moveHead(50,93)
+		sleep(0.5)
+		i01.moveHead(130,90)
+		sleep(0.5)
+	#Light(0,1,1)
+	if IsInmoovLeft==1:
+		i01.moveHead(60,91)
+		sleep(0.5)
+		i01.moveHead(120,88)
+	if IsInmoovLeft==1:
+		i01.moveHead(70,90)
+		sleep(0.5)
+		i01.moveHead(95,90)
+	sleep(0.5)
+	#Light(1,1,1)
+	if IsInmoovLeft==1:
+		i01.moveHead(90,90)
+	if IsInmoovLeft==1:
+		i01.head.jaw.rest()
+	
+			
 def talk(data):
-	sleep(0.1)
-	#VieAleatoire.stopClock()
 	
 	if data!="":
 		try:
@@ -278,16 +354,23 @@ def talk(data):
 		except: 
 			pass
 		mouth.speak(unicode(data,'utf-8'))
+		
+	if IsInmoovLeft==1:
+		if random.randint(1,3)==1:
+			i01.head.eyeX.moveTo(0)
+			sleep(2)
+			i01.head.eyeX.moveTo(180)
+			sleep(1)
+			i01.head.eyeX.moveTo(90)
 
 def talkBlocking(data):
-	sleep(0.1)
-	#VieAleatoire.stopClock()
-	
+		
 	if data!="":
 		try:
 			ear.stopListening()
 		except: 
 			pass
+		
 		mouth.speakBlocking(unicode(data,'utf-8'))
 
 
@@ -298,9 +381,12 @@ execfile('../INMOOV-AI_vie_aleatoire-standby_life.py')
 if IsInmoovLeft==1:
 	execfile('../INMOOV-AI_opencv.py')
 execfile('../INMOOV-AI_move_head_random.py')
+execfile('../INMOOV-AI_azure_translator.py')
 #on bloque le micro quand le robot parle
 
+
 def onEndSpeaking(text):
+	global MoveHeadRandom
 	MoveHeadTimer.stopClock()
 	global Ispeak
 	Ispeak=0
@@ -308,14 +394,32 @@ def onEndSpeaking(text):
 	VieAleatoire.startClock()
 	TimeNoSpeak="OFF"
 	#Light(0,0,0)
+	if IsInmoovLeft==1:
+		i01.moveHead(90,90,90,90,90)
+	MoveHeadRandom=1
+	sleep(1)
 	if IcanStartToEar==1:
 		try:
 			ear.startListening()
 		except: 
 			pass
+	WebkitSpeachReconitionFix.startClock()
 
+	
 def onStartSpeaking(text):
-	MoveHeadTimer.startClock()
+
+	WebkitSpeachReconitionFix.stopClock()
+	global MoveHeadRandom
+	if 'non' in text or 'no' in text:
+		No('no')
+		MoveHeadRandom=0
+		print("no detected")
+	if 'oui' in text or 'yes' in text:
+		Yes('yes')
+		print("yes detected")
+		MoveHeadRandom=0
+	if MoveHeadRandom==1:
+		MoveHeadTimer.startClock()
 	global Ispeak
 	Ispeak=1
 	try:
@@ -330,12 +434,12 @@ def onStartSpeaking(text):
 	
 #ear.addTextListener(chatBot)	
 def onText(text):
-	ear.stopListening()	
+	ear.stopListening()
+	talk(" ")
 	print text.replace("'", " ")
-	chatBot.getResponse(text.replace("'", " "))
-	
-
-
+	global Ispeak
+	if Ispeak==0:
+		chatBot.getResponse(text.replace("'", " "))
 	
 
 	
@@ -351,14 +455,16 @@ WebkitSpeachReconitionFix = Runtime.start("WebkitSpeachReconitionFix","Clock")
 WebkitSpeachReconitionFix.setInterval(10000)
 
 def WebkitSpeachReconitionON(timedata):
+	
 	global Ispeak
 	if Ispeak==0:
-		ear.startListening()
-	
+		try:
+			ear.startListening()
+		except: 
+			pass
+			
 WebkitSpeachReconitionFix.addListener("pulse", python.name, "WebkitSpeachReconitionON")
 # start the clock
-
-
 
 
 		
@@ -401,7 +507,21 @@ def askWiki(query,question,retour): # retourne la description du sujet (query)
 		talk(answer)
 	#Light(1,1,1)
 	
-
+def WikiRaw(query): # retourne la description du sujet (query)
+	#Light(1,0,0)
+	query = unicode(query,'utf-8')# on force le format de police UTF-8 pour prendre en charge les accents
+	if query[1]== "\'" : # Si le sujet contient un apostrophe , on efface tout ce qui est avant ! ( "l'été" -> "été")
+		query2 = query[2:len(query)]
+		query = query2
+	print query # petit affichage de contrôle dans la console python ..
+	word = wdf.cutStart(query) # on enlève le derminant ("le chat" -> "chat")
+	start = wdf.grabStart(query) # on garde que le déterminant ( je ne sais plus pourquoi j'ai eu besoin de ça, mais la fonction existe ...)
+	wikiAnswer = wdf.getDescription(word) # récupère la description su wikidata
+	answer = wikiAnswer
+	if (wikiAnswer == "Not Found !") or (unicode(wikiAnswer[-9:],'utf-8') == u"Wikimédia") : # Si le document n'ai pas trouvé , on réponds "je ne sais pas"
+		chatBot.setPredicate("default","WikiRaw","0")
+	else:
+		chatBot.setPredicate("default","WikiRaw",answer)
 
 def getProperty(query, what): # retourne la valeur contenue dans la propriété demandée (what)
 	#Light(1,0,0)
@@ -456,44 +576,16 @@ def FindImage(image):
 	print BotURL+"&type=pic&pic="+urllib2.quote(image).replace(" ", "%20")
 	#Light(1,1,1)
 			
-def Joke():
-	MoveHead()
-	a = Parse(BotURL+"&type=joke&genre="+JokeType).replace(" : ", random.choice(troat))
-	mouth.speakBlocking(a+' '+random.choice(laugh))
 	
 
-	
-def Yes(data):
-	i01.attach()
-	i01.moveHead(80,90,90,180,40)
-	sleep(1)
-	#Light(1,0,1)
-	i01.setHeadSpeed(1, 1)
-	i01.moveHead(120,88,90,78,40)
-	sleep(0.4)
-	i01.moveHead(40,92,90,78,40)
-	sleep(0.4)
-	mouth.speakBlocking(data.decode( "utf8" ))
-	sleep(0.4)
-	i01.moveHead(120,87,90,78,40)
-	sleep(0.4)
-	i01.moveHead(40,91,90,78,40)
-	sleep(0.4)
-	i01.moveHead(120,87,90,78,40)
-	sleep(0.3)
-	#Light(1,1,1)
-	i01.moveHead(80,90,90,78,40)
-	mouth.speakBlocking(random.choice(troat))
-	i01.head.jaw.rest()
-	i01.detach()
-	
 
 	
 def ClearMemory():
-	chatBot.setPredicate("default","topic","")
+	chatBot.setPredicate("default","topic","default")
 	chatBot.setPredicate("default","QUESTION_WhoOrWhat","")
 	chatBot.setPredicate("default","QUESTION_sujet","")
 	chatBot.setPredicate("default","QUESTION_action","")
+	chatBot.setPredicate("default","WikiRaw","0")
 	
 def UpdateBotName(botname):
 	if str(chatBot.getPredicate("default","bot_id"))=="unknown":
@@ -559,7 +651,7 @@ def Meteo(data):
 	a = Parse(BotURL+"&type=meteo&units="+units+"&city="+urllib2.quote(data).replace(" ", "%20"))
 	print BotURL+"&type=meteo&units="+units+"&city="+urllib2.quote(data).replace(" ", "%20")
 	mouth.speakBlocking(a)
-	MoveHead()
+	
 
 def question(data):
 	chatBot.getResponse("FINDTHEWEB")
@@ -578,14 +670,45 @@ def question(data):
 
 
 
-def loto(phrase,the,lucky):
+def loto(phrase,the,chance,fin):
+	table1 = [(random.randint(1,49)), (random.randint(1,49)), (random.randint(1,49)), (random.randint(1,49)),(random.randint(1,49))]
+	tablefin = []
+	doublon = []
+
+	for i in table1:
+		if i not in tablefin:
+			tablefin.append(i) #supprime les doublons
+		else:
+			doublon.append(i) #extraire les doublons
+			d = len(doublon)
+			while d > 0:
+			#nouveau tirage
+				doublon = []
+				table1 = [(random.randint(1,49)), (random.randint(1,49)), (random.randint(1,49)), (random.randint(1,49)),(random.randint(1,49))]
+				# recherche doublon
+				for i in table1:
+					if i not in tablefin:
+						tablefin.append(i) #supprime les doublons
+					else:
+						doublon.append(i) #extraire les doublons
+					# si il existe doublon d+1 et vite la table
+					if (len(doublon)==1)or(len(doublon)==2)or(len(doublon)==3)or(len(doublon)==4)or(len(doublon)==5):
+						talkBlocking("j ai trouver un doublon , je refais un tirage")
+						d = d+1
+						doublon =[]
+					else:
+						d = 0
+		break
+	# tri la table avant de la dire
+	table1.sort()
 	talkBlocking(phrase)
-	talkBlocking(the+str(random.randint(1,49)))
-	talkBlocking(the+str(random.randint(1,49)))
-	talkBlocking(the+str(random.randint(1,49)))
-	talkBlocking(the+str(random.randint(1,49)))
-	talkBlocking(the+str(random.randint(1,49)))
-	talkBlocking(lucky+str(random.randint(1,10)))
+	talkBlocking(the+str(table1[0]))
+	talkBlocking(the+str(table1[1]))
+	talkBlocking(the+str(table1[2]))
+	talkBlocking(the+str(table1[3]))
+	talkBlocking(the+str(table1[4]))
+	talkBlocking(chance+str(random.randint(1,9)))
+	talkBlocking(fin)
 
 def DisplayPic(pic):
 	r=0
@@ -608,7 +731,7 @@ def rest():
 	if IsInmoovLeft==1:
 		i01.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 		i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
-		i01.setHeadSpeed(1.0, 1.0)
+		i01.setHeadSpeed(0.8, 0.8)
 		i01.setTorsoSpeed(1.0, 1.0, 1.0)
 		i01.moveHead(80,86,82,78,76)
 		i01.moveArm("left",5,90,0,10)
@@ -625,9 +748,9 @@ def rest():
 		i01.detach()
   
 def trackHumans():
-	i01.headTracking.findFace()
+	#i01.headTracking.findFace()
 	#i01.opencv.SetDisplayFilter
-	#i01.headTracking.faceDetect()
+	i01.headTracking.faceDetect()
 	i01.eyesTracking.faceDetect()
 	print "test"
 
@@ -694,9 +817,134 @@ def PhotoProcess(messagePhoto):
 	i01.startHeadTracking(leftPort)
 	i01.eyesTracking.faceDetect()
 	
-	
+
+def PlayUtub(q,num):
+	if q=="stop" and num==0:
+		subprocess.Popen("taskkill /F /T /PID %i"%proc1.pid , shell=True)
+		sleep(2)
+		webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
+	else:
+		webgui.startBrowser("http://www.myai.cloud/utub/?num="+str(num)+"&q="+str(q).encode('utf-8'))
+		print "http://www.myai.cloud/utub/?num="+str(num)+"&q="+str(q).encode('utf-8')
 	
 # ##########################################################	
+
+#gestures
+
+
+def MoveHand(side,thumb,index,majeure,ringFinger,pinky):
+	print side
+	if side=="left":
+		if thumb != -1:
+			i01.leftHand.thumb.attach()
+			i01.leftHand.thumb.moveTo(thumb)
+			
+		if index != -1:
+			i01.leftHand.index.attach()
+			i01.leftHand.index.moveTo(index)
+			
+		if majeure != -1:
+			i01.leftHand.majeure.attach()
+			i01.leftHand.majeure.moveTo(majeure)
+			
+		if ringFinger != -1:
+			i01.leftHand.ringFinger.attach()
+			i01.leftHand.ringFinger.moveTo(ringFinger)
+			
+		if pinky != -1:
+			i01.leftHand.pinky.attach()
+			i01.leftHand.pinky.moveTo(pinky)
+		
+		sleep(1)
+		i01.leftHand.detach()
+			
+	if side=="right":
+		if thumb != -1:
+			i01.rightHand.thumb.attach()
+			i01.rightHand.thumb.moveTo(thumb)
+			
+		if index != -1:
+			i01.rightHand.index.attach()
+			i01.rightHand.index.moveTo(index)
+			
+		if majeure != -1:
+			i01.rightHand.majeure.attach()
+			i01.rightHand.majeure.moveTo(majeure)
+			
+		if ringFinger != -1:
+			i01.rightHand.ringFinger.attach()
+			i01.rightHand.ringFinger.moveTo(ringFinger)
+			
+		if pinky != -1:
+			i01.rightHand.pinky.attach()
+			i01.rightHand.pinky.moveTo(pinky)
+			
+		sleep(1)
+		i01.rightHand.detach()
+
+def LookAtTheSky():
+	global MoveHeadRandom
+	MoveHeadRandom=0
+	i01.setHeadSpeed(0.98, 0.98)
+	i01.moveHead(00,90)
+	sleep(5)
+	i01.setHeadSpeed(0.92, 0.92)
+	i01.moveHead(90)
+	
+	
+def LookAtYourFeet():
+	global MoveHeadRandom
+	MoveHeadRandom=0
+	i01.setHeadSpeed(0.98, 0.98)
+	i01.moveHead(180,90)
+	sleep(5)
+	i01.setHeadSpeed(0.92, 0.92)
+	i01.moveHead(90)
+	
+	
+def LookAtYourLeft():
+	global MoveHeadRandom
+	MoveHeadRandom=0
+	i01.setHeadSpeed(0.98, 0.98)
+	i01.moveHead(120,20)
+	sleep(5)
+	i01.setHeadSpeed(0.92, 0.92)
+	i01.moveHead(90,90)
+	
+def LookAtYourRight():
+	global MoveHeadRandom
+	MoveHeadRandom=0
+	i01.setHeadSpeed(0.98, 0.98)
+	i01.moveHead(120,160)
+	sleep(5)
+	i01.setHeadSpeed(0.92, 0.92)
+	i01.moveHead(90,90)
+
+	
+	
+def LookAroundYou():
+	global MoveHeadRandom
+	MoveHeadRandom=0
+	i01.setHeadSpeed(0.98, 0.98)
+	i01.moveHead(160,160)
+	sleep(1)
+	i01.setHeadSpeed(0.98, 0.98)
+	i01.moveHead(160,20)
+	sleep(1)
+	i01.setHeadSpeed(0.98, 0.98)
+	i01.moveHead(20,20)
+	sleep(1)
+	i01.setHeadSpeed(0.98, 0.98)
+	i01.moveHead(20,160)
+	sleep(1)
+	i01.setHeadSpeed(0.92, 0.92)
+	i01.moveHead(90,90)
+	
+	
+	
+#######
+
+
 # program start :
 
 Light(1,1,0)
@@ -714,10 +962,11 @@ if IsInmoovLeft==1:
 if IsInmoovLeft==1 and tracking==1:
 	trackHumans()
 
-sleep(5)
+sleep(4)
 
-i01.startEar()
-ear = i01.ear
+
+proc1 = subprocess.Popen("%programfiles(x86)%\Google\Chrome\Application\chrome.exe", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+sleep(0.5)
 webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
 Light(1,1,1)
 if lang=="FR":
@@ -732,8 +981,7 @@ if str(chatBot.getPredicate("default","botname"))!="unknown" and str(chatBot.get
 #if str(chatBot.getPredicate("default","bot_id"))!="unknown":
 	#chatBot.getResponse("MESSAGESCHECK")
 sleep(0.5)
-r=image.displayFullScreen(os.getcwd().replace("develop", "")+'pictures\logo.jpg',1)
-r=image.displayFullScreen(os.getcwd().replace("develop", "")+'pictures\logo.jpg',1)
+#r=image.displayFullScreen(os.getcwd().replace("develop", "")+'pictures\logo.jpg',1)
+#r=image.displayFullScreen(os.getcwd().replace("develop", "")+'pictures\logo.jpg',1)
 Light(1,1,1)
 NeoPixelF(1)
-

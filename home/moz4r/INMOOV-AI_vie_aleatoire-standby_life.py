@@ -1,5 +1,5 @@
 VieAleatoire = Runtime.start("VieAleatoire","Clock")
-VieAleatoire.setInterval(600000)
+VieAleatoire.setInterval(60000)
 chatBot.getResponse("SAVEPREDICATES")
 global TimeNoSpeak
 TimeNoSpeak="OFF"
@@ -8,7 +8,7 @@ def OnBalanceUnePhare_Aleatoire(timedata):
 	global TimeNoSpeak
 	global TuTeTais
 	
-	VieAleatoire.setInterval(random.randint(600000,1200000))
+	VieAleatoire.setInterval(random.randint(60000,600000))
 	if TimeNoSpeak=="ON":
 		if random.randint(0,1)==1:
 			chatBot.getResponse("ALEATOIRE")

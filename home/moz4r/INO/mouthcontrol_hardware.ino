@@ -11,7 +11,9 @@
 // Webkit : shutdown microphone when speak
 
 #include <Servo.h> 
-#define servoPin 2
+#define VoltAmpliGnd 2
+#define VoltAmpliVolt 3
+#define servoPin 5
 #define HPpin        0    // analog speaker input
 
 Servo myservo;                 
@@ -36,7 +38,10 @@ void setup()
   analogReference(INTERNAL);
   Serial.begin(9600);  
   Serial.println("--- Start DEBUG ---");
-  
+  pinMode(VoltAmpliGnd, OUTPUT);
+  pinMode(VoltAmpliVolt, OUTPUT);
+  digitalWrite(VoltAmpliGnd, LOW);
+  digitalWrite(VoltAmpliVolt, HIGH);
   myservo.attach(servoPin);
   
 } 

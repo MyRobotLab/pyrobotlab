@@ -2,6 +2,7 @@
 <aiml>
 <!--  -->
 <!--  -->
+<topic name="default">
 <category><pattern># MERCI #</pattern>
 <template><random>
 		<li>de rien</li>
@@ -44,4 +45,5 @@
 		<li>You're welcome </li>
 	</random></template>
 </category>
+</topic>
 </aiml>
