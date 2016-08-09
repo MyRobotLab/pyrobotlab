@@ -5,6 +5,7 @@
 <category><pattern>ALEATOIRE</pattern>
 <template><random>
 		<li><srai>STAR WARS</srai></li>
+		<li><srai>QUELLE HEURE IL EST</srai></li>
 		<li>J'ai une petite ami qui s'appelle Wifi et nous avons une bonne connexion</li>
 		<li>Un boomerang c'est comme un frisbee mais pour ceux qui n'ont pas d'amis</li>
 		<li>Harry Potter : Le seul film où l'on verra des mecs se servir d'un balai</li>
@@ -69,9 +70,14 @@ je t écoute , quel est mon nom ?
 				<li>#SHORTBREATH01# J'ai révé de moutons éléctriques</li>
 				<li>#SHORTBREATH01# Bonjour, je suis opérationnelle</li>
 				<li>#SHORTBREATH01# Salut, pourquoi m'avoir réveillé ?</li>
-				<li>A vos ordres humain !</li>
+				<li>A vos ordres, humain !</li>
+				<li>A vos ordres, mammifère !</li>
+				<li>Humanoide à ton service !</li>
+				<li>Humanoide à ton écoute !</li>
+				<li>Oui !! Oui !! suis là ? je t'écoute  !</li>
 				<li>Tu crois que tu peux m'éteindre et m'allummer comme ça à ta convenance ?</li>
 				<li>Bonjour, que puis-je faire pour toi</li>
+				<li>Coucou ! Tu sais, je n'étais pas vraiment endormi</li>
 				</random>
 				<oob>
 				<mrl>
