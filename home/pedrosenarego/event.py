@@ -11,12 +11,16 @@ from apiclient.discovery import build
 from httplib2 import Http
 
 import datetime
+import sys
 
-try:
-    import argparse
-    flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
-except ImportError:
-    flags = None
+#try:
+#    import argparse
+#    flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
+#except ImportError:
+#    flags = None
+print "Args are: " + str(sys.argv)
+
+firstArg = sys.argv[0]
 
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/calendar-python-quickstart.json
