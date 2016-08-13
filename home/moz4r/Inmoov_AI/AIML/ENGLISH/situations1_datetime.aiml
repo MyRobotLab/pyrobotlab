@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<category><pattern>WHAT TIME #</pattern>
+<template><think><set name="heurequestion"> <date jformat="H"/></set></think>
+It's
+<date jformat="H:mm"/>
+.
+<condition>
+<li name="heurequestion" value="0">it's tomorow</li>
+<li name="heurequestion" value="1">Please go to sleep.</li>
+<li name="heurequestion" value="2">I said go to sleep</li>
+<li name="heurequestion" value="3">I m tired</li>
+<li name="heurequestion" value="4">I did't awnser anything at this time.</li>
+<li>About the earth position from the sun</li>
+</condition></template>
+</category>
+<category><pattern>WHAT DAY IS IT</pattern>
+<template><think><set name="jourdelasemaine"> <date jformat="W"/></set></think>
+It is  <date jformat="EEEE dd MMMM yyyy"/>
+.
+<condition name="jourdelasemaine" value="1">I know, monday is a bad day</condition>
+</template>
+</category>
+</aiml>

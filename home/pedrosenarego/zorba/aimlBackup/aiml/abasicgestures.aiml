@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  
+<category><pattern>STOP</pattern><template>i'm detaching all servos.<oob><mrl><service>i01</service><method>detach</method></mrl></oob></template></category>
+<category><pattern>REST</pattern><template>ah resting...<oob><mrl><service>python</service><method>exec</method><param>rest()</param></mrl></oob></template></category>
+
+
+<!-- HEAD SERVICES -->
+<!--NECK-->
+<category><pattern>HEAD DOWN</pattern><template>putting my head down.<oob><mrl><service>python</service><method>exec</method><param>headdown()</param></mrl></oob></template></category>
+<category><pattern>HEAD UP</pattern><template>putting my head up.<oob><mrl><service>python</service><method>exec</method><param>headup()</param></mrl></oob></template></category>
+
+<!--SIDE NECK-->                   
+<category><pattern>NECK LEFT</pattern><template>pending neck to the left.<oob><mrl><service>python</service><method>exec</method><param>neckleft()</param></mrl></oob></template></category>
+<category><pattern>NECK RIGHT</pattern><template>pending neck to the right.<oob><mrl><service>python</service><method>exec</method><param>neckright()</param></mrl></oob></template></category>
+
+<!--ROTHEAD-->  
+<category><pattern>HEAD LEFT</pattern><template>looking to the left.<oob><mrl><service>python</service><method>exec</method><param>headleft()</param></mrl></oob></template></category>
+<category><pattern>HEAD RIGHT</pattern><template>looking to the right.<oob><mrl><service>python</service><method>exec</method><param>headright()</param></mrl></oob></template></category>
+
+<!--HAND SERVICES -->
+<category><pattern>CONNECT RIGHT HAND</pattern><template>right hand at your service.<oob><mrl><service>i01.rightHand</service><method>attach</method></mrl></oob></template></category>
+<category><pattern>OPEN HAND</pattern><template><oob><mrl><service>python</service><method>exec</method><param>openhand()</param></mrl></oob></template></category>
+<category><pattern>CLOSE HAND</pattern><template><oob><mrl><service>python</service><method>exec</method><param>closehand()</param></mrl></oob></template></category>
+
+<!--ARM SERVICES -->
+<!--OMOPLATE -->
+<category><pattern>ARMS OPEN</pattern><template>opening my arms.<oob><mrl><service>python</service><method>exec</method><param>armsopen()</param></mrl></oob></template></category>
+<category><pattern>ARMS CLOSED</pattern><template>closing my arms.<oob><mrl><service>python</service><method>exec</method><param>armsclosed()</param></mrl></oob></template></category>
+<!--SHOULDER -->
+<category><pattern>ARMS AIR</pattern><template>putting my arms up.<oob><mrl><service>python</service><method>exec</method><param>armsfront()</param></mrl></oob></template></category>
+<category><pattern>ARMS DOWN</pattern><template>putting my arms down.<oob><mrl><service>python</service><method>exec</method><param>armsback()</param></mrl></oob></template></category>
+<!--ROTATE -->
+<category><pattern>ARMS OUTSIDE</pattern><template>rotating my arms outside.<oob><mrl><service>python</service><method>exec</method><param>armsoutside()</param></mrl></oob></template></category>
+<category><pattern>ARMS INSIDE</pattern><template>rotating my arms inside.<oob><mrl><service>python</service><method>exec</method><param>armsinside()</param></mrl></oob></template></category>
+
+</aiml>

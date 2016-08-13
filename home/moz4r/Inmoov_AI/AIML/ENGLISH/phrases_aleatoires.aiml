@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<category><pattern>ALEATOIRE</pattern>
+<template><random>
+		<li><srai># STAR WARS #</srai></li>
+		<li>this is a random sentence</li>
+	</random>
+	</template>
+</category>
+
+
+
+<category>
+<pattern>*</pattern>
+<that># what is my name #</that>
+<template>
+<oob>
+				<mrl>
+				   <service>python</service>
+				   <method>exec</method>
+				   <param>UpdateBotName("<star/>")</param>
+				 </mrl>
+			</oob>
+Merci. <set name="botname"><star/></set> , i's a nice name, what is your name ?</template>
+</category>
+
+<category><pattern>DEBOUT</pattern>
+<template>
+<condition name="bot_id">
+<li value="unknown">
+Hello mammal this is my first startup, what is my name ?
+</li>
+<li>
+	<random>
+	<li>Hi ! it was a long sleep</li>
+	<li>Hi ! i feeling good</li>
+	</random>
+	<oob>
+	<mrl>
+	<service>python</service>
+	<method>exec</method>
+	<param>TuTeTais_OuPas(0)</param>
+	</mrl>
+	</oob>
+</li>
+</condition>
+			
+
+ 	
+</template>
+</category>
+
+
+
+<category><pattern>WAKE_UP</pattern>
+<template><srai>DEBOUT</srai></template>
+</category>
+
+<category><pattern>SHUT UP</pattern>
+<template>Ok but it's not nice
+<oob>
+<mrl>
+<service>python</service>
+<method>exec</method>
+<param>TuTeTais_OuPas(1)</param>
+</mrl>
+</oob></template>
+</category>
+
+<category><pattern>TAIS-TOI</pattern>
+<template><srai>FERME TA GUEULE</srai></template>
+</category>
+<category><pattern>ALEATOIRE2</pattern>
+<template><srai>ALEATOIRE</srai></template>
+</category>
+
+
+
+
+
+</aiml>

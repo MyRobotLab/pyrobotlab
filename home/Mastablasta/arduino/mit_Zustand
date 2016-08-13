@@ -1,0 +1,126 @@
+#include <NewPing.h>
+
+#define  TRIGGER_PIN  11
+#define  ECHO_PIN     12
+#define MAX_DISTANCE 200
+
+NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
+
+int DistanceCm;
+
+int inputPin = 3;
+int inputPin2 = 8;
+
+int pirState = LOW;
+int pirState2 = LOW;
+
+int val = 0;
+int val2 = 0;
+
+int RPWM_Output = 5;
+int LPWM_Output = 6;
+
+int zustand = 0;
+
+void setup()
+  {
+  pinMode(inputPin, INPUT);
+  pinMode(inputPin2, INPUT);
+
+  pinMode(RPWM_Output, OUTPUT);
+  pinMode(LPWM_Output, OUTPUT);
+  
+  Serial.begin(9600);
+
+  }
+
+void loop() 
+{
+  delay(50);
+  DistanceCm = sonar.ping_cm();
+  Serial.println(DistanceCm);  
+  int sensorValue = digitalRead(inputPin);
+  val = digitalRead(inputPin);
+  if (zustand == 0)
+  {
+  if (val == HIGH)
+  {
+  if (pirState == LOW)
+  {
+  Serial.println("PIR 1 Door open");
+  zustand = 1;
+  pirState = HIGH;
+  int reversePWM = 511;
+  analogWrite(LPWM_Output, 0);
+  analogWrite(RPWM_Output, reversePWM);
+  delay(2900);
+  reversePWM = 512;
+  analogWrite(LPWM_Output, 0);
+  analogWrite(RPWM_Output, reversePWM);
+  delay(6000);
+  if (DistanceCm < 10)
+  {
+  zustand = 0;
+  Serial.println("Achtung!");
+  delay(5000);
+  }
+  else
+  {
+  Serial.println("PIR 1 Door closed");
+  pirState = LOW;
+  int forwardPWM = 1023;
+  analogWrite(LPWM_Output, forwardPWM);
+  analogWrite(RPWM_Output, 0);
+  delay(2900);
+  forwardPWM = 512;
+  analogWrite(LPWM_Output, forwardPWM);
+  analogWrite(RPWM_Output, 0);
+  delay(1000);
+  zustand = 0;
+  }
+  }
+  }
+  }
+
+int sensorValue2 = digitalRead(inputPin2);
+val2 = digitalRead(inputPin2);
+if (zustand == 0)
+  {
+  if (val2 == HIGH)
+  {
+  if (pirState2 == LOW)
+  {
+  Serial.println("PIR 2 Door open");
+  zustand = 1;
+  pirState2 = HIGH;
+  int reversePWM = 511;
+  analogWrite(LPWM_Output, 0);
+  analogWrite(RPWM_Output, reversePWM);
+  delay(2900);
+  reversePWM = 512;
+  analogWrite(LPWM_Output, 0);
+  analogWrite(RPWM_Output, reversePWM);
+  delay(6000);
+  if (DistanceCm < 10)
+  {
+  Serial.println("Achtung!");
+  delay(5000);
+  }
+  else
+  {  
+  Serial.println("PIR 2 Door closed");
+  pirState2 = LOW;
+  int forwardPWM = 1023;
+  analogWrite(LPWM_Output, forwardPWM);
+  analogWrite(RPWM_Output, 0);
+  delay(2900);
+  forwardPWM = 512;
+  analogWrite(LPWM_Output, forwardPWM);
+  analogWrite(RPWM_Output, 0);
+  delay(1000);
+  zustand = 0;
+  }
+  }
+  }
+  }
+}

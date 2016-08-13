@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<category><pattern>TEST</pattern>
+<template>
+<oob><mrl><service>python</service><method>exec</method><param>whataboutstarwars() </param></mrl></oob>
+</template></category>
+</aiml>

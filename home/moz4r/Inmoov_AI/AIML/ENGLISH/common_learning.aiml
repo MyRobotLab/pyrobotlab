@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+
+<!--GLOBAL AND SHARED LEARNING
+
+-->
+   
+   
+   <!--exemple : 
+Q(question) H(humain) R(robot)
+Q H : Is that France will win the World Cup football
+R YES
+R NO
+R I DON T KNOW
+->Q R what do you think
+H YES
+H NO
+H I DON'T KNOW
+
+Q H : who will win the World Cup football
+R - france
+R - I DON'T KNOW
+-> what do you think
+H : france
+
+** WE CAN FORCE TOO **
+
+H : France will win the World Cup football
+
+
+ -->   
+
+
+<!--
+MODULE 1 : * WILL * THE *
+-->  
+ 
+ 
+<!--
+MODULE 1 aprentissage
+-->  
+ 
+   <category>
+      <pattern>* WILL * THE *</pattern>
+      <template>
+         <random>
+            <li>
+               Ok, <star /> WILL <star index="2" /> THE <star index="3" />.
+            </li>
+            <li>
+               I learn <star /> will <star index="2" /> the <star index="3" />.
+            </li>
+         </random>
+		 <srai>SAVEMEMORY QUESTION WHO WILL <star index="2" /> THE <star index="3" /> REPONSE <star /> WILL <star index="2" /> THE <star index="3" /></srai>
+        </template>
+   </category>
+<!--
+MODULE 1 interraction
+-->  
+
+   <category>
+      <pattern>IS THAT * WILL * THE *</pattern>
+      <template>
+         <think>
+            <set name="QUESTION_WhoOrWhat"><star /></set> <set name="QUESTION_action">WILL <star index="2" /></set><set name="QUESTION_sujet"> THE <star index="3" /></set>
+		</think>
+         <srai>
+            WHO WILL <star index="2" /> THE <star index="3" />
+         </srai>
+      </template>
+   </category>
+   
+   <category>
+      <pattern>WHO WILL * THE *</pattern>
+      <template>
+        <think>
+           	<set name="QUESTION_action"> WILL <star /></set>
+			<set name="QUESTION_sujet"> THE <star index="2" /></set>
+		</think>
+			<srai>QUERYMEMORY QUESTION WHO WILL <star /> THE <star index="2" /> RETURN IDONTKNOW3STARS</srai>
+		</template>
+   </category>
+
+   
+   
+   
+<!--
+FIN MODULE 1
+-->  
+
+
+
+<!--
+INRERACTION PARTAGEE
+
+La petite phrase DIS MOI CE QUE TU EN PENSE est reservé a un module à 3 parametres
+C'est une petite bidouille pour identifier les réponses
+
+
+Reponse 3 etoiles
+
+-->  
+   <category>
+      <pattern>IT IS *</pattern>
+      <that># what do you think #</that>
+      <template>
+         <srai>
+            <set name="QUESTION_WhoOrWhat"><star index="1" /></set> <get name="QUESTION_action" /> <get name="QUESTION_sujet" /> 
+         </srai>
+      </template>
+   </category>
+   
+      <category>
+      <pattern>IT S *</pattern>
+      <that># what do you think #</that>
+      <template>
+         <srai>
+            IT IS <star/>
+         </srai>
+      </template>
+   </category>
+   
+   
+   <category>
+      <pattern># YES #</pattern>
+      <that># what do you think #</that>
+      <template>
+         <srai>
+            <get name="QUESTION_WhoOrWhat" /> <get name="QUESTION_action" /> <get name="QUESTION_sujet" /> 
+         </srai>
+      </template>
+   </category>
+   <category>
+      <pattern># NO #</pattern>
+      <that># what do you think #</that>
+      <template><srai>SYSTEMIDONTKNOW</srai></template>
+   </category>
+   <category>
+      <pattern>*</pattern>
+      <that># what do you think #</that>
+      <template>
+         <srai>IT IS <star/></srai>
+      </template>
+   </category>
+   
+   
+<!--
+  
+fin Reponse 3 etoiles
+
+--> 
+
+
+
+
+
+<!--
+  
+début Reponse wiki
+
+--> 
+
+
+
+  <category>
+      <pattern># <get name="QUESTION_WhoOrWhat"/> *</pattern>
+      <that># tell me #</that>
+      <template>
+			<srai>SAVEMEMORY QUESTION <get name="QUESTION_action"/> <get name="QUESTION_WhoOrWhat"/> REPONSE <star /></srai>
+      </template>
+   </category>
+
+
+
+    <category>
+      <pattern>IT IS *</pattern>
+      <that># tell me #</that>
+      <template>
+         <srai>SAVEMEMORY QUESTION <get name="QUESTION_action"/> <get name="QUESTION_WhoOrWhat"/> REPONSE <star /></srai>
+      </template>
+   </category>
+     <category>
+      <pattern># NO #</pattern>
+      <that># tell me #</that>
+      <template><srai>SYSTEMIDONTKNOW</srai></template>
+   </category>
+   
+      <category>
+      <pattern>I DON T KNOW</pattern>
+      <that># tell me #</that>
+      <template>
+         <srai># NON #</srai>
+      </template>
+   </category>
+   
+    
+   
+   
+   <category>
+      <pattern>*</pattern>
+      <that># tell me #</that>
+      <template>
+         <srai>SAVEMEMORY QUESTION <get name="QUESTION_action"/> <get name="QUESTION_WhoOrWhat"/> REPONSE <star /></srai>
+      </template>
+   </category>
+   
+ 
+<!--
+  
+fin Reponse wiki
+
+--> 
+
+   <category>
+      <pattern>SYSTEMIDONTKNOW</pattern>
+      <template>
+	  	 <random>
+			<li>I ask soon a robot friend next syncronisation</li>
+         </random>
+	  </template>
+   </category>
+   
+   <category>
+      <pattern>IDONTKNOW3STARS</pattern>
+      <template>
+	  	 <random>
+				<li>I don't know what do you think</li>
+		</random>
+	  </template>
+   </category>
+   
+   
+    
+   
+   
+       <category>
+      <pattern>JENESAISPASWIKI</pattern>
+      <template>
+	  	 <random>
+				<li>I don't know tell me</li>
+		</random>
+	  </template>
+   </category>
+   
+   
+   
+    <category>
+      <pattern>SAVEMEMORY QUESTION * REPONSE *</pattern>
+      <template>
+     	<oob>
+            <mrl>
+               <service>python</service>
+               <method>exec</method>
+               <param>SaveMemory("<star />","<star index="2" />",0,0)</param>
+			   
+            </mrl>
+         </oob>
+			
+   	</template>
+   </category>
+   
+   
+       <category>
+      <pattern>QUERYMEMORY QUESTION * RETURN *</pattern>
+      <template>
+		<oob>
+			<mrl>
+			   <service>python</service>
+			   <method>exec</method>
+				   <param>QueryMemory("<star />","<star index="2" />")</param>
+			</mrl>
+		</oob>
+			
+   	</template>
+   </category>
+   
+</aiml>

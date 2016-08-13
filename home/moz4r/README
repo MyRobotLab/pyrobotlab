@@ -1,0 +1,25 @@
+Rachel BOT is french/english AIML based bot
+Sorry english version is just a POC but fully worky, I work on french AIML in priority
+ToDo : Inmoov gesture
+# ##############################################################################
+# 							*** SETUP / INSTALLATION ***
+# ##############################################################################
+# STABLE FILES : https://github.com/MyRobotLab/pyrobotlab/tree/master/home/moz4r  [ RACHEL AIML + PYTHON ]
+# UPDATED DEV FILES :  https://github.com/MyRobotLab/aiml/tree/master/bots/ [ RACHEL AIML + PYTHON ]
+# -----------------------------------
+# - Inmoov-Life Version 1.5 By Moz4r
+# - Credit :
+# - Rachel the humanoïde
+# - Wikidatafetcher By Beetlejuice
+# - Grog / Kwatters / and All MRL team
+# - HairyGael
+# - heisenberg333 for help to construct french AIML brain
+# -----------------------------------
+# !!! INSTALL : !!!
+# !!! PLEASE copy all aiml files to : develop\ProgramAB\bots\rachel\aiml !!! ( french or engligh )
+# !!! AND https://github.com/MyRobotLab/aiml/tree/master/bots/BOTS-FRENCH/Rachel/TXT to the root of MRL
+# !!! + https://github.com/MyRobotLab/aiml/tree/master/bots/BOTS-ENGLISH/Rachel/TXT
+#
+# 
+# don't forget to complete the config file !
+# You can use mrl.bat to launch, it's usefull to kill java and autostart the script

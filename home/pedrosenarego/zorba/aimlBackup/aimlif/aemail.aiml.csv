@@ -1,0 +1,12 @@
+0,CAN YOU SEND EMAIL,*,*,Yes#Comma should i send an email?,aemail.aiml
+0,^ <SET>AFIRMATIVE</SET> ^,YES, SHOULD I SEND AN EMAIL,*,<srai>SEND EMAIL</srai>,aemail.aiml
+0,^ <SET>NEGATIONS</SET> ^,YES, SHOULD I SEND AN EMAIL,*,ok.,aemail.aiml
+0,WHAT IS THE EMAIL OF <SET>CONTACT</SET>,*,*,<map><name>contact2email</name><star/></map>,aemail.aiml
+0,SEND EMAIL,*,*,<think><set name="topic">send email</set></think>What is the subject of the email?,aemail.aiml
+0,_,WHAT IS THE SUBJECT OF THE EMAIL,SEND EMAIL,<think><set name="emailsub"><star/></set></think> What is the content?,aemail.aiml
+0,_,WHAT IS THE CONTENT,SEND EMAIL,<think><set name="emailcontent"><star/></set></think>For whom you wish to send the email?,aemail.aiml
+0,<SET>CONTACT</SET>,FOR WHOM YOU WISH TO SEND THE EMAIL,SEND EMAIL,Email sent.<oob><mrl><service>python</service><method>exec</method><param>emailtest("<map><name>contact2email</name><star/></map>"#Comma"<get name="emailcontent"/>"#Comma"<get name="emailsub"/>")</param></mrl></oob>,aemail.aiml
+0,*,FOR WHOM YOU WISH TO SEND THE EMAIL,SEND EMAIL,No contact for that name wanna try another?,aemail.aiml
+0,^ <SET>NEGATIONS</SET> ^,NO CONTACT FOR THAT NAME WANNA TRY ANOTHER,SEND EMAIL,ok.,aemail.aiml
+0,^ <SET>AFIRMATIVE</SET> ^,NO CONTACT FOR THAT NAME WANNA TRY ANOTHER,SEND EMAIL,For whom you wish to send the email?,aemail.aiml
+0,*,NO CONTACT FOR THAT NAME WANNA TRY ANOTHER,SEND EMAIL,I guess that means no.,aemail.aiml
