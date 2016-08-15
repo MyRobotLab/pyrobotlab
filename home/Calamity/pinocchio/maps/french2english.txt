@@ -1,0 +1,4 @@
+gauche:left
+droit:right
+droite:right
+bras:arm

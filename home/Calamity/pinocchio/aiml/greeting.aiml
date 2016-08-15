@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>HELLO</pattern>
+    <template>
+      <random>
+        <li>How are you today?</li>
+        <li>Hi</li>
+        <li>Greetings</li>
+        <li>What's up?</li>
+      </random>
+      <srai>SETLANGUAGE ENGLISH</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>HELLO *</pattern>
+    <template>
+      <srai>HELLO</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>HI *</pattern>
+    <template>
+      <srai>HELLO</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>HI</pattern>
+    <template>
+      <srai>HELLO</srai>
+    </template>
+  </category>
+  
+  <category>
+     <pattern>BONJOUR</pattern>
+    <template>
+      <random>
+        <li>Comment ca va aujourd'hui?</li>
+        <li>Bonjour</li>
+        <li>Salut</li>
+        <li>Allo</li>
+      </random>
+      <srai>SETLANGUAGE FRENCH</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>BONJOUR *</pattern>
+    <template>
+      <srai>BONJOUR</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>Salut *</pattern>
+    <template>
+      <srai>BONJOUR</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>Allo *</pattern>
+    <template>
+      <srai>BONJOUR</srai>
+    </template>
+  </category>
+
+</aiml>

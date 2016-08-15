@@ -1,0 +1,7 @@
+0,START IN MOVE,*,*,<condition name="language">#Newline        <li value="french">Je me mets en fonction</li>#Newline        <li>I'm booting up</li>#Newline      </condition>#Newline      <oob>#Newline        <mrl>#Newline          <service>python</service>#Newline          <method>exec</method>#Newline          <param>startAll()</param>#Newline        </mrl>#Newline      </oob>,bootup.aiml
+0,START IN MOVIE,*,*,<srai>START IN MOVE</srai>,bootup.aiml
+0,DÉMARRE PINOCCHIO,*,*,<srai>START IN MOVE</srai>,bootup.aiml
+0,START <SET>SIDE</SET> <SET>PART</SET>,*,*,<condition name="language">#Newline        <li value="english">Starting <star index="1"/> <star index="2"/></li> #Newline      </condition>#Newline      <oob>#Newline        <mrl>#Newline          <service>python</service>#Newline          <method>exec</method>#Newline          <param>start<formal><star index="1"/></formal><formal><star index="2"/></formal>()</param>#Newline        </mrl>#Newline      </oob>,bootup.aiml
+0,DÉMARRE * <SET>PART</SET> <SET>SIDE</SET>,*,*,Je démarre <star/> <star index="2"/><star index="3"/>#Newline      <srai>START <map name="french2english"><star index="3"/></map> <map name="french2english"><star index="2"/></map></srai>,bootup.aiml
+0,SYSTEM CHECK,*,*,ok#Newline      <oob>#Newline        <mrl>#Newline          <service>i01</service>#Newline          <method>systemCheck</method>#Newline        </mrl>#Newline      </oob>,bootup.aiml
+0,VÉRIFIE LE SYSTÈME,*,*,<srai>SYSTEM CHECK</srai>,bootup.aiml
