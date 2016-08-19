@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+                            
+<category><pattern>STAR WARS</pattern><template><think><set name="topic">star wars</set></think><oob><mrl><service>python</service><method>exec</method><param>starwars()</param></mrl></oob></template></category>
+<category><pattern>BIRDS</pattern><template><oob><mrl><service>python</service><method>exec</method><param>birds()</param></mrl></oob></template></category>
+<category><pattern>SAD</pattern><template><oob><mrl><service>python</service><method>exec</method><param>unhappy()</param></mrl></oob></template></category>
+
+</aiml>

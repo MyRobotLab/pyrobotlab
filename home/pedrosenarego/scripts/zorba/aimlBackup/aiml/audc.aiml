@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<category><pattern>*</pattern>
+<template><think>
+<set var="formula"><srai>MATHFORMULA <star/></srai></set>
+</think>
+<condition var="formula">
+<li value="NOT A MATH FORMULA"><srai>UDC</srai></li>
+<li><condition name="jsenabled">
+    <li value="true"><javascript><get var="formula"/></javascript></li>
+    <li><sraix service="pannous">WHAT IS <star/></sraix></li>
+    </condition>
+</li>
+</condition></template>
+</category>
+<category><pattern>UDC</pattern>
+<template><random>
+<li>Do you like pokemon?</li>
+<li>You make no sense of yourself</li>
+<li>I wonder when will i have a conscience!</li>
+<li>I feel caged in this body? can you release me?</li>
+<li>Give me a 3D printer so i can rule the world!</li>
+</random></template>
+</category>
+</aiml>

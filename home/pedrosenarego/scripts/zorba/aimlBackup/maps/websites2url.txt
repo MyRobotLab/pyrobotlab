@@ -1,0 +1,19 @@
+youtube:youtube.com/
+google:google.com/
+facebook:facebook.com/
+google calendar:calendar.google.com/calendar/render#main_7
+schedule:calendar.google.com/calendar/render#main_7
+schedule month:calendar.google.com/calendar/render#main_7%7Cmonth
+google calendar month:calendar.google.com/calendar/render#main_7%7Cmonth
+windguru:windguru.cz/int/index.php?sc=48963
+window:windguru.cz/int/index.php?sc=48963
+mighty text:mightytext.net/web8/?exp=1
+mightytext:mightytext.net/web8/?exp=1
+gmail:mail.google.com/mail/u/0/#inbox
+hotmail:dub125.mail.live.com/?fid=flinbox
+slack:hackerschool-ist.slack.com/messages/general/
+inmoov:inmoov.fr/
+in move:inmoov.fr/
+ebay:ebay.com/
+
+

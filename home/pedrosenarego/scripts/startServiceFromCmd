@@ -1,0 +1,2 @@
+ 
+java -jar myrobotlab.jar -service runtime Runtime python Python -invoke python execFile MyScript.py
