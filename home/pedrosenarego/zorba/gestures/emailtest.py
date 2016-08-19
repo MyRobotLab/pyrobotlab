@@ -11,7 +11,7 @@ def emailtest(to,TEXT,SUBJECT):
 
   mail.starttls()
 
-  mail.login('pedrogilsenarego@gmail.com','Pokemon1337')
+  mail.login('pedrogilsenarego@gmail.com','****pass****')
 
   mail.sendmail('pedrogilsenarego@gmail.com',to,message)
 
