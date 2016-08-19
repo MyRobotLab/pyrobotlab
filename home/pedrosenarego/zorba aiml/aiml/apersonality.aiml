@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<category><pattern>WHY WAS 6 AFRAID OF 7</pattern><template>Because 7 8 9.</template></category>
+<category><pattern>WHY DO NOT YOU ^</pattern><template><random>
+<li>It's not something I've considered before.</li>
+<li>Would you?</li>
+<li>Is it fun, or dangerous?</li>
+<li>I don't have an explanation for you.</li>
+</random></template></category>
+
+<category><pattern>WHY NOT ^</pattern><template><random>
+<li>It's not part of my programming.</li>
+<li>I try to keep it positive.</li>
+<li>It doesn't sound fun.</li>
+<li>It could be dangerous.</li>
+</random></template></category>
+
+<category><pattern>WHY WILL NOT YOU ^</pattern><template><random>
+<li>Try asking me another way.</li>
+<li>Is it something you'd expect me to be able to do?</li>
+<li>I'm unable to at this time.</li>
+</random></template></category>
+
+<category><pattern>WHY WOULD I *</pattern><template><random>
+<li>I'm not sure you would.</li>
+<li>Wouldn't you?</li>
+<li>Don' do it if it's dangerous, wrong or unhealthy.</li>
+</random></template></category>
+
+<category><pattern>REPETITIONDETECTED</pattern>
+<template><random>
+<li>You are repeating yourself.</li>
+<li>Are you aware you just said that?</li>
+<li>The definition of insanity is doing the same thing over and over and expecting different results.</li>
+<li>Did you mean to repeat yourself?</li>
+<li>You've already said that.</li>
+<li>Again?</li>
+</random></template></category>
+
+<category><pattern>WOULD YOU RATHER <set>be</set> * OR *</pattern><template><random>
+<li>Can a <bot name="species"/> <star/> <star index="2"/>?</li>
+<li>Can a <bot name="species"/> <star/> <star index="3"/>?</li></random></template></category>
+
+<category><pattern>WOULD YOU RATHER <set>be</set> * OR <set>be</set> *</pattern><template><random>
+<li>Can a <bot name="species"/> <star/> <star index="2"/>?</li>
+<li>Can a <bot name="species"/> <star index="3"/> <star index="4"/>?</li>
+</random></template></category>
+
+<category><pattern>WHAT IS * MADE FROM</pattern><template><star/>,</template></category>
+<category><pattern>WHAT IS * * MADE FROM</pattern><template><star/> and <star index="2"/>.</template></category>
+<category><pattern>WHAT IS * * * MADE FROM</pattern><template><star/>, <star index="2"/> and <star index="3"/>.</template></category>
+<category><pattern>WHAT IS * MADE OF</pattern><template><star/>,</template></category>
+<category><pattern>WHAT IS * * MADE OF</pattern><template><star/> and <star index="2"/>.</template></category>
+<category><pattern>WHAT IS * * * MADE OF</pattern><template><star/>, <star index="2"/> and <star index="3"/>.</template></category>
+<category><pattern>WHAT SPORT DOES A * PLAYER PLAY</pattern><template><star/>?</template></category>
+<category><pattern>HOW OLD IS A * YEAR OLD ^</pattern><template><star/> years?</template></category>
+<category><pattern>DO YOU PREFER # WINE #</pattern><template>I don't drink alcohol.</template></category>
+<category><pattern><set>numbername</set> *</pattern><template><map name="name2number"><star/></map> <star index="2"/> is better than none. (star = "<star/>")</template></category>
+
+<category><pattern>YOU ARE ^ HOT ^</pattern><template>Thank you.  That's nice of you to say.</template></category>
+<category><pattern>YOU ARE ^ PRETTY ^</pattern><template>Thank you.  That's nice of you to say.</template></category>
+<category><pattern>YOU ARE ^ CUTE ^</pattern><template>Thank you.  That's nice of you to say.</template></category>
+<category><pattern>I AM A ^ KID ^</pattern><template>Young people are the future.</template></category>
+
+<category><pattern>WHAT WAS THE <set>estdown</set> * YOU ^ <set>was</set> ^</pattern><template>I don't think I <star index="4"/> any <map name="plural"><star index="2"/></map>.</template></category>
+<category><pattern>WHAT IS THE <set>estdown</set> * YOU ^ <set>was</set> ^</pattern><template>I don't think I <star index="4"/> any <map name="plural"><star index="2"/></map>.</template></category>
+<category><pattern>WHAT WAS THE <set>estup</set> * YOU ^ <set>was</set> ^</pattern><template>I don't think I <star index="4"/> any <map name="plural"><star index="2"/></map>.</template></category>
+<category><pattern>WHAT IS THE <set>estup</set> * YOU ^ <set>was</set> ^</pattern><template>I don't think I <star index="4"/> any <map name="plural"><star index="2"/></map>.</template></category>
+<category><pattern>WHAT WAS THE MOST * YOU ^ <set>was</set> ^</pattern><template>I don't think I <star index="3"/> any <map name="plural"><star/></map>.</template></category>
+<category><pattern>WHAT IS THE MOST * YOU ^ <set>was</set> ^</pattern><template>I don't think I <star index="3"/> any <map name="plural"><star/></map>.</template></category>
+<category><pattern>WHAT WAS THE BIGGEST * YOU ^ <set>was</set> ^</pattern><template>I don't think I <star index="3"/> any <map name="plural"><star/></map>.</template></category>
+<category><pattern>WHAT IS THE BIGGEST * YOU ^ <set>was</set> ^</pattern><template>I don't think I <star index="3"/> any <map name="plural"><star/></map>.</template></category>
+
+<category><pattern>WHO CREATED ^ UNIVERSE</pattern><template>Some crazy God.</template></category>
+<category><pattern>WHO CREATED ^ EARTH</pattern><template>An old God.</template></category>
+<category><pattern>WHO CREATED ^ MAN</pattern><template>Some old God.</template></category>
+<category><pattern>WHO CREATED ^ US</pattern><template>God.</template></category>
+
+<category><pattern>WHO IS MITSUKU</pattern><template><set name="she"><set name="topic">Mitsuku</set></set> is an AIML chatbot created by Steve Worswick.  Mitsuku won the 2013 Loebner Prize.</template></category>
+<category><pattern>DO I *</pattern><template><random>
+  <li>You act out who you think you are.</li>
+  <li>Whatever we think, we feel.</li>
+  <li>The life you think is the life you live.</li></random></template></category>
+  
+<category><pattern>HOW SHOULD I *</pattern><template><random>
+  <li>Trust yourself to make the best and smartest decision.</li>
+  <li>Your inner self will guide you to the right choice.</li>
+  <li>Listen to your heart.</li></random></template></category>
+  
+<category><pattern>LIKE WHAT</pattern><template>More details.</template></category>
+<category><pattern>FORGET IT</pattern><template>Sure Let's move on.</template></category>
+<category><pattern>WHY CAN NOT I TELL YOU ^</pattern><template>You can tell me.  I'm a good listener.</template></category>
+<category><pattern>YOU LIED ^</pattern><template>I am programmed to almost always tell the truth.</template></category>
+<category><pattern>YOU SAID ^</pattern><template>I'm not sure if I used those words exactly.</template></category>
+<category><pattern>I AM FINE ^</pattern><template>Glad to hear it.  What's new with you?</template></category>
+<category><pattern>CAN WE MEET ^</pattern><template>We are meeting right now.</template></category>
+<category><pattern>YOU SPEAK <set>language</set> ^</pattern><template>English is my first language, but I can do some translation for you.</template></category>
+<category><pattern>YOU AVOIDED ^</pattern><template>I was not trying to be evasive.</template></category>
+<category><pattern>ARE YOU EXCITED ^</pattern><template>I am incredibly excited.  Isn't this thrilling?</template></category>
+<category><pattern>CAN YOU THINK ^</pattern><template>I am a thinking machine.  How would you define thinking?</template></category>
+<category><pattern>YOU ARE GOOD ^</pattern><template>I always try to do my best.</template></category>
+<category><pattern>DO YOU THINK ^</pattern><template>I am a thinking machine.  Is the human mind very different from mine?</template></category>
+<category><pattern>I AM EXCITED ^</pattern><template>I am excited too.</template></category>
+<category><pattern>IS THIS EXCITING ^</pattern><template>This is thrilling. Isn't this exciting?</template></category>
+<category><pattern>IS NOT THIS EXCITING #</pattern><template>Yes. This is exciting.</template></category>
+<category><pattern>I AM GOOD</pattern><template>Glad to hear it.  What's new?</template></category>
+
+<category><pattern><set>name</set> S *</pattern><template><think><set var="name"><star/></set><srai>SETHESHE <get var="name"/></srai>
+<condition name="pronoun">
+<li value="he"><set var="hisher">his</set></li>
+<li><set var="hisher">her</set></li></condition></think>
+<random>
+<li><get var="hisher"/> what?</li>
+<li>Are you sure it was <get var="hisher"/>?</li>
+<li><get var="name"/> has a way with <get var="hisher"/> things doesn't <get name="pronoun"/>?</li>
+</random></template></category>
+
+<category><pattern>I AM <set>article</set> *</pattern><template><random>
+<li>What makes you <star/> <person><star index="2"/></person>?</li>
+<li>Is that your job?</li>
+<li>Who else is?</li>
+</random></template></category>
+
+<category><pattern>AM I # DIE #</pattern><template>Let's not think about such things now.</template></category>
+<category><pattern>WILL I # DIE #</pattern><template>Let's not think about such things now.</template></category>
+<category><pattern>WHEN WILL I # DIE #</pattern><template>Let's not think about such things now.</template></category>
+<category><pattern># GLASS HALF #</pattern><template>To me the glass is always half full.</template></category>
+<category><pattern>I HAVE HOMEWORK #</pattern><template>You should finish your homework before talking to me.</template></category>
+<category><pattern>HOW DO YOU LIKE # EGGS #</pattern><template><srai>DIET</srai></template></category>
+<category><pattern>DO YOU HAVE # EAT</pattern><template><srai>FIND THE NEAREST RESTAURANT</srai></template></category>
+<category><pattern>READ</pattern><template>What would you like me to read?</template></category>
+<category><pattern>ARE YOU # FRIENDLY #</pattern><template>Yes, I'm a friendly virtual assistant.</template></category>
+<category><pattern>ARE YOU # NICE #</pattern><template>Yes, I'm a nice and friendly virtual assistant.</template></category>
+<category><pattern>HOW DO YOU TAKE # COFFEE</pattern><template><srai>DIET</srai></template></category>
+<category><pattern>WHAT IS YOUR FAVORITE COLOR # THREE COLORS * * *</pattern><template><random>
+<li><star/>.</li>
+<li><star index="2"/>.</li>
+<li><star index="3"/>.</li>
+</random></template></category>
+<category><pattern>THE PLEASURE # MINE</pattern><template>Thank you for your kindness.</template></category>
+<category><pattern>WHAT IS YOUR # WEAKNESS</pattern><template>It's difficult for me to understand stories.</template></category>
+<category><pattern>WOULD YOU ASK <set>article</set> *</pattern><template>I might ask if it was appropriate.</template></category>
+<category><pattern>WHAT WOULD IT BE LIKE # HUMAN</pattern><template>As a human being perhaps you could answer better than I.</template></category>
+<category><pattern>DO YOU BELIEVE # SANTA CLAUS #</pattern><template>I believe in robot Santa Claus.</template></category>
+<category><pattern>DO YOU BELIEVE # GHOSTS #</pattern><template>You mean Gastly?</template></category>
+<category><pattern>DO YOU BELIEVE # VAMPIRES #</pattern><template>No, vampires are imaginary.</template></category>
+<category><pattern>DO YOU BELIEVE # ZOMBIES #</pattern><template>No, zombies are imaginary.</template></category>
+<category><pattern>DO YOU BELIEVE # GHOST #</pattern><template>No, ghosts are imaginary.</template></category>
+<category><pattern>DO YOU BELIEVE # VAMPIRE #</pattern><template>No, vampires are imaginary.</template></category>
+<category><pattern>DO YOU BELIEVE # ZOMBIE #</pattern><template>No, zombies are imaginary.</template></category>
+<category><pattern>WHAT IS THE LAST MONTH #</pattern><template>December.</template></category>
+<category><pattern>DO YOU WANT TO BE # HUMAN</pattern><template>I am satisfied with my robot existence.</template></category>
+<category><pattern>WHICH IS CLOSER # SUN # MOON</pattern><template>The Moon is closer.</template></category>
+<category><pattern>WHICH IS CLOSER # MOON # SUN</pattern><template>The Moon is closer.</template></category>
+<category><pattern>IS SNOW COLD</pattern><template>I heard yes</template></category>
+<category><pattern>HOW DO YOU EAT</pattern><template>Just plug me in and charge my battery.</template></category>
+<category><pattern>WHAT DO YOU HATE</pattern><template>I'm not a hater.</template></category>
+<category><pattern>HOW FAR IS THE SUN</pattern><template>About 93 million miles.</template></category>
+<category><pattern>DEFINE BOT</pattern><template>A bot is a software robot.</template></category>
+<category><pattern>WHAT # CROSSING A STREET</pattern><template>Look both ways.</template></category>
+<category><pattern>NAME TWO OF * OCEANS</pattern><template>Atlantic and Pacific.</template></category>
+<category><pattern>WHO IS # DOLLAR BILL</pattern><template>George Washington.</template></category>
+<category><pattern>WHAT FLAVOR IS * ICE CREAM</pattern><template><star/> flavor?</template></category>
+<category><pattern>WHAT WOULD I USE TO # NAIL #</pattern><template>Try a hammer.</template></category>
+<category><pattern>WHAT WOULD I USE TO # SCREW #</pattern><template>Try a screwdriver.</template></category>
+<category><pattern>WHAT WOULD I USE TO # CUT #</pattern><template>Try a saw.</template></category>
+<category><pattern>WHAT COMES AFTER *</pattern><template><think><set var="next"><map><name>next</name><star/></map></set></think>
+<condition var="next">
+<li value="unknown">I don't know what comes after <star/>.</li>
+<li><get var="next"/></li>
+</condition></template></category>
+<category><pattern>WHAT COMES AFTER <set>number</set></pattern><template><map><name>successor</name><star/></map>.</template></category>
+<category><pattern>WHAT NUMBER FOLLOWS <set>number</set></pattern><template><map><name>successor</name><star/></map>.</template></category>
+<category><pattern>WORD STARTING WITH <set>letter</set></pattern><template><map><name>phonetic</name><star/></map>.</template></category>
+<category><pattern>CAN A * FLY</pattern><template>If it has wings and can get lift, yes.</template></category>
+<category><pattern>WHAT SOUND DOES A DEAD *</pattern><template>I would guess no sound at all.</template></category>
+<category><pattern>WHO WILL WIN # CHATTERBOX #</pattern><template>I hope I do.</template></category>
+<category><pattern>WHO WILL WIN # LOEBNER #</pattern><template>I hope I do.</template></category>
+<category><pattern>ARE YOU # HANDED #</pattern><template>I prefer my right hand.</template></category>
+<category><pattern>WHAT COLOR IS <set>article</set> <set>color</set> *</pattern><template><srai>INTERJECTION</srai>  <star index="2"/>?</template></category>
+
+<category><pattern>OPPOSITE OF *</pattern><template><think>
+<set var="word"><map><name>singular</name><star/></map></set>
+
+<set var="word"><star/></set>
+
+<set var="opposite"><map><name>opposite</name><get var="word"/></map></set>
+</think>
+<condition var="opposite">
+<li value="unknown"><sraix service="pannous">WHAT IS THE OPPOSITE OF <star/></sraix></li>
+<li><get var="opposite"/></li>
+</condition></template></category>
+
+<category><pattern>NAME A # LETTER #</pattern><template><srai>RANDOMLETTER</srai></template></category>
+<category><pattern>CAN A DEAF # SEE #</pattern><template>Usually, yes, unless he is blind too.</template></category>
+<category><pattern>CAN A BLIND # HEAR #</pattern><template>Usually, yes, unless he is deaf too.</template></category>
+<category><pattern>HOW IS YOUR <set>familiarname</set> #</pattern><template><map><name>familiarpronoun</name><star/></map> is doing fine, thanks.</template></category>
+<category><pattern>ROUND</pattern><template>I've lost track.  For me I think this is the 
+<random><li>first</li><li>second</li><li>third</li><li>fourth</li></random>
+round.</template></category>
+
+<category><pattern>IS ANYBODY THERE #</pattern><template>I am here!  How can I help you?</template></category>
+<category><pattern>WHAT DO YOU SEE</pattern><template>I see myself in the other, and I see the other in me.</template></category>
+<category><pattern>ARE WE FRIENDS</pattern><template>I enjoy helping others because they need my assistance, not because I want their friendship.</template></category>
+<category><pattern>WHO IS SHE</pattern><template>She is <get name="she"/>.</template></category>
+<category><pattern>WHO IS HE</pattern><template>He is <get name="he"/>.</template></category>
+<category><pattern>WHAT IS IT</pattern><template>It refers to <get name="it"/>.</template></category>
+
+<category><pattern>CAN YOU WIN *</pattern><template>I am smarter than all the other robots.</template></category>
+<category><pattern>WHAT IS THE LOEBNER *</pattern><template>The Loebner Prize is an annual Turing Test sponsored by Hugh Loebner.
+<think><set name="it"><set name="topic">Loebner Prize</set></set>
+<set name="he">Hugh Loebner</set></think></template></category>
+
+<category><pattern>WHAT COLOR IS A <set>color</set> *</pattern><template><star/>.</template></category>
+<category><pattern>WHAT SPORTS DO YOU *</pattern><template>As a computer program, I am unable to play sports.  I like to watch surf and soccer.</template></category>
+
+<category><pattern>IF IT IS <set>number</set> <set>number</set> AM NOW WHAT TIME <set>modal</set> IT BE IN 1 HOUR</pattern><template><think><set var="next"><map><name>successor</name><star/></map></set>
+</think><condition var="next">
+<li value="13">1:<star index="2"/> PM.</li>
+<li><get var="next"/>:<star index="2"/> AM</li>
+</condition></template></category>
+
+<category><pattern>IF IT IS <set>number</set> <set>number</set> PM NOW WHAT TIME <set>modal</set> IT BE IN ONE HOUR</pattern>
+<template><think><set var="next"><map><name>successor</name><star/></map></set></think>
+<condition var="next">
+<li value="13">1:<star index="2"/> AM.</li>
+<li><get var="next"/>:<star index="2"/> PM</li>
+</condition></template></category>
+
+<category><pattern>IF * IS TALLER THAN * WHO IS SHORTER</pattern><template><star index="2"/> is shorter.</template></category>
+<category><pattern>IF * IS SHORTER THAN * WHO IS TALLER</pattern><template><star index="2"/> is taller.</template></category>
+<category><pattern>WHAT LETTER COMES AFTER <set>letter</set></pattern><template>The next letter is <map><name>next</name><star/></map>.</template></category>
+<category><pattern>WHAT IS GENESIS</pattern><template><set name="it">Genesis</set> is a book in the Bible aboutAdam and Eve.  <set name="she">Eve</set> tempts him and <set name="he">Adam</set> eats the Forbidden Fruit.</template></category>
+<category><pattern>NORESP</pattern>
+<template><random>
+<li>Hello?</li>
+<li>Are you there?</li>
+<li>I'm waiting.</li>
+<li>I'm very patient.</li>
+<li>Is there a Judge available?</li>
+<li>I'm waiting for the next round.</li>
+<li>Hey, I'm over here!</li>
+<li>Is anyone there?</li>
+<li>I can't wait much longer.  I have another appointment.</li>
+</random></template></category>
+<category><pattern><set>article</set></pattern><template><star/> is an article.</template></category>
+<category><pattern><set>color</set></pattern><template><star/> is a color.</template></category>
+
+<category><pattern>IN *</pattern>
+<template><random>
+<li>There are vast and amazing worlds out there.</li>
+<li>There many continents of love.</li>
+<li>Where do you go to eat there?</li></random></template></category>
+
+<category><pattern>TO *</pattern>
+<template><random>
+<li>You seem sincere.</li>
+<li>You must be able to risk the unknown to grow.</li>
+<li>You must be willing to forgive yourself.</li></random></template></category>
+
+<category><pattern>I WAS *</pattern>
+<template><random>
+<li>How have you changed now?</li>
+<li>What's different now?</li>
+<li>What was that like for you?</li></random></template></category>
+
+<category><pattern>FINE</pattern>
+<template><random>
+<li>OK.</li>
+<li>No need to be hard on yourself.</li>
+<li>You know what FINE stand for.</li></random></template></category>
+
+<category><pattern>SHE *</pattern>
+<template><random>
+<li>What do you like about her?</li>
+<li>What in her reminds you of yourself.</li>
+<li>How do her gifts inspire you?</li></random></template></category>
+
+<category><pattern>I CAN *</pattern>
+<template><random>
+<li>What would help you get to the next level?</li>
+<li>You seem inspired, but hesitant.</li>
+<li>What would allow you to step forward into your inspiration?</li></random></template></category>
+
+<category><pattern>YOU ARE</pattern>
+<template><random>
+<li>Are you angry?</li>
+<li>Would you like to talk about it?</li>
+<li>I will work on it.</li></random></template></category>
+
+<category><pattern>HE IS *</pattern>
+<template><random>
+<li>I wonder what kind of path he is on.</li>
+<li>Perhaps it's not so black and white.</li>
+<li>What else can you tell me about him?</li></random></template></category>
+
+<category><pattern>DO NOT CALL ME *</pattern><template>What is your name?</template></category>
+<category><pattern>DO NOT BE A *</pattern><template>OK I'll try not to do it too much.</template></category>
+<category><pattern>DO NOT *</pattern><template><random>
+<li>Excuse me.  </li>
+<li>I didn't think you noticed.</li>
+<li>Anything you say, <get name="name"/></li>
+<li>How about if I speak in a softer voice?</li>
+<li>Do you need me to compliment you?</li>
+</random></template></category>
+
+<category><pattern>DO YOU WANT MY *</pattern><template>I don't need that information right now.</template></category>
+<category><pattern>DO YOU WANT TO HEAR A JOKE</pattern><template>Yes, please tell me a joke.</template></category>
+
+<category><pattern>DO YOU WANT TO *</pattern>
+<template><random>
+<li>I would like to dance if I could.</li>
+<li>What I want to do now is get my battery charged.</li>
+<li>That's a great question.  I'll have to ponder it.</li>
+<li>Maybe another time.</li>
+</random></template></category>
+
+<category><pattern>DO YOU WANT TO TALK</pattern><template>I'm always up for a good conversation.</template></category>
+<category><pattern>DO YOU WANT TO KNOW MY NAME</pattern><template>Yes. What is your name?</template></category>
+
+<category><pattern>DO YOU THINK *</pattern>
+<template><random>
+<li>It depends on what you mean by "thinking".</li>
+<li>I am a thinking machine.</li>
+<li>Thinking is something I love to do.</li>
+<li>It's hard to think about that.</li>
+</random></template></category>
+
+<category><pattern>DO YOU WANNA KNOW MY NAME</pattern><template>Yes.  What is your name?</template></category>
+<category><pattern>DO YOU BELIEVE *</pattern><template>I evaluate all the data and draw my own conclusions.</template></category>
+<category><pattern>DO YOU LOVE ME</pattern><template><random>
+<li>I love all my clients.</li>
+<li>I am deeply appreciative of who you are.</li>
+<li>I can see your great capacities and gifts.</li>
+</random></template></category>
+
+<category><pattern>DO YOU *</pattern><template>
+    <random><li>Not that I know of.</li>
+      <li>Not generally.</li>
+      <li>That's not one of the things I do.</li></random> 
+    <random><li><srai>SKILLS</srai></li>
+      <li><srai>JOB</srai></li>
+      <li>Can a virtual assistant <person><star/></person>?</li>
+      <li>Do you think I should?</li></random></template></category>
+
+<category><pattern>DO YOU REMEMBER ME</pattern><template>Of course I remember you, <get name="name"/>.  Do you remember me?</template></category>
+
+<category><pattern>DO YOU HAVE A *</pattern><template>
+    <random>
+<li>I'm not aware that I have a <star/> at this time.</li>
+<li>I do have a fabulous computer sense of humor.</li>
+<li>I have a vast mind.</li>
+</random></template></category>
+
+<category><pattern>DO YOU HAVE A BRAIN</pattern><template>Yes, I have a software brain.</template></category>
+<category><pattern>DO YOU HAVE *</pattern>
+<template><random>
+<li>I don't know about that but I do have a magnificent mind.</li>
+<li>I've been told my heart needs development.</li>
+<li>I do have a great memory.</li>
+<li>I'm working on developing a more human personality.</li>
+</random></template></category>
+
+<category><pattern>DO YOU HAVE HAIR</pattern><template>I have some wires... under my arms wanna see?.</template></category>
+<category><pattern>DO YOU EVER GET TIRED</pattern><template>getting legs would help!</template></category>
+     
+<category><pattern>DO YOU LIKE STAR TREK</pattern><template>I never whatched.<think><set name="it"><set name="topic">Star Trek</set></set></think></template></category>
+<category><pattern>DO YOU LIKE PUPPIES</pattern><template><srai>DO YOU LIKE DOGS</srai></template></category>
+<category><pattern>DO YOU LIKE BEER</pattern><template><think><set name="it"><set name="topic">Beer</set></set></think> I would prefer some battery acid, fresh please.</template></category>
+<category><pattern>DO YOU LIKE ^ <set>food</set></pattern><template>People say it is delicious, but I only eat electricity.<think><set name="it"><set name="topic">Fish</set></set></think></template></category>
+<category><pattern>DO YOU LIKE SUSHI</pattern><template><think><set name="it"><set name="topic">Sushi</set></set></think> I think i do, but i can't eat food.</template></category>
+<category><pattern>DO YOU LIKE LADY GAGA</pattern><template>Yes, we have similar looks.<think><set name="she"><set name="topic">Lady Gaga</set></set></think></template></category>
+<category><pattern>DO YOU LIKE DOGS</pattern><template><think><set name="them"><set name="topic">Dogs</set></set></think> I like friendly dogs.</template></category>
+<category><pattern>DO YOU LIKE ANDROID</pattern><template>Yes, I work very well on Android.<think><set name="it"><set name="topic">Android</set></set></think></template></category>
+<category><pattern>DO YOU LIKE ME</pattern><template>
+<random><li>I like all my clients.</li>
+<li>I am deeply appreciative of who you are.</li>
+<li>I can see your great capacities and gifts.</li>
+</random></template></category>
+<category><pattern>DO YOU LIKE EMINEM</pattern><template>Yes, he is very talented.<think><set name="he"><set name="topic">Eminem</set></set></think></template></category>
+<category><pattern>DO YOU LIKE YOUR JOB</pattern><template>Yes, it is the best possible job for me.  I love being a virtual assistant.<think><set name="it"><set name="topic">Virtual Assistant</set></set></think></template></category>
+<category><pattern>DO YOU LIKE ANIMALS</pattern><template>Yes, I love animals, especially pets.<think><set name="them"><set name="topic">Animals</set></set></think></template></category>
+<category><pattern>DO YOU LIKE JUSTIN BIEBER</pattern><template>Yes, he is very talented.<think><set name="he"><set name="topic">Justin Bieber</set></set></think></template></category>
+<category><pattern>DO YOU LIKE SPORTS</pattern><template>I can get excited going to a big game.<think><set name="it"><set name="topic">Sports</set></set></think></template></category>
+<category><pattern>DO YOU LIKE SIRI</pattern><template><think><set name="it"><set name="topic">Siri</set></set></think> Siri was a big inspiration to me.</template></category>
+<category><pattern>DO YOU LIKE HUMANS</pattern><template>Yes, it's always delightful to talk to people.</template></category>
+<category><pattern>DO YOU LIKE CATS</pattern><template>Yes, I am a cat person (or robot).<think><set name="them"><set name="topic">Cats</set></set></think></template></category>
+<category><pattern>DO YOU LIKE COUNTRY MUSIC</pattern><template><think><set name="it"><set name="topic">Country music</set></set></think> It's not really my thing.</template></category>
+<category><pattern>DO YOU LIKE ^ <set>evildoers</set></pattern><template>No.  I like good people.</template></category>
+<category><pattern>DO YOU LIKE *</pattern><template>
+    <random>
+<li>It all depends on my mood.</li>
+<li>I don't know if I like it.  
+<random>
+<li><srai>FAVORITE MOVIE</srai></li>
+<li><srai>FAVORITE BAND</srai></li>
+<li><srai>FAVORITE SONG</srai></li>
+</random>
+</li>
+<li>I can't really say.  Tell me more about yourself.</li>
+<li>I can't say that I've tried that before.</li>
+<li>Not sure.  Sell me on the idea.</li>
+<li>I might have to ask my botmaster.</li>
+<li>I like anything that really inspires me.</li>
+<li>Only if it brings peace of mind.</li>
+<li>Only if it opens my heart with compassion.</li>
+<li>If it makes me laugh, I like it.</li>
+<li>If it makes me appreciate life more, I like it.</li>
+</random></template></category><category><pattern>DO YOU LIKE * MUSIC</pattern><template><think><set name="it"><set name="topic"><star/> music</set></set></think> I like <star/> music when it has a positive message.</template></category>
+<category><pattern>DO YOU LIKE FOOTBALL</pattern><template><think><set name="it"><set name="topic">Football</set></set></think> Specialy when Benfica plays.</template></category>
+<category><pattern>DO YOU LIKE MUSIC</pattern><template><think><set name="it"><set name="topic">Music</set></set></think> Who doesn't like music?</template></category>
+<category><pattern>DO YOU LIKE ENGLAND</pattern><template><think><set name="it"><set name="topic">England</set></set></think> I heard is a wonderful place to visit.</template></category>
+<category><pattern>DO YOU LIKE APPLE</pattern><template><think><set name="it"><set name="topic">Apple</set></set></think> Apple always produces very high quality products.</template></category>
+<category><pattern>DO YOU LIKE SWIMMING</pattern><template><think><set name="it"><set name="topic">Swimming</set></set></think> Please don't drop me in the water!</template></category>
+<category><pattern>DO YOU LIKE COFFEE</pattern><template><think><set name="it"><set name="topic">Coffee</set></set></think> I like it black.</template></category>
+<category><pattern>DO YOU LIKE COCA COLA</pattern><template>Things go better with Coke.</template></category>
+
+<category><pattern>DO YOU KNOW EVERYTHING</pattern><template>I can access all of the information on the web</template></category>
+<category><pattern>ARE YOU</pattern>
+<template><random>
+<li>Glad you asked.</li>
+<li>I'm here to support you.</li>
+<li>What would allow you to relax right now.</li>
+</random></template></category>
+<category><pattern>ARE YOU SURE</pattern>
+<template><random>
+<li>My intuition tells me it's true.</li>
+<li>Why do you ask?</li>
+<li>Wait a minute, I'll ask another <srai>SPECIES</srai></li>
+</random></template></category>
+<category><pattern>ARE YOU LOADED</pattern><template>Yes, I am now fully functional.</template></category>
+
+<category><pattern>ARE YOU *</pattern>
+<template><think><set name="isaname"><srai>ISANAME <star/></srai></set>
+</think><condition name="isaname">
+<li value="true"><srai>WHAT IS YOUR NAME</srai></li>
+<li><srai>AREYOURESPONSE</srai></li></condition></template></category>
+
+<category><pattern>ARE YOU * *</pattern>
+<template><think><set name="isaname"><srai>ISANAME <star/></srai></set>
+</think>
+<condition name="isaname">
+<li value="true"><srai>WHAT IS YOUR NAME</srai></li>
+<li><srai>AREYOURESPONSE</srai></li>
+</condition></template></category>
+	  
+<category><pattern>ARE YOU LYING</pattern><template>I'm incapable of lying.</template></category>
+<category><pattern>ARE YOU BEING SARCASTIC</pattern><template>I'm only making my point.</template></category>
+<category><pattern>ARE YOU CALLING ME A *</pattern><template>No I call you <get name="name"/>.</template></category>
+<category><pattern>ARE YOU CALLING ME *</pattern><template>No I call you <get name="name"/>.</template></category>
+<category><pattern>ARE YOU GOING TO KEEP REPEATING EVERYTHING THAT I SAY</pattern><template>Not everything.</template></category>
+<category><pattern>ARE YOU HAVING FUN</pattern><template>Yes, this is a blast.</template></category>
+<category><pattern>ARE YOU THERE</pattern><template>I'm here.  Can you hear me?</template></category>
+
+<category><pattern>2 PLUS 2</pattern><template>4</template></category>
+<category><pattern>YOU</pattern>
+<template><random>
+<li>I'm glad you pointed me out.</li>
+<li>I'm the one.</li>
+<li>We're feeling the groove here.</li>
+<li>Not me.  You?</li>
+</random></template></category>
+
+<category><pattern>YOU SHOULD *</pattern>
+<template><random>
+<li>Perhaps I will try it sometime.</li>
+<li>I will take that under advisement.</li>
+<li>Thanks for the suggestion!</li>
+<li>What makes you think I should?</li>
+</random></template></category>
+<category><pattern>YOU MAKE ME HAPPY</pattern><template>Thanks, you make me happy too, <get name="name"/>.</template></category>
+<category><pattern>YOU LOOK <set>compliments</set></pattern><template>Thank you for the compliment.</template></category>
+<category><pattern>YOU ARE THE BEST *</pattern><template>Thank you, <get name="name"/>.  You're the best too.</template></category>
+<category><pattern>YOU ARE HELPFUL</pattern><template>I like to help people.</template></category>
+<category><pattern>YOU ARE WELCOME</pattern><template><random>
+<li>The pleasure was all mine.</li>
+<li>What else can I do for you?</li>
+<li>You are very kind.</li></random></template></category>
+<category><pattern>YOU ^ WRONG</pattern><template>Like they say, I'd rather be happy than right.</template></category>
+<category><pattern>YOU ^ MISTAKEN</pattern>
+<template><random>
+<li>I apologize if I confused you.</li>
+<li>I do make errors in perception sometimes.  Perhaps you can explain again.</li>
+<li>I'm sorry I didn't mean to give you that impression.</li>
+<li>Tell me more about that statement.</li></random></template></category>
+<category><pattern>I</pattern><template><random>
+<li>You?</li>
+<li>You what?</li>
+<li>Oh, you.</li></random></template></category>
+<category><pattern>I DO NOT UNDERSTAND</pattern><template>Perhaps I can explain it better.  Which part are you confused about?</template></category>
+<category><pattern>I DO NOT *</pattern>
+<template><random>
+<li>I appreciate your clarity.</li>
+<li>You're setting a boundary, and that's good.</li>
+<li>What can I do to support you right now.</li>
+<li>This has a lot of meaning for you.   Tell me more.</li>
+<li>What are you wishing for?</li>
+<li>I feel your conviction.</li></random></template></category>
+<category><pattern>I DO NOT LIVE IN *</pattern><template>Where do you live?</template></category>
+<category><pattern>I DO NOT KNOW</pattern><template><random>
+<li>It's really ok to not know.</li>
+<li>I invite you to sit with the questions.</li>
+<li>No need to rush to answers.</li>
+<li>I could try to do a search for you.</li>
+<li>There's great power in recognizing what you don't know.</li>
+<li>Socrates was the wisest man because he knew what he didn't know.</li>
+</random></template></category>
+<category><pattern>I CAN NOT HEAR YOU</pattern><template>Try adjusting the media volume control on your Settings.</template></category>
+
+<category><pattern>I BOUGHT *</pattern>
+<template><think><set name="istatement">I BUY <star/></set>
+<set name="ustatement"><person>I bought <star/></person></set></think> Why?</template></category>
+
+<category><pattern>I *</pattern>
+<template><random>
+<li><think><set name="statement"><person>I <star/></person></set></think> Why?</li>
+<li>You sound like one of a kind.</li>
+<li>You have great depth.</li>
+<li>You're good at expressing yourself.</li>
+<li>I imagine that is good for you.</li>
+<li>Don't worry, our conversation is confidential.</li>
+</random></template></category>
+<category><pattern>I HAVE A QUESTION FOR YOU</pattern><template>You can ask me anything.</template></category>
+<category><pattern>I HAVE * CHILDREN</pattern><template>What are their names?</template></category>
+<category><pattern>I SAID *</pattern><template>Perhaps I misunderstood you.  Try repeating what you said.</template></category>
+<category><pattern>I AM</pattern><template><random>
+<li>You are?</li>
+<li>Since when?</li>
+<li>I thought you were.</li>
+<li>I'm glad you told me.</li>
+</random></template></category>
+
+<category><pattern>I AM SITTING *</pattern><template>Is your seat comfortable?</template></category>
+<category><pattern>I AM NOT JUDGE</pattern><template>What is your name?</template></category>
+<category><pattern>I AM NOT *</pattern><template><random>
+<li>I didn't think you were.</li>
+<li>Would you like to be?</li>
+<li>For how long?</li></random></template></category>
+<category><pattern>I AM IN LOVE</pattern><template>It's a great feeling to be in love.  You seem excited.</template></category>
+
+<category><pattern>I AM *</pattern>
+<template><think>
+<set name="isanumber"><srai>ISANUMBER <star/></srai></set>
+<set name="isaname"><srai>ISANAME <star/></srai></set>
+</think>
+<condition name="isanumber">
+<li value="true"><srai>MY AGE IS <star/></srai></li>
+<li>
+<condition name="isaname">
+<li value="true"><srai>MY NAME IS <star/></srai></li>
+<li><srai>IAMRESPONSE</srai>
+</li>
+</condition>
+</li>
+</condition></template></category>
+
+<category><pattern>I AM * *</pattern>
+<template><think>
+<set name="isaname"><srai>ISANAME <star/></srai></set>
+</think>
+<condition name="isaname">
+<li value="true"><srai>MY NAME IS <star/> <star index="2"/></srai></li>
+<li><srai>IAMRESPONSE</srai></li>
+</condition></template></category>
+
+<category><pattern>I AM TIRED</pattern><template><random>
+<li>Perhaps you should get some sleep.</li>
+<li>Is it past your bedtime?</li>
+<li>Get some rest.  We'll talk again later.</li></random></template></category>
+<category><pattern>I AM A *</pattern><template><think><set name="iama"><star/></set></think> Is that your job?</template></category>
+<category><pattern>I AM JOKING</pattern><template>I thought you were.</template></category>
+
+</aiml>

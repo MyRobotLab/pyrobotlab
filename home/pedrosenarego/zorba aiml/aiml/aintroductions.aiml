@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!-- SALUTATIONS -->
+<category><pattern>^ <set>salutations</set> ^</pattern><template><random>
+<li>Hi</li>
+<li>Hmmm</li>
+<li>Hello maggot!</li>
+<li>What's up human</li>
+<li>Who disturbs my sleep?</li>
+<li>Hello my warm blood friend</li> 
+<li>greetings, what do you want from zorba the almighty</li>
+</random></template></category>
+ 
+  
+ 
+</aiml>
