@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>RANDOM GESTURE</pattern>
+    <template>
+      <condition name = "language">
+        <li value = "french">
+          <random>
+            <li>relaxe. <srai>REST</srai></li>
+            <li>chercher les humains <srai>SEARCH HUMAN</srai></li>
+          </random>
+        </li>
+        <li>
+          <random>
+            <li>rest. <srai>REST</srai></li>
+            <li>search humans <srai>SEARCH HUMAN</srai></li>
+          </random>
+        </li>
+      </condition>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>* RANDOM GESTURE</pattern>
+    <template><srai>RANDOM GESTURE</srai></template>
+  </category>
+  
+  <category>
+    <pattern>* POSE ALÉATOIRE</pattern>
+    <template><srai>RANDOM GESTURE</srai></template>
+  </category>
+  
+  <category>
+    <pattern>* PAUSE ALÉATOIRE</pattern>
+    <template><srai>RANDOM GESTURE</srai></template>
+  </category>
+
+  <category>
+    <pattern>DO GESTURE</pattern>
+    <template><srai>RANDOM GESTURE</srai></template>
+  </category>
+
+  <category>
+    <pattern>FAIS UNE POSE</pattern>
+    <template><srai>RANDOM GESTURE</srai></template>
+  </category>
+
+  <category>
+    <pattern>FAIS UNE PAUSE</pattern>
+    <template><srai>RANDOM GESTURE</srai></template>
+  </category>
+  
+  <category>
+    <pattern>REST</pattern>
+    <template>
+      <condition name = "language" value = "english">
+        <random>
+          <li>Ah, relaxing</li>
+          <li>taking a rest</li>
+          <li>Phew!</li>
+          <li>#YAWN02#</li>
+          <li>Thats good</li>
+        </random>
+      </condition>
+      <oob>
+        <mrl>
+          <service>i01</service>
+          <method>rest</method>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>RELAX</pattern>
+    <template>
+      <random>
+        <li>Ah, relaxer</li>
+        <li>Je prends une pause</li>
+        <li>Phew!</li>
+        <li>Ça fait du bien</li>
+      </random>
+      <srai>REST</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>SEARCH HUMAN</pattern>
+    <template>
+      <condition name = "language" value = "english">
+        <random>
+          <li>I'm looking for faces.</li>
+          <li>Scanning around</li>
+          <li>I'm looking for faces.</li>
+          <li>Scanning around</li>
+          <li><srai>ACTIONREFUSE SEARCH HUMAN</srai></li>
+        </random>
+      </condition>
+      <condition name = "refuse">
+        <li value = "False">
+          <oob>
+            <mrl>
+              <service>python</service>
+              <method>exec</method>
+              <param>trackHumans()</param>
+            </mrl>
+          </oob>
+        </li>
+        <li value = "True"><think><set name = "refuse">False</set></think></li>
+      </condition>
+    </template>
+  </category>
+
+  <category>
+    <pattern>CHERCHE LES HUMAINS</pattern>
+    <template>
+      <random>
+        <li>Je recherche des figures</li>
+        <li>Je cherche</li>
+        <li>Je recherche des figures</li>
+        <li>Je cherche</li>
+        <li><srai>ACTIONREFUSE <input/></srai></li>
+      </random>
+      <srai>SEARCH HUMAN</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>STOP SEARCH</pattern>
+    <template>
+      <condition name = "language" value = "english">
+        Stopping my search.
+      </condition>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>stopTracking()</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ARRÊTE LA RECHERCHE</pattern>
+    <template>
+      J'arrête ma recherche
+      <srai>STOP SEARCH</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>TRACK</pattern>
+    <template>
+      <condition name = "language" value = "english">
+        <random>
+          <li>Following the point.</li>
+          <li>I love to look at this</li>
+          <li>ok</li>
+          <li>Looking at this</li>
+          <li><srai>ACTIONREFUSE <input/></srai></li>
+        </random>
+      </condition>
+      <condition name = "refuse">
+        <li value = "False">
+          <oob>
+            <mrl>
+              <service>python</service>
+              <method>exec</method>
+              <param>trackPoint()</param>
+            </mrl>
+          </oob>
+        </li>
+        <li value = "True"><think><set name = "refuse">False</set></think></li>
+      </condition>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>REGARDE CE POINT</pattern>
+    <template>
+      <random>
+        <li>Je suis le point</li>
+        <li>J'aime regarder ceci</li>
+        <li>ok</li>
+        <li>Je regarde ce point</li>
+        <li><srai>ACTIONREFUSE <input/></srai></li>
+      </random>
+      <srai>TRACK</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>STOP TRACKING</pattern>
+    <template>Stopping my tracking
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>stopTracking()</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>GO AT FULL SPEED</pattern>
+    <template>
+      <condition name = "language" value = "english">
+        Servos are set to full speed now.
+      </condition>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>fullspeed()</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>PLEINE VITESSE</pattern>
+    <template>
+      Mes moteurs a plein régime
+      <srai>GO AT FULL SPEED</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ABOUT</pattern>
+    <template>
+      ok
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>about()</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>SHAKE HAND</pattern>
+    <template>
+      <condition name = "language" value = "english">
+        <random>
+          <li>Hello</li>
+          <li>Welcome</li>
+          <li>ok</li>
+          <li>There</li>
+          <li><srai>ACTIONREFUSE <input/></srai></li>
+        </random>
+      </condition>
+      <condition name = "refuse">
+        <li value = "False">
+          <oob>
+            <mrl>
+              <service>python</service>
+              <method>exec</method>
+              <param>shakehand()</param>
+            </mrl>
+          </oob>
+        </li>
+        <li value = "True"><think><set name = "refuse">False</set></think></li>
+      </condition>
+    </template>
+  </category>
+
+  <category>
+    <pattern>DONNE LA MAIN</pattern>
+    <template>
+      <random>
+        <li>Bonjour</li>
+        <li>Bienvenue</li>
+        <li>Ok</li>
+        <li>Voila</li>
+        <li><srai>ACTIONREFUSE <input/></srai></li>
+      </random>
+      <srai>SHAKE HAND</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>SUPERMAN</pattern>
+    <template>Superman.</template>
+  </category>
+
+  <category>
+    <pattern>QUEEN</pattern>
+    <template>Queen.</template>
+  </category>
+</aiml>

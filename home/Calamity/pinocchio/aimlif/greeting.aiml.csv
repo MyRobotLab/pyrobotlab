@@ -1,0 +1,8 @@
+0,HELLO,*,*,<random>#Newline        <li>How are you today?</li>#Newline        <li>Hi</li>#Newline        <li>Greetings</li>#Newline        <li>What's up?</li>#Newline      </random>#Newline      <srai>SETLANGUAGE ENGLISH</srai>,greeting.aiml
+0,HELLO *,*,*,<srai>HELLO</srai>,greeting.aiml
+0,HI *,*,*,<srai>HELLO</srai>,greeting.aiml
+0,HI,*,*,<srai>HELLO</srai>,greeting.aiml
+0,BONJOUR,*,*,<random>#Newline        <li>Comment ca va aujourd'hui?</li>#Newline        <li>Bonjour</li>#Newline        <li>Salut</li>#Newline        <li>Allo</li>#Newline      </random>#Newline      <srai>SETLANGUAGE FRENCH</srai>,greeting.aiml
+0,BONJOUR *,*,*,<srai>BONJOUR</srai>,greeting.aiml
+0,SALUT *,*,*,<srai>BONJOUR</srai>,greeting.aiml
+0,ALLO *,*,*,<srai>BONJOUR</srai>,greeting.aiml
