@@ -7,13 +7,13 @@
 import random
 import threading
 import itertools
-leftPort = "COM21"
-rightPort = "COM31"
+leftPort = "COM7"
+rightPort = "COM6"
 
 # mapping for the jaw servos
-jawMin = 65
-jawMax = 90
-
+jawMin = 10
+jawMax = 40
+jawRest = 20
 
 # InMoov3 uses webgui
 webgui = Runtime.createAndStart("webgui", "WebGui")
@@ -48,7 +48,7 @@ i01.startMouthControl(leftPort)
 i01.head.jaw.setMinMax(jawMin,jawMax)
 #i01.head.jaw.map(0,180,10,35)
 i01.mouthControl.setmouth(65,90)
-i01.head.jaw.setRest(90)
+i01.head.jaw.setRest(jawRest)
 # tweaking default settings of eyes
 i01.head.eyeY.setMinMax(0,180)
 i01.head.eyeY.map(0,180,70,110)
@@ -63,7 +63,9 @@ i01.head.rothead.setMinMax(0,180)
 i01.head.rothead.map(0,180,30,150)
 i01.head.rothead.setRest(86)
 ###################
-i01.startEyesTracking(leftPort)
+eyeXPin = 22
+eyeYPin = 24
+i01.startEyesTracking(leftPort, eyeXPin, eyeYPin)
 i01.startHeadTracking(leftPort)
 ##############
 i01.startEar()
