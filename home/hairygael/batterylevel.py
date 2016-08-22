@@ -1,4 +1,7 @@
+import subprocess
+
 def batterylevel():
-  power_now = subprocess.call ("WMIC PATH Win32_Battery Get EstimatedChargeRemaining", "r".readline())
-  ANSWER = float(power_now) * 100 , "%"
-  i01.mouth.speak(str(ANSWER))
+  power_now = subprocess.check_output(["WMIC","PATH","Win32_Battery","Get","EstimatedChargeRemaining"])
+  battery = power_now.split("\n")[1].strip()
+  # print battery
+  i01.mouth.speak(str(battery) + " percent")
