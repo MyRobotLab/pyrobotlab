@@ -387,7 +387,7 @@
     
     <category>
       <pattern>CAPTURE GESTURE</pattern>
-      <template>Now I will try to capture a gesture.
+      <template>I am capturing this gesture.
         <oob>
           <mrl>
             <service>i01</service>
@@ -503,7 +503,7 @@
     
     <category>
       <pattern>MANUAL</pattern>
-      <template>There is no manual, sorry.
+      <template>Okay I don't listen anymore, to unlock me you need to say voice control.
         <oob>
           <mrl>
             <service>i01.ear</service>
@@ -1015,8 +1015,8 @@
       </template>
     </category>
     <category>
-      <pattern>SERVO</pattern>
-      <template>SERVO
+      <pattern>HOW MANY MOTORS DO YOU HAVE</pattern>
+      <template>
         <oob>
           <mrl>
             <service>python</service>
@@ -1028,7 +1028,7 @@
     </category>
     <category>
       <pattern>HOW MANY FINGERS DO YOU HAVE</pattern>
-      <template>HOW MANY FINGERS DO YOU HAVE
+      <template>LET SEE HOW MANY FINGERS DO I HAVE
         <oob>
           <mrl>
             <service>python</service>
@@ -1075,7 +1075,7 @@
       </template>
     </category>
     <category>
-      <pattern>CYCLE GESTURE ONE</pattern>
+      <pattern>MOVEMENT NUMBER 1</pattern>
       <template>CYCLE GESTURE ONE
         <oob>
           <mrl>
@@ -1087,7 +1087,7 @@
       </template>
     </category>
     <category>
-      <pattern>CYCLE GESTURE TWO</pattern>
+      <pattern>MOVEMENT NUMBER 2</pattern>
       <template>CYCLE GESTURE TWO
         <oob>
           <mrl>
@@ -1099,13 +1099,85 @@
       </template>
     </category>
     <category>
-      <pattern>CYCLE GESTURE THREE</pattern>
+      <pattern>MOVEMENT NUMBER 3</pattern>
       <template>CYCLE GESTURE THREE
         <oob>
           <mrl>
             <service>python</service>
             <method>exec</method>
             <param>cyclegesture3()</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
+    <category>
+      <pattern>REPEAT MOVEMENT FOR LONDON</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>brooke2()</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
+    <category>
+      <pattern>MOVEMENT FOR LONDON NUMBER 2</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>brooke()</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
+    <category>
+      <pattern>MOVEMENT FOR LONDON NUMBER 3</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>gestureforlondon3()</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
+    <category>
+      <pattern>MOVEMENT FOR LONDON NUMBER 4</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>gestureforlondon4()</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
+    <category>
+      <pattern>RIGHT CLOTHES</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>rightclothes()</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
+    <category>
+      <pattern>RELEASE YOUR CLOTHES</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>releaseleftclothes()</param>
           </mrl>
         </oob>
       </template>
@@ -1123,8 +1195,8 @@
       </template>
     </category>
     <category>
-      <pattern>SHAKE HANDS</pattern>
-      <template>SHAKE HANDS
+      <pattern>SHAKE HAND</pattern>
+      <template>SHAKE HAND
         <oob>
           <mrl>
             <service>python</service>
@@ -1135,16 +1207,8 @@
       </template>
     </category>
     <category>
-      <pattern>PLEASE SHAKE HANDS</pattern>
-      <template>SHAKE HANDS
-        <oob>
-          <mrl>
-            <service>python</service>
-            <method>exec</method>
-            <param>shakehand()</param>
-          </mrl>
-        </oob>
-      </template>
+      <pattern>SHAKE HANDS</pattern>
+      <template><srai>SHAKE HAND</srai></template>
     </category>
     <category>
       <pattern>UNHAPPY</pattern>
@@ -1352,7 +1416,7 @@
     </category>
     <category>
       <pattern>PHONE HOME</pattern>
-      <template>PHONE HOME
+      <template>
         <oob>
           <mrl>
             <service>python</service>
@@ -1361,6 +1425,10 @@
           </mrl>
         </oob>
       </template>
+    </category>
+    <category>
+      <pattern>WHERE ARE YOU FROM</pattern>
+      <template><srai>PHONE HOME</srai></template>
     </category>
     <category>
       <pattern>HOW DO YOU FEEL</pattern>
@@ -1399,7 +1467,7 @@
       </template>
     </category>
     <category>
-      <pattern>CARRY BABY</pattern>
+      <pattern>CARRY THE BABY</pattern>
       <template>CARRY BABY
         <oob>
           <mrl>
@@ -1437,11 +1505,71 @@
     <category>
       <pattern>WHAT ABOUT STAR WARS</pattern>
       <template>
-        </oob>
+        <oob>
           <mrl>
             <service>python</service>
             <method>exec</method>
             <param>whataboutstarwars()</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
+    <category>
+      <pattern>CAN YOU GIVE ME THE TIME</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>canyougivemethetime()</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
+    <category>
+      <pattern>ALESSANDRO</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>alessandro()</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
+    <category>
+      <pattern>NO WORRY</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>dontworry()</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
+    <category>
+      <pattern>BATTERY LEVEL</pattern>
+      <template>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>batterylevel()</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
+    <category>
+      <pattern>START FACE RECOGNIZER</pattern>
+      <template>I'm starting face recognizer
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>facerecognizer()</param>
           </mrl>
         </oob>
       </template>
