@@ -2,6 +2,7 @@ from java.lang import String
 import threading
 import time
 import random
+##import subprocess
 from org.myrobotlab.net import BareBonesBrowserLaunch 
 
 #############################################################
@@ -71,7 +72,13 @@ ear.addMouth(mouth)
 ear.addTextListener(inmoovWebKit)
 inmoovWebKit.addTextListener(htmlfilter)
 htmlfilter.addTextListener(mouth)
-
+######################################################################
+# Sets the face recognizer
+######################################################################
+opencv=Runtime.start("opencv","OpenCV")
+opencv.setCameraIndex(1)
+fr=opencv.addFilter("FaceRecognizer")
+lastName=fr.getLastRecognizedName()
 ######################################################################
 # Start up the inmoov and attach stuff.
 ######################################################################
