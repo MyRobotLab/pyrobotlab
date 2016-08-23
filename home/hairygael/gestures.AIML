@@ -1574,6 +1574,14 @@
         </oob>
       </template>
     </category>
+    <category>
+      <pattern>FACE RECOGNIZER</pattern>
+      <template><srai>START FACE RECOGNIZER</srai></template>
+    </category>
+    <category>
+      <pattern>FACE RECOGNITION</pattern>
+      <template><srai>START FACE RECOGNIZER</srai></template>
+    </category>
     
   </topic>
 
