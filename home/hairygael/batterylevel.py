@@ -1,5 +1,3 @@
-import subprocess
-
 def batterylevel():
   power_now = subprocess.check_output(["WMIC","PATH","Win32_Battery","Get","EstimatedChargeRemaining"])
   battery = power_now.split("\n")[1].strip()
