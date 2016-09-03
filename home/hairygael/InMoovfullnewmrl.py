@@ -122,7 +122,7 @@ i01.startRightArm(rightPort)
 #i01.eyesTracking.faceDetect()
 #i01.headTracking.pyramidDown()
 ############################################################
-#to tweak the default PID values
+#to tweak the default Pid values
 i01.eyesTracking.pid.setPID("eyeX",20.0,5.0,0.1)
 i01.eyesTracking.pid.setPID("eyeY",20.0,5.0,0.1)
 i01.headTracking.pid.setPID("rothead",12.0,5.0,0.1)

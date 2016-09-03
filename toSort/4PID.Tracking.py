@@ -24,13 +24,13 @@ tracker = Runtime.create("tracker","Tracking")
 rotation = Runtime.create("rotation","Servo")
 neck = Runtime.create("neck","Servo")
 arduino = Runtime.create("arduino","Arduino")
-xpid = Runtime.create("xpid","PID");
-ypid = Runtime.create("ypid","PID");
+xpid = Runtime.create("xpid","Pid");
+ypid = Runtime.create("ypid","Pid");
 
 rotationb = Runtime.create("rotationb","Servo")
 neckb = Runtime.create("neckb","Servo")
-xpidb = Runtime.create("xpidb","PID");
-ypidb = Runtime.create("ypidb","PID");
+xpidb = Runtime.create("xpidb","Pid");
+ypidb = Runtime.create("ypidb","Pid");
  
 # adjust values
 arduino.connect("COM3")

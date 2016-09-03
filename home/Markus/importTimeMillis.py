@@ -37,7 +37,7 @@ i01.head.eyeY.map(50,100,100,50)
 i01.head.neck.map(20,160,160,20)
  
 ############################################################
-#to tweak the default PID values
+#to tweak the default Pid values
 i01.headTracking.xpid.setPID(10.0,5.0,0.1)
 i01.headTracking.ypid.setPID(10.0,5.0,0.1)
 i01.eyesTracking.xpid.setPID(15.0,5.0,0.1)

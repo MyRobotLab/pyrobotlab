@@ -9,7 +9,7 @@ openni.addListener("publish",python.name,"input")
 global actualhand
 actualhand = 0
 
-xpid = Runtime.createAndStart("xpid","PID")
+xpid = Runtime.createAndStart("xpid","Pid")
 xpid.setMode(1)
 xpid.setOutputRange(-1, 1)
 xpid.setPID(10.0, 0, 1.0)

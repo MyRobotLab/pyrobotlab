@@ -14,8 +14,8 @@ from time import sleep
 actservox = 90
 actservoy = 90
 
-xpid = Runtime.createAndStart("xpid","PID")
-ypid = Runtime.createAndStart("ypid","PID")
+xpid = Runtime.createAndStart("xpid","Pid")
+ypid = Runtime.createAndStart("ypid","Pid")
 xpid.setMode(1)
 xpid.setOutputRange(-3, 3)
 xpid.setPID(10.0, 0, 1.0)

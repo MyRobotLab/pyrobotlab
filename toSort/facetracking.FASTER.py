@@ -11,8 +11,8 @@ from org.myrobotlab.service import Servo
 from time import sleep
  
  
-xpid = Runtime.createAndStart("xpid","PID")
-ypid = Runtime.createAndStart("ypid","PID")
+xpid = Runtime.createAndStart("xpid","Pid")
+ypid = Runtime.createAndStart("ypid","Pid")
 xpid.setMode(1)
 xpid.setOutputRange(-1, 1)
 xpid.setPID(10.0, 0, 1.0)

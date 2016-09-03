@@ -11,8 +11,8 @@ tracker = Runtime.create("tracker","Tracking")
 rotation = Runtime.create("rotation","Servo")
 neck = Runtime.create("neck","Servo")
 arduino = Runtime.create("arduino","Arduino")
-xpid = Runtime.create("xpid","PID");
-ypid = Runtime.create("ypid","PID");
+xpid = Runtime.create("xpid","Pid");
+ypid = Runtime.create("ypid","Pid");
 
 # adjust values
 arduino.connect("COM12")

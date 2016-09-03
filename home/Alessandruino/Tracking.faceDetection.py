@@ -20,7 +20,7 @@ servoY = tracker.getY()
 servoY.setPin(yServoPin)
 servoY.setMinMax(30, 150)
 
-# changing PID values change the 
+# changing Pid values change the 
 # speed and "jumpyness" of the Servos
 xpid = tracker.getXPID()
 ypid = tracker.getYPID()

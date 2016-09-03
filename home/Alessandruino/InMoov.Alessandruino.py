@@ -28,8 +28,8 @@ head.reserveAs("ypid", "neckPID")
 # naming - binding of peer services is done with service names
 # the Tracking service will use the following default names
 # arduinoName = "arduino" - the arduino controller - used to control the servos
-# xpidName = "xpid" - the PID service to control X tracking
-# ypidName = "ypid" - the PID service to control Y tracking
+# xpidName = "xpid" - the Pid service to control X tracking
+# ypidName = "ypid" - the Pid service to control Y tracking
 # xName = "x" - the x servo (pan)
 # yName = "y" - the y servo (eyeY)
 # opencvName = "opencv" - the camera
@@ -54,7 +54,7 @@ eyes.setServoLimits(65, 90, 22, 85)
 eyes.setRestPosition(80, 47) 
  
 #eyes.setPIDDefaults()
-# changing PID values 
+# changing Pid values 
 # setXPID(Kp, Ki, Kd, Direction 0=direct 1=reverse, Mode 0=manual 1= automatic, minOutput, maxOutput, sampleTime, setPoint);
 # defaults look like this_AUTOMATIC
 eyes.setXPID(10.0, 5, 1, 0, 1, -10, 10, 30, 0.5)

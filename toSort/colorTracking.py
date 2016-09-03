@@ -22,14 +22,14 @@ else:
   cameraIndex = 0
 
 
-# ///////////////////PID/////////////////////////////////////////////////////
-# 2 PID services to adjust for X & Y of the open cv point and to map them
+# ///////////////////Pid/////////////////////////////////////////////////////
+# 2 Pid services to adjust for X & Y of the open cv point and to map them
 # to the pan and tilt servo values
 # X : opencv 0 - 320 ->  pan 0 - 180
 # Y : opencv 0 - 240 -> tilt 0 - 180
 
-# xpid = Runtime.createAndStart("xpid","PID")
-# ypid = Runtime.createAndStart("ypid","PID")
+# xpid = Runtime.createAndStart("xpid","Pid")
+# ypid = Runtime.createAndStart("ypid","Pid")
 
 # xpid.setInputRange(0, 320)
 # xpid.setOutputRange(0, 180)

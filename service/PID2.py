@@ -8,7 +8,7 @@ arduino.analogReadPollingStart(readAnalogPin)
 arduino.addListener("publishPin", "python", "input")
 
 
-pid = Runtime.createAndStart("pid","PID")
+pid = Runtime.createAndStart("pid","Pid")
 pid.setMode(1)
 #set the range of the "correction"
 pid.setOutputRange(-5, 5)

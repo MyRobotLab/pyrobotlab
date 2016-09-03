@@ -94,7 +94,7 @@ i01.leftHand.majeure.map(0,180,30,118)
 i01.leftHand.ringFinger.map(0,180,25,134)
 i01.leftHand.pinky.map(0,180,35,130)
 ############################################################
-#to tweak the default PID values
+#to tweak the default Pid values
 i01.headTracking.xpid.setPID(10.0,5.0,0.1)
 i01.headTracking.ypid.setPID(15.0,5.0,0.1)
 i01.eyesTracking.xpid.setPID(15.0,5.0,0.1)

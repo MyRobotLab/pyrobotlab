@@ -136,7 +136,7 @@ opencv.capture()
 
 #i01.headTracking.faceDetect()
 #i01.headTracking.pyramidDown()
-#to tweak the default PID values
+#to tweak the default Pid values
 #i01.headTracking.xpid.setPID(10.0,5.0,0.1)
 #i01.headTracking.ypid.setPID(10.0,5.0,0.1)
 

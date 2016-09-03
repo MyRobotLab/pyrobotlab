@@ -1,6 +1,6 @@
 opencv.addListener("publishOpenCVData", "python","onOpenCVData")
 
-pid = Runtime.createAndStart("pid","PID")
+pid = Runtime.createAndStart("pid","Pid")
 pid.setMode(1)
 #set the range of the "correction"
 pid.setOutputRange(-1, 1)

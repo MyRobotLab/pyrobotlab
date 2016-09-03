@@ -5,8 +5,8 @@ eyeX = Runtime.create("eyeX","Servo")
 eyeY = Runtime.create("eyeY","Servo")
 eyeY.setInverted(True)
 arduino = Runtime.create("arduino","Arduino")
-xpid = Runtime.create("xpid","PID");
-ypid = Runtime.create("ypid","PID");
+xpid = Runtime.create("xpid","Pid");
+ypid = Runtime.create("ypid","Pid");
  
 # adjust values
 arduino.connect("COM3")
