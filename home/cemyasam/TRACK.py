@@ -9,6 +9,8 @@ port = "COM6"   #change COM port to your own port
 xServoPin = 7   #change this to the right servo pin if needed, for inmoov this is right
 yServoPin = 8   #change this to the right servo pin if needed, for inmoov this is right
 
+cameraIndex = 1
+
 # Create the arduino service
 arduino = Runtime.createAndStart("tracker.arduino", "Arduino")
 # connect the arduino service to the specified port
@@ -43,10 +45,10 @@ tracker = Runtime.createAndStart("tracker", "Tracking")
 opencv = tracker.getOpenCV()
 
 # setting camera index to 1 default is 0
-opencv.setCameraIndex(1) 
+opencv.setCameraIndex(cameraIndex) 
 
-# connect to the Arduino
-tracker.connect(port)
+
+tracker.connect(port,xServoPin, yServoPin, cameraIndex)
 
 # Gray & PyramidDown make face tracking
 # faster - if you dont like these filters - you
