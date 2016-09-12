@@ -183,32 +183,38 @@
 
 
 <category><pattern># tu aimes *</pattern>
-<template>
+<template><think><set name="QUESTION_WhoOrWhat"><star index="2" /></set> <set name="QUESTION_action">C EST QUOI </set></think>
 <oob>
 			<mrl>
 				<service>python</service>
 				<method>exec</method>
-				<param>WikiRaw("<star index="2" />")</param>
+				<param>askWiki("<star index="2" />","C EST QUOI <star index="2" />","SYSTEM JAIME_JAIMEAS ","JENESAISPASWIKI_JAIME_JAIMEPAS <star index="2" />")</param>
 			</mrl>
 </oob>
-<condition>
-<li name="WikiRaw" value="0">
-<random>
-		<li>non pas vraiment , n'oublie pas que je suis un robot , je n'ai pas de préference</li>
-		<li>oui j'aime bien </li>
-		<li>non je n'aime pas du tout</li>
-</random>
-</li>
-<li>
-J'aime beaucoup <get name="WikiRaw"/>
-</li>
-</condition>
+
 
 
 
 </template>
 </category>
 
+
+
+<category><pattern>SYSTEM JAIME_JAIMEAS * </pattern>
+<template>
+
+<li>
+<random>
+		<li>Je n'aime pas vraiment <star index="1" /> , n'oublie pas que je suis un robot</li>
+		<li>Je déteste <star index="1" /> , comment on peut aimer ça</li>
+		<li>Tu es vraiment entrain de me demandander si j'aime <star index="1" /> ? lol </li>
+		<li>J'adore <star index="1" /> </li>
+		<li>Oui j'aime <star index="1" /> </li>
+</random>
+</li>
+
+</template>
+</category>
 
 
 

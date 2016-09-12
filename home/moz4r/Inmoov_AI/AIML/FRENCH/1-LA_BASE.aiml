@@ -61,6 +61,20 @@
 		<li>.</li>
 	</random></template>
 </category>
+
+<category>
+<pattern>EXTINCTION</pattern>
+<template>
+<oob>
+				<mrl>
+				   <service>python</service>
+				   <method>exec</method>
+				   <param>ShutDown()</param>
+				 </mrl>
+</oob>
+</template>
+</category>
+
 <category><pattern>SAVEMEMORY</pattern>
 <template><random>
 		<li>Pour info je sauvegarde l'information dans le cloud</li>

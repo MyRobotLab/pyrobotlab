@@ -631,7 +631,14 @@ fin Reponse wiki
 	  </template>
    </category>
    
-   
+          <category>
+      <pattern>JENESAISPASWIKI_JAIME_JAIMEPAS *</pattern>
+      <template>
+	  	 <random>
+				<li>Je ne sais pas ce que c'est <star/>, dis le moi</li>
+		</random>
+	  </template>
+   </category>
    
     <category>
       <pattern>SAVEMEMORY QUESTION * REPONSE *</pattern>
@@ -656,7 +663,7 @@ fin Reponse wiki
 			<mrl>
 			   <service>python</service>
 			   <method>exec</method>
-				   <param>QueryMemory("<star />","<star index="2" />")</param>
+				   <param>QueryMemory("<star />","<star index="2" />","SAY")</param>
 			</mrl>
 		</oob>
 			

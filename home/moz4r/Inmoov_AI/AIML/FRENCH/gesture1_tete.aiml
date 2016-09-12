@@ -74,7 +74,7 @@
   
   
   
-<category><pattern># regarde a gauche #</pattern>
+<category><pattern># regarde à gauche #</pattern>
 <template>
 <oob>
 					<mrl>
@@ -99,7 +99,7 @@
    
    
    
-<category><pattern># regarde a droite #</pattern>
+<category><pattern># regarde à droite #</pattern>
 <template>
 <oob>
 					<mrl>

@@ -24,7 +24,7 @@
 				<mrl>
 				   <service>python</service>
 				   <method>exec</method>
-				   <param>GetUnreadMessageNumbers()</param>
+				   <param>GetUnreadMessageNumbers("1")</param>
 				 </mrl>
 			</oob>
 			
