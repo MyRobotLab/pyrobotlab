@@ -10,8 +10,8 @@
 import threading
 
 # All bot specific hardware configuration goes here.
-leftPort = "/dev/ttyACM0"
-rightPort = "/dev/ttyACM1"
+leftPort = "/dev/ttyACM1"
+rightPort = "/dev/ttyACM0"
 headPort = leftPort
 gesturesPath = "/home/pi/myrobotlab/pyrobotlab/home/kwatters/harry/gestures"
 
@@ -22,6 +22,15 @@ botVoice = "Rod"
 
 # toggle to only load program ab  and skip the inmoov services
 startInMoov = True
+
+
+
+######################################################################
+# Launch the web gui and create the webkit speech recognition gui
+# This service works in Google Chrome only with the WebGui
+#################################################################
+webgui = Runtime.createAndStart("webgui","WebGui")
+
 
 ######################################################################
 # helper function help debug the recognized text from webkit/sphinx
@@ -83,10 +92,8 @@ if startInMoov:
   # calibrate harry specific stuff. 
   i01.head.rothead.detach()
   i01.head.neck.detach()
-  i01.head.rothead.setController("i01.right")
-  i01.head.neck.setController("i01.right")
-  i01.head.rothead.attach()
-  i01.head.neck.attach()  
+  i01.head.rothead.attach(right, 13)
+  i01.head.neck.attach(right, 12)  
   
 else:
   i01.mouth = mouth
@@ -94,12 +101,6 @@ else:
 # Harry doesn't have a forward servo, but i'm adding it here as a 
 # place holder
 forwardServo = Runtime.start("forwardServo","Servo")
-
-######################################################################
-# Launch the web gui and create the webkit speech recognition gui
-# This service works in Google Chrome only with the WebGui
-#################################################################
-webgui = Runtime.createAndStart("webgui","WebGui")
 
 ######################################################################
 # END MAIN SERVICE SETUP SECTION
