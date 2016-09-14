@@ -26,7 +26,3 @@ sleep(2)
 delta = 0
 neckMoveTo(restPos,delta)
 sleep(2)
-def neckMoveTo(restPos,delta):
-	leftneckServo.moveTo(restPos + delta)
-	rightneckServo.moveTo(restPos - delta)
-
