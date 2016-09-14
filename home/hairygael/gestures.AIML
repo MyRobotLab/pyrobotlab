@@ -1552,7 +1552,7 @@
     </category>
     <category>
       <pattern>BATTERY LEVEL</pattern>
-      <template>
+      <template>THE BATTERY LEVEL IS
         <oob>
           <mrl>
             <service>python</service>
