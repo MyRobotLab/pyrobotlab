@@ -1,19 +1,18 @@
 #Robot Name
 #please, there is no verifications ! don't use an other used robot name ( usefull to use Inmoov Messenger )
 myBotname=""
-myAimlFolder="rachel" # dossier ou se trouvent vos aiml pas d'accent svp
+myAimlFolder="inmoovai" # dossier ou se trouvent vos aiml pas d'accent svp
 # LANGUAGE ( FR/EN )
-lang="EN"
+lang="FR"
 global Voice
-Voice="Ryan" # antoine en francais
+Voice="Antoine" # ryan in english
 # To fetch weather etc [ adresse du serveur fetcher meteo etc ...]
 BotURL="http://myai.cloud/bot1.php"
 units="metric" # or : imperial
 # ##
 #
 # ARDUINO CONFIG IF YOU DIDNT HAVE MOTORS set inmoov=0 / Si vous n'avez pas de servo : inmoov=0
-IsInmoovLeft=0
-IsInmoovRight=0
+IsInmoovArduino=0
 MRLmouthControl=0
 BoardType="atmega2560" # atmega168 | atmega328 | atmega328p | atmega2560 | atmega1280 | atmega32u4
 leftPort = "COM3"
@@ -47,27 +46,45 @@ global PaupiereMIN
 global PaupiereMAX
 PaupiereMIN=10
 PaupiereMAX=50
+
 MinRotHead=0
 MaxRotHead=180
+RotHeadInverted=0
+
 MinNeck=0
 MaxNeck=180
+NeckInverted=0
+
+MinHeadSide=0
+MaxHeadSide=180
+HeadSideInverted=0
+HeadSidePin=30
+HeadSideArduino="left"
+
 JawMIN=0
 JawMAX=180
 JawInverted=0
+
 EyeXMIN=0
 EyeXMAX=180
+
 EyeYMIN=0
 EyeYMAX=180
+
 BicepsLeftMIN=0
 BicepsLeftMAX=180
+
 ShoulderLeftMIN=0
 ShoulderLeftMAX=180
+
 RotateLeftMIN=0
 RotateLeftMAX=180
+
 OmoplateLeftMIN=0
 OmoplateLeftMAX=180
 ThumbLeftMIN=0
 ThumbLeftMAX=180
+ThumbLeftInverted=0
 IndexLeftMIN=0
 IndexLeftMAX=180
 majeureLeftMIN=0
@@ -88,6 +105,7 @@ OmoplateRightMIN=0
 OmoplateRightMAX=180
 ThumbRightMIN=0
 ThumbRightMAX=180
+ThumbRightInverted=0
 IndexRightMIN=0
 IndexRightMAX=180
 majeureRightMIN=0

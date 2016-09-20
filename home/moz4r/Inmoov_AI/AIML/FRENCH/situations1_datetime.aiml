@@ -66,4 +66,72 @@ Nous sommes  <date jformat="EEEE dd MMMM yyyy"/>
 <condition name="jourdelasemaine" value="6">On est samedi et tu ne le sais pas ? heuresement que je suis la</condition>
 <condition name="jourdelasemaine" value="7">Aujourd'hui on se repose, quoique tu aurrais bien besoin de faire un peu de sport</condition></template>
 </category>
+
+<category>                   
+ <pattern># anniversaire #</pattern> 
+ <template>                  
+	<oob>                   
+		<mrl>             
+				<service>python</service>   
+				<method>exec</method>      
+				<param>anniversaire("1")</param>
+				                       
+				
+		 </mrl>            
+	</oob>                 
+</template>                 
+</category>
+
+<category>                   
+<pattern>* SYSTEM * BIRTHDAY OK *</pattern> 
+<template>
+<think><set name="jourrestants"> <star index="2"/></set></think>
+<condition>
+
+	<li name="jourrestants" value="0">
+		<li>
+			<li>
+				Joyeux anniversaire <star index="1"/>, 
+			</li>
+			<random>
+				<li>
+					<star index="3"/> ans , c'est encore jeune !
+				</li>
+				<li>
+					<star index="3"/> ans , félécitation être le doyen de l'humanité ça se fête
+				</li>
+			</random>
+		</li>
+	</li>
+
+	<li name="jourrestants" value="1">
+		<li>
+			Demain, c'est l'anniversaire de <star index="1"/> !
+		</li>
+	</li>
+	
+		<li name="jourrestants" value="2">
+		<li>
+			Après demain, c'est l'anniversaire de <star index="1"/> !
+		</li>
+	</li>
+	
+	<li>
+		C'est l'anniversaire de <star index="1"/> dans <star index="2"/> jours !
+	</li>
+	
+</condition>
+</template>                 
+</category>
+
+
+<category>                   
+<pattern>SYSTEM BIRTHDAY NOK</pattern> 
+<template>
+<li>
+Pas d'anniversaire à fêter aujourd'hui
+</li>
+</template>                 
+</category>
+
 </aiml>

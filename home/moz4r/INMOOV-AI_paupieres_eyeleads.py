@@ -1,5 +1,3 @@
-from org.myrobotlab.service import Servo
-
 PaupiereServo = Runtime.start("PaupiereServo","Servo")
 PaupiereServo.setMinMax(PaupiereMIN , PaupiereMAX)
 PaupiereServo.attach(right, PaupiereServoPin)

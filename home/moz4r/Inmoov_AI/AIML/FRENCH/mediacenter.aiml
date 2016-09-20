@@ -18,7 +18,7 @@
 </category> 
 
   
-<category><pattern># Numéro *</pattern>
+<category><pattern>Numéro *</pattern>
 <template>
 	<oob>
 					<mrl>
@@ -31,7 +31,7 @@ J'aurrais choisi la même
 </template>
 </category>
 
-<category><pattern># VIDéO *</pattern>
+<category><pattern>VIDéO *</pattern>
 <template><srai># Numéro <star index="2" /></srai></template>
 </category>
 
@@ -48,7 +48,7 @@ J'aurrais choisi la même
 </template>
 </category>    
 
-<category><pattern># REGARDER *</pattern>
+<category><pattern>REGARDER *</pattern>
 <template><srai>LIS-MOI <star index="2" /></srai></template>
 </category>
 
