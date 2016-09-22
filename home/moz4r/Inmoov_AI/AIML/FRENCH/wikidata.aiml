@@ -2,443 +2,536 @@
 <aiml>
 <!--  -->
 <!--  -->
-<category><pattern>QU EST-CE QUE *</pattern>
-<template><srai>c est quoi <star/></srai></template>
-</category>
-<category><pattern>QU EST-CE QU *</pattern>
-<template><srai>c est quoi <star/></srai></template>
-</category>
-<category><pattern>C EST QUI *</pattern>
-<template><srai>c est quoi <star/></srai></template>
-</category>
+  <category>
+    <pattern>QU EST-CE QUE *</pattern>
+    <template>
+      <srai>c est quoi <star/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>QU EST-CE QU *</pattern>
+    <template>
+      <srai>c est quoi <star/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>C EST QUI *</pattern>
+    <template>
+      <srai>c est quoi <star/></srai>
+    </template>
+  </category>
 
-<category><pattern>C EST QUOI *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star/></set> <set name="QUESTION_action">C EST QUOI </set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>askWiki("<star/>","C EST QUOI <star/>","SAY ","JENESAISPASWIKI")</param>
-			</mrl>
+  <category>
+    <pattern>C EST QUOI *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star/></set> <set name="QUESTION_action">C EST QUOI </set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>askWiki("<star/>","C EST QUOI <star/>","SAY ","JENESAISPASWIKI")</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUI EST *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star/></set> <set name="QUESTION_action">QUI EST </set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>askWiki("<star/>","QUI EST <star/>","SAY ","JENESAISPASWIKI")</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUELLE EST LA * DE LA *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star/> DE LA <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LA <star/> DE LA <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUELLE EST LA * DE *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star/> DE <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LA <star/> DE <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUELLE EST LA * DU *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star/> DU <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LA <star/> DU <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUELLE EST LE * DE *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star/> DE <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LE <star/> DE <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUELLE EST LE * DU *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star/> DU <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LE <star/> DU <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUELLE EST LA * DE L *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star/> DE L <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LA <star/> DE L <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUELLE EST LE * DE L *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star/> DE L <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LE <star/> DE L <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUELLE EST LE * DU *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star/> DU <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LE <star/> DU <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUELLE EST * DE LA *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST <star/> DE LA <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST <star/> DE LA <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUELLE EST * DE *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST <star/> DE <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST <star/> DE <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUELLE EST * DU *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST <star/> DU <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST <star/> DU <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUELLE EST LE * DE LA *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star/> DE LA <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LE <star/> DE LA <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUI EST LE * DE LA *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LE <star/> DE LA <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LE <star/> DE LA <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUI EST LA * DE LA *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LA <star/> DE LA <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LA <star/> DE LA <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUI EST LE * DU *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LE <star/> DU <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LE <star/> DU <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUI EST LA * DU *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LA <star/> DU <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LA <star/> DU <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUI EST LE * DES *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LE <star/> DES <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LE <star/> DES <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUI EST LA * DES *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LA <star/> DES <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LA <star/> DES <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUI A * LE *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI A <star/> LE <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI A <star/> LE <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>QUI A * LA *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI A <star/> LA <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI A <star/> LA <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
       </oob></template>
-</category>
+  </category>
 
+  <category>
+    <pattern>QUI A * LES *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI A <star/> LES <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI A <star/> LES <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
 
+  <category>
+    <pattern>QUI EST LE * DE *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LE <star/> DE <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LE <star/> DE <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
 
+  <category>
+    <pattern>QUI EST LA * DE *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LA <star/> DE <star index="2"/></set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LA <star/> DE <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
 
+  <category>
+    <pattern>QUELLE EST LA * DE * DE *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star index="1"/> de <star index="2"/> DE <star index="3"/> </set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LA <star index="1"/> de <star index="2"/> DE <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
 
+  <category>
+    <pattern>QUELLE EST LE * DE * DE *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star index="1"/> de <star index="2"/> DE <star index="3"/> </set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LE <star index="1"/> de <star index="2"/> DE <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
 
-<category><pattern>QUI EST *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star/></set> <set name="QUESTION_action">QUI EST </set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>askWiki("<star/>","QUI EST <star/>","SAY ","JENESAISPASWIKI")</param>
-			</mrl>
-      </oob></template>
-</category>
+  <category>
+    <pattern>QUELLE EST LA * DE * DES *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star index="1"/> de <star index="2"/> DES <star index="3"/> </set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LA <star index="1"/> de <star index="2"/> DES <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
 
-<category><pattern>QUELLE EST LA * DE LA *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star/> DE LA <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LA <star/> DE LA <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
+  <category>
+    <pattern>QUELLE EST LE * DE * DES *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star index="1"/> de <star index="2"/> DES <star index="3"/> </set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LE <star index="1"/> de <star index="2"/> DES <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
 
-<category><pattern>QUELLE EST LA * DE *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star/> DE <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LA <star/> DE <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
+  <category>
+    <pattern>QUELLE EST LA * DE * DU *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star index="1"/> de <star index="2"/> DU <star index="3"/> </set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LA <star index="1"/> de <star index="2"/> DU <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
 
-<category><pattern>QUELLE EST LA * DU *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star/> DU <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LA <star/> DU <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
+  <category>
+    <pattern>QUELLE EST LE * DE * DU *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star index="1"/> de <star index="2"/> DU <star index="3"/> </set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LE <star index="1"/> de <star index="2"/> DU <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
 
-<category><pattern>QUELLE EST LE * DE *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star/> DE <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LE <star/> DE <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUELLE EST LE * DU *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star/> DU <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LE <star/> DU <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUELLE EST LA * DE L *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star/> DE L <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LA <star/> DE L <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUELLE EST LE * DE L *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star/> DE L <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LE <star/> DE L <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUELLE EST LE * DU *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star/> DU <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LE <star/> DU <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUELLE EST * DE LA *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST <star/> DE LA <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST <star/> DE LA <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUELLE EST * DE *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST <star/> DE <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST <star/> DE <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUELLE EST * DU *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST <star/> DU <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST <star/> DU <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUELLE EST LE * DE LA *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star/> DE LA <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUELLE EST LE <star/> DE LA <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUI EST LE * DE LA *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LE <star/> DE LA <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LE <star/> DE LA <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUI EST LA * DE LA *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LA <star/> DE LA <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LA <star/> DE LA <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUI EST LE * DU *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LE <star/> DU <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LE <star/> DU <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUI EST LA * DU *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LA <star/> DU <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LA <star/> DU <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUI EST LE * DES *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LE <star/> DES <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LE <star/> DES <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUI EST LA * DES *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LA <star/> DES <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LA <star/> DES <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUI A * LE *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI A <star/> LE <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI A <star/> LE <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-
-<category><pattern>QUI A * LA *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI A <star/> LA <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI A <star/> LA <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-
-<category><pattern>QUI A * LES *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI A <star/> LES <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI A <star/> LES <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-
-<category><pattern>QUI EST LE * DE *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LE <star/> DE <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LE <star/> DE <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-
-<category><pattern>QUI EST LA * DE *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUI EST LA <star/> DE <star index="2"/></set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="2"/>" , "<star index="1"/>" , "QUI EST LA <star/> DE <star index="2"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUELLE EST LA * DE * DE *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star index="1"/> de <star index="2"/> DE <star index="3"/> </set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LA <star index="1"/> de <star index="2"/> DE <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUELLE EST LE * DE * DE *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star index="1"/> de <star index="2"/> DE <star index="3"/> </set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LE <star index="1"/> de <star index="2"/> DE <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUELLE EST LA * DE * DES *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star index="1"/> de <star index="2"/> DES <star index="3"/> </set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LA <star index="1"/> de <star index="2"/> DES <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-<category><pattern>QUELLE EST LE * DE * DES *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star index="1"/> de <star index="2"/> DES <star index="3"/> </set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LE <star index="1"/> de <star index="2"/> DES <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-
-
-<category><pattern>QUELLE EST LA * DE * DU *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star index="1"/> de <star index="2"/> DU <star index="3"/> </set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LA <star index="1"/> de <star index="2"/> DU <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-
-<category><pattern>QUELLE EST LE * DE * DU *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LE <star index="1"/> de <star index="2"/> DU <star index="3"/> </set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LE <star index="1"/> de <star index="2"/> DU <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
-
-
-<category><pattern>QUELLE EST LA * DE * DE LA *</pattern>
-<template><think>
-<set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star index="1"/> de <star index="2"/> DE LA <star index="3"/> </set>
-</think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LA <star index="1"/> de <star index="2"/> DE LA <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
-			</mrl>
-      </oob></template>
-</category>
+  <category>
+    <pattern>QUELLE EST LA * DE * DE LA *</pattern>
+    <template>
+      <think>
+        <set name="QUESTION_WhoOrWhat"><star index="2"/></set> <set name="QUESTION_action">QUELLE EST LA <star index="1"/> de <star index="2"/> DE LA <star index="3"/> </set>
+      </think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>getProperty( "<star index="3"/>" , "<star index="1"/> de <star index="2"/>" , "QUELLE EST LA <star index="1"/> de <star index="2"/> DE LA <star index="3"/> ","SAY ","JENESAISPASWIKI" )</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
 
 </aiml>

@@ -1,3 +1,4 @@
+# -- coding: utf-8 --
 #Robot Name
 #please, there is no verifications ! don't use an other used robot name ( usefull to use Inmoov Messenger )
 myBotname=""
@@ -5,7 +6,7 @@ myAimlFolder="inmoovai" # dossier ou se trouvent vos aiml pas d'accent svp
 # LANGUAGE ( FR/EN )
 lang="FR"
 global Voice
-Voice="Antoine" # ryan in english
+Voice="Margaux" # ryan in english
 # To fetch weather etc [ adresse du serveur fetcher meteo etc ...]
 BotURL="http://myai.cloud/bot1.php"
 units="metric" # or : imperial
@@ -15,8 +16,8 @@ units="metric" # or : imperial
 IsInmoovArduino=0
 MRLmouthControl=0
 BoardType="atmega2560" # atmega168 | atmega328 | atmega328p | atmega2560 | atmega1280 | atmega32u4
-leftPort = "COM3"
-rightPort = "COM4"
+leftPort = "COM4"
+rightPort = "COM5"
 # other things
 Neopixel = "COMX"
 DiyServo1 = "COMX"
@@ -25,9 +26,6 @@ DiyServo3 = "COMX"
 DiyServo4 = "COMX"
 
 
-#Eyeleads / paupieres
-IhaveEyelids=0
-PaupiereServoPin = 27
 
 # Ligh if you have / led RGB with pins
 IhaveLights = 0
@@ -39,88 +37,159 @@ BLEU=30
 #tracking for testing
 tracking=0
 
+# !!! IMPORTANT !!! Valeur des servos
 
-# !!! IMPORTANT !!! Your Servos Values :
+# PAUPIERES Mettre IhaveEyelids=2 (ligne 49) si deux servo pour clin d'oeil => si un servo mettre IhaveEyelids=1
 
-global PaupiereMIN
-global PaupiereMAX
-PaupiereMIN=10
-PaupiereMAX=50
+global PaupiereGaucheMIN
+global PaupiereGaucheMAX
+global PaupiereDroiteMIN
+global PaupiereDroiteMAX
+global IhaveEyelids
 
-MinRotHead=0
+IhaveEyelids=2 
+PaupiereArduino="right"
+PaupiereInverted=0
+PaupiereGaucheServoPin = 12 # PIN 12 (remplacement cou) Arduino A (Right) 
+PaupiereGaucheMIN=10
+PaupiereGaucheMAX=50
+PaupiereDroiteServoPin = 13 # PIN 13 (remplacement cou) Arduino A (Right)
+PaupiereDroiteMIN=10
+PaupiereDroiteMAX=50
+
+# Rotation de la tête gauche/droite Arduino B (left)
+
+MinRotHead=0 
 MaxRotHead=180
 RotHeadInverted=0
 
-MinNeck=0
+# COU gauche/droit PIN à définir 26 (ligne76) Arduino A (right)
+
+MinNeck=0 
 MaxNeck=180
 NeckInverted=0
+
+# COU gauche/droit PIN à définir sur 28 (emplacement vide à côté de inclinaison et rotation basin) (ligne76) Arduino B (left)
 
 MinHeadSide=0
 MaxHeadSide=180
 HeadSideInverted=0
-HeadSidePin=30
-HeadSideArduino="left"
+HeadSidePin=28
+HeadSideArduino="right"
 
-JawMIN=0
+# BOUCHE PIN HP Bluetooth Arduino NANO
+
+JawMIN=0 
 JawMAX=180
 JawInverted=0
 
-EyeXMIN=0
+# YEUX gauche/droite PIN 22 Arduino B (left)
+
+EyeXMIN=0 
 EyeXMAX=180
 
-EyeYMIN=0
+# YEUX bas/haut PIN 24 Arduino B (left)
+
+EyeYMIN=0 
 EyeYMAX=180
 
-BicepsLeftMIN=0
+# BRAS GAUCHE 4 Servos PIN 8-9-10-11 Arduino B (left)
+
+BicepsLeftMIN=0 # PIN 8
 BicepsLeftMAX=180
 
-ShoulderLeftMIN=0
-ShoulderLeftMAX=180
-
-RotateLeftMIN=0
+RotateLeftMIN=0 # PIN 9
 RotateLeftMAX=180
 
-OmoplateLeftMIN=0
+ShoulderLeftMIN=0 # PIN 10
+ShoulderLeftMAX=180
+
+OmoplateLeftMIN=0 # PIN 11
 OmoplateLeftMAX=180
-ThumbLeftMIN=0
+
+# MAIN & POIGNET LEFT PIN 2-3-4-5-6-7 Arduino B (left)
+
+ThumbLeftMIN=0 # PIN 2
 ThumbLeftMAX=180
 ThumbLeftInverted=0
-IndexLeftMIN=0
+
+IndexLeftMIN=0 # PIN 3
 IndexLeftMAX=180
-majeureLeftMIN=0
+
+majeureLeftMIN=0 # PIN 4
 majeureLeftMAX=180
-ringFingerLeftMIN=0
+
+ringFingerLeftMIN=0 # PIN 5
 ringFingerLeftMAX=180
-pinkyLeftMIN=0
+
+pinkyLeftMIN=0 # PIN 6
 pinkyLeftMAX=0
-WristLeftMIN=0
+
+WristLeftMIN=0 # PIN 7
 WristLeftMAX=180
-BicepsRightMIN=0
+
+# BRAS DROIT 4 Servos PIN 8-9-10-11 Arduino A (right)
+
+BicepsRightMIN=0 # PIN 8
 BicepsRightMAX=180
-ShoulderRightMIN=0
-ShoulderRightMAX=180
-RotateRightMIN=0
+
+RotateRightMIN=0 # PIN 9
 RotateRightMAX=180
-OmoplateRightMIN=0
+
+ShoulderRightMIN=0 # PIN 10
+ShoulderRightMAX=180
+
+OmoplateRightMIN=0 # PIN 11
 OmoplateRightMAX=180
-ThumbRightMIN=0
+
+# MAIN & POIGNET RIGHT PIN 2-3-4-5-6-7 Arduino A (right)
+
+ThumbRightMIN=0 # PIN 2
 ThumbRightMAX=180
 ThumbRightInverted=0
-IndexRightMIN=0
+
+IndexRightMIN=0 # PIN 3
 IndexRightMAX=180
-majeureRightMIN=0
+
+majeureRightMIN=0 # PIN 4
 majeureRightMAX=180
-ringFingerRightMIN=0
+
+ringFingerRightMIN=0 # PIN 5
 ringFingerRightMAX=180
-pinkyRightMIN=0
+
+pinkyRightMIN=0 # PIN 6
 pinkyRightMAX=0
-WristRightMIN=0
+
+WristRightMIN=0 # PIN7
 WristRightMAX=180
+
+# BASIN INCLINAISON gauche/droite PIN 27 Arduino B (left)
+
+TorsoArduino="left"
+TorsoTopMin=0
+TorsoTopMax=180
+
+# BASIN 
+
+TorsoMidMin=0
+TorsoMidMax=180
+
+# BASIN ROTATION PIN 30 Arduino B (left)
+
+TorsoBottomMin=0
+TorsoBottomMax=180
+
 # translator : https://datamarket.azure.com/dataset/bing/microsofttranslator 
 global Azure_client_id
 global Azure_client_secret
-Azure_client_id = 'your client id'
-Azure_client_secret = 'your client secret'
+Azure_client_id = 'X-X-X-X-X'
+Azure_client_secret = 'XXXXX'
+ 
+#
+GoogleAPIa=''
+GoogleAPIb=''
+GoogleAPIc=''
+GoogleAPId=''
  
 param1=0
 param2=0

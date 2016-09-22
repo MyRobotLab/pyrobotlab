@@ -1,47 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 
-<category><pattern>SYSTEM FACENOTDETECTED</pattern>
-<template>
-	<oob>
-					<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>PhotoProcess("Je nai pas trouvé de visage, pourtant jai de bons yeux. Je vais quand mème faire la photo.")</param>
-				 </mrl>
-			</oob>
-</template>
-</category> 
+  <category>
+    <pattern>SYSTEM FACENOTDETECTED</pattern>
+    <template>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>PhotoProcess("Je nai pas trouvé de visage, pourtant jai de bons yeux. Je vais quand mème faire la photo.")</param>
+        </mrl>
+      </oob>
+    </template>
+  </category> 
 
-<category><pattern>SYSTEM FACEDETECTED</pattern>
-<template>
-	<oob>
-			
-				 <mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>PhotoProcess("Je te vois, attention regarde le petit oiseau.")</param>
-				 </mrl>
-			</oob>
-</template>
-</category>
+  <category>
+    <pattern>SYSTEM FACEDETECTED</pattern>
+    <template>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>PhotoProcess("Je te vois, attention regarde le petit oiseau.")</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
 
-   <category>
-      <pattern># UNE PHOTO</pattern>
-      	<template>
-			<oob>
-				<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>TakePhoto("Je cherche un visage , avec opène cévé, pour la mise au point, ne bougez pas !")</param>
-				 </mrl>
-			</oob>
-			
-   	</template>
-   </category>
-   
-  
-  
+  <category>
+    <pattern># UNE PHOTO</pattern>
+    <template>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>TakePhoto("Je cherche un visage , avec opène cévé, pour la mise au point, ne bougez pas !")</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
 
 </aiml>
 

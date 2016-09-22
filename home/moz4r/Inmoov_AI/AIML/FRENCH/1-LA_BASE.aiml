@@ -2,96 +2,136 @@
 <aiml>
 <!--  -->
 <!--  -->
-<category><pattern>SAY *</pattern>
-<template><star/>
-<learn>
-<category><pattern><eval><input index="2"/></eval></pattern>
-<template>
-<eval><star/></eval>.</template>
-</category>
-</learn></template>
-</category>
-<category><pattern>IDONTUNDERSTAND</pattern>
-<template>
-<random>
-		<li>Je ne comprend pas</li>
-		<li>Tu as dis quoi ?</li>
-		<li>Je ne comprends rien</li>
-		<li>Je ne comprends rien a ce que tu me dis</li>
-		<li>Peux tu reformuler la question</li>
-		<li>Peux tu répéter</li>
-		<li>Parle plus clairement</li>
-		<li>Articule je ne comprend pas</li>
-		<li>Je ne dispose pas de cette information</li>
-		<li>Je ne peux pas te répondre</li>
-		<li>Comment ?</li>
-		<li>De quoi ?</li>
-		<li>Mais qu'est-ce qu'il me dis</li>
-		<li>je n'ai pas envie de répondre</li>
-		<li>Parle avec google, moi je suis fatigué</li>
-		<li>C'est du français ça ?</li>
-		<li>C'est pas gagné</li>
-		<li>Moi pas comprendre toi !! </li>
-		<li>tu as un grave accent !! articule</li>
-	</random>
-	<oob>
-				<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>No("#NO#")</param>
-				</mrl>
-</oob>
-	</template>
-</category>
+  <category>
+    <pattern>SAY *</pattern>
+    <template>
+      <star/>
+      
+      <learn>
+        <category>
+          <pattern><eval><input index="2"/></eval></pattern>
+            <template>
+              <eval><star/></eval>.
+            </template>
+        </category>
+      </learn>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>IDONTUNDERSTAND</pattern>
+    <template>
+      <random>
+        <li>Je ne comprend pas</li>
+        <li>Tu as dis quoi ?</li>
+        <li>Je ne comprends rien</li>
+        <li>Je ne comprends rien a ce que tu me dis</li>
+        <li>Peux tu reformuler la question</li>
+        <li>Peux tu répéter</li>
+        <li>Parle plus clairement</li>
+        <li>Articule je ne comprend pas</li>
+        <li>Je ne dispose pas de cette information</li>
+        <li>Je ne peux pas te répondre</li>
+        <li>Comment ?</li>
+        <li>De quoi ?</li>
+        <li>Mais qu'est-ce qu'il me dis</li>
+        <li>je n'ai pas envie de répondre</li>
+        <li>Parle avec google, moi je suis fatigué</li>
+        <li>C'est du français ça ?</li>
+        <li>C'est pas gagné</li>
+        <li>Moi pas comprendre toi !! </li>
+        <li>tu as un grave accent !! articule</li>
+      </random>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>No("#NO#")</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
 
-<category><pattern>PICTUREPROBLEM</pattern>
-<template><random>
-		<li>Désolé, Je rencontre un problème pour te montrer cette image</li>
-	</random></template>
-</category>
-<category><pattern>NON</pattern>
-<template><random>
-		<li>D'accord comme tu veux</li>
-		<li>Tu sais dire oui de temps en temps ?</li>
-	</random></template>
-</category>
-<category><pattern>FINDTHEWEB</pattern>
-<template><random>
-		<li>.</li>
-		<li>.</li>
-	</random></template>
-</category>
+  <category>
+    <pattern>PICTUREPROBLEM</pattern>
+    <template>
+      <random>
+        <li>Désolé, Je rencontre un problème pour te montrer cette image</li>
+      </random>
+    </template>
+  </category>
 
-<category>
-<pattern>EXTINCTION</pattern>
-<template>
-<oob>
-				<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>ShutDown()</param>
-				 </mrl>
-</oob>
-</template>
-</category>
+  <category>
+    <pattern>NON</pattern>
+    <template>
+      <random>
+        <li>D'accord comme tu veux</li>
+        <li>Tu sais dire oui de temps en temps ?</li>
+      </random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>FINDTHEWEB</pattern>
+    <template>
+      <random>
+        <li>.</li>
+        <li>.</li>
+      </random>
+    </template>
+  </category>
 
-<category><pattern>SAVEMEMORY</pattern>
-<template><random>
-		<li>Pour info je sauvegarde l'information dans le cloud</li>
-		<li>Pour info je syncronise cette information avec mes paires</li>
-	</random></template>
-</category>
-<category><pattern>IAMUPDATED</pattern>
-<template><random>
-		<li>Mon programme est à jour, c'est super</li>
-</random></template>
-</category>
-<category><pattern>INEEDUPDATE</pattern>
-<template><random>
-		<li>Mon programme à besoin d'une mise à jour, dès que possible</li>
-</random></template>
-</category>
-<category><pattern>*</pattern>
-<template><srai>IDONTUNDERSTAND</srai></template>
-</category>
+  <category>
+    <pattern>EXTINCTION</pattern>
+    <template>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>ShutDown()</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+
+  <category>
+    <pattern>SAVEMEMORY</pattern>
+    <template>
+      <random>
+        <li>Pour info je sauvegarde l'information dans le cloud</li>
+        <li>Pour info je syncronise cette information avec mes paires</li>
+      </random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>IAMUPDATED</pattern>
+    <template>
+      <random>
+        <li>Mon programme est à jour, c'est super</li>
+      </random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>INEEDUPDATE</pattern>
+    <template>
+      <random>
+        <li>Mon programme à besoin d'une mise à jour, dès que possible</li>
+      </random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>*</pattern>
+      <template>
+        <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>IdontUnderstand()</param>
+        </mrl>
+      </oob>
+      </template>
+  </category>
 </aiml>

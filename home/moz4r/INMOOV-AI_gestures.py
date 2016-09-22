@@ -16,6 +16,7 @@ def rest():
 		HeadSide.rest()
 		i01.detach()
 		
+		
 def No(data):
 	global MoveHeadRandom
 	MoveHeadRandom=0
@@ -44,6 +45,8 @@ def No(data):
 			sleep(1)
 			HeadSide.moveTo(90)
 			i01.head.jaw.rest()
+		
+		
 
 def Yes(data):
 	global MoveHeadRandom
@@ -72,6 +75,8 @@ def Yes(data):
 		i01.moveHead(90,90)
 	if IsInmoovArduino==1:
 		i01.head.jaw.rest()
+		
+		
 	
 
 def MoveHand(side,thumb,index,majeure,ringFinger,pinky):
@@ -128,7 +133,7 @@ def LookAtTheSky():
 	global MoveHeadRandom
 	MoveHeadRandom=0
 	i01.setHeadSpeed(0.2, 0.2)
-	i01.moveHead(00,90)
+	i01.moveHead(0,90)
 	sleep(5)
 	i01.setHeadSpeed(0.1, 0.1)
 	i01.moveHead(90)

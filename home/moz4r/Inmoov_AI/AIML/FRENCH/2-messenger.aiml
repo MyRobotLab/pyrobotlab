@@ -1,106 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 
-<category><pattern>SYSTEMREADMESSAGE *</pattern><template><li>Nouveau message de <star/></li><srai>MESSAGESCHECK</srai></template></category> 
+  <category>
+    <pattern>SYSTEMREADMESSAGE *</pattern>
+    <template>
+      <li>Nouveau message de <star/></li>
+      <srai>MESSAGESCHECK</srai>
+    </template>
+  </category> 
 
-   <category>
-      <pattern>SYSTEMFETCHMESSAGE</pattern>
-      <template>
-			<oob>
-				<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>GetMessage()</param>
-				 </mrl>
-			</oob>
-			
-   	</template>
-   </category>
-   
-      <category>
-      <pattern>MESSAGESCHECK</pattern>
-      <template>
-			<oob>
-				<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>GetUnreadMessageNumbers("1")</param>
-				 </mrl>
-			</oob>
-			
-   	</template>
-   </category>
-   
-    
-    <category>
-      <pattern>ENVOYER UN MESSAGE À *</pattern>
-      <template>
-		<think><set name="destinataire"><star/></set></think>
-			<oob>
-				<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>CheckRobot("<get name="destinataire"/>")</param>
-				 </mrl>
-			</oob>
-			
-   	</template>
-    </category>
-   
+  <category>
+    <pattern>SYSTEMFETCHMESSAGE</pattern>
+    <template>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>GetMessage()</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+     
+  <category>
+    <pattern>MESSAGESCHECK</pattern>
+    <template>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>GetUnreadMessageNumbers("1")</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+     
+  <category>
+    <pattern>ENVOYER UN MESSAGE À *</pattern>
+    <template>
+      <think><set name="destinataire"><star/></set></think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>CheckRobot("<get name="destinataire"/>")</param>
+          </mrl>
+      </oob>
+    </template>
+  </category>
+     
+  <category>
+    <pattern>SYSTEM * MESSAGE</pattern>
+    <template>
+      <think><set name="nbmessage"><star/></set></think>
+      <condition name="nbmessage">
+        <li value="0">Je n'ai pas de nouveaux messages à délivrer, je vérifierai régulairement Inmoov méssènegeure</li>
+        <li>J'ai <star/> nouveau message. Veux tu que je lise ce message ?</li>
+      </condition>
+    </template>
+  </category>
+     
+  <category>
+    <pattern>LIRE LES MESSAGES</pattern>
+    <template>
+      <srai>MESSAGESCHECK</srai>
+    </template>
+  </category>    
 
-   
-            <category>
-      <pattern>SYSTEM * MESSAGE</pattern>
-      <template>
-	  <think><set name="nbmessage"><star/></set></think>
-	  <condition name="nbmessage">
-            <li value="0">Je n'ai pas de nouveaux messages à délivrer, je vérifierai régulairement Inmoov méssènegeure</li>
-			<li>J'ai <star/> nouveau message. Veux tu que je lise ce message ?</li>
-		</condition>
-			</template>
-   </category>
-   
-<category><pattern>LIRE LES MESSAGES</pattern>
-<template><srai>MESSAGESCHECK</srai></template>
-</category>    
+  <category>
+    <pattern>NOROBOTNAME</pattern>
+    <template>
+      Désolé je ne connais pas de robot appelé <get name="destinataire"/>. Verifie l'ortographe
+    </template>
+  </category>   
 
-<category><pattern>NOROBOTNAME</pattern>
-<template>Désolé je ne connais pas de robot appelé <get name="destinataire"/>. Verifie l'ortographe</template>
-</category>   
+  <category>
+    <pattern>OKMESSAGE</pattern>
+    <template>
+      Le message a été envoyé à  <get name="destinataire"/>.
+    </template>
+  </category>   
 
-<category><pattern>OKMESSAGE</pattern>
-<template>Le message a été envoyé à  <get name="destinataire"/>.</template>
-</category>   
+  <category>
+    <pattern>OKROBOTNAME *</pattern>
+    <template>
+      <think><set name="destinataireid"><star/></set></think>Je t'écoute quel message court veux-tu envoyer à <get name="destinataire"/> : 
+    </template>
+  </category>  
 
-<category><pattern>OKROBOTNAME *</pattern>
-<template><think><set name="destinataireid"><star/></set></think>Je t'écoute quel message court veux-tu envoyer à <get name="destinataire"/> : </template>
-</category>  
+  <category>
+    <pattern>OUI</pattern><that># lise ce message #</that>
+    <template>
+      <srai>SYSTEMFETCHMESSAGE</srai>
+    </template>
+  </category> 
 
+  <category>
+    <pattern>NON</pattern><that># lise ce message #</that>
+    <template>
+      Tu le dis si je te dérange, hein ?
+    </template>
+  </category> 
 
-
-
-
-<category><pattern>OUI</pattern><that># lise ce message #</that>
-<template><srai>SYSTEMFETCHMESSAGE</srai></template>
-</category> 
-
-<category><pattern>NON</pattern><that># lise ce message #</that>
-<template>Tu le dis si je te dérange, hein ?</template>
-</category> 
-
-
-<category><pattern>*</pattern>
-<that># quel message court veux-tu envoyer #</that>
-<template>
-<oob>
-				<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>NewMessage("<get name="botname"/>","<get name="destinataireid"/>","<star/>")</param>
-				 </mrl>
-			</oob>
-</template>
-</category>  
-
+  <category>
+    <pattern>*</pattern>
+    <that># quel message court veux-tu envoyer #</that>
+    <template>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>NewMessage("<get name="botname"/>","<get name="destinataireid"/>","<star/>")</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>  
 
 </aiml>

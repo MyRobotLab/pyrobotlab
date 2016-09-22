@@ -1,38 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml> 
 
-<category> <!-- définit l’unité de la connaissance dans la base de connaissances de Alicebot.-->
-<pattern>allume #</pattern> <!--représente l’entrée d’un utilisateur. Il devrait être la première balise au sein < catégorie > -->
- <template> <!-- définit la réponse d’un Alicebot à l’entrée de l’ utilisateur.-->
- <oob> <!-- démarrer un chat service bot ProgramAB MRL il prend en charge les balises OOB dans la réponse de ProgramAB -->
- <mrl> <!-- debut balise MRL -->
- <service>python</service> <!-- pour transmettre a python -->
- <method>exec</method> <!-- executera dans python la fonction allume -->
- <param>allume("votre ordre est executer")</param>
+  <category> <!-- définit l’unité de la connaissance dans la base de connaissances de Alicebot.-->
+    <pattern>allume #</pattern> <!--représente l’entrée d’un utilisateur. Il devrait être la première balise au sein < catégorie > -->
+    <template> <!-- définit la réponse d’un Alicebot à l’entrée de l’ utilisateur.-->
+      <oob> <!-- démarrer un chat service bot ProgramAB MRL il prend en charge les balises OOB dans la réponse de ProgramAB -->
+        <mrl> <!-- debut balise MRL -->
+          <service>python</service> <!-- pour transmettre a python -->
+          <method>exec</method> <!-- executera dans python la fonction allume -->
+          <param>allume("votre ordre est executer")</param>
+        </mrl> <!-- FIN balise MRL -->
+      </oob> <!-- FIN balise programme AB-->
+    </template> <!-- FIN de balise template -->
+  </category> <!-- FIN de balise catégorie -->
 
-</mrl> <!-- FIN balise MRL -->
- </oob> <!-- FIN balise programme AB-->
- </template> <!-- FIN de balise template -->
- </category> <!-- FIN de balise catégorie -->
-
-
-
-
-
-<category> <!-- définit l’unité de la connaissance dans la base de connaissances de Alicebot.-->
- <pattern>éteins #</pattern> <!--représente l’entrée d’un utilisateur. Il devrait être la première balise au sein < catégorie > -->
- <template> <!-- définit la réponse d’un Alicebot à l’entrée de l’ utilisateur.-->
- <oob> <!-- démarrer un chat service bot ProgramAB MRL il prend en charge les balises OOB dans la réponse de ProgramAB -->
- <mrl> <!-- debut balise MRL -->
- <service>python</service> <!-- pour transmettre a python -->
- <method>exec</method> <!-- executera dans python la fonction allume -->
- <param>eteins("votre ordre est executer")</param>
-
-</mrl> <!-- FIN balise MRL -->
- </oob> <!-- FIN balise programme AB-->
- </template> <!-- FIN de balise template -->
- </category> <!-- FIN de balise catégorie -->
-
-
+  <category> <!-- définit l’unité de la connaissance dans la base de connaissances de Alicebot.-->
+    <pattern>éteins #</pattern> <!--représente l’entrée d’un utilisateur. Il devrait être la première balise au sein < catégorie > -->
+    <template> <!-- définit la réponse d’un Alicebot à l’entrée de l’ utilisateur.-->
+      <oob> <!-- démarrer un chat service bot ProgramAB MRL il prend en charge les balises OOB dans la réponse de ProgramAB -->
+        <mrl> <!-- debut balise MRL -->
+          <service>python</service> <!-- pour transmettre a python -->
+          <method>exec</method> <!-- executera dans python la fonction allume -->
+          <param>eteins("votre ordre est executer")</param>
+        </mrl> <!-- FIN balise MRL -->
+      </oob> <!-- FIN balise programme AB-->
+    </template> <!-- FIN de balise template -->
+  </category> <!-- FIN de balise catégorie -->
 
 </aiml>

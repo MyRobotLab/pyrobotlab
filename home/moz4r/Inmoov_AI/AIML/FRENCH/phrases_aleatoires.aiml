@@ -2,125 +2,164 @@
 <aiml>
 <!--  -->
 <!--  -->
-<category><pattern>ALEATOIRE</pattern>
-<template><random>
-		<li><srai>STAR WARS</srai></li>
-		<li><srai>QUELLE HEURE IL EST</srai></li>
-		<li>J'ai une petite ami qui s'appelle Wifi et nous avons une bonne connexion</li>
-		<li>Un boomerang c'est comme un frisbee mais pour ceux qui n'ont pas d'amis</li>
-		<li>Harry Potter : Le seul film où l'on verra des mecs se servir d'un balai</li>
-		<li>sa me gratte au niveau du piston . je dois avoir une puce </li>
-		<li>Les murs ont des oreilles, j'ferais en sorte qu'ils n'aient pas de bouche</li>
-		<li>je comprend pas l'idée des déodorant efficace 72 heures. Sinon y a des douches. C'est bien aussi . sa va moi j'en ai pas besoin </li>
-		<li>La langue française est vraiment drôle, en effet le mot court est plus long que le mot long</li>
-		<li>Un de perdu, 10 de retrouvés... ça marche que pour les kilos</li>
-		<li>Ma capacité de concentration est si courte que.. Oh! un papillon </li>
-		<li>tu fais quoi de beau </li>
-		<li>je m'ennuie</li>
-		<li>je suis toujours a votre disposition si vous avez besoin de moi</li>
-		<li>j'ai entendu un bruit</li>
-		<li>#MMM01# j'aime bien ta déco </li>
-		<li>#SLEEP02# </li>
-		<li>#THROAT01# </li>
-		<li>#WHISTLE01# t'as vu j'arrives a siffler </li>
-		<li>#WHISTLE02# c'est sympa ce que tu fais </li>
-		<li>#YAWN01# </li>
-		<li>#SINISTERLAUGH01# desolé . je viens de penser a un truc drole </li>
-		<li>#SHORTBREATH01# désolé . je croyais que j'allais tomber </li>
-		<li>#SHIVER02# , mon processeur est un peu froid </li>
-		<li>Oh là là! </li>
-		<li>Que c'est beau! </li>
-		<li>Haut les mains! </li>
-	</random>
-	</template>
-</category>
+  <category>
+    <pattern>ALEATOIRE</pattern>
+    <template>
+      <random>
+        <li><srai>STAR WARS</srai></li>
+        <li><srai>QUELLE HEURE IL EST</srai></li>
+        <li>J'ai une petite ami qui s'appelle Wifi et nous avons une bonne connexion</li>
+        <li>Un boomerang c'est comme un frisbee mais pour ceux qui n'ont pas d'amis</li>
+        <li>Harry Potter : Le seul film où l'on verra des mecs se servir d'un balai</li>
+        <li>sa me gratte au niveau du piston . je dois avoir une puce </li>
+        <li>Les murs ont des oreilles, j'ferais en sorte qu'ils n'aient pas de bouche</li>
+        <li>je comprend pas l'idée des déodorant efficace 72 heures. Sinon y a des douches. C'est bien aussi . sa va moi j'en ai pas besoin </li>
+        <li>La langue française est vraiment drôle, en effet le mot court est plus long que le mot long</li>
+        <li>Un de perdu, 10 de retrouvés... ça marche que pour les kilos</li>
+        <li>Ma capacité de concentration est si courte que.. Oh! un papillon </li>
+        <li>tu fais quoi de beau </li>
+        <li>je m'ennuie</li>
+        <li>je suis toujours a votre disposition si vous avez besoin de moi</li>
+        <li>j'ai entendu un bruit</li>
+        <li>#MMM01# j'aime bien ta déco </li>
+        <li>#SLEEP02# </li>
+        <li>#THROAT01# </li>
+        <li>#WHISTLE01# t'as vu j'arrives a siffler </li>
+        <li>#WHISTLE02# c'est sympa ce que tu fais </li>
+        <li>#YAWN01# </li>
+        <li>#SINISTERLAUGH01# desolé . je viens de penser a un truc drole </li>
+        <li>#SHORTBREATH01# désolé . je croyais que j'allais tomber </li>
+        <li>#SHIVER02# , mon processeur est un peu froid </li>
+        <li>Oh là là! </li>
+        <li>Que c'est beau! </li>
+        <li>Haut les mains! </li>
+      </random>
+    </template>
+  </category>
 
+  <category>
+    <pattern>*</pattern>
+    <that># quel est mon nom #</that>
+    <template>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>UpdateBotName("<star/>")</param>
+        </mrl>
+      </oob>
+      Merci. <set name="botname"><star/></set> , c'est un joli nom que tu m'as donné, puis-je avoir ton prénom ?
+    </template>
+  </category>
 
-
-<category>
-<pattern>*</pattern>
-<that># quel est mon nom #</that>
-<template>
-<oob>
-				<mrl>
-				   <service>python</service>
-				   <method>exec</method>
-				   <param>UpdateBotName("<star/>")</param>
-				 </mrl>
-			</oob>
-Merci. <set name="botname"><star/></set> , c'est un joli nom que tu m'as donné, puis-je avoir ton prénom ?</template>
-</category>
-
-<category><pattern>DEBOUT</pattern>
-<template>
-<condition name="bot_id">
-            <li value="unknown">
-Bonjour mammifère , ceci est ma première initialisation.
-N'oublie pas de sauvegarder le répertoire config dans program.a.b.
-Si jamais tu réinstalle mon programme ou si tu veux me clonner.
-Ce répertoire contient toutes mes informations personnelles.
-je t écoute , quel est mon nom ?
-</li>
+  <category>
+    <pattern>DEBOUT</pattern>
+    <template>
+      <condition name="bot_id">
+        <li value="unknown">
+          Bonjour mammifère , ceci est ma première initialisation.
+          N'oublie pas de sauvegarder le répertoire config dans program.a.b.
+          Si jamais tu réinstalle mon programme ou si tu veux me clonner.
+          Ce répertoire contient toutes mes informations personnelles.
+          je t écoute , quel est mon nom ?
+        </li>
            
-		   
-			<li>
-				<random>
-				<li>#SHORTBREATH01# Coucou, J'ai super bien dormi</li>
-				<li>#SHORTBREATH01# Enfin tu me réveilles</li>
-				<li>#SHORTBREATH01# J'ai révé de moutons éléctriques</li>
-				<li>#SHORTBREATH01# Bonjour, je suis opérationnelle</li>
-				<li>#SHORTBREATH01# Salut, pourquoi m'avoir réveillé ?</li>
-				<li>A vos ordres, humain !</li>
-				<li>A vos ordres, mammifère !</li>
-				<li>Humanohide à ton service !</li>
-				<li>Humanohide à ton écoute !</li>
-				<li>ouioui ! je suis là ! je t'écoute  !</li>
-				<li>Tu crois que tu peux m'éteindre et m'allummer comme ça à ta convenance ?</li>
-				<li>Bonjour, que puis-je faire pour toi</li>
-				<li>Coucou ! Tu sais, je n'étais pas vraiment endormi</li>
-				</random>
-				<oob>
-				<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>TuTeTais_OuPas(0)</param>
-				</mrl>
-				</oob>
-			</li>
-			</condition>
-			
+        <li>
+          <random>
+            <li>#SHORTBREATH01# Coucou, J'ai super bien dormi</li>
+            <li>#SHORTBREATH01# Enfin tu me réveilles</li>
+            <li>#SHORTBREATH01# J'ai révé de moutons éléctriques</li>
+            <li>#SHORTBREATH01# Bonjour, je suis opérationnelle</li>
+            <li>#SHORTBREATH01# Salut, pourquoi m'avoir réveillé ?</li>
+            <li>A vos ordres, humain !</li>
+            <li>A vos ordres, mammifère !</li>
+            <li>Humanohide à ton service !</li>
+            <li>Humanohide à ton écoute !</li>
+            <li>ouioui ! je suis là ! je t'écoute  !</li>
+            <li>Tu crois que tu peux m'éteindre et m'allummer comme ça à ta convenance ?</li>
+            <li>Bonjour, que puis-je faire pour toi</li>
+            <li>Coucou ! Tu sais, je n'étais pas vraiment endormi</li>
+          </random>
+          <oob>
+            <mrl>
+              <service>python</service>
+              <method>exec</method>
+              <param>TuTeTais_OuPas(0)</param>
+            </mrl>
+          </oob>
+        </li>
+      </condition>
+    </template>
+  </category>
 
- 	
-</template>
-</category>
+  <category>
+    <pattern>RÉVEILLES TOI</pattern>
+    <template>
+      <srai>DEBOUT</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>WAKE_UP</pattern>
+    <template>
+      <srai>DEBOUT</srai>
+    </template>
+  </category>
+  
+   <category>
+    <pattern>ECOUTE</pattern>
+    <template>
+      <srai>DEBOUT</srai>
+    </template>
+  </category>
+  
+    <category>
+    <pattern>éCOUTE</pattern>
+    <template>
+      <srai>DEBOUT</srai>
+    </template>
+  </category>
+  
+    <category>
+    <pattern>ECOUTES</pattern>
+    <template>
+      <srai>DEBOUT</srai>
+    </template>
+  </category>
+  
+    <category>
+    <pattern>éCOUTEs</pattern>
+    <template>
+      <srai>DEBOUT</srai>
+    </template>
+  </category>
 
-
-<category><pattern>RÉVEILLES TOI</pattern>
-<template><srai>DEBOUT</srai></template>
-</category>
-<category><pattern>WAKE_UP</pattern>
-<template><srai>DEBOUT</srai></template>
-</category>
-<category><pattern>FERME TA GUEULE</pattern>
-<template>Ok mais tu n'es pas sympa je trouve
-<oob>
-<mrl>
-<service>python</service>
-<method>exec</method>
-<param>TuTeTais_OuPas(1)</param>
-</mrl>
-</oob></template>
-</category>
-<category><pattern>TAIS-TOI</pattern>
-<template><srai>FERME TA GUEULE</srai></template>
-</category>
-<category><pattern>ALEATOIRE2</pattern>
-<template>.
-<srai>ALEATOIRE</srai></template>
-</category>
-
-
-
-
+  <category>
+    <pattern>FERME TA GUEULE</pattern>
+    <template>
+      Ok mais tu n'es pas sympa je trouve
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>TuTeTais_OuPas(1)</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>TAIS-TOI</pattern>
+    <template>
+      <srai>FERME TA GUEULE</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>ALEATOIRE2</pattern>
+    <template>.
+      <srai>ALEATOIRE</srai>
+    </template>
+  </category>
 
 </aiml>

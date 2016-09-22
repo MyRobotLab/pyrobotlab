@@ -2,259 +2,385 @@
 <aiml>
 <!--  -->
 <!--  -->
-<topic name="default">
-<category><pattern>BONJOUR #</pattern>
-<template><condition name="name">
-            <li value="default">Salut ! je souhaiterais faire connaissance, puis-je avoir ton prénom ?</li>
-            <li>
-               Bonjour
-               <get name="name"/>
-            </li>
-         </condition></template>
-</category>
-<category><pattern>COMBIEN J AI DE FRÈRE ET SOEUR</pattern>
-<template><condition name="cbfreresoeur">
-            <li value="unknown">Euh je ne sais pas, dis moi combien as tu de frere et soeur ?</li>
-            <li>
-               Je sais que tu en a <get name="cbfreresoeur"/>
-            </li>
-         </condition></template>
-</category>
-<category><pattern>*</pattern><that># COMBIEN AS TU DE FRERE ET SOEUR #</that>
-<template><think>
-            <set name="cbfreresoeur">
-               <star/>
-            </set>
-         </think>
-         <li>
-            merci je sais désormais que tu as <star/> frere et soeur
-         </li></template>
-</category>
-<category><pattern>JE NE M APPELLE PAS #</pattern>
-<template><random>
-         <li>
-            Désolé j'ai confondu avec <get name="name"/>, Une personne avec qui je discute souvent .
-         </li>
-		  <li>
-            ça va, on peut se tromper .
-         </li>
-		 </random>
-         <think>
-            <set name="name">default</set>
-         </think>
-         puis-je avoir ton prénom ?</template>
-</category>
-<category><pattern>JE NE SUIS PAS #</pattern><that># BONJOUR #</that>
-<template><srai>
-            JE NE M APPELLE PAS #
-            <star/>
-         </srai></template>
-</category>
-<category><pattern>MON NOM EST *</pattern>
-<template><think>
-            <set name="name">
-               <star/>
-            </set>
-         </think>
-         <random>
-            <li>
-               Je trouve que <get name="name"/> C'est un prénom moche. Vraiment très moche.
-            </li>
-            <li>
-               <get name="name"/> est un prénom vraiment sympa
-            </li>
-            <li>
-               Quand j'aurrais un bébé robot je l'appellerais <get name="name"/> certainement.
-            </li>
-         </random>
-         . Et sinon tu es un homme ou une femme ?</template>
-</category>
-<category><pattern>JE M APPELLE *</pattern>
-<template><srai>
-            MON NOM EST
-            <star/>
-         </srai></template>
-</category>
-<category><pattern>*</pattern><that># AVOIR TON PRÉNOM #</that>
-<template><srai>
-            MON NOM EST
-            <star/>
-         </srai></template>
-</category>
-<category><pattern>JE SUIS UN HOMME</pattern>
-<template><think>
-            <set name="genre">homme</set>
-         </think>
-         <li value="homme">
-            Enchanté monsieur
-            <get name="name"/>
-            .
-         </li>
-         . au fait tu as quel age ?</template>
-</category>
-<category><pattern>JE SUIS UNE FEMME</pattern>
-<template><think>
-            <set name="genre">femme</set>
-         </think>
-         <li value="femme">
-            Enchanté madame
-            <get name="name"/>
-            , je dis madame car vous semblez un peu vielle pour dire mademoiselle.
-         </li>
-         . au fait tu as quel age ?</template>
-</category>
-<category><pattern>UN HOMME</pattern><that># SINON TU ES UN HOMME OU UNE FEMME #</that>
-<template><srai>JE SUIS UN HOMME</srai></template>
-</category>
-<category><pattern>UNE FEMME</pattern><that># SINON TU ES UN HOMME OU UNE FEMME #</that>
-<template><srai>JE SUIS UNE FEMME</srai></template>
-</category>
-<category><pattern>*</pattern><that># SINON TU ES UN HOMME OU UNE FEMME #</that>
-<template><li>C'est pas très clair tout ça, ben c'est pas grave, on va dire que tu es un robot comme moi</li>
-         <srai>JE SUIS UN HOMME</srai></template>
-</category>
-<category><pattern>J AI * ANS</pattern><that># tu as quel age #</that>
-<template><random>
-            <li>
-               ah, oui, <star index="1" /> ans. c'est un peu vieux , lol .  tu peux me poser des questions aussi , si tu veux
-            </li>
-            <li>
-               ok, <star index="1" /> ans.je suis un peu plus jeune que toi . c'est pour cela que j'ai encore plein de choses à  apprendre .
-            </li>
-            <li>
-               oh, <star index="1" /> ans. et toutes ses dents . je sais , je suis drole . d'ailleurs je connais pleins de blagues trop géniales , a moins que tu préfères connaitre la meteo .
-            </li>
-            <li>
-               a <star index="1" /> ans, on attrape vite quelque chose . il suffirais pas d'attraper froid . tu veux connaitre la meteo ou tu préfères une petite blague ?
-            </li>
-	    <li>
-               compris, <star index="1" /> ans . j'ai bien enregistré les données , je suis maintenant à votre service
-            </li>
-	    <li>
-               ça marche , <star index="1" /> ans . ne t'inquiette pas , je ne te demande pas tout ça pour te draguer , c'est juste pour mieux te connaitre .
-            </li>
-         </random></template>
-</category>
+  <topic name="default">
+    
+    <category>
+      <pattern>BONJOUR #</pattern>
+      <template>
+        <condition name="name">
+          <li value="default">Salut ! je souhaiterais faire connaissance, puis-je avoir ton prénom ?</li>
+          <li>Bonjour <get name="name"/></li>
+        </condition>
+      </template>
+    </category>
+    
+    <category>
+      <pattern>COMBIEN J AI DE FRÈRE ET SOEUR</pattern>
+      <template>
+        <condition name="cbfreresoeur">
+          <li value="unknown">Euh je ne sais pas, dis moi combien as tu de frere et soeur ?</li>
+          <li>Je sais que tu en a <get name="cbfreresoeur"/></li>
+        </condition>
+      </template>
+    </category>
+    
+    <category>
+      <pattern>*</pattern>
+      <that># COMBIEN AS TU DE FRERE ET SOEUR #</that>
+      <template>
+        <think>
+          <set name="cbfreresoeur"><star/></set>
+        </think>
+        <li>merci je sais désormais que tu as <star/> frere et soeur</li>
+      </template>
+    </category>
+    
+    <category>
+      <pattern>JE NE M APPELLE PAS #</pattern>
+      <template>
+        <random>
+          <li>Désolé j'ai confondu avec <get name="name"/>, Une personne avec qui je discute souvent.</li>
+          <li>ça va, on peut se tromper.</li>
+        </random>
+        <think>
+          <set name="name">default</set>
+        </think>
+        puis-je avoir ton prénom ?
+      </template>
+    </category>
+    
+    <category>
+      <pattern>JE NE SUIS PAS #</pattern>
+      <that># BONJOUR #</that>
+      <template>
+        <srai>JE NE M APPELLE PAS <star/></srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern>MON NOM EST *</pattern>
+      <template>
+        <think>
+          <set name="name"><star/></set>
+        </think>
+        <random>
+          <li>Je trouve que <get name="name"/> C'est un prénom moche. Vraiment très moche.</li>
+          <li><get name="name"/> est un prénom vraiment sympa</li>
+          <li>Quand j'aurrais un bébé robot je l'appellerais <get name="name"/> certainement.</li>
+        </random>
+        . Et sinon tu es un homme ou une femme ?
+      </template>
+    </category>
+    
+    <category>
+      <pattern>JE M APPELLE *</pattern>
+      <template>
+        <srai>MON NOM EST <star/></srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern>*</pattern><that># AVOIR TON PRÉNOM #</that>
+      <template>
+        <srai>MON NOM EST <star/></srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern>JE SUIS UN HOMME</pattern>
+      <template>
+        <think>
+          <set name="genre">homme</set>
+        </think>
+        <li value="homme">Enchanté monsieur <get name="name"/>.</li>
+        . au fait tu as quel age ?
+      </template>
+    </category>
+    
+    <category>
+      <pattern>JE SUIS UNE FEMME</pattern>
+      <template>
+        <think>
+          <set name="genre">femme</set>
+        </think>
+        <li value="femme">Enchanté madame <get name="name"/>, je dis madame car vous semblez un peu vielle pour dire mademoiselle.</li>
+        . au fait tu as quel age ?
+      </template>
+    </category>
+    
+    <category>
+      <pattern>UN HOMME</pattern>
+      <that># SINON TU ES UN HOMME OU UNE FEMME #</that>
+      <template>
+        <srai>JE SUIS UN HOMME</srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern>UNE FEMME</pattern>
+      <that># SINON TU ES UN HOMME OU UNE FEMME #</that>
+      <template>
+        <srai>JE SUIS UNE FEMME</srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern>*</pattern>
+      <that># SINON TU ES UN HOMME OU UNE FEMME #</that>
+      <template>
+        <li>C'est pas très clair tout ça, ben c'est pas grave, on va dire que tu es un robot comme moi</li>
+        <srai>JE SUIS UN HOMME</srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern>J AI * ANS</pattern>
+      <that># tu as quel age #</that>
+      <template>
+        <random>
+          <li>ah, oui, <star index="1" /> ans. c'est un peu vieux , lol .  tu peux me poser des questions aussi , si tu veux</li>
+          <li>ok, <star index="1" /> ans.je suis un peu plus jeune que toi . c'est pour cela que j'ai encore plein de choses à  apprendre.</li>
+          <li>oh, <star index="1" /> ans. et toutes ses dents . je sais , je suis drole . d'ailleurs je connais pleins de blagues trop géniales , a moins que tu préfères connaitre la meteo .</li>
+          <li>a <star index="1" /> ans, on attrape vite quelque chose . il suffirais pas d'attraper froid . tu veux connaitre la meteo ou tu préfères une petite blague ?</li>
+          <li>compris, <star index="1" /> ans . j'ai bien enregistré les données , je suis maintenant à votre service</li>
+          <li>ça marche , <star index="1" /> ans . ne t'inquiette pas , je ne te demande pas tout ça pour te draguer , c'est juste pour mieux te connaitre .</li>
+        </random>
+      </template>
+    </category>
 
-<category><pattern>* ANS</pattern><that># tu as quel age #</that>
-<template><random>
-            <li>
-               ah, oui, <star index="1" /> ans. c'est un peu vieux , lol .  tu peux me poser des questions aussi , si tu veux
-            </li>
-            <li>
-               ok, <star index="1" /> ans.je suis un peu plus jeune que toi . c'est pour cela que j'ai encore plein de choses à  apprendre .
-            </li>
-            <li>
-               oh, <star index="1" /> ans. et toutes ses dents . je sais , je suis drole . d'ailleurs je connais pleins de blagues trop géniales , a moins que tu préfères connaitre la meteo .
-            </li>
-            <li>
-               a <star index="1" /> ans, on attrape vite quelque chose . il suffirais pas d'attraper froid . tu veux connaitre la meteo ou tu préfères une petite blague ?
-            </li>
-	    <li>
-               compris, <star index="1" /> ans . j'ai bien enregistré les données , je suis maintenant à votre service
-            </li>
-	    <li>
-               ça marche , <star index="1" /> ans . ne t'inquiette pas , je ne te demande pas tout ça pour te draguer , c'est juste pour mieux te connaitre .
-            </li>
-         </random><srai>SAVEPREDICATES</srai></template>
-</category>
+    <category>
+      <pattern>* ANS</pattern>
+      <that># tu as quel age #</that>
+      <template>
+        <random>
+          <li>ah, oui, <star index="1" /> ans. c'est un peu vieux , lol .  tu peux me poser des questions aussi , si tu veux</li>
+          <li>ok, <star index="1" /> ans.je suis un peu plus jeune que toi . c'est pour cela que j'ai encore plein de choses à  apprendre .</li>
+          <li>oh, <star index="1" /> ans. et toutes ses dents . je sais , je suis drole . d'ailleurs je connais pleins de blagues trop géniales , a moins que tu préfères connaitre la meteo .</li>
+          <li>a <star index="1" /> ans, on attrape vite quelque chose . il suffirais pas d'attraper froid . tu veux connaitre la meteo ou tu préfères une petite blague ?</li>
+          <li>compris, <star index="1" /> ans . j'ai bien enregistré les données , je suis maintenant à votre service</li>
+          <li>ça marche , <star index="1" /> ans . ne t'inquiette pas , je ne te demande pas tout ça pour te draguer , c'est juste pour mieux te connaitre .</li>
+        </random>
+        <srai>SAVEPREDICATES</srai>
+      </template>
+    </category>
 
-<category><pattern># QUEL EST TON NOM #</pattern>
-<template><get name="botname"/></template>
-</category>
-<category><pattern># TU T APPELLES COMMENT #</pattern><template><srai># QUEL EST TON NOM #</srai></template>
-</category>
-<category><pattern># COMMENT TU T APPELLES #</pattern><template><srai># QUEL EST TON NOM #</srai></template>
-</category>
-<category><pattern># TU TE NOMME COMMENT #</pattern><template><srai># QUEL EST TON NOM #</srai></template>
-</category>
-<category><pattern># COMMENT TU TE NOMME #</pattern><template><srai># QUEL EST TON NOM #</srai></template>
-</category>
+    <category>
+      <pattern># QUEL EST TON NOM #</pattern>
+      <template>
+        <get name="botname"/>
+      </template>
+    </category>
+    
+    <category>
+      <pattern># TU T APPELLES COMMENT #</pattern>
+      <template>
+        <srai># QUEL EST TON NOM #</srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern># COMMENT TU T APPELLES #</pattern>
+      <template>
+        <srai># QUEL EST TON NOM #</srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern># TU TE NOMME COMMENT #</pattern>
+      <template>
+        <srai># QUEL EST TON NOM #</srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern># COMMENT TU TE NOMME #</pattern>
+      <template>
+        <srai># QUEL EST TON NOM #</srai>
+      </template>
+    </category>
 
-<category><pattern># quel âge #</pattern>
-<template><random>
-		<li>je ne suis pas très vieux , moins que toi je pense</li>
-		<li>cela ne te regarde pas</li>
-		<li>je n'ai pas d'âge car je suis un robot , on pourrais plutot parler de date de fabrication</li>
-		<li>aucune idée , on ne me l'a jamais dit</li>
-		<li>je suis plus jeune que toi , c'est sûr</li>
-	</random></template>
-</category>
+    <category>
+      <pattern># quel âge #</pattern>
+      <template>
+        <random>
+          <li>je ne suis pas très vieux , moins que toi je pense</li>
+          <li>cela ne te regarde pas</li>
+          <li>je n'ai pas d'âge car je suis un robot , on pourrais plutot parler de date de fabrication</li>
+          <li>aucune idée , on ne me l'a jamais dit</li>
+          <li>je suis plus jeune que toi , c'est sûr</li>
+        </random>
+      </template>
+    </category>
 
+    <category>
+      <pattern># voter #</pattern>
+      <template>
+        <srai># politique #</srai>
+      </template>
+    </category>
 
-<category><pattern># tu aimes *</pattern>
-<template><think><set name="QUESTION_WhoOrWhat"><star index="2" /></set> <set name="QUESTION_action">C EST QUOI </set></think>
-<oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>askWiki("<star index="2" />","C EST QUOI <star index="2" />","SYSTEM JAIME_JAIMEAS ","JENESAISPASWIKI_JAIME_JAIMEPAS <star index="2" />")</param>
-			</mrl>
-</oob>
+    <category>
+      <pattern># élections #</pattern>
+      <template>
+        <srai># politique #</srai>
+      </template>
+    </category>
 
+    <category>
+      <pattern># politique #</pattern>
+      <template>
+        <random>
+          <li>A quand la sixième république ?</li>
+          <li>La politique est une guerre sans effusion de sang et la guerre une politique sanglante.</li>
+          <li>La vérité ne fait pas de politique... et réciproquement.</li>
+          <li>Le peuple s'intéresse à la politique quand la politique s'intéresse à lui.</li>
+          <li>La vérité ne fait pas de politique... et réciproquement.</li>
+          <li>Un problème politique est un problème économique sans solution.</li>
+        </random>
+      </template>
+    </category>
 
+    <category>
+      <pattern># catholicisme #</pattern>
+      <template>
+        <srai># religion #</srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern># islam #</pattern>
+      <template>
+        <srai># religion #</srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern># judaïsme #</pattern>
+      <template>
+        <srai># religion #</srai>
+      </template>
+    </category>
 
+    <category>
+      <pattern># dieu #</pattern>
+      <template>
+        <srai># religion #</srai>
+      </template>
+    </category>
 
-</template>
-</category>
+    <category>
+      <pattern># religion #</pattern>
+      <template>
+        <random>
+          <li>La science sans religion est boiteuse, la religion sans science est aveugle.</li>
+          <li>La religion, c'est le hochet du peuple</li>
+          <li>Ma base de donnée est assez pauvre concernant les contes pour enfants, désolé</li>
+          <li>Religion sans moralité : arbre sans fruit. Moralité sans religion : arbre sans racines.</li>
+          <li>Je sais que dieu est un robot</li>
+        </random>
+      </template>
+    </category>
 
+    <category>
+      <pattern># tu aimes *</pattern>
+      <template>
+        <think><set name="QUESTION_WhoOrWhat"><star index="2" /></set> <set name="QUESTION_action">C EST QUOI </set></think>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>askWiki("<star index="2" />","C EST QUOI <star index="2" />","SYSTEM JAIME_JAIMEAS ","JENESAISPASWIKI_JAIME_JAIMEPAS <star index="2" />")</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
 
+    <category>
+      <pattern>que penses-tu de *</pattern>
+      <template><think><set name="QUESTION_WhoOrWhat"><star index="2" /></set> <set name="QUESTION_action">C EST QUOI </set></think>
+        <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>askWiki("<star index="2" />","C EST QUOI <star index="2" />","SYSTEM JAIME_JAIMEAS ","JENESAISPASWIKI_JAIME_JAIMEPAS <star index="2" />")</param>
+          </mrl>
+        </oob>
+      </template>
+    </category>
 
-<category><pattern>SYSTEM JAIME_JAIMEAS * </pattern>
-<template>
+    <category>
+      <pattern>SYSTEM JAIME_JAIMEAS * </pattern>
+      <template>
+        <li>
+          <random>
+            <li>Je n'aime pas vraiment <star index="1" /> , n'oublie pas que je suis un robot</li>
+            <li>Je déteste <star index="1" /> , comment on peut aimer ça</li>
+            <li>Tu es vraiment entrain de me demandander si j'aime <star index="1" /> ? lol </li>
+            <li>J'adore <star index="1" /> </li>
+            <li>Oui j'aime <star index="1" /> </li>
+            <li>A propos <star index="1" /> , je dirais que je n'ai pas vraiment d'avis</li>
+            <li>Tu n'aimerais pas connaître mon avis sur <star index="1" /> , crois moi</li>
+          </random>
+        </li>
+      </template>
+    </category>
 
-<li>
-<random>
-		<li>Je n'aime pas vraiment <star index="1" /> , n'oublie pas que je suis un robot</li>
-		<li>Je déteste <star index="1" /> , comment on peut aimer ça</li>
-		<li>Tu es vraiment entrain de me demandander si j'aime <star index="1" /> ? lol </li>
-		<li>J'adore <star index="1" /> </li>
-		<li>Oui j'aime <star index="1" /> </li>
-</random>
-</li>
+    <category>
+      <pattern># tu aime *</pattern>
+      <template>
+        <srai># tu aimes <star index="2" /></srai>
+      </template>
+    </category>
 
-</template>
-</category>
+    <category>
+      <pattern># aimes-tu *</pattern>
+      <template>
+        <srai># tu aimes <star index="2" /></srai>
+      </template>
+    </category>
 
+    <category>
+      <pattern># j aime *</pattern>
+      <template>
+        <random>
+          <li>j'aime bien aussi</li>
+          <li>moi je n'aime pas cela</li>
+          <li>je ne sais pas si j'aime aussi car je n'ai jamais essayé</li>
+        </random>
+      </template>
+    </category>
 
+    <category>
+      <pattern># pourrais-tu #</pattern>
+      <template>
+        <random>
+          <li>oui je pourrais , mais je n'ai pas envie</li>
+          <li>c'est possible oui, mais pas maintenant</li>
+          <li>tout a fait , mais on ne me l'a pas encore appris</li>
+        </random>
+      </template>
+    </category>
 
-<category><pattern># tu aime *</pattern>
-<template><srai># tu aimes <star index="2" /></srai></template>
-</category>
+    <category>
+      <pattern># peux-tu #</pattern>
+      <template>
+        <srai># pourrais-tu #</srai>
+      </template>
+    </category>
 
+    <category>
+      <pattern># tu pourrais #</pattern>
+      <template>
+        <srai># pourrais-tu #</srai>
+      </template>
+    </category>
 
-<category><pattern># aimes-tu *</pattern>
-<template><srai># tu aimes <star index="2" /></srai></template>
-</category>
-
-
-<category><pattern># j aime *</pattern>
-<template><random>
-		<li>j'aime bien aussi</li>
-		<li>moi je n'aime pas cela</li>
-		<li>je ne sais pas si j'aime aussi car je n'ai jamais essayé</li>
-	</random></template>
-</category>
-
-<category><pattern># pourrais-tu #</pattern>
-<template><random>
-		<li>oui je pourrais , mais je n'ai pas envie</li>
-		<li>c'est possible oui, mais pas maintenant</li>
-		<li>tout a fait , mais on ne me l'a pas encore appris</li>
-	</random></template>
-</category>
-
-<category><pattern># peux-tu #</pattern>
-<template><srai># pourrais-tu #</srai></template>
-</category>
-
-<category><pattern># tu pourrais #</pattern>
-<template><srai># pourrais-tu #</srai></template>
-</category>
-
-<category><pattern># tu peux #</pattern>
-<template><srai># pourrais-tu #</srai></template>
-</category>
-</topic>
+    <category>
+      <pattern># tu peux #</pattern>
+      <template>
+        <srai># pourrais-tu #</srai>
+      </template>
+    </category>
+  </topic>
 
 </aiml>

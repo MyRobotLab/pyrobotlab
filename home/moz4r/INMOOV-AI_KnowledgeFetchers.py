@@ -2,6 +2,7 @@
 	
 def askWiki(query,question,ReturnOk,ReturnNok): # retourne la description du sujet (query)
 	#Light(1,0,0)
+	
 	query = unicode(query,'utf-8')# on force le format de police UTF-8 pour prendre en charge les accents
 	if query[1]== "\'" : # Si le sujet contient un apostrophe , on efface tout ce qui est avant ! ( "l'ete" -> "ete")
 		query2 = query[2:len(query)]
@@ -58,7 +59,7 @@ def askWiki(query,question,ReturnOk,ReturnNok): # retourne la description du suj
 		QueryMemory(question,ReturnNok,ReturnOk) # on balance au service apprentissage
 	else:
 		chatBot.getResponse(ReturnOk + answer)
-		
+	FindImage(query)	
 	#Light(1,1,1)
 
 
@@ -100,7 +101,7 @@ def FindImage(image):
 		image = image.decode( "utf8" )
 	except: 
 		pass
-	mouth.speak(image)
+	#mouth.speak(image)
 	#PLEASE USE REAL LANGUAGE PARAMETER :
 	#lang=XX ( FR/EN/RU/IT etc...)
 	#A FAKE LANGUAGE WORKS BUT DATABASE WILL BROKE
