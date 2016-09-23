@@ -614,6 +614,7 @@ date minimale:P2310
 date maximale:P2311
 contact:P2569
 chef de l'exécutif:P6
+premier ministre:P6
 frère:P7
 sœur:P9
 système d'autoroute:P16
@@ -628,6 +629,8 @@ pays de nationalité:P27
 continent:P30
 nature de l'élément:P31
 chef d'état:P35
+chef de l'état:P35
+président:P35
 capitale:P36
 langue officielle:P37
 monnaie:P38
@@ -808,7 +811,6 @@ bannière d'appartenance:P470
 périphérique d'entrée:P479
 studio d'enregistrement:P483
 localisation des archives:P485
-président:P488
 description du symbole monétaire:P489
 pays d'origine:P495
 exclave de:P500

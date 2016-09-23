@@ -1,11 +1,12 @@
-#CREDITS : PAPAOUTAI http://myrobotlab.org/content/translate-microsoft-translator-python-azuretranslate-0
+#CREDITS : PAPAOUTAI
+# your keys here ( put in config file ) : https://datamarket.azure.com/dataset/bing/microsofttranslator 
 
 AzureTranslator=Runtime.createAndStart("AzureTranslator", "AzureTranslator")
 sleep(0.1)
-
+#initiate azure
 AzureTranslator.setCredentials(Azure_client_id,Azure_client_secret)
 
- 
+#Origin language 
 supported_languages = { # as defined here: http://msdn.microsoft.com/en-us/library/hh456380.aspx
     'ar' : ' Arabic',
  #   'bs-Latn' : 'Bosnian (Latin)',
@@ -58,7 +59,8 @@ supported_languages = { # as defined here: http://msdn.microsoft.com/en-us/libra
  #  'cy' : 'Welsh',
  #  'yua' : 'Yucatec Maya',
 }
- 
+
+#acapela voice name map 
 male_languages = { 
     'ar' : ' Nizar',
     'da' : 'Rasmus',
@@ -74,6 +76,7 @@ male_languages = {
 	'ja' : 'Sakura',
 }
 
+#Translate to :
 en_languages = {
     'arab' : 'ar',
 	'arabe' : 'ar',
@@ -99,21 +102,38 @@ en_languages = {
 					
 def translateText(text,language):
 	
-	AzureTranslator.detectLanguage(text)
+	
 	RealLang="0"
+	
 	try:
 		RealLang=en_languages[language]
 	except: 
 		chatBot.getResponse("AZURE_ERROR_2 "+language)
 	print RealLang
+	
+	try:
+		AzureTranslator.detectLanguage(text)
+	except:
+		chatBot.getResponse("AZURE_ERROR_1")
+		RealLang="0"
+	
 	if RealLang!="0":
 		AzureTranslator.toLanguage(RealLang)
-		t_text=AzureTranslator.translate(text)   
+		sleep(0.1)
+		t_text=AzureTranslator.translate(text)
+		
+		#small trick to prevent connection timeout :)
+		i=0
+		while 'Cannot find an active Azure Market Place' in t_text and i<50: 
+			print(i,t_text)
+			i += 1 
+			sleep(0.2)
+			AzureTranslator.detectLanguage(text)
+			t_text=AzureTranslator.translate(text+" ")
+		
+		
 		if 'Cannot find an active Azure Market Place' in t_text:
-			sleep(0.5)
-			t_text=AzureTranslator.translate(text)
-		if 'Cannot find an active Azure Market Place' in t_text:
-			chatBot.getResponse("AZURE_ERROR_1")
+			chatBot.getResponse("AZURE_ERROR_3")
 		else:
 			mouth.setVoice(male_languages[RealLang])  
 			print t_text

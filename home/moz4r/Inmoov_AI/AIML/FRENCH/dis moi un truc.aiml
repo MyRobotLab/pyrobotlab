@@ -2,135 +2,106 @@
 <aiml>
 <!--  -->
 <!--  -->
-<category><pattern>DIS-MOI UN TRUC</pattern>
-<template><random>
-		<li>avec</li>
-		<li>considérant</li>
-		<li>ou que nous mène</li>
-		<li>Vu</li>
-		<li>en ce qui concerne</li>
-		<li>dans le cas particulier de</li>
-		<li>quelque soit</li>
-		<li>du fait de</li>
-		<li>tant que durera</li>
+  <category>
+    <pattern>DIS-MOI UN TRUC</pattern>
+    <template>
+      <random>
+        <li>avec</li>
+        <li>considérant</li>
+        <li>ou que nous mène</li>
+        <li>Vu</li>
+        <li>en ce qui concerne</li>
+        <li>dans le cas particulier de</li>
+        <li>quelque soit</li>
+        <li>du fait de</li>
+        <li>tant que durera</li>
+      </random>
 
+      <random>
+        <li>la situation</li>
+        <li>la conjoncture</li>
+        <li>la crise</li>
+        <li>l'inertie</li>
+        <li>l'impasse</li>
+        <li>l'extrémité</li>
+        <li>la degradation des moeurs</li>
+        <li>la sinistrose</li>
+        <li>la dualité de la situation</li>
+        <li>la baisse de confiance</li>
+        <li>en ce qui concerne</li>
+        <li>en ce qui concerne</li>
+      </random>
 
+      <random>
+        <li>présente</li>
+        <li>actuelle</li>
+        <li>qui nous occupe</li>
+        <li>qui est la notre</li>
+        <li>induite</li>
+        <li>conjoncturelle</li>
+        <li>contemporaine</li>
+        <li>de cette fin de siècle</li>
+        <li>de la société</li>
+        <li>de ces derniers temps</li>
+      </random>
 
+      <random>
+        <li>il convient de</li>
+        <li>il faut</li>
+        <li>on se doit de</li>
+        <li>il est préférable de</li>
+        <li>il serait intéressant de</li>
+        <li>il ne faut pas négliger de</li>
+        <li>on ne peut pas se passer de</li>
+        <li>il est nécessaire de</li>
+        <li>il serait bon de</li>
+        <li>il faut de toute urgence</li>
+      </random>
 
-		
-	</random>
+      <random>
+        <li>étudier</li>
+        <li>examiner</li>
+        <li>ne pas négliger</li>
+        <li>prendre en considération</li>
+        <li>anticiper</li>
+        <li>imaginer</li>
+        <li>se préoccuper de</li>
+        <li>s'intéresser à</li>
+        <li>avoir à l'esprit</li>
+        <li>se remémorer</li>
+      </random>
 
+      <random>
+        <li>toutes les</li>
+        <li>chacune des</li>
+        <li>la majorité des</li>
+        <li>toutes les</li>
+        <li>l'ensemble des</li>
+        <li>la somme des</li>
+        <li>la totalité des</li>
+        <li>la globalité des</li>
+        <li>toutes les</li>
+        <li>certaines</li>
+      </random>
 
-	<random>
-		<li>la situation</li>
-		<li>la conjoncture</li>
-		<li>la crise</li>
-		<li>l'inertie</li>
-		<li>l'impasse</li>
-		<li>l'extrémité</li>
-		<li>la degradation des moeurs</li>
-		<li>la sinistrose</li>
-		<li>la dualité de la situation</li>
-		<li>la baisse de confiance</li>
-		<li>en ce qui concerne</li>
-		<li>en ce qui concerne</li>
+      <random>
+        <li>solutions</li>
+        <li>issues</li>
+        <li>problématiques</li>
+        <li>voies</li>
+        <li>induite</li>
+        <li>alternatives</li>
+      </random>
 
+      <random>
+        <li>envisageables</li>
+        <li>possibles</li>
+        <li>déja en notre possession</li>
+        <li>s'offrant à nous</li>
+        <li>de bon sens</li>
+      </random>
+    </template>
+  </category>
 
-		
-	</random>
-
-	<random>
-		<li>présente</li>
-		<li>actuelle</li>
-		<li>qui nous occupe</li>
-		<li>qui est la notre</li>
-		<li>induite</li>
-		<li>conjoncturelle</li>
-		<li>contemporaine</li>
-		<li>de cette fin de siècle</li>
-		<li>de la société</li>
-		<li>de ces derniers temps</li>
-
-
-		
-	</random>
-
-
-
-	<random>
-		<li>il convient de</li>
-		<li>il faut</li>
-		<li>on se doit de</li>
-		<li>il est préférable de</li>
-		<li>il serait intéressant de</li>
-		<li>il ne faut pas négliger de</li>
-		<li>on ne peut pas se passer de</li>
-		<li>il est nécessaire de</li>
-		<li>il serait bon de</li>
-		<li>il faut de toute urgence</li>
-
-
-		
-	</random>
-
-	<random>
-		<li>étudier</li>
-		<li>examiner</li>
-		<li>ne pas négliger</li>
-		<li>prendre en considération</li>
-		<li>anticiper</li>
-		<li>imaginer</li>
-		<li>se préoccuper de</li>
-		<li>s'intéresser à</li>
-		<li>avoir à l'esprit</li>
-		<li>se remémorer</li>
-
-
-		
-	</random>
-
-
-	<random>
-		<li>toutes les</li>
-		<li>chacune des</li>
-		<li>la majorité des</li>
-		<li>toutes les</li>
-		<li>l'ensemble des</li>
-		<li>la somme des</li>
-		<li>la totalité des</li>
-		<li>la globalité des</li>
-		<li>toutes les</li>
-		<li>certaines</li>
-
-
-		
-	</random>
-
-
-	<random>
-		<li>solutions</li>
-		<li>issues</li>
-		<li>problématiques</li>
-		<li>voies</li>
-		<li>induite</li>
-		<li>alternatives</li>
-
-
-		
-	</random>
-
-
-
-	<random>
-		<li>envisageables</li>
-		<li>possibles</li>
-		<li>déja en notre possession</li>
-		<li>s'offrant à nous</li>
-		<li>de bon sens</li>
-
-
-
-		
-	</random></template>
-</category>
 </aiml>
+

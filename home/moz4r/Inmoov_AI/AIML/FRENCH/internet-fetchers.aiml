@@ -2,52 +2,93 @@
 <aiml>
 <!--  -->
 <!--  -->
-<category><pattern>MONTRE *</pattern>
-<template><oob>
-<mrl>
-<service>python</service>
-<method>exec</method>
-<param>FindImage("<star/>")</param>
-</mrl>
-</oob></template>
-</category>
-<category><pattern>MONTRE MOI *</pattern>
-<template><srai>MONTRE <star/></srai></template>
-</category>
-<category><pattern>MONTRE-MOI *</pattern>
-<template><srai>MONTRE <star/></srai></template>
-</category>
-<category><pattern>QUESTION *</pattern>
-<template><oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>question("<star/>")</param>
-			</mrl>
-      </oob></template>
-</category>
-<category><pattern># MÉTÉO À *</pattern>
-<template><oob>
-			<mrl>
-				<service>python</service>
-				<method>exec</method>
-				<param>Meteo("<star index="2"/>")</param>
-			</mrl>
-      </oob></template>
-</category>
-<category><pattern>QUEL TEMPS FAIT-IL À *</pattern>
-<template><srai># Météo à <star/></srai></template>
-</category>
-<category><pattern># MÉTÉO DE *</pattern>
-<template><srai># Météo à <star index="2"/></srai></template>
-</category>
-<category><pattern># MÉTÉO</pattern>
-<template>La météo du monde ? eh bien ça se réchauffe. Pour quelle ville souhaites tu connaitre la météo?</template>
-</category>
-<category><pattern>À *</pattern><that># POUR QUELLE VILLE SOUHAITES TU CONNAITRE LA MÉTÉO #</that>
-<template><srai># Météo de <star/></srai></template>
-</category>
-<category><pattern>*</pattern><that># POUR QUELLE VILLE SOUHAITES TU CONNAITRE LA MÉTÉO #</that>
-<template><srai># Météo de <star/></srai></template>
-</category>
+  <category>
+    <pattern>MONTRE *</pattern>
+    <template>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>FindImage("<star/>")</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>MONTRE MOI *</pattern>
+    <template>
+      <srai>MONTRE <star/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>MONTRE-MOI *</pattern>
+    <template>
+      <srai>MONTRE <star/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>QUESTION *</pattern>
+    <template>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>question("<star/>")</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+  
+  <category>
+    <pattern># MÉTÉO À *</pattern>
+    <template>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>Meteo("<star index="2"/>")</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>QUEL TEMPS FAIT-IL À *</pattern>
+    <template>
+      <srai># Météo à <star/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern># MÉTÉO DE *</pattern>
+    <template>
+      <srai># Météo à <star index="2"/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern># MÉTÉO</pattern>
+    <template>
+      La météo du monde ? eh bien ça se réchauffe. Pour quelle ville souhaites tu connaitre la météo?
+    </template>
+  </category>
+  
+  <category>
+    <pattern>À *</pattern>
+    <that># POUR QUELLE VILLE SOUHAITES TU CONNAITRE LA MÉTÉO #</that>
+    <template>
+      <srai># Météo de <star/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>*</pattern>
+    <that># POUR QUELLE VILLE SOUHAITES TU CONNAITRE LA MÉTÉO #</that>
+    <template>
+      <srai># Météo de <star/></srai>
+    </template>
+  </category>
 </aiml>
