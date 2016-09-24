@@ -1,2 +1,2 @@
-headRpi = Runtime.createAndStart("RemoteAdapterA","RemoteAdapter")
-headRpi.startListening()
+remoteAdapterA = Runtime.createAndStart("RemoteAdapterA","RemoteAdapter")
+remoteAdapterA.startListening()
