@@ -1,7 +1,8 @@
 ik=Runtime.createAndStart("ik","InverseKinematics3D");
 
 arduino = Runtime.createAndStart("arduino","Arduino")
-arduino.connect("COM15")
+arduino.setBoardMega()
+arduino.connect("COM3")
 
 mtorso = Runtime.createAndStart("mtorso","Servo")
 mtorso.attach(arduino,28,90);
@@ -35,7 +36,7 @@ rotate.setVelocity(18)
 rotate.moveTo(90)
 bicep = Runtime.createAndStart("bicep","Servo")
 bicep.attach(arduino,8,10);
-bicep.map(5,80,5,80)
+bicep.map(5,60,5,80)
 bicep.setVelocity(26)
 #bicep.setMinMax(5,90)
 bicep.moveTo(10)
@@ -57,12 +58,13 @@ ik.addObject("omoplate", 10.0)
 ik.addObject("shoulder", 50.0)
 ik.addObject("rotate", 50.0)
 ik.addObject("bicep", 60.0)
-ik.addObject(-1000.0, 300, 0, 1000, 300, 00, "obstacle",40)
+#ik.addObject(-1000.0, 300, 0, 1000, 300, 00, "obstacle",40)
 
 
 print ik.currentPosition();
 
-ik.moveTo(200,500,1000)
+ik.setComputeMethodGeneticAlgorythm()
+ik.moveTo(350,400,300, -10, -30, 100)
 
 print ik.currentPosition();
 
