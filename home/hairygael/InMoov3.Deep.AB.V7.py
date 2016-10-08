@@ -46,8 +46,8 @@ global Voice
 Voice="Ryan" # Bruno in French
 voiceType = Voice
 
-client_id = "90a98ba0-a028-4b61-9e7a-10a22b186944"
-client_secret = "SZDqSTcKxwUMiPEievXKWleXAYMWuD1Tm1D2igskvus"
+client_id = "90a98ba0-xxxxxxxxxxxxxxxxxxxxx"
+client_secret = "SZDqSTcKxwUMiPxxxxxxxxxxxxxx"
 
 global human
 global inmoov
