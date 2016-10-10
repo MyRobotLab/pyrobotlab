@@ -8,3 +8,4 @@ if bno.begin():
   print event.orientation.x
   print event.orientation.y
   print event.orientation.z
+
