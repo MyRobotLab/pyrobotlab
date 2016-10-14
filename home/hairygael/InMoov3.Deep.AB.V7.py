@@ -35,9 +35,9 @@ headPort = leftPort
 
 gesturesPath = "C:\Myrobotlab\ProgramAB bots\gestures"
 
-aimlPath = "C:\Myrobotlab\myrobotlab.1.0.1700\ProgramAB"
-aimlBotName = "inmoovSuper"
-aimlUserName = "Gael"
+aimlPath = "C:\Myrobotlab\myrobotlab.1.0.1723\ProgramAB"
+aimlBotName = "inmoovWebKit"
+aimlUserName = "YourName"
 #botVoice = "Ryan"
 #############################################################
 # LANGUAGE ( FR/EN )
@@ -46,6 +46,7 @@ global Voice
 Voice="Ryan" # Bruno in French
 voiceType = Voice
 
+##Create your free Id and key https://datamarket.azure.com/dataset/bing/microsofttranslator
 client_id = "your_id"
 client_secret = "yoursecret_key"
 
@@ -78,9 +79,9 @@ def heard(data):
 ######################################################################
 #neopixel = Runtime.createAndStart("neopixel","Serial")
 #neopixel.connect("COM3", 57600, 8, 1, 0)
-inmoovSuper = Runtime.createAndStart("inmoovSuper", "ProgramAB")
+inmoovWebKit = Runtime.createAndStart("inmoovWebKit", "ProgramAB")
 #inmoovWebKit.setPath(aimlPath)
-inmoovSuper.startSession(aimlUserName, aimlBotName)
+inmoovWebKit.startSession(aimlUserName, aimlBotName)
 
 ######################################################################
 # Html filter to clean the output from programab.  (just in case)
@@ -102,8 +103,8 @@ ear.addMouth(mouth)
 ######################################################################
 # MRL Routing webkitspeechrecognition/ear -> program ab -> htmlfilter -> mouth
 ######################################################################
-ear.addTextListener(inmoovSuper)
-inmoovSuper.addTextListener(htmlfilter)
+ear.addTextListener(inmoovWebKit)
+inmoovWebKit.addTextListener(htmlfilter)
 htmlfilter.addTextListener(mouth)
 ######################################################################
 #Gets the battery level
