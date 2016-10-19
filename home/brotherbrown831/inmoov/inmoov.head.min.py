@@ -17,15 +17,24 @@ webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
 # webgui = Runtime.createAndStart("webgui","WebGui")
 
 # Change to the port that you use
-leftPort = "COM20"
+leftPort = "COM06"
 
 aimlPath = "C:\inmoov MRL\ProgramAB"
 aimlUserName = "Nolan"
 aimlBotName = "harry"
 
+def heard(data):
+print "Speech Recognition Data:"+str(data)
+
 inmoovWebKit = Runtime.createAndStart("inmoovWebKit", "ProgramAB")
-#inmoovWebKit.setPath(aimlPath)
+inmoovWebKit.setPath(aimlPath)
 inmoovWebKit.startSession(aimlUserName, aimlBotName)
+
+######################################################################
+# Html filter to clean the output from programab.  (just in case)
+htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
+
+######################################################################
 
 i01 = Runtime.createAndStart("i01", "InMoov")
 i01.startEar()
@@ -74,22 +83,13 @@ ear.attach(mouth)
  
 ear.addCommand("rest", "python", "rest")
 
-ear.addCommand("attach head", "i01.head", "attach")
-ear.addCommand("disconnect head", "i01.head", "detach")
-ear.addCommand("attach eyes", "i01.head.eyeY", "attach")
-ear.addCommand("disconnect eyes", "i01.head.eyeY", "detach")
-ear.addCommand("capture gesture", ear.getName(), "captureGesture")
-ear.addCommand("manual", ear.getName(), "lockOutAllGrammarExcept", "voice control")
-ear.addCommand("voice control", ear.getName(), "clearLock")
-
-ear.addCommand("search humans", "python", "trackHumans")
-ear.addCommand("quit search", "python", "stopTracking")
-ear.addCommand("track", "python", "trackPoint")
-ear.addCommand("freeze track", "python", "stopTracking")
-
-ear.addCommand("look on your right side", "python", "lookrightside")
-ear.addCommand("look on your left side", "python", "lookleftside")
-ear.addCommand("look in the middle", "python", "lookinmiddle")
+######################################################################
+# MRL Routing webkitspeechrecognition/ear -> program ab -> htmlfilter -> mouth
+######################################################################
+ear.addTextListener(inmoovWebKit)
+inmoovWebKit.addTextListener(htmlfilter)
+htmlfilter.addTextListener(mouth)
+######################################################################
 
 # Confirmations and Negations are not supported yet in WebkitSpeechRecognition
 # So commands will execute immediatley
