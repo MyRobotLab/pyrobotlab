@@ -33,11 +33,11 @@ leftPort = "COM20"
 rightPort = "COM7"
 headPort = leftPort
 
-gesturesPath = "C:\Myrobotlab\ProgramAB bots\gestures"
+gesturesPath = "C:\github\pyrobotlab\home\brotherbrown831\inmoov\gestures"
 
-aimlPath = "C:\Myrobotlab\myrobotlab.1.0.1723\ProgramAB"
+aimlPath = "C:\github\pyrobotlab\home\brotherbrown831\inmoov\inmoovWebKit\aiml"
 aimlBotName = "inmoovWebKit"
-aimlUserName = "YourName"
+aimlUserName = "Nolan"
 #botVoice = "Ryan"
 #############################################################
 # LANGUAGE ( FR/EN )
@@ -57,7 +57,7 @@ global walkingThread
 #############################################################
 
 # toggle to only load program ab  and skip the inmoov services
-startInMoov = True
+startInMoov = False
 
 ######################################################################
 # helper function help debug the recognized text from webkit/sphinx

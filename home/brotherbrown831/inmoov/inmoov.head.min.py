@@ -17,14 +17,11 @@ webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
 # webgui = Runtime.createAndStart("webgui","WebGui")
 
 # Change to the port that you use
-leftPort = "COM06"
+leftPort = "COM7"
 
-aimlPath = "C:\inmoov MRL\ProgramAB"
+aimlPath = "C:\github\pyrobotlab\home\brotherbrown831\inmoov\inmoovWebKit"
 aimlUserName = "Nolan"
-aimlBotName = "harry"
-
-def heard(data):
-print "Speech Recognition Data:"+str(data)
+aimlBotName = "inmoovWebKit"
 
 inmoovWebKit = Runtime.createAndStart("inmoovWebKit", "ProgramAB")
 inmoovWebKit.setPath(aimlPath)
