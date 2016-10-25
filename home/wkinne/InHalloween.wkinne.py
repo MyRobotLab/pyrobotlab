@@ -37,6 +37,9 @@ i01.head.neck.setMinMax(0,180)
 # start the jaw control for animation while speaking
 i01.startMouthControl(comPort)
 
+voice = "WillBadGuy"
+i01.mouth.setVoice(voice)
+
 # the position for the jaw to be open/closed during annimzation.
 openPosition = 20
 closedPosition = 90
