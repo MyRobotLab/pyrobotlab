@@ -8,7 +8,7 @@ i01 = Runtime.createAndStart("i01", "InMoov")
 #starting the mouth
 i01.startMouth()
 #set a custom voice
-i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Graham&txt=")
+i01.mouth.setVoice("Ryan")
 
 #start the (InMoov-)head(-service) 
 head = i01.startHead(headPort)
