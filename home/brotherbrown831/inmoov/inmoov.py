@@ -29,7 +29,7 @@ from subprocess import Popen, PIPE
 # the bot.
 #############################################################
 # All bot specific hardware configuration goes here.
-leftPort = "COM20"
+leftPort = "COM6"
 rightPort = "COM7"
 headPort = leftPort
 
@@ -57,7 +57,7 @@ global walkingThread
 #############################################################
 
 # toggle to only load program ab  and skip the inmoov services
-startInMoov = False
+startInMoov = True
 
 ######################################################################
 # helper function help debug the recognized text from webkit/sphinx
@@ -72,7 +72,7 @@ def heard(data):
 ######################################################################
 
 # launch the swing gui?
-# gui = Runtime.createAndStart("gui", "GUIService");
+gui = Runtime.createAndStart("gui", "GUIService");
 
 ######################################################################
 # Create ProgramAB chat bot ( This is the inmoov "brain" )
@@ -225,7 +225,7 @@ i01 = Runtime.start("i01","InMoov")
 i01.setMute(False)
 ################# 
 if startInMoov:
-   i01.startAll(leftPort, rightPort)
+   i01.startAll(leftPort)
    #i01.startMouth()
    #i01.startMouthControl(leftPort)
    i01.mouthControl.setmouth(43,95)
@@ -313,7 +313,7 @@ rightArm.omoplate.setVelocity(30)
 # This service works in Google Chrome only with the WebGui
 #################################################################
 #webgui = Runtime.create("webgui","WebGui")
-webgui.autoStartBrowser(False)
+webgui.autoStartBrowser(True)
 webgui.startService()
 BareBonesBrowserLaunch.openURL("http://localhost:8888/#service/i01.ear")
 
