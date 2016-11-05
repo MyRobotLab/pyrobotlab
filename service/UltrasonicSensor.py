@@ -1,6 +1,8 @@
 python = Runtime.start("python","Python")
 sr04 = Runtime.start("sr04", "UltrasonicSensor")
-sr04.attach("COM15", 12, 11)
+arduino = Runtime.start("arduino", "Arduino")
+arduino.connect("COM15")
+sr04.attach(arduino, 12, 11)
 sr04.addRangeListener(python)
 
 def onRange(distance):
