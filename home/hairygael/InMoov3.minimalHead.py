@@ -107,6 +107,20 @@ def lookinmiddle():
   i01.setHeadSpeed(0.70, 0.70)
   i01.moveHead(85,86)
 
+def trackHumans():
+  i01.headTracking.faceDetect()
+  i01.eyesTracking.faceDetect()
+  fullspeed()
+
+def trackPoint():
+  i01.headTracking.startLKTracking()
+  i01.eyesTracking.startLKTracking()
+  fullspeed()
+
+def stopTracking():
+  i01.headTracking.stopTracking()
+  i01.eyesTracking.stopTracking()
+
 
 
 
