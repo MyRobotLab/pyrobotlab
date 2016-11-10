@@ -54,10 +54,10 @@ i01.startEyesTracking(leftPort)
 i01.startHeadTracking(leftPort)
 ############################################################
 #to tweak the default PID values
-i01.eyesTracking.xpid.setPID(25.0,5.0,0.1)
-i01.eyesTracking.ypid.setPID(25.0,5.0,0.1)
-i01.headTracking.xpid.setPID(15.0,5.0,0.2)
-i01.headTracking.ypid.setPID(15.0,5.0,0.2)
+i01.eyesTracking.pid.setPID("eyeX",12.0,1.0,0.1)
+i01.eyesTracking.pid.setPID("eyeY",12.0,1.0,0.1)
+i01.headTracking.pid.setPID("rothead",5.0,1.0,0.1)
+i01.headTracking.pid.setPID("neck",5.0,1.0,0.1)
 ############################################################
 
 # verbal commands
