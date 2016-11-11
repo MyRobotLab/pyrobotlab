@@ -5,7 +5,7 @@ AzureTranslator=Runtime.createAndStart("AzureTranslator", "AzureTranslator")
 sleep(0.1)
 #initiate azure
 #AzureTranslator.setCredentials(Azure_client_id,Azure_client_secret)
-AzureTranslator.setCredentials("90a98ba0-a028-4b61-9e7a-10a22b186944","SZDqSTcKxwUMiPEievXKWleXAYMWuD1Tm1D2igskvus") # KEY and SECRET azure credentials
+AzureTranslator.setCredentials("xxxxxx","xwxxxxxxxxxxxx") # KEY and SECRET azure credentials
 
 
 #Origin language 
