@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!-- File: keywords.aiml -->
+<!-- Author: CEO Gael Langevin -->
+<!-- Last modified: October 10, 2016 -->
+<!--  -->
+<!-- This AIML file is part of the Alice 0.0.5 chat bot knowledge base. -->
+<!--  -->
+<!-- This AIML file is powered by MyRobotLab. -->
+<!--  -->
+<!-- The InMoov design is created by Gael Langevin. -->
+<!--  -->  
+<!-- The InMoov design is released under the Creative commons License CC-BY-NC -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see http://www.inmoov.fr -->
+<!--  -->
+<category><pattern># DOWNLOAD ^ YOU ^</pattern>
+<template>You can download CallMom BASIC from
+<a href="https://play.google.com/store/apps/details?id=com.pandorabots.callmom.basic">Google Play</a>.</template>
+</category>
+</aiml>
