@@ -1,4 +1,4 @@
-#We intercept what the robot is listen to change some values
+#We intercept what the robot is listening to change some values
 #here we replace ' by space because AIML doesn't like '
 def replacer(data):
     data = data.replace("'", " ")
