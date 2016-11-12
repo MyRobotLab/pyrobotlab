@@ -6,3 +6,4 @@ today = Date()
 print today
 dateOut = dateFormatter.format(today);
 print dateOut
+
