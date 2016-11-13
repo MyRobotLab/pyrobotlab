@@ -1,8 +1,8 @@
 def relax():
   global MoveBodyRandom
-       MoveBodyRandom=0
+  MoveBodyRandom=0
   global MoveHeadRandom
-  if (i01.eyesTracking.getOpenCV().capturing == true)
+  if (i01.eyesTracking.getOpenCV().capturing == true):
        MoveHeadRandom=0
        i01.setHandSpeed("left", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
        i01.setHandSpeed("right", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
@@ -17,7 +17,7 @@ def relax():
        i01.moveHand("right",81,66,82,60,105,113)
        i01.moveTorso(95,90,90)
 
-  else
+  else:
        MoveHeadRandom=1
        MoveHeadTimer.startClock()
        i01.setHandSpeed("left", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
