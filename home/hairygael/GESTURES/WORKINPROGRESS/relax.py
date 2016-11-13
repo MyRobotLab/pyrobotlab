@@ -18,7 +18,7 @@ def relax():
        i01.moveTorso(95,90,90)
 
   else:
-       MoveHeadRandom=1
+       MoveHeadRandom==1
        MoveHeadTimer.startClock()
        i01.setHandSpeed("left", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
        i01.setHandSpeed("right", 0.85, 0.85, 0.85, 0.85, 0.85, 0.85)
