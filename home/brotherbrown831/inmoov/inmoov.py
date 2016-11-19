@@ -29,7 +29,7 @@ from subprocess import Popen, PIPE
 # the bot.
 #############################################################
 # All bot specific hardware configuration goes here.
-leftPort = "COM6"
+leftPort = "COM8"
 rightPort = "COM7"
 headPort = leftPort
 
@@ -47,8 +47,8 @@ Voice="Ryan" # Bruno in French
 voiceType = Voice
 
 ##Create your free Id and key https://datamarket.azure.com/dataset/bing/microsofttranslator
-client_id = "your_id"
-client_secret = "yoursecret_key"
+client_id = "63ee9eef-2c78-4e87-a6be-5fa0fa29acdd"
+client_secret = "6wtk1hynqgXlRhNY1vni4zTjJb8Znlp/yeTX4953LaI"
 
 global human
 global inmoov
@@ -57,7 +57,7 @@ global walkingThread
 #############################################################
 
 # toggle to only load program ab  and skip the inmoov services
-startInMoov = True
+startInMoov = False
 
 ######################################################################
 # helper function help debug the recognized text from webkit/sphinx
@@ -225,7 +225,7 @@ i01 = Runtime.start("i01","InMoov")
 i01.setMute(False)
 ################# 
 if startInMoov:
-   i01.startAll(leftPort)
+   i01.startAll(leftPort, rightPort)
    #i01.startMouth()
    #i01.startMouthControl(leftPort)
    i01.mouthControl.setmouth(43,95)

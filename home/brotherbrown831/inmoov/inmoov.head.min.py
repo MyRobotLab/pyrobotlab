@@ -17,14 +17,14 @@ webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
 # webgui = Runtime.createAndStart("webgui","WebGui")
 
 # Change to the port that you use
-leftPort = "COM7"
+leftPort = "COM8"
 
-aimlPath = "C:\github\pyrobotlab\home\brotherbrown831\inmoov\inmoovWebKit"
+#aimlPath = ""
 aimlUserName = "Nolan"
 aimlBotName = "inmoovWebKit"
 
 inmoovWebKit = Runtime.createAndStart("inmoovWebKit", "ProgramAB")
-inmoovWebKit.setPath(aimlPath)
+#inmoovWebKit.setPath(aimlPath)
 inmoovWebKit.startSession(aimlUserName, aimlBotName)
 
 ######################################################################
@@ -57,9 +57,9 @@ i01.startHead(leftPort)
 #i01.head.eyeX.setMinMax(64,105)
 #i01.head.eyeX.map(0,180,105,64)
 #i01.head.eyeX.setRest(90)
-#i01.head.neck.setMinMax(55,105)
-#i01.head.neck.map(0,180,105,55)
-#i01.head.neck.setRest(70)
+i01.head.neck.setMinMax(55,105)
+i01.head.neck.map(0,180,105,55)
+i01.head.neck.setRest(70)
 #i01.head.rothead.setMinMax(45,135)
 #i01.head.rothead.map(0,180,45,135)
 #i01.head.rothead.setRest(86)
@@ -97,7 +97,7 @@ ear.startListening()
 
 # set up a message route from the ear --to--> python method "heard"
 ear.addListener("recognized", "python", "heard")
-#inmoov.addTextListener(i01.mouth)
+inmoov.addTextListener(i01.mouth)
 
 
 def lookrightside():
