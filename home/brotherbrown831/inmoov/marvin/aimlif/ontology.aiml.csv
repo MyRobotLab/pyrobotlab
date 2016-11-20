@@ -1,0 +1,8 @@
+0,IS A <SET>MAMMAL</SET> A MAMMAL,*,*,Yes,ontology.aiml
+0,IS A * A MAMMAL,*,*,unknown,ontology.aiml
+0,IS A <SET>BIRD</SET> A BIRD,*,*,Yes,ontology.aiml
+0,IS A * A BIRD,*,*,unknown,ontology.aiml
+0,DOES A <SET>MAMMAL</SET> HAVE <SET>MAMMALFEATURE</SET>,*,*,Yes,ontology.aiml
+0,DOES A <SET>MAMMAL</SET> HAVE *,*,*,unknown,ontology.aiml
+0,DOES A <SET>BIRD</SET> HAVE <SET>BIRDFEATURE</SET>,*,*,Yes,ontology.aiml
+0,DOES A <SET>BIRD</SET> HAVE *,*,*,unknown,ontology.aiml

@@ -12,8 +12,8 @@ def heard(data):
 ######################################################################
 inmoov = Runtime.createAndStart("inmoov", "ProgramAB")
 # this starts a session between username "nolan" and the chat bot named
-# "alice2"  (AIML for the bots are in the develop/ProgramAB/bots directory.
-inmoov.startSession("nolan", "inmoovWebKit")
+# "marvin"  (AIML for the bots are in the develop/ProgramAB/bots directory.
+inmoov.startSession("nolan", "marvin")
 
 ######################################################################
 # create the speech recognition service
