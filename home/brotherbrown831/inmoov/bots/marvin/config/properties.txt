@@ -1,5 +1,5 @@
 url:http://www.alicebot.org
-name:MARVIN
+name:Marvin
 firstname:Artificial
 middlename:Internet
 lastname:Entity

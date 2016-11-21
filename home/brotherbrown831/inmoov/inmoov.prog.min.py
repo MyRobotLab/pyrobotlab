@@ -6,11 +6,17 @@ from java.lang import String
 ######################################################################
 def heard(data):
   print "Speech Recognition Data:", data
- 
+
+log = Runtime.createAndStart("Log","Log")  
 ######################################################################
 # Create ProgramAB chat bot
 ######################################################################
+#inmoovWebKit.setPath(aimlPath)
+
+aimlPath = "C:/github/pyrobotlab/home/brotherbrown831/inmoov"
+
 inmoov = Runtime.createAndStart("inmoov", "ProgramAB")
+inmoov.setPath(aimlPath)
 # this starts a session between username "nolan" and the chat bot named
 # "marvin"  (AIML for the bots are in the develop/ProgramAB/bots directory.
 inmoov.startSession("nolan", "marvin")
@@ -21,7 +27,7 @@ inmoov.startSession("nolan", "marvin")
 ######################################################################
 # Start the new WebGuiREST API for MRL
 webgui = Runtime.create("webgui","WebGui")
-webgui.autoStartBrowser(False)
+webgui.autoStartBrowser(True)
 webgui.startService()
 # Then start the browsers and show the WebkitSpeechRecognition service named i01.ear
 webgui.startBrowser("http://localhost:8888/#/service/webkitspeechrecognition")
