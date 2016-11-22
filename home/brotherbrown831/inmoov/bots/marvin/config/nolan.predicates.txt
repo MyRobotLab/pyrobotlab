@@ -17,30 +17,32 @@ nephew:who
 grandfather:who
 has:what
 state:which
-residence:where
+residence:oklahoma
 sister:who
 bestfriend:who
 likes:what
 favoritefood:what
 town:which
-wife:who
+wife:denise
 favoritecolor:what
 them:who
 it:what
 lastname:what
 longitute:which
+familiarpredicate:unknown
 girlfriend:who
-she:who
+she:denise
 birthplace:where
 dialnumber:unknown
 meta:set
 customname:unknown
 name:nolan
-topic:unknown
+topic:what
 favoriteactress:who
 brother:who
 daughter:who
-dog:who
+dog:what
+isfamiliarname:Where are you?
 status:what
 birthday:when
 favoritetvshow:what
@@ -51,7 +53,7 @@ boyfriend:who
 father:who
 latitude:which
 phonenumber:unknown
-isanumber:false
+isanumber:true
 we:who
 favoritesong:what
 hair:what
@@ -76,4 +78,4 @@ there:where
 baby:who
 location:where
 he:who
-age:how many
+age:33
