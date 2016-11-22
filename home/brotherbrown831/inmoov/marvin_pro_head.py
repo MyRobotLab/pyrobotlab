@@ -88,8 +88,8 @@ i01.startHead(leftPort)
 ##############
 # tweaking default settings of Head
 #i01.head.jaw.setMinMax(43,101)
-#i01.head.jaw.map(0,180,43,101)
-#i01.mouthControl.setmouth(43,95)
+i01.head.jaw.map(0,180,43,101)
+#i01.mouthControl.setmouth(10,170)
 #i01.head.jaw.setRest(43)
 # tweaking default settings of eyes
 #i01.head.eyeY.setMinMax(63,107)
