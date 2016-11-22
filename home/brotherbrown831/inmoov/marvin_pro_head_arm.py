@@ -105,3 +105,46 @@ i01.head.rothead.setMinMax(45,135)
 i01.head.rothead.map(0,180,45,135)
 i01.head.rothead.setRest(86)
 #################
+i01.startRightArm(leftPort)
+#################
+# tweak default RightArm
+#i01.rightArm.bicep.setMinMax(0,90)
+#i01.rightArm.rotate.setMinMax(46,160)
+#i01.rightArm.shoulder.setMinMax(30,100)
+#i01.rightArm.omoplate.setMinMax(10,75)
+
+
+#################
+# verbal commands
+ear = i01.ear
+
+ear.addCommand("attach everything", "i01", "attach")
+ear.addCommand("disconnect everything", "i01", "detach")
+ear.addCommand("attach right arm", "i01.rightArm", "attach")
+ear.addCommand("disconnect right arm", "i01.rightArm", "detach")
+ear.addCommand("rest", "python", "rest")
+ear.addCommand("arms front", i01.getName(), "armsFront")
+ear.addCommand("da vinci", i01.getName(), "daVinci")
+ear.addCommand("capture gesture", ear.getName(), "captureGesture")
+ear.addCommand("manual", ear.getName(), "lockOutAllGrammarExcept", "voice control")
+ear.addCommand("voice control", ear.getName(), "clearLock")
+
+# Confirmations and Negations are not supported yet in WebkitSpeechRecognition
+# So commands will execute immediatley
+ear.addComfirmations("yes","correct","ya","yeah", "yes please", "yes of course")
+ear.addNegations("no","wrong","nope","nah","no thank you", "no thanks")
+
+ear.startListening()
+
+def rest():
+  i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
+  i01.moveArm("right",5,90,30,10)
+
+
+
+
+
+
+
+
+
