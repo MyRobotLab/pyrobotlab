@@ -14,7 +14,7 @@
   </category>
 
 <category>
-    <pattern>HELLO 2</pattern>
+    <pattern>HELLO ROBOT 2</pattern>
     <template>
       <random>
         <li>Hello <get name="name"/>. </li>
