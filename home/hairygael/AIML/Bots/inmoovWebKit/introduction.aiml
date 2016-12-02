@@ -28,7 +28,7 @@
 
 
   <category>
-    <pattern>* BYE BYE ROBOT *</pattern>
+    <pattern>* BYE ROBOT *</pattern>
     <template><oob>
 			<mrl>
 				<service>python</service>
