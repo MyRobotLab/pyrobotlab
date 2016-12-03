@@ -1,0 +1,106 @@
+# -- coding: utf-8 --
+#Robot Name
+#please, there is no verifications ! don't use an other used robot name ( usefull to use Inmoov Messenger )
+myBotname=""
+
+DEBUG=0
+
+myAimlFolder="inmoovai" # dossier ou se trouvent vos aiml pas d'accent svp
+
+# LANGUAGE ( FR/EN )
+lang="FR"
+Voice="Margaux" # ryan in english
+
+
+# MouthControl / CONTROLE MACHOIRE LOGICIEL
+MRLmouthControl=0
+
+# LOADING PICTURES
+LoadingPicture=1
+
+#TYPE DE PC
+LATTEPANDA=0
+
+#ARDUINO CONFIG
+IsInmoovArduino=0
+BoardTypeLeft="atmega2560" # atmega168 | atmega328 | atmega328p | atmega2560 | atmega1280 | atmega32u4
+BoardTypeRight="atmega2560" # atmega168 | atmega328 | atmega328p | atmega2560 | atmega1280 | atmega32u4
+leftPort = "COM4"
+rightPort = "COM5"
+
+
+# NeoPixel # Mrl Neopixel service
+MrlNeopixel=0
+MrlNeopixelPin=49
+
+#ACTIVATOR # Arduino dédié neopixel / mouthcontrol / batterie / son
+Activator=0
+ActivatorPort="Serial1"
+ActivatorControler="left"
+BoardTypeActivator="atmega328" # atmega168 | atmega328 | atmega328p | atmega2560 | atmega1280 | atmega32u4
+defaultRingColor="bleu"
+WatchDog=0
+
+#PIN RELAIS POUR DETACHEMENT SERVOS
+LeftRelaisArm=53
+LeftRelaisHand=51
+RightRelaisArm=53
+RightRelaisHand=51
+
+# ARDUINO SLAVES / ARDUINO SECONDAIRES
+
+DiyServo1 = "COMX"
+DiyServo2 = "COMX"
+DiyServo3 = "COMX"
+DiyServo4 = "COMX"
+
+#Speed tweak / VITESSES
+DefaultSpeed=0.6
+RotHeadSpeed=0.6
+NeckSpeed=0.6
+PistonSideSpeed=0.6
+
+# Ligh if you have / led RGB with pins / LUMIERES
+IhaveLights = 0
+ROUGE=29
+VERT=28
+BLEU=30
+
+#tracking for testing
+tracking=0
+
+
+
+# API API API API
+
+# To fetch knowledge and send messages / inmoov messenger et apprentissage
+BotURL="http://myai.cloud/bot1.php"
+units="metric" # or : imperial
+
+# translator : https://datamarket.azure.com/dataset/bing/microsofttranslator 
+global Azure_client_id
+global Azure_client_secret
+Azure_client_id = 'XXX-XXX-44d9-9621-9a900a294983'
+Azure_client_secret = 'XXX/XXX2esBHiqZPVNUR4ZbIAPVntsPTlbCTf2s'
+
+# weather : http://openweathermap.org/appid 
+WeatherMapMeteoApi="XXX"
+Town="Paris"
+units="metric"
+ 
+#
+GoogleAPIa=''
+GoogleAPIb=''
+GoogleAPIc=''
+GoogleAPId=''
+ 
+param1=0
+param2=0
+param3=0
+param4=0
+param5=0
+param6=0
+param7=0
+param8=0
+param9=0
+param10=0
