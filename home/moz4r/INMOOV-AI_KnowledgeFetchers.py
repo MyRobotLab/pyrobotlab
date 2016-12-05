@@ -47,7 +47,7 @@ def askWiki(query,question,ReturnOk,ReturnNok): # retourne la description du suj
 	else:
 		word=query
 	wordSingular = word=Singularize(word) # on met au singulier pour double test
-	
+	print word
 	wikiAnswer = wdf.getDescription(word) # recupere la description su wikidata
 
 	answer = ( query + retour + wikiAnswer)

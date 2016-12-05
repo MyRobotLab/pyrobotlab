@@ -1,100 +1,50 @@
 # -- coding: utf-8 --
-#Robot Name
-#please, there is no verifications ! don't use an other used robot name ( usefull to use Inmoov Messenger )
-myBotname=""
-myAimlFolder="inmoovai" # dossier ou se trouvent vos aiml pas d'accent svp
-# LANGUAGE ( FR/EN )
-lang="FR"
-global Voice
-Voice="Margaux" # ryan in english
-# To fetch weather etc [ adresse du serveur fetcher meteo etc ...]
-BotURL="http://myai.cloud/bot1.php"
-units="metric" # or : imperial
-# ##
-#
-# ARDUINO CONFIG IF YOU DIDNT HAVE MOTORS set inmoov=0 / Si vous n'avez pas de servo : inmoov=0
-IsInmoovArduino=0
-MRLmouthControl=0
-BoardType="atmega2560" # atmega168 | atmega328 | atmega328p | atmega2560 | atmega1280 | atmega32u4
-leftPort = "COM4"
-rightPort = "COM5"
-# other things
-Neopixel = "COMX"
-DiyServo1 = "COMX"
-DiyServo2 = "COMX"
-DiyServo3 = "COMX"
-DiyServo4 = "COMX"
+# !!! IMPORTANT !!! Valeur des servos #
 
-
-
-# Ligh if you have / led RGB with pins
-IhaveLights = 0
-
-ROUGE=29
-VERT=28
-BLEU=30
-
-#tracking for testing
-tracking=0
-
-# !!! IMPORTANT !!! Valeur des servos
+# BOUCHE PIN HP Bluetooth Arduino NANO / CONTROLE MACHOIRE HARDWARE
+JawMIN=0 
+JawMAX=180
+JawInverted=0
 
 # PAUPIERES Mettre IhaveEyelids=2 (ligne 49) si deux servo pour clin d'oeil => si un servo mettre IhaveEyelids=1
-
-global PaupiereGaucheMIN
-global PaupiereGaucheMAX
-global PaupiereDroiteMIN
-global PaupiereDroiteMAX
-global IhaveEyelids
-
-IhaveEyelids=2 
+IhaveEyelids=0
 PaupiereArduino="right"
 PaupiereInverted=0
-PaupiereGaucheServoPin = 12 # PIN 12 (remplacement cou) Arduino A (Right) 
+PaupiereGaucheServoPin=12
+# PIN 12 (remplacement cou) Arduino A (Right) 
 PaupiereGaucheMIN=10
 PaupiereGaucheMAX=50
-PaupiereDroiteServoPin = 13 # PIN 13 (remplacement cou) Arduino A (Right)
+PaupiereDroiteServoPin=13
+# PIN 13 (remplacement cou) Arduino A (Right)
 PaupiereDroiteMIN=10
 PaupiereDroiteMAX=50
 
 # Rotation de la tête gauche/droite Arduino B (left)
-
 MinRotHead=0 
 MaxRotHead=180
 RotHeadInverted=0
 
 # COU gauche/droit PIN à définir 26 (ligne76) Arduino A (right)
-
 MinNeck=0 
 MaxNeck=180
 NeckInverted=0
 
 # COU gauche/droit PIN à définir sur 28 (emplacement vide à côté de inclinaison et rotation basin) (ligne76) Arduino B (left)
-
 MinHeadSide=0
 MaxHeadSide=180
 HeadSideInverted=0
 HeadSidePin=28
 HeadSideArduino="right"
 
-# BOUCHE PIN HP Bluetooth Arduino NANO
-
-JawMIN=0 
-JawMAX=180
-JawInverted=0
-
 # YEUX gauche/droite PIN 22 Arduino B (left)
-
 EyeXMIN=0 
 EyeXMAX=180
 
 # YEUX bas/haut PIN 24 Arduino B (left)
-
 EyeYMIN=0 
 EyeYMAX=180
 
 # BRAS GAUCHE 4 Servos PIN 8-9-10-11 Arduino B (left)
-
 BicepsLeftMIN=0 # PIN 8
 BicepsLeftMAX=180
 
@@ -104,11 +54,10 @@ RotateLeftMAX=180
 ShoulderLeftMIN=0 # PIN 10
 ShoulderLeftMAX=180
 
-OmoplateLeftMIN=0 # PIN 11
+OmoplateLeftMIN=10 # PIN 11
 OmoplateLeftMAX=180
 
 # MAIN & POIGNET LEFT PIN 2-3-4-5-6-7 Arduino B (left)
-
 ThumbLeftMIN=0 # PIN 2
 ThumbLeftMAX=180
 ThumbLeftInverted=0
@@ -129,9 +78,8 @@ WristLeftMIN=0 # PIN 7
 WristLeftMAX=180
 
 # BRAS DROIT 4 Servos PIN 8-9-10-11 Arduino A (right)
-
 BicepsRightMIN=0 # PIN 8
-BicepsRightMAX=180
+BicepsRightMAX=80
 
 RotateRightMIN=0 # PIN 9
 RotateRightMAX=180
@@ -139,11 +87,10 @@ RotateRightMAX=180
 ShoulderRightMIN=0 # PIN 10
 ShoulderRightMAX=180
 
-OmoplateRightMIN=0 # PIN 11
-OmoplateRightMAX=180
+OmoplateRightMIN=10 # PIN 11
+OmoplateRightMAX=80
 
 # MAIN & POIGNET RIGHT PIN 2-3-4-5-6-7 Arduino A (right)
-
 ThumbRightMIN=0 # PIN 2
 ThumbRightMAX=180
 ThumbRightInverted=0
@@ -164,40 +111,23 @@ WristRightMIN=0 # PIN7
 WristRightMAX=180
 
 # BASIN INCLINAISON gauche/droite PIN 27 Arduino B (left)
-
 TorsoArduino="left"
 TorsoTopMin=0
 TorsoTopMax=180
 
 # BASIN 
-
 TorsoMidMin=0
 TorsoMidMax=180
 
 # BASIN ROTATION PIN 30 Arduino B (left)
-
 TorsoBottomMin=0
 TorsoBottomMax=180
 
-# translator : https://datamarket.azure.com/dataset/bing/microsofttranslator 
-global Azure_client_id
-global Azure_client_secret
-Azure_client_id = 'X-X-X-X-X'
-Azure_client_secret = 'XXXXX'
- 
-#
-GoogleAPIa=''
-GoogleAPIb=''
-GoogleAPIc=''
-GoogleAPId=''
- 
-param1=0
-param2=0
-param3=0
-param4=0
-param5=0
-param6=0
-param7=0
-param8=0
-param9=0
-param10=0
+HeadSideRest=90
+RotHeadRest=90
+NeckRest=90
+TorsoTopRest=90
+TorsoMidRes=90
+TorsoBottomRest=90
+EyeXRest=90
+EyeYRest=90
