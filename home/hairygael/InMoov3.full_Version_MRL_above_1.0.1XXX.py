@@ -1,31 +1,42 @@
 #file : InMoov3.full.byGael.Langevin.1.py
 
-
 # this script is provided as a basic guide
 # most parts can be run by uncommenting them
 # InMoov now can be started in modular pieces
+# It uses WebkitSpeechRecognition, so you need to use Chrome as your default browser for this script to work
 import random
 import threading
 import itertools
+# Change to the port that you use
 leftPort = "COM7"
 rightPort = "COM6"
+headPort = leftPort
 
-# mapping for the jaw servos
-jawMin = 10
-jawMax = 40
-jawRest = 20
-
+# Start the webgui service without starting the browser
 # InMoov3 uses webgui
-webgui = Runtime.createAndStart("webgui", "WebGui")
- 
+webgui = Runtime.create("WebGui","WebGui")
+webgui.autoStartBrowser(False)
+webgui.startService()
+# Then start the browsers and show the WebkitSpeechRecognition service named i01.ear
+webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
+
+# As an alternative you can use the line below to show all services in the browser. In that case you should comment out all lines above that starts with webgui. 
+# webgui = Runtime.createAndStart("webgui","WebGui")
+
+# starting parts
 i01 = Runtime.createAndStart("i01", "InMoov")
-#inmoov = Runtime.createAndStart("alice", "ProgramAB") 
-#inmoov.startSession() 
+i01.startEar()
+
+i01.startMouth()
+mouth = i01.mouth
+i01.startMouthControl(leftPort)
+#to tweak the default voice
+i01.mouth.setVoice("Ryan")
+##############################
 directionServo = Runtime.start("directionServo","Servo")
 forwardServo = Runtime.start("forwardServo","Servo") 
 right = Runtime.start("i01.right", "Arduino")
 right.connect(rightPort)
-#cleverbot = Runtime.createAndStart("cleverbot","CleverBot")
 
 # starts everything
 ##i01.startAll(leftPort, rightPort)
@@ -34,21 +45,13 @@ forwardServo.attach(right, 13)
 #directionServo.attach("COM7", 12)
 #forwardServo.attach("COM7", 13)
 # starting parts
-i01.startMouth()
-mouth = i01.mouth
-i01.startMouthControl(leftPort)
-#to tweak the default voice
-#i01.mouth.setVoice("Ryan")
-
-
-
 #i01.startHead(leftPort)
 ##############
 # tweaking default settings of jaw
-i01.head.jaw.setMinMax(jawMin,jawMax)
-#i01.head.jaw.map(0,180,10,35)
-i01.mouthControl.setmouth(65,90)
-i01.head.jaw.setRest(jawRest)
+i01.head.jaw.setMinMax(10,35)
+i01.head.jaw.map(0,180,10,35)
+i01.head.jaw.setRest(10)
+i01.mouthControl.setmouth(10,35)
 # tweaking default settings of eyes
 i01.head.eyeY.setMinMax(0,180)
 i01.head.eyeY.map(0,180,70,110)
@@ -63,9 +66,7 @@ i01.head.rothead.setMinMax(0,180)
 i01.head.rothead.map(0,180,30,150)
 i01.head.rothead.setRest(86)
 ###################
-eyeXPin = 22
-eyeYPin = 24
-i01.startEyesTracking(leftPort, eyeXPin, eyeYPin)
+i01.startEyesTracking(leftPort)
 i01.startHeadTracking(leftPort)
 ##############
 i01.startEar()
@@ -123,7 +124,7 @@ i01.startRightArm(rightPort)
 
 ################
 
-# starting part with a reference, with a reference
+# starting part with a reference,
 # you can interact further
 #opencv = i01.startOpenCV()
 #opencv.startCapture()
@@ -197,15 +198,16 @@ human = 0
 
 
 #############################################################################################
-# i01.systemCheck()
-
-#i01.mouth.speakBlocking(cleverbot.chat("hi"))
-#i01.mouth.speakBlocking(cleverbot.chat("how are you"))
  
-# verbal commands
-ear = i01.ear
+# the "ear" of the inmoov TODO: replace this with just base inmoov ear?
+ear = Runtime.createAndStart("i01.ear", "WebkitSpeechRecognition")
+ear.addListener("publishText", python.name, "heard");
 ear.addMouth(mouth)
- 
+############################################################
+def heard(data):
+  print "Speech Recognition Data:"+str(data)
+######################################################################
+# verbal commands
 ear.addCommand("rest", "python", "rest")
 
 ear.addCommand("attach head", "i01.head", "attach")
