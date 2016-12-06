@@ -66,7 +66,7 @@ i01.head.rothead.setMinMax(0,180)
 i01.head.rothead.map(0,180,30,150)
 i01.head.rothead.setRest(86)
 ###################
-i01.startEyesTracking(leftPort)
+i01.startEyesTracking(leftPort,22,24)
 i01.startHeadTracking(leftPort)
 ##############
 i01.startEar()
