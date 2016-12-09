@@ -42,8 +42,10 @@ aimlUserName = "YourName"
 #############################################################
 # LANGUAGE ( FR/EN )
 lang="EN"
-global Voice
-Voice="Ryan" # Bruno in French
+Voice="cmu-stl-hsmm" # Default for MarySpeech
+Voice="cmu-bdl" #Male US voice.You need to add the necessary file.jar to myrobotlab.1.0.XXXX/library/jar
+#https://github.com/MyRobotLab/pyrobotlab/blob/ff6e2cef4d0642e47ee15e353ef934ac6701e713/home/hairygael/voice-cmu-bdl-5.2.jar
+#Voice="upmc-pierre-hsmm" #French voice
 voiceType = Voice
 
 ##Create your free Id and key https://datamarket.azure.com/dataset/bing/microsofttranslator
@@ -89,10 +91,21 @@ htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 
 ######################################################################
 # mouth service, speech synthesis
-mouth = Runtime.createAndStart("i01.mouth", "AcapelaSpeech")
+mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
 #mouth.setVoice(botVoice)
 mouth.setVoice(voiceType)
-mouth.setLanguage(lang)
+#Volume(amount=2.0)
+#TractScaler(amount=1.4)
+#F0Scale(f0Add=2.0)
+#F0Add(f0Add=60.0)
+#Robot(amount=0.0)
+#Rate(amount=3.75)
+#Whisper(amount=100.0)
+#Stadium(amount=100.0)
+#Chorus(delay=1.466;amp1=0.54)
+#FIRFilter(type=3;fc1=500.0;fc2=2)
+mouth.setAudioEffects("Volume(amount=1.75) + TractScaler(amount=0.95) + F0Scale(f0Add=3.0)")
+#mouth.setLanguage(lang)
 
 ######################################################################
 # the "ear" of the inmoov TODO: replace this with just base inmoov ear?
