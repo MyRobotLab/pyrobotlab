@@ -27,7 +27,7 @@ i01.startEar()
 # starting parts
 i01.startMouth()
 #to tweak the default voice
-i01.mouth.setVoice("Ryan")
+i01.mouth.setVoice("cmu-stl-hsmm")
 ##############
 
 # verbal commands
