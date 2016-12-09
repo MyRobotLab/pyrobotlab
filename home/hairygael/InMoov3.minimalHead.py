@@ -17,17 +17,20 @@ webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
 # webgui = Runtime.createAndStart("webgui","WebGui")
 
 # Change to the port that you use
-leftPort = "COM20"
+rightPort = "COM20"
 
+#to tweak the default voice
+Voice="cmu-slt-hsmm" # Default female for MarySpeech 
+#Voice="cmu-bdl" #Male US voice.You need to add the necessary file.jar to myrobotlab.1.0.XXXX/library/jar
+#https://github.com/MyRobotLab/pyrobotlab/blob/ff6e2cef4d0642e47ee15e353ef934ac6701e713/home/hairygael/voice-cmu-bdl-5.2.jar
+voiceType = Voice
+mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
+mouth.setVoice(voiceType)
+##############
+# starting parts
 i01 = Runtime.createAndStart("i01", "InMoov")
 i01.startEar()
-
-# starting parts
 i01.startMouth()
-mouth = i01.mouth
-i01.startMouthControl(leftPort)
-#to tweak the default voice
-i01.mouth.setVoice("Ryan")
 ##############
 #i01.startHead(leftPort)
 ##############
