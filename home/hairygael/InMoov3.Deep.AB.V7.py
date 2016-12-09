@@ -42,8 +42,8 @@ aimlUserName = "YourName"
 #############################################################
 # LANGUAGE ( FR/EN )
 lang="EN"
-Voice="cmu-stl-hsmm" # Default for MarySpeech
-Voice="cmu-bdl" #Male US voice.You need to add the necessary file.jar to myrobotlab.1.0.XXXX/library/jar
+Voice="cmu-stl-hsmm" # Default female for MarySpeech 
+#Voice="cmu-bdl" #Male US voice.You need to add the necessary file.jar to myrobotlab.1.0.XXXX/library/jar
 #https://github.com/MyRobotLab/pyrobotlab/blob/ff6e2cef4d0642e47ee15e353ef934ac6701e713/home/hairygael/voice-cmu-bdl-5.2.jar
 #Voice="upmc-pierre-hsmm" #French voice
 voiceType = Voice
