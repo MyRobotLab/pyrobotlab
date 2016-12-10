@@ -1,0 +1,23 @@
+ik = Runtime.createAndStart("ik","InverseKinematics3D");
+
+def startIK3D():
+  ik.setComputeMethodGeneticAlgorythm()
+  ik.setNewDHRobotArm()
+  ik.setDHLink(i01.torso.midStom,113,90,0,-90)
+  ik.setDHLink(i01.torso.topStom,0,90+65.6,346,0)
+  ik.setDHLink(i01.rightArm.omoplate,0,-5.6+24.4+180,55,-90)
+  ik.setDHLink(i01.rightArm.shoulder,77,-20+90,0,90)
+  ik.setDHLink(i01.rightArm.rotate,284,90,40,90)
+  ik.setDHLink(i01.rightArm.bicep,0,-7-90+24.4+180,300,-90)
+  ik.setDHLink(i01.rightHand.wrist,0,-90,200,0)
+  print ik.currentPosition()
+  ik.clearObject()
+  ik.addObject(0.0, 0.0, 0.0, 0.0, 0.0, -150.0, "base", 150.0)
+  ik.addObject("i01.torso.midStom", 150.0)
+  ik.addObject("i01.torso.topStom", 10.0)
+  ik.addObject("i01.rightArm.omoplate", 10.0)
+  ik.addObject("i01.rightArm.shoulder", 50.0)
+  ik.addObject("i01.rightArm.rotate", 50.0)
+  ik.addObject("i01.rightArm.bicep", 60.0)
+  ik.addObject("i01.rightHand.wrist", 70.0)
+  #ik.addObject(-1000.0, 400, 0, 1000, 300, 00, "obstacle",40)

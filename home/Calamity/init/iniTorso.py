@@ -1,0 +1,16 @@
+def startTorso():
+  i01.startTorso(leftPort)
+  i01.torso.topStom.map(80,100,92,118)
+  #i01.torso.topStom.map(50,130,90,120)
+  #i01.torso.topStom.setMinMax(90,120)
+  i01.torso.topStom.setRest(90)
+  i01.torso.midStom.map(15,165,38,148)
+  i01.torso.midStom.setInverted(True)
+	#i01.torso.midStom.setMinMax(38,150)
+  i01.torso.midStom.setRest(90)
+  i01.torso.topStom.setVelocity(13)
+  i01.torso.midStom.setVelocity(13)
+  i01.torso.midStom.setMaxVelocity(13)
+  i01.torso.topStom.setMaxVelocity(13)
+  i01.torso.rest()
+  

@@ -1,0 +1,38 @@
+def iniPlayDrums():
+  ik.setNewDHRobotArm()
+  i01.rightHand.majeure.map(89,90,89,90)
+  ik.setDHLink(i01.torso.midStom,113,90,0,-90)
+  ik.setDHLink(i01.torso.topStom,0,90+65.6,346,0)
+  ik.setDHLink(i01.rightArm.omoplate,0,-5.6+24.4+180,55,-90)
+  ik.setDHLink(i01.rightArm.shoulder,77,-20+90,0,90)
+  ik.setDHLink(i01.rightArm.rotate,284,90,40,90)
+  ik.setDHLink(i01.rightArm.bicep,0,-7+24.4+90,300,90)
+  ik.setDHLink(i01.rightHand.wrist,0,-90,100,-90)
+  ik.setDHLink(i01.rightHand.majeure,0,0,300,0)
+  ik.clearObject()
+  ik.addObject(0.0, 0.0, 0.0, 0.0, 0.0, -150.0, "base", 150.0)
+  ik.addObject("i01.torso.midStom", 150.0)
+  ik.addObject("i01.torso.topStom", 10.0)
+  ik.addObject("i01.rightArm.omoplate", 10.0)
+  ik.addObject("i01.rightArm.shoulder", 50.0)
+  ik.addObject("i01.rightArm.rotate", 50.0)
+  ik.addObject("i01.rightArm.bicep", 60.0)
+  ik.addObject("i01.rightHand.wrist", 70.0)
+  ik.addObject("i01.rightHand.majeure",10.0)
+  ik.addObject(360,700,117,360, 720,97,"cymbal",200)
+  ik.addObject(90,700,-180,300,700,-181,"bell", 25)
+  ik.addObject(-260,800,-70,-260,880,-250,"tom",150)
+  
+  ik.setComputeMethodGeneticAlgorythm()
+  ik.setGeneticComputeSimulation(False)
+  
+  #ik.moveTo(280,190,-345)
+  i01.rest()
+  i01.handClose("right")
+  i01.rightHand.majeure.moveTo(90)
+  
+def stopPlayingDrums():
+  i01.rightHand.majeure.map(0,180,0,180)
+  i01.rightHand.majeure.setMinMax(35,130)
+  startIK3D()
+
