@@ -6,7 +6,7 @@ mouth = i01.startMouth()
 arduino = Runtime.createAndStart("i01.right", "Arduino")
 arduino.connect(port)
 arduino.addListener("publishPin", python.getName(), "input")
-arduino.setSampleRate(8000)
+# arduino.setSampleRate(8000)
 arduino.digitalReadPollStart(12)
 #head.setSpeed(0.5, 0.5, 0.5, 0.5, 0.5)
 

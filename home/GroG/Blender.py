@@ -406,10 +406,10 @@ class Arduino:
   # {publishVersion Integer} 
   PUBLISH_VERSION = 3
 
-  # {analogReadPollingStart Integer} 
+  # {arduino.enablePin Integer} 
   ANALOG_READ_POLLING_START = 4
 
-  # {analogReadPollingStop Integer} 
+  # {arduino.disablePin Integer} 
   ANALOG_READ_POLLING_STOP = 5
 
   # {analogWrite Integer Integer} 

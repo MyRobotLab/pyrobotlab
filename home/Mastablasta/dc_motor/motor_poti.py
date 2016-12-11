@@ -5,9 +5,9 @@ m1 = Runtime.createAndStart("m1","Motor")
 arduino.motorAttach("m1", "TYPE_LPWM_RPWM", 5, 6)
 
 readAnalogPin = 0
-arduino.setSampleRate(9600)
+# arduino.setSampleRate(9600)
 arduino.addListener("publishPin", "python", "publishPin")
-arduino.analogReadPollingStart(readAnalogPin)
+arduino.arduino.enablePin(readAnalogPin)
 
 def publishPin(pin):
   print pin.pin, pin.value

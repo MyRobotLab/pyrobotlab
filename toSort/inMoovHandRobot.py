@@ -69,10 +69,10 @@ arduino.setBoard("atmega1280") # atmega328 | atmega168 | mega2560 | atmega1280 e
 arduino.connect("COM7",57600,8,1,0)
 sleep(2)
 arduino.pinMode(17,0)
-arduino.analogReadPollingStart(17)
+arduino.arduino.enablePin(17)
 sleep(1)
 arduino.pinMode(17,0)
-arduino.analogReadPollingStop(17)
+arduino.arduino.disablePin(17)
  
 # attach servos
 arduino.servoAttach("thumb",2)

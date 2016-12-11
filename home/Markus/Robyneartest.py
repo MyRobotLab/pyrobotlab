@@ -63,8 +63,8 @@ rightstedy = 600
 leftval = leftfast - leftstedy
 rightval = rightfast - rightstedy
 
-left.analogReadPollingStart(pin0)
-left.analogReadPollingStart(pin1)
+left.arduino.enablePin(pin0)
+left.arduino.enablePin(pin1)
 
 
 

@@ -7,7 +7,7 @@ readAnalogPin = 1
 readDigitalPin = 7
 
 # make friendly sample rate
-arduino.setSampleRate(8000)
+# arduino.setSampleRate(8000)
 
 # add call back route
 arduino.addListener("publishPin", "python", "publishPin")
@@ -17,12 +17,12 @@ def publishPin(pin):
   print pin.pin, pin.value, pin.type, pin.source
 
 # get data from analog pin for 5 seconds
-arduino.analogReadPollingStart(readAnalogPin)
+arduino.arduino.enablePin(readAnalogPin)
 sleep(5)
-arduino.analogReadPollingStop(readAnalogPin)  
+arduino.arduino.disablePin(readAnalogPin)  
 
 # get data from digital pin for 5 seconds
-arduino.digitalReadPollingStart(readDigitalPin)
+arduino.enablePin(readDigitalPin)
 sleep(5)
 arduino.digitalReadPollingStop(readDigitalPin)  
 

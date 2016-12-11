@@ -28,11 +28,11 @@ servo2.attach("arduino", 12)
 servo1.setSpeed(0.8)
 servo2.setSpeed(0.8)
 
-arduino.analogReadPollingStart(pin0)
-arduino.analogReadPollingStart(pin1)
+arduino.arduino.enablePin(pin0)
+arduino.arduino.enablePin(pin1)
 
 # make friendly sample rate
-arduino.setSampleRate(1000)
+# arduino.setSampleRate(1000)
 
 arduino.addListener("publishPin", "python", "publishPin")
 

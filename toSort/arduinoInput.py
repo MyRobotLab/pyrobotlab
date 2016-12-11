@@ -30,7 +30,7 @@ arduino.publishState()
 
 # start the analog pin sample to display
 # in the oscope
-arduino.analogReadPollingStart(readAnalogPin)
+arduino.arduino.enablePin(readAnalogPin)
 
 # change the pinMode of digital pin 13
 arduino.pinMode(readDigitalPin, Arduino.OUTPUT)
@@ -41,4 +41,4 @@ arduino.digitalReadPollStart(readDigitalPin)
 # turn off the trace
 # arduino.digitalReadPollStop(readDigitalPin)
 # turn off the analog sampling
-# arduino.analogReadPollingStop(readAnalogPin)
+# arduino.arduino.disablePin(readAnalogPin)

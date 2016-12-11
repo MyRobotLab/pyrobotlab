@@ -54,9 +54,9 @@ arduino.connect(comPort, 57600, 8, 1, 0)
 sleep(3) # sleep because even after initialization the serial port still takes time to be ready
 arduino.pinMode(16, Arduino.INPUT)
 # arduino.digitalReadPollingStop(7)
-arduino.analogReadPollingStart(16) # A2
+arduino.arduino.enablePin(16) # A2
 sleep(1)
-arduino.analogReadPollingStop(16)
+arduino.arduino.disablePin(16)
 
 # //////////////SERVOS////////////////////////////////////////////
 from org.myrobotlab.service import Servo

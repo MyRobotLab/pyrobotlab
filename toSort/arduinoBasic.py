@@ -18,10 +18,10 @@ arduino.publishState()
 
 # start the analog pin sample to display
 # in the oscope
-arduino.analogReadPollingStart(17)
+arduino.arduino.enablePin(17)
 
 # sample the data in the oscope for 10 seconds
 sleep(10) 
 
 # turn off the sampling
-arduino.analogReadPollingStop(17)
+arduino.arduino.disablePin(17)

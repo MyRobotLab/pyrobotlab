@@ -25,5 +25,5 @@ arduino.publishState()
 # in the oscope
 
 # decrease the sample rate so queues won't overrun
-arduino.setSampleRate(8000)
-arduino.analogReadPollingStart(readAnalogPin)
+# arduino.setSampleRate(8000)
+arduino.arduino.enablePin(readAnalogPin)

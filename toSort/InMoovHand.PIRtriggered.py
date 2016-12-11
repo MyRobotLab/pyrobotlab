@@ -42,10 +42,10 @@ ear.startListening()
 
 
 
-rightHand.arduino.setSampleRate(8000)
+rightHand.# arduino.setSampleRate(8000)
  
 #start polling data from the digital pin
-rightHand.arduino.digitalReadPollingStart(readDigitalPin)
+rightHand.arduino.enablePin(readDigitalPin)
 #add python as listener of the arduino service, each time arduino publish the value of the pin
 rightHand.arduino.addListener("publishPin", "python", "publishPin")
  

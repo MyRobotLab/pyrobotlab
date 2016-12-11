@@ -42,7 +42,7 @@ servo.attach("arduino", 8)
 arduino.addListener("publishPin", "python", "pinData")
 
 # start reading the value from analog pin 0.
-arduino.analogReadPollingStart(0)
+arduino.arduino.enablePin(0)
 
 # move the servo to center position  (here, I used the GUI and measured 550)
 # this computes the center value

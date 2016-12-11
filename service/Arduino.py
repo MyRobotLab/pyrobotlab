@@ -31,7 +31,7 @@ for x in range(0, 10):
 # pin # = 13 + analog pin#  
 # (in this case pin 16 is analog pin 3)
 arduino.pinMode(16,0)
-arduino.analogReadPollingStart(16)
+arduino.arduino.enablePin(16)
 sleep(2) # read the analog value of pin 3 for 2 seconds
 arduino.pinMode(16,0)
-arduino.analogReadPollingStop(16) # stop polling
+arduino.arduino.disablePin(16) # stop polling

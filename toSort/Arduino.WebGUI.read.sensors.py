@@ -30,13 +30,13 @@ print arduino.getVersion()
 
 arduino.softReset() # reset to good known state
 
-arduino.setSampleRate(5000) # 1 - fast 32K - slow :P
+# arduino.setSampleRate(5000) # 1 - fast 32K - slow :P
 
 # start the analog pin sample to display
 # in the oscope
-arduino.analogReadPollingStart(soildMoisture)
-arduino.analogReadPollingStart(tempHumidity)
-arduino.analogReadPollingStart(leftLight)
-arduino.analogReadPollingStart(rightLight)
-arduino.analogReadPollingStart(airQuality)
+arduino.arduino.enablePin(soildMoisture)
+arduino.arduino.enablePin(tempHumidity)
+arduino.arduino.enablePin(leftLight)
+arduino.arduino.enablePin(rightLight)
+arduino.arduino.enablePin(airQuality)
 arduino.save()

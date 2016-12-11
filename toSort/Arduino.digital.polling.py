@@ -4,7 +4,7 @@ arduino = Runtime.createAndStart("arduino","Arduino")
 # connect the arduino to the appropriate port
 arduino.connect("COM12")
 # set the sampling rate 1 = fastest - 32767 = slowest
-arduino.setSampleRate(8000)
+# arduino.setSampleRate(8000)
 # begin polling a digital line - sets mode to input
 # and reads at sample rate modulus 
 arduino.digitalReadPollStart(8)

@@ -15,7 +15,7 @@ arduino = Runtime.createAndStart("arduino", "Arduino")
 arduino.connect(Port)
 readDigitalPin = 4
 arduino.addListener("publishPin", "python", "input")
-arduino.setSampleRate(8000)
+# arduino.setSampleRate(8000)
 i01.startPIR(Port,4)
 
 # note parallax pir is active high, radio shack pir is active low

@@ -9,11 +9,11 @@ pin1 = None
 
 Ana0 = 10
 
-arduino.analogReadPollingStart(Pin0)
-arduino.analogReadPollingStart(Pin1)
+arduino.arduino.enablePin(Pin0)
+arduino.arduino.enablePin(Pin1)
 
 # make friendly sample rate
-arduino.setSampleRate(8000)
+# arduino.setSampleRate(8000)
 
 arduino.addListener("publishPin", "python", "publishPin")
 

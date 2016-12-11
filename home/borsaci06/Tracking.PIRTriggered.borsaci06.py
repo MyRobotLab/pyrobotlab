@@ -34,10 +34,10 @@ tracker.connect(port)
 
 arduino = tracker.getArduino()
 
-arduino.setSampleRate(8000)
+# arduino.setSampleRate(8000)
 
 #start polling data from the digital pin
-arduino.digitalReadPollingStart(readDigitalPin)
+arduino.enablePin(readDigitalPin)
 #add python as listener of the arduino service, each time arduino publish the value of the pin
 arduino.addListener("publishPin", "python", "publishPin")
 

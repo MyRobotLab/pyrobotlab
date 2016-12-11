@@ -1,10 +1,10 @@
 arduino = Runtime.createAndStart("arduino","Arduino")
 arduino.connect("COM3")
-arduino.setSampleRate(30000)
+# arduino.setSampleRate(30000)
 
 
 readAnalogPin = 0
-arduino.analogReadPollingStart(readAnalogPin)
+arduino.arduino.enablePin(readAnalogPin)
 arduino.addListener("publishPin", "python", "input")
 
 

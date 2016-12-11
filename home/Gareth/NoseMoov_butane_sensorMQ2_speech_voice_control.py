@@ -17,7 +17,7 @@ arduino.connect("COM4")
  
 readAnalogPin = 5  # butane sensor MQ2 is wired to analog 5
 
-arduino.setSampleRate(8000)   # make friendly sample rate
+# arduino.setSampleRate(8000)   # make friendly sample rate
 
 butain=0    # butane level variable
 global butane
@@ -47,7 +47,7 @@ def publishPin(pin):
  print butane
  
 # get data from analog pin for 5 seconds
-arduino.analogReadPollingStart(readAnalogPin)
+arduino.arduino.enablePin(readAnalogPin)
 sleep(200)
-arduino.analogReadPollingStop(readAnalogPin) 
+arduino.arduino.disablePin(readAnalogPin) 
 ear.attach("mouth") 
