@@ -2,7 +2,7 @@ arduino = Runtime.createAndStart("arduino","Arduino")
 arduino.setBoardMega()
 arduino.connect("COM7")
 arduino1 = Runtime.createAndStart("arduino1","Arduino")
-arduino1.setBoardAtmega328()
+arduino1.setBoardNano()
  
 #connecting arduino1 to arduino Serial1 instead to a COMX
 arduino1.connect(arduino,"Serial1") 
