@@ -1,5 +1,10 @@
 #file : InMoov3.hand+arm+rockpaperscissors.py
 
+from java.lang import String
+import threading
+import time
+import random
+
 # this will run with versions of MRL above 1695
 # a very minimal script for InMoov
 # although this script is very short you can still
@@ -23,6 +28,12 @@ human = 0
 # Change to the port that you use
 rightPort = "COM7"
 
+ear = Runtime.createAndStart("i01.ear", "WebkitSpeechRecognition")
+ear.addListener("publishText", python.name, "heard");
+######################################################################
+def heard(data):
+  print "Speech Recognition Data:"+str(data)
+######################################################################    
 #to tweak the default voice
 Voice="cmu-slt-hsmm" # Default female for MarySpeech 
 #Voice="cmu-bdl" #Male US voice.You need to add the necessary file.jar to myrobotlab.1.0.XXXX/library/jar
@@ -68,6 +79,7 @@ ear.addCommand("capture gesture", ear.getName(), "captureGesture")
 ear.addCommand("manual", ear.getName(), "lockOutAllGrammarExcept", "voice control")
 ear.addCommand("voice control", ear.getName(), "clearLock")
 ear.addCommand("rock paper scissors", "python", "rockpaperscissors")
+ear.addCommand("play", "python", "rockpaperscissors2")
 ear.addCommand("ready", "python", "ready")
 ear.addCommand("rock", "python", "rock")
 ear.addCommand("paper", "python", "paper")
@@ -77,32 +89,42 @@ ear.addCommand("scissors", "python", "scissors")
 # So commands will execute immediatley
 ear.addComfirmations("yes","correct","yeah","ya")
 ear.addNegations("no","wrong","nope","nah")
+ear.addListener("recognized", "python", "heard")
 
-ear.startListening(ear.startListening("yes | no | i have rock | i have paper | i have scissors")
+#Direct verbal commands("yes | no | i have rock | i have paper | i have scissors")
+ear.startListening()
 
 
 def handopen():
   i01.moveHand("right",0,0,0,0,0)
   i01.mouth.speak("ok I open my hand")
-
+  
 def handclose():
-  i01.moveHand("right",180,180,180,180,180)
-  i01.mouth.speak("a nice and wide open hand that is")
+   i01.moveHand("right",180,180,180,180,180)
+   i01.mouth.speak("a nice and wide open hand that is")
+
+
+def fullspeed():
+  i01.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+  i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
 
 def rockpaperscissors():
     fullspeed()
     i01.mouth.speak("lets play first to 3 points win")
     sleep(4)
     rockpaperscissors2()
+   
 
 def rockpaperscissors2():
     x = (random.randint(1, 3))
+    global inmoov
+    global human
     if x == 1:
         ready()
         sleep(2)
         rock()
         sleep(2)
-        data = msg_i01_ear_recognized.data[0]
+        data = msg_i01_ear_recognized.data[0]  
         if (data == "i have rock"):
             x = (random.randint(1, 3))
             if x == 1:
@@ -120,7 +142,6 @@ def rockpaperscissors2():
                 i01.mouth.speak("your point")
             if x == 3:
                 i01.mouth.speak("you got this one")
-            global human
             human += 1
             sleep(1)
         if (data == "i have scissors"):
@@ -131,17 +152,16 @@ def rockpaperscissors2():
                 i01.mouth.speak("going fine")
             if x == 3:
                 i01.mouth.speak("rock beats scissors")
-            global inmoov
             inmoov += 1
             sleep(1)
-       
-           
+
+
     if x == 2:
         ready()
         sleep(2)
         paper()
         sleep(2)
-        data = msg_i01_ear_recognized.data[0]
+        data = msg_i01_ear_recognized.data[0]  
         if (data == "i have rock"):
             x = (random.randint(1, 3))
             if x == 1:
@@ -150,7 +170,6 @@ def rockpaperscissors2():
                 i01.mouth.speak("paper beats rock")
             if x == 3:
                 i01.mouth.speak("my point")
-            global inmoov
             inmoov += 1
             sleep(1)
         if (data == "i have paper"):
@@ -171,16 +190,15 @@ def rockpaperscissors2():
                 i01.mouth.speak("this is not good for me")
             if x == 3:
                 i01.mouth.speak("your point")
-            global human
             human += 1
             sleep(1)
-        
+
     if x == 3:
         ready()
         sleep(2)
         scissors()
         sleep(2)
-        data = msg_i01_ear_recognized.data[0]
+        data = msg_i01_ear_recognized.data[0]  
         if (data == "i have rock"):
             x = (random.randint(1, 3))
             if x == 1:
@@ -189,7 +207,6 @@ def rockpaperscissors2():
                 i01.mouth.speak("rock beats scissors")
             if x == 3:
                 i01.mouth.speak("i feel generous today")
-            global human
             human += 1
             sleep(1)
         if (data == "i have paper"):
@@ -200,7 +217,6 @@ def rockpaperscissors2():
                 i01.mouth.speak("my point")
             if x == 3:
                 i01.mouth.speak("good")
-            global inmoov
             inmoov += 1
             sleep(1)
         if (data == "i have scissors"):
@@ -215,13 +231,13 @@ def rockpaperscissors2():
     if inmoov == 3:
         stoprockpaperscissors()
         sleep(1)
-    elif human == 3:                       # changed from if to  elif              
+    elif human == 3:                       # changed from if to  elif
         stoprockpaperscissors()
         sleep(1)
-    elif inmoov <= 2:                      # changed from if to  elif 
+    elif inmoov <= 2:                      # changed from if to  elif
         rockpaperscissors2()
-    elif human <= 2:                       # changed from if to  elif 
-        rockpaperscissors2()   
+    elif human <= 2:                       # changed from if to  elif
+        rockpaperscissors2()
   
 def stoprockpaperscissors():
     rest()
@@ -244,7 +260,7 @@ def stoprockpaperscissors():
     sleep(2)
     i01.mouth.speak("do you want to play again")
     sleep(10)
-    data = msg_i01_ear_recognized.data[0]
+    data = msg_i01_ear_recognized.data[0]  
     if (data == "yes let's play again"):
         rockpaperscissors2()
     elif (data == "yes"):                                                                              # changed from if to  elif
@@ -257,8 +273,6 @@ def stoprockpaperscissors():
         i01.mouth.speak("maybe some other time")
         sleep(4)
         power_down()
-    ##i01.mouth.speak("ok i'll find something else to do then")
-    ##lookaroundyou()
     
 
 def ready():
@@ -410,4 +424,5 @@ def scissors():
     if x == 1:
         i01.mouth.speakBlocking("i have scissors what do you have")
     if x == 2:
-        i01.mouth.speakBlocking("what do you have")      
+        i01.mouth.speakBlocking("what do you have")
+            
