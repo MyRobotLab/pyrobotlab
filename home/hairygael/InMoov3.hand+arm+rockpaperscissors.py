@@ -101,7 +101,7 @@ def handopen():
   
 def handclose():
    i01.moveHand("right",180,180,180,180,180)
-   i01.mouth.speak("a nice and wide open hand that is")
+    i01.mouth.speak("a nice and wide open hand that is")
 
 
 def fullspeed():
@@ -113,8 +113,7 @@ def rockpaperscissors():
     i01.mouth.speak("lets play first to 3 points win")
     sleep(4)
     rockpaperscissors2()
-   
-
+    
 def rockpaperscissors2():
     x = (random.randint(1, 3))
     global inmoov
@@ -154,8 +153,6 @@ def rockpaperscissors2():
                 i01.mouth.speak("rock beats scissors")
             inmoov += 1
             sleep(1)
-
-
     if x == 2:
         ready()
         sleep(2)
@@ -192,7 +189,6 @@ def rockpaperscissors2():
                 i01.mouth.speak("your point")
             human += 1
             sleep(1)
-
     if x == 3:
         ready()
         sleep(2)
