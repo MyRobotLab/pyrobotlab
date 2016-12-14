@@ -1,5 +1,11 @@
 #
 # Voices can be found here : http://www.acapela-group.com/?lang=en
+# 
+#  As of 2016-12-14 the AcapelaSpeech service no longer works.
+#  Two alternatives exists.
+#  1. Switch to MarySpeech. It's Open source, local and configureble
+#  2. Use NaturalReaderSpeech. Same voices as AcapelaSpeech but will fail sooner or later. Uses
+#     an internet service that can change at any moment.
 #
 speech = Runtime.createAndStart("Speech","AcapelaSpeech")
 speech.setVoice("Sharon")
