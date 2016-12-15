@@ -100,8 +100,8 @@ def handopen():
   i01.mouth.speak("ok I open my hand")
   
 def handclose():
-   i01.moveHand("right",180,180,180,180,180)
-    i01.mouth.speak("a nice and wide open hand that is")
+	i01.moveHand("right",180,180,180,180,180)
+	i01.mouth.speak("a nice and wide open hand that is")
 
 
 def fullspeed():
