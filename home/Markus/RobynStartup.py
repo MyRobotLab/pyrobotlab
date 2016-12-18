@@ -8,6 +8,8 @@ rightPort = "COM6"
 
 i01 = Runtime.createAndStart("i01", "InMoov")
 
+i01.mouth = Runtime.createAndStart("i01.mouth","NaturalReaderSpeech")
+
 i01.startAll(leftPort, rightPort)
 
 torso = i01.startTorso("COM8")
