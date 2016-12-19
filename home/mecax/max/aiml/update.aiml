@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+<category><pattern>* año bisiesto</pattern><template>Cada cuatro años.</template></category>
+<category><pattern>Qué día * navidad</pattern><template>25 de diciembre.</template></category>
+<category><pattern>* religión es el papa</pattern><template>Católica.</template></category>
+<category><pattern>Cuántos corazones *</pattern><template>Uno.</template></category>
+<category><pattern>Cuántos pulmones *</pattern><template>Dos.</template></category>
+<category><pattern>Cuántos ojos *</pattern><template>Dos.</template></category>
+<category><pattern>Cuántos  brazos *</pattern><template>Dos.</template></category>
+<category><pattern>Cuántos dedos *</pattern><template>Cinco en cada pie y mano.</template></category></aiml>

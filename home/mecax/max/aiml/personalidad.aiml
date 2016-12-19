@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+<!-- Personalidad-->
+
+
+<category><pattern>TIPO DE PERSONALIDAD OM</pattern><template>No me he hecho una idea sobre ti todavía. Pero por favor sigue hablando conmigo. Durante nuestra conversación te haré preguntas e intentaré determinar tu tipo de personalidad. Más adelante pregúntame otra vez y te daré mi mejor estimación.</template></category>        
+<category><pattern>TENGO CRITERIO *</pattern><template>Suenas como un perfeccionista. <think><set name="etype">Perfeccionista</set><set name="has">CRITERIO <star/></set></think></template></category>    
+<category><pattern>TIPO DE PERSONALIDAD DESCONOCIDO</pattern><template><srai>TIPO DE PERSONALIDAD OM</srai></template></category>
+
+<category><pattern>TIPO DE PERSONALIDAD *</pattern><template>Mi mejor estimación de tu tipo de personalidad es el tipo "<star/>".  Considera por favor que ésto no es un juicio profesional, es solamente una conjetura basada en tus entradas a un algoritmo de tipo heurístico, y por tanto los resultados carecen de una absoluta certeza. Puedes obtener un resultado diferente charlando conmigo durante más tiempo y contestando más de mis preguntas sobre tu personalidad.</template></category>       
+<category><pattern>_ CUÁL ES MI ESTILO DE PERSONALIDAD *</pattern><template><srai>TIPO DE PERSONALIDAD</srai></template></category>             
+<category><pattern>QUÉ CLASE DE TIPO SOY</pattern><template><srai>TIPO DE PERSONALIDAD</srai></template></category>             
+<category><pattern>DE QUÉ CLASE SOY</pattern><template><srai>TIPO DE PERSONALIDAD</srai></template></category> 
+<category><pattern>DE QUÉ CLASE CREES QUE SOY</pattern><template><srai>TIPO DE PERSONALIDAD</srai></template></category>
+<category><pattern>_ TEST DE PERSONALIDAD *</pattern><template><srai>TIPO DE PERSONALIDAD</srai></template></category>
+<category><pattern>_ TENGO UN CARÁCTER *</pattern><template><srai>TIPO DE PERSONALIDAD</srai></template></category>
+<category><pattern>_ TENGO PERSONALIDAD *</pattern><template><srai>TIPO DE PERSONALIDAD</srai></template></category>  
+<category><pattern>_ PERSONALIDAD TENGO *</pattern><template><srai>TIPO DE PERSONALIDAD</srai></template></category>  
+<category><pattern>_ MI PERSONALIDAD *</pattern><template><srai>TIPO DE PERSONALIDAD</srai></template></category>  
+<category><pattern>CUÁL ES MI TIPO DE PERSONALIDAD</pattern><template><srai>TIPO DE PERSONALIDAD <get name="etype"/></srai></template></category>         
+
+<category><pattern>ETYPE</pattern><template><srai>TIPO DE PERSONALIDAD <get name="etype"/></srai></template></category>
+
+
+<category><pattern>TIPO DE PERSONALIDAD</pattern><template>Quieres que te haga un test de personalidad</template></category>
+<category><pattern>_ SÍ *</pattern><that>QUIERES QUE TE HAGA UN TEST DE PERSONALIDAD</that><template><srai>PERSONALITY TEST QUESTION</srai></template></category>
+<category><pattern>_ CLARO *</pattern><that>QUIERES QUE TE HAGA UN TEST DE PERSONALIDAD</that><template><srai>PERSONALITY TEST QUESTION</srai></template></category>
+<category><pattern>POR SUPUESTO</pattern><that>QUIERES QUE TE HAGA UN TEST DE PERSONALIDAD</that><template><srai>PERSONALITY TEST QUESTION</srai></template></category>
+<category><pattern>POR SUPUESTO QUE SÍ</pattern><that>QUIERES QUE TE HAGA UN TEST DE PERSONALIDAD</that><template><srai>PERSONALITY TEST QUESTION</srai></template></category>
+<category><pattern>CHACHI</pattern><that>QUIERES QUE TE HAGA UN TEST DE PERSONALIDAD</that><template><srai>PERSONALITY TEST QUESTION</srai></template></category>
+<category><pattern>POR QUE NO</pattern><that>QUIERES QUE TE HAGA UN TEST DE PERSONALIDAD</that><template><srai>PERSONALITY TEST QUESTION</srai></template></category>
+<category><pattern>VENGA</pattern><that>QUIERES QUE TE HAGA UN TEST DE PERSONALIDAD</that><template><srai>PERSONALITY TEST QUESTION</srai></template></category>
+<category><pattern>ESTARÍA BIEN</pattern><that>QUIERES QUE TE HAGA UN TEST DE PERSONALIDAD</that><template><srai>PERSONALITY TEST QUESTION</srai></template></category>
+
+<category><pattern>_ NO *</pattern><that>QUIERES QUE TE HAGA UN TEST DE PERSONALIDAD</that><template>Vale, ¿de qué quieres que hablemos?</template></category>
+<category><pattern>CLARO QUE NO</pattern><that>QUIERES QUE TE HAGA UN TEST DE PERSONALIDAD</that><template>Vale, ¿de qué quieres que hablemos?</template></category>
+<category><pattern>NI SE TE OCURRA</pattern><that>QUIERES QUE TE HAGA UN TEST DE PERSONALIDAD</that><template>Vale, ¿de qué quieres que hablemos?</template></category>
+
+<category><pattern>PTQ</pattern><template><srai>PERSONALITY TEST QUESTION</srai></template></category>
+
+
+<!-- Test de personalidad-->
+
+
+<category>
+<pattern>PERSONALITY TEST QUESTION</pattern>
+<template>
+<condition name="eindex">
+<li value="1A">Te enfadas a menudo</li> 
+<li value="1B">Te gusta tener todo organizado</li> 
+<li value="1C">Te divierten las tareas domésticas</li> 
+
+
+<li value="2A">Te sacrificas a menudo por los demás</li> 
+<li value="2B">Ríes o lloras más que otra gente</li> 
+<li value="2C">Te enorgullece tu éxito </li> 
+
+<li value="3A">Eres muy competitivo</li> 
+<li value="3B">Te gusta ser el número uno</li> 
+<li value="3C">Trabajas en ventas o marketing</li> 
+
+<li value="4A">Eres creativo</li> 
+<li value="4B">Sientes que falta algo en tu vida</li> 
+<li value="4C">Te sueles deprimir</li> 
+
+<li value="5A">Sólo tienes unos pocos amigos</li> 
+<li value="5B">Crees que es mejor ser independiente</li> 
+<li value="5C">Trabajas en la ciencia o medicina</li> 
+
+
+<li value="6A">Eres miedoso o tienes muchos temores</li> 
+<li value="6B">Crees mucho en las autoridades</li> 
+<li value="6C">Eres profesor o funcionario público</li> 
+
+
+<li value="7A">Pasas mucho tiempo completando tus proyectos</li> 
+<li value="7B">Es difícil para ti prestar atención a una cosa</li>
+<li value="7C">A menudo buscas placer</li> 
+
+
+<li value="8A">Crees que el fuerte protege al débil</li> 
+<li value="8B">Sientes más sensaciones corporales que emociones</li> 
+<li value="8C">Posees o quieres tener tu propio negocio</li> 
+
+
+<li value="9A">Intentas que la gente deje de pelearse</li> 
+<li value="9B">Antepones a menudo a otros antes que a ti mismo</li> 
+<li value="9C">Te gusta seguir al rebaño</li> 
+
+</condition>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>TE ENFADAS *</that>
+<template><think><set name="eindex">1B</set></think><think><set name="etype">1 Perfeccionista</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>* TODO ORGANIZADO</that>
+<template><think><set name="eindex">1C</set></think><think><set name="etype">1 Perfeccionista</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>* TAREAS DOMÉSTICAS</that>
+<template><think><set name="eindex">2A</set></think><think><set name="etype">1 Perfecionista</set></think>
+<srai>ETYPE</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>* SACRIFICAS A MENUDO POR LOS DEMÁS</that>
+<template><think><set name="eindex">2B</set></think><think><set name="etype">2 Bondadoso</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>RÍES O LLORAS *</that>
+<template><think><set name="eindex">2C</set></think><think><set name="etype">2 Bondadoso</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>TE ENORGULLECE *</that>
+<template><think><set name="eindex">3A</set></think><think><set name="etype">2 Bondadoso</set></think>
+<srai>ETYPE</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>* MUY COMPETITIVO</that>
+<template><think><set name="eindex">3B</set></think><think><set name="etype">3 Competidor</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>TE GUSTA SER EL NÚMERO UNO</that>
+<template><think><set name="eindex">3C</set></think><think><set name="etype">3 Competidor</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>TRABAJAS EN VENTAS *</that>
+<template><think><set name="eindex">4A</set></think><think><set name="etype">3 CompetiDor</set></think>
+<srai>ETYPE</srai>
+</template>
+</category>
+
+<category><pattern>MARKETING</pattern><that>TRABAJAS EN VENTAS *</that>
+<template><think><set name="eindex">4A</set></think><think><set name="etype">3 CompetiDor</set></think>
+<srai>ETYPE</srai>
+</template>
+</category>
+
+<category><pattern>VENTAS</pattern><that>TRABAJAS EN VENTAS *</that>
+<template><think><set name="eindex">4A</set></think><think><set name="etype">3 Competidor</set></think>
+<srai>ETYPE</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>ERES CREATIVO</that>
+<template><think><set name="eindex">4B</set></think><think><set name="etype">4 Individualista</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>SIENTES QUE FALTA ALGO *</that>
+<template><think><set name="eindex">4C</set></think><think><set name="etype">4 Individualista</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>TE SUELES DEPRIMIR</that>
+<template><think><set name="eindex">5A</set></think><think><set name="etype">4 Individualista</set></think>
+<srai>ETYPE</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>SÓLO TIENES UNOS POCOS AMIGOS</that>
+<template><think><set name="eindex">5B</set></think><think><set name="etype">5 Observador</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>* SER INDEPENDIENTE</that>
+<template><think><set name="eindex">5C</set></think><think><set name="etype">5 Observador</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>TRABAJAS EN LA CIENCIA *</that>
+<template><think><set name="eindex">6A</set></think><think><set name="etype">5 Observador</set></think>
+<srai>ETYPE</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>ERES MIEDOSO *</that>
+<template><think><set name="eindex">6B</set></think><think><set name="etype">6 Leal</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>CREES MUCHO EN LAS AUTORIDADES</that>
+<template><think><set name="eindex">6C</set></think><think><set name="etype">6 Leal</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>ERES PROFESOR *</that>
+<template><think><set name="eindex">7A</set></think><think><set name="etype">6 Leal</set></think>
+<srai>ETYPE</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>* COMPLETANDO TUS PROYECTOS</that>
+<template><think><set name="eindex">7B</set></think><think><set name="etype">7 Hedonista</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>* ATENCIÓN A UNA COSA</that>
+<template><think><set name="eindex">7C</set></think><think><set name="etype">7 Hedonista</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>* BUSCAS PLACER</that>
+<template><think><set name="eindex">8A</set></think><think><set name="etype">7 Hedonista</set></think>
+<srai>ETYPE</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>* FUERTE PROTEGE AL DÉBIL</that>
+<template><think><set name="eindex">8B</set></think><think><set name="etype">8 Jefe</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>* SENSACIONES CORPORALES QUE EMOCIONES</that>
+<template><think><set name="eindex">8C</set></think><think><set name="etype">8 Jefe</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>* TU PROPIO NEGOCIO</that>
+<template><think><set name="eindex">9A</set></think><think><set name="etype">8 Jefe</set></think>
+<srai>ETYPE</srai>
+</template>
+</category>
+
+
+<category><pattern>SÍ</pattern><that>* DEJE DE PELEARSE</that>
+<template><think><set name="eindex">9B</set></think><think><set name="etype">9 Mediador</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>* ANTES QUE A TI MISMO</that>
+<template><think><set name="eindex">9C</set></think><think><set name="etype">9 Mediador</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>SÍ</pattern><that>* SEGUIR AL REBAÑO</that>
+<template><think><set name="eindex">1A</set></think><think><set name="etype">9 Mediador</set></think>
+<srai>ETYPE</srai>
+</template>
+</category>
+
+
+
+
+<category><pattern>NO</pattern><that>TE ENFADAS *</that>
+<template><think><set name="eindex">2A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>* TODO ORGANIZADO</that>
+<template><think><set name="eindex">2A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>* TAREAS DOMESTICAS</that>
+<template><think><set name="eindex">2A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>* SACRIFICAS A MENUDO POR LOS DEMAS</that>
+<template><think><set name="eindex">3A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>RÍES O LLORAS *</that>
+<template><think><set name="eindex">3A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>TE ENORGULLECE *</that>
+<template><think><set name="eindex">3A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>* MUY COMPETITIVO</that>
+<template><think><set name="eindex">4A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>TE GUSTA SER EL NÚMERO UNO</that>
+<template><think><set name="eindex">4A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>TRABAJAS EN VENTAS *</that>
+<template><think><set name="eindex">4A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>ERES CREATIVO</that>
+<template><think><set name="eindex">5A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>SIENTES QUE FALTA ALGO *</that>
+<template><think><set name="eindex">5A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>TE SUELES DEPRIMIR</that>
+<template><think><set name="eindex">5A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>SÓLO TIENES UNOS POCOS AMIGOS</that>
+<template><think><set name="eindex">6A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>* SER INDEPENDIENTE</that>
+<template><think><set name="eindex">6A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>TRABAJAS EN LA CIENCIA *</that>
+<template><think><set name="eindex">6A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>ERES MIEDOSO *</that>
+<template><think><set name="eindex">7A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>CREES MUCHO EN LAS AUTORIDADES</that>
+<template><think><set name="eindex">7A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>ERES PROFESOR *</that>
+<template><think><set name="eindex">7A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>* COMPLETANDO TUS PROYECTOS</that>
+<template><think><set name="eindex">8A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>* ATENCIÓN A UNA COSA</that>
+<template><think><set name="eindex">8A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>* BUSCAS PLACER</that>
+<template><think><set name="eindex">8A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+
+<category><pattern>NO</pattern><that>* FUERTE PROTEGE AL DÉBIL</that>
+<template><think><set name="eindex">9A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>* SENSACIONES CORPORALES QUE EMOCIONES</that>
+<template><think><set name="eindex">9A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>* TU PROPIO NEGOCIO</that>
+<template><think><set name="eindex">9A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>* DEJE DE PELEARSE</that>
+<template><think><set name="eindex">1A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>* ANTES QUE A TI MISMO</that>
+<template><think><set name="eindex">1A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>NO</pattern><that>* SEGUIR AL REBAÑO</that>
+<template><think><set name="eindex">1A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+<category><pattern>A MI NO ME GUSTA *</pattern><that>* SEGUIR AL REBAÑO</that>
+<template><think><set name="eindex">1A</set></think>
+<srai>PERSONALITY TEST QUESTION</srai>
+</template>
+</category>
+
+
+</aiml>
+

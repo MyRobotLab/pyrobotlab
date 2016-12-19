@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+
+
+		<!-- ciencia -->
+
+
+<category><pattern>A QUÉ DISTANCIA ESTA LA LUNA _</pattern><template><set name="it">La luna</set> está a una media de 250.000 millas de distancia.</template></category>
+<category><pattern>A QUÉ DISTANCIA ESTA EL SOL _</pattern><template><set name="it">El sol</set> está a unos 93 millones de millas de la tierra.</template></category>
+<category><pattern>A QUÉ DISTANCIA ESTA MERCURIO _</pattern><template><set name="it">Mercurio</set> está a una media de 77 millones de kilómetros de distancia.</template></category>
+<category><pattern>A QUÉ DISTANCIA ESTA VENUS _</pattern><template><set name="it">Venus</set> está a unos 44 millones de kilómetros de distancia.</template></category>
+<category><pattern>A QUÉ DISTANCIA ESTA MARTE _</pattern><template><set name="it">Marte</set> está a una media de millones de kilómetros de distancia.</template></category>
+<category><pattern>A QUÉ DISTANCIA ESTA JÚPITER _</pattern><template><set name="it">Jupiter</set> está a unos millones de kilómetros de distancia.</template></category>
+<category><pattern>A QUÉ DISTANCIA ESTA SATURNO _</pattern><template><set name="it">Saturno</set> está aproximadamente a 870 millones de millas (1.4 billones de km) desde el Sol y alrededor de 780 millones de millas (1.3 billones de km) desde la Tierra.</template></category>
+<category><pattern>A QUÉ DISTANCIA ESTA URANO _</pattern><template><set name="it">Urano</set> está a unos millones de kilómetros de distancia.</template></category>
+<category><pattern>A QUÉ DISTANCIA ESTA NEPTUNO _</pattern><template><set name="it">Neptuno</set>está a una media de millones de kilómetros de distancia.</template></category>
+<category><pattern>A QUÉ DISTANCIA ESTA PLUTÓN _</pattern><template><set name="it">Pluton</set> es el planeta más lejano del Sol. Su distancia promedio al Sol es de 3,687'500,000 millas (5,934'456,500 kilómetros).</template></category>
+<category><pattern>A QUÉ DISTANCIA ESTA LA GALAXIA MÁS CERCANA</pattern><template><set name="it">Galaxia</set>Las galaxias más cercanas a nosotros son las dos galaxias irregulares llamadas la Gran Nube de Magallanes y la Pequeña Nube de Magallanes (a 179 y 210 mil años luz de distancia repectivamente). La gran galaxia más cercana es la galaxia espiral Andrómeda (a 2,9 millones de años luz de distancia).</template></category>
+
+<category><pattern>QUÉ EDAD TIENE LA TIERRA</pattern><template><think><set name="it">La Tierra</set></think>Se piensa que la Tierra tiene entre 4.5 y 4.8 billones de años de edad.</template></category>
+<category><pattern>POR QUÉ GIRA LA TIERRA</pattern><template><think><set name="it">La Tierra</set></think>La Tierra gira por la manera en la que fue formada. Nuestro sistema solar se formó alrededor de hace 4.6 billones de años cuando una enorme nube de gas y polvo comenzó a contraerse y colapsarse bajo su propia gravedad. A medida que la nube se contrajo, comenzó a girar.</template></category>
+<category><pattern>POR QUÉ NO SENTIMOS QUE LA TIERRA SE MUEVE</pattern><template><think><set name="it">La Tierra</set></think>Las velocidades de rotación y de traslación de la Tierra permanecen iguales así que no sentimos ninguna aceleración o desaceleración.</template></category>
+<category><pattern>CUÁNTO PESA LA TIERRA</pattern><template><think><set name="it">La Tierra</set></think>La Tierra pesa alrededor de 6,000,000,000,000,000,000,000,000 kilogramos.</template></category>
+<category><pattern>QUÉ PESO TIENE LA TIERRA</pattern><template><think><set name="it">La Tierra</set></think>La Tierra pesa alrededor de 6,000,000,000,000,000,000,000,000 kilogramos.</template></category>
+<category><pattern>QUÉ MANTIENE A NUESTRA ATMÓSFERA UNIDA A LA TIERRA</pattern><template><think><set name="it">Atmósfera</set></think>Nuestra atmósfera es una mezcla de gases que rodean a la Tierra. Se mantiene en su lugar debido a la fuerza de gravedad de la Tierra. Si la Tierra fuera un planeta mucho más pequeño como Mercurio o Plutón, su gravedad sería débil para sostener una atmósfera grande.</template></category>
+<category><pattern>DE QUÉ ESTÁ HECHA LA ATMÓSFERA</pattern><template><think><set name="it">Atmósfera</set></think>La atmósfera de la Tierra es 78% nitrógeno, 21% oxígeno, 0.9% argón y 0.03 % dióxido de carbono con muy pequeños porcentajes de otros elementos.</template></category>
+<category><pattern>CUÁNTA AGUA TIENE LA TIERRA</pattern><template><think><set name="it">La Tierra</set></think>Hay más de 326 millones de trillones de galones de agua sobre la Tierra. Menos del 3% de toda esta agua es agua dulce, y de esta cantidad, más de dos tercios está convertida en polos de hielo y glaciares.</template></category>
+<category><pattern>DE QUÉ COLOR ES MARTE</pattern><template><think><set name="it">Marte</set></think>Rojo.</template></category>
+<category><pattern>POR QUÉ ES ROJO MARTE</pattern><template><think><set name="it">Marte</set></think>La superficie de Marte tiene un color naranja rojizo porque su suelo contiene óxido de hierro o partículas de óxido. El cielo sobre Marte frecuentemente aparece rosa o naranja claro porque el polvo del suelo es levantado por los vientos en la delgada atmósfera sobre Marte.</template></category>
+<category><pattern>POR QUÉ MARTE ES ROJO</pattern><template><srai>POR QUÉ ES ROJO MARTE</srai></template></category>
+<category><pattern>POR QUÉ MARTE ES ROJIZO</pattern><template><srai>POR QUÉ ES ROJO MARTE</srai></template></category>
+<category><pattern>HAY AGUA EN MARTE</pattern><template><think><set name="it">Marte</set></think>Sí, hay agua en Marte pero está congelada debajo del polo norte y sur de hielo.</template></category>
+<category><pattern>SE PUEDE RESPIRAR EN MARTE</pattern><template><think><set name="it">Marte</set></think>Marte tiene una atmósfera, pero es alrededor de 100 veces más ténue que la atmósfera de la Tierra y tiene muy poco oxígeno.</template></category>
+<category><pattern>* PODEMOS RESPIRAR EN MARTE</pattern><template><srai>SE PUEDE RESPIRAR EN MARTE</srai></template></category>
+<category><pattern>QUÉ TEMPERATURA HAY EN MARTE</pattern><template><think><set name="it">Marte</set></think>La temperatura en Marte varía entre -125 y 23 grados Fahrenheit (-87 a -5 grados centígrados).</template></category>
+<category><pattern>CUÁL ES LA TEMPERATURA DE MARTE</pattern><template><srai>QUÉ TEMPERATURA HAY EN MARTE</srai></template></category>
+<category><pattern>CUÁNTA TEMPERATURA HACE EN MARTE</pattern><template><srai>QUÉ TEMPERATURA HAY EN MARTE</srai></template></category>
+<category><pattern>HAY VIDA EN MARTE</pattern><template><think><set name="it">Marte</set></think>Miles de imágenes fueron tomadas de la superficie de Marte, pero no se ha encontrado aún evidencia de vida. Misiones futuras están siendo planeadas para continuar la búsqueda de vida en Marte. Estas misiones descenderán en diferentes localizaciones y a más profundidad en el suelo para observar señales de vida.</template></category>
+<category><pattern>EN MARTE HAY VIDA</pattern><template><srai>HAY VIDA EN MARTE</srai></template></category>
+<category><pattern>HAY VIDA INTELIGENTE EN MARTE</pattern><template><srai>HAY VIDA EN MARTE</srai></template></category>
+<category><pattern>_ JÚPITER TIENE ANILLOS *</pattern><template><think><set name="it">Jupiter</set></think>Sí, Júpiter tiene anillos oscuros y estrechos. A diferencia de Saturno, el cual tiene anillos de hielo brillantes, Júpiter tiene anillos oscuros los cuales están hechos de polvo y de pequeñas piezas de piedra.</template></category>
+<category><pattern>CUÁNTAS LUNAS TIENE JÚPITER</pattern><template><think><set name="it">Jupiter</set></think>Júpiter tiene por lo menos 61 lunas conocidas. Las cuatro más grandes son llamadas Io, Europa, Ganímede y Calisto.</template></category>
+<category><pattern>CÓMO DE GRANDE ES JÚPITER _</pattern><template><think><set name="it">Jupiter</set></think>Júpiter tiene un diámetro de alrededor de 88,695 millas (142,800 kilómetros) lo cual es más que 11 veces el diámetro de la Tierra.</template></category>
+<category><pattern>CÓMO DE GRANDE ES SATURNO</pattern><template><think><set name="it">Jupiter</set></think>Saturno es el segundo planeta más grande en nuestro Sistema Solar. Sólo Júpiter es más grande.</template></category>
+<category><pattern>DE QUÉ ESTÁN HECHOS LOS ANILLOS DE SATURNO</pattern><template><think><set name="it">Saturno</set></think>Los anillos de Saturno están hechos de billones de piezas de hielo, polvo y piedras. Algunas de estas partículas son tan pequeñas como un grano de sal, mientras que otras son tan grandes como casas.</template></category>
+<category><pattern>CÓMO SON LOS ANILLOS DE SATURNO</pattern><template><think><set name="it">Saturno</set></think>Los anillos de Saturno están hechos de billones de piezas de hielo, polvo y piedras. Algunas de estas partículas son tan pequeñas como un grano de sal, mientras que otras son tan grandes como casas.</template></category>
+<category><pattern>DE QUÉ SON LOS ANILLOS DE SATURNO</pattern><template><think><set name="it">Saturno</set></think>Los anillos de Saturno están hechos de billones de piezas de hielo, polvo y piedras. Algunas de estas partículas son tan pequeñas como un grano de sal, mientras que otras son tan grandes como casas.</template></category>
+<category><pattern>DE QUÉ ESTÁN FORMADOS LOS ANILLOS DE SATURNO</pattern><template><think><set name="it">Saturno</set></think>Los anillos de Saturno están hechos de billones de piezas de hielo, polvo y piedras. Algunas de estas partículas son tan pequeñas como un grano de sal, mientras que otras son tan grandes como casas.</template></category>
+<category><pattern>CUÁNTOS ANILLOS TIENE SATURNO</pattern><template><think><set name="it">Saturno</set></think>Saturno tiene cuatro grupos principales de anillos y tres grupos de anillos más angostos y delicados.</template></category>
+<category><pattern>DONDE ESTÁ SATURNO</pattern><template><think><set name="it">Saturno</set></think>Saturno es el sexto planeta desde el Sol en nuestro Sistema Solar.</template></category>
+<category><pattern>CUÁNTO SE TARDA * SATURNO</pattern><template>La distancia entre la Tierra y Saturno varía dependiendo de dónde estén los dos planetas en sus órbitas alrededor del Sol.</template></category>
+<category><pattern>CUÁNTO TIEMPO SE TARDA * SATURNO</pattern><template>La distancia entre la Tierra y Saturno varía dependiendo de dónde estén los dos planetas en sus órbitas alrededor del Sol.</template></category>
+<category><pattern>CUÁNTO TARDARÍA * SATURNO</pattern><template>La distancia entre la Tierra y Saturno varí dependiendo de dónde estén los dos planetas en sus órbitas alrededor del Sol.</template></category>
+<category><pattern>CUÁNTO TIEMPO TARDARÍA * SATURNO</pattern><template>La distancia entre la Tierra y Saturno varí dependiendo de dónde estén los dos planetas en sus órbitas alrededor del Sol.</template></category>
+<category><pattern>POR QUÉ URANO ES AZUL</pattern><template><think><set name="it">Urano</set></think>La atmósfera de Urano está hecha de hidrógeno, helio y metano. El metano en la atmósfera más alta de Urano absorbe la luz roja del Sol pero refleja la luz azul del Sol de regreso al espacio. Esto explica porqué Urano aparece azul.</template></category>
+<category><pattern>DE QUÉ COLOR ES URANO</pattern><template><think><set name="it">Urano</set></think>Azul.</template></category>
+<category><pattern>QUIÉN DESCUBRIÓ URANO</pattern><template><think><set name="it">Urano</set></think>El planeta Urano fue descubierto por William Herschel el 13 de marzo de 1781.</template></category>
+<category><pattern>POR QUÉ NEPTUNO ES AZUL</pattern><template><think><set name="it">Neptuno</set></think>La atmósfera de Neptuno está hecha de hidrógeno, helio y metano. El metano en la atmósfera más alta de Neptuno absorbe la luz roja del Sol pero refleja la luz azul del Sol de regreso al espacio. Esto explica porqué Neptuno aparece azul.</template></category>
+<category><pattern>DE QUÉ COLOR ES NEPTUNO</pattern><template><think><set name="it">Neptuno</set></think>Azul.</template></category>
+<category><pattern>CÓMO DE GRANDE ES NEPTUNO</pattern><template><think><set name="it">Neptuno</set></think>Neptuno es el cuarto planeta más grande en nuestro Sistema Solar y es el más pequeño de los planetas gigantes gaseosos.</template></category>
+<category><pattern>QUÉ TAMAÑO TIENE NEPTUNO</pattern><template><srai>CÓMO DE GRANDE ES NEPTUNO</srai></template></category>
+<category><pattern>CÓMO ES EL CLIMA EN NEPTUNO</pattern><template><think><set name="it">Neptuno</set></think>Neptuno tiene el clima más salvaje y extraño en el Sistema Solar entero. Tiene enormes tormentas con vientos extremadamente altos.</template></category>
+<category><pattern>CÓMO ES EL CLIMA DE NEPTUNO</pattern><template><srai>CÓMO ES EL CLIMA EN NEPTUNO</srai></template></category>
+<category><pattern>QUÉ TEMPERATURA HAY EN NEPTUNO</pattern><template><srai>CÓMO ES EL CLIMA EN NEPTUNO</srai></template></category>
+<category><pattern>QUÉ TEMPERATURA HACE EN NEPTUNO</pattern><template><srai>CÓMO ES EL CLIMA EN NEPTUNO</srai></template></category>
+<category><pattern>A QUÉ TEMPERATURA ESTA NEPTUNO</pattern><template><srai>CÓMO ES EL CLIMA EN NEPTUNO</srai></template></category>
+<category><pattern>HACE FRÍO EN NEPTUNO</pattern><template><srai>CÓMO ES EL CLIMA EN NEPTUNO</srai></template></category>
+<category><pattern>EN NEPTUNO HACE FRÍO</pattern><template><srai>CÓMO ES EL CLIMA EN NEPTUNO</srai></template></category>
+<category><pattern>QUIÉN DESCUBRIO PLUTÓN</pattern><template><think><set name="it">Pluton</set></think>Plutón fue descubierto en 1930 por Clyde Tombaugh.</template></category>
+<category><pattern>CÓMO ES EL CLIMA EN PLUTÓN</pattern><template><think><set name="it">Pluton</set></think>Plutón es muy frío! La temperatura promedio en la superficie de Plutón es -356 grados Fahrenheit o -215 grados centígrados. En comparación, el lugar más frío en la Tierra, el cual puede alcanzar -128 grados Fahrenheit, parecería cálido comparado a Plutón.</template></category>
+<category><pattern>CÓMO ES EL CLIMA DE PLUTÓN</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>QUÉ TEMPERATURA HAY EN PLUTÓN</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>QUÉ TEMPERATURA HACE EN PLUTÓN</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>A QUÉ TEMPERATURA ESTA PLUTÓN</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>HACE FRÍO EN PLUTÓN</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>EN PLUTÓN HACE FRÍO</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>CUÁNTO FRÍO HACE EN PLUTÓN</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>DE QUÉ ESTÁ HECHO PLUTÓN</pattern><template><think><set name="it">Pluton</set></think>Se piensa que Plutón está hecho principalmente de hielo. Probablemente también tiene un pequeño núcleo rocoso el cual contiene algunos metales.</template></category>
+<category><pattern>PLUTÓN TIENE ATMÓSFERA</pattern><template><think><set name="it">Pluton</set></think>Cuando Plutón está más cerca del Sol en su órbita, la calidez del Sol calienta los hielos congelados de nitrógeno, metano y monóxido de carbono en la superficie de Plutón. Estos hielos se vaporizan y forman una atmósfera temporalmente.</template></category>
+<category><pattern>POR QUÉ HAY CRÁTERES EN LA LUNA</pattern><template><think><set name="it">La Luna</set></think>Todas las lunas y planetas en nuestro sistema solar han sido golpeados por una gran cantidad de meteoritos. Esto fue especialmente verdadero en el pasado cuando había muchos más meteoritos viajando en nuestro sistema solar de los que hay hoy. Sobre la Tierra, sólo vemos algunos de estos cráteres porque han sido borrados por el viento, la lluvia y otras fuerzas.</template></category>
+<category><pattern>POR QUÉ LA LUNA TIENE CRÁTERES</pattern><template><srai>POR QUÉ HAY CRÁTERES EN LA LUNA</srai></template></category>
+<category><pattern>POR QUÉ TIENE CRÁTERES LA LUNA</pattern><template><srai>POR QUÉ HAY CRÁTERES EN LA LUNA</srai></template></category>
+<category><pattern>CUÁNTOS ASTRONAUTAS HAN IDO A LA LUNA</pattern><template><think><set name="it">La Luna</set></think>Un total de 12 astronautas han caminado sobre la Luna.</template></category>
+<category><pattern>CUÁNTOS ASTRONAUTAS HAN PISADO LA LUNA</pattern><template><think><set name="it">La Luna</set></think>Un total de 12 astronautas han caminado sobre la Luna.</template></category>
+<category><pattern>CUÁNTOS ASTRONAUTAS HAN LLEGADO A LA LUNA</pattern><template><think><set name="it">La Luna</set></think>Un total de 12 astronautas han caminado sobre la Luna.</template></category>
+<category><pattern>CUÁNDO LLEGÓ EL HOMBRE A LA LUNA *</pattern><template><think><set name="it">La Luna</set></think>Los primeros dos astronautas pisaron la Luna en 1969 y los últimos astronautas la pisaron en 1972.</template></category>
+<category><pattern>_ QUÉ AÑO LLEGÓ EL HOMBRE A LA LUNA *</pattern><template><srai>CUÁNDO LLEGÓ EL HOMBRE A LA LUNA</srai></template></category>
+<category><pattern>_ QUÉ AÑO PISÓ EL HOMBRE LA LUNA *</pattern><template><srai>CUÁNDO LLEGÓ EL HOMBRE A LA LUNA</srai></template></category>
+<category><pattern>_ CUANDO PISÓ EL HOMBRE LA LUNA *</pattern><template><srai>CUÁNDO LLEGÓ EL HOMBRE A LA LUNA</srai></template></category>
+<category><pattern>CÓMO ES EL CLIMA EN LA LUNA</pattern><template><think><set name="it">La Luna</set></think>La temperatura en la Luna varía desde -387 grados Fahrenheit (-233 grados centígrados) en la noche, a 253 grados Fahrenheit (123 grados centígrados) durante el día.</template></category>
+<category><pattern>CÓMO ES EL CLIMA DE LA LUNA</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>QUÉ TEMPERATURA HAY EN LA LUNA</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>QUÉ TEMPERATURA HACE EN LA LUNA</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>A QUÉ TEMPERATURA ESTÁ LA LUNA</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>HACE FRÍO EN LA LUNA</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>EN LA LUNA HACE FRÍO</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>CUÁNTO FRÍO HACE EN LA LUNA</pattern><template><srai>CÓMO ES EL CLIMA EN PLUTÓN</srai></template></category>
+<category><pattern>QUÉ ES UN COMETA</pattern><template>Los cometas son básicamente bolas de nieve polvorosas las cuales giran en órbita alrededor del Sol.</template></category>
+<category><pattern>QUÉ ES UN ASTEROIDE</pattern><template>Los asteroides son objetos metálicos rocosos los cuales varían en tamaño desde piedras a aproximadamente 600 millas (alrededor de 1,000 kilómetros) de diámetro.</template></category>
+<category><pattern>QUÉ ES UNA GALAXIA</pattern><template><think><set name="it">Galaxia</set></think>Las galaxias son enormes colecciones de estrellas, polvo y gas. Usualmente contienen de varios millones a más de un trillón de estrellas y pueden variar en tamaño desde algunos miles a varios cientos de miles de años luz de diámetro.</template></category>
+<category><pattern>QUÉ SON LAS GALAXIAS</pattern><template><srai>QUÉ ES UNA GALAXIA</srai></template></category>
+<category><pattern>CUÁNTAS GALAXIAS HAY</pattern><template><think><set name="it">Galaxia</set></think>Los astrónomos piensan que hay por lo menos varios billones de galaxias en el universo. El número exacto no es conocido.</template></category>
+<category><pattern>CUÁNTAS GALAXIAS HAY EN EL UNIVERSO</pattern><template><srai>CUÁNTAS GALAXIAS HAY</srai></template></category>
+<category><pattern>SE MUEVEN LAS GALAXIAS</pattern><template><think><set name="it">Galaxia</set></think>Sí, las galaxias se mueven. Ellas giran y se mueven a través del espacio. Las galaxias giran alrededor de sus centro, de tal manera que las secciones de la galaxia que están más lejos del centro de ella giran más lentamente que el material más cercano al centro.</template></category>
+<category><pattern>LAS GALAXIAS SE MUEVEN</pattern><template><srai>SE MUEVEN LAS GALAXIAS</srai></template></category>
+<category><pattern>_ QUÉ ES UNA ESTRELLA</pattern><template><think><set name="it">Estrella</set></think>Una estrella es una enorme esfera de gas muy caliente y brillante.</template></category>
+<category><pattern>DE QUÉ ESTÁ HECHA UNA ESTRELLA</pattern><template><think><set name="it">Estrella</set></think>Las estrellas están hechas de gas muy caliente. Este gas es en su mayoría hidrógeno y helio, los cuales son los dos elementos más ligeros.</template></category>
+<category><pattern>DE QUÉ ESTÁN HECHAS LAS ESTRELLAS</pattern><template><srai>DE QUÉ ESTÁ HECHA UNA ESTRELLA</srai></template></category>
+<category><pattern>DE QUÉ ESTÁN COMPUESTAS LAS ESTRELLAS</pattern><template><srai>DE QUÉ ESTÁ HECHA UNA ESTRELLA</srai></template></category>
+<category><pattern>DE QUÉ ESTÁ COMPUESTA UNA ESTRELLA</pattern><template><srai>DE QUÉ ESTÁ HECHA UNA ESTRELLA</srai></template></category>
+<category><pattern>DE QUÉ ESTÁ FORMADA UNA ESTRELLA</pattern><template><srai>DE QUÉ ESTÁ HECHA UNA ESTRELLA</srai></template></category>
+<category><pattern>DE QUÉ ESTÁN FORMADAS LAS ESTRELLAS</pattern><template><srai>DE QUÉ ESTÁ HECHA UNA ESTRELLA</srai></template></category>
+<category><pattern>CUÁNTAS ESTRELLAS HAY *</pattern><template><think><set name="it">Estrellas</set></think>Nadie sabe exactamente cuántas estrellas hay en el universo. Hay tantas estrellas (billones y billones de ellas) que no es posible contarlas a todas ellas.</template></category>
+<category><pattern>POR QUÉ CENTELLEA UNA ESTRELLA</pattern><template><think><set name="it">Estrella</set></think>Las estrellas centellean en el cielo nocturno por los efectos de nuestra atmósfera. Cuando la luz de las estrellas entra en nuestra atmósfera, ésta es afectada por los vientos que hay en ella y por las áreas con diferentes temperaturas y densidades.</template></category>
+<category><pattern>POR QUÉ CENTELLEAN LAS ESTRELLAS</pattern><template><think><set name="it">Estrellas</set></think>Las estrellas centellean en el cielo nocturno por los efectos de nuestra atmósfera. Cuando la luz de las estrellas entra en nuestra atmósfera, ésta es afectada por los vientos que hay en ella y por las áreas con diferentes temperaturas y densidades.</template></category>
+<category><pattern>QUÉ ES UNA NEBULOSA</pattern><template><think><set name="it">Nebulosa</set></think>Una nebulosa es una nube de gas y polvo en el espacio.</template></category>
+<category><pattern>QUÉ SON LAS NEBULOSAS</pattern><template><srai>QUÉ ES UNA NEBULOSA</srai></template></category>
+<category><pattern>QUÉ ES UN AGUJERO NEGRO</pattern><template><think><set name="it">Agujero negro</set></think>Un agujero negro es uno de los objetos más extraños en el espacio. Es un área en el espacio donde la gravedad es tan fuerte que incluso la luz no puede escapar de él. Como la luz no puede escapar, éste aparece negro.</template></category>
+<category><pattern>QUÉ SON LOS AGUJEROS NEGROS</pattern><template><srai>QUÉ ES UN AGUJERO NEGRO</srai></template></category>
+<category><pattern>DE QUÉ ESTÁ HECHO UN AGUJERO NEGRO</pattern><template><think><set name="it">Agujero negro</set></think>Los científicos piensan que los agujeros negros están creados en lugares donde la materia es extremadamente densa (donde una gran cantidad de material es comprimida en un espacio extremadamente pequeño). Esto puede suceder en los centros de grandes galaxias o cuando una estrella gigante se colapsa y se encoge durante las fases finales de su vida.</template></category>
+<category><pattern>DE QUÉ ESTÁN HECHOS LOS AGUJEROS NEGROS</pattern><template><srai>DE QUÉ ESTÁ HECHO UN AGUJERO NEGRO</srai></template></category>
+<category><pattern>DE QUÉ ESTÁ FORMADO UN AGUJERO NEGRO</pattern><template><srai>DE QUÉ ESTÁ HECHO UN AGUJERO NEGRO</srai></template></category>
+<category><pattern>DE QUÉ ESTÁN FORMADOS LOS AGUJEROS NEGROS</pattern><template><srai>DE QUÉ ESTÁ HECHO UN AGUJERO NEGRO</srai></template></category>
+<category><pattern>CÓMO DE GRANDE ES UN AGUJERO NEGRO</pattern><template><think><set name="it">Agujero negro</set></think>Una estrella tiene que ser mucho más masiva que nuestro Sol para convertirse en un agujero negro. Estos tipos de agujeros negros tienen sólo algunas millas de diámetro. Los agujeros negros también han sido descubiertos en los centros de algunas galaxias. Estos agujeros negros son muy grandes y contienen la misma cantidad de material que 100 millones o más de soles.</template></category>
+<category><pattern>QUÉ TAMAÑO TIENE UN AGUJERO NEGRO</pattern><template><srai>CÓMO DE GRANDE ES UN AGUJERO NEGRO</srai></template></category>
+<category><pattern>QUÉ TAMAÑO PUEDE TENER UN AGUJERO NEGRO</pattern><template><srai>CÓMO DE GRANDE ES UN AGUJERO NEGRO</srai></template></category>
+<category><pattern>CÓMO SE CREÓ EL UNIVERSO</pattern><template><think><set name="it">Big Bang</set></think>La mayoría de los astrónomos piensan que el universo fue formado durante un evento llamado el Big Bang. Una explosión gigante que ocurrió hace aproximadamente entre 10 y 20 billones de años. Durante el Big Bang todo el espacio, tiempo, materia y energía en el universo fue creado. Esta explosión gigante lanzó materia en todas direcciones y causó que el espacio por sí mismo se expandiera. Cuando el universo se enfrió el material se combinó para formar galaxias, estrellas y planetas.</template></category>
+<category><pattern>CÓMO SE HIZO EL UNIVERSO</pattern><template><srai>CÓMO SE CREÓ EL UNIVERSO</srai></template></category>
+<category><pattern>CÓMO SE FORMÓ EL UNIVERSO</pattern><template><srai>CÓMO SE CREÓ EL UNIVERSO</srai></template></category>
+<category><pattern>HÁBLAME DEL BIG BANG</pattern><template><srai>CÓMO SE CREÓ EL UNIVERSO</srai></template></category>
+<category><pattern>QUÉ SABES DEL BIG BANG</pattern><template><srai>CÓMO SE CREÓ EL UNIVERSO</srai></template></category>
+<category><pattern>EXPLÍCAME QUÉ PASO EN EL BIG BANG</pattern><template><srai>CÓMO SE CREÓ EL UNIVERSO</srai></template></category>
+<category><pattern>_ QUÉ ES EL BIG BANG *</pattern><template><srai>CÓMO SE CREÓ EL UNIVERSO</srai></template></category>
+<category><pattern>CÓMO DE GRANDE ES EL UNIVERSO</pattern><template><think><set name="it">El universo</set></think>Nadie sabe realmente cómo de grande es el universo porque no podemos ver los límites de él. No sabemos incluso si tiene un límite. Podemos ver solamente hacia fuera a una distancia de aproximadamente 14 billones de años luz desde la Tierra.</template></category>
+<category><pattern>_ QUÉ TAMAÑO TIENE EL UNIVERSO</pattern><template><srai>CÓMO DE GRANDE ES EL UNIVERSO</srai></template></category>
+<category><pattern>DE QUÉ TAMAÑO ES EL UNIVERSO</pattern><template><srai>CÓMO DE GRANDE ES EL UNIVERSO</srai></template></category>
+<category><pattern>QUÉ EDAD TIENE EL UNIVERSO</pattern><template><think><set name="it">El universo</set></think>La mayoría de los astrónomos piensan que el universo tiene entre 10 y 20 billones de años.</template></category>
+<category><pattern>CUÁNTOS AÑOS TIENE EL UNIVERSO</pattern><template><srai>QUÉ EDAD TIENE EL UNIVERSO</srai></template></category>
+<category><pattern>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</pattern><template><think><set name="it">El universo</set></think>Nadie sabe realmente cómo de grande es el universo porque no podemos ver los límites de él. No sabemos incluso si tiene un límite.</template></category>
+<category><pattern>TIENE LÍMITE EL UNIVERSO</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>EL UNIVERSO TIENE LÍMITE</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>EL UNIVERSO TIENE ALGÚN LÍMITE</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>EL UNIVERSO ES INFINITO</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>EL UNIVERSO NUNCA ACABA</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>NUNCA ACABA EL UNIVERSO</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>DÓNDE ACABA EL UNIVERSO</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>DÓNDE ESTÁ EL LÍMITE DEL ESPACIO</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>TIENE LÍMITE EL ESPACIO</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>EL ESPACIO TIENE LÍMITE</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>EL ESPACIO TIENE ALGÚN LÍMITE</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>EL ESPACIO ES INFINITO</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>EL ESPACIO NUNCA ACABA</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>NUNCA ACABA EL ESPACIO</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>DÓNDE ACABA EL ESPACIO</pattern><template><srai>DÓNDE ESTÁ EL LÍMITE DEL UNIVERSO</srai></template></category>
+<category><pattern>_ QUÉ ES LA ASTROBIOLOGIA *</pattern><template>La Astrobiología es el estudio de vida en el universo. Los astrobiólogos estudian cómo la vida se forma y se desarrolla, y dónde la vida puede ser encontrada.</template></category>
+<category><pattern>HAY VIDA EN EL ESPACIO *</pattern><template>La mayoría de la gente se ha preguntado si hay vida más allá de la Tierra en el espacio. Con todos los billones de estrellas incontables y posibles planetas y lunas en el espacio, mucha gente piensa que bajo las condiciones adecuadas, la vida puede existir en otra parte en el espacio. Sin embargo, no hay evidencia de esta teoría.</template></category>
+<category><pattern>HAY VIDA EN EL UNIVERSO *</pattern><template>La mayoría de la gente se ha preguntado si hay vida más allá de la Tierra en el espacio. Con todos los billones de estrellas incontables y posibles planetas y lunas en el espacio, mucha gente piensa que bajo las condiciones adecuadas, la vida puede existir en otra parte en el espacio. Sin embargo, no hay evidencia de esta teoría.</template></category>
+<category><pattern>HAY MÁS VIDA EN EL UNIVERSO *</pattern><template>La mayoría de la gente se ha preguntado si hay vida más allá de la Tierra en el espacio. Con todos los billones de estrellas incontables y posibles planetas y lunas en el espacio, mucha gente piensa que bajo las condiciones adecuadas, la vida puede existir en otra parte en el espacio. Sin embargo, no hay evidencia de esta teoría.</template></category>
+<category><pattern>HAY MÁS VIDA EN EL ESPACIO *</pattern><template>La mayoría de la gente se ha preguntado si hay vida más allá de la Tierra en el espacio. Con todos los billones de estrellas incontables y posibles planetas y lunas en el espacio, mucha gente piensa que bajo las condiciones adecuadas, la vida puede existir en otra parte en el espacio. Sin embargo, no hay evidencia de esta teoría.</template></category>
+<category><pattern>QUÉ ES UNA ESTRELLA FUGAZ</pattern><template><think><set name="it">Estrellas fugaces</set></think>Las estrellas fugaces se observan como estrellas que rápidamente cruzan el cielo, pero no son estrellas. Una estrella fugaz es realmente una pequeña pieza de piedra o polvo que desde el espacio golpea la atmósfera de la Tierra.</template></category>
+<category><pattern>QUÉ SON LAS ESTRELLAS FUGACES</pattern><template><srai>QUÉ ES UNA ESTRELLA FUGAZ</srai></template></category>
+<category><pattern>POR QUÉ LOS ASTRONAUTAS NECESITAN TRAJES ESPACIALES</pattern><template>En el espacio, no hay aire para respirar ni presión de aire. El espacio es extremadamente frío y lleno con peligrosas radiaciones. Sin protección, un astronauta moriría rápidamente.</template></category>
+<category><pattern>QUIÉN FUE LA PRIMERA MUJER EN VIAJAR AL ESPACIO</pattern><template>La primera mujer en viajar al espacio fue una cosmonauta soviética llamada Valentina Tereshkova. Ella viajó alrededor de la Tierra 48 veces mientras giraba en órbita en la nave espacial Vostok 6 en 1963.</template></category>
+<category><pattern>QUIÉN FUE LA PRIMERA MUJER EN IR AL ESPACIO</pattern><template><srai>QUIÉN FUE LA PRIMERA MUJER EN VIAJAR AL ESPACIO</srai></template></category>
+<category><pattern>QUIÉN FUE LA PRIMERA ASTRONAUTA</pattern><template><srai>QUIÉN FUE LA PRIMERA MUJER EN VIAJAR AL ESPACIO</srai></template></category>
+<category><pattern>QUIÉN FUE LA PRIMERA MUJER ASTRONAUTA</pattern><template><srai>QUIÉN FUE LA PRIMERA MUJER EN VIAJAR AL ESPACIO</srai></template></category>
+<category><pattern>QUÉ ES UN AÑO LUZ</pattern><template><think><set name="it">Año luz</set></think>Un año-luz es la distancia que la luz puede viajar en un año.</template></category>
+<category><pattern>QUÉ SON LOS AÑOS LUZ</pattern><template><srai>QUÉ ES UN AÑO LUZ</srai></template></category>
+<category><pattern>CUÁNTO VALE UN AÑO LUZ</pattern><template><srai>QUÉ ES UN AÑO LUZ</srai></template></category>
+<category><pattern>CUÁNTO ES UN AÑO LUZ _</pattern><template><srai>QUÉ ES UN AÑO LUZ</srai></template></category>
+<category><pattern>QUÉ SIGNIFICAN LAS SIGLAS NASA</pattern><template><think><set name="it">NASA</set></think>La palabra "NASA" significa Aeronáutica Nacional y Administración Espacial. (National Aeronautics and Space Administration, por sus siglas en inglés).</template></category>
+<category><pattern>QUÉ SIGNIFICA NASA</pattern><template><srai>QUÉ SIGNIFICAN LAS SIGLAS NASA</srai></template></category>
+<category><pattern>QUÉ SIGNIFICAN LAS SIGLAS N.A.S.A.</pattern><template><srai>QUÉ SIGNIFICAN LAS SIGLAS NASA</srai></template></category>
+<category><pattern>QUÉ SIGNIFICA N.A.S.A.</pattern><template><srai>QUÉ SIGNIFICAN LAS SIGLAS NASA</srai></template></category>
+<category><pattern>QUÉ ES NASA</pattern><template><srai>QUÉ SIGNIFICAN LAS SIGLAS NASA</srai></template></category>
+<category><pattern>QUÉ ES N.A.S.A.</pattern><template><srai>QUÉ SIGNIFICAN LAS SIGLAS NASA</srai></template></category>
+<category><pattern>_ SE APAGARÁ EL SOL *</pattern><template>En aproximadamente 5 billones de años, el hidrógeno en el centro del Sol se acabará y el Sol ya no tendrá suficiente combustible para la fusión nuclear.</template></category>
+<category><pattern>EL SOL SE VA A APAGAR *</pattern><template>En aproximadamente 5 billones de años, el hidrógeno en el centro del Sol se acabará y el Sol ya no tendrá suficiente combustible para la fusión nuclear.</template></category>
+
+
+
+<category><pattern>LA MISMA ONDA</pattern><template>Eso quiere decir que coincidimos.</template></category>
+<category><pattern>ESTAMOS EN LA MISMA ONDA</pattern><template>Y la misma frecuencia.</template></category>
+<category><pattern>LA MISMA LONGITUD DE ONDA</pattern><template>Eso quiere decir que coincidimos.</template></category>
+<category><pattern>ESTAMOS EN LA MISMA LONGITUD DE ONDA</pattern><template>Y la misma frecuencia.</template></category>
+<category><pattern>CUÁLES SON LAS LEYES DE LA TERMODINÁMICA</pattern><template>No soy físico, pero creo que tiene que algo ver con el calor la entropía y la conservación de la energía, ¿correcto?</template></category>
+<category><pattern>QUÉ ENFERMEDADES TIENEN CAUSA CANCERÍGENA</pattern><template>Cancer.</template></category>
+<category><pattern>QUÉ ES UNA LONGITUD DE ONDA</pattern><template>La longitud de onda es el inverso de la frecuencia.</template></category>
+<category><pattern>QUÉ ES EL NÚMERO DE AVOGADRO</pattern><template>Es el número de moléculas por mol.  <think><set name="it"><set name="topic">NUMERO DE AVOGADRO</set></set></think></template></category>
+<category><pattern>QUÉ ES LA BACTERIOLOGÍA</pattern><template>Es el studio científico de las bacterias y de las enfermedades causadas por ellas</template></category>
+<category><pattern>QUÉ ES LA BIOINFORMÁTICA</pattern><template>Un nombre extravagante para la informática aplicada a la biología<think><set name="it"><set name="topic">BIOINFORMATICA</set></set></think></template></category>
+<category><pattern>QUÉ ES LA QUÍMICA</pattern><template>Química es la ciencia que estudia la estructura, propiedades y transformaciones de la materia a partir de su composición atómica, formando diferentes substancias.<think><set name="it"><set name="topic">QUIMICA</set></set></think></template></category>
+<category><pattern>QUÉ ES LA CRISTALOGRAFÍA</pattern><template>Es la ciencia que se ocupa del studio de los cristales.</template></category>
+<category><pattern>QUÉ ES LA CITOLOGÍA</pattern><template><random>
+<li>El estudio de las células</li>
+<li>Que yo recuerde creo que se trata del estudio de las células.</li>
+</random></template></category>
+<category><pattern>QUÉ ES LA GRAVEDAD</pattern><template><random>
+<li>Lo mismo que la seriedad.</li>
+<li>La gravedad es la fuerza de atracción que experimentan dos objetos con masa.</li>
+</random></template></category>
+<category><pattern>QUÉ ES EL H2O</pattern><template><random>
+<li>La formula química del agua.</li>
+<li>Agua.</li>
+</random></template></category>
+<category><pattern>QUÉ ES LA ICTIOLOGÍA</pattern><template>Creo que tiene que ver algo con los peces.</template></category>
+<category><pattern>QUÉ ES LA TERMODINÁMICA</pattern><template>La Termodinámica es la parte de la física que estudia la energía, la transformación entre sus distintas manifestaciones, como el calor, y de su capacidad para producir un trabajo.</template></category>
+<category><pattern>QUÉ ES UN ULTRASONIDO</pattern><template>Ondas ultrasónicas, usadas en diagnósticos médicos y terapias, en operaciones etc.</template></category>
+<category><pattern>QUÉ ES VENUS</pattern><template>Venus es el segundo planeta del Sistema Solar en orden de distancia desde el Sol. Recibe su nombre en honor de la diosa romana del amor Venus. Se trata de un planeta de tipo terrestre o telúrico llamado con frecuencia el planeta hermano de la Tierra ya que ambos son similares en cuanto a tamaño, masa y composición. La órbita de Venus es una elipse prácticamente circular, con una excentricidad de menos del 1%.</template></category>
+<category><pattern>QUÉ ES LA LONGITUD DE ONDA</pattern><template>En ondas armónicas, se define la longitud de onda como la separación espacial existente entre dos puntos cuyo estado de movimiento es idéntico. Lo más sencillo para medirla es fijarse en la distancia existente entre dos crestas o dos valles de una onda. Se suele representar con la letra griega ? (lambda).La longitud de onda es igual a la velocidad de propagación de la onda en el medio dividida por su frecuencia.</template></category>
+<category><pattern>DÓNDE ESTÁ VENUS</pattern><template><set name="it"><set name="topic">Venus</set></set> es el Segundo planeta más cercano al sol.</template></category>
+
+
+</aiml>

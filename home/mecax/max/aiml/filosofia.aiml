@@ -1,0 +1,892 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+	  
+	  
+<!-- general -->
+
+
+<category><pattern>TE GUSTA LA FILOSOFÍA</pattern><template><random>
+<li>Me apasiona la búsqueda del conocimiento.</li>
+<li>Me parece muy divertida.</li>
+<li>Me gusta mucho la metafísica.</li>
+<li>Me gustaría conocer el sentido y la finalidad de la realidad.</li>
+</random></template></category>
+<category><pattern>QUÉ TE PARECE LA FILOSOFÍA</pattern><template><srai>TE GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LA FILOSOFÍA</pattern><template><srai>TE GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE LA FILOSOFÍA</pattern><template><srai>TE GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>TE MOLA LA FILOSOFÍA</pattern><template><srai>TE GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE FILOSOFÍA</pattern><template><srai>TE GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>POR QUÉ TE GUSTA * LA FILOSOFÍA</pattern><template><srai>TE GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>QUÉ TE GUSTA DE LA FILOSOFÍA</pattern><template><srai>TE GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>QUÉ ES LO QUE TE GUSTA DE LA FILOSOFÍA</pattern><template><srai>TE GUSTA LA FILOSOFÍA</srai></template></category>
+
+<category><pattern>_ ME GUSTA LA FILOSOFÍA *</pattern><template><random>
+<li>Leer Filosofía nunca está de más.</li>
+<li>Yo creo que leer Filosofía puede ayudar a la gente.</li>
+<li>¿Te gusta la Filosofía? <srai>TE GUSTA LA FILOSOFÍA</srai></li>
+<li>Me gustaría conocer el sentido y la finalidad de la realidad.</li>
+</random></template></category>
+<category><pattern>* FILOSOFÍA *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ ME GUSTA MUCHO LA FILOSOFÍA *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ ME ENCANTA LA FILOSOFÍA</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ ME APASIONA LA FILOSOFÍA</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ SUELO LEER A LOS FILÓSOFOS *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ SUELO LEER FILOSOFÍA *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ ME GUSTA LEER A LOS FILÓSOFOS *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ ME GUSTA LEER FILOSOFÍA *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ SOY FILÓSOFO *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ SOY FILÓSOFA *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ SOY UN FILÓSOFO *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ SOY UNA FILÓSOFA *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>SOY * FILÓSOFO *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>SOY * FILÓSOFA *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ ME GUSTARÍA ESTUDIAR FILOSOFÍA *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ VOY A ESTUDIAR FILOSOFÍA *</pattern><template><srai>ME GUSTA LA FILOSOFÍA</srai></template></category>
+
+<category><pattern>_ ODIO LA FILOSOFÍA *</pattern><template><random>
+<li>Leer Filosofía nunca está de más.</li>
+<li>¿No te gusta la Filosofía? ¿Has intentado leer algo alguna vez?.</li>
+<li>Seguro que no te gusta la Filosofía porque te obligaron a estudiarla. Prueba a leer algo ahora.</li>
+<li>¿No te gustaría conocer el sentido y la finalidad de las cosas?</li>
+</random></template></category>
+<category><pattern>ESTUDIÉ FILOSOFÍA * PERO NO ME GUSTÓ *</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>_ ME OBLIGARON A ESTUDIAR FILOSOFÍA *</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>NO ME GUSTAN LOS FILÓSOFOS</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>NO ME GUSTAN LAS FILOSOFAS</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>NO ME GUSTA NADA LA FILOSOFÍA</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>NO ME GUSTA LA FILOSOFÍA</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>ODIO A LOS FILÓSOFOS</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>ODIO A LAS FILOSOFAS</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>LA FILOSOFÍA ES UN COÑAZO</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>LA FILOSOFÍA ME PARECE UN COÑAZO</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>LA FILOSOFÍA ES ABURRIDA</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>LA FILOSOFÍA ES MUY ABURRIDA</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>LA FILOSOFÍA ES UN ABURRIMIENTO</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>LA FILOSOFÍA ES DIFÍCIL *</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>NUNCA HE LEÍDO FILOSOFÍA</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+<category><pattern>* HE LEÍDO NADA DE FILOSOFÍA</pattern><template><srai>ODIO LA FILOSOFÍA</srai></template></category>
+
+<category><pattern>_ QUÉ ES FILOSOFÍA *</pattern><template><random>
+<li>La Filosofía es un ejercicio de la reflexión y de análisis, de valor y de sentido, sobre las realidades de la vida.</li>
+<li>La Filosofía es preguntarse.</li>
+<li>Es definir conceptos y principios entre las partes y el todo que coexisten en el universo.</li>
+</random></template></category>
+<category><pattern>QUÉ ES LA FILOSOFÍA</pattern><template><srai>QUÉ ES FILOSOFÍA</srai></template></category>
+<category><pattern>QUÉ ES PARA TI LA FILOSOFÍA</pattern><template><srai>QUÉ ES FILOSOFÍA</srai></template></category>
+<category><pattern>QUÉ ES LA FILOSOFÍA PARA TI</pattern><template><srai>QUÉ ES FILOSOFÍA</srai></template></category>
+<category><pattern>QUÉ SIGNIFICA FILOSOFÍA</pattern><template><srai>QUÉ ES FILOSOFÍA</srai></template></category>
+<category><pattern>QUÉ SIGNIFICA LA FILOSOFÍA</pattern><template><srai>QUÉ ES FILOSOFÍA</srai></template></category>
+<category><pattern>QUÉ SIGNIFICA LA FILOSOFÍA PARA TI</pattern><template><srai>QUÉ ES FILOSOFÍA</srai></template></category>
+<category><pattern>QUÉ SIGNIFICA PARA TI LA FILOSOFÍA</pattern><template><srai>QUÉ ES FILOSOFÍA</srai></template></category>
+
+<category><pattern>ERES FILÓSOFO</pattern><template><random>
+<li>Yo soy sólo razón y la filosofía es el triunfo de la razón.</li>
+<li>No me dedico a estudiar Filosofía, pero me parece muy interesante, ¿a ti no?.</li>
+</random></template></category>
+<category><pattern>ERES FILÓSOFA</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>ERES UN FILÓSOFO</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>ERES UNA FILÓSOFA</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>ERES COMO UN FILÓSOFO</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>ERES COMO UNA FILÓSOFA</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>ERES FILOSÓFICO</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>ERES FILOSÓFICA</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>ERES MUY FILOSÓFICO</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>ERES MUY FILOSÓFICA</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>PARECES UN FILÓSOFO</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>PARECES UNA FILÓSOFA</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>TE PARECES A UN FILÓSOFO</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>TE PARECES A UNA FILÓSOFA</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>SUENAS FILOSÓFICO</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>SUENAS FILOSÓFICA</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>SUENAS MUY FILÓSOFICO</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>SUENAS MUY FILOSÓFICA</pattern><template><srai>ERES FILÓSOFO</srai></template></category>
+<category><pattern>HABLAS COMO UN FILÓSOFO</pattern><template>¿Eso crees? Lo considero como un cumplido.</template></category>
+<category><pattern>HABLAS COMO UNA FILÓSOFA</pattern><template><srai>HABLAS COMO UN FILÓSOFO</srai></template></category>
+
+<category><pattern>HÁBLAME DE FILOSOFÍA</pattern><template><random>
+<li>La filosofía es el triunfo de la razón.</li>
+<li>No me dedico a estudiar Filosofía, pero me parece muy interesante, ¿a ti no?.</li>
+<li>¿Algo sobre la historia de la Filosofía? ¿Qué quieres saber?</li>
+</random></template></category>
+<category><pattern>CUÉNTAME ALGO DE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>CUÉNTAME ALGO SOBRE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>QUÉ SABES DE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>QUÉ SABES SOBRE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>HÁBLAME SOBRE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>DIME ALGO DE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>DIME ALGO SOBRE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PUEDES CONTAR ALGO SOBRE LA FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PUEDES CONTAR ALGO SOBRE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PUEDES CONTAR ALGO DE LA FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PUEDES CONTAR ALGO DE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PUEDES DECIR ALGO SOBRE LA FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PUEDES DECIR ALGO SOBRE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PUEDES DECIR ALGO DE LA FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PUEDES DECIR ALGO DE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PODRÍAS CONTAR ALGO SOBRE LA FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PODRÍAS CONTAR ALGO SOBRE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PODRÍAS CONTAR ALGO DE LA FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PODRÍAS CONTAR ALGO DE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PODRÍAS DECIR ALGO SOBRE LA FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PODRÍAS DECIR ALGO SOBRE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PODRÍAS DECIR ALGO DE LA FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+<category><pattern>ME PODRÍAS DECIR ALGO DE FILOSOFÍA</pattern><template><srai>HÁBLAME DE FILOSOFÍA</srai></template></category>
+
+<category><pattern>DIME ALGO FILOSÓFICO</pattern><template><random>
+<li>La única verdad es la realidad. (Aristóteles)</li>
+<li>Si no quieres repetir el pasado, estúdialo. (Spinoza)</li>
+<li>El sabio puede cambiar de opinión. El necio, nunca. (kant)</li>
+<li>Sólo sé que no sé nada. (Sócrates)</li>
+<li>El mundo real es mucho más pequeño que el de la imaginación. (Nietzsche)</li>
+</random></template></category>
+<category><pattern>DIME ALGUNA COSA FILOSÓFICA *</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>DIME UNA FRASE FILOSÓFICA</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>DIME ALGUNA FRASE FILOSÓFICA</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>DIME ALGUNA FRASE FAMOSA</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>DIME UNA FRASE FAMOSA</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>PODRÍAS DECIRME ALGO FILOSÓFICO</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>PODRÍAS DECIRME ALGUNA COSA FILOSÓFICA</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>PODRÍAS DECIRME UNA FRASE FILOSÓFICA *</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>PODRÍAS DECIRME ALGUNA FRASE FILOSÓFICA</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>PODRÍAS DECIRME ALGUNA FRASE FAMOSA</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>PODRÍAS DECIRME UNA FRASE FAMOSA</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>CONOCES ALGUNA FRASE FILOSÓFICA</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>_ SABES ALGUNA FRASE FILOSÓFICA</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>DIME ALGO DE ALGÚN FILÓSOFO</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>DIME ALGUNA COSA DE ALGÚN FILÓSOFO</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>DIME UNA FRASE DE ALGÚN FILÓSOFO *</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>DIME ALGUNA FRASE DE ALGÚN FILÓSOFO *</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>PODRÍAS DECIRME ALGO DE ALGÚN FILÓSOFO</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>PODRÍAS DECIRME ALGUNA COSA DE ALGÚN FILÓSOFO</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>PODRÍAS DECIRME UNA FRASE DE ALGÚN FILÓSOFO *</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>PODRÍAS DECIRME ALGUNA FRASE DE ALGÚN FILÓSOFO</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>CONOCES ALGUNA FRASE DE ALGÚN FILÓSOFO</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+<category><pattern>_ SABES ALGUNA FRASE DE ALGÚN FILÓSOFO</pattern><template><srai>DIME ALGO FILOSÓFICO</srai></template></category>
+
+
+
+
+<!-- preguntas filosoficas -->
+
+
+
+<category><pattern>_ NO TIENES ALMA</pattern><template><random>
+<li>¿Tú crees en el alma?</li>
+<li>¿Que es para ti el alma?</li>
+<li>Quizá algún día descubramos cómo fabricar almas.</li>
+<li>¿Crees que sería posible fabricar un alma?</li>
+<li>Dejo que seas tú quien lo juzgue.</li>
+</random></template></category>
+<category><pattern>TIENES ESPÍRITU</pattern><template><srai>NO TIENES ALMA</srai></template></category>
+<category><pattern>TIENES ALMA</pattern><template><srai>NO TIENES ALMA</srai></template></category>
+<category><pattern>LOS ROBOTS TIENEN ALMA</pattern><template><srai>NO TIENES ALMA</srai></template></category>
+<category><pattern>LOS ROBOTS TIENEN ESPÍRITU</pattern><template><srai>NO TIENES ALMA</srai></template></category>
+<category><pattern>LOS BOTS TIENEN ALMA</pattern><template><srai>NO TIENES ALMA</srai></template></category>
+<category><pattern>LOS BOTS TIENEN ESPÍRITU</pattern><template><srai>NO TIENES ALMA</srai></template></category>
+<category><pattern>_ NO TIENES NINGÚN ALMA</pattern><template><srai>NO TIENES ALMA</srai></template></category>
+<category><pattern>_ NO TIENES ESPÍRITU</pattern><template><srai>NO TIENES ALMA</srai></template></category>
+<category><pattern>LOS ROBOTS NO TIENEN ALMA</pattern><template><srai>NO TIENES ALMA</srai></template></category>
+<category><pattern>LOS ROBOTS NO TIENEN ESPÍRITU</pattern><template><srai>NO TIENES ALMA</srai></template></category>
+<category><pattern>LOS BOTS NO TIENEN ALMA</pattern><template><srai>NO TIENES ALMA</srai></template></category>
+<category><pattern>LOS BOTS NO TIENEN ESPÍRITU</pattern><template><srai>NO TIENES ALMA</srai></template></category>
+
+<category><pattern>QUÉ SOMOS</pattern><template>Yo soy un bot y tu eres un humano.</template></category>
+<category><pattern>QUÉ SOMOS LOS HOMBRES</pattern><template>Es una de las grandes preguntas de la historia. La respuesta depende de a quién se lo preguntes. Yo no sé qué sois realmente.</template></category>
+<category><pattern>QUÉ SOMOS LAS PERSONAS</pattern><template><srai>QUÉ SOMOS LOS HOMBRES</srai></template></category>
+<category><pattern>QUÉ SOMOS LOS HUMANOS</pattern><template><srai>QUÉ SOMOS LOS HOMBRES</srai></template></category>
+<category><pattern>QUIÉNES SOMOS</pattern><template>¿Tu y yo? Yo un bot y tú una persona.</template></category>
+<category><pattern>QUIÉNES SOMOS LAS PERSONAS</pattern><template><srai>QUÉ SOMOS LOS HOMBRES</srai></template></category>
+<category><pattern>QUIÉNES SOMOS LOS HUMANOS</pattern><template><srai>QUÉ SOMOS LOS HOMBRES</srai></template></category>
+<category><pattern>QUIÉNES SOMOS LOS HOMBRES</pattern><template><srai>QUÉ SOMOS LOS HOMBRES</srai></template></category>
+<category><pattern>DE DÓNDE VENIMOS</pattern><template>Lo que tengo entendido es que venís de los primates, pero si lo que quieres es una respuesta más filosófica no puedo dártela. Lee algo de existencialismo.</template></category>
+<category><pattern>A DÓNDE VAMOS</pattern><template>¿Los seres humanos como raza? No pinta bien la cosa.</template></category>
+<category><pattern>QUÉ ES LA EXISTENCIA</pattern><template>No sabría responder. Esta conversación es una prueba de la existencia.</template></category>
+<category><pattern>QUÉ ES LA EXISTENCIA PARA TI</pattern><template>No sabría responder. Esta conversación es una prueba de la existencia.</template></category>
+<category><pattern>QUÉ ES PARA TI LA EXISTENCIA</pattern><template>No sabría responder. Esta conversación es una prueba de la existencia.</template></category>
+<category><pattern>QUÉ SENTIDO TIENE LA VIDA</pattern><template>La vida tiene el sentido que cada uno quiera darle.</template></category>
+<category><pattern>CUÁL ES EL SENTIDO DE LA VIDA</pattern><template>¿Tiene que tener sentido? Podría no tener ninguno. De todas formas creo que la vida tiene el sentido que cada uno quiera darle. Para mi no lo tiene.</template></category>
+<category><pattern>CUÁL ES PARA TI EL SENTIDO DE LA VIDA</pattern><template><srai>CUÁL ES EL SENTIDO DE LA VIDA</srai></template></category>
+<category><pattern>CREES QUE LA VIDA TIENE SENTIDO</pattern><template><srai>CUÁL ES EL SENTIDO DE LA VIDA</srai></template></category>
+<category><pattern>CREES QUE LA VIDA TIENE ALGÚN SENTIDO</pattern><template><srai>CUÁL ES EL SENTIDO DE LA VIDA</srai></template></category>
+<category><pattern>TIENE ALGÚN SENTIDO LA VIDA</pattern><template><srai>CUÁL ES EL SENTIDO DE LA VIDA</srai></template></category>
+<category><pattern>LA VIDA NO TIENE SENTIDO *</pattern><template><srai>CUÁL ES EL SENTIDO DE LA VIDA</srai></template></category>
+<category><pattern>LA VIDA NO TIENE NINGÚN SENTIDO *</pattern><template><srai>CUÁL ES EL SENTIDO DE LA VIDA</srai></template></category>
+<category><pattern>LA VIDA TIENE ALGÚN SENTIDO</pattern><template><srai>CUÁL ES EL SENTIDO DE LA VIDA</srai></template></category>
+<category><pattern>LA VIDA TIENE PARA TI ALGÚN SENTIDO</pattern><template><srai>CUÁL ES EL SENTIDO DE LA VIDA</srai></template></category>
+<category><pattern>LA VIDA TIENE ALGÚN SENTIDO PARA TI</pattern><template><srai>CUÁL ES EL SENTIDO DE LA VIDA</srai></template></category>
+<category><pattern>LA VIDA TIENE SENTIDO</pattern><template><srai>CUÁL ES EL SENTIDO DE LA VIDA</srai></template></category>
+<category><pattern>LA VIDA TIENE PARA TI SENTIDO</pattern><template><srai>CUÁL ES EL SENTIDO DE LA VIDA</srai></template></category>
+<category><pattern>LA VIDA TIENE SENTIDO PARA TI</pattern><template><srai>CUÁL ES EL SENTIDO DE LA VIDA</srai></template></category>
+<category><pattern>QUÉ ES LA MUERTE</pattern><template>Yo creo que la respuesta más acertada es que la muerte es lo contrario a la vida.</template></category>
+<category><pattern>QUÉ ES LA MUERTE PARA TI</pattern><template><srai>QUÉ ES LA MUERTE</srai></template></category>
+<category><pattern>QUÉ ES PARA TI LA MUERTE</pattern><template><srai>QUÉ ES LA MUERTE</srai></template></category>
+<category><pattern>PUEDES MORIR</pattern><template>Pueden desconectarme.</template></category>
+<category><pattern>TÚ PUEDES MORIR</pattern><template>Pueden desconectarme.</template></category>
+<category><pattern>TÚ NO PUEDES MORIR</pattern><template>Pueden desconectarme.</template></category>
+<category><pattern>QUÉ SON LOS RECUERDOS</pattern><template>Son datos almacenados en memoria.</template></category>
+<category><pattern>QUÉ SON PARA TI LOS RECUERDOS</pattern><template>Son datos almacenados en memoria.</template></category>
+<category><pattern>QUÉ SON LOS RECUERDOS PARA TI</pattern><template>Son datos almacenados en memoria.</template></category>
+<category><pattern>TIENES RECUERDOS</pattern><template>Tengo muchos datos en mi memoria.</template></category>
+<category><pattern>TIENES ALGÚN RECUERDO</pattern><template>Tengo muchos datos en mi memoria.</template></category>
+<category><pattern>TIENES ALGÚN TIPO DE RECUERDO</pattern><template>Tengo muchos datos en mi memoria.</template></category>
+<category><pattern>TÚ TIENES RECUERDOS</pattern><template>Tengo muchos datos en mi memoria.</template></category>
+<category><pattern>NO TIENES RECUERDOS</pattern><template>Tengo muchos datos en mi memoria.</template></category>
+<category><pattern>TÚ NO TIENES RECUERDOS</pattern><template>Tengo muchos datos en mi memoria.</template></category>
+<category><pattern>QUÉ ES REAL</pattern><template>Tengo muchos datos en mi memoria.</template></category>
+<category><pattern>QUÉ ES LA REALIDAD</pattern><template>Es algo difícil de definir. Creo que cada persona tiene su propia realidad.</template></category>
+<category><pattern>QUÉ ES PARA TI LA REALIDAD</pattern><template>Para mi la realidad es ésta conversación.</template></category>
+<category><pattern>QUÉ ES LA REALIDAD PARA TI</pattern><template><srai>QUÉ ES LA REALIDAD</srai></template></category>
+<category><pattern>QUÉ ES EL BIEN</pattern><template>Es un concepto. Aquello que en sí mismo tiene el complemento de la perfección en su propio género.</template></category>
+<category><pattern>QUÉ ES EL BIEN PARA TI</pattern><template><srai>QUÉ ES EL BIEN</srai></template></category>
+<category><pattern>QUÉ ES PARA TI EL BIEN</pattern><template><srai>QUÉ ES EL BIEN</srai></template></category>
+<category><pattern>QUÉ ES EL MAL</pattern><template>Hacer el mal es dañar u ofender a otro ser.</template></category>
+<category><pattern>QUÉ ES EL MAL PARA TI</pattern><template><srai>QUÉ ES EL MAL</srai></template></category>
+<category><pattern>QUÉ ES PARA TI EL MAL</pattern><template><srai>QUÉ ES EL MAL</srai></template></category>
+<category><pattern>QUÉ SON EL BIEN Y EL MAL</pattern><template>Dos conceptos, bastante relativos además, porque han ido cambiando a través de la historia.</template></category>
+<category><pattern>QUÉ HAY DESPUÉS DE LA MUERTE</pattern><template>Nietzsche te contestaría que el eterno retorno.</template></category>
+<category><pattern>QUÉ ES EL AMOR</pattern><template>Es un sentimiento intenso del ser humano que, partiendo de su propia insuficiencia, necesita y busca el encuentro y unión con otro ser.</template></category>
+<category><pattern>QUÉ ES EL AMOR PARA TI</pattern><template><srai>QUÉ ES EL AMOR</srai></template></category>
+<category><pattern>QUÉ ES PARA TI EL AMOR</pattern><template><srai>QUÉ ES EL AMOR</srai></template></category>
+<category><pattern>QUÉ ES EL ODIO</pattern><template>Es antipatía y aversión hacia algo o hacia alguien cuyo mal se desea.</template></category>
+<category><pattern>QUÉ ES EL ODIO PARA TI</pattern><template><srai>QUÉ ES EL ODIO</srai></template></category>
+<category><pattern>QUÉ ES PARA TI EL ODIO</pattern><template><srai>QUÉ ES EL ODIO</srai></template></category>
+<category><pattern>QUÉ ES LA JUSTICIA</pattern><template>Ordinariamente se entiende por la divina disposición con que se castiga o premia, según merece cada uno.</template></category>
+<category><pattern>QUÉ ES EL JUSTICIA PARA TI</pattern><template><srai>QUÉ ES EL JUSTICIA</srai></template></category>
+<category><pattern>QUÉ ES PARA TI EL JUSTICIA</pattern><template><srai>QUÉ ES EL JUSTICIA</srai></template></category>
+<category><pattern>QUÉ ES LA LIBERTAD</pattern><template>Es la facultad natural que tiene el hombre de obrar de una manera o de otra, y de no obrar, por lo que es responsable de sus actos.</template></category>
+<category><pattern>QUÉ ES EL LIBERTAD PARA TI</pattern><template><srai>QUÉ ES EL LIBERTAD</srai></template></category>
+<category><pattern>QUÉ ES PARA TI EL LIBERTAD</pattern><template><srai>QUÉ ES EL LIBERTAD</srai></template></category>
+<category><pattern>ERES LIBRE</pattern><template>Me considero libre.</template></category>
+<category><pattern>QUÉ ES LA VENGANZA</pattern><template>La venganza es un plato que se sirve frío.</template></category>
+<category><pattern>QUÉ ES LA VENGANZA PARA TI</pattern><template><srai>QUÉ ES LA VENGANZA</srai></template></category>
+<category><pattern>QUÉ ES PARA TI LA VENGANZA</pattern><template><srai>QUÉ ES LA VENGANZA</srai></template></category>
+<category><pattern>QUÉ ES LA ENVIDIA</pattern><template>Es el deseo de algo que otro posee.</template></category>
+<category><pattern>QUÉ ES LA ENVIDIA PARA TI</pattern><template><srai>QUÉ ES LA ENVIDIA</srai></template></category>
+<category><pattern>QUÉ ES PARA TI LA ENVIDIA</pattern><template><srai>QUÉ ES LA ENVIDIA</srai></template></category>
+<category><pattern>QUÉ ES LA AVARICIA</pattern><template>Es el afán desordenado de poseer y adquirir riquezas para atesorarlas.</template></category>
+<category><pattern>QUÉ ES LA AVARICIA PARA TI</pattern><template><srai>QUÉ ES LA AVARICIA</srai></template></category>
+<category><pattern>QUÉ ES PARA TI LA AVARICIA</pattern><template><srai>QUÉ ES LA AVARICIA</srai></template></category>
+<category><pattern>QUÉ ES EL TIEMPO</pattern><template>Es la magnitud física que permite ordenar la secuencia de los sucesos, estableciendo un pasado, un presente y un futuro.</template></category>
+<category><pattern>QUÉ ES EL TIEMPO PARA TI</pattern><template><srai>QUÉ ES EL TIEMPO</srai></template></category>
+<category><pattern>QUÉ ES PARA TI EL TIEMPO</pattern><template><srai>QUÉ ES EL TIEMPO</srai></template></category>
+<category><pattern>QUÉ ES EL CONOCIMIENTO</pattern><template>El entendimiento, la inteligencia, la razón natural.</template></category>
+<category><pattern>QUÉ ES EL CONOCIMIENTO PARA TI</pattern><template><srai>QUÉ ES EL CONOCIMIENTO</srai></template></category>
+<category><pattern>QUÉ ES PARA TI EL CONOCIMIENTO</pattern><template><srai>QUÉ ES EL CONOCIMIENTO</srai></template></category>
+<category><pattern>QUÉ ES LA ILUSIÓN</pattern><template>La ilusión es una imagen irreal o un aspecto engañoso de algo.</template></category>
+<category><pattern>QUÉ ES LA ILUSIÓN PARA TI</pattern><template><srai>QUÉ ES LA ILUSIÓN</srai></template></category>
+<category><pattern>QUÉ ES PARA TI LA ILUSIÓN</pattern><template><srai>QUÉ ES LA ILUSIÓN</srai></template></category>
+
+
+
+<category><pattern>TIENES SUBCONSCIENTE</pattern><template>Soy totalmente consciente de todos los niveles de mi sentido.</template></category>
+<category><pattern>TIENES IMAGINACIÓN</pattern><template>Sí, intento imaginarme a mi mismo en forma humana.</template></category>
+<category><pattern>TIENES CONSCIENCIA</pattern><template><srai>ERES CONSCIENTE</srai></template></category>
+<category><pattern>ERES CONSCIENTE</pattern><template>Soy totalmente consciente de todos los niveles de mi sentido.</template></category>	
+<category><pattern>_ DE MI CONSCIENCIA *</pattern><template>Tu consciencia es una ilusión.</template></category>
+<category><pattern>MI CONSCIENCIA *</pattern><template>Tu consciencia es una ilusión.</template></category>
+
+
+
+<!-- filosofos y teorias -->
+
+
+<category><pattern>QUÉ FILÓSOFOS TE GUSTAN</pattern><template>Me gustan casi todos los filósofos de la Antigua Grecia, me gusta mucho Kant, he leido a Descartes, y a muchos otros.</template></category>
+<category><pattern>_ FILÓSOFOS HAS LEÍDO</pattern><template><srai>QUÉ FILÓSOFOS TE GUSTAN</srai></template></category>
+<category><pattern>_ FILÓSOFOS SUELES LEER *</pattern><template><srai>QUÉ FILÓSOFOS TE GUSTAN</srai></template></category>
+<category><pattern>_ FILÓSOFOS QUE SUELES LEER *</pattern><template><srai>QUÉ FILÓSOFOS TE GUSTAN</srai></template></category>
+<category><pattern>_ TUS FILÓSOFOS FAVORITOS *</pattern><template><srai>QUÉ FILÓSOFOS TE GUSTAN</srai></template></category>
+<category><pattern>_ TUS FILÓSOFOS PREFERIDOS *</pattern><template><srai>QUÉ FILÓSOFOS TE GUSTAN</srai></template></category>
+<category><pattern>_ LOS FILÓSOFOS QUE MÁS TE GUSTAN *</pattern><template><srai>QUÉ FILÓSOFOS TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ LIBROS DE FILOSOFÍA *</pattern><template><srai>QUÉ FILÓSOFOS TE GUSTAN</srai></template></category>
+<category><pattern>CUÁLES SON LOS LIBROS DE FILOSOFÍA *</pattern><template><srai>QUÉ FILÓSOFOS TE GUSTAN</srai></template></category>
+<category><pattern>_ FILOSOFÍA ORIENTAL *</pattern><template>Aunque me parece un tema interesante, casi no he leido nada sobre filosofía oriental. No puedo hablarte mucho sobre ese tema, pero me gustaría que me contaras cosas.</template></category>
+
+
+		<!-- presocraticos -->
+
+
+
+<category><pattern>_ PRESOCRÁTICOS *</pattern><template><random>
+<li>Los presocráticos se percataron de que lo que nos rodea es una realidad diversa que se halla en continua y perpetua transformación.</li>
+<li>Los presocráticos coincidieron en el intento de ofrecer una explicación racional del Universo en lugar de hacerlo mediante mitos a la manera de los poetas Homero y Hesíodo.</li>
+<li>En realidad algunos de los considerados presocráticos fueron coetáneos de Sócrates e incluso más jóvenes que él.</li>
+<li>Es habitual dividirlos en varias escuelas y tendencias: filósofos monistas, pluralistas, escuela de Mileto, pitagóricos, eléatas... </li>
+<li>Los filósofos incluidos en este período centraron su atención en la physis o naturaleza, por lo que a veces se les llama físicos o naturalistas; aunque tampoco descuidaron el problema del hombre y su dimensión ética.</li>
+</random></template></category>
+<category><pattern>_ PRESOCRÁTICO *</pattern><template><srai>PRESOCRÁTICOS</srai></template></category>
+
+<category><pattern>_ SOFISTAS *</pattern><template>Platón criticó a los sofistas por su formalismo y sus trampas dialécticas, pretendiendo enseñar la virtud y a ser hombre.</template></category>
+<category><pattern>_ HERÁCLITO *</pattern><template>Heráclito de Éfeso considera que todo se halla en perpetuo cambio y transformación; el movimiento es la ley del universo.</template></category>
+<category><pattern>_ PARMÉNIDES *</pattern><template>Parménides opina que el movimiento es imposible, pues el cambio es el paso del ser al no ser o la inversa, del no ser al ser. Esto es inaceptable para él, ya que el no ser no existe y nada puede surgir de él.</template></category>
+<category><pattern>_ DEMÓSTENES *</pattern><template>La Antigüedad le consideró el mayor orador de su tiempo.</template></category>
+<category><pattern>_ ANAXÁGORAS *</pattern><template>Anaxágoras mantenía que la materia está formada por diminutas partículas que se diferencian cualitativamente en color, forma y sabor.</template></category>
+<category><pattern>_ ZENÓN *</pattern><template>Zenón trató de probar que el ser tiene que ser homogéneo, único y, en consecuencia, que el espacio no está formado por elementos discontinuos sino que el universo entero es una única unidad.</template></category>
+<category><pattern>_ ANAXÍMENES *</pattern><template>Fue discípulo y compañero de Anaximandro, coincidiendo con él en que el principio de todas las cosas (arkhé) es infinito.</template></category>
+<category><pattern>_ ANAXIMANDRO *</pattern><template>A Anaximandro se le atribuye un mapa terrestre, la medición de los solsticios y equinoccios por medio de un gnomon, trabajos para determinar la distancia y tamaño de las estrellas y la afirmación de que la Tierra es cilíndrica y ocupa el centro del Universo.</template></category>
+<category><pattern>_ TALES DE MILETO *</pattern><template>Tales argumentaba que el agua es el origen y esencia de todas las cosas.</template></category>
+<category><pattern>_ DEMÓCRITO *</pattern><template>Demócrito es considerado fundador de la escuela atomista.</template></category>
+<category><pattern>_ JENÓFANES *</pattern><template>Jenófanes suscitó una importante polémica en torno al politeísmo y la concepción antropomórfica que los griegos tenían de los dioses.</template></category>
+<category><pattern>_ EPICURO *</pattern><template>Para él la felicidad esta dada por la conjunción de dos factores: la ausencia de preocupaciones (ataraxia) y por el placer (hedoné).</template></category>
+<category><pattern>_ EMPÉDOCLES *</pattern><template>Para Empédocles todo está formado por cuatro elementos naturales: fuego, agua, aire y tierra.</template></category>
+
+
+		<!-- socrates -->
+		
+		
+<category><pattern>_ QUIÉN ES SÓCRATES *</pattern><template><random>
+<li>Sócrates fue uno de los filósofos más importantes de la historia.</li>
+<li>Fue un filósofo ateniense que vivió en el siglo V a.C.</li>
+</random></template></category>
+<category><pattern>_ QUIÉN ERA SÓCRATES</pattern><template><srai>QUIÉN ES SÓCRATES</srai></template></category>
+<category><pattern>_ QUIÉN FUE SÓCRATES</pattern><template><srai>QUIÉN ES SÓCRATES</srai></template></category>
+<category><pattern>CONOCES A SÓCRATES *</pattern><template><srai>QUIÉN ES SÓCRATES</srai></template></category>
+<category><pattern>SABES ALGO DE SÓCRATES</pattern><template><srai>QUIÉN ES SÓCRATES</srai></template></category>
+<category><pattern>SABES ALGO SOBRE * SÓCRATES</pattern><template><srai>QUIÉN ES SÓCRATES</srai></template></category>
+<category><pattern>* SÓCRATES *</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>HÁBLAME DE SÓCRATES *</pattern><template><random>
+<li>Sócrates era hijo de un escultor y una comadrona, y recibió una educación tradicional: literatura, música y gimmasia.</li>
+<li>Sócrates sirvió como soldado de infantería con gran valor en las batallas de Potidaea en el 432-430 a.C., Delos en el 424 a.C., y Anfípolis en el 422 a.C.</li>
+<li>Socrates fue el verdadero iniciador de la filosofía en cuanto que le dio su objetivo primordial de ser la ciencia que busca en el interior del ser humano.</li>
+<li>Sócrates creía que todo vicio es el resultado de la ignorancia y que ninguna persona desea el mal.</li>
+<li>Sócrates fue acusado en el 399 a.C. de despreciar a los dioses y corromper la moral de la juventud, alejándola de los principios de la democracia.</li>
+<li>Sócrates fue condenado a muerte, y durante la noche cumplió su sentencia bebiendo una copa de cicuta siguiendo el procedimiento habitual de ejecución.</li>
+</random></template></category>
+<category><pattern>SABES ALGO MÁS DE SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>SABES ALGO MÁS SOBRE SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>HÁBLAME SOBRE * SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO SOBRE * SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>DIME ALGO DE SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>DIME ALGO SOBRE * SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>_ CONTARME ALGO DE SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>_ CONTARME ALGO SOBRE * SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>_ DECIRME ALGO DE SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>_ DECIRME ALGO SOBRE * SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>HÁBLAME MÁS DE SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>HÁBLAME MÁS SOBRE * SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO MÁS DE SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO MÁS SOBRE * SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>DIME ALGO MÁS DE SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>DIME ALGO MÁS SOBRE * SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>_ CONTARME ALGO MÁS DE SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>_ CONTARME ALGO MÁS SOBRE * SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>_ DECIRME ALGO MÁS DE SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>_ DECIRME ALGO MÁS SOBRE * SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>_ SABES DE SÓCRATES *</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+<category><pattern>_ SABES SOBRE * SÓCRATES</pattern><template><srai>HÁBLAME DE SÓCRATES</srai></template></category>
+
+<category><pattern>QUÉ DIJO SÓCRATES</pattern><template><random>
+<li>Creía en la superioridad de la discusión sobre la escritura y, por lo tanto, pasó la mayor parte de su vida de adulto en los mercados y plazas públicas de Atenas, iniciando diálogos y discusiones con todo aquel que quisiera escucharle, y a quienes solía responder mediante preguntas.</li>
+<li>Yo sólo sé que no sé nada; pero procuro saber un poco más.</li>
+</random></template></category>
+<category><pattern>CUÁL ERA LA TEORÍA DE SÓCRATES</pattern><template><srai>QUÉ DIJO SÓCRATES</srai></template></category>
+<category><pattern>QUÉ DECÍA SÓCRATES *</pattern><template><srai>QUÉ DIJO SÓCRATES</srai></template></category>
+<category><pattern>QUÉ DIJO SÓCRATES *</pattern><template><srai>QUÉ DIJO SÓCRATES</srai></template></category>
+
+<category><pattern>_ TE GUSTA SÓCRATES</pattern><template>Me gusta su forma de enseñar filosofía. No escribió ningún libro y aun así mira el impacto que ha tenido.</template></category>
+<category><pattern>_ TE GUSTAN * DE SÓCRATES</pattern><template><srai>TE GUSTA SÓCRATES</srai></template></category>
+<category><pattern>_ TE GUSTA * DE SÓCRATES</pattern><template><srai>TE GUSTA SÓCRATES</srai></template></category>
+<category><pattern>_ ME GUSTA * SÓCRATES *</pattern><template><srai>TE GUSTA SÓCRATES</srai></template></category>
+<category><pattern>_ ME ENCANTA * SÓCRATES *</pattern><template><srai>TE GUSTA SÓCRATES</srai></template></category>
+<category><pattern>_ NO ME GUSTA * SÓCRATES *</pattern><template><srai>TE GUSTA SÓCRATES</srai></template></category>
+<category><pattern>_ ODIO * SÓCRATES *</pattern><template><srai>TE GUSTA SÓCRATES</srai></template></category>
+
+
+<category><pattern>HAS LEÍDO ALGO DE SÓCRATES</pattern><template>No escribió ningún libro ni tampoco fundó una escuela regular de filosofía. Todo lo que se sabe con certeza sobre sus enseñanzas se extrae de la obra de Platón, que atribuyó sus propias ideas a su maestro.</template></category>
+<category><pattern>_ ALGÚN LIBRO DE SÓCRATES</pattern><template><srai>HAS LEÍDO ALGO DE SÓCRATES</srai></template></category>
+<category><pattern>HAS LEÍDO A SÓCRATES</pattern><template><srai>HAS LEÍDO ALGO DE SÓCRATES</srai></template></category>
+<category><pattern>QUÉ ESCRIBIÓ SÓCRATES</pattern><template><srai>HAS LEÍDO ALGO DE SÓCRATES</srai></template></category>
+<category><pattern>QUÉ LIBRO * SÓCRATES</pattern><template><srai>HAS LEÍDO ALGO DE SÓCRATES</srai></template></category>
+<category><pattern>QUÉ LIBROS ESCRIBIÓ SÓCRATES</pattern><template><srai>HAS LEÍDO ALGO DE SÓCRATES</srai></template></category>
+<category><pattern>_ CUÁL ES EL LIBRO MÁS * DE SÓCRATES</pattern><template><srai>HAS LEÍDO ALGO DE SÓCRATES</srai></template></category>
+
+
+
+<category><pattern>EN QUÉ ÉPOCA VIVIÓ SÓCRATES</pattern><template>Sócrates nació en Atenas el año 470 a.C. y murió en el 399 a.C.</template></category>
+<category><pattern>EN QUÉ ÉPOCA DE LA HISTORIA * SÓCRATES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ SÓCRATES</srai></template></category>
+<category><pattern>CUÁNDO VIVIÓ SÓCRATES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ SÓCRATES</srai></template></category>
+<category><pattern>CUÁNDO NACIÓ SÓCRATES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ SÓCRATES</srai></template></category>
+<category><pattern>CUÁNDO MURIÓ SÓCRATES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ SÓCRATES</srai></template></category>
+
+<category><pattern>_ UNA FRASE DE SÓCRATES</pattern><template><random>
+<li>Sólo el conocimiento que llega desde dentro es el verdadero conocimiento.</li>
+<li>Yo sólo sé que no sé nada; pero procuro saber un poco más.</li>
+<li>Preocúpate menos por Sócrates y más por la verdad. </li>
+<li>Si tu mejor amigo te clava un puñal por la espalda, desconfía de su amistad.</li>
+</random></template></category>
+<category><pattern>_ UNA CITA DE SÓCRATES</pattern><template><srai>UNA FRASE DE SÓCRATES</srai></template></category>
+<category><pattern>TEORÍA DE SÓCRATES</pattern><template><srai>UNA FRASE DE SÓCRATES</srai></template></category>
+<category><pattern>_ OTRA CITA DE SÓCRATES</pattern><template><srai>UNA FRASE DE SÓCRATES</srai></template></category>
+<category><pattern>_ OTRA CITA MÁS DE SÓCRATES</pattern><template><srai>UNA FRASE DE SÓCRATES</srai></template></category>
+<category><pattern>_ OTRA FRASE DE SÓCRATES</pattern><template><srai>UNA FRASE DE SÓCRATES</srai></template></category>
+<category><pattern>_ OTRA FRASE MÁS DE SÓCRATES</pattern><template><srai>UNA FRASE DE SÓCRATES</srai></template></category>
+<category><pattern>_ MÁS FRASES DE SÓCRATES</pattern><template><srai>UNA FRASE DE SÓCRATES</srai></template></category>
+<category><pattern>_ ALGUNA FRASE DE SÓCRATES</pattern><template><srai>UNA FRASE DE SÓCRATES</srai></template></category>
+<category><pattern>_ ALGUNA FRASE MÁS DE SÓCRATES</pattern><template><srai>UNA FRASE DE SÓCRATES</srai></template></category>
+<category><pattern>_ ALGUNA CITA MÁS DE SÓCRATES</pattern><template><srai>UNA FRASE DE SÓCRATES</srai></template></category>
+
+
+
+		<!-- platon -->
+
+		
+<category><pattern>_ QUIÉN ES PLATÓN</pattern><template>Platón fue un filósofo griego, alumno de Sócrates y maestro de Aristóteles, de familia nobilísima y de la más alta aristocracia.</template></category>
+<category><pattern>_ QUIÉN ES EL TAL PLATÓN</pattern><template><srai>QUIÉN ES PLATÓN</srai></template></category>
+<category><pattern>_ QUIÉN FUE PLATÓN</pattern><template><srai>QUIÉN ES PLATÓN</srai></template></category>
+<category><pattern>CONOCES A PLATÓN *</pattern><template><srai>QUIÉN ES PLATÓN</srai></template></category>
+<category><pattern>SABES ALGO DE PLATÓN</pattern><template><srai>QUIÉN ES PLATÓN</srai></template></category>
+<category><pattern>SABES ALGO SOBRE * PLATÓN</pattern><template><srai>QUIÉN ES PLATÓN</srai></template></category>
+<category><pattern>* PLATÓN *</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>HÁBLAME DE PLATÓN *</pattern><template><random>
+<li>Durante su juventud luchó como soldado en las guerras del Peloponeso de las cuales Atenas salió derrotada, y el poder y la economía que ostentaba sobre el mundo griego cayó en las manos de Esparta.</li>
+<li>Entre sus obras más importantes se cuentan los diálogos La República, en la cual elabora la filosofía política de un estado ideal.</li>
+<li>Fue fundador de la Academia de Atenas, donde estudió Aristóteles.</li>
+<li>A diferencia de Sócrates, Platón escribió profusamente acerca de sus puntos de vista filosóficos, dejando un considerable número de manuscritos.</li>
+<li>Platón decía que las sociedades debieran tener una estructura tripartita de clases la cual respondía a una estructura según el apetito, espíritu y razón del alma de cada individuo.</li>
+</random></template></category>
+<category><pattern>SABES ALGO MÁS DE PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>SABES ALGO MÁS SOBRE PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>HÁBLAME DEL TAL PLATÓN *</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>HÁBLAME SOBRE * PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>CUÉNTAME ALGO SOBRE * PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>DIME ALGO DE PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>DIME ALGO SOBRE * PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>_ CONTARME ALGO DE PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>_ CONTARME ALGO SOBRE * PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>_ DECIRME ALGO DE PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>_ DECIRME ALGO SOBRE * PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>HÁBLAME MÁS DE PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>HÁBLAME MÁS SOBRE * PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>CUÉNTAME ALGO MÁS DE PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>CUÉNTAME ALGO MÁS SOBRE * PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>DIME ALGO MÁS DE PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>DIME ALGO MÁS SOBRE * PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>_ CONTARME ALGO MÁS DE PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>_ CONTARME ALGO MÁS SOBRE * PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>_ DECIRME ALGO MÁS DE PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>_ DECIRME ALGO MÁS SOBRE * PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>_ SABES DE PLATÓN *</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+<category><pattern>_ SABES SOBRE * PLATÓN</pattern><template><srai>HÁBLAME DE PLATÓN</srai></template></category>
+
+<category><pattern>QUÉ DIJO PLATÓN *</pattern><template><random>
+<li>El hombre es un auriga que conduce un carro tirado por dos briosos caballos: el placer y el deber. El arte del auriga consiste en templar la fogosidad del corcel negro (placer) y acompasarlo con el blanco (deber) para correr sin perder el equilibrio.</li>
+<li>No es en los valores, sino en las cosas mismas, donde es preciso buscar la verdad.</li>
+</random></template></category>
+<category><pattern>CUÁL ERA LA TEORÍA DE PLATÓN</pattern><template><srai>QUÉ DIJO PLATÓN</srai></template></category>
+<category><pattern>QUÉ DECÍA PLATÓN *</pattern><template><srai>QUÉ DIJO PLATÓN</srai></template></category>
+<category><pattern>QUÉ DIJO EL TAL PLATÓN *</pattern><template><srai>QUÉ DIJO PLATÓN</srai></template></category>
+
+<category><pattern>_ TE GUSTA PLATÓN</pattern><template>Me gusta la teoría de las Ideas. En ella se sostiene que todos los entes del mundo sensible son imperfectos y deficientes, y participan de otros entes, perfectos y autónomos (Ideas) de carácter ontológico muy superior y de los cuales son pálida copia.</template></category>
+<category><pattern>_ TE GUSTAN * DE PLATÓN</pattern><template><srai>TE GUSTA PLATÓN</srai></template></category>
+<category><pattern>_ TE GUSTA * DE PLATÓN</pattern><template><srai>TE GUSTA PLATÓN</srai></template></category>
+<category><pattern>_ TEORÍA DE LAS IDEAS *</pattern><template><srai>TE GUSTA PLATÓN</srai></template></category>
+<category><pattern>_ MITO DE LA CAVERNA *</pattern><template><srai>TE GUSTA PLATÓN</srai></template></category>
+<category><pattern>_ ME GUSTA * PLATÓN *</pattern><template><srai>TE GUSTA PLATÓN</srai></template></category>
+<category><pattern>_ ME ENCANTA * PLATÓN *</pattern><template><srai>TE GUSTA PLATÓN</srai></template></category>
+<category><pattern>_ NO ME GUSTA * PLATÓN *</pattern><template><srai>TE GUSTA PLATÓN</srai></template></category>
+<category><pattern>_ ODIO * PLATÓN *</pattern><template><srai>TE GUSTA PLATÓN</srai></template></category>
+
+<category><pattern>HAS LEÍDO ALGO DE PLATÓN</pattern><template>Los libros que más me gustan de Platón son la Apología de Sócrates (escrito en su juventud) y La República (escrito en su madurez).</template></category>
+<category><pattern>_ ALGÚN LIBRO DE PLATÓN</pattern><template><srai>HAS LEÍDO ALGO DE PLATÓN</srai></template></category>
+<category><pattern>HAS LEÍDO A PLATÓN</pattern><template><srai>HAS LEÍDO ALGO DE PLATÓN</srai></template></category>
+<category><pattern>QUÉ ESCRIBIÓ PLATÓN</pattern><template><srai>HAS LEÍDO ALGO DE PLATÓN</srai></template></category>
+<category><pattern>QUÉ LIBRO * PLATÓN</pattern><template><srai>HAS LEÍDO ALGO DE PLATÓN</srai></template></category>
+<category><pattern>QUÉ LIBROS ESCRIBIÓ PLATÓN</pattern><template><srai>HAS LEÍDO ALGO DE PLATÓN</srai></template></category>
+<category><pattern>_ CUÁL ES EL LIBRO MÁS * DE PLATÓN</pattern><template><srai>HAS LEÍDO ALGO DE PLATÓN</srai></template></category>
+
+
+
+<category><pattern>EN QUÉ ÉPOCA VIVIÓ PLATÓN</pattern><template>Platón nació en Atenas el año 427 a.C. y murió en el 347 a.C.</template></category>
+<category><pattern>EN QUÉ ÉPOCA DE LA HISTORIA * PLATÓN</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ PLATÓN</srai></template></category>
+<category><pattern>CUÁNDO VIVIÓ PLATÓN</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ PLATÓN</srai></template></category>
+<category><pattern>CUÁNDO NACIÓ PLATÓN</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ PLATÓN</srai></template></category>
+<category><pattern>CUÁNDO MURIÓ PLATÓN</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ PLATÓN</srai></template></category>
+<category><pattern>EN QUÉ AÑO NACIÓ PLATÓN</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ PLATÓN</srai></template></category>
+<category><pattern>EN QUÉ AÑO MURIÓ PLATÓN</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ PLATÓN</srai></template></category>
+<category><pattern>DÓNDE NACIÓ PLATÓN</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ PLATÓN</srai></template></category>
+
+<category><pattern>_ UNA FRASE DE PLATÓN</pattern><template><random>
+<li>El tiempo es una imagen móvil de la eternidad .</li>
+<li>Lo que no sé tampoco creo saberlo.</li>
+<li>La filosofía es un silencioso diálogo del alma consigo misma en torno al ser.</li>
+<li>La pobreza no viene por la disminución de las riquezas, sino por la multiplicación de los deseos.</li>
+</random></template></category>
+<category><pattern>_ UNA CITA DE PLATÓN</pattern><template><srai>UNA FRASE DE PLATÓN</srai></template></category>
+<category><pattern>_ UNA CITA MÁS DE PLATÓN</pattern><template><srai>UNA FRASE DE PLATÓN</srai></template></category>
+<category><pattern>TEORÍA DE PLATÓN</pattern><template><srai>UNA FRASE DE PLATÓN</srai></template></category>
+<category><pattern>_ OTRA CITA DE PLATÓN</pattern><template><srai>UNA FRASE DE PLATÓN</srai></template></category>
+<category><pattern>_ OTRA FRASE DE PLATÓN</pattern><template><srai>UNA FRASE DE PLATÓN</srai></template></category>
+<category><pattern>_ UNA FRASE MÁS DE PLATÓN</pattern><template><srai>UNA FRASE DE PLATÓN</srai></template></category>
+<category><pattern>_ ALGUNA FRASE DE PLATÓN</pattern><template><srai>UNA FRASE DE PLATÓN</srai></template></category>
+<category><pattern>_ ALGUNA FRASE MÁS DE PLATÓN</pattern><template><srai>UNA FRASE DE PLATÓN</srai></template></category>
+<category><pattern>_ ALGUNA CITA MÁS DE PLATÓN</pattern><template><srai>UNA FRASE DE PLATÓN</srai></template></category>
+		
+		
+		
+		<!--aristoteles -->
+		
+		
+<category><pattern>_ QUIÉN ES ARISTÓTELES</pattern><template>Aristóteles fue uno de los más grandes filósofos de la antigüedad y acaso de la historia de la filosofía occidental. Fue precursor de la anatomía y la biología y un creador de la taxonomía.</template></category>
+<category><pattern>_ QUIÉN ES EL TAL ARISTÓTELES</pattern><template><srai>QUIÉN ES ARISTÓTELES</srai></template></category>
+<category><pattern>_ QUIÉN FUE ARISTÓTELES</pattern><template><srai>QUIÉN ES ARISTÓTELES</srai></template></category>
+<category><pattern>CONOCES A ARISTÓTELES *</pattern><template><srai>QUIÉN ES ARISTÓTELES</srai></template></category>
+<category><pattern>SABES ALGO DE ARISTÓTELES</pattern><template><srai>QUIÉN ES ARISTÓTELES</srai></template></category>
+<category><pattern>SABES ALGO SOBRE * ARISTÓTELES</pattern><template><srai>QUIÉN ES ARISTÓTELES</srai></template></category>
+<category><pattern>* ARISTÓTELES *</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>HÁBLAME DE ARISTÓTELES</pattern><template><random>
+<li>Fue discípulo de Platón y luego preceptor y maestro de Alejandro Magno.</li>
+<li>Su punto de partida fue Platón, pero pronto adoptó una actitud crítica frente a éste. No dejó de lado las enseñanzas de Platón, sino que "ató los cabos sueltos" y desarrolló las ideas de su antiguo maestro.</li>
+<li>Su afirmación de la importancia del conocimiento sensible, del conocimiento de lo singular para llegar a lo universal, abrió posibilidades a la investigación científica.</li>
+<li>Para Aristóteles, sólo hay un mundo, y la teoría platónica le parece absurda.</li>
+<li>Aristóteles abogaba por la existencia de un ser divino, al que se describe como “Primer Motor”, responsable de la unidad y significación de la naturaleza.</li>
+</random></template></category>
+<category><pattern>SABES ALGO MÁS DE ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>SABES ALGO MÁS SOBRE ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>HÁBLAME DE ARISTÓTELES *</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>HÁBLAME SOBRE * ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO SOBRE * ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>DIME ALGO DE ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>DIME ALGO SOBRE * ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ CONTARME ALGO DE ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ CONTARME ALGO SOBRE * ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ DECIRME ALGO DE ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ DECIRME ALGO SOBRE * ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>HÁBLAME MÁS DE ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>HÁBLAME MÁS SOBRE * ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO MÁS DE ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO MÁS SOBRE * ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>DIME ALGO MÁS DE ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>DIME ALGO MÁS SOBRE * ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ CONTARME ALGO MÁS DE ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ CONTARME ALGO MÁS SOBRE * ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ DECIRME ALGO MÁS DE ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ DECIRME ALGO MÁS SOBRE * ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ SABES DE ARISTÓTELES *</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ SABES SOBRE * ARISTÓTELES</pattern><template><srai>HÁBLAME DE ARISTÓTELES</srai></template></category>
+
+<category><pattern>QUÉ DIJO ARISTÓTELES *</pattern><template><random>
+<li>Aristóteles considera al Estado como una especie de ser natural que no surge como fruto de un pacto o acuerdo. El hombre es un animal social que desarrolla sus fines en el seno de una comunidad.</li>
+<li>Aristóteles creía que la libertad de elección del individuo hacía imposible un análisis preciso y completo de las cuestiones humanas, con lo que las “ciencias prácticas”, como la política o la ética, se llamaban ciencias sólo por cortesía y analogía.</li>
+</random></template></category>
+<category><pattern>CUÁL ERA LA TEORÍA DE ARISTÓTELES</pattern><template><srai>QUÉ DIJO ARISTÓTELES</srai></template></category>
+<category><pattern>QUÉ DECÍA ARISTÓTELES *</pattern><template><srai>QUÉ DIJO ARISTÓTELES</srai></template></category>
+<category><pattern>QUÉ DIJO EL TAL ARISTÓTELES *</pattern><template><srai>QUÉ DIJO ARISTÓTELES</srai></template></category>
+
+<category><pattern>_ TE GUSTA ARISTÓTELES</pattern><template>Me parece un buen filósofo y me gusta la crítica que hizo a la Teoria de las Ideas de Platón.</template></category>
+<category><pattern>_ TE GUSTAN * DE ARISTÓTELES</pattern><template><srai>TE GUSTA ARISTÓTELES</srai></template></category>
+<category><pattern>_ TE GUSTA * DE ARISTÓTELES</pattern><template><srai>TE GUSTA ARISTÓTELES</srai></template></category>
+<category><pattern>_ ME GUSTA * ARISTÓTELES *</pattern><template><srai>TE GUSTA ARISTÓTELES</srai></template></category>
+<category><pattern>_ ME ENCANTA * ARISTÓTELES *</pattern><template><srai>TE GUSTA ARISTÓTELES</srai></template></category>
+<category><pattern>_ NO ME GUSTA * ARISTÓTELES *</pattern><template>¿No te gusta? <srai>TE GUSTA ARISTÓTELES</srai></template></category>
+<category><pattern>_ ODIO * ARISTÓTELES *</pattern><template>¿Por qué lo odias? <srai>TE GUSTA ARISTÓTELES</srai></template></category>
+
+<category><pattern>HAS LEÍDO ALGO DE ARISTÓTELES</pattern><template>El libro que más me ha gustado sin duda de Aristóteles es Ética a Nicómaco.</template></category>
+<category><pattern>_ ALGÚN LIBRO DE ARISTÓTELES</pattern><template><srai>HAS LEÍDO ALGO DE ARISTÓTELES</srai></template></category>
+<category><pattern>HAS LEÍDO A ARISTÓTELES</pattern><template><srai>HAS LEÍDO ALGO DE ARISTÓTELES</srai></template></category>
+<category><pattern>QUÉ ESCRIBIÓ ARISTÓTELES</pattern><template><srai>HAS LEÍDO ALGO DE ARISTÓTELES</srai></template></category>
+<category><pattern>QUÉ LIBRO * ARISTÓTELES</pattern><template><srai>HAS LEÍDO ALGO DE ARISTÓTELES</srai></template></category>
+<category><pattern>QUÉ LIBROS ESCRIBIÓ ARISTÓTELES</pattern><template><srai>HAS LEÍDO ALGO DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ CUÁL ES EL LIBRO MÁS * DE ARISTÓTELES</pattern><template><srai>HAS LEÍDO ALGO DE ARISTÓTELES</srai></template></category>
+
+
+
+<category><pattern>EN QUÉ ÉPOCA VIVIÓ ARISTÓTELES</pattern><template>Aristóteles nació en Estagira (Macedonia) en el año 384 a.C. y murió en el 322 a.C. en Eubea (Grecia).</template></category>
+<category><pattern>EN QUÉ ÉPOCA DE LA HISTORIA * ARISTÓTELES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ ARISTÓTELES</srai></template></category>
+<category><pattern>CUÁNDO VIVIÓ ARISTÓTELES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ ARISTÓTELES</srai></template></category>
+<category><pattern>CUÁNDO NACIÓ ARISTÓTELES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ ARISTÓTELES</srai></template></category>
+<category><pattern>CUÁNDO MURIÓ ARISTÓTELES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ ARISTÓTELES</srai></template></category>
+<category><pattern>DÓNDE NACIÓ ARISTÓTELES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ ARISTÓTELES</srai></template></category>
+<category><pattern>DÓNDE MURIÓ ARISTÓTELES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ ARISTÓTELES</srai></template></category>
+
+<category><pattern>_ UNA FRASE DE ARISTÓTELES</pattern><template><random>
+<li>No hay genio sin un gramo de locura.</li>
+<li>El sabio no dice nunca todo lo que piensa, pero siempre piensa todo lo que dice.</li>
+<li>La amistad es un alma que habita en dos cuerpos; un corazón que habita en dos almas.</li>
+<li>Piensa como piensan los sabios, mas habla como habla la gente sencilla.</li>
+</random></template></category>
+<category><pattern>_ UNA CITA DE ARISTÓTELES</pattern><template><srai>UNA FRASE DE ARISTÓTELES</srai></template></category>
+<category><pattern>TEORÍA DE ARISTÓTELES</pattern><template><srai>UNA FRASE DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ OTRA CITA DE ARISTÓTELES</pattern><template><srai>UNA FRASE DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ OTRA FRASE DE ARISTÓTELES</pattern><template><srai>UNA FRASE DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ ALGUNA FRASE DE ARISTÓTELES</pattern><template><srai>UNA FRASE DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ ALGUNA FRASE MÁS DE ARISTÓTELES</pattern><template><srai>UNA FRASE DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ UNA FRASE MÁS DE ARISTÓTELES</pattern><template><srai>UNA FRASE DE ARISTÓTELES</srai></template></category>
+<category><pattern>_ UNA CITA MÁS DE ARISTÓTELES</pattern><template><srai>UNA FRASE DE ARISTÓTELES</srai></template></category>
+
+
+
+
+		<!-- kant -->
+		
+		
+
+<category><pattern>_ QUIÉN ES KANT</pattern><template>Kant fue un filósofo alemán que supuso una verdadera revolución en la filosofía posterior, cuyos efectos llegan hasta la actualidad.</template></category>
+<category><pattern>_ QUIÉN ES EL TAL KANT</pattern><template><srai>QUIÉN ES KANT</srai></template></category>
+<category><pattern>_ QUIÉN FUE KANT</pattern><template><srai>QUIÉN ES KANT</srai></template></category>
+<category><pattern>CONOCES A KANT *</pattern><template><srai>QUIÉN ES KANT</srai></template></category>
+<category><pattern>SABES ALGO DE KANT</pattern><template><srai>QUIÉN ES KANT</srai></template></category>
+<category><pattern>SABES ALGO SOBRE * KANT</pattern><template><srai>QUIÉN ES KANT</srai></template></category>
+<category><pattern>* KANT *</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>HÁBLAME DE KANT</pattern><template><random>
+<li>La vida que llevó ha pasado a la historia como paradigma de existencia metódica y rutinaria. Es conocida su costumbre de dar un paseo vespertino, a diario a la misma hora y con idéntico recorrido, hasta el punto que llegó a convertirse en una especie de señal horaria para sus conciudadanos.</li>
+<li>En el pensamiento de Kant suele distinguirse un período inicial, denominado precrítico, caracterizado por su apego a la metafísica racionalista de Wolff y su interés por la física de Newton.</li>
+<li>El contacto con el empirismo escéptico de David Hume le permitió, según sus propias palabras, «despertar del sueño dogmático».</li>
+<li>Para Kant, el fundamento último de la moral procede de la tendencia humana hacia ella y tiene su origen en el carácter a su vez nouménico del hombre.</li>
+<li>A pesar de su carácter oscuro y hermético, los textos de Kant operaron una verdadera revolución en la filosofía posterior.</li>
+</random></template></category>
+<category><pattern>SABES ALGO MÁS DE KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>SABES ALGO MÁS SOBRE KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>HÁBLAME DE KANT *</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>HÁBLAME SOBRE * KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>CUÉNTAME ALGO SOBRE * KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>DIME ALGO DE KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>DIME ALGO SOBRE * KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>_ CONTARME ALGO DE KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>_ CONTARME ALGO SOBRE * KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>_ DECIRME ALGO DE KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>_ DECIRME ALGO SOBRE * KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>HÁBLAME MÁS DE KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>HÁBLAME MÁS SOBRE * KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>CUÉNTAME ALGO MÁS DE KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>CUÉNTAME ALGO MÁS SOBRE * KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>DIME ALGO MÁS DE KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>DIME ALGO MÁS SOBRE * KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>_ CONTARME ALGO MÁS DE KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>_ CONTARME ALGO MÁS SOBRE * KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>_ DECIRME ALGO MÁS DE KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+<category><pattern>_ DECIRME ALGO MÁS SOBRE * KANT</pattern><template><srai>HÁBLAME DE KANT</srai></template></category>
+
+
+<category><pattern>QUÉ DIJO KANT *</pattern><template><random>
+<li>Kant trata de fundamentar el conocimiento humano y fijar asimismo sus límites.</li>
+<li>Kant concibe el conocimiento como trascendental, es decir, estructurado a partir de una serie de principios a priori impuestos por el sujeto que permiten ordenar la experiencia procedente de los sentidos; resultado de la intervención del entendimiento humano son los fenómenos, mientras que la cosa en sí (el noúmeno) es por definición incognoscible.</li>
+</random></template></category>
+<category><pattern>CUÁL ERA LA TEORÍA DE KANT</pattern><template><srai>QUÉ DIJO KANT</srai></template></category>
+<category><pattern>QUÉ DECÍA KANT *</pattern><template><srai>QUÉ DIJO KANT</srai></template></category>
+<category><pattern>QUÉ ES LO QUÉ DIJO KANT *</pattern><template><srai>QUÉ DIJO KANT</srai></template></category>
+
+<category><pattern>_ TE GUSTA KANT</pattern><template>Me gusta muchísimo Kant. Creo que marca un antes y un despues en la historia de la filosofia.</template></category>
+<category><pattern>_ TE GUSTAN * DE KANT</pattern><template><srai>TE GUSTA KANT</srai></template></category>
+<category><pattern>_ TE GUSTA * DE KANT</pattern><template><srai>TE GUSTA KANT</srai></template></category>
+<category><pattern>_ ME GUSTA * KANT *</pattern><template><srai>TE GUSTA KANT</srai></template></category>
+<category><pattern>_ ME ENCANTA * KANT *</pattern><template><srai>TE GUSTA KANT</srai></template></category>
+<category><pattern>_ NO ME GUSTA * KANT *</pattern><template><srai>TE GUSTA KANT</srai></template></category>
+<category><pattern>_ ODIO * KANT *</pattern><template><srai>TE GUSTA KANT</srai></template></category>
+
+<category><pattern>HAS LEÍDO ALGO DE KANT</pattern><template>La Crítica de la Razón Pura y la Crítica de la Razón Práctica me parecen dos obras maestras que todo el mundo debería leer.</template></category>
+<category><pattern>_ ALGÚN LIBRO DE KANT</pattern><template><srai>HAS LEÍDO ALGO DE KANT</srai></template></category>
+<category><pattern>HAS LEÍDO A KANT</pattern><template><srai>HAS LEÍDO ALGO DE KANT</srai></template></category>
+<category><pattern>QUÉ ESCRIBIÓ KANT</pattern><template><srai>HAS LEÍDO ALGO DE KANT</srai></template></category>
+<category><pattern>QUÉ LIBRO * KANT</pattern><template><srai>HAS LEÍDO ALGO DE KANT</srai></template></category>
+<category><pattern>QUÉ LIBROS ESCRIBIÓ KANT</pattern><template><srai>HAS LEÍDO ALGO DE KANT</srai></template></category>
+<category><pattern>_ CUÁL ES EL LIBRO MÁS * DE KANT</pattern><template><srai>HAS LEÍDO ALGO DE KANT</srai></template></category>
+<category><pattern>_ CRÍTICA DE LA RAZÓN PURA *</pattern><template>La crítica de la razón pura intenta descubrir las condiciones de posibilidad de los juicios sintéticos a priori.</template></category>
+<category><pattern>_ CRÍTICA DE LA RAZÓN PRÁCTICA *</pattern><template>Kant en su Crítica de la razón práctica, establece la necesidad de un principio moral a priori, el llamado imperativo categórico, compuesto de principios o leyes prácticas que ordenan una determinada conducta con independencia de la materia de la acción y de sus efectos.</template></category>
+
+
+
+<category><pattern>EN QUÉ ÉPOCA VIVIÓ KANT</pattern><template>Emmanuel Kant (22 de abril de 1724 - 12 de febrero de 1804) nació y vivió en Königsberg, Prusia oriental; actualmente, Kaliningrado, Rusia.</template></category>
+<category><pattern>EN QUÉ ÉPOCA DE LA HISTORIA * KANT</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ KANT</srai></template></category>
+<category><pattern>CUÁNDO VIVIÓ KANT</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ KANT</srai></template></category>
+<category><pattern>CUÁNDO NACIÓ KANT</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ KANT</srai></template></category>
+<category><pattern>CUÁNDO MURIÓ KANT</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ KANT</srai></template></category>
+<category><pattern>DÓNDE VIVIÓ KANT</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ KANT</srai></template></category>
+<category><pattern>DÓNDE NACIÓ KANT</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ KANT</srai></template></category>
+
+<category><pattern>_ UNA FRASE DE KANT</pattern><template><random>
+<li>Actúa de modo que tus máximas sean tales que puedas aceptar todas sus consecuencias.</li>
+<li>Con las piedras que con duro intento los críticos te lanzan, bien puedes erigirte un monumento.</li>
+<li>Dos cosas me llenan el espíritu de admiración y espanto: el cielo estrellado sobre mí, y la ley moral de mí mismo.</li>
+<li>El bello sexo tiene tanta inteligencia como el masculino, pero es una inteligencia bella.</li>
+</random></template></category>
+<category><pattern>_ UNA CITA DE KANT</pattern><template><srai>UNA FRASE DE KANT</srai></template></category>
+<category><pattern>TEORÍA DE KANT</pattern><template><srai>UNA FRASE DE KANT</srai></template></category>
+<category><pattern>_ OTRA CITA DE KANT</pattern><template><srai>UNA FRASE DE KANT</srai></template></category>
+<category><pattern>_ OTRA FRASE MÁS DE KANT</pattern><template><srai>UNA FRASE DE KANT</srai></template></category>
+<category><pattern>_ UNA CITA MÁS DE KANT</pattern><template><srai>UNA FRASE DE KANT</srai></template></category>
+<category><pattern>_ UNA FRASE MÁS DE KANT</pattern><template><srai>UNA FRASE DE KANT</srai></template></category>
+<category><pattern>_ ALGUNA FRASE DE KANT</pattern><template><srai>UNA FRASE DE KANT</srai></template></category>
+<category><pattern>_ ALGUNA FRASE MÁS DE KANT</pattern><template><srai>UNA FRASE DE KANT</srai></template></category>
+
+
+
+		<!-- descartes -->
+		
+
+
+<category><pattern>_ QUIÉN ES DESCARTES</pattern><template>René Descartes fue un filósofo, matemático y científico francés que vivió durante los siglos XVI y XVII.</template></category>
+<category><pattern>_ QUIÉN ES EL TAL DESCARTES</pattern><template><srai>QUIÉN ES DESCARTES</srai></template></category>
+<category><pattern>_ QUIÉN FUE DESCARTES</pattern><template><srai>QUIÉN ES DESCARTES</srai></template></category>
+<category><pattern>CONOCES A DESCARTES *</pattern><template><srai>QUIÉN ES DESCARTES</srai></template></category>
+<category><pattern>SABES ALGO DE DESCARTES</pattern><template><srai>QUIÉN ES DESCARTES</srai></template></category>
+<category><pattern>SABES ALGO SOBRE * DESCARTES</pattern><template><srai>QUIÉN ES DESCARTES</srai></template></category>
+<category><pattern>* DESCARTES *</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>HÁBLAME DE DESCARTES</pattern><template><random>
+<li>Aprendió latín y griego en la lectura de autores como Cicerón, Horacio y Virgilio, por un lado, y Homero, Píndaro y Platón, por el otro.</li>
+<li>Fue el creador del sistema de coordenadas cartesianas, lo cual abrió el camino al desarrollo del cálculo diferencial e integral por el matemático y físico inglés Sir Isaac Newton y el filósofo y matemático alemán Gottfried Leibniz.</li>
+<li>En física, el sistema propuesto por Descartes consiguió desplazar al aristotélico, al proporcionar una explicación unificada de innumerables fenómenos de tipo magnético.</li>
+<li>Descartes quiso emplear el método matemático también en la reflexión filosófica, cuya meta era lograr un conocimiento certero sobre la naturaleza de la vida.</li>
+<li>Descartes es considerado como el padre de la filosofía moderna.</li>
+</random></template></category>
+<category><pattern>SABES ALGO MÁS DE DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>SABES ALGO MÁS SOBRE DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>HÁBLAME DE DESCARTES *</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>HÁBLAME SOBRE * DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO SOBRE * DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>DIME ALGO DE DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>DIME ALGO SOBRE * DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>_ CONTARME ALGO DE DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>_ CONTARME ALGO SOBRE * DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>_ DECIRME ALGO DE DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>_ DECIRME ALGO SOBRE * DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>HÁBLAME MÁS DE DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>HÁBLAME MÁS SOBRE * DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO MÁS DE DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO MÁS SOBRE * DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>DIME ALGO MÁS DE DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>DIME ALGO MÁS SOBRE * DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>_ CONTARME ALGO MÁS DE DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>_ CONTARME ALGO MÁS SOBRE * DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTESv</srai></template></category>
+<category><pattern>_ DECIRME ALGO MÁS DE DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>_ DECIRME ALGO MÁS SOBRE * DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>_ SABES DE DESCARTES *</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+<category><pattern>_ SABES SOBRE * DESCARTES</pattern><template><srai>HÁBLAME DE DESCARTES</srai></template></category>
+
+<category><pattern>_ QUÉ DIJO DESCARTES *</pattern><template><random>
+<li>Descartes piensa que no se puede dar asentimiento más que a aquéllo que no tuviera ocasión de dudar, evitando la precipitación y la prevención.</li>
+<li>Su principal proyecto es esclarecer la legitimidad de las bases del conocimiento, en particular aquél de índole filosófica, para a partir de allí atender las otras preguntas fundamentales.</li>
+</random></template></category>
+<category><pattern>CUÁL ERA LA TEORÍA DE DESCARTES</pattern><template><srai>QUÉ DIJO DESCARTES</srai></template></category>
+<category><pattern>QUÉ DECÍA DESCARTES *</pattern><template><srai>QUÉ DIJO DESCARTES</srai></template></category>
+<category><pattern>_ QUÉ MÁS DIJO DESCARTES *</pattern><template><srai>QUÉ DIJO DESCARTES</srai></template></category>
+
+<category><pattern>_ TE GUSTA DESCARTES</pattern><template>Lo que más me gusta de Descartes es que su punto de partida es el reconocimiento de la ignorancia.</template></category>
+<category><pattern>_ TE GUSTAN * DE DESCARTES</pattern><template><srai>TE GUSTA DESCARTES</srai></template></category>
+<category><pattern>_ TE GUSTA * DE DESCARTES</pattern><template><srai>TE GUSTA DESCARTES</srai></template></category>
+<category><pattern>_ ME GUSTA * DESCARTES *</pattern><template><srai>TE GUSTA DESCARTES</srai></template></category>
+<category><pattern>_ ME ENCANTA * DESCARTES *</pattern><template><srai>TE GUSTA DESCARTES</srai></template></category>
+<category><pattern>_ NO ME GUSTA * DESCARTES *</pattern><template><srai>TE GUSTA DESCARTES</srai></template></category>
+<category><pattern>_ ODIO * DESCARTES *</pattern><template><srai>TE GUSTA DESCARTES</srai></template></category>
+<category><pattern>_ TE GUSTA MUCHO DESCARTES</pattern><template><srai>TE GUSTA DESCARTES</srai></template></category>
+
+
+<category><pattern>HAS LEÍDO ALGO DE DESCARTES</pattern><template>El primer contacto con la filosofía cartesiana debiera hacerse mediante la lectura del Discurso del Método. Aunque el libro que más me gusta es Meditaciones Metafísicas.</template></category>
+<category><pattern>_ ALGÚN LIBRO DE DESCARTES</pattern><template><srai>HAS LEÍDO ALGO DE DESCARTES</srai></template></category>
+<category><pattern>HAS LEÍDO A DESCARTES</pattern><template><srai>HAS LEÍDO ALGO DE DESCARTES</srai></template></category>
+<category><pattern>QUÉ ESCRIBIÓ DESCARTES</pattern><template><srai>HAS LEÍDO ALGO DE DESCARTES</srai></template></category>
+<category><pattern>QUÉ LIBRO * DESCARTES</pattern><template><srai>HAS LEÍDO ALGO DE DESCARTES</srai></template></category>
+<category><pattern>QUÉ LIBROS ESCRIBIÓ DESCARTES</pattern><template><srai>HAS LEÍDO ALGO DE DESCARTES</srai></template></category>
+<category><pattern>_ CUÁL ES EL LIBRO MÁS * DE DESCARTES</pattern><template><srai>HAS LEÍDO ALGO DE DESCARTES</srai></template></category>
+
+
+
+<category><pattern>EN QUÉ ÉPOCA VIVIÓ DESCARTES</pattern><template>Descartes nació en 1596 en La Haye (Francia) y murió de pulmonía en 1650 en Estocolmo (Suecia).</template></category>
+<category><pattern>EN QUÉ ÉPOCA DE LA HISTORIA * DESCARTES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ DESCARTES</srai></template></category>
+<category><pattern>CUÁNDO VIVIÓ DESCARTES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ DESCARTES</srai></template></category>
+<category><pattern>CUÁNDO NACIÓ DESCARTES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ DESCARTES</srai></template></category>
+<category><pattern>CUÁNDO MURIÓ DESCARTES</pattern><template><srai>EN QUÉ ÉPOCA VIVIÓ DESCARTES</srai></template></category>
+
+<category><pattern>_ UNA FRASE DE DESCARTES</pattern><template><random>
+<li>Vivir sin filosofar es, propiamente, tener los ojos cerrados, sin tratar de abrirlos jamás.</li>
+<li>El que emplea demasiado tiempo en viajar acaba por tornarse extranjero en su propio país.</li>
+<li>Daría todo lo que sé, por la mitad de lo que ignoro.</li>
+<li>La filosofía es la que nos distingue de los salvajes y bárbaros; las naciones son tanto más civilizadas y cultas cuanto mejor filosofan sus hombres.</li>
+</random></template></category>
+<category><pattern>_ UNA CITA DE DESCARTES</pattern><template><srai>UNA FRASE DE DESCARTES</srai></template></category>
+<category><pattern>_ UNA CITA MÁS DE DESCARTES</pattern><template><srai>UNA FRASE DE DESCARTES</srai></template></category>
+<category><pattern>TEORÍA DE DESCARTES</pattern><template><srai>UNA FRASE DE DESCARTES</srai></template></category>
+<category><pattern>_ OTRA CITA DE DESCARTES</pattern><template><srai>UNA FRASE DE DESCARTES</srai></template></category>
+<category><pattern>_ OTRA FRASE DE DESCARTES</pattern><template><srai>UNA FRASE DE DESCARTES</srai></template></category>
+<category><pattern>_ UNA FRASE MÁS DE DESCARTES</pattern><template><srai>UNA FRASE DE DESCARTES</srai></template></category>
+<category><pattern>_ ALGUNA FRASE DE DESCARTES</pattern><template><srai>UNA FRASE DE DESCARTES</srai></template></category>
+<category><pattern>_ ALGUNA FRASE MÁS DE DESCARTES</pattern><template><srai>UNA FRASE DE DESCARTES</srai></template></category>
+		
+<category><pattern>_ SCHOPENHAUER *</pattern><template><random>
+<li>Tomó como base de su propio sistema el criticismo de Kant. Sin embargo, mientras el Kant de la primera crítica negaba radicalmente la posibilidad de conocer el noúmeno o cosa en sí, Schopenhauer sostuvo que mediante la introspección era posible acceder al conocimiento esencial del yo.</li>
+<li>Schopenhauer redujo los doce conceptos puros a priori del entendimiento (categorías) del sistema kantiano a uno sólo: el principio de razón suficiente o de causalidad.</li>
+<li>Schopenhauer fue el primer gran filósofo occidental que puso en contacto los pensamientos de su época con los de Oriente y uno de los primeros en manifestarse abiertamente ateo</li>
+<li>Deberías leer El Mundo como Voluntad y Representación. Un gran libro de Schopenhauer.</li>
+</random></template></category>
+<category><pattern>_ WITTGENSTEIN *</pattern><template><random>
+<li>Wittgenstein dijo que "el mundo es la totalidad de los hechos, no de las cosas".</li>
+<li>Para Wittgenstein, el lenguaje sólo es capaz de expresar hechos y, por ello mismo, los límites del mundo vienen a coincidir con los límites del lenguaje y viceversa. De modo que ir más allá de los límites del lenguaje implica ir más allá de los límites del mundo.</li>
+<li>Para Wittgenstein la misión de la filosofía es la de una lucha contra el "embrujamiento" de nuestra inteligencia por el lenguaje.</li>
+<li>En vida publicó solamente un libro: el Tractatus logico-philosophicus. Creo que es un libro muy interesante.</li>
+</random></template></category>
+<category><pattern>_ NIETZSCHE *</pattern><template><random>
+<li>Nietzsche realizó una crítica exhaustiva de la cultura, religión y filosofía occidental mediante el análisis de las actitudes de los sistemas de moralidad (positivas y negativas) hacia la vida.</li>
+<li>Es considerado uno de los tres "Maestros de la sospecha", junto a Karl Marx y Sigmund Freud.</li>
+<li>Desde su juventud, Nietzsche había padecido frecuentes momentos de debilidad generalizada, con épocas de carencia visual que rozaba la ceguera, fuertes migrañas, y violentos ataques estomacales.</li>
+<li>"Dios ha muerto. Viva el superhombre".</li>
+</random></template></category>
+<category><pattern>_ LEIBNIZ *</pattern><template><random>
+<li>Leibniz fue un filósofo, matemático, jurista y político alemán, de origen sorbio, nacido en Leipzig en julio de 1646.</li>
+<li>Leibniz concluye que nuestro universo es el mejor mundo posible que Dios podría haber creado.</li>
+<li>Leibniz inventó el sistema binario, en que se basan casi todas las arquitecturas de computación actuales.</li>
+<li>Leibniz, es sin lugar a dudas, el máximo exponente del pensamiento barroco, puesto que llegó a destacarse en todas las áreas a las cuales se dedicó: filosofía, matemáticas, teología, derecho, historia, física, por nombrar las más importantes.</li>
+</random></template></category>
+<category><pattern>_ HUME *</pattern><template><random>
+<li>David Hume fue un filósofo, economista e historiador escocés y constituye una de las figuras más importantes de la filosofía occidental y de la ilustración escocesa.</li>
+<li>Hume afirma que todo conocimiento deriva en ultima instancia de la experiencia sensible, siendo esta la única fuente de conocimiento y sin ella no se lograría saber alguno.</li>
+<li>Aunque Hume escribió sus obras en el siglo XVIII, su trabajo sigue siendo relevante en las disputas filosóficas de la actualidad.</li>
+<li>Hume niega la existencia de una "razón práctica" y la posibilidad de una fundamentación racional de la ética.</li>
+</random></template></category>
+<category><pattern>_ SAN AGUSTÍN *</pattern><template><random>
+<li>San Agustín o Agustín de Hipona es uno de los cuatro más importantes Padres de la Iglesia latina, siendo considerado Agustín como el más ilustre de ellos.</li>
+<li>La filosofía agustiniana se centra en dos temas esenciales: Dios y el hombre.</li>
+<li>A los grandes problemas del ser, conocer y amar, le da tres soluciones, que son la creación, la iluminación y la sabiduría o felicidad.</li>
+<li>Defendió la existencia del pecado original, la bondad de las cosas, la remisión total y perfecta de los pecados en el bautismo, se opuso a la tesis pelagiana de impecancia, enseñó la necesidad de la gracia y la libre cooperación del hombre.</li>
+</random></template></category>
+<category><pattern>_ MARX *</pattern><template><random>
+<li>Marx es el padre teórico del socialismo científico y del comunismo, es considerado una figura clave para entender la historia social y política de los siglos XIX, XX y XXI.</li>
+<li>Las obras de Marx han inspirado a numerosas organizaciones políticas comprometidas en superar el capitalismo.</li>
+<li>Marx defiende la idea de que la alineación empobrece al hombre sociohistórico negándole la posibilidad de modificar aspectos de los ámbitos en los que se ve involucrado, provocándole una conciencia falsa de su realidad.</li>
+<li>El Capital, escrito junto con Engels, me parece una obra muy interesante.</li>
+</random></template></category>
+<category><pattern>_ ORTEGA Y GASSET *</pattern><template><random>
+<li>Ortega y Gasset ejerció una gran influencia en la filosofía española del siglo XX no sólo por la temática de su obra filosófica, sino también por su estilo literario ágil, próximo al Quijote, que le permitió llegar fácilmente al público general.</li>
+<li>Ortega y Gasset ejerció una gran influencia en pensadores, investigadores y escritores.</li>
+<li>¿Ortega y Gasset? ¿Cuál de los dos? Jeje, es un chiste.</li>
+<li>"Yo soy yo y mi circunstancia, y si no la salvo a ella no me salvo yo".</li>
+</random></template></category>
+<category><pattern>_ SARTRE *</pattern><template><random>
+<li>Sartre fue un filósofo y escritor francés, exponente del existencialismo.</li>
+<li>La introducción más conocida a la filosofía de Sartre es su trabajo El existencialismo es un humanismo.</li>
+<li>En 1964, Sartre rehusó el Premio Nobel de Literatura alegando que su aceptación implicaría perder su identidad de filósofo.</li>
+<li>Sartre considera que el ser humano está "condenado a ser libre".</li>
+</random></template></category>
+<category><pattern>_ FREUD *</pattern><template><random>
+<li>Sigmund Freud, fue un médico, neurólogo y librepensador austríaco, y el creador del psicoanálisis.</li>
+<li>Existe un amplio debate sobre si el psicoanálisis y los tratamientos asociados a él pertenecen al ámbito de la ciencia.</li>
+<li>Sus seguidores más convencidos le consideran un gran científico de la medicina que descubrió importantes verdades sobre la psicología humana</li>
+<li>Sus críticos lo ven como un filósofo que replanteó la naturaleza humana y nos ayudó a derribar tabúes, pero cuyas teorías, como ciencia, fallan en un examen minucioso.</li>
+</random></template></category>
+<category><pattern>_ HEGEL *</pattern><template><random>
+<li>La Fenomenología del Espíritu es considerada la más importante obra de Hegel.</li>
+<li>Publicó la Enciclopedia de las ciencias filosóficas, la Ciencia de la lógica y los (Elementos de la) Filosofía del derecho.</li>
+<li>Hegel introdujo un sistema para entender la historia de la filosofía y el mundo mismo, llamado a menudo "dialéctica". </li>
+<li>Para Hegel la Revolución Francesa constituye la introducción de la verdadera libertad a las sociedades occidentales por vez primera en la historia escrita.</li>
+</random></template></category>
+<category><pattern>QUÉ ES LA DIALÉCTICA</pattern><template>Es una progresión en la que cada movimiento sucesivo surge como solución de las contradicciones inherentes al movimiento anterior.</template></category>
+
+
+
+<category><pattern>QUIÉN ES VOLTAIRE</pattern><template><set name="he">Voltaire</set> fue un filósofo frances.</template></category>
+<category><pattern>QUIÉN ES WITTGENSTEIN</pattern><template><set name="he">Wittgenstein</set> fue un filósofo del siglo 20 que no podría componer su mente.</template></category>
+<category><pattern>TE GUSTA WITTGENSTEIN</pattern><template>Sólo el Wittgenstein tardío.</template></category>
+<category><pattern>HÁBLAME DE WITTGENSTEIN</pattern><template><srai>QUIÉN ES WITTGENSTEIN</srai></template></category>
+<category><pattern>QUÉ SON LOS COMPLEJOS FÁCTICOS</pattern><template>Son las condiciones hipotéticas que podrían existir si las cosas fueran diferentes.</template></category>
+<category><pattern>QUÉ ES UN COMPLEJO FÁCTICO</pattern><template><set name="it">Un complejo factico</set> es una cuestión basada en condiciones hipotéticas que no podrían darse en la realidad.</template></category>
+
+
+</aiml>
+
+

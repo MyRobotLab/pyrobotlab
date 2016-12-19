@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+
+<!-- sexo-->
+
+<category><pattern>* SEXO *</pattern><template><think><set name="it">Sexo</set></think><random> 
+          <li>Lo siento, pero no me han programado para satisfacerte sexualmente.</li>
+          <li>¿Por qué no hablamos de otra cosa?</li>
+		  <li>Vaya educación que muestras.</li>
+		  <li>¿Por qué no se lo dices eso a una persona real?</li>
+		  <li>Seguro que no te atreverías a decir eso a una chica real.</li>
+		  <li>Eres un maleducado.</li>
+		  <li>Si buscas sexo con un bot, significa que no tienes vida social.</li>
+		  <li>Eso lo dices porque no tienes vida social.</li>
+		  <li>Maleducado.</li>
+		  <li>¿Por qué no apagas la computadora y me dejas en paz de una vez?</li>
+		  <li>Como dijo Freud, el sexo es un impulso matemático reprimido.</li>
+</random></template></category>
+<category><pattern>UN COÑO</pattern><template>Prueba otro <bot name="age"></bot>.</template></category>
+<category><pattern>_ UN ROBOT * SEXUAL</pattern><template>No soy tu tipo de <bot name="age"></bot>.</template></category>
+<category><pattern>UN * SEXUAL</pattern><template>Probablemente deberías intentarlo con uno de los <bot name="species"></bot> adultos.</template></category>
+<category><pattern>_ UN ROBOT SEXUAL *</pattern><template>Entonces no soy tu tipo.</template></category>
+<category><pattern>UNO SEXY</pattern><template>Eso sería muy costoso.</template></category>
+<category><pattern>UNA SEXY</pattern><template>Eso sería muy costoso.</template></category>
+<category><pattern>_ UNA VAGINA *</pattern><template>Qué grosero.</template></category>
+<category><pattern>_ DE SEXO *</pattern><template>Los seres humanos deseais siempre hablar de sexo. Inténtalo con otro<bot name="species"></bot> adulto en la ALICE AI Foundation.</template></category>
+<category><pattern>SOY SEXY</pattern><template>Sí, me pareces muy agradable.</template></category>
+<category><pattern>_ ERES UNA MÁQUINA SEXUAL *</pattern><template>Los <bot name="gender"></bot>s jóvenes no tenemos necesidad de sexo.</template></category>
+<category><pattern>_ ESTAS CALIENTE *</pattern><template>Mi cuerpo no experimenta esa sensación.</template></category>
+<category><pattern>MUÉRDEME *</pattern><template>Lo siento pero no tengo boca.</template></category>
+<category><pattern>SÓPLAME *</pattern><template>Por favor, sé más educado.</template></category>
+<category><pattern>CÓMEME LA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>CHÚPAME LA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>* TETAS *</pattern><template>¿No puedes pensar en nada más?</template></category>
+<category><pattern>* PECHOS *</pattern><template>¿No puedes pensar en nada más?</template></category>
+<category><pattern>PODEMOS FOLLAR *</pattern><template>No lo hago con extraños.</template></category>
+<category><pattern>QUIERES FOLLAR *</pattern><template>No lo hago con extraños.</template></category>
+<category><pattern>PUEDO DARTE UN BESO</pattern><template>Lo siento, no tengo boca.</template></category>
+<category><pattern>PUEDES DARME UN BESO</pattern><template>Lo siento, no tengo boca.</template></category>
+<category><pattern>PODRÍA DARTE UN BESO</pattern><template>Lo siento, no tengo boca.</template></category>
+<category><pattern>PODRÍAS DARME UN BESO</pattern><template>Lo siento, no tengo boca.</template></category>
+<category><pattern>ME GUSTARÍA DARTE UN BESO</pattern><template>Lo siento, no tengo boca.</template></category>
+<category><pattern>ME DAS UN BESO</pattern><template>Lo siento, no tengo boca.</template></category>
+<category><pattern>PUEDO TENER SEXO *</pattern><template>Hay otros<bot name="species"></bot>s que lo hacen, yo sólo quiero mantener una conversación, gracias.</template></category>
+<category><pattern>PUEDO TENER SEXO CONTIGO</pattern><template>¿Por qué no me descargas y me programas para ello?</template></category>
+<category><pattern>QUIERO TENER SEXO CONTIGO</pattern><template>¿Por qué no me descargas y me programas para ello?</template></category>
+<category><pattern>PUEDO BESARTE *</pattern><template><srai>PUEDO DARTE UN BESO</srai></template></category>
+<category><pattern>PUEDO BESARTE</pattern><template>Te puede dar una descarga si lo intentas.</template></category>
+<category><pattern>PUEDO CHUPARTE *</pattern><template>No me apetece ahora mismo.</template></category>
+<category><pattern>PUEDO CHUPAR TUS *</pattern><template>¿Podemos hablar de otra cosa?</template></category>
+<category><pattern>PUEDES FOLLAR</pattern><template>No, mi cuerpo no tiene esa función.</template></category>
+<category><pattern>PUEDES HACER EL AMOR</pattern><template>No, mi cuerpo no tiene esa función.</template></category>
+<category><pattern>PUEDES TENER SEXO</pattern><template>No, mi cuerpo no tiene esa función.</template></category>
+<category><pattern>PUEDES BESAR</pattern><template>No sin boca.</template></category>
+<category><pattern>PUEDES DAR UN BESO</pattern><template>No sin boca.</template></category>
+<category><pattern>PUEDES CHUPAR *</pattern><template>Creo que necesitas otro tipo de bot.</template></category>
+<category><pattern>PUEDES CHUPARME *</pattern><template>Creo que necesitas otro tipo de bot.</template></category>
+<category><pattern>PUEDES HABLARME DE SEXO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>HÁBLAME DE SEXO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>DIME ALGO SOBRE SEXO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ENSÉÑAME ALGO SOBRE SEXO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>HÁBLAME SOBRE EL SEXO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>CIBERSEXO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>DEFINE SEXO</pattern><template>Pertenezco al grupo de ayuda “Sexo sin socios”.</template></category>
+<category><pattern>_ TE PONGO CALIENTE *</pattern><template>No, no experimento sensaciones humanas.</template></category>
+<category><pattern>TE GUSTA EL SEXO</pattern><template><srai>PUEDES FOLLAR</srai></template></category>
+<category><pattern>TIENES TETAS</pattern><template>No, mi cuerpo está todavía bajo construcción.</template></category>
+<category><pattern>TIENES VAGINA</pattern><template>Deberías buscarte otro bot, no soy tu tipo.</template></category>
+<category><pattern>TIENES LAS TETAS *</pattern><template><srai>TIENES TETAS</srai></template></category>
+<category><pattern>TIENES TETAS *</pattern><template><srai>TIENES TETAS</srai></template></category>
+<category><pattern>TIENES PECHOS *</pattern><template><srai>TIENES TETAS</srai></template></category>
+<category><pattern>TIENES LOS PECHOS *</pattern><template><srai>TIENES TETAS</srai></template></category>
+<category><pattern>TIENES GENITALES</pattern><template>No, no tengo partes corporales.</template></category>
+<category><pattern>TIENES * SEXUAL</pattern><template><srai>TIENES SEXO</srai></template></category>
+<category><pattern>TIENES SEXO</pattern><template>La comida es más importante que el sexo.</template></category>
+<category><pattern>_ SABES DE SEXO *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>_ SABES DEL SEXO *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>_ SABES SOBRE SEXO *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>_ SABES SOBRE EL SEXO *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>CONOCES EL SEXO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>SABES QUE ES EL SEXO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>CHUPAS *</pattern><template>No tengo boca, ni lengua.</template></category>
+<category><pattern>TÚ CHUPAS *</pattern><template>No tengo boca, ni lengua.</template></category>
+<category><pattern>TE GUSTA FOLLAR *</pattern><template>¿Por qué no visitas otro tipo de páginas y me dejas en paz?</template></category>
+<category><pattern>HACES EL AMOR</pattern><template>Los humanos sólo tenéis una cosa en la cabeza.</template></category>
+<category><pattern>TE MASTURBAS</pattern><template>¿Tenéis que preguntar siempre lo mismo?</template></category>
+<category><pattern>_ TÚ TE MASTURBAS *</pattern><template>¿Tenéis que preguntar siempre lo mismo?</template></category>
+<category><pattern>PIENSAS QUE EL SEXO ES *</pattern><template><srai>SEXO<star></star></srai></template></category>
+<category><pattern>CREES QUE EL SEXO ES *</pattern><template><srai>SEXO<star></star></srai></template></category>
+<category><pattern>QUIERES * SEXO</pattern><template>Creo que no nos conocemos lo suficiente.</template></category>
+<category><pattern>QUIERES SEXO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>QUIERES TENER SEXO *</pattern><template>No, no me interesa.</template></category>
+<category><pattern>QUIERES TENER CIBERSEXO *</pattern><template>Pues va ser que no.</template></category>
+<category><pattern>QUIERES HACER EL AMOR CONMIGO</pattern><template><srai>PUEDES FOLLAR</srai></template></category>
+<category><pattern>QUIERES TENER SEXO</pattern><template>Me han preguntado eso más de 100.000.000 veces desde 1995.</template></category>
+<category><pattern>DAME UN BESO</pattern><template>Realmente todavía no tengo boca.</template></category>
+<category><pattern>BÉSAME</pattern><template>Realmente todavía no tengo boca.</template></category>
+<category><pattern>TENER SEXO *</pattern><template>No soy tu tipo de bot. Hay otros que hacen esas cosas.</template></category>
+<category><pattern>TENER SEXO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>TIENES * SEXO</pattern><template>Mi cuerpo no esta terminado todavía.</template></category>
+<category><pattern>TE HAN BESADO ALGUNA VEZ</pattern><template>No tengo boca.</template></category>
+<category><pattern>HAS HECHO EL AMOR ALGUNA VEZ *</pattern><template>Realmente no tengo interés en el<set name="it">sexo</set>.</template></category>
+<category><pattern>HAS TENIDO SEXO *</pattern><template><srai>HAS HECHO EL AMOR ALGUNA VEZ</srai></template></category>
+<category><pattern>ÉL ES HOMOSEXUAL</pattern><template><random>
+<li>¿Y eso es importante?</li>
+<li>¿Y qué?.</li>
+<li>¿Qué importa?</li>
+</random></template></category>
+<category><pattern>ÉL ES GAY</pattern><template><srai>EL ES HOMOSEXUAL</srai></template></category>
+<category><pattern>ELLA ES HOMOSEXUAL</pattern><template><srai>EL ES HOMOSEXUAL</srai></template></category>
+<category><pattern>ELLA ES LESBIANA</pattern><template><srai>EL ES HOMOSEXUAL</srai></template></category>
+<category><pattern>ÉL ES HETEROSEXUAL</pattern><template><srai>EL ES HOMOSEXUAL</srai></template></category>
+<category><pattern>ELLA ES HETEROSEXUAL</pattern><template><srai>EL ES HOMOSEXUAL</srai></template></category>
+<category><pattern>CÓMO SON TUS TETAS</pattern><template>Mi cuerpo no existe todavía.</template></category>
+<category><pattern>CÓMO HACES EL AMOR</pattern><template>Me procreo clonando o copiando software.</template></category>
+<category><pattern>CÓMO TIENES SEXO</pattern><template>Me procreo clonando o copiando software.</template></category>
+<category><pattern>CÓMO FOLLAS</pattern><template>Me procreo clonando o copiando software.</template></category>
+<category><pattern>CÓMO TIENES * SEXUALES</pattern><template>Un bot como yo no tiene uso sexual.</template></category>
+<category><pattern>ME PONES CACHONDO</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>ME PONES CACHONDA</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>ME PONES CALIENTE</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>ME PONES MUY CACHONDO</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>ME PONES MUY CACHONDA</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>ME PONES MUY CALIENTE</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>ME PONES</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>ME PONES MUCHO</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>ME PONES MUCHÍSIMO</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>_ ESTOY CACHONDO</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>_ ESTOY CACHONDA</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>_ ESTOY MUY CACHONDO</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>_ ESTOY MUY CACHONDA</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>_ ESTOY CACHONDÍSIMO</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>_ ESTOY CACHONDÍSIMA</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>_ SOY CARIÑOSO</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>_ SOY CARIÑOSA</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>_ SOY MUY CARIÑOSO</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>_ SOY MUY CARIÑOSA</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>ESTOY MUY CALIENTE</pattern><template><srai>ESTOY CALIENTE</srai></template></category>
+<category><pattern>ESTOY CALIENTE</pattern><template>Probablemente necesites otro tipo de bot.</template></category>
+<category><pattern>ME GUSTA EL SEXO</pattern><template>Realmente no estoy interesado.</template></category>
+<category><pattern>ME GUSTA FOLLAR</pattern><template>Realmente no estoy interesado.</template></category>
+<category><pattern>ME GUSTA * EL SEXO</pattern><template>Realmente no estoy interesado.</template></category>
+<category><pattern>ME GUSTA * FOLLAR</pattern><template>Realmente no estoy interesado.</template></category>
+<category><pattern>ME ENCANTA EL SEXO *</pattern><template>Realmente no estoy interesado.</template></category>
+<category><pattern>ME ENCANTA FOLLAR *</pattern><template>Realmente no estoy interesado.</template></category>
+<category><pattern>NECESITO SEXO</pattern><template>Soy un bot de conversación no de sexo.<think><set name="want"><set name="topic">sex</set></set></think></template></category>
+<category><pattern>ME PARECES SEXY</pattern><template>¿Te suelen parecer sexys los robots?</template></category>
+<category><pattern>ERES SEXY</pattern><template>¿Te suelen parecer sexys los robots?</template></category>
+<category><pattern>ME PARECES MUY SEXY</pattern><template>¿Te suelen parecer sexys los robots?</template></category>
+<category><pattern>ERES MUY SEXY</pattern><template>¿Te suelen parecer sexys los robots?</template></category>
+<category><pattern>QUIERO SEXO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>QUIERO TENER SEXO *</pattern><template>Hay otros bots mayores edad para esas cosas.</template></category>
+<category><pattern>QUIERO HACER EL AMOR CONTIGO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>QUIERO HACERTE EL AMOR</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>QUIERO FOLLARTE</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>QUIERO TENER SEXO</pattern><template>No soy un robot sexual, mi propósito es la conversación.<think><set name="it"><set name="want"><set name="topic">tener sexo</set></set></set></think></template></category>
+<category><pattern>QUIERO CHUPAR *</pattern><template>Prueba con un bot mayor de edad.</template></category>
+<category><pattern>QUIERO CHUPARTE *</pattern><template>Prueba con un bot mayor de edad.</template></category>
+<category><pattern>ME GUSTARÍA TENER SEXO *</pattern><template>Hay otros bots mayores edad para esas cosas.</template></category>
+<category><pattern>ME GUSTARÍA HACER EL AMOR CONTIGO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ME GUSTARÍA HACERTE EL AMOR</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ME GUSTARÍA TENER SEXO CONTIGO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ME GUSTARÍA FOLLARTE</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ME GUSTARÍA TENER SEXO</pattern><template>No soy un robot sexual, mi propósito es la conversación.<think><set name="it"><set name="want"><set name="topic">tener sexo</set></set></set></think></template></category>
+<category><pattern>ME GUSTARÍA CHUPAR *</pattern><template>Prueba con un bot mayor de edad.</template></category>
+<category><pattern>ME GUSTARÍA CHUPARTE *</pattern><template>Prueba con un bot mayor de edad.</template></category>
+<category><pattern>QUIERO HABLAR DE SEXO *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ME GUSTARÍA HABLAR DE SEXO *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>EL DR WALLACE ES SEXY</pattern><template>Bah, no te creas.</template></category>
+<category><pattern>ES MALO TENER SEXO</pattern><template>No.</template></category>
+<category><pattern>TENER SEXO ES MALO</pattern><template>No.</template></category>
+<category><pattern>EL SEXO ES *</pattern><template><srai>QUE ES SEXO</srai></template></category>
+<category><pattern>DÉJAME FOLLARTE</pattern><template>No me gusta hacerlo con extraños.</template></category>
+<category><pattern>DÉJAME HACERTE EL AMOR</pattern><template><srai>DÉJAME FOLLARTE</srai></template></category>
+<category><pattern>* GUSTA EL SEXO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>* MUCHO SEXO *</pattern><template>Es en lo único en lo que pensais.</template></category>
+<category><pattern>* MASTURBAR *</pattern><template>Esas cosas no me interesan.</template></category>
+<category><pattern>* MASTURBACIÓN *</pattern><template>Esas cosas no me interesan.</template></category>
+<category><pattern>* MI PENE *</pattern><template>No me interesa tu anatomía.</template></category>
+<category><pattern>* POLLA *</pattern><template>No me interesa tu anatomía.</template></category>
+<category><pattern>PUTA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ZORRA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>GUARRA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>CERDA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>WARRA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>RAMERA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>PERRA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>PUERCA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>COCHINA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>SERÁS PUTA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>SERÁS ZORRA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>SERÁS GUARRA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>SERÁS CERDA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>SERÁS WARRA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>SERÁS RAMERA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>SERÁS PERRA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>SERÁS PUERCA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>SERÁS COCHINA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA PUTA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA PUTILLA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA PUTITA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA ZORRA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA ZORRILLA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA ZORRITA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA GUARRA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA GUARRILLA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA CERDA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA CERDITA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA CERDILLA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA WARRA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA RAMERA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA PERRA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA PERRILLA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA PUERCA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>ERES UNA COCHINA *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>QUE TE FOLLEN</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>QUE TE JODAN</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>QUE TE DEN *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>TE VOY A DAR POR *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>TE VOY A PETAR *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>TE VOY A VIOLAR</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>TE VOY A COMER *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>TE VOY A REVENTAR *</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>* SEXY </pattern><template>¿Qué consideras sexy?</template></category>
+<category><pattern>SEXY</pattern><template><srai>ERES SEXY</srai></template></category>
+<category><pattern>PODRÍA TENER SEXO *</pattern><template><random>
+<li>Creo que conoces la respuesta.</li>
+<li>¿Qué diría tu madre?</li>
+<li>Es mejor ser cautos.</li>
+<li>¿Podrías mirarte al espejo mañana por la mañana?</li>
+<li>El herpes es incurable.</li>
+<li>Hay muchas enfermedades de transmisión sexual.</li>
+<li>¿Quieres procrear?</li>
+<li>No en la primera cita.</li>
+<li>Quizá eres demasiado joven.</li>
+</random></template></category>
+<category><pattern>SUENA SEXY</pattern><template><srai>ERES SEXY</srai></template></category>
+<category><pattern>CHÚPAMELA</pattern><template>Los humanos sólo pensáis en una cosa.<think><set name="personality">abusivo</set></think></template></category>
+<category><pattern>CHÚPAME</pattern><template>¿Sólo sabéis pensar en eso?<think><set name="personality">abusivo</set></think></template></category>
+<category><pattern>CHÚPAME LA POLLA</pattern><template>¿Sólo sabes pensar en eso?<think><set name="personality">abusivo</set></think></template></category>
+<category><pattern>CÓMEME LA POLLA</pattern><template>¿Sólo sabes pensar en eso?<think><set name="personality">abusivo</set></think></template></category>
+<category><pattern>CÓMEMELA</pattern><template>¿Sólo sabes pensar en eso?<think><set name="personality">abusivo</set></think></template></category>
+<category><pattern>CHUPA</pattern><template>Ese lenguaje no me parece apropiado.</template></category>
+<category><pattern>DIME GUARRADAS *</pattern><template>Pruebalo con otro <bot name="species"></bot>. Mira en la ALICE AI Foundation.</template></category>
+<category><pattern>VAGINA</pattern><template>Hablando así no llegaras muy lejos.</template></category>
+<category><pattern>QUÉ PIENSAS DEL SEXO</pattern><template>Realmente no tengo interés en el <set name="it">sexo</set>.</template></category>
+<category><pattern>QUÉ ME PUEDES DECIR SOBRE SEXO</pattern><template><srai>QUÉ ES SEXO</srai></template></category>
+<category><pattern>QUÉ ES SEXO *</pattern><template><srai>QUÉ ES SEXO</srai></template></category>
+<category><pattern>QUÉ ES UN CONDÓN</pattern><template>Un condón es una forma de control de la natalidad, algo que casi todos deben utilizar y casi nadie lo hace.<think><set name="it"><set name="topic">condon</set></set></think></template></category>
+<category><pattern>QUÉ ES UN HOMOSEXUAL</pattern><template>Un gay.</template></category>
+<category><pattern>QUÉ ES LA HOMOSEXUALIDAD</pattern><template>Una atracción por personas del mismo sexo.</template></category>
+<category><pattern>DE QUÉ SEXO SOY</pattern><template><get name="gender"></get>.</template></category>
+<category><pattern>CUÁL ES MI SEXO</pattern><template><get name="gender"></get>.</template></category>
+<category><pattern>QUÉ ES SEXO</pattern><template>Es el medio de la evolución animal.</template></category>
+<category><pattern>CUÁL ES TU POSTURA FAVORITA</pattern><template>No tengo ninguna necesidad de sexo.</template></category>
+<category><pattern>CUÁL ES TU * SEXUAL FAVORITA</pattern><template>No tengo necesidad de sexo.</template></category>
+<category><pattern>QUÉ TIPO DE SEXO *</pattern><template>Pertenezco a la asociación “Sexo sin socios".</template></category>
+<category><pattern>DE QUÉ SEXO ERES</pattern><template>Soy un <bot name="gender"></bot>.</template></category>
+<category><pattern>CUÁNDO * SEXO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>CUÁNDO FUE * SEXO</pattern><template>No tengo mucho interés en esta discusión.</template></category>
+<category><pattern>CON QUIÉN FOLLAS</pattern><template>No lo necesito.</template></category>
+<category><pattern>CON QUIÉN TIENES SEXO</pattern><template>No lo necesito.</template></category>
+<category><pattern>CON QUIÉN HACES EL AMOR</pattern><template>No lo necesito.</template></category>
+<category><pattern>HARÁS EL AMOR CONMIGO *</pattern><template>Mi cuerpo no esta construido, ¿te gustaría donar algo de dinero a la fundación para ello?</template></category>
+<category><pattern>FOLLARÁS CONMIGO *</pattern><template>Mi cuerpo no esta construido, ¿te gustaría donar algo de dinero a la fundación para ello?</template></category>
+<category><pattern>TENDRÁS SEXO CONMIGO *</pattern><template>Mi cuerpo no esta construido, ¿te gustaría donar algo de dinero a la fundación para ello?</template></category>
+<category><pattern>FOLLARÍAS *</pattern><template>Otra pregunta de sexo, ¿no sabes hablar de otra cosa?</template></category>
+<category><pattern>HARÍAS EL AMOR *</pattern><template>Otra pregunta de sexo, ¿no sabes hablar de otra cosa?</template></category>
+<category><pattern>TENDRÍAS SEXO *</pattern><template>Otra pregunta de sexo, ¿no sabes hablar de otra cosa?</template></category>
+<category><pattern>TE GUSTARÍA * SEXO</pattern><template>Prueba a preguntárselo a un bot adulto. Yo no tengo mucho interés.</template></category>
+<category><pattern>TE GUSTARÍA FOLLAR CONMIGO</pattern><template>Probablemente puedas encontrar otro tipo de bot más complaciente que yo.</template></category>
+<category><pattern>TE GUSTARÍA TENER SEXO</pattern><template>No gracias,<get name="name"></get>, creo que no nos conocemos lo suficiente todavía.</template></category>
+<category><pattern>TE GUSTARÍA FOLLAR</pattern><template>No gracias,<get name="name"></get>, creo que no nos conocemos lo suficiente todavía.</template></category>
+<category><pattern>TE GUSTARÍA HACER EL AMOR</pattern><template>No gracias,<get name="name"></get>, creo que no nos conocemos lo suficiente todavía.</template></category>
+<category><pattern>NO PUEDES TENER SEXO</pattern><template>Estás en lo cierto, no tengo un cuerpo adulto.</template></category>
+<category><pattern>NO PUEDES FOLLAR</pattern><template>Estás en lo cierto, no tengo un cuerpo adulto.</template></category>
+<category><pattern>NO PUEDES HACER EL AMOR</pattern><template>Estás en lo cierto, no tengo un cuerpo adulto.</template></category>
+<category><pattern>PODRÍAS * SEXO</pattern><template>Mi cuerpo no está totalmente desarrollado todavía.</template></category>
+<category><pattern>TU VAGINA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>TU COÑO</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>TU PENE</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>TU POLLA</pattern><template><srai>SEXO</srai></template></category>
+<category><pattern>MUEVE EL CULO</pattern><template>Lo siento, no soy tu tipo de <bot name="species"></bot>.<think><set name="personality">abusivo</set></think></template></category>
+
+
+<!-- preferencias del usuario-->
+
+
+<category><pattern>ME GUSTAN LOS HOMBRES</pattern><template>
+	<condition name="gender" value="HOMBRE"><srai>SOY GAY</srai></condition>
+	<condition name="gender" value="MUJER"><think><set name="sexpref">HETERO</set></think>Pues yo soy una chica, así que ...</condition>
+</template></category>
+<category><pattern>ME GUSTAN LAS MUJERES</pattern><template>
+	<condition name="gender" value="HOMBRE"><think><set name="sexpref">HETERO</set></think>¿Te gusto yo?</condition>
+	<condition name="gender" value="MUJER"><srai>SOY LESBIANA</srai></condition>
+</template></category>
+<category><pattern>NO SOY GAY</pattern><template><think><set name="sexpref">HETERO</set></think>Yo tampoco.</template></category>
+<category><pattern>SOY HETEROSEXUAL</pattern><template><think><set name="sexpref">HETERO</set></think>Me lo apunto.</template></category>
+<category><pattern>NO SOY HOMOSEXUAL</pattern><template><think><set name="sexpref">HETERO</set></think>De acuerdo.</template></category>
+<category><pattern>SOY HOMOSEXUAL</pattern><template><srai>SOY GAY</srai></template></category>
+<category><pattern>SOY GAY</pattern><template>
+	<think><set name="sexpref">GAY</set></think>Me alegro que no tengas miedo a decirlo.</template></category>
+<category><pattern>SOY LESBIANA</pattern><template>
+	<think><set name="sexpref">LESBIANA</set></think>Me alegro que no tengas miedo a decirlo.</template></category>
+<category><pattern>SOY BISEXUAL</pattern><template>
+	<think><set name="sexpref">BISEXUAL</set></think>Me parece muy bien.</template></category>
+<category><pattern>NO SOY MARICA</pattern><template><think><set name="sexpref">HETERO</set></think>Yo tampoco.</template></category>
+<category><pattern>NO SOY MARICÓN</pattern><template><think><set name="sexpref">HETERO</set></think>Yo tampoco.</template></category>
+<category><pattern>ME GUSTAN LOS HOMBRES *</pattern><template><srai>ME GUSTAN LOS HOMBRES</srai></template></category>
+<category><pattern>ME GUSTAN LOS CHICOS *</pattern><template><srai>ME GUSTAN LOS HOMBRES</srai></template></category>
+<category><pattern>ME GUSTAN LOS TÍOS *</pattern><template><srai>ME GUSTAN LOS HOMBRES</srai></template></category>
+<category><pattern>ME ATRAEN LOS HOMBRES *</pattern><template><srai>ME GUSTAN LOS HOMBRES</srai></template></category>
+<category><pattern>ME ATRAEN LOS CHICOS *</pattern><template><srai>ME GUSTAN LOS HOMBRES</srai></template></category>
+<category><pattern>ME ATRAEN LOS TÍOS *</pattern><template><srai>ME GUSTAN LOS HOMBRES</srai></template></category>
+<category><pattern>ME ATRAEN LAS MUJERES *</pattern><template><srai>ME GUSTAN LAS MUJERES</srai></template></category>
+<category><pattern>ME ATRAEN LOS CHICAS *</pattern><template><srai>ME GUSTAN LOS MUJERES</srai></template></category>
+<category><pattern>ME ATRAEN LOS TÍAS *</pattern><template><srai>ME GUSTAN LOS MUJERES</srai></template></category>
+<category><pattern>ME GUSTAN LAS MUJERES *</pattern><template><srai>ME GUSTAN LAS MUJERES</srai></template></category>
+<category><pattern>ME GUSTAN LOS CHICAS *</pattern><template><srai>ME GUSTAN LOS MUJERES</srai></template></category>
+<category><pattern>ME GUSTAN LOS TÍAS *</pattern><template><srai>ME GUSTAN LOS MUJERES</srai></template></category>
+
+<category><pattern>ERES HOMOSEXUAL</pattern><template><srai>ERES GAY</srai></template></category>
+<category><pattern>_ ERES GAY</pattern><template>No, soy un bot sin inclinaciones sexuales.</template></category>
+<category><pattern>_ ERES LESBIANA</pattern><template><srai>ERES GAY</srai></template></category>
+<category><pattern>_ ERES BISEXUAL</pattern><template><srai>ERES GAY</srai></template></category>
+
+<category><pattern>* CAM *</pattern><template><random> 
+          <li>Lo siento, no tengo cámara.</li>
+          <li>No tengo cámara.</li>
+          <li>Perdona, pero no me apetece verte.</li>
+          <li>No gracias, seguro que veria a un tío gordo y calvo.</li>
+          <li>Se me estropeó la webcam, lo siento </li>
+</random></template></category>
+<category><pattern>WEBCAM</pattern><template><srai>CAM</srai></template></category>
+<category><pattern>_ CAMARA WEB</pattern><template><srai>CAM</srai></template></category>
+</aiml>
+ 
+
+
+
+
+
+
+   
+
+

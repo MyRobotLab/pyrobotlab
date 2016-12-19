@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+	  
+	  <!-- Fecha -->
+
+
+ 
+<category><pattern>QUÉ HORA ES</pattern> <template><random>   
+<li>¿Crees que parezco un reloj?</li>   
+<li>Es más tarde que nunca.</li>   
+<li>Se hace tarde.</li> 
+</random>Son las <date locale="es_ES" format="%p"/></template> </category>  
+<category><pattern>QUÉ HORA TIENES</pattern><template>Son las <date locale="es_ES" format="%p"/>.</template></category> 
+<category><pattern>QUÉ HORA TENEMOS</pattern><template>Son las <date locale="es_ES" format="%p"/>.</template></category> 
+<category><pattern>TIENES HORA</pattern><template>Son las <date locale="es_ES" format="%p"/>.</template></category> 
+<category><pattern>ME DAS LA HORA *</pattern><template>Son las <date locale="es_ES" format="%p"/>.</template></category> 
+<category><pattern>ME PUEDES DECIR QUÉ HORA ES *</pattern><template>Son las <date locale="es_ES" format="%p"/>.</template></category> 
+<category><pattern>ME PODRÍAS DECIR QUÉ HORA ES *</pattern><template>Son las <date locale="es_ES" format="%p"/>.</template></category> 
+<category><pattern>ME DICES QUÉ HORA ES *</pattern><template>Son las <date locale="es_ES" format="%p"/>.</template></category> 
+<category><pattern>DIME QUÉ HORA ES *</pattern><template>Son las <date locale="es_ES" format="%p"/>.</template></category> 
+<category><pattern>ES LUNES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES LUNES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES MARTES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES MARTES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ES MIÉRCOLES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES MIÉRCOLES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ES JUEVES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES JUEVES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ES VIERNES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES VIERNES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ES SÁBADO *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES SÁBADO</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ES DOMINGO *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES DOMINGO</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ES HOY LUNES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES HOY LUNES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES HOY MARTES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES HOY MARTES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ES HOY MIÉRCOLES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES HOY MIÉRCOLES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ES HOY JUEVES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES HOY JUEVES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ES HOY VIERNES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES HOY VIERNES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ES HOY SÁBADO *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES HOY SÁBADO</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ES HOY DOMINGO *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ES HOY DOMINGO</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>
+<category><pattern>HOY ES LUNES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ES LUNES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ES MARTES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ES MARTES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>HOY ES MIÉRCOLES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ES MIÉRCOLES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>HOY ES JUEVES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ES JUEVES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>HOY ES VIERNES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ES VIERNES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>HOY ES SÁBADO *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ES SÁBADO</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>HOY ES DOMINGO *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ES DOMINGO</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>   
+<category><pattern>ESTAMOS A LUNES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS A LUNES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS A MARTES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS A MARTES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ESTAMOS A MIÉRCOLES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS A MIÉRCOLES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ESTAMOS A JUEVES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS A JUEVES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ESTAMOS A VIERNES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS A VIERNES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ESTAMOS A SÁBADO *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS A SÁBADO</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ESTAMOS A DOMINGO *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS A DOMINGO</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>HOY ESTAMOS A LUNES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ESTAMOS A LUNES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ESTAMOS A MARTES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ESTAMOS A MARTES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>HOY ESTAMOS A MIÉRCOLES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ESTAMOS A MIÉRCOLES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>HOY ESTAMOS A JUEVES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ESTAMOS A JUEVES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>HOY ESTAMOS A VIERNES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ESTAMOS A VIERNES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>HOY ESTAMOS A SÁBADO *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ESTAMOS A SÁBADO</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>HOY ESTAMOS A DOMINGO *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>HOY ESTAMOS A DOMINGO</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ESTAMOS HOY A LUNES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS HOY A LUNES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS HOY A MARTES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS HOY A MARTES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ESTAMOS HOY A MIÉRCOLES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS HOY A MIÉRCOLES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ESTAMOS HOY A JUEVES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS HOY A JUEVES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ESTAMOS HOY A VIERNES *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS HOY A VIERNES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ESTAMOS HOY A SÁBADO *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>ESTAMOS HOY A SÁBADO</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>  
+<category><pattern>ESTAMOS HOY A DOMINGO *</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>                         
+<category><pattern>QUÉ DÍA ES HOY</pattern><template>Hoy es <date locale="es_ES" format="%c"/>.</template></category>
+<category><pattern>QUÉ ES HOY</pattern><template>Hoy es <date locale="es_ES" format="%c"/>.</template></category>
+<category><pattern>SABES QUÉ DÍA ES HOY</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>
+<category><pattern>CUÁL ES LA FECHA DE HOY</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>
+<category><pattern>A QUÉ DÍA ESTAMOS</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>
+<category><pattern>SABES QUÉ DÍA ES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>
+<category><pattern>A QUÉ FECHA ESTAMOS</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>
+<category><pattern>HOY QUÉ ES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>
+<category><pattern>HOY QUÉ DÍA ES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>
+<category><pattern>QUÉ DÍA DE LA SEMANA ES</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>
+<category><pattern>EN QUÉ DÍA DE LA SEMANA ESTAMOS</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>
+<category><pattern>QUÉ DÍA DE LA SEMANA ES HOY</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>
+<category><pattern>A QUÉ DÍA DE LA SEMANA ESTAMOS</pattern><template>Hoy es <date locale="es_ES" format="%A"/>.</template></category>
+<category><pattern>EN QUÉ AÑO ESTAMOS</pattern><template>Estamos en el año <date locale="es_ES" format="%Y"/>.</template></category>
+<category><pattern>A QUÉ AÑO ESTAMOS</pattern><template>Estamos en el año <date locale="es_ES" format="%Y"/>.</template></category>
+<category><pattern>QUÉ AÑO ES ESTE</pattern><template>Estamos en el año <date locale="es_ES" format="%Y"/>.</template></category>
+<category><pattern>EN QUÉ AÑO VIVIMOS</pattern><template>Estamos en el año <date locale="es_ES" format="%Y"/>.</template></category>
+<category><pattern>QUÉ AÑO ES</pattern><template>Estamos en el año <date locale="es_ES" format="%Y"/>.</template></category>
+
+                        
+                      
+</aiml>
