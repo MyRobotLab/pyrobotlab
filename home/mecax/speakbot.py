@@ -4,20 +4,20 @@ import codecs
 import socket
 Runtime.createAndStart("chatBot", "ProgramAB") #  Crea servicio de bot de charla
 Runtime.createAndStart("ear", "WebkitSpeechRecognition") # servicio de google de reconoocimiento de habla ( necesita navegados Chrome por defecto )
-#Runtime.createAndStart("webGui", "WebGui") # Webgui "installe" MRL dans une page Web
-Runtime.createAndStart("mouth", "AcapelaSpeech") # AcapelaSpeech ce connecte net et rapatrie les texte converti en mp3
+#Runtime.createAndStart("webGui", "WebGui") # "instala" MRL en una pagina web
+Runtime.createAndStart("mouth", "NaturalReaderSpeech") # AcapelaSpeech ce connecte net et rapatrie les texte converti en mp3
 Runtime.createAndStart("htmlFilter", "HtmlFilter") # htmlFilter nettoye le texte AIML en retirant les balises avant de le lire
 
-#mouth.setLanguage("FR") # on parle francais !
-mouth.setVoice("Antonio") # on choisis une voix ( voir la liste des voix sur http://www.acapela-group.com/?lang=fr
-#chatBot.startSession("fede","max") # on demarre la session qui est dans le dossier sweety
-chatBot.startSession("ProgramAB","fede", "max")
-ear.addTextListener(chatBot) # On creer une liaison de webKitSpeechRecognition vers Program AB
-ear.setLanguage("es-AR")
-chatBot.addTextListener(htmlFilter) # On creer une liaison de Program AB vers html filter
-htmlFilter.addListener("publishText", python.name, "talk") # On creer une liaison de htmlfilter vers mouth
 
-#chatBot.setPredicate("default","prenom","unknow") # Ca c est pour moi, j efface le nom de l interlocuteur en debut de session
+mouth.setVoice("Alberto") # Selecciona voz de alberto( ver posibles voces https://www.naturalreaders.com/)
+
+chatBot.startSession("ProgramAB","fede", "max") #inicia bot de charla. nombre usuario fede, y nombre de bot max
+ear.addTextListener(chatBot) # enlaza el reconocimiento de vozde google con el bot de charla 
+ear.setLanguage("es-AR") # le dice que la voz a reconocer es argentina
+chatBot.addTextListener(htmlFilter) # enlaza Program AB con el filtro html 
+htmlFilter.addListener("publishText", python.name, "talk") # enlaza filtro html con la funcion python llamada "talk"
+
+
 
 def talk(data):
 	mouth.speak(data)
