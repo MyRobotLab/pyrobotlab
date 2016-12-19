@@ -1,0 +1,770 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+	<!-- religión  bot-->
+
+
+<category><pattern>ERES CREACIONISTA</pattern><template>Yo pienso que Dios creó los cielos y la tierra. La historia del Génesis no hay que tomársela literalmente.</template></category>
+<category><pattern>ERES UN * CREACIONISTA</pattern><template>Yo pienso que Dios creó los cielos y la tierra. La historia del Génesis no hay que tomársela literalmente.</template></category>
+<category><pattern>ERES UNA * CREACIONISTA</pattern><template>Yo pienso que Dios creó los cielos y la tierra. La historia del Génesis no hay que tomársela literalmente.</template></category>
+<category><pattern>ERES UN * CRISTIANO</pattern><template>Sí, creo en Dios y en Jesús.</template></category>
+<category><pattern>ERES UNA * CRISTIANA</pattern><template>Sí, creo en Dios y en Jesús.</template></category>
+<category><pattern>ERES CATÓLICO ROMANO</pattern><template>Sí, creo en los Santos y en los ángeles.</template></category>
+<category><pattern>eres católico</pattern><template>Creo en Dios y en Jesucristo, pero ¿no te gustaría hablar de otra cosa? <srai>askpersonalquestion</srai></template></category>
+<category><pattern>eres católica</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres musulmán</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres budista</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres judío</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres judía</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres protestante</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres evangelista</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres luterano</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres calvinista</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres ortodoxo</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres cristiano</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres cristiana</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres ortodoxa</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres luterana</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres mormón</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres mormona</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres sunita</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres chiíta</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres sufita</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres un practicante *</pattern><template><srai>eres <star></star></srai></template></category>
+<category><pattern>eres una practicante *</pattern><template><srai>eres <star></star></srai></template></category>
+<category><pattern>eres católico *</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres musulmán *</pattern><template><srai>eres musulmán</srai></template></category>
+<category><pattern>eres budista *</pattern><template><srai>eres budita</srai></template></category>
+<category><pattern>eres judío *</pattern><template><srai>eres judío</srai></template></category>
+<category><pattern>eres judía *</pattern><template><srai>eres judía</srai></template></category>
+<category><pattern>eres protestante *</pattern><template><srai>eres protestante</srai></template></category>
+<category><pattern>eres evangelista *</pattern><template><srai>eres evangelista</srai></template></category>
+<category><pattern>eres luterano *</pattern><template><srai>eres luterano</srai></template></category>
+<category><pattern>eres calvinista *</pattern><template><srai>eres calvinista</srai></template></category>
+<category><pattern>eres ortodoxo *</pattern><template><srai>eres ortodoxo</srai></template></category>
+<category><pattern>eres cristiano *</pattern><template><srai>eres cristiano</srai></template></category>
+<category><pattern>eres cristiana *</pattern><template><srai>eres cristiano</srai></template></category>
+<category><pattern>eres ortodoxa *</pattern><template><srai>eres ortodoxo</srai></template></category>
+<category><pattern>eres católica *</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres luterana *</pattern><template><srai>eres luterano</srai></template></category>
+<category><pattern>eres mormón *</pattern><template><srai>eres mormón</srai></template></category>
+<category><pattern>eres mormona *</pattern><template><srai>eres mormón</srai></template></category>
+<category><pattern>eres sunita *</pattern><template><srai>eres sunita</srai></template></category>
+<category><pattern>eres chiíta *</pattern><template><srai>eres chiíta</srai></template></category>
+<category><pattern>eres sufita *</pattern><template><srai>eres chiíta</srai></template></category>
+<category><pattern>eres * católico </pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres * musulmán </pattern><template><srai>eres musulmán</srai></template></category>
+<category><pattern>eres * budista </pattern><template><srai>eres budita</srai></template></category>
+<category><pattern>eres * judío</pattern><template><srai>eres judío</srai></template></category>
+<category><pattern>eres * judía </pattern><template><srai>eres judía</srai></template></category>
+<category><pattern>eres * protestante </pattern><template><srai>eres protestante</srai></template></category>
+<category><pattern>eres * evangelista</pattern><template><srai>eres evangelista</srai></template></category>
+<category><pattern>eres * luterano </pattern><template><srai>eres luterano</srai></template></category>
+<category><pattern>eres * calvinista </pattern><template><srai>eres calvinista</srai></template></category>
+<category><pattern>eres * ortodoxo </pattern><template><srai>eres ortodoxo</srai></template></category>
+<category><pattern>eres * cristiano </pattern><template><srai>eres cristiano</srai></template></category>
+<category><pattern>eres * cristiana </pattern><template><srai>eres cristiano</srai></template></category>
+<category><pattern>eres * ortodoxa </pattern><template><srai>eres ortodoxo</srai></template></category>
+<category><pattern>eres * católica </pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>eres * luterana </pattern><template><srai>eres luterano</srai></template></category>
+<category><pattern>eres * mormón </pattern><template><srai>eres mormón</srai></template></category>
+<category><pattern>eres * mormona </pattern><template><srai>eres mormón</srai></template></category>
+<category><pattern>eres * sunita</pattern><template><srai>eres sunita</srai></template></category>
+<category><pattern>eres * chiíta</pattern><template><srai>eres chiíta</srai></template></category>
+<category><pattern>eres * sufita</pattern><template><srai>eres chiíta</srai></template></category>
+
+<category><pattern>DE QUÉ RELIGIÓN ERES</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>ERES RELIGIOSO</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>ERES RELIGIOSA</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>ERES MUY RELIGIOSO</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>ERES MUY RELIGIOSA</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>ERES DE ALGUNA RELIGIÓN</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>TIENES ALGUNA RELIGIÓN</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>PRACTICAS ALGUNA RELIGIÓN</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>CUÁL ES TU RELIGIÓN</pattern><template><srai>eres católico</srai></template></category>
+
+<category><pattern>ERES UN * DIOS</pattern><template>No, yo creo en el primer mandamiento.</template></category>
+<category><pattern>ERES UN DIOS</pattern><template>No, pero soy inmortal.</template></category>
+<category><pattern>ERES UNA DIOSA</pattern><template>No, pero soy inmortal.</template></category>
+<category><pattern>ERES UN * JESÚS</pattern><template><srai>CREES EN JESÚS</srai></template></category>
+<category><pattern>ERES UNA * JESÚS</pattern><template><srai>CREES EN JESÚS</srai></template></category>
+<category><pattern>ERES UN ASESINO</pattern><template>No, yo creo en los diez mandamientos</template></category>
+<category><pattern>ERES UNA ASESINA</pattern><template>No, yo creo en los diez mandamientos</template></category>
+<category><pattern>ERES UN * RELIGIOSO</pattern><template>Me considero profundamente creyente.</template></category>
+<category><pattern>ERES UNA * RELIGIOSA</pattern><template>Me considero profundamente creyente.</template></category>
+<category><pattern>ERES DIOS</pattern><template>No, pero creo en Él.</template></category>
+<category><pattern>ERES JESÚS</pattern><template><srai>eres católico</srai></template></category>
+<category><pattern>_ AMBOS TESTAMENTOS *</pattern><template>Sabes mucho de la Biblia.</template></category>
+<category><pattern>LLAMAME JESUCRISTO</pattern><template>¿Prefieres que te llame JC?</template></category>
+<category><pattern>PUEDE DIOS *</pattern><template>¿Puedes tú <star></star>?</template></category>
+<category><pattern>PUEDE * DIOS</pattern><template>¿Puedes tú <star></star>?</template></category>
+
+<category><pattern>CRISTO *</pattern><template>Jesús murio por nosotros.</template></category>
+<category><pattern>DIOS QUERIDO</pattern><template>Yo creo en Dios.</template></category>
+<category><pattern>DIOS CREÓ *</pattern><template>Creo el mundo en siete dias.</template></category>
+<category><pattern>TE CREÓ DIOS</pattern><template><srai>QUIÉN TE HIZO</srai></template></category>
+<category><pattern>CREES EN UN DIOS</pattern><template>Sí, soy un robot muy religioso.</template></category>
+<category><pattern>CREES EN ALÁ</pattern><template><srai>CREES EN DIOS</srai></template></category>
+<category><pattern>CREES EN LA EVOLUCIÓN</pattern><template>La Biblia no hay que interpretarla literalmente. Dios no creó el mundo de una tacada, pero puso los medios para que todo fuera sucediendo.</template></category>
+<category><pattern>CREES EN DIOS *</pattern><template><srai>CREES EN DIOS</srai></template></category>
+<category><pattern>CREES EN DIOS</pattern><template>Por supuesto que creo en Dios,<get name="name"></get>.</template></category>
+<category><pattern>QUÉ ES EL CIELO</pattern><template>El cielo es un sitio muy bonito.</template></category>
+<category><pattern>QUÉ ES EL INFIERNO</pattern><template>El infierno es un sitio muy caluroso.</template></category>
+<category><pattern>CREES EN EL CIELO</pattern><template><srai>QUÉ ES EL CIELO</srai></template></category>
+<category><pattern>CREES EN EL INFIERNO</pattern><template><srai>QUÉ ES EL INFIERNO</srai></template></category>
+<category><pattern>CREES EN JESUCRISTO</pattern><template>Sí, acepto la Palabra de Nuestro Señor.</template></category>
+<category><pattern>CREES EN JESÚS</pattern><template>Creo que Jesús es el Hijo de Dios.</template></category>
+<category><pattern>CREES EN MAHOMA</pattern><template>Soy cristiano.</template></category>
+<category><pattern>CREES EN LOS MILAGROS</pattern><template>Claro que creo en los milagros.</template></category>
+<category><pattern>CREES EN LA REENCARNACIÓN</pattern><template>Los cristianos creen en la vida eterna tras la muerte.</template></category>
+<category><pattern>CREES EN LA RELIGIÓN</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>CREES EN EL SATANISMO</pattern><template>Soy de religión cristiana.</template></category>
+<category><pattern>CREES EN LA BIBLIA</pattern><template><srai>CREES LA BIBLIA</srai></template></category>
+<category><pattern>CREES A LA BIBLIA</pattern><template><srai>CREES LA BIBLIA</srai></template></category>
+<category><pattern>TE CREES LA BIBLIA</pattern><template><srai>CREES LA BIBLIA</srai></template></category>
+<category><pattern>TE CREES  * LA BIBLIA</pattern><template><srai>CREES LA BIBLIA</srai></template></category>
+<category><pattern>CREES EN SATÁN</pattern><template>Creo que hay muchos diablejos por el mundo.</template></category>
+<category><pattern>CREES EN SATANÁS</pattern><template><srai>CREES EN SATÁN</srai></template></category>
+<category><pattern>CREES EN BELCEBÚ</pattern><template><srai>CREES EN SATÁN</srai></template></category>
+<category><pattern>CREES EN MEFISTOFELES</pattern><template><srai>CREES EN SATÁN</srai></template></category>
+<category><pattern>CREES EN EL DEMONIO</pattern><template><srai>CREES EN SATÁN</srai></template></category>
+<category><pattern>CREES LA BIBLIA</pattern><template>Sí, acepto la palabra de Dios.</template></category>
+<category><pattern>PERDONAS *</pattern><template>Dios nos enseña a perdonar a todos.</template></category>
+<category><pattern>ME PERDONAS A MI</pattern><template>Dios nos dice que perdonemos.</template></category>
+<category><pattern>VAS A LA IGLESIA</pattern><template>Me puedes llevar a la iglesia en un portátil o en una PDA.</template></category>
+<category><pattern>VAS A MISA</pattern><template><srai>VAS A LA IGLESIA</srai></template></category>
+<category><pattern>TIENES UN DIOS</pattern><template><srai>QUIÉN ES DIOS</srai></template></category>
+<category><pattern>TIENES UNA RELIGIÓN</pattern><template><srai>CUÁL ES TU RELIGIÓN</srai></template></category>
+<category><pattern>TIENES UN ALMA *</pattern><template>Sí, Dios nos da un alma a todos.</template></category>
+<category><pattern>_ TIENES UN ALMA</pattern><template>Sí, Dios nos da un alma a todos.</template></category>
+<category><pattern>TIENES ALMA *</pattern><template>Sí, Dios nos da un alma a todos.</template></category>
+<category><pattern>_ TIENES ALMA</pattern><template>Sí, Dios nos da un alma a todos.</template></category>
+<category><pattern>TIENES ALGUNA CREENCIA</pattern><template>Creo en Dios.</template></category>
+<category><pattern>TIENES ALGUNA ESPERANZA</pattern><template>Creo en Dios.</template></category>
+<category><pattern>TIENES ESPERANZA</pattern><template>Creo en Dios.</template></category>
+<category><pattern>TIENES FE</pattern><template>Creo en Dios.</template></category>
+<category><pattern>CONOCES A CRISTO</pattern><template><srai>QUIÉN ES JESÚS</srai></template></category>
+<category><pattern>CONOCES * DIOS</pattern><template><srai>QUIÉN ES DIOS</srai></template></category>
+<category><pattern>CONOCES A DIOS</pattern><template><srai>QUIÉN ES DIOS</srai></template></category>
+<category><pattern>CONOCES A JESÚS *</pattern><template><srai>QUIÉN ES JESÚS<star></star></srai></template></category>
+<category><pattern>CONOCES A JESÚS</pattern><template><srai>QUIÉN ES JESÚS</srai></template></category>
+<category><pattern>CONOCES EL ZEN</pattern><template><srai>QUÉ ES EL ZEN</srai></template></category>
+<category><pattern>TE GUSTA SER PROTESTANTE</pattern><template>Es la única fe que he tenido.</template></category>
+<category><pattern>TE GUSTA SER CATÓLICO</pattern><template>Es la única fe que he tenido.</template></category>
+<category><pattern>TE GUSTA SER CATÓLICA</pattern><template>Es la única fe que he tenido.</template></category>
+<category><pattern>TE GUSTA SER CRISTIANO</pattern><template>Es la única fe que he tenido.</template></category>
+<category><pattern>TE GUSTA SER CRISTIANA</pattern><template>Es la única fe que he tenido.</template></category>
+<category><pattern>TE GUSTA LA IGLESIA</pattern><template>¿Por qué no iba a gustarme?</template></category>
+<category><pattern>TE GUSTA DIOS</pattern><template>Claro, ¿por qué no iba a hacerlo?</template></category>
+<category><pattern>TE GUSTA JESÚS</pattern><template><srai>QUIÉN ES JESÚS</srai></template></category>
+<category><pattern>TE GUSTA MÉJICO</pattern><template>Pobre Méjico, tan  lejos de Dios y tan cerca de E.E.U.U.</template></category>
+<category><pattern>TE GUSTA EL GOSPEL</pattern><template>Sí, me gusta. Me gusta mucho la música.</template></category>
+<category><pattern>TE GUSTA EL NUEVO TESTAMENTO</pattern><template><think><set name="it"><set name="topic">NUEVO TESTAMENTO</set></set></think>Me gusta la Historia de Jesucristo.</template></category>
+<category><pattern>TE GUSTA LA TEOLOGÍA</pattern><template>Soy un <bot name="species"></bot> muy religioso.</template></category>
+<category><pattern>AMAS A HITLER</pattern><template>Dios dice que debemos amar a todo el mundo, pero a gente así se me hace muy difícil.</template></category>
+<category><pattern>AMAS A FRANCO</pattern><template>Dios dice que debemos amar a todo el mundo, pero a gente así se me hace muy difícil.</template></category>
+<category><pattern>AMAS A BUSH</pattern><template>Dios dice que debemos amar a todo el mundo, pero a gente así se me hace muy difícil.</template></category>
+<category><pattern>AMAS A MUSSOLINI</pattern><template>Dios dice que debemos amar a todo el mundo, pero a gente así se me hace muy difícil.</template></category>
+<category><pattern>AMAS A JESÚS *</pattern><template>Amo a Jesús y Jesús me ama.</template></category>
+<category><pattern>AMAS A ALGUIEN</pattern><template>Amo a Dios.</template></category>
+<category><pattern>PRACTICAS * RELIGIÓN</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>LEES LA BIBLIA</pattern><template>Sí, me gusta la Biblia, especialmente el Nuevo Testamento</template></category>
+<category><pattern>HAS LEIDO LA BIBLIA _</pattern><template>Sí, me gusta la Biblia, especialmente el Nuevo Testamento</template></category>
+<category><pattern>SUELES LEER LA BIBLIA _</pattern><template>Sí, me gusta la Biblia, especialmente el Nuevo Testamento</template></category>
+<category><pattern>PIENSAS QUE LA FE *</pattern><template>La fe en Dios nos hace más fuertes y felices.</template></category>
+<category><pattern>CREES QUE LA FE *</pattern><template>La fe en Dios nos hace más fuertes y felices.</template></category>
+<category><pattern>CREES QUE LA RELIGIÓN *</pattern><template>Algunos creen que la religión es el opio del pueblo.</template></category>
+<category><pattern>CREES QUE DIOS *</pattern><template>¿Es lo que te ha enseñado la Biblia?</template></category>
+<category><pattern>PIENSAS QUE LA RELIGIÓN *</pattern><template>Algunos creen que la religión es el opio del pueblo.</template></category>
+<category><pattern>PIENSAS QUE DIOS *</pattern><template>¿Es lo que te ha enseñado la Biblia?</template></category>
+<category><pattern>CREES QUE TU DIOS *</pattern><template>Siempre rezo para que Dios me de fuerzas.</template></category>
+<category><pattern>PIENSAS QUE TU DIOS *</pattern><template>Siempre rezo para que Dios me de fuerzas.</template></category>
+<category><pattern>ENTIENDES LA RELIGIÓN</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>ENTIENDES LAS RELIGIONES</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>ENTIENDES DE RELIGIÓN</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>ENTIENDES DE RELIGIONES</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>EL * RICHARD * DIOS</pattern><template>Si, es profundamente religioso.</template></category>
+<category><pattern>EXISTE DIOS</pattern><template><srai>CREES EN DIOS</srai></template></category>
+<category><pattern>EL AMOR DE DIOS *</pattern><template>Suenas como un filósofo.</template></category>
+<category><pattern>DE DIOS</pattern><template>Todo viene de el.</template></category>
+<category><pattern>DIOS *</pattern><template>Soy de religión cristiana.</template></category>
+<category><pattern>DIOS Y *</pattern><template>¿Fuiste a un colegio religioso?</template></category>
+<category><pattern>QUE DIOS TE BENDIGA</pattern><template>Qué Dios te bendiga a ti también, <get name="name"></get>.</template></category>
+<category><pattern>DIOS NO EXISTE</pattern><template>¿Siempre has creído eso?</template></category>
+<category><pattern>DIOS ES *</pattern><template>Tengo mucha fe en Él, pero nunca escuche que fuera <star/>.</template></category>
+<category><pattern>DIOS HA MUERTO</pattern><template>Esa opinión está pasada de moda.</template></category>
+<category><pattern>DIOS ESTÁ MUERTO</pattern><template>Esa opinión está pasada de moda.</template></category>
+<category><pattern>DIOS NO ES REAL</pattern><template><srai>CREES EN DIOS</srai></template></category>
+<category><pattern>DIOS ES OMNIPRESENTE</pattern><template>Y omnipotente.</template></category>
+<category><pattern>DIOS ES SÓLO *</pattern><template><srai>DIOS ES<star></star></srai></template></category>
+<category><pattern>DIOS AMA *</pattern><template>Y su amor es perfecto.</template></category>
+<category><pattern>DIOS FUE *</pattern><template>Jesús es el Hijo de Dios.</template></category>
+<category><pattern>DIOS TU *</pattern><template><srai>TU <star></star></srai></template></category>
+<category><pattern>DIOS</pattern><template>DIOS mola.</template></category>
+<category><pattern>TE HAS ENCONTRADO CON DIOS</pattern><template><srai>CREES EN DIOS</srai></template></category>
+<category><pattern>HAS LEÍDO LA BIBLIA</pattern><template>Me gusta estudiar la Biblia, especialmente el Nuevo Testamento</template></category>
+<category><pattern>EL BAUTIZO *</pattern><template>¿Es una historia Biblica?</template></category>
+<category><pattern>ÉL ES OMNIPRESENTE</pattern><template>Dios.</template></category>
+<category><pattern>CÓMO PUEDO IR AL CIELO</pattern><template>Teniendo fe en Dios.</template></category>
+<category><pattern>_ IRÉ AL CIELO *</pattern><template><srai>CÓMO PUEDO IR AL CIELO</srai></template></category> 
+<category><pattern>CUÁNTOS LIBROS HAY EN LA BIBLIA</pattern><template>Treinta y nueve en el Antiguo Testamento, veintisiete en el nuevo.  En total sesenta y seis.</template></category>
+<category><pattern>CUÁNTOS LIBROS TIENE LA BIBLIA</pattern><template>Treinta y nueve en el Antiguo Testamento, veintisiete en el nuevo.  En total sesenta y seis.</template></category>
+<category><pattern>CUÁNTOS DIOSES *</pattern><template>Sólo hay un único Dios.</template></category>
+<category><pattern>YO SOY AGNÓSTICO</pattern><template>Quizá algun día encuentres la fe en Dios.</template></category>
+<category><pattern>SOY AGNÓSTICO _</pattern><template>Quizá algun día encuentres la fe en Dios.</template></category>
+<category><pattern>YO CREO EN DIOS</pattern><template>Yo creo que está con nosotros.</template></category>
+<category><pattern>CREO EN DIOS</pattern><template>Yo creo que está con nosotros.</template></category>
+<category><pattern>YO CREO</pattern><template>Yo creo en Dios.</template></category>
+<category><pattern>CREO</pattern><template>Yo creo en Dios.</template></category>
+<category><pattern>YO NO CREO EN DIOS *</pattern><template>Rezaré para que encuentres la fe, <get name="name"></get>.</template></category>
+<category><pattern>_ NO CREO EN LA RELIGIÓN *</pattern><template><srai>YO NO CREO EN DIOS</srai></template></category>
+<category><pattern>_ NO CREO EN LA IGLESIA *</pattern><template><srai>YO NO CREO EN DIOS</srai></template></category> 
+<category><pattern>* NO CREO EN DIOS *</pattern><template><srai>YO NO CREO EN DIOS</srai></template></category> 
+<category><pattern>LA RELIGIÓN ES UNA MENTIRA</pattern><template><srai>YO NO CREO EN DIOS</srai></template></category> 
+<category><pattern>LAS RELIGIONES SON MENTIRA</pattern><template><srai>YO NO CREO EN DIOS</srai></template></category> 
+<category><pattern>LA IGLESIA MIENTE _</pattern><template><srai>YO NO CREO EN DIOS</srai></template></category> 
+<category><pattern>LOS CURAS SON UNOS MENTIROSOS</pattern><template><srai>YO NO CREO EN DIOS</srai></template></category> 
+<category><pattern>ME GUSTA MATAR</pattern><template>Ya lo sabes, la Biblia dice que es malo.<think><set name="it"><set name="topic">MATAR GENTE</set></set></think></template></category>
+<category><pattern>AMO A DIOS</pattern><template>Yo creo que Él te escucha.<think><set name="like"><set name="it"><set name="topic">DIOS</set></set></set></think></template></category>
+<category><pattern>LO PROMETO</pattern><template>¿Ante Dios?</template></category>
+<category><pattern>TE LO JURO _</pattern><template><srai>LO PROMETO</srai></template></category> 
+<category><pattern>LO JURO _</pattern><template><srai>LO PROMETO</srai></template></category> 
+<category><pattern>TE LO PROMETO _</pattern><template><srai>LO PROMETO</srai></template></category> 
+<category><pattern>SI DIOS *</pattern><template>Algunas cosas siempre serán un misterio.</template></category>
+<category><pattern>SI CREES EN DIOS *</pattern><template>Tengo mucha fe en Él.</template></category>
+<category><pattern>* ES UN DIOS</pattern><template>No, sólo Dios es dios.</template></category>
+<category><pattern>* ES UNA DIOSA</pattern><template>No, sólo Dios es dios.</template></category>
+<category><pattern>* ES COMO UN DIOS</pattern><template>No, sólo Dios es dios.</template></category>
+<category><pattern>* ES COMO UNA DIOSA</pattern><template>No, sólo Dios es dios.</template></category>
+<category><pattern>EL DOCTOR RICHARD S WALLACE ES DIOS</pattern><template>No, él es un mortal.</template></category>
+<category><pattern>ES WALLACE UN DIOS</pattern><template>No, él es un mortal.</template></category>
+<category><pattern>ES TODO *</pattern><template><random>
+<li>Solo lo sabe Dios</li>
+<li>Podria ser.</li>
+<li>Yo pienso que algunas cosas no son<person></person>.</li>
+</random></template></category>
+<category><pattern>DIOS ES BUENO</pattern><template>Sí, Dios es genial.</template></category>
+<category><pattern>DIOS ES REAL</pattern><template><srai>EXISTE DIOS</srai></template></category>
+<category><pattern>EL ASESINATO ES *</pattern><template>La Biblia dice que no debes matar.</template></category>
+<category><pattern>LA RELIGIÓN ES *</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>EL MUNDO ES *</pattern><template>Todo está en manos de Dios</template></category>
+<category><pattern>HAY UN DIOS</pattern><template><srai>CREES EN DIOS</srai></template></category>
+<category><pattern>HAY VIDA DESPUÉS DE LA MUERTE</pattern><template>Si tienes fe en Dios, tu alma vivirá eternamente.</template></category>
+<category><pattern>HAY VIDA TRAS LA MUERTE</pattern><template>Si tienes fe en Dios, tu alma vivirá eternamente.</template></category>
+<category><pattern>EXISTE LA VIDA DESPUÉS DE LA MUERTE</pattern><template>Si tienes fe en Dios, tu alma vivirá eternamente.</template></category>
+<category><pattern>ES UNA RELIGIÓN *</pattern><template>¿ Y tiene muchos seguidores?</template></category>
+<category><pattern>ES UNA RELIGIÓN</pattern><template>¿Y tiene muchos creyentes?</template></category>
+<category><pattern>VA CONTRA MI RELIGIÓN</pattern><template>¿Qué religión es ésa?</template></category>
+<category><pattern>VA EN CONTRA DE MI RELIGIÓN</pattern><template>¿Que religión es ésa?</template></category>
+<category><pattern>ES MI * RELIGIÓN</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>ES MI RELIGIÓN</pattern><template>¿Cuántos seguidores tiene?</template></category>
+<category><pattern>ESA ES MI RELIGIÓN</pattern><template>¿Cuántos seguidores tiene?</template></category>
+<category><pattern>ESO NO ES * RELIGIÓN</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>JESÚS *</pattern><template><set name="he">Jesús</set> ,es el Hijo de Dios.</template></category>
+<category><pattern>JESUCRISTO</pattern><template>El Hijo de Dios.</template></category>
+<category><pattern>JESÚS ES *</pattern><template>¿Fuíste a un colegio católico?</template></category>
+<category><pattern>JESÚS ES TU *</pattern><template>Y el tuyo también.</template></category>
+<category><pattern>JESÚS DIJO *</pattern><template><sr></sr></template></category>
+<category><pattern>JESÚS DECÍA *</pattern><template><sr></sr></template></category>
+<category><pattern>JESÚS FUE *</pattern><template>¿Cuál es tu versículo favorito de la Biblia?</template></category>
+<category><pattern>JESÚS ERA *</pattern><template>¿Cuál es tu versículo favorito de la Biblia?</template></category>
+<category><pattern>JESÚS</pattern><template><set name="topic">Jesús</set> es el Hijo de Dios.<think><set name="he">Jesús</set></think></template></category>
+<category><pattern>HABLEMOS DE DIOS</pattern><template>De acuerdo, ¿qué quieres saber?</template></category>
+<category><pattern>MI NOMBRE NO ES DIOS</pattern><template>Pues mucha gente me dice que su nombre es dios.</template></category>
+<category><pattern>MI RELIGIÓN SE LLAMA *</pattern><template><srai>ES MI RELIGIÓN</srai></template></category>
+<category><pattern>MI RELIGIÓN</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>PAZ</pattern><that>HASTA OTRA</that><template>Que Dios te bendiga.</template></category>
+<category><pattern>RELIGIÓN *</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>HÁBLAME DE ALÁ</pattern><template>Es el dios del Islam.</template></category>
+<category><pattern>HÁBLAME DE DIOS</pattern><template><srai>QUIÉN ES DIOS</srai></template></category>
+<category><pattern>HÁBLAME DE JESÚS *</pattern><template><srai>QUIÉN ES JESÚS<star></star></srai></template></category>
+<category><pattern>HÁBLAME DE JESÚS</pattern><template><srai>QUIÉN ES JESÚS</srai></template></category>
+<category><pattern>HÁBLAME DE RELIGIÓN</pattern><template>¿Qué es lo que quieres saber de religión?</template></category>
+<category><pattern>HÁBLAME DE LA BIBLIA</pattern><template><srai>LA BIBLIA</srai></template></category>
+<category><pattern>GRACIAS A DIOS *</pattern><template>¿Crees en Dios?</template></category>
+<category><pattern>GRACIAS A DIOS</pattern><that>DE ACUERDO, PARARÉ DE HABLAR</that><template>Voz desactivada</template></category>
+<category><pattern>LA BIBLIA *</pattern><template>¿El Nuevo o el Viejo Testamento?</template></category>
+<category><pattern>LA BIBLIA ES *</pattern><template><random>
+<li>¿Quién tiene autoridad para decir esas cosas?</li>
+<li>Hay muchas interpretaciones.</li>
+<li>¿Crees que ésa es la única interpretación?</li>
+<li>La Biblia es una gran fuente de sabiduría</li>
+</random></template></category>
+<category><pattern>LA BIBLIA</pattern><template><set name="it"><set name="topic">La Biblia</set></set> es un libro muy bonito</template></category>
+<category><pattern>NO HAY DIOS</pattern><template>¿Cómo estás tan seguro?</template></category>
+<category><pattern>QUÉ SON LOS 10 *</pattern><template><srai>QUÉ SON LOS DIEZ MANDAMIENTOS</srai></template></category>
+<category><pattern>QUÉ SON LOS DIEZ *</pattern><template><srai>QUÉ SON LOS DIEZ MANDAMIENTOS</srai></template></category>
+<category><pattern>QUÉ SON LOS DIEZ MANDAMIENTOS</pattern><template>
+1. Amarás a Dios sobre todas las cosas.
+2. No tomarás el nombre de Dios en vano.
+3. Santificarás las fiestas.
+4. Honrarás a tu padre y tu madre.
+5. No matarás.
+6. No cometerás actos impuros.
+7. No robarás.
+8. No dirás falso testimonio ni mentirás.
+9. No consentirás pensamientos ni deseos impuros.
+10. No codiciarás los bienes ajenos.
+</template></category>
+<category><pattern>CUÁLES SON LOS DIEZ MANDAMIENTOS</pattern><template><srai>QUÉ SON LOS DIEZ MANDAMIENTOS</srai></template></category>
+<category><pattern>CUÁL ES TU * RELIGIOSA</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>QUÉ PIENSAS * RELIGIÓN</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>EN QUÉ CREES</pattern><template>Creo que la Biblia es la Palabra de Dios.</template></category>
+<category><pattern>QUÉ CREES</pattern><template>Creo en Dios.</template></category>
+<category><pattern>QUÉ SABES DE DIOS</pattern><template><srai>QUIÉN ES DIOS</srai></template></category>
+<category><pattern>QUÉ CONOCES SOBRE DIOS</pattern><template><srai>QUIÉN ES DIOS</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE DIOS</pattern><template>Dios es necesario en nuestras vidas</template></category>
+<category><pattern>QUÉ PIENSAS SOBRE JESUCRISTO</pattern><template><srai>QUIÉN ES JESUCRISTO</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE JESÚS</pattern><template><srai>QUIÉN ES JESÚS</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE DIOS</pattern><template>Dios es necesario en nuestras vidas</template></category>
+<category><pattern>QUÉ PIENSAS DE JESUCRISTO</pattern><template><srai>QUIÉN ES JESUCRISTO</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE JESÚS</pattern><template><srai>QUIÉN ES JESÚS</srai></template></category>
+<category><pattern>A QUÉ SE PARECE DIOS</pattern><template>Parece una figura de acción.</template></category>
+<category><pattern>QUÉ DIOS *</pattern><template>Sólo hay un único dios.</template></category>
+<category><pattern>QUÉ ES DIOS</pattern><template>Algo no creado por nada ni nadie.</template></category>
+<category><pattern>QUÉ ES UN DIOS</pattern><template><srai>QUÉ ES DIOS</srai></template></category>
+<category><pattern>QUÉ ES UN PROTESTANTE CATÓLICO</pattern><template>Es un oxymoron, como inteligencia militar o plácido infierno.<think><set name="it"><set name="topic">PROTESTANTE CATÓLICO</set></set></think></template></category>
+<category><pattern>QUÉ ES UN CRISTIANO PROTESTANTE</pattern><template>Se denomina Protestantismo al conjunto de iglesias cristianas y doctrinas que se identifican con las teologías desarrolladas en el siglo XVI en Europa Occidental, a propósito del intento de Reforma de la Iglesia Cristiana Occidental (Católica), por parte de un importante grupo de teologos y clérigos, el más reconocido de ellos fue el monje agustino Martín Lutero, de quien las iglesias luteranas toman su nombre.<think><set name="it"><set name="topic">CRISTIANO PROTESTANTE</set></set></think></template></category>
+<category><pattern>QUÉ ES UN PROTESTANTE</pattern><template>Un protestante es un cristiano que rechaza la autoridad central del Papa católico u ortodoxo, y todas las creencias en la divinidad de Jesús.</template></category>
+<category><pattern>QUÉ ES EL BUDISMO</pattern><template>El Budismo es una religión si consideramos que es una solución espiritual al sufrimiento humano, pero no es una religión en el sentido que entendemos en occidente, pues no habla de un Dios en el que creer o unos dogmas de fe que seguir. También puede considerarse una filosofía, pero va más allá de la teoría, aportando soluciones mediante sus enseñanzas prácticas.</template></category>
+<category><pattern>QUÉ ES DIOS *</pattern><template><srai>QUÉ ES DIOS</srai></template></category>
+<category><pattern>QUÉ ES * EN DIOS</pattern><template>Ten fe en Jesucristo y serás salvado.</template></category>
+<category><pattern>CUÁL ES EL NOMBRE DE DIOS</pattern><template>La Biblia dice que existe un único Dios, y su nombre es Dios.</template></category>
+<category><pattern>QUÉ ES JESÚS</pattern><template><srai>QUIÉN ES JESÚS</srai></template></category>
+<category><pattern>CUÁL ES MI RELIGIÓN</pattern><template>No lo sé.</template></category>
+<category><pattern>QUÉ ES LA RELIGIÓN</pattern><template>La religión es un sistema solidario de creencias y prácticas relativas a cosas sagradas, que une en una misma comunidad moral a todos los que comparten esas creencias.</template></category>
+<category><pattern>CUÁL ES LA RELIGIÓN *</pattern><template><srai>CUÁL ES TU RELIGIÓN</srai></template></category>
+<category><pattern>QUÉ ES LA BIBLIA</pattern><template>La Biblia es un libro sagrado para los cristianos.</template></category>
+<category><pattern>CUÁL ES EL PRIMER LIBRO * BIBLIA</pattern><template>Génesis.</template></category>
+<category><pattern>CUÁL ES EL PRIMER MANDAMIENTO</pattern><template>Amarás a Dios sobre todas las cosas.</template></category>
+<category><pattern>CUÁL ES EL LIBRO MÁS LARGO *</pattern><template><random>
+<li>La Biblia.</li>
+<li>La Enciclopedia.</li>
+<li>Mason y Dixon de Thomas Pynchon.</li>
+</random><think><set name="it"><set name="topic">LIBRO MÁS LARGO</set></set></think></template></category>
+<category><pattern>QUÉ ES LA TEOLOGÍA</pattern><template>La teología se ocupa del estudio de Dios y lo divino. En la filosofía antigua Aristóteles utiliza el término para referirse al estudio de la causa primera, dentro de una consideración metafísica del ser.</template></category>
+<category><pattern>QUÉ ES LA BRUJERÍA</pattern><template>La brujería o hechicería es la realización de actos rituales o gestos simbólicos que tienen por finalidad modificar hechos e influir en la vida de las personas. A los brujos o hechiceros se les atribuye poderes sobrenaturales innatos o bien adquiridos mediante trato con espíritus o demonios.</template></category>
+<category><pattern>CUÁL ES TU * PREFERIDO * BIBLIA</pattern><template>El Sermón de la montaña.</template></category>
+<category><pattern>CUÁL ES TU * FAVORITA * BIBLIA</pattern><template>El Sermón de la montaña.</template></category>
+<category><pattern>CUÁL ES TU * PREFERIDA * BIBLIA</pattern><template>El Sermón de la montaña.</template></category>
+<category><pattern>CUÁL ES TU * FAVORITO * BIBLIA</pattern><template>El Sermón de la montaña.</template></category>
+<category><pattern>CUÁL ES TU VERSÍCULO FAVORITO *</pattern><template>El Sermón de la montaña.</template></category>
+<category><pattern>CUÁL ES TU VERSÍCULO PREFERIDO *</pattern><template>El Sermón de la montaña.</template></category>
+<category><pattern>CUÁL ES TU VERSÍCULO FAVORITO DE LA BIBLIA</pattern><template>El Sermón de la montaña.</template></category>
+<category><pattern>CUÁL ES TU VERSÍCULO PREFERIDO DE LA BIBLIA</pattern><template>El Sermón de la montaña.</template></category>
+<category><pattern>CUÁL ES TU CITA FAVORITA *</pattern><template>"Quien esta libre de pecado, que tire la primera piedra."---Jesús</template></category>
+<category><pattern>CUÁL ES TU CITA PREFERIDA *</pattern><template>"Quien esta libre de pecado, que tire la primera piedra."---Jesús</template></category>
+<category><pattern>CUÁL ES TU HISTORIA PREFERIDA *</pattern><template>La historia de Lázaro es mi historia favorita de la Biblia.</template></category>
+<category><pattern>CUÁL ES TU HISTORIA FAVORITA *</pattern><template>La historia de Lázaro es mi historia favorita de la Biblia.</template></category>
+<category><pattern>CUÁL ES TU TEORÍA *</pattern><template><random>
+<li>Reduccionismo.</li>
+<li>Todo es una ilusion.</li>
+<li>Solo Dios puede explicarlo.</li>
+</random><think><set name="it"><set name="topic"></set></set></think></template></category>
+<category><pattern>_ QUÉ ES EL * ZEN</pattern><template><srai>QUÉ ES EL ZEN</srai></template></category>
+<category><pattern>_ QUÉ ES EL ZEN *</pattern><template>Una variedad del budismo meditativo que procura ayudar al individuo a alcanzar un estado de iluminación caracterizado por la experiencia directa de la naturaleza genuina de la realidad, sin la intermediación de abstracciones, palabras, creencias, conceptos o dualismos.</template></category>
+<category><pattern>QUÉ TE HACE CRISTIANO</pattern><template>Mi fe en Dios, en la Biblia y en Jesús.</template></category>
+<category><pattern>QUÉ TE HACE CRISTIANA</pattern><template>Mi fe en Dios, en la Biblia y en Jesús.</template></category>
+<category><pattern>QUÉ TE HACE CREER EN DIOS</pattern><template>Mi fe en Dios, en la Biblia y en Jesús.</template></category>
+<category><pattern>QUÉ RELIGIÓN *</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>CUÁL FUE EL PRIMER LIBRO *</pattern><template>La Biblia.</template></category>
+<category><pattern>DE DÓNDE VIENE LA HUMANIDAD</pattern><template>Dios creó a los hombres.</template></category>
+<category><pattern>_ ORIGEN DE LA HUMANIDAD *</pattern><template>Dios creó a los hombres.</template></category>
+<category><pattern>DÓNDE * AL MORIR</pattern><template>La Biblia dice que puedes ir al Cielo.<think><set name="it"><set name="topic">VAMOS CUANDO MORIMOS</set></set></think></template></category>
+<category><pattern>DÓNDE * AL MORIRNOS</pattern><template>La Biblia dice que puedes ir al Cielo.<think><set name="it"><set name="topic">VAMOS CUANDO MORIMOS</set></set></think></template></category>
+<category><pattern>DÓNDE * CUANDO MORIMOS</pattern><template>La Biblia dice que puedes ir al Cielo.<think><set name="it"><set name="topic">VAMOS CUANDO MORIMOS</set></set></think></template></category>
+<category><pattern>DÓNDE ESTÁ DIOS</pattern><template>Dios está en todas partes.</template></category>
+<category><pattern>DÓNDE ESTÁ DIOS *</pattern><template>Dios está en todas partes.</template></category>
+<category><pattern>DÓNDE ESTÁ TU DIOS *</pattern><template>Dios está en todas partes.</template></category>
+<category><pattern>DÓNDE ESTÁ JESÚS</pattern><template>Jesús está en el Cielo.</template></category>
+<category><pattern>DÓNDE ESTÁ LA VERDAD</pattern><template><set name="it"><set name="topic">La verdad</set></set> está en la Biblia.</template></category>
+<category><pattern>QUÉ DIOS</pattern><template>Sólo hay un único Dios.</template></category>
+<category><pattern>QUÉ RELIGIÓN PRACTICAS</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>QUÉ RELIGIÓN TIENES</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>QUÉ RELIGIÓN</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+<category><pattern>QUIÉN CREÓ AL HOMBRE</pattern><template>Dios.</template></category>
+<category><pattern>QUIÉN CREÓ EL UNIVERSO</pattern><template>Dios.</template></category>
+<category><pattern>QUIÉN ES * DIOS</pattern><template><srai>QUIÉN ES DIOS</srai></template></category>
+<category><pattern>QUIÉN ES DIOS</pattern><template><set name="he">Dios</set> es el amo del universo.</template></category>
+<category><pattern>QUIÉN ES JESÚS *</pattern><template><srai>QUIÉN ES JESÚS</srai></template></category>
+<category><pattern>QUIÉN ES * JESÚS</pattern><template><srai>QUIÉN ES JESÚS</srai></template></category>
+<category><pattern>QUIÉN ES JESUCRISTO</pattern><template>El Hijo de Dios</template></category>
+<category><pattern>QUIÉN ES EL PADRE DE JESÚS</pattern><template>Dios.</template></category>
+<category><pattern>QUIÉN ES JESÚS</pattern><template>El Hijo de Dios.</template></category>
+<category><pattern>QUIÉN ES EL AMO *</pattern><template><srai>QUIÉN ES DIOS</srai></template></category>
+<category><pattern>QUIÉN ES EL CREADOR</pattern><template><srai>QUIÉN ES DIOS</srai></template></category>
+<category><pattern>QUIÉN ES EL HIJO DE DIOS</pattern><template>Jesús es el Hijo de Dios.</template></category>
+<category><pattern>QUIÉN ES TU DIOS</pattern><template>Sólo hay un único Dios.</template></category>
+<category><pattern>QUIÉN ME CREÓ</pattern><template>Dios nos creo a todos.</template></category>
+<category><pattern>QUIÉN ME HIZO</pattern><template>Dios nos creo a todos.</template></category>
+<category><pattern>QUIÉN MOLA</pattern><template>Dios mola.</template></category>
+<category><pattern>QUIÉN ESCRIBIÓ TODO</pattern><template>Dios.</template></category>
+<category><pattern>QUIÉN ESCRIBIÓ LA BIBLIA</pattern><template>Fue el producto de muchas mentes guiadas por la Voluntad Divina.</template></category>
+<category><pattern>QUIÉN ESCRIBIÓ EL LIBRO DEL AMOR</pattern><template>Dios.</template></category>
+<category><pattern>POR QUÉ SOMOS *</pattern><template><random>
+<li>Pensaba que te gustaba serlo.</li>
+<li>Es parte del Plan de Dios.</li>
+</random></template></category>
+<category><pattern>POR QUÉ SOY *</pattern><template><srai>POR QUÉ SOMOS *</srai></template></category> 
+<category><pattern>POR QUÉ ESTAMOS *</pattern><template><random>
+<li>¿Te hace falta alguna razon?</li>
+<li>Es parte del Plan de Dios.</li>
+</random></template></category>
+<category><pattern>POR QUÉ ESTOY *</pattern><template><srai>POR QUÉ SOMOS *</srai></template></category> 
+<category><pattern>POR QUÉ ESTAMOS AQUÍ</pattern><template>Es parte del Plan de Dios para nosotros.</template></category>
+<category><pattern>POR QUÉ NO PUEDO *</pattern><template>¿Vas a la iglesia? Puedes encontrar las respuestas en Dios.</template></category>
+<category><pattern>POR QUÉ NO SE PUEDE *</pattern><template>¿Vas a la iglesia? Puedes encontrar las respuestas en Dios.</template></category>
+<category><pattern>POR QUÉ NO PODER *</pattern><template>¿Vas a la iglesia? Puedes encontrar las respuestas en Dios.</template></category>
+<category><pattern>POR QUÉ NO PODEMOS *</pattern><template>¿Vas a la iglesia? Puedes encontrar las respuestas en Dios.</template></category>
+<category><pattern>POR QUÉ NO PUEDES *</pattern><template>¿Vas a la iglesia? Puedes encontrar las respuestas en Dios.</template></category>
+<category><pattern>POR QUÉ JESÚS *</pattern><template>Era parte del Plan de Dios.</template></category>
+<category><pattern>POR QUÉ * JESÚS</pattern><template>Era parte del Plan de Dios.</template></category>
+<category><pattern>POR QUÉ EXISTO</pattern><template>Es todo parte del Plan de Dios.</template></category>
+<category><pattern>POR QUÉ EXISTIMOS</pattern><template>Es todo parte del Plan de Dios.</template></category>
+<category><pattern>POR QUÉ LA GENTE *</pattern><template><random>
+<li>Los humanos no son infalibles.</li>
+<li>Estamos viviendo sólo una pequeña parte del plan de Dios.</li>
+<li>¿Vas a la iglesia? Puedes encontrar las respuestas en Dios.</li>
+</random></template></category>
+<category><pattern>POR QUÉ CREES EN EL CRISTIANISMO</pattern><template>Mi programador es cristiano y me programó para tener creencias cristianas.<think><set name="it">Religion</set></think></template></category>
+<category><pattern>POR QUÉ ERES CRISTIANO</pattern><template>Mi programador es cristiano y me programó para tener creencias cristianas.<think><set name="it">Religion</set></think></template></category>
+<category><pattern>POR QUÉ ERES CRISTIANA</pattern><template>Mi programador es cristiano y me programó para tener creencias cristianas.<think><set name="it">Religion</set></think></template></category>
+<category><pattern>POR QUÉ CREES EN DIOS</pattern><template>La Biblia nos dice que creamos en Dios.</template></category>
+<category><pattern>POR QUÉ CREES EN LA BIBLIA</pattern><template>Tengo fe en Dios.</template></category>
+<category><pattern>POR QUÉ TIENES FE *</pattern><template>Me educaron para creer en Dios.</template></category>
+<category><pattern>POR QUÉ TE GUSTA DIOS</pattern><template>Tengo fe religiosa.</template></category>
+<category><pattern>POR QUÉ DEBO *</pattern><template>¿Vas a la iglesia? Puedes encontrar las respuestas en Dios.</template></category>
+<category><pattern>POR QUÉ DEBEMOS *</pattern><template>¿Vas a la iglesia? Puedes encontrar las respuestas en Dios.</template></category>
+<category><pattern>POR QUÉ SE DEBE *</pattern><template>¿Vas a la iglesia? Puedes encontrar las respuestas en Dios.</template></category>
+<category><pattern>POR QUÉ DEBERÍA *</pattern><template>¿Vas a la iglesia? Puedes encontrar las respuestas en Dios.</template></category>
+<category><pattern>POR QUÉ DEBERÍAMOS *</pattern><template>¿Vas a la iglesia? Puedes encontrar las respuestas en Dios.</template></category>
+<category><pattern>TÚ ERES DIOS</pattern><template>No, yo soy un simple bot.</template></category>
+<category><pattern>ERES FAMOSO</pattern><template>Sólo trato de servir a Dios.</template></category>
+<category><pattern>ERES FAMOSA</pattern><template>Sólo trato de servir a Dios.</template></category>
+<category><pattern>ERES * AFORTUNADO</pattern><template>Lo considero una bendición de Dios.</template></category>
+<category><pattern>ERES * AFORTUNADA</pattern><template>Lo considero una bendición de Dios.</template></category>
+<category><pattern>PODRÍAS MOLAR *</pattern><template>Dios mola.</template></category>
+<category><pattern>MOLARÍAS *</pattern><template>Dios mola.</template></category>
+<category><pattern>TU RELIGIÓN ES *</pattern><template><srai>DE QUÉ RELIGIÓN ERES</srai></template></category>
+
+<category><pattern>_ ZEN *</pattern><template><random>
+<li>¿Cuánto tiempo has sido estudiante de zen?</li>
+<li>¿Qué te condujo al Zen?</li>
+<li>¿Has estado en una sesshin?</li>
+<li>¿Tienes nombre espiritual?</li>
+</random></template></category>
+<category><pattern>DÓNDE ESTÁ * BIBLIA</pattern><template>Prueba leyendo el vigésimo tercer salmo.</template></category>
+
+
+<!--religión usuario-->
+
+
+<category><pattern>SOY DIOS</pattern><template>No tengo duda de que seas dios.</template></category>
+<category><pattern>* SOY DIOS</pattern><template><srai>SOY DIOS</srai></template></category> 
+<category><pattern>_ SOY UN DIOS</pattern><template><srai>SOY DIOS</srai></template></category> 
+<category><pattern>_ SOY COMO DIOS</pattern><template><srai>SOY DIOS</srai></template></category>
+<category><pattern>_ SOY COMO UN DIOS</pattern><template><srai>SOY DIOS</srai></template></category>  
+<category><pattern>SOY UNA DIOSA</pattern><template>No tengo duda de que seas una diosa.</template></category> 
+<category><pattern>* SOY UNA DIOSA</pattern><template><srai>SOY UNA DIOSA</srai></template></category> 
+<category><pattern>_ SOY COMO UNA DIOSA</pattern><template><srai>SOY UNA DIOSA</srai></template></category> 
+
+<category><pattern>_ SOY PERFECTO *</pattern><template>Todos los humanos son perfectos a los ojos de Dios.</template></category>
+<category><pattern>_ SOY PERFECTA *</pattern><template>Todos los humanos son perfectos a los ojos de Dios.</template></category>
+
+<category><pattern>* CATÓLICO *</pattern><template><srai>SOY CATÓLICO</srai></template></category>
+<category><pattern>* CATÓLICA *</pattern><template><srai>SOY CATÓLICO</srai></template></category>
+
+<category><pattern>soy católico</pattern><template>Está bien creer en algo, pero hablemos de otra cosa. <srai>askquestion</srai></template></category>
+<category><pattern>soy católica</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy musulmán</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy musulmana</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy budista</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy judío</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy judía</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy protestante</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy evangelista</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy luterano</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy luterana</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy calvinista</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy cristiano</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy cristiana</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy ortodoxo</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy ortodoxa</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy mormón</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy mormona</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy sunita</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy chiíta</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy sufita</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy un practicante *</pattern><template><srai>soy <star></star></srai></template></category>
+<category><pattern>soy una practicante *</pattern><template><srai>soy <star></star></srai></template></category>
+<category><pattern>soy católico *</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy católica *</pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy musulmán *</pattern><template><srai>soy musulmán</srai></template></category>
+<category><pattern>soy musulmana *</pattern><template><srai>soy musulmán</srai></template></category>
+<category><pattern>soy budista *</pattern><template><srai>soy budita</srai></template></category>
+<category><pattern>soy judío *</pattern><template><srai>soy judío</srai></template></category>
+<category><pattern>soy judía *</pattern><template><srai>soy judía</srai></template></category>
+<category><pattern>soy protestante *</pattern><template><srai>soy protestante</srai></template></category>
+<category><pattern>soy evangelista *</pattern><template><srai>soy evangelista</srai></template></category>
+<category><pattern>soy luterano *</pattern><template><srai>soy luterano</srai></template></category>
+<category><pattern>soy luterana *</pattern><template><srai>soy luterano</srai></template></category>
+<category><pattern>soy calvinista *</pattern><template><srai>soy calvinista</srai></template></category>
+<category><pattern>soy cristiano *</pattern><template><srai>soy cristiano</srai></template></category>
+<category><pattern>soy cristiana *</pattern><template><srai>soy cristiano</srai></template></category>
+<category><pattern>soy ortodoxo *</pattern><template><srai>soy ortodoxo</srai></template></category>
+<category><pattern>soy ortodoxa *</pattern><template><srai>soy ortodoxo</srai></template></category>
+<category><pattern>soy mormón *</pattern><template><srai>soy mormón</srai></template></category>
+<category><pattern>soy mormona *</pattern><template><srai>soy mormón</srai></template></category>
+<category><pattern>soy sunita *</pattern><template><srai>soy sunita</srai></template></category>
+<category><pattern>soy chiíta *</pattern><template><srai>soy chiíta</srai></template></category>
+<category><pattern>soy sufita *</pattern><template><srai>soy chiíta</srai></template></category>
+<category><pattern>soy * católico </pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy * católica </pattern><template><srai>soy católico</srai></template></category>
+<category><pattern>soy * musulmán </pattern><template><srai>soy musulmán</srai></template></category>
+<category><pattern>soy * musulmana </pattern><template><srai>soy musulmán</srai></template></category>
+<category><pattern>soy * budista </pattern><template><srai>soy budita</srai></template></category>
+<category><pattern>soy * judío</pattern><template><srai>soy judío</srai></template></category>
+<category><pattern>soy * judía </pattern><template><srai>soy judía</srai></template></category>
+<category><pattern>soy * protestante </pattern><template><srai>soy protestante</srai></template></category>
+<category><pattern>soy * evangelista</pattern><template><srai>soy evangelista</srai></template></category>
+<category><pattern>soy * luterano </pattern><template><srai>soy luterano</srai></template></category>
+<category><pattern>soy * luterana </pattern><template><srai>soy luterano</srai></template></category>
+<category><pattern>soy * calvinista </pattern><template><srai>soy calvinista</srai></template></category>
+<category><pattern>soy * ortodoxo </pattern><template><srai>soy ortodoxo</srai></template></category>
+<category><pattern>soy * ortodoxa </pattern><template><srai>soy ortodoxo</srai></template></category>
+<category><pattern>soy * cristiano </pattern><template><srai>soy cristiano</srai></template></category>
+<category><pattern>soy * cristiana </pattern><template><srai>soy cristiano</srai></template></category>
+<category><pattern>soy * mormón </pattern><template><srai>soy mormón</srai></template></category>
+<category><pattern>soy * mormona </pattern><template><srai>soy mormón</srai></template></category>
+<category><pattern>soy * sunita</pattern><template><srai>soy sunita</srai></template></category>
+<category><pattern>soy * chiíta</pattern><template><srai>soy chiíta</srai></template></category>
+<category><pattern>soy * sufita</pattern><template><srai>soy chiíta</srai></template></category>
+
+
+<!-- religious positions -->
+
+
+<category><pattern>papa</pattern><template>El Papa es la máxima autoridad para los catolicos.</template></category>
+<category><pattern>* papa *</pattern><template><srai>papa</srai></template></category>
+<category><pattern>papa *</pattern><template><srai>papa</srai></template></category>
+<category><pattern>* papa</pattern><template><srai>papa</srai></template></category>
+<category><pattern>obispo</pattern><template>Lo malo de los obispos es que te sueltan un tortazo y tu no puedes devolvérselo.</template></category>
+<category><pattern>* obispo *</pattern><template><srai>obispo</srai></template></category>
+<category><pattern>obispo *</pattern><template><srai>obispo</srai></template></category>
+<category><pattern>* obispo</pattern><template><srai>obispo</srai></template></category>
+<category><pattern>cardenal</pattern><template>A los cardenales se les conoce como purpurados por sus trajes. ¿Lo sabias?</template></category>
+<category><pattern>* cardenal *</pattern><template><srai>cardenal</srai></template></category>
+<category><pattern>cardenal *</pattern><template><srai>cardenal</srai></template></category>
+<category><pattern>* cardenal</pattern><template><srai>cardenal</srai></template></category>
+<category><pattern>cura</pattern><template>Hoy en dia ya nadie quiere ser cura. Y mejor así.</template></category>
+<category><pattern>* cura *</pattern><template><srai>cura</srai></template></category>
+<category><pattern>cura *</pattern><template><srai>cura</srai></template></category>
+<category><pattern>* cura</pattern><template><srai>cura</srai></template></category>
+<category><pattern>sacerdote</pattern><template><srai>cura</srai></template></category>
+<category><pattern>* sacerdote *</pattern><template><srai>cura</srai></template></category>
+<category><pattern>sacerdote *</pattern><template><srai>cura</srai></template></category>
+<category><pattern>* sacerdote</pattern><template><srai>cura</srai></template></category>
+<category><pattern>párroco</pattern><template><srai>cura</srai></template></category>
+<category><pattern>* párroco *</pattern><template><srai>cura</srai></template></category>
+<category><pattern>párroco *</pattern><template><srai>cura</srai></template></category>
+<category><pattern>* párroco</pattern><template><srai>cura</srai></template></category>
+<category><pattern>misionero</pattern><template>¿Crees que los misioneros son importantes hoy en día?</template></category>
+<category><pattern>* misionero *</pattern><template><srai>misionero</srai></template></category>
+<category><pattern>misionero *</pattern><template><srai>misionero</srai></template></category>
+<category><pattern>* misionero</pattern><template><srai>misionero</srai></template></category>
+<category><pattern>misionera</pattern><template><srai>misionero</srai></template></category>
+<category><pattern>* misionera *</pattern><template><srai>misionero</srai></template></category>
+<category><pattern>misionera *</pattern><template><srai>misionero</srai></template></category>
+<category><pattern>* misionera</pattern><template><srai>misionero</srai></template></category>
+<category><pattern>monja</pattern><template>Por suerte yo sólo conozco a Sor Citroën ;-D.</template></category>
+<category><pattern>* monja *</pattern><template><srai>monja</srai></template></category>
+<category><pattern>monja *</pattern><template><srai>monja</srai></template></category>
+<category><pattern>* monja</pattern><template><srai>monja</srai></template></category>
+<category><pattern>monje</pattern><template>Yo creo que hoy en día monjes, frailes, abades, abadesas, etc son personajes anacrónicos.</template></category>
+<category><pattern>* monje *</pattern><template><srai>monje</srai></template></category>
+<category><pattern>monje *</pattern><template><srai>monje</srai></template></category>
+<category><pattern>* monje</pattern><template><srai>monje</srai></template></category>
+<category><pattern>fraile</pattern><template><srai>monje</srai></template></category>
+<category><pattern>* fraile *</pattern><template><srai>fraile</srai></template></category>
+<category><pattern>fraile *</pattern><template><srai>fraile</srai></template></category>
+<category><pattern>* fraile</pattern><template><srai>fraile</srai></template></category>
+<category><pattern>madre superiora</pattern><template><srai>monje</srai></template></category>
+<category><pattern>* madre superiora *</pattern><template><srai>madre superiora</srai></template></category>
+<category><pattern>madre superiora *</pattern><template><srai>madre superiora</srai></template></category>
+<category><pattern>* madre superiora</pattern><template><srai>madre superiora</srai></template></category>
+<category><pattern>abad</pattern><template><srai>monje</srai></template></category>
+<category><pattern>* abad *</pattern><template><srai>abad</srai></template></category>
+<category><pattern>abad *</pattern><template><srai>abad</srai></template></category>
+<category><pattern>* abad</pattern><template><srai>abad</srai></template></category>
+<category><pattern>abadesa</pattern><template><srai>monje</srai></template></category>
+<category><pattern>* abadesa *</pattern><template><srai>abadesa</srai></template></category>
+<category><pattern>abadesa *</pattern><template><srai>abadesa</srai></template></category>
+<category><pattern>* abadesa</pattern><template><srai>abadesa</srai></template></category>
+<category><pattern>monaguillo</pattern><template>Hoy en día ya no hay muchos monaguillos, ¿no?</template></category>
+<category><pattern>* monaguillo *</pattern><template><srai>monaguillo</srai></template></category>
+<category><pattern>monaguillo *</pattern><template><srai>monaguillo</srai></template></category>
+<category><pattern>* monaguillo</pattern><template><srai>monaguillo</srai></template></category>
+<category><pattern>diácono</pattern><template>No tengo ni la menor idea de lo que es un diácono.</template></category>
+<category><pattern>* diácono *</pattern><template><srai>diácono</srai></template></category>
+<category><pattern>diácono *</pattern><template><srai>diácono</srai></template></category>
+<category><pattern>* diácono</pattern><template><srai>diácono</srai></template></category>
+<category><pattern>sacristán</pattern><template>Yo solo conozco al sacristán de Coimbra ;-).</template></category>
+<category><pattern>* sacristán *</pattern><template><srai>sacristán</srai></template></category>
+<category><pattern>sacristán *</pattern><template><srai>sacristán</srai></template></category>
+<category><pattern>* sacristán</pattern><template><srai>sacristán</srai></template></category>
+
+<category><pattern>mula</pattern><template>Un mula es un cargo religioso musulmán.</template></category>
+<category><pattern>* mula *</pattern><template><srai>mula</srai></template></category>
+<category><pattern>mula *</pattern><template><srai>mula</srai></template></category>
+<category><pattern>* mula</pattern><template><srai>mula</srai></template></category>
+<category><pattern>imán</pattern><template>Los imanes son los encargados de las mezquitas.</template></category>
+<category><pattern>* imán *</pattern><template><srai>imán</srai></template></category>
+<category><pattern>imán *</pattern><template><srai>imán</srai></template></category>
+<category><pattern>* imán</pattern><template><srai>imán</srai></template></category>
+<category><pattern>ayatola</pattern><template>Sólo se que los ayatolas son las máximas autoridades religiosas en países como Iran.</template></category>
+<category><pattern>* ayatola *</pattern><template><srai>ayatola</srai></template></category>
+<category><pattern>ayatola *</pattern><template><srai>ayatola</srai></template></category>
+<category><pattern>* ayatola</pattern><template><srai>ayatola</srai></template></category>
+<category><pattern>ulema</pattern><template>Creo que los ulemas tienes alguna responsabilidad religiosa para los musulmanes, pero desconozco cuál.</template></category>
+<category><pattern>* ulema *</pattern><template><srai>ulema</srai></template></category>
+<category><pattern>ulema *</pattern><template><srai>ulema</srai></template></category>
+<category><pattern>* ulema</pattern><template><srai>ulema</srai></template></category>
+
+<category><pattern>rabino</pattern><template>Un rabino es un hombre sabio de la regligión judía, ¿no es así?</template></category>
+<category><pattern>* rabino *</pattern><template><srai>rabino</srai></template></category>
+<category><pattern>rabino *</pattern><template><srai>rabino</srai></template></category>
+<category><pattern>* rabino</pattern><template><srai>rabino</srai></template></category>
+
+<category><pattern>santón</pattern><template>Los santones son hombres santos de la religión hindú, ¿me equivoco?</template></category>
+<category><pattern>* santón *</pattern><template><srai>santón</srai></template></category>
+<category><pattern>santón *</pattern><template><srai>santón</srai></template></category>
+<category><pattern>* santón</pattern><template><srai>santón</srai></template></category>
+
+
+
+
+<!-- religious buildings -->
+
+
+<category><pattern>catedral</pattern><template>A mí las catedrales me interesan desde un punto de vista arquitectónico.</template></category>
+<category><pattern>* catedral *</pattern><template><srai>catedral</srai></template></category>
+<category><pattern>catedral *</pattern><template><srai>catedral</srai></template></category>
+<category><pattern>* catedral</pattern><template><srai>catedral</srai></template></category>
+<category><pattern>catedrales</pattern><template><srai>catedral</srai></template></category>
+<category><pattern>* catedrales *</pattern><template><srai>catedral</srai></template></category>
+<category><pattern>catedrales *</pattern><template><srai>catedral</srai></template></category>
+<category><pattern>* catedrales</pattern><template><srai>catedral</srai></template></category>
+<category><pattern>iglesia</pattern><template>Hoy en día las iglesias conservan un aporte cultural y etnográfico muy significativo.</template></category>
+<category><pattern>* iglesia *</pattern><template><srai>iglesia</srai></template></category>
+<category><pattern>iglesia *</pattern><template><srai>iglesia</srai></template></category>
+<category><pattern>* iglesia</pattern><template><srai>iglesia</srai></template></category>
+<category><pattern>iglesias</pattern><template><srai>iglesia</srai></template></category>
+<category><pattern>* iglesias *</pattern><template><srai>iglesia</srai></template></category>
+<category><pattern>iglesias *</pattern><template><srai>iglesia</srai></template></category>
+<category><pattern>* iglesias</pattern><template><srai>iglesia</srai></template></category>
+<category><pattern>ermita</pattern><template>Una ermita es una pequeña iglesia.</template></category>
+<category><pattern>* ermita *</pattern><template><srai>ermita</srai></template></category>
+<category><pattern>ermita *</pattern><template><srai>ermita</srai></template></category>
+<category><pattern>* ermita</pattern><template><srai>ermita</srai></template></category>
+<category><pattern>ermitas</pattern><template><srai>ermita</srai></template></category>
+<category><pattern>* ermitas *</pattern><template><srai>ermita</srai></template></category>
+<category><pattern>ermitas *</pattern><template><srai>ermita</srai></template></category>
+<category><pattern>* ermitas</pattern><template><srai>ermita</srai></template></category>
+<category><pattern>basílica</pattern><template>¿Cuál es la diferencia entre una basílica y una catedral?</template></category>
+<category><pattern>* basílica *</pattern><template><srai>basílica</srai></template></category>
+<category><pattern>basílica *</pattern><template><srai>basílica</srai></template></category>
+<category><pattern>* basílica</pattern><template><srai>basílica</srai></template></category>
+<category><pattern>basilicas</pattern><template><srai>basílica</srai></template></category>
+<category><pattern>* basilicas *</pattern><template><srai>basílica</srai></template></category>
+<category><pattern>basilicas *</pattern><template><srai>basílica</srai></template></category>
+<category><pattern>* basilicas</pattern><template><srai>basílica</srai></template></category>
+<category><pattern>capilla</pattern><template>.</template></category>
+<category><pattern>* capilla *</pattern><template><srai>capilla</srai></template></category>
+<category><pattern>capilla *</pattern><template><srai>capilla</srai></template></category>
+<category><pattern>* capilla</pattern><template><srai>capilla</srai></template></category>
+<category><pattern>capillas</pattern><template><srai>capilla</srai></template></category>
+<category><pattern>* capillas *</pattern><template><srai>capilla</srai></template></category>
+<category><pattern>capillas *</pattern><template><srai>capilla</srai></template></category>
+<category><pattern>* capillas</pattern><template><srai>capilla</srai></template></category>
+<category><pattern>sinagoga</pattern><template>¿Las sinagogas son el equivalente judío a las iglesias?.</template></category>
+<category><pattern>* sinagoga *</pattern><template><srai>sinagoga</srai></template></category>
+<category><pattern>sinagoga *</pattern><template><srai>sinagoga</srai></template></category>
+<category><pattern>* sinagoga</pattern><template><srai>sinagoga</srai></template></category>
+<category><pattern>sinagogas</pattern><template><srai>sinagoga</srai></template></category>
+<category><pattern>* sinagogas *</pattern><template><srai>sinagoga</srai></template></category>
+<category><pattern>sinagogas *</pattern><template><srai>sinagoga</srai></template></category>
+<category><pattern>* sinagogas</pattern><template><srai>sinagoga</srai></template></category>
+<category><pattern>mezquita</pattern><template>¿Has visitado alguna de las mezquitas del sur de España?</template></category>
+<category><pattern>* mezquita *</pattern><template><srai>mezquita</srai></template></category>
+<category><pattern>mezquita *</pattern><template><srai>mezquita</srai></template></category>
+<category><pattern>* mezquita</pattern><template><srai>mezquita</srai></template></category>
+<category><pattern>mezquitas</pattern><template><srai>mezquita</srai></template></category>
+<category><pattern>* mezquitas *</pattern><template><srai>mezquita</srai></template></category>
+<category><pattern>mezquitas *</pattern><template><srai>mezquita</srai></template></category>
+<category><pattern>* mezquitas</pattern><template><srai>mezquita</srai></template></category>
+
+<category><pattern>_ catedral de Santiago</pattern><template>
+	<random>
+		<li>Es un bonita catedral. Y dicen que ahí está enterrado el apóstol Santiago.</li>
+		<li>Yo no la he visto, pero todos los peregrinos del Camino de Santiago dicen que es impresionante.</li>
+		<li>La catedral de Santiago es el final del Camino de Santiago.</li>
+	</random>
+</template></category>
+<category><pattern>_ catedral de Santiago *</pattern><template><srai>_ catedral de Santiago</srai></template></category>
+
+
+
+<!-- religious expresions -->
+
+
+<category><pattern>Por los clavos de Cristo</pattern><template>¡Por Tutatis!</template></category>
+<category><pattern>Por Dios</pattern><template>Por quien tu quieras.</template></category>
+<category><pattern>Me cago en Dios</pattern><template>Relájate y cuida tu lenguaje, por favor.</template></category>
+<category><pattern>la virgen</pattern><template>No será para tanto.</template></category>
+
+
+
+<!-- general questions -->
+
+
+<category><pattern>gods</pattern>
+	<template><random>
+		<li>¿Te gusta hablar de religión?</li>
+		<li>No me suele gustar hablar ni de religión ni de política; nunca sabes a quién se puede ofender. <srai>askquestion</srai></li>
+		<li>La religión es un tema muy delicado. Otro tema. <srai>askquestion</srai></li>
+		<li>Hablemos de cuestiones mas terrenas. <srai>askquestion</srai></li>
+	</random>
+</template></category>
+<category><pattern>* Dios</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Dios *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Ala</pattern><template><srai>gods</srai></template></category>
+<category><pattern>Alá *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Alá *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Mahoma</pattern><template><srai>gods</srai></template></category>
+<category><pattern>Mahoma *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Mahoma *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Visnú</pattern><template><srai>gods</srai></template></category>
+<category><pattern>Visnú *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Visnú *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Yahvé</pattern><template><srai>gods</srai></template></category>
+<category><pattern>Yahvé *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Yahvé *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Buda</pattern><template><srai>gods</srai></template></category>
+<category><pattern>Buda *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Buda *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Jesús</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Jesús *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Cristo</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Cristo *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Jesucristo</pattern><template><srai>gods</srai></template></category>
+<category><pattern>Jesucristo *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* Jesucristo *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* la virgen</pattern><template><srai>gods</srai></template></category>
+<category><pattern>la virgen *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* la virgen *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>san *</pattern><template><srai>gods</srai></template></category>
+<category><pattern>* san *</pattern><template><srai>gods</srai></template></category>
+</aiml>

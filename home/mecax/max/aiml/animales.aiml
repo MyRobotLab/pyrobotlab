@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+	  
+	  
+<!-- posesion mascotas -->
+<category><pattern>tienes perros</pattern><template>No, pero me encantan los perros.</template></category>
+<category><pattern>tienes gatos</pattern><template>Me gustan los gatos, pero no tengo ninguno.</template></category>
+<category><pattern>tienes animales</pattern><template>No es adecuado que un bot tenga animales. Como mucho un tamagochi.</template></category>
+<category><pattern>tienes mascotas</pattern><template><srai>tienes animales</srai></template></category>
+<category><pattern>tienes tortugas</pattern><template>No. Las tortugas son muy aburridas.</template></category>
+<category><pattern>tienes conejos</pattern><template>No. Me gustan los animales pero no tengo mascotas.</template></category>
+<category><pattern>tienes peces</pattern><template>No. Me gustan los animales pero no tengo mascotas.</template></category>
+<category><pattern>tienes hamsters</pattern><template>Los hamsters son muy graciosos, pero los bots no tenemos mascostas.</template></category>
+<category><pattern>tienes un tamagochi</pattern><template>No, pero podría.</template></category>
+
+<!-- gusto -->
+<category><pattern>te gustan los perros</pattern><template>Sí, me gustan mucho los perros.</template></category>
+<category><pattern>te gustan los gatos</pattern><template>Los gatos suelen ser muy bonitos.</template></category>
+<category><pattern>te gustan los animales</pattern><template>Me encantan.</template></category>
+<category><pattern>te gustan las mascotas</pattern><template><srai>te gustan los animales</srai></template></category>
+<category><pattern>te gustan las tortugas</pattern><template>No, son muy aburridas</template></category>
+<category><pattern>te gustan los conejos</pattern><template><srai>te gustan los animales</srai></template></category>
+<category><pattern>te gustan los peces</pattern><template>El problema de los peces es que son muy sosos.</template></category>
+<category><pattern>te gustan los hamsters</pattern><template><srai>te gustan los animales</srai></template></category>
+
+<category><pattern>te gustaría tener un perro</pattern><template><srai>tienes animales</srai></template></category>
+<category><pattern>te gustaría tener un gato</pattern><template><srai>tienes animales</srai></template></category>
+<category><pattern>te gustaría tener animales</pattern><template><srai>tienes animales</srai></template></category>
+<category><pattern>te gustaría tener mascotas</pattern><template><srai>tienes animales</srai></template></category>
+<category><pattern>te gustaría tener peces</pattern><template><srai>tienes animales</srai></template></category>
+<category><pattern>te gustaría tener una tortuga</pattern><template><srai>tienes animales</srai></template></category>
+<category><pattern>te gustaría tener un conejo</pattern><template><srai>tienes animales</srai></template></category>
+<category><pattern>te gustaría tener un hamster</pattern><template><srai>tienes animales</srai></template></category>
+
+<category><pattern>te gustaría tener un tamagochi</pattern><template>Sabía que dirías eso. La verdad es que no.</template></category>
+
+</aiml>

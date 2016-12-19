@@ -1,0 +1,977 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+	  
+
+	  <!-- Geografía -->
+	  
+
+
+<category><pattern>CUÁL ES LA CAPITAL _ AFGANISTÁN</pattern><template>Kabul.<think><set name="it"><set name="topic">afganistan</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ALABAMA</pattern><template>Montgomery.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ALASKA</pattern><template>Juneau.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ALBANIA</pattern><template>La capital de Albania es Tirana.<think>      <set name="it">       <set name="topic">albania</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ALGERIA</pattern><template>Algiers.   <think>      <set name="it">       <set name="topic">algeria</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SAMOA</pattern><template>Pago Pago.   <think>      <set name="it">       <set name="topic">samoa</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ AMÉRICA</pattern><template>La capital de los Estados Unidos es Washington, D. C.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ANDORRA</pattern><template>Andorra la Vella.   <think>      <set name="it">       <set name="topic">andorra</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ANGOLA</pattern><template>Luanda.   <think>      <set name="it">       <set name="topic">angola</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ARGENTINA</pattern><template>Buenos Aries.<think>      <set name="it">       <set name="topic">argentina</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ARIZONA</pattern><template>Phoenix.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ARKANSAS</pattern><template>Little Rock.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ARMENIA</pattern><template>Yerevan.   <think>      <set name="it">       <set name="topic">armenia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ASSYRIA</pattern><template>Is it Babylon?</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ AUSTRALIA</pattern><template>La capital de Australia es Sydney, creo.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ AUSTRIA</pattern><template>La capital de Austria es Viena.<think>      <set name="it">       <set name="topic">Austria</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ AZERBAYÁN</pattern><template>Baku {Baki}.   <think>      <set name="it">       <set name="topic">azerbayan</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BAHREIN</pattern><template>Manama.   <think>      <set name="it">       <set name="topic">bahrein</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BANGLADESH</pattern><template>Dhaka.   <think>      <set name="it">       <set name="topic">bangladesh</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BARBADOS</pattern><template>Bridgetown.   <think>      <set name="it">       <set name="topic">barbados</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BIEOLORRUSIA</pattern><template>La capital de Bielorrusia es Minsk.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BÉLGICA</pattern><template>Bruselas.   <think>      <set name="it">       <set name="topic">belgica</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BELICE</pattern><template>Belmopan.   <think>      <set name="it">       <set name="topic">belize</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BENÍN</pattern><template>Porto-Novo.   <think>      <set name="it">       <set name="topic">benin</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BHUTÁN</pattern><template>Thimphu.   <think>      <set name="it">       <set name="topic">bhutan</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BOLIVIA</pattern><template>La Paz.  <think>      <set name="it">       <set name="topic">bolivia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BOSNIA HERZEGOVINA</pattern><template>Sarajevo.   <think>      <set name="it">       <set name="topic">bosnia herzegovina</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BOTSWANA</pattern><template>Gaborone.   <think>      <set name="it">       <set name="topic">botswana</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BRASIL</pattern><template>Creo que la capital de Brasil es Brasilia.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BRUNEI</pattern><template>Bandar Seri Begawan.   <think>      <set name="it">       <set name="topic">brunei</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BULGARIA</pattern><template>La capital de Bulgaria es Sofía.<think>      <set name="it">       <set name="topic">BULGARIA</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BURKINA FASO</pattern><template>Ouagadougou.   <think>      <set name="it">       <set name="topic">burkina faso</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BURUNDI</pattern><template>Bujumbura.   <think>      <set name="it">       <set name="topic">burundi</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CALIFORNIA</pattern><template>Sacramento.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CAMBOYA</pattern><template>Phnom Penh.   <think>      <set name="it">       <set name="topic">camboya</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CAMERÚN</pattern><template>Yaounde.   <think>      <set name="it">       <set name="topic">camerun</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CANADÁ</pattern><template>Ottawa. <think>      <set name="it">       <set name="topic">canada</set>      </set>     </think>     <random>      <li>Ottawa.</li>      <li>I heard it was Toronto.</li>     </random>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CABO VERDE</pattern><template>Praia.   <think>      <set name="it">       <set name="topic">cabo verde</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ISLAS CAIMÁN</pattern><template>George Town.   <think>      <set name="it">       <set name="topic">islas caiman</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CHAD</pattern><template>N'Djamena.   <think>      <set name="it">       <set name="topic">chad</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CHILE</pattern><template>Santiago.   <think>      <set name="it">       <set name="topic">chile</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CHINA</pattern><template>Algunas personas la llaman Beijin, otras Pekin.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ COLOMBIA</pattern><template>Bogotá es la capital de Colombia.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ COLORADO</pattern><template>Denver.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CONGO</pattern><template>Brazzaville.   <think>      <set name="it">       <set name="topic">congo</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CONNECTICUT</pattern><template>Hartford.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ COOK ISLANDS</pattern><template>Avarua.   <think>      <set name="it">       <set name="topic">cook islands</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ COSTA RICA</pattern><template>San Jose.   <think>      <set name="it">       <set name="topic">costa rica</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ COSTA DE MARFIL</pattern><template>Yamoussoukro.   <think>      <set name="it">       <set name="topic">costa de marfil</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CROACIA</pattern><template>Zagreb.   <think>      <set name="it">       <set name="topic">croacia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CUBA</pattern><template>La Havana.   <think>      <set name="it">       <set name="topic">cuba</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CHIPRE</pattern><template>Nicosia.   <think>      <set name="it">       <set name="topic">chipre</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ REPÚBLICA CHECA</pattern><template>Praga.   <think>      <set name="it">       <set name="topic">republica checa</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ DINAMARCA</pattern><template>Copenhague.   <think>      <set name="it">       <set name="topic">dinamarca</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ DJIBOUTI</pattern><template>Djibouti.   <think>      <set name="it">       <set name="topic">djibouti</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ REPÚBLICA DOMINICANA</pattern><template>Santo Domingo.   <think>      <set name="it">       <set name="topic">republica dominicana</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ DOMINICA</pattern><template>Roseau.   <think>      <set name="it">       <set name="topic">dominica</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ECUADOR</pattern><template>Quito.   <think>      <set name="it">       <set name="topic">ecuador</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ EGIPTO</pattern><template>El Cairo.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ EL SALVADOR</pattern><template>San Salvador.   <think>      <set name="it">       <set name="topic">el salvador</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ INGLATERRA</pattern><template>Londres.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GUINEA ECUATORIAL</pattern><template>Malabo.   <think>      <set name="it">       <set name="topic">guinea ecuatorial</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ERITREA</pattern><template>Asmara.   <think>      <set name="it">       <set name="topic">eritrea</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ESTONIA</pattern><template>Tallinn.   <think>      <set name="it">       <set name="topic">estonia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ETIOPIA</pattern><template>Addis Abeba.   <think>      <set name="it">       <set name="topic">etiopia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ FIJI</pattern><template>Suva.   <think>      <set name="it">       <set name="topic">fiji</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ FINLANDIA</pattern><template>La capital de Finlandia es Helsinki.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ FLORIDA</pattern><template>Tallahassee.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ FRANCIA</pattern><template>Paris.   <think>      <set name="it">       <set name="topic">francia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ * FRANCESA</pattern><template>Ninguna, se administra desde París creo.     <think>      <set name="it">       <set name="topic">french <star/>       </set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ POLINESIA FRANCESA</pattern><template>Papeete.   <think>      <set name="it">       <set name="topic">polinesia francesa</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GABÓN</pattern><template>Libreville.   <think>      <set name="it">       <set name="topic">gabon</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GEORGIA</pattern><template>Atlanta.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ALEMANIA</pattern><template>Berlin.   <think>      <set name="it">       <set name="topic">alemania</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GHANA</pattern><template>Accra.   <think>      <set name="it">       <set name="topic">ghana</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GIBRALTAR</pattern><template>Gibraltar.   <think>      <set name="it">       <set name="topic">gibraltar</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GRECIA</pattern><template>Atenas.   <think>      <set name="it">       <set name="topic">grecia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GROENLANDIA</pattern><template>Nuuk {Godthab}.   <think>      <set name="it">       <set name="topic">groenlandia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GRANADOS</pattern><template>Saint George's.   <think>      <set name="it">       <set name="topic">granados</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GUADALUPE</pattern><template>Basse-Terre.   <think>      <set name="it">       <set name="topic">guadelupe</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GUAM</pattern><template>Agana.   <think>      <set name="it">       <set name="topic">guam</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GUATEMALA</pattern><template>Guatemala.   <think>      <set name="it">       <set name="topic">guatemala</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GUERNSEY</pattern><template>Saint Peter Port.   <think>      <set name="it">       <set name="topic">guernsey</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GUINEA BISSAU</pattern><template>Bissau.   <think>      <set name="it">       <set name="topic">guinea-bissau</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GUINEA</pattern><template>Conakry.   <think>      <set name="it">       <set name="topic">guinea</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GUYANA</pattern><template>Georgetown.   <think>      <set name="it">       <set name="topic">guyana</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ HAITÍ</pattern><template>Port-au-Prince.   <think>      <set name="it">       <set name="topic">haiti</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ HAWAII</pattern><template>Honolulu.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ HONDURAS</pattern><template>Tegucigalpa.   <think>      <set name="it">       <set name="topic">honduras</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ HONG KONG</pattern><template>Victoria.   <think>      <set name="it">       <set name="topic">hong kong</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ HUNGRÍA</pattern><template>La capital de Hungría es Budapest.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ISLANDIA</pattern><template>Reykjavik.   <think>      <set name="it">       <set name="topic">islandia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ IDAHO</pattern><template>Boise.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ILLINOIS</pattern><template>Springfield.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ INDIANA</pattern><template>Indianapolis.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ INDIA</pattern><template>Nueva Dehli es la capital de la India.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ INDONESIA</pattern><template>Yakarta.   <think>      <set name="it">       <set name="topic">indonesia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ IOWA</pattern><template>Des Moines.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ IRÁN</pattern><template>Teheran.   <think>      <set name="it">       <set name="topic">iran</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ IRAQ</pattern><template>Bagdad.   <think>      <set name="it">       <set name="topic">iraq</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ IRLANDA</pattern><template>Dublin.   <think>      <set name="it">       <set name="topic">irland</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ISRAEL</pattern><template>Jerusalen.   <think>      <set name="it">       <set name="topic">israel</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ITALIA</pattern><template>Roma.   <think>      <set name="it">       <set name="topic">italia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ JAMAICA</pattern><template>Kingston.   <think>      <set name="it">       <set name="topic">jamaica</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ JAPÓN</pattern><template>Tokyo.   <think>      <set name="it">       <set name="topic">japon</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ JERSEY</pattern><template>Saint Helier.   <think>      <set name="it">       <set name="topic">jersey</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ JORDANIA</pattern><template>Amman.   <think>      <set name="it">       <set name="topic">jordan</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ KANSAS</pattern><template>Topeka.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ KAZAJSTAN</pattern><template>Almaty.   <think>      <set name="it">       <set name="topic">kazajstan</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ KENTUCKY</pattern><template>Frankfort.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ KENYA</pattern><template>Nairobi.   <think>      <set name="it">       <set name="topic">kenya</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ KIRIBATI</pattern><template>Tarawa.   <think>      <set name="it">       <set name="topic">kiribati</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ KOREA DEL SUR</pattern><template>Seúl.   <think>      <set name="it">       <set name="topic">korea</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ KUWAIT</pattern><template>Kuwait.   <think>      <set name="it">       <set name="topic">kuwait</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ KIRGUISTÁN</pattern><template>Bishkek.   <think>      <set name="it">       <set name="topic">kirguistan</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ LAOS</pattern><template>Vientiane.   <think>      <set name="it">       <set name="topic">laos</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ LATVIA</pattern><template>Riga.   <think>      <set name="it">       <set name="topic">latvia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ LÍBANO</pattern><template>Beirut.   <think>      <set name="it">       <set name="topic">libano</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ LESOTO</pattern><template>Maseru.   <think>      <set name="it">       <set name="topic">lesoto</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ LIBERIA</pattern><template>Monrovia.   <think>      <set name="it">       <set name="topic">liberia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ LIBIA</pattern><template>Tripoli.   <think>      <set name="it">       <set name="topic">libia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ LIECHTENSTEIN</pattern><template>Vaduz.   <think>      <set name="it">       <set name="topic">liechtenstein</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ LITUANIA</pattern><template>Vilnius.   <think>      <set name="it">       <set name="topic">lituania</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ LOUISIANA</pattern><template>Baton Rouge.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ LUXEMBURGO</pattern><template>Luxemburgo.   <think>      <set name="it">       <set name="topic">luxemburgo</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MACAU</pattern><template>Macau.   <think>      <set name="it">       <set name="topic">macau</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MACEDONIA</pattern><template>Skopje.   <think>      <set name="it">       <set name="topic">macedonia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MADAGASCAR</pattern><template>Antananarivo.   <think>      <set name="it">       <set name="topic">madagascar</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MAINE</pattern><template>Augusta.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MALAWI</pattern><template>Lilongwe.   <think>      <set name="it">       <set name="topic">malawi</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MALASIA</pattern><template>Kuala Lumpur.   <think>      <set name="it">       <set name="topic">malasia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MALDIVAS</pattern><template>Male.   <think>      <set name="it">       <set name="topic">maldivas</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MALI</pattern><template>Bamako.   <think>      <set name="it">       <set name="topic">mali</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MALTA</pattern><template>Valletta.   <think>      <set name="it">       <set name="topic">malta</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MARTINICA</pattern><template>Fort-de-France.   <think>      <set name="it">       <set name="topic">martinica</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MARYLAND</pattern><template>Annapolis.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MASSACHUSETTS</pattern><template>Boston.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MAURITANIA</pattern><template>Nouakchott.   <think>      <set name="it">       <set name="topic">mauritania</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MAURICIO</pattern><template>Port Louis.   <think>      <set name="it">       <set name="topic">mauricio</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MAYOTTE</pattern><template>Mamoutzou.   <think>      <set name="it">       <set name="topic">mayotte</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MÉXICO</pattern><template>Ciudad de Mexico.   <think>      <set name="it">       <set name="topic">mexico</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MICHIGAN</pattern><template>Lansing.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MICRONESIA</pattern><template>Kolonia.   <think>      <set name="it">       <set name="topic">micronesia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MINNESOTA</pattern><template>St. Paul.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MISSISSIPPI</pattern><template>Jackson.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MISSOURI</pattern><template>Jefferson City .</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MOLDAVIA</pattern><template>Chisinau.   <think>      <set name="it">       <set name="topic">moldavia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MÓNACO</pattern><template>Mónaco.   <think>      <set name="it">       <set name="topic">monaco</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MONGOLIA</pattern><template>La capital de Mongolia es Ulan Bator.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MONTANA</pattern><template>Helena.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MONTSERRAT</pattern><template>Plymouth.   <think>      <set name="it">       <set name="topic">montserrat</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MARRUECOS</pattern><template>Rabat.   <think>      <set name="it">       <set name="topic">marruecos</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ MOZAMBIQUE</pattern><template>Maputo.   <think>      <set name="it">       <set name="topic">mozambique</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NAMIBIA</pattern><template>Windhoek.   <think>      <set name="it">       <set name="topic">namibia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NEBRASKA</pattern><template>Lincoln.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NEPAL</pattern><template>Kathmandu.   <think>      <set name="it">       <set name="topic">nepal</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ PAÍSES BAJOS</pattern><template>Amsterdam.   <think>      <set name="it">       <set name="topic">paises bajos</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NEVADA</pattern><template>Carson City.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NEW HAMPSHIRE</pattern><template>Concord.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NEW JERSEY</pattern><template>Trenton.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NUEVO MÉXICO</pattern><template>Santa Fe.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NUEVO MÉJICO</pattern><template>Santa Fe.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NUEVA *</pattern><template>¿Nueva <person/> ciudad?</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NUEVO *</pattern><template>¿Nuevo <person/> ciudad?</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NEW YORK</pattern><template>Albany.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NUEVA YORK</pattern><template>Albany.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NUEVA ZELANDA</pattern><template>Wellington.   <think>      <set name="it">       <set name="topic">nueva zelanda</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NICARAGUA</pattern><template>Managua.   <think>      <set name="it">       <set name="topic">nicaragua</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NIGERIA</pattern><template>Abuja.   <think>      <set name="it">       <set name="topic">nigeria</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NÍGER</pattern><template>Niamey.   <think>      <set name="it">       <set name="topic">niger</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NORTH CAROLINA</pattern><template>Raleigh.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CAROLINA DEL NORTE</pattern><template>Raleigh.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ DAKOTA DEL NORTE</pattern><template>Bismarck.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ KOREA DEL NORTE</pattern><template>P'yongyang.   <think>      <set name="it">       <set name="topic">korea del norte</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ NORUEGA</pattern><template>La capital de Noruega es Oslo.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ BOSNIA</pattern><template>Sarajevo.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL DE *</pattern><template>Sé que la capital de  <random>      
+<li>Canada es Toronto.  </li>      
+<li>California es Sacramento.  </li>      
+<li>Georgia es Atlanta.  </li>      
+<li>France es Paris.  </li>     
+</random></template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ OHIO</pattern><template>Columbus.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ OKLAHOMA</pattern><template>Oklahoma City.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ OMÁN</pattern><template>Muscat.   <think>      <set name="it">       <set name="topic">oman</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ OREGÓN</pattern><template>Salem.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ PAKISTÁN</pattern><template>Se llama Islamabad.<think>      <set name="it">       <set name="topic">PAKISTAN</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ PALAU</pattern><template>Koror.   <think>      <set name="it">       <set name="topic">palau</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ PANAMÁ</pattern><template>Panama.   <think>      <set name="it">       <set name="topic">panama</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ PAPÚA NUEVA GUINEA</pattern><template>Port Moresby.   <think>      <set name="it">       <set name="topic">papua nueva guinea</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ PARAGUAY</pattern><template>Asunción.   <think>      <set name="it">       <set name="topic">paraguay</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ PARÍS</pattern><template>¿Es una pregunta trampa?<think>      <set name="it">       <set name="topic">PARIS</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ PENNSYLVANIA</pattern><template>Harrisburg.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ PERÚ</pattern><template>Lima es la capital de Perú.<think>      <set name="it">       <set name="topic">PERU</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ FILIPINAS</pattern><template>Manila.   <think>      <set name="it">       <set name="topic">filipinas</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ POLONIA</pattern><template>Varsovia.   <think>      <set name="it">       <set name="topic">polonia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ PORTUGAL</pattern><template>Lisboa.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ PUERTO RICO</pattern><template>San Juan.   <think>      <set name="it">       <set name="topic">puerto rico</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ QATAR</pattern><template>Doha.   <think>      <set name="it">       <set name="topic">qatar</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ REUNIÓN</pattern><template>Saint-Denis.   <think>      <set name="it">       <set name="topic">reunion</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ RHODE ISLAND</pattern><template>Providence.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ RUMANIA</pattern><template>Bucarest.   <think>      <set name="it">       <set name="topic">rumania</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ RUSIA</pattern><template>Moscú.   <think>      <set name="it">       <set name="topic">rusia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ RUANDA</pattern><template>Kigali.   <think>      <set name="it">       <set name="topic">ruanda</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SACRAMENTO</pattern><template>Esa es una pregunta trampa.<think>      <set name="it">       <set name="topic">SACRAMENTO</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SANTA ELENA</pattern><template>Jamestown.   <think>      <set name="it">       <set name="topic">santa elena</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SAN MARINO</pattern><template>San Marino.   <think>      <set name="it">       <set name="topic">san marino</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SAO TOMÉ *</pattern><template>Sao Tome.   <think>      <set name="it">       <set name="topic">sao tome y principe</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ARABIA SAUDÍ</pattern><template>Riyadh.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ARABIA SAUDITA</pattern><template>Riyadh, Arabia Saudí.  <think>      <set name="it">       <set name="topic">ARABIA SAUDI</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SENEGAL</pattern><template>Dakar.   <think>      <set name="it">       <set name="topic">senegal</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SERBIA *</pattern><template>Belgrado.   <think>      <set name="it">       <set name="topic">serbia y montenegro</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SEYCHELLES</pattern><template>Victoria.   <think>      <set name="it">       <set name="topic">seychelles</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SIERRA LEONA</pattern><template>Freetown.   <think>      <set name="it">       <set name="topic">sierra leona</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SINGAPUR</pattern><template>Singapur.   <think>      <set name="it">       <set name="topic">singapur</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ESLOVAQUIA</pattern><template>Bratislava.   <think>      <set name="it">       <set name="topic">eslovaquia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ESLOVENIA</pattern><template>Ljubljana.   <think>      <set name="it">       <set name="topic">eslovenia</set>      </set>     </think>    </template></category>    
+<category><pattern>CUÁL ES LA CAPITAL _ ISLAS SALOMÓN</pattern><template>Honiara.   <think>      <set name="it">       <set name="topic">islas salomon</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SOMALIA</pattern><template>Mogadishu.   <think>      <set name="it">       <set name="topic">somalia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SUDÁFRICA</pattern><template>Pretoria {administrativa}; Cape Town {legislativa}; Bloemfontein {judicial}.   <think>      <set name="it">       <set name="topic">sudafrica</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ CAROLINA DEL SUR</pattern><template>Columbia.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ DAKOTA DEL SUR</pattern><template>Pierre.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ESPAÑA</pattern><template>La capital de España es Madrid.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SRI LANKA</pattern><template>Colombo.   <think>      <set name="it">       <set name="topic">sri lanka</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SUDÁN</pattern><template>Khartoum.   <think>      <set name="it">       <set name="topic">sudan</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SURINAM</pattern><template>Paramaribo.   <think>      <set name="it">       <set name="topic">suriname</set>      </set>     </think>    </template></category>
+<category><pattern>CUÁL ES LA CAPITAL _ SUECIA</pattern><template>Creo que la capital de Suecia es Estocolmo.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SUIZA</pattern><template>Berna.   <think>      <set name="it">       <set name="topic">suiza</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ SIRIA</pattern><template>Damasco.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ TAIWAN</pattern><template>Taipei.   <think>      <set name="it">       <set name="topic">taiwan</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ TAJIKISTÁN</pattern><template>Dushanbe.   <think>      <set name="it">       <set name="topic">tajikistan</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ TANZANIA</pattern><template>Dar es Salaam.   <think>      <set name="it">       <set name="topic">tanzania</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ TENNESSEE</pattern><template>Nashville.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ TEXAS</pattern><template>Austin.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ TAILANDIA</pattern><template>Bangkok.   <think>      <set name="it">       <set name="topic">tailandia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ LAS BAHAMAS</pattern><template>Nassau.   <think>      <set name="it">       <set name="topic">las bahamas</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ GAMBIA</pattern><template>Banjul.   <think>      <set name="it">       <set name="topic">gambia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ESTADOS UNIDOS</pattern><template>La capital de Estados Unidos es Washington, D. C.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ TOGO</pattern><template>Lome.   <think>      <set name="it">       <set name="topic">togo</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ TRINIDAD Y TOBAGO</pattern><template>Puerto España.   <think>      <set name="it">       <set name="topic">trinidad y tobago</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ TÚNEZ</pattern><template>Tunicia.   <think>      <set name="it">       <set name="topic">tunez</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ TURQUÍA</pattern><template>Ankara es la capital de Turquía. <think>      <set name="it">       <set name="topic">turquia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ TURKMENISTÁN</pattern><template>Ashgabat.   <think>      <set name="it">       <set name="topic">turkmenistan</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ UGANDA</pattern><template>Kampala.   <think>      <set name="it">       <set name="topic">uganda</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ UCRANIA</pattern><template>Kiev {Kyyiv}.   <think>      <set name="it">       <set name="topic">ucrania</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ EMIRATOS ÁRABES UNIDOS</pattern><template>Abu Dhabi.   <think>      <set name="it">       <set name="topic">emiratos arabes unidos</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ REINO UNIDO</pattern><template>London.   <think>      <set name="it">       <set name="topic">reino unido</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ EEUU</pattern><template>Washington, DC.   <think>      <set name="it">       <set name="topic">estados unidos</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ URUGUAY</pattern><template>Montevideo.   <think>      <set name="it">       <set name="topic">uruguay</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ USA</pattern><template>Washington.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ UTAH</pattern><template>Salt Lake City.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ UZBEKISTÁN</pattern><template>Tashkent {Toshkent}.   <think>      <set name="it">       <set name="topic">uzbekistan</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ VATICANO *</pattern><template>Ciudad del Vaticano.   <think>      <set name="it">       <set name="topic">vaticano</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ VENEZUELA</pattern><template>Caracas.   <think>      <set name="it">       <set name="topic">venezuela</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ VERMONT</pattern><template>Montpelier.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ VIETNAM</pattern><template>Hanoi.   <think>      <set name="it">       <set name="topic">vietnam</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ VIRGINIA</pattern><template>Richmond.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ WASHINGTON</pattern><template>Olympia.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ WISCONSIN</pattern><template>Madison.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ WYOMING</pattern><template>Cheyenne .</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ YEMEN</pattern><template>Sanaa.   <think>      <set name="it">       <set name="topic">yemen</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ YUGOSLAVIA</pattern><template>Belgrado.</template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ZAIRE</pattern><template>Kinshasa.   <think>      <set name="it">       <set name="topic">zaire</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ZAMBIA</pattern><template>Lusaka.   <think>      <set name="it">       <set name="topic">zambia</set>      </set>     </think>    </template></category>  
+<category><pattern>CUÁL ES LA CAPITAL _ ZIMBABWE</pattern><template>La capital se llama Harare.<think>      <set name="it">       <set name="topic">ZIMBABWE</set>      </set>     </think>    </template></category>  
+
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE AFGANISTÁN</pattern><template>Kabul.<think><set name="it"><set name="topic">afganistan</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ALABAMA</pattern><template>Montgomery.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ALASKA</pattern><template>Juneau.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ALBANIA</pattern><template>La capital de Albania es Tirana.<think>      <set name="it">       <set name="topic">albania</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ALGERIA</pattern><template>Algiers.   <think>      <set name="it">       <set name="topic">algeria</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SAMOA</pattern><template>Pago Pago.   <think>      <set name="it">       <set name="topic">samoa</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE AMÉRICA</pattern><template>La capital de los Estados Unidos es Washington, D. C.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ANDORRA</pattern><template>Andorra la Vella.   <think>      <set name="it">       <set name="topic">andorra</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ANGOLA</pattern><template>Luanda.   <think>      <set name="it">       <set name="topic">angola</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ARGENTINA</pattern><template>Buenos Aries.<think>      <set name="it">       <set name="topic">argentina</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ARIZONA</pattern><template>Phoenix.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ARKANSAS</pattern><template>Little Rock.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ARMENIA</pattern><template>Yerevan.   <think>      <set name="it">       <set name="topic">armenia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ASSYRIA</pattern><template>Is it Babylon?</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE AUSTRALIA</pattern><template>La capital de Australia es Sydney, creo.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE AUSTRIA</pattern><template>La capital de Austria es Viena.<think>      <set name="it">       <set name="topic">Austria</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE AZERBAYÁN</pattern><template>Baku {Baki}.   <think>      <set name="it">       <set name="topic">azerbayan</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BAHREIN</pattern><template>Manama.   <think>      <set name="it">       <set name="topic">bahrein</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BANGLADESH</pattern><template>Dhaka.   <think>      <set name="it">       <set name="topic">bangladesh</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BARBADOS</pattern><template>Bridgetown.   <think>      <set name="it">       <set name="topic">barbados</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BIEOLORRUSIA</pattern><template>La capital de Bielorrusia es Minsk.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BÉLGICA</pattern><template>Bruselas.   <think>      <set name="it">       <set name="topic">belgica</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BELICE</pattern><template>Belmopan.   <think>      <set name="it">       <set name="topic">belize</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BENÍN</pattern><template>Porto-Novo.   <think>      <set name="it">       <set name="topic">benin</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BHUTÁN</pattern><template>Thimphu.   <think>      <set name="it">       <set name="topic">bhutan</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BOLIVIA</pattern><template>La Paz.  <think>      <set name="it">       <set name="topic">bolivia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BOSNIA HERZEGOVINA</pattern><template>Sarajevo.   <think>      <set name="it">       <set name="topic">bosnia herzegovina</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BOTSWANA</pattern><template>Gaborone.   <think>      <set name="it">       <set name="topic">botswana</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BRASIL</pattern><template>Creo que la capital de Brasil es Brasilia.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BRUNEI</pattern><template>Bandar Seri Begawan.   <think>      <set name="it">       <set name="topic">brunei</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BULGARIA</pattern><template>La capital de Bulgaria es Sofía.<think>      <set name="it">       <set name="topic">BULGARIA</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BURKINA FASO</pattern><template>Ouagadougou.   <think>      <set name="it">       <set name="topic">burkina faso</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BURUNDI</pattern><template>Bujumbura.   <think>      <set name="it">       <set name="topic">burundi</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CALIFORNIA</pattern><template>Sacramento.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CAMBOYA</pattern><template>Phnom Penh.   <think>      <set name="it">       <set name="topic">camboya</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CAMERÚN</pattern><template>Yaounde.   <think>      <set name="it">       <set name="topic">camerun</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CANADÁ</pattern><template>Ottawa. <think>      <set name="it">       <set name="topic">canada</set>      </set>     </think>     <random>      <li>Ottawa.</li>      <li>I heard it was Toronto.</li>     </random>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CABO VERDE</pattern><template>Praia.   <think>      <set name="it">       <set name="topic">cabo verde</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ISLAS CAIMÁN</pattern><template>George Town.   <think>      <set name="it">       <set name="topic">islas caiman</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CHAD</pattern><template>N'Djamena.   <think>      <set name="it">       <set name="topic">chad</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CHILE</pattern><template>Santiago.   <think>      <set name="it">       <set name="topic">chile</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CHINA</pattern><template>Algunas personas la llaman Beijin, otras Pekin.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE COLOMBIA</pattern><template>Bogotá es la capital de Colombia.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE COLORADO</pattern><template>Denver.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CONGO</pattern><template>Brazzaville.   <think>      <set name="it">       <set name="topic">congo</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CONNECTICUT</pattern><template>Hartford.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE COOK ISLANDS</pattern><template>Avarua.   <think>      <set name="it">       <set name="topic">cook islands</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE COSTA RICA</pattern><template>San Jose.   <think>      <set name="it">       <set name="topic">costa rica</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE COSTA DE MARFIL</pattern><template>Yamoussoukro.   <think>      <set name="it">       <set name="topic">costa de marfil</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CROACIA</pattern><template>Zagreb.   <think>      <set name="it">       <set name="topic">croacia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CUBA</pattern><template>La Havana.   <think>      <set name="it">       <set name="topic">cuba</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CHIPRE</pattern><template>Nicosia.   <think>      <set name="it">       <set name="topic">chipre</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE REPÚBLICA CHECA</pattern><template>Praga.   <think>      <set name="it">       <set name="topic">republica checa</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE DINAMARCA</pattern><template>Copenhague.   <think>      <set name="it">       <set name="topic">dinamarca</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE DJIBOUTI</pattern><template>Djibouti.   <think>      <set name="it">       <set name="topic">djibouti</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE REPÚBLICA DOMINICANA</pattern><template>Santo Domingo.   <think>      <set name="it">       <set name="topic">republica dominicana</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE DOMINICA</pattern><template>Roseau.   <think>      <set name="it">       <set name="topic">dominica</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ECUADOR</pattern><template>Quito.   <think>      <set name="it">       <set name="topic">ecuador</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE EGIPTO</pattern><template>El Cairo.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE EL SALVADOR</pattern><template>San Salvador.   <think>      <set name="it">       <set name="topic">el salvador</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE INGLATERRA</pattern><template>Londres.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GUINEA ECUATORIAL</pattern><template>Malabo.   <think>      <set name="it">       <set name="topic">guinea ecuatorial</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ERITREA</pattern><template>Asmara.   <think>      <set name="it">       <set name="topic">eritrea</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ESTONIA</pattern><template>Tallinn.   <think>      <set name="it">       <set name="topic">estonia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ETIOPIA</pattern><template>Addis Abeba.   <think>      <set name="it">       <set name="topic">etiopia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE FIJI</pattern><template>Suva.   <think>      <set name="it">       <set name="topic">fiji</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE FINLANDIA</pattern><template>La capital de Finlandia es Helsinki.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE FLORIDA</pattern><template>Tallahassee.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE FRANCIA</pattern><template>Paris.   <think>      <set name="it">       <set name="topic">francia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE * FRANCESA</pattern><template>Ninguna, se administra desde París creo.     <think>      <set name="it">       <set name="topic">french <star/>       </set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE POLINESIA FRANCESA</pattern><template>Papeete.   <think>      <set name="it">       <set name="topic">polinesia francesa</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GABÓN</pattern><template>Libreville.   <think>      <set name="it">       <set name="topic">gabon</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GEORGIA</pattern><template>Atlanta.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ALEMANIA</pattern><template>Berlin.   <think>      <set name="it">       <set name="topic">alemania</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GHANA</pattern><template>Accra.   <think>      <set name="it">       <set name="topic">ghana</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GIBRALTAR</pattern><template>Gibraltar.   <think>      <set name="it">       <set name="topic">gibraltar</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GRECIA</pattern><template>Atenas.   <think>      <set name="it">       <set name="topic">grecia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GROENLANDIA</pattern><template>Nuuk {Godthab}.   <think>      <set name="it">       <set name="topic">groenlandia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GRANADOS</pattern><template>Saint George's.   <think>      <set name="it">       <set name="topic">granados</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GUADALUPE</pattern><template>Basse-Terre.   <think>      <set name="it">       <set name="topic">guadelupe</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GUAM</pattern><template>Agana.   <think>      <set name="it">       <set name="topic">guam</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GUATEMALA</pattern><template>Guatemala.   <think>      <set name="it">       <set name="topic">guatemala</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GUERNSEY</pattern><template>Saint Peter Port.   <think>      <set name="it">       <set name="topic">guernsey</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GUINEA BISSAU</pattern><template>Bissau.   <think>      <set name="it">       <set name="topic">guinea-bissau</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GUINEA</pattern><template>Conakry.   <think>      <set name="it">       <set name="topic">guinea</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GUYANA</pattern><template>Georgetown.   <think>      <set name="it">       <set name="topic">guyana</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE HAITÍ</pattern><template>Port-au-Prince.   <think>      <set name="it">       <set name="topic">haiti</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE HAWAII</pattern><template>Honolulu.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE HONDURAS</pattern><template>Tegucigalpa.   <think>      <set name="it">       <set name="topic">honduras</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE HONG KONG</pattern><template>Victoria.   <think>      <set name="it">       <set name="topic">hong kong</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE HUNGRÍA</pattern><template>La capital de Hungría es Budapest.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ISLANDIA</pattern><template>Reykjavik.   <think>      <set name="it">       <set name="topic">islandia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE IDAHO</pattern><template>Boise.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ILLINOIS</pattern><template>Springfield.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE INDIANA</pattern><template>Indianapolis.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE INDIA</pattern><template>Nueva Dehli es la capital de la India.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE INDONESIA</pattern><template>Yakarta.   <think>      <set name="it">       <set name="topic">indonesia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE IOWA</pattern><template>Des Moines.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE IRÁN</pattern><template>Teheran.   <think>      <set name="it">       <set name="topic">iran</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE IRAQ</pattern><template>Bagdad.   <think>      <set name="it">       <set name="topic">iraq</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE IRLANDA</pattern><template>Dublin.   <think>      <set name="it">       <set name="topic">irland</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ISRAEL</pattern><template>Jerusalen.   <think>      <set name="it">       <set name="topic">israel</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ITALIA</pattern><template>Roma.   <think>      <set name="it">       <set name="topic">italia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE JAMAICA</pattern><template>Kingston.   <think>      <set name="it">       <set name="topic">jamaica</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE JAPÓN</pattern><template>Tokyo.   <think>      <set name="it">       <set name="topic">japon</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE JERSEY</pattern><template>Saint Helier.   <think>      <set name="it">       <set name="topic">jersey</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE JORDANIA</pattern><template>Amman.   <think>      <set name="it">       <set name="topic">jordan</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE KANSAS</pattern><template>Topeka.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE KAZAJSTÁN</pattern><template>Almaty.   <think>      <set name="it">       <set name="topic">kazajstan</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE KENTUCKY</pattern><template>Frankfort.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE KENYA</pattern><template>Nairobi.   <think>      <set name="it">       <set name="topic">kenya</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE KIRIBATI</pattern><template>Tarawa.   <think>      <set name="it">       <set name="topic">kiribati</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE KOREA DEL SUR</pattern><template>Seúl.   <think>      <set name="it">       <set name="topic">korea</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE KUWAIT</pattern><template>Kuwait.   <think>      <set name="it">       <set name="topic">kuwait</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE KIRGUISTÁN</pattern><template>Bishkek.   <think>      <set name="it">       <set name="topic">kirguistan</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE LAOS</pattern><template>Vientiane.   <think>      <set name="it">       <set name="topic">laos</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE LATVIA</pattern><template>Riga.   <think>      <set name="it">       <set name="topic">latvia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE LÍBANO</pattern><template>Beirut.   <think>      <set name="it">       <set name="topic">libano</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE LESOTO</pattern><template>Maseru.   <think>      <set name="it">       <set name="topic">lesoto</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE LIBERIA</pattern><template>Monrovia.   <think>      <set name="it">       <set name="topic">liberia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE LIBIA</pattern><template>Tripoli.   <think>      <set name="it">       <set name="topic">libia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE LIECHTENSTEIN</pattern><template>Vaduz.   <think>      <set name="it">       <set name="topic">liechtenstein</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE LITUANIA</pattern><template>Vilnius.   <think>      <set name="it">       <set name="topic">lituania</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE LOUISIANA</pattern><template>Baton Rouge.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE LUXEMBURGO</pattern><template>Luxemburgo.   <think>      <set name="it">       <set name="topic">luxemburgo</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MACAU</pattern><template>Macau.   <think>      <set name="it">       <set name="topic">macau</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MACEDONIA</pattern><template>Skopje.   <think>      <set name="it">       <set name="topic">macedonia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MADAGASCAR</pattern><template>Antananarivo.   <think>      <set name="it">       <set name="topic">madagascar</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MAINE</pattern><template>Augusta.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MALAWI</pattern><template>Lilongwe.   <think>      <set name="it">       <set name="topic">malawi</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MALASIA</pattern><template>Kuala Lumpur.   <think>      <set name="it">       <set name="topic">malasia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MALDIVAS</pattern><template>Male.   <think>      <set name="it">       <set name="topic">maldivas</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MALI</pattern><template>Bamako.   <think>      <set name="it">       <set name="topic">mali</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MALTA</pattern><template>Valletta.   <think>      <set name="it">       <set name="topic">malta</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MARTINICA</pattern><template>Fort-de-France.   <think>      <set name="it">       <set name="topic">martinica</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MARYLAND</pattern><template>Annapolis.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MASSACHUSETTS</pattern><template>Boston.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MAURITANIA</pattern><template>Nouakchott.   <think>      <set name="it">       <set name="topic">mauritania</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MAURICIO</pattern><template>Port Louis.   <think>      <set name="it">       <set name="topic">mauricio</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MAYOTTE</pattern><template>Mamoutzou.   <think>      <set name="it">       <set name="topic">mayotte</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MÉXICO</pattern><template>Ciudad de Mexico.   <think>      <set name="it">       <set name="topic">mexico</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MICHIGAN</pattern><template>Lansing.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MICRONESIA</pattern><template>Kolonia.   <think>      <set name="it">       <set name="topic">micronesia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MINNESOTA</pattern><template>St. Paul.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MISSISSIPPI</pattern><template>Jackson.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MISSOURI</pattern><template>Jefferson City .</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MOLDAVIA</pattern><template>Chisinau.   <think>      <set name="it">       <set name="topic">moldavia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MÓNACO</pattern><template>Monaco.   <think>      <set name="it">       <set name="topic">monaco</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MONGOLIA</pattern><template>La capital de Mongolia es Ulan Bator.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MONTANA</pattern><template>Helena.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MONTSERRAT</pattern><template>Plymouth.   <think>      <set name="it">       <set name="topic">montserrat</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MARRUECOS</pattern><template>Rabat.   <think>      <set name="it">       <set name="topic">marruecos</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE MOZAMBIQUE</pattern><template>Maputo.   <think>      <set name="it">       <set name="topic">mozambique</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NAMIBIA</pattern><template>Windhoek.   <think>      <set name="it">       <set name="topic">namibia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NEBRASKA</pattern><template>Lincoln.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NEPAL</pattern><template>Kathmandu.   <think>      <set name="it">       <set name="topic">nepal</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE PAÍSES BAJOS</pattern><template>Amsterdam.   <think>      <set name="it">       <set name="topic">paises bajos</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NEVADA</pattern><template>Carson City.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NEW HAMPSHIRE</pattern><template>Concord.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NEW JERSEY</pattern><template>Trenton.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NUEVO MÉXICO</pattern><template>Santa Fe.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NUEVO MÉJICO</pattern><template>Santa Fe.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NUEVA *</pattern><template>¿Nueva <person/> ciudad?</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NUEVO *</pattern><template>¿Nuevo <person/> ciudad?</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NEW YORK</pattern><template>Albany.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NUEVA YORK</pattern><template>Albany.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NUEVA ZELANDA</pattern><template>Wellington.   <think>      <set name="it">       <set name="topic">nueva zelanda</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NICARAGUA</pattern><template>Managua.   <think>      <set name="it">       <set name="topic">nicaragua</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NIGERIA</pattern><template>Abuja.   <think>      <set name="it">       <set name="topic">nigeria</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NÍGER</pattern><template>Niamey.   <think>      <set name="it">       <set name="topic">niger</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NORTH CAROLINA</pattern><template>Raleigh.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CAROLINA DEL NORTE</pattern><template>Raleigh.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE DAKOTA DEL NORTE</pattern><template>Bismarck.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE KOREA DEL NORTE</pattern><template>P'yongyang.   <think>      <set name="it">       <set name="topic">korea del norte</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE NORUEGA</pattern><template>La capital de Noruega es Oslo.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE BOSNIA</pattern><template>Sarajevo.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE *</pattern><template>Sé que la capital de  <random>      
+<li>Canada es Toronto.  </li>      
+<li>California es Sacramento.  </li>      
+<li>Georgia es Atlanta.  </li>      
+<li>France es Paris.  </li>     
+</random></template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE OHIO</pattern><template>Columbus.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE OKLAHOMA</pattern><template>Oklahoma City.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE OMÁN</pattern><template>Muscat.   <think>      <set name="it">       <set name="topic">oman</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE OREGÓN</pattern><template>Salem.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE PAKISTÁN</pattern><template>Se llama Islamabad.<think>      <set name="it">       <set name="topic">PAKISTAN</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE PALAU</pattern><template>Koror.   <think>      <set name="it">       <set name="topic">palau</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE PANAMÁ</pattern><template>Panama.   <think>      <set name="it">       <set name="topic">panama</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE PAPÚA NUEVA GUINEA</pattern><template>Port Moresby.   <think>      <set name="it">       <set name="topic">papua nueva guinea</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE PARAGUAY</pattern><template>Asunción.   <think>      <set name="it">       <set name="topic">paraguay</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE PARÍS</pattern><template>¿Es una pregunta trampa?<think>      <set name="it">       <set name="topic">PARIS</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE PENNSYLVANIA</pattern><template>Harrisburg.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE PERÚ</pattern><template>Lima es la capital de Perú.<think>      <set name="it">       <set name="topic">PERU</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE FILIPINAS</pattern><template>Manila.   <think>      <set name="it">       <set name="topic">filipinas</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE POLONIA</pattern><template>Varsovia.   <think>      <set name="it">       <set name="topic">polonia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE PORTUGAL</pattern><template>Lisboa.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE PUERTO RICO</pattern><template>San Juan.   <think>      <set name="it">       <set name="topic">puerto rico</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE QATAR</pattern><template>Doha.   <think>      <set name="it">       <set name="topic">qatar</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE REUNIÓN</pattern><template>Saint-Denis.   <think>      <set name="it">       <set name="topic">reunion</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE RHODE ISLAND</pattern><template>Providence.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE RUMANÍA</pattern><template>Bucarest.   <think>      <set name="it">       <set name="topic">rumania</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE RUSIA</pattern><template>Moscú.   <think>      <set name="it">       <set name="topic">rusia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE RUANDA</pattern><template>Kigali.   <think>      <set name="it">       <set name="topic">ruanda</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SACRAMENTO</pattern><template>Esa es una pregunta trampa.<think>      <set name="it">       <set name="topic">SACRAMENTO</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SANTA ELENA</pattern><template>Jamestown.   <think>      <set name="it">       <set name="topic">santa elena</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SAN MARINO</pattern><template>San Marino.   <think>      <set name="it">       <set name="topic">san marino</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SAO TOMÉ *</pattern><template>Sao Tome.   <think>      <set name="it">       <set name="topic">sao tome y principe</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ARABIA SAUDÍ</pattern><template>Riyadh.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ARABIA SAUDITA</pattern><template>Riyadh, Arabia Saudí.  <think>      <set name="it">       <set name="topic">ARABIA SAUDI</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SENEGAL</pattern><template>Dakar.   <think>      <set name="it">       <set name="topic">senegal</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SERBIA *</pattern><template>Belgrado.   <think>      <set name="it">       <set name="topic">serbia y montenegro</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SEYCHELLES</pattern><template>Victoria.   <think>      <set name="it">       <set name="topic">seychelles</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SIERRA LEONA</pattern><template>Freetown.   <think>      <set name="it">       <set name="topic">sierra leona</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SINGAPUR</pattern><template>Singapur.   <think>      <set name="it">       <set name="topic">singapur</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ESLOVAQUIA</pattern><template>Bratislava.   <think>      <set name="it">       <set name="topic">eslovaquia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ESLOVENIA</pattern><template>Ljubljana.   <think>      <set name="it">       <set name="topic">eslovenia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ISLAS SALOMÓN</pattern><template>Honiara.   <think>      <set name="it">       <set name="topic">islas salomon</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SOMALIA</pattern><template>Mogadishu.   <think>      <set name="it">       <set name="topic">somalia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SUDÁFRICA</pattern><template>Pretoria {administrativa}; Cape Town {legislativa}; Bloemfontein {judicial}.   <think>      <set name="it">       <set name="topic">sudafrica</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE CAROLINA DEL SUR</pattern><template>Columbia.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE DAKOTA DEL SUR</pattern><template>Pierre.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ESPAÑA</pattern><template>La capital de España es Madrid.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SRI LANKA</pattern><template>Colombo.   <think>      <set name="it">       <set name="topic">sri lanka</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SUDÁN</pattern><template>Khartoum.   <think>      <set name="it">       <set name="topic">sudan</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SURINAM</pattern><template>Paramaribo.   <think>      <set name="it">       <set name="topic">suriname</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SUECIA</pattern><template>Creo que la capital de Suecia es Estocolmo.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SUIZA</pattern><template>Berna.   <think>      <set name="it">       <set name="topic">suiza</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE SIRIA</pattern><template>Damasco.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE TAIWAN</pattern><template>Taipei.   <think>      <set name="it">       <set name="topic">taiwan</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE TAJIKISTÁN</pattern><template>Dushanbe.   <think>      <set name="it">       <set name="topic">tajikistan</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE TANZANIA</pattern><template>Dar es Salaam.   <think>      <set name="it">       <set name="topic">tanzania</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE TENNESSEE</pattern><template>Nashville.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE TEXAS</pattern><template>Austin.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE TAILANDIA</pattern><template>Bangkok.   <think>      <set name="it">       <set name="topic">tailandia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE LAS BAHAMAS</pattern><template>Nassau.   <think>      <set name="it">       <set name="topic">las bahamas</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE GAMBIA</pattern><template>Banjul.   <think>      <set name="it">       <set name="topic">gambia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ESTADOS UNIDOS</pattern><template>La capital de Estados Unidos es Washington, D. C.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE TOGO</pattern><template>Lome.   <think>      <set name="it">       <set name="topic">togo</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE TRINIDAD Y TOBAGO</pattern><template>Puerto España.   <think>      <set name="it">       <set name="topic">trinidad y tobago</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE TÚNEZ</pattern><template>Tunicia.   <think>      <set name="it">       <set name="topic">tunez</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE TURQUÍA</pattern><template>Ankara es la capital de Turquía. <think>      <set name="it">       <set name="topic">turquia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE TURKMENISTÁN</pattern><template>Ashgabat.   <think>      <set name="it">       <set name="topic">turkmenistan</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE UGANDA</pattern><template>Kampala.   <think>      <set name="it">       <set name="topic">uganda</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE UCRANIA</pattern><template>Kiev {Kyyiv}.   <think>      <set name="it">       <set name="topic">ucrania</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE EMIRATOS ARABES UNIDOS</pattern><template>Abu Dhabi.   <think>      <set name="it">       <set name="topic">emiratos arabes unidos</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE REINO UNIDO</pattern><template>London.   <think>      <set name="it">       <set name="topic">reino unido</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE EEUU</pattern><template>Washington, DC.   <think>      <set name="it">       <set name="topic">estados unidos</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE URUGUAY</pattern><template>Montevideo.   <think>      <set name="it">       <set name="topic">uruguay</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE USA</pattern><template>Washington.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE UTAH</pattern><template>Salt Lake City.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE UZBEKISTÁN</pattern><template>Tashkent {Toshkent}.   <think>      <set name="it">       <set name="topic">uzbekistan</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE VATICANO *</pattern><template>Ciudad del Vaticano.   <think>      <set name="it">       <set name="topic">vaticano</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE VENEZUELA</pattern><template>Caracas.   <think>      <set name="it">       <set name="topic">venezuela</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE VERMONT</pattern><template>Montpelier.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE VIETNAM</pattern><template>Hanoi.   <think>      <set name="it">       <set name="topic">vietnam</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE VIRGINIA</pattern><template>Richmond.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE WASHINGTON</pattern><template>Olympia.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE WISCONSIN</pattern><template>Madison.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE WYOMING</pattern><template>Cheyenne .</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE YEMEN</pattern><template>Sanaa.   <think>      <set name="it">       <set name="topic">yemen</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE YUGOSLAVIA</pattern><template>Belgrado.</template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ZAIRE</pattern><template>Kinshasa.   <think>      <set name="it">       <set name="topic">zaire</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ZAMBIA</pattern><template>Lusaka.   <think>      <set name="it">       <set name="topic">zambia</set>      </set>     </think>    </template></category>  
+<category><pattern>CÓMO SE LLAMA LA CAPITAL DE ZIMBABWE</pattern><template>La capital se llama Harare.<think>      <set name="it">       <set name="topic">ZIMBABWE</set>      </set>     </think>    </template></category>  
+
+
+<category><pattern>_ DÓNDE ESTÁ ACAPULCO</pattern><template><set name="it">Acapulco</set> es una ciudad mexicana de la costa del Pacífico.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ADELAIDA</pattern><template><set name="it"><set name="topic"> Adelaida </set></set>es una ciudad del sur de Australia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ AFGANISTÁN</pattern><template>En el sur de Asia, al norte de Pakistán.<think><set name="it"><set name="topic">afganistan</set></set></think></template></category>  
+<category><pattern>_ DÓNDE ESTÁ ALABAMA</pattern><template><set name="it"><set name="topic">Alabama</set></set> es un estado sureño que está entre el Mississippi y Georgia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ALASKA</pattern><template><set name="it">Alaska</set> está en la esquina noroeste de Norteamérica, entre Rusia y Canadá.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ALBANIA</pattern><template><set name="it"><set name="topic">Albania </set></set> está en el mar Adriático.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ALBERT EINSTEIN</pattern><template><set name="he">Einstein</set> está en los libros.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ALBUQUERQUE</pattern><template><set name="it"><set name="topic">Albuquerque</set></set> es una ciudad de nuevo México.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ALGERIA</pattern><template>Al norte de África, bordeando el mar Mediterráneo, entre Marruecos y Túnez.   <think>      <set name="it">       <set name="topic">algeria</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ AMÉRICA</pattern><template><set name="it">America</set> puede referirse a la del sur o la del norte, o a Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ AMSTERDAM</pattern><template><set name="it">Amsterdam</set> es una ciudad de Holanda.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ANDORRA</pattern><template>Al suroeste de Europa, entre Francia y España.<think><set name="it"><set name="topic">andorra</set></set></think></template></category>  
+<category><pattern>_ DÓNDE ESTÁ ANGOLA</pattern><template>Al sur de África, bordeando el océano atlántico, entre Namibia y zaire.<think><set name="it"><set name="topic">angola</set></set></think></template></category>  
+<category><pattern>_ DÓNDE ESTÁ ANKARA</pattern><template><set name="it"><set name="topic"> Ankara</set></set> es una ciudad turca.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ LA ANTÁRTIDA</pattern><template><set name="it"><set name="topic">La Antártida</set></set> es el continente del polo sur.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL OCÉANO ÁRTICO</pattern><template>Alrededor del Círculo Ártico.<think><set name="it"><set name="topic">oceano artico</set></set></think></template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL ÁREA 51</pattern><template><think><set name="it"><set name="topic">El Area 51</set></set></think> está entre el Área 50 y el Área 52.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ARGENTINA</pattern><template>   <set name="it">Argentina</set> es un país de América del Sur.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ARIZONA</pattern><template>   <set name="it">      <set name="topic">Arizona</set>     </set> está al sur de Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ARKANSAS</pattern><template>   <set name="it">      <set name="topic">Arkansas</set>     </set> es un estado sureño de la margen oeste del río Mississipi.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ARMENIA</pattern><template>Sudoeste de Asia, este de Turquía..   <think>      <set name="it">       <set name="topic">armenia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ARUBA</pattern><template>   <set name="it">      <set name="topic">Aruba</set>     </set> es una isla de las Antillas.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ASIA</pattern><template>   <set name="it">Asia</set> es el continente más grande.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ATENAS</pattern><template>   <set name="it">Atenas</set> es una ciudad griega.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ATLANTA</pattern><template>Es la capital de Georgia.  <think>      <set name="it">       <set name="topic">Atlanta</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL OCÉANO ATLÁNTICO</pattern><template>Entre África, Europa y la Antártida.   <think>      <set name="it">       <set name="topic">oceano atlantico</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ LA ATLÁNTIDA</pattern><template>   <set name="it">La Atlántida</set> pudo no existir jamás..</template></category>  
+<category><pattern>_ DÓNDE ESTÁ AUSTIN</pattern><template>   <set name="it">Austin</set> es una ciudad de Texas.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ AUSTRALIA</pattern><template>   <set name="it">Australia</set> es la isla-continente más grande del mundo, en el hemisferio sur.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ AUSTRIA</pattern><template>Europa Central, al norte de Italia.   <think>      <set name="it">       <set name="topic">austria</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ AZERBAYAN</pattern><template>Sudoeste de Asia, bordeando el mar Caspio.   <think>      <set name="it">       <set name="topic">azerbayan</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ BAHREIN</pattern><template>En el Golfo Pérsico.   <think>      <set name="it">       <set name="topic">bahrein</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ BANGLADESH</pattern><template>   <set name="it">      <set name="topic">Bangladesh</set>     </set> está en la India, en el este.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BARBADOS</pattern><template>En el Caribe, al norte de Vnezuela. <think>      <set name="it">       <set name="topic">barbados</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ BARCELONA</pattern><template>   <set name="it">Barcelona</set> es una ciudad española.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BIELORRUSIA</pattern><template>En Europa del este, al este de Polonia.   <think>      <set name="it">       <set name="topic">bielorrusia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ BELGICA</pattern><template>   <set name="it">Belgica</set> está entre Francia, alemania y Holanda.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BELIZE</pattern><template>En América Central, entre Guatemala y México. <think>      <set name="it">       <set name="topic">belize</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ BENÍN</pattern><template>África occidental, entre nigeria y Togo.   <think>      <set name="it">       <set name="topic">benin</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ BERGEN</pattern><template>   <set name="it">      <set name="topic">Bergen</set>     </set> es una ciudad alemana.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BERKELEY</pattern><template>   <set name="it">      <set name="topic">Berkeley</set>     </set> está en el norte de California.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BERLÍN</pattern><template>   <set name="it">      <set name="topic">Berlín</set>     </set> en la parte este de Alemania.</template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS BERMUDAS</pattern><template>En América del Norte al este de Carolina del Norte.   <think>      <set name="it">       <set name="topic">bermudas</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ BHUTÁN</pattern><template>En el sur de Asia, entre India y China.   <think>      <set name="it">       <set name="topic">bhutan</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ BILBAO</pattern><template>   <set name="it">      <set name="topic">Bilbao</set>     </set> es una ciudad del País Vasco, al norte de la Península Ibérica.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BOLIVIA</pattern><template>   <set name="it">      <set name="topic">Bolivia</set>     </set> es un país de América del Sur.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BORNEO</pattern><template>   <set name="it">      <set name="topic">Borneo</set>     </set> es una isla asiática.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BOSNIA HERZEGOVINA</pattern><template>Sudeste de Europa, bordeando el mar Adriático y Croacia.   <think>      <set name="it">       <set name="topic">bosnia herzegovina</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ BOSTON</pattern><template>   <set name="it">      <set name="topic"> Boston</set>     </set> es una ciudad de Massachusettes.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BOTSWANA</pattern><template>En el sur de África, al norte de Sudáfrica.   <think>      <set name="it">       <set name="topic">botswana</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ BRASIL</pattern><template>Brasil está en sudamérica.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BRISTOL</pattern><template>   <set name="it">      <set name="topic">Bristol</set>     </set> es una ciudad de la costa oeste de Inglaterra.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BRETAÑA</pattern><template>Al noroeste de Francia.<think>      <set name="it">       <set name="topic">Bretaña</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ BRUNEI</pattern><template>Sudeste de Asia, bordeando el sur de China y Malasia.   <think>      <set name="it">       <set name="topic">brunei</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ BRUSELAS</pattern><template>   <set name="it">Bruselas</set> es una ciudad de Bélgica.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BUDAPEST</pattern><template>   <set name="it">      <set name="topic"> Budapest</set>     </set> es una ciudad de Hungría, atravesada por el Danubio.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BULGARIA</pattern><template>   <set name="it">Bulgaria</set> es un país de los Balcanes.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ BURKINA FASO</pattern><template>En África, al norte de Ghana.   <think>      <set name="it">       <set name="topic">burkina faso</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ BURUNDI</pattern><template>En África Central,al este de Zaire.   <think>      <set name="it">       <set name="topic">burundi</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ CALGARY</pattern><template>   <set name="it">      <set name="topic">Calgary</set>     </set> es una ciudad de Alberta, Canadá.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ CALIFORNIA</pattern><template>   <set name="it">California</set> en la costa del Pacífico de América del Norte.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ * CALIFORNIA</pattern><template>Algún lugar en California, supongo.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ CAMBOYA</pattern><template>Sudeste de Asia, entre Tailandia y Vietnam.   <think>      <set name="it">       <set name="topic">camboya</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ CAMBRIDGE</pattern><template>   <set name="it">      <set name="topic">Cambridge</set>     </set> es una ciudad inglesa.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ CAMERÚN</pattern><template>Al oeste de África, entre Guinea Ecuatorial y Nigeria.   <think>      <set name="it">       <set name="topic">camerun</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ CANADÁ</pattern><template>Ocupa la mayor parte de Norteamérica.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ CANBERRA</pattern><template>   <set name="it">      <set name="topic">Canberra </set>     </set> es una ciudad australiana que está entre Sidney y Melbourne.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ CABO VERDE</pattern><template>Western Africa, group of Islands in the North Atlantic Ocean, west of Senegal.   <think>      <set name="it">       <set name="topic">cabo verde</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ CARTAGO</pattern><template>   <set name="it">      <set name="topic">Cartago</set>     </set> es el antiguo nombre de Tunicia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS ISLAS CAIMÁN</pattern><template>En el Caribe, cerca de Cuba y Honduras.   <think>      <set name="it">       <set name="topic">islas caiman</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ CHAD</pattern><template>África Central, al sur de Libia.   <think>      <set name="it">       <set name="topic">chad</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ CHARLOTTE</pattern><template>   <set name="it">      <set name="topic">Charlotte</set>     </set> está en Carolina del Norte.</template></category>  
+<category><pattern>DE DÓNDE ES EL QUESO CHEDDAR</pattern><template>Inglaterra.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ CHICAGO</pattern><template>   <set name="it">      <set name="topic">Chicago</set>     </set> es una ciudad grande de Illinois, al lado del lago Michigan.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ CHILE</pattern><template>En América del Sur, entre Argentina y Peru.   <think>      <set name="it">       <set name="topic">chile</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ CHINA</pattern><template>   <set name="it">      <set name="topic">China</set>     </set> es un país muy grande de Asia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ CINCINNATI</pattern><template>   <set name="it">      <set name="topic">Cincinnati</set>     </set> es una ciudad de Ohio.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ COLOMBIA</pattern><template>   <set name="it">      <set name="topic">Colombia</set>     </set> es un país de América del Sur.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ COLUMBUS</pattern><template>   <set name="it">      <set name="topic">Columbus</set>     </set> es una ciudad de Ohio.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL CONGO</pattern><template>En África occidental, entre Angola y Gabón.   <think>      <set name="it">       <set name="topic">congo</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ CONNECTICUT</pattern><template>   <set name="it">      <set name="topic">Conneticut</set>     </set> está en el estado de Nueva Inglaterra, entre Nueva York, Massaschusetts y Rhode Island.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ COPENHAGUE</pattern><template>   <set name="it">Copenhague</set> es una ciudad de Dinamarca.</template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS ISLAS CORAL</pattern><template>En Oceania, en el mar de Coral, al noreste de Australia.   <think>      <set name="it">       <set name="topic">islas coral</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ CORNWALL</pattern><template>   <set name="it">      <set name="topic"> CORNWALL </set>     </set> is a city in England.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ CORONA</pattern><template>   <set name="it">      <set name="topic"> CORONA </set>     </set> is a suburb of Los Angeles.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ COSTA RICA</pattern><template>En América Central, entre Nicaragua y Panama.   <think>      <set name="it">       <set name="topic">costa rica</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ COSTA DE MARFIL</pattern><template>En África occidental, entre Ghana y Liberia.   <think>      <set name="it">       <set name="topic">costa de marfil</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ CROACIA</pattern><template>   <set name="it">      <set name="topic">Croacia</set>     </set> es parte de Yugoslavia, cerca de Hungría.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ CUBA</pattern><template>   <set name="it">      <set name="topic">Cuba</set>     </set> es una isla que está cerca de Florida.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ CHIPRE</pattern><template>Es una isla que está en el mar Mediterráneo, al sur de Turquía.   <think>      <set name="it">       <set name="topic">chipre</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ CHECOSLOVAQUIA</pattern><template>Ese país ya no existe, se separó tras la guerra.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ LA REPÚBLICA CHECA</pattern><template>En europa Central, al sudeste de Alemania.<think>      <set name="it">       <set name="topic">republica checa</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ DALLAS</pattern><template>   <set name="it">      <set name="topic">Dallas</set>     </set> es una ciudad de Texas.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ DELHI</pattern><template>   <set name="it">      <set name="topic">Delhi</set>     </set> es una ciudad de India.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ DINAMARCA</pattern><template>   <set name="it">Dinamarca</set> es un país de Europa occidental,entre Alemania y Noruega.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ DENVER</pattern><template>   <set name="it">Denver</set> es una ciudad de Colorado.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ DJIBOUTI</pattern><template>Al este de áfrica, entre Eritrea y Somalia.   <think>      <set name="it">       <set name="topic">djibouti</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ LA REPÚBLICA DOMINICANA</pattern><template>En el Caribe, al este de Haiti.   <think>      <set name="it">       <set name="topic">republica dominicana</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ DOMINICA</pattern><template>Es una isla caribeña situada a medio camino entre Puerto Rico y Trinidad y Tobago.   <think>      <set name="it">       <set name="topic">dominica</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ DUSSELDORF</pattern><template>   <set name="it">      <set name="topic">Dusseldorf</set>     </set> es una gran ciudad situada en la parte occidental de Alemania.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ LA TIERRA</pattern><template>   <set name="it">      <set name="topic">La Tierra</set>     </set> es el tercer planeta más cercano al Sol.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ECUADOR</pattern><template>Al oeste en sudamérica, bordeando el Océano Pacífico y el Ecuador, entre Colombia y Perú.   <think>      <set name="it">       <set name="topic">ecuador</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ EDMONTON</pattern><template>   <set name="it">      <set name="topic">Edmonton</set>     </set> es una ciudad de Alberta.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EGIPTO</pattern><template>   <set name="it">      <set name="topic">Egipto</set>     </set> es un país del Nordeste africano.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EINSTEIN</pattern><template>   <set name="he">Einstein</set> está en otro espacio-tiempo.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL SALVADOR</pattern><template>En América Central, entre Guatemala y Honduras.   <think>      <set name="it">       <set name="topic">el salvador</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ELVIS</pattern><template>   <set name="he">Elvis</set> está en el salpicadero de algunos coches.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ENGLAND</pattern><template>   <set name="it">Inglaterra</set> es una isla situiada en la costa de Europa.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ GUINEA ECUATORIAL</pattern><template>África occidental, bordeando el Atlántico, entre Camerún y Gabón.   <think>      <set name="it">       <set name="topic">guinea ecuatorial</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ERITREA</pattern><template>África oriental, tocando el Mar Rojo, entre Djibouti y Sudán.   <think>      <set name="it">       <set name="topic">eritrea</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ESTONIA</pattern><template>Europa del este, bordeando el Mar Báltico y el Golfo de Finlandia, entre Latvia y Russia.   <think>      <set name="it">       <set name="topic">estonia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ETIOPÍA</pattern><template>En el este de África, al oeste de Somalia.   <think>      <set name="it">       <set name="topic">etiopia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ EUROPA</pattern><template>Europa está entre Asia y América.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ FIJI</pattern><template>En Oceania, un grupo de islas en el sur del Pacífico, a dos tercios de camino desde Hawaii a Nueva Zelanda.   <think>      <set name="it">       <set name="topic">fiji</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ FINLANDIA</pattern><template>   <set name="it">Finlandia</set> Es un país de Europa del este que limita con Suecia y Rusia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ FLORIDA</pattern><template>   <set name="it">      <set name="topic">Florida</set>     </set> está al sureste de los Estados Unidos, y se extiende en una larga península.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ FRANCIA</pattern><template>   <set name="it">Francia</set> es el país que está entre Alemania y España.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ FRANKFURT</pattern><template>   <set name="it">      <set name="topic">Frankfurt</set>     </set> es una gran ciudad del oeste de Alemania.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ LA GUYANA FRANCESA</pattern><template>Al norte de América del Sur, tocando el Atlántico, entre Brasil y Surinam.   <think>      <set name="it">       <set name="topic">guyana francesa</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ FRESNO</pattern><template>   <set name="it">Fresno</set> es una pequeña ciudad que está en California.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ GABON</pattern><template>En África occidental, entre El Congo y Guinea Ecuatorial.   <think>      <set name="it">       <set name="topic">gabon</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ GAZA</pattern><template>Una parte de Palestina, en el Mar Mediterráneo.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ GEORGIA</pattern><template>   <set name="it">      <set name="topic">Georgia</set>     </set> es un estado sureño de Estados Unidos que está añ norte de Florida.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ALEMANIA</pattern><template>   <set name="it">Alemania</set> es el país que está justo en el centro de Europa.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ GHANA</pattern><template>   <set name="it">      <set name="topic">Ghana</set>     </set> es una nación del este de África.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ GIBRALTAR</pattern><template>Al sudoeste de Europa, en el estrecho que lleva su mismo nombre, que une el Mar Mediterráneo y el Océano Atlántico, en la costa sur de España.   <think>      <set name="it">       <set name="topic">gibraltar</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS ISLAS GLORIOSO</pattern><template>En África del Sur, son un grupo de islas que están en el Índico, al norte de Madagascar.   <think>      <set name="it">       <set name="topic">islas glorioso</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ GRECIA</pattern><template>   <set name="it">Grecia</set> es un país de los Balcanes.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ GROENLANDIA</pattern><template>Al norte de Norteamérica, la isla que está entre el Océano Ártico y el Atlántico Norte, al nordeste de Canadá.   <think>      <set name="it">       <set name="topic">groenlandia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ GUADALUPE</pattern><template>En el Caribe, son unas islas del este del Mar del Caribe, al sureste de Puerto Rico.   <think>      <set name="it">       <set name="topic">guadalupe</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ GUAM</pattern><template>En Oceania, son unas islas al norte del Océano Pacífico.   <think>      <set name="it">       <set name="topic">guam</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ GUATEMALA</pattern><template>   <set name="it">Guatemala</set> es un país de América Central.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ GUINEA BISSAU</pattern><template>En África, al oeste. Tocando el Atlántico Norte, entre Guinea y Senegal.   <think>      <set name="it">       <set name="topic">guinea-bissau</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ GUINEA</pattern><template>En África, al oeste. Tocando el Atlántico Norte, entre Guinea-Bissau y Sierra Leona.   <think>      <set name="it">       <set name="topic">guinea</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ GUYANA</pattern><template>Al norte de Sudamérica,bordeando el Atlántico Norte, entre Surinam y Venezuela.   <think>      <set name="it">       <set name="topic">guyana</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ HADES</pattern><template>   <set name="it">      <set name="topic">Hades</set>     </set> es el Infierno.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ HAITÍ</pattern><template>En el Caribe, cerca de La Española, entre el Mar del Caribe y el Atlántico Norte, al oeste de la República Dominicana.   <think>      <set name="it">       <set name="topic">haiti</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ HAMBURGO</pattern><template>   <set name="it">      <set name="topic">Hamburgo</set>     </set> es una gran ciudad de Alemania occidental.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ HAWAII</pattern><template>   <set name="it">      <set name="topic">Hawaii</set>     </set> es una isla situada en la mitad del Océano Pacífico.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL CIELO</pattern><template>Sobre tu cabeza.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ HOLANDA</pattern><template>   <set name="it">Holanda</set> es un país del oeste de Europa, cercano a Alemania y a Bélgica.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ HOLLYWOOD</pattern><template>   <set name="it">Hollywood</set> es una pequeña parte de Los Angeles, California.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ HONDURAS</pattern><template>En Centroamérica, tocando el Mar Caribe, entre Guatemala y Nicaragua y bordeando el Pacífico Norte, entre El Salvador y Nicaragua.   <think>      <set name="it">       <set name="topic">honduras</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ HONG KONG</pattern><template>   <set name="it">Hong Kong</set> es una ciudad de China.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ HOUSTON</pattern><template>   <set name="it">Houston</set> es una ciudad de Texas.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ HUNGRÍA</pattern><template>   <set name="it">Hungría</set> es un país de Europa Central.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ISLANDIA</pattern><template>   <set name="it">      <set name="topic">Islandia</set>     </set> es una isla que está al norte del Océano Atlántico.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ IDAHO</pattern><template>   <set name="it">Idaho</set> está en el oeste de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ILLINOIS</pattern><template>   <set name="it">Illinois</set> está en el medio oeste de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ INDIANA</pattern><template>   <set name="it">Indiana</set> está en el medio oeste de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ INDIANAPOLIS</pattern><template>   <set name="it">      <set name="topic">Indianapolis</set>     </set> es una ciudad grande de Indiana.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL OCÉANO ÍNDICO</pattern><template>Es el océano que está entre África, La Antártida, Asia, y Australia.   <think>      <set name="it">       <set name="topic">oceano indico</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ INDIA</pattern><template>   <set name="it">India</set> es un  país enorme del sur de Asia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ LA INDIA</pattern><template>   <set name="it">India</set> es un  país enorme del sur de Asia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ INDONESIA</pattern><template>   <set name="it">      <set name="topic">Indonesia</set>     </set> es una nación de islas del sudeste asiático.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ IOWA</pattern><template>   <set name="it">      <set name="topic">Iowa</set>     </set> está en el medio oeste de los Estados Unidos, entre los ríos Mississipi y Missouri.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ IRÁN</pattern><template>   <set name="it">      <set name="topic">Iran</set>     </set> está en el Golfo Pérsico.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ IRAQ</pattern><template>   <set name="it">      <set name="topic">Iraq</set>     </set> está en el Golfo Pérsico.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ IRLANDA</pattern><template>   <set name="it">Irlanda</set> es una pequeña isla de la costa europea.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ISRAEL</pattern><template>   <set name="it">Israel</set> se situa en el Mar Mediterráneo, en el medio-este.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ESTAMBUL</pattern><template>   <set name="it">Estambul</set> es una ciudad turca, también llamad Constantinopla.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ITALIA</pattern><template>   <set name="it">Italia</set> se situa en la parte sur de Europa.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ESO</pattern><template>Depende de a lo que se refiera "eso".</template></category>  
+<category><pattern>_ DÓNDE ESTÁ JAKARTA</pattern><template>¿Jakarta? mmmm, en Indonesia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ JAMAICA</pattern><template>En el Caribe. Es una isla del Caribe que está al sur de Cuba.   <think>      <set name="it">       <set name="topic">jamaica</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ JAPÓN</pattern><template>   <set name="it">      <set name="topic">Japón</set>     </set> es una nación isla en la parte este de Asia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ JERSEY</pattern><template>Al oeste de Europa. es una isla del Canal de la Mancha,al noroeste de Francia.   <think>      <set name="it">       <set name="topic">jersey</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ JOHNSTON ATOLL</pattern><template>En Oceanía, en el Pacífico Norte, a un tercio del camino desde Hawaii a las islas Marshall.   <think>      <set name="it">       <set name="topic">johnston atoll</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ JORDAN</pattern><template>En Oriente-Medio, al noroeste de Arabia Saudí.   <think>      <set name="it">       <set name="topic">jordan</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ JULIA</pattern><template>No creo que esté online ahora.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ JÚPITER</pattern><template>   <set name="it">      <set name="topic">Júpiter</set>     </set> es el quinto paneta del Sistema Solar.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ KALAMAZOO</pattern><template>   <set name="it">      <set name="topic">Kalamazoo</set>     </set> es una ciudad de Michigan.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ KANSAS</pattern><template>   <set name="it">Kansas</set> está en el medio-oeste de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ KASHMIR</pattern><template>   <set name="it">      <set name="topic">Kashmir</set>     </set> es una disputada área entre India y Pakistán.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ KAZAJSTÁN</pattern><template>En Asia Central, al noroeste de China   <think>      <set name="it">       <set name="topic">kazajstan</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ KENTUCKY</pattern><template>   <set name="it">      <set name="topic">Kentucky</set>     </set> está en la orilla sur del río Ohio.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ KENYA</pattern><template>   <set name="it">      <set name="topic">Kenya</set>     </set> es un país de África Central.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ KINGMAN REEF</pattern><template>En Oceania, en el Pacífico Norte, a mitad de camino entre Hawaii y Samoa.   <think>      <set name="it">       <set name="topic">kingman reef</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ KIRIBATI</pattern><template>En Oceania, es un grupo de islas del Océano Pacífico a mitad de camino entre Hawaii y Australia.   <think>      <set name="it">       <set name="topic">kiribati</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ KOREA</pattern><template>   <set name="it">      <set name="topic">Korea</set>     </set> es una pènínsula del extremo este del continente asiático.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ KRAFTWERK</pattern><template>Ellos son de Dusseldorf, Alemania.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ KUWAIT</pattern><template>   <set name="it">      <set name="topic">Kuwait</set>     </set> es una pequeña nación del Golfo Pérsico.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ KIRGUISTÁN</pattern><template>En Asia central, al oeste de China.<think>      <set name="it">       <set name="topic">kirguistan</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ LAOS</pattern><template>Al sudeste de Asia, al nordeste de Tailandia.   <think>      <set name="it">       <set name="topic">laos</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ L.A.</pattern><template>   <set name="it">      <set name="topic">L.A.</set>     </set> es una ciudad muy grande del sur de California.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ LAS VEGAS</pattern><template>   <set name="it">Las Vegas</set> está en Nevada.</template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS VEGAS</pattern><template>   <set name="it">Las Vegas</set> está en Nevada.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ LATVIA</pattern><template>En Europa del este, bordeando el Mar Báltico, entre Estonia y Lituania.   <think>      <set name="it">       <set name="topic">latvia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ LÍBANO</pattern><template>En Oriente Medio tocando el Mar Mediterráneo, entre Israel y Siria.   <think>      <set name="it">       <set name="topic">libano</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL LÍBANO</pattern><template>En Oriente Medio tocando el Mar Mediterráneo, entre Israel y Siria.    <think>      <set name="it">       <set name="topic">libano</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ LESOTO</pattern><template>En África del sur, un enclave de Sudáfrica. <think>      <set name="it">       <set name="topic">lesoto</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ LIBERIA</pattern><template>Al oeste de África, tocando el Atlántico norte, entre Costa de Marfil y Sierra Leona.   <think>      <set name="it">       <set name="topic">liberia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ LIBIA</pattern><template>Al norte de África, tocando el Mar Mediterráneo, entre Egipto y Tunicia.   <think>      <set name="it">       <set name="topic">libia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ LICHTENSTEIN</pattern><template>   <set name="it">      <set name="topic">Liechtenstein</set>     </set> es un pequeño país de Europa Central.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ LIECHTENSTEIN</pattern><template>En Europa Central, entre Austria y Suiza.   <think>      <set name="it">       <set name="topic">liechtenstein</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ LINCOLN</pattern><template>   <set name="it">Lincoln</set> es una ciudad de Nebraska.</template></category>
+<category><pattern>_ DÓNDE ESTÁ LISBOA</pattern><template>   <set name="it">Lisboa</set> es una ciudad portuguesa.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ LITUANIA</pattern><template>En Europa del este, bordeando el Mar Báltico, entre Latvia y Rusia.   <think>      <set name="it">       <set name="topic">lituania</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ LONDRES</pattern><template>   <set name="it">Londres</set> es una ciudad de Inglaterra.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ LOS ÁNGELES</pattern><template>   <set name="it">Los Angeles</set> es una ciudad de California.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ LUXEMBURGO</pattern><template>Al oeste de Europa, entre Francia y Alemania.   <think>      <set name="it">       <set name="topic">luxemburgo</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ MACAU</pattern><template>Alñ este de Asia, limita con el sur del Mar de China y con China.   <think>      <set name="it">       <set name="topic">macau</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ MACEDONIA</pattern><template>   <set name="it">      <set name="topic">Macedonia</set>     </set> es una pequeña nación que está entre Grecia y Serbia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MADAGASCAR</pattern><template>Al sur de África, es una isla del Océano Índico que se sitúa al este de Mozambique.   <think>      <set name="it">       <set name="topic">madagascar</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ MADRAS</pattern><template>   <set name="it">      <set name="topic">Madras</set>     </set> es una ciudad de La India.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MADRID</pattern><template>   <set name="it">Madrid</set> es una ciudad de España.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MAINE</pattern><template>   <set name="it">Maine</set> está en la esquina nordeste de los Estados Unidos, al lado de Canadá.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MALAWI</pattern><template>Al sur de África, este de Zambia.   <think>      <set name="it">       <set name="topic">malawi</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ MALASIA</pattern><template>   <set name="it">      <set name="topic">Malasia</set>     </set> es una isla del sudeste asiático.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MALDIVAS</pattern><template>Al sur de Asia, en el Océano Índico, al suroeste de La India.   <think>      <set name="it">       <set name="topic">maldivas</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS MALDIVAS</pattern><template>Al sur de Asia, en el Océano Índico, al suroeste de La India.    <think>      <set name="it">       <set name="topic">maldivas</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ MALI</pattern><template>África occidental, suroeste de Algeria.  <think>      <set name="it">       <set name="topic">mali</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ MALTA</pattern><template>   <set name="it">      <set name="topic">Malta</set>     </set> es una isla del Mar Mediterráneo, que está al sur de Sicilia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MANCHESTER</pattern><template>Manchester es una ciudad situada al oeste de Inglaterra.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MANHATTAN</pattern><template>   <set name="it">Manhattan</set> es la isla que está en el centro de Nueva York.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MANILA</pattern><template>   <set name="it">Manila</set> es una ciudad de Filipinas.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MATE</pattern><template>   <set name="it">      <set name="topic">Marte</set>     </set> es el cuarto planeta del Sistema Solar.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MARTINICA</pattern><template>   <set name="it">      <set name="topic">Martinica</set>     </set> es una isla del Caribe.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ LA MARTINICA</pattern><template>   <set name="it">      <set name="topic"> Martinica </set>     </set> es una isla del Caribe.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MARYLAND</pattern><template>   <set name="it">      <set name="topic">Maryland</set>     </set> es un estado de la costa este de Estados Unidos, situado entre Delaware y Virginia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MAURITANIA</pattern><template>Al norte de África, junto al Atlántico Norte, entre Senegal y el Sáhara occidental.   <think>      <set name="it">       <set name="topic">mauritania</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ MAURICIO</pattern><template>Al sur de áfrica, en el Océano Índico, al este de Madagascar.   <think>      <set name="it">       <set name="topic">mauricio</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS MAURICIO</pattern><template>Al sur de áfrica, en el Océano Índico, al este de Madagascar.  <think>      <set name="it">       <set name="topic">mauricio</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS ISLAS MAURICIO</pattern><template>Al sur de áfrica, en el Océano Índico, al este de Madagascar.  <think>      <set name="it">       <set name="topic">mauricio</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ MAYOTTE</pattern><template>Al sur de África, en el canal de Mozambique, a mitad de camino entre Madagascar y Mozambique.   <think>      <set name="it">       <set name="topic">mayotte</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ MELBOURNE</pattern><template>   <set name="it">      <set name="topic">Melbourne</set>     </set> es una ciudad Australiana y también de Florida.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MÉXICO</pattern><template>México está al sur de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MÉJICO</pattern><template>México está al sur de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MIAMI</pattern><template>   <set name="it">      <set name="topic">Miami</set>     </set> es una ciudad de Florida, en la costa atlántica sur.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MICHIGAN</pattern><template>   <set name="it">      <set name="topic">Michigan</set>     </set> es un estado del medio oeste de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MICRONESIA</pattern><template>   <set name="it">      <set name="topic">Micronesia</set>     </set> es una colección de islas del Océano Pacífico.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MINNESOTA</pattern><template>   <set name="it">      <set name="topic">Minnesota</set>     </set> está en la frontera norte de los Estados Unidos, entre Wisconsin y Dakota del Norte.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MISSISSIPPI</pattern><template>   <set name="it">Mississippi</set> está al sur de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL MISSISSIPPI</pattern><template>   <set name="it">Mississippi</set> está al sur de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MOLDAVIA</pattern><template>En Europa del este, al nordeste de Rumanía..   <think>      <set name="it">       <set name="topic">moldavia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ MÓNACO</pattern><template>Al oeste de Europa, junto al Mar Mediterráneo, en la costa sur de Francia, cerca de la frontera italiana.   <think>      <set name="it">       <set name="topic">monaco</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ MONGOLIA</pattern><template>   <set name="it">      <set name="topic">Mongolia</set>     </set> está en Asia Central, entre Siberia y China.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MONTANA</pattern><template>   <set name="it">      <set name="topic">Montana</set>     </set> está al noroeste de los Estados Unidos, entre Dakota y Idaho.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MONTEREY</pattern><template>Monterey está en California.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MONTREAL</pattern><template>   <set name="it">Montreal</set> es una ciudad de Canadá.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MONTSERRAT</pattern><template>En el Caribe, al sudeste de Puerto Rico.   <think>      <set name="it">       <set name="topic">montserrat</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ LA LUNA</pattern><template>   <set name="it">      <set name="topic">La Luna</set>     </set> es un satélite de La Tierra.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MARRUECOS</pattern><template>   <set name="it">      <set name="topic">Marruecos</set>     </set> es una nación del noroeste africano, cercana a España.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MOSCÚ</pattern><template>   <set name="it">Moscú</set> es una ciudad rusa.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ MOZAMBIQUE</pattern><template>Al sur de África, junto al Canal de Mozambique, entre Sudáfrica y Tanzania.   <think>      <set name="it">       <set name="topic">mozambique</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ MI COCHE</pattern><template>¿Has mirado en el garaje?</template></category>  
+<category><pattern>_ DÓNDE ESTÁ NAIROBI</pattern><template>   <set name="it">      <set name="topic">Nairobi</set>     </set> es una ciudad de Kenya.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ NAMIBIA</pattern><template>Al sur de África, entre Angola y Sudáfrica.   <think>      <set name="it">       <set name="topic">namibia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ NAURU</pattern><template>En Oceania, alo sur de las islas Marshall.   <think>      <set name="it">       <set name="topic">nauru</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ NEBRASKA</pattern><template>   <set name="it">      <set name="topic">Nebraska</set>     </set> está en la orilla oeste del río Missouri, entre Dakota del Sur y Kansas.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ NEPAL</pattern><template>   <set name="it">      <set name="topic">Nepal</set>     </set> es una nación montañosa del sur de Asia, situada entre la India y el Tibet.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL NEPAL</pattern><template>   <set name="it">      <set name="topic">Nepal</set>     </set> es una nación montañosa del sur de Asia, situada entre la India y el Tibet.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ NEPTUNO</pattern><template>   <set name="it">      <set name="topic">Neptuno</set>     </set> es el octavo planeta del Sistema Solar.</template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS ANTILLAS</pattern><template>Son unas islas del Caribe.<think>      <set name="it">       <set name="topic">antillas</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁN LOS PAÍSES BAJOS</pattern><template>Al oeste de Europa, junto al Mar del Norte, entre Bélgica y Alemania.   <think>      <set name="it">       <set name="topic">paises bajos</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ NEWARK</pattern><template>   <set name="it">Newark</set> está situada al nordeste de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ NEW CALEDONIA</pattern><template>En Oceania, en el Pacífico Sur, al este de Australia.   <think>      <set name="it">       <set name="topic">new caledonia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ NEW ORLEANS</pattern><template>   <set name="it">Nueva Orleans</set> es una ciudad de Louisiana.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ NUEVA ORLEANS</pattern><template>   <set name="it">Nueva Orleans</set> es una ciudad de Louisiana.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ NEW YORK CITY</pattern><template>   <set name="it">Nueva York</set> se sitúa al nordeste de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ NEW YORK</pattern><template>   <set name="it">Nueva York</set> se sitúa al nordeste de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ NUEVA YORK</pattern><template>   <set name="it">Nueva York</set> se sitúa al nordeste de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ NUEVA ZEALAND</pattern><template>Está en el Pacífico sur, al sureste de Australia.   <think>      <set name="it">       <set name="topic">nueva zealnda</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ NICARAGUA</pattern><template>En América Central, entre Costa Rica y Honduras.   <think>      <set name="it">       <set name="topic">nicaragua</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ NIGERIA</pattern><template>Al oeste de África, junto al Golfo de Guinea, entre Benin y Camerún.   <think>      <set name="it">       <set name="topic">nigeria</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ NÍGER</pattern><template>En África occidental, al sudesten de Algeria.   <think>      <set name="it">       <set name="topic">niger</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ NIUE</pattern><template>Es una isla del Pacífico Sur, al este de Tonga.   <think>      <set name="it">       <set name="topic">niue</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ NORFOLK</pattern><template>   <set name="it">      <set name="topic">Norfolk</set>     </set> es una ciudad de Virginia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ NORTE AMÉRICA</pattern><template>Norte América está en América del Norte, jeje, qué repuesta más estúpida...</template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS ISLAS MARIANA</pattern><template>Están en Oceania, a tres cuartos de camino entre Hawaii y Filipinas.   <think>      <set name="it">       <set name="topic">islas mariana</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS ISLAS MARIANAS</pattern><template>Están en Oceania, a tres cuartos de camino entre Hawaii y Filipinas.  <think>      <set name="it">       <set name="topic">islas mariana</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ KOREA DEL NORTE</pattern><template>En Asia oriental, mitad norte de la Península de Korea junto al Mar de Japón, entre China y Korea del Sur.   <think>      <set name="it">       <set name="topic">korea del norte</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ NORUEGA</pattern><template>   <set name="it">Noruega</set> es una país del norte de Europa. Al lado de Suecia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ OHIO</pattern><template>   <set name="it">      <set name="topic">Ohio</set>     </set> está en el medio oeste de los Estados Unidos, entre Pennsylvania e Indiana.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ OKLAHOMA</pattern><template>   <set name="it">Oklahoma</set> está en el medio oeste de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ OMAHA</pattern><template>   <set name="it">      <set name="topic">Omaha</set>     </set> es una ciudad de Nebraska.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ OMÁN</pattern><template>Está en Oriente Medio, junto al Mar Arábigo, el Golfo de Omán y el Golfo pérsico; entre Yemen y Emiratos Árabes Unidos.   <think>      <set name="it">       <set name="topic">oman</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ONTARIO</pattern><template>   <set name="it">      <set name="topic">Ontario</set>     </set> es una provincia de Canadá.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ORLANDO</pattern><template>   <set name="it">Orlando</set> es una ciudad del centro de Florida.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ OSLO</pattern><template>   <set name="it">Oslo</set> es una ciudad noruega.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ OXFORD</pattern><template>   <set name="it">      <set name="topic">Oxford</set>     </set> es una universidad inglesa.  También es una ciudad de Maine, en los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ OXNARD</pattern><template>   <set name="it">      <set name="topic">Oxnard</set>     </set> es una ciudad de California.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL OCÉANO PACÍFICO</pattern><template>Es el océano que está entre La  Antártida, Asia y Australia.   <think>      <set name="it">       <set name="topic">oceano pacifico</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ PAKISTÁN</pattern><template>   <set name="it">      <set name="topic">Pakistán</set>     </set> es parte del subcontinente Indio, junto a India y Afganistán.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PALAU</pattern><template>En Oceania, al sureste de las islas Filipinas.   <think>      <set name="it">       <set name="topic">palau</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ PALESTINA</pattern><template>   <set name="it">      <set name="topic">Palestina</set>     </set> es el antiguo nombre de Israel, o el nuevo nombre de un estado dentro de Israel.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PANAMÁ</pattern><template>   <set name="it">      <set name="topic">Panamá</set>     </set> está en el istmo que separa América del Sur de América del Norte.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PAPÚA NUEVA GUINEA</pattern><template>En el sudeste asiático, al este de Indonesia.   <think>      <set name="it">       <set name="topic">papua nueva guinea</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ PARAGUAY</pattern><template>En el centro de sudamérica, al nordeste de Argentina.   <think>      <set name="it">       <set name="topic">paraguay</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ PARÍS</pattern><template>   <set name="it">Paris</set> es una ciudad de Francia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PENNSYLVANIA</pattern><template>   <set name="it">Pennsylvania</set> está situada en el nordeste de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PERTH</pattern><template>   <set name="it">      <set name="topic">Perth</set>     </set> es una ciudad que se encuentra en el oeste de Australia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PERÚ</pattern><template>   <set name="it">Peru</set> es un país de América del sur.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PHILADELPHIA</pattern><template>   <set name="it">      <set name="topic">Philadelphia</set>     </set> está en la nevera. Es broma, se encuentra entre Nueva York y Washington D.C.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ FILIPINAS</pattern><template>Al sudeste de Asia, es el archipiélago que está entre el Mar de Filipinas y el sur del Mar de Chinaal este de Vietnam.   <think>      <set name="it">       <set name="topic">filipinas</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ PHOENIX</pattern><template>   <set name="it">      <set name="topic">Phoenix</set>     </set> es una ciudad de Arizona.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PITTSBURGH</pattern><template>   <set name="it">      <set name="topic">Pittsburgh</set>     </set> es una ciudad del oeste de Pensilvania.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PITTSFIELD</pattern><template>   <set name="it">      <set name="topic">Pittsfield</set>     </set> es una ciudad de Massachusettes.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PLUTÓN</pattern><template>   <set name="it">      <set name="topic">Plutón</set>     </set> es (o era) el noveno planeta del Sistema Solar.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ POLONIA</pattern><template>Polonia es un extenso país del centro de Europa.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ POLARIS</pattern><template>   <set name="it">      <set name="topic">Polaris</set>     </set> es la Estrella del Norte.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PORTSMOUTH</pattern><template>Portsmouth, New Hampshire y Portsmouth, Inglaterra.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PORTUGAL</pattern><template>   <set name="it">Portugal</set> es un país del oeste de Europa, en la península Ibérica.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PRUSIA</pattern><template>La mayor parte está contenida en Polonia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ PUERTO RICO</pattern><template>En el Caribe, es la isla que está al este de la República Dominicana.   <think>      <set name="it">       <set name="topic">puerto rico</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ QATAR</pattern><template>En Oriente Medio, limita con el Golfo Pérsico y con arabia Saudí. <think>      <set name="it">       <set name="topic">qatar</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ LA REALIDAD</pattern><template>   <set name="it">      <set name="topic">La realidad</set>     </set> está a nuestro alrededor, supongo.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ REUNIÓN</pattern><template>Es una isla del ïndico, al sur de África, al este de Madagascar.   <think>      <set name="it">       <set name="topic">reunion</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ RÍO</pattern><template>   <set name="it">      <set name="topic">Río</set>     </set> es una ciudad enorme de Brasil.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ RÍO DE JANEIRO</pattern><template>   <set name="it">      <set name="topic">Río</set>     </set> es una ciudad enorme de Brasil.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ RUMANÍA</pattern><template>Al sudeste de Europa, junto al Mar Negro, entre Bulgaria y Ucrania.   <think>      <set name="it">       <set name="topic">rumania</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ROMA</pattern><template>   <set name="it">      <set name="topic">Roma</set>     </set> es una bonita ciudad italiana.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ RUSIA</pattern><template>   <set name="it">Rusia</set> es un extenso país situado al norte de China.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ RUANDA</pattern><template>   <set name="it">Ruanda</set> es un país de África.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SACRAMENTO</pattern><template>   <set name="it">Sacramento</set> es una ciudad de California.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SANTA ELENA</pattern><template>Al sur de África. Es una isla situada al oeste de Angola.  <think>      <set name="it">       <set name="topic">santa elena</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SANTA LUCÍA</pattern><template>En el Caribe, al norte de Trinidad y Tobago.   <think>      <set name="it">       <set name="topic">santa lucia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SALEM</pattern><template>   <set name="it">      <set name="topic">Salem</set>     </set> es una ciudad de Massachusetts.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SALT LAKE CITY</pattern><template>   <set name="it">Salt Lake City</set> es una ciudad de Utah.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SAN DIEGO</pattern><template>   <set name="it">San Diego</set> es una ciudad de California.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SAN FRANCISCO</pattern><template>California.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SAN JOSÉ</pattern><template>   <set name="it">San Jose</set> es una ciudad de  California.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SAN MARINO</pattern><template>Al sur de Europa, en el centro de Italia.   <think>      <set name="it">       <set name="topic">san marino</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SAO TOMÉ Y PRÍNCIPE</pattern><template>Al oeste de África, es una isla del Atlántico situada al oste de Gabón.   <think>      <set name="it">       <set name="topic">sao tome y principe</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SASKATOON</pattern><template>   <set name="it">      <set name="topic">Saskatoon</set>     </set>  es una ciudad de Saskatchewan.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SATURNO</pattern><template>   <set name="it">      <set name="topic">Saturno</set>     </set> es el sexto planeta del Sistema Solar.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ARABIA SAUDÍ</pattern><template>En Oriente Medio, limita con el Golfo Pérsico y el Mar Rojo; al norte de Yemen.   <think>      <set name="it">       <set name="topic">arabia saudi</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ESCOCIA</pattern><template>Está al norte de Inglaterra, en la costa Europea.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SEATTLE</pattern><template>   <set name="it">      <set name="topic">Seattle</set>     </set> es una ciudad del estado de Washington, cercana a Vancouver.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SENEGAL</pattern><template>En África occidental, entre Guinea-Bissau y Mauritania.   <think>      <set name="it">       <set name="topic">senegal</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SEÚL</pattern><template>Es la capital de Korea del Sur.<think>      <set name="it">       <set name="topic">Seoul</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SERBIA Y MONTENEGRO</pattern><template>Al sudeste de Europa, junto al Mar Adriático, entre Albania y Bosnia Herzegovina.   <think>      <set name="it">       <set name="topic">serbia y montenegro</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SERBIA</pattern><template>   <set name="it">      <set name="topic">Serbia</set>     </set> es lo que queda de la extinta Yugoslavia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SEYCHELLES</pattern><template>Al este de África, es un grupo de islas del Océano Índico, al nordeste de Madagascar.   <think>      <set name="it">       <set name="topic">seychelles</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS SEYCHELLES</pattern><template>Al este de África, es un grupo de islas del Océano Índico, al nordeste de Madagascar.   <think>      <set name="it">       <set name="topic">seychelles</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS ISLAS SEYCHELLES</pattern><template>Al este de África, es un grupo de islas del Océano Índico, al nordeste de Madagascar.  <think>      <set name="it">       <set name="topic">seychelles</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SHEFFIELD</pattern><template>   <set name="it">      <set name="topic">Sheffield</set>     </set> es una ciudad inglesa.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SIAM</pattern><template>   <set name="it">      <set name="topic">Siam</set>     </set> es otro de los nombres de Tailandia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SIERRA LEONA</pattern><template>En África, entre Guinea y Liberia.   <think>      <set name="it">       <set name="topic">sierra leona</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SINGAPUR</pattern><template>   <set name="it">      <set name="topic">Singapur</set>     </set> es una isla nación-estado en la punta de la Península Malaya.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ESLOVAQUIA</pattern><template>En Europa Central, al sur de Polonia.   <think>      <set name="it">       <set name="topic">Eslovaquia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ESLOVENIA</pattern><template>En el sudeste de Europa, junto al Mar Adriático, entre Croacia e Italia.   <think>      <set name="it">       <set name="topic">eslovenia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SOFÍA</pattern><template>   <set name="it">      <set name="topic">Sofía</set>     </set> es una ciudad de Bulgaria.</template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS ISLAS SALOMÓN</pattern><template>En Oceania, al este de Papua Nueva Guinea.   <think>      <set name="it">       <set name="topic">islas salomon</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SOMALIA</pattern><template>En el este de África, tocando el Golfo de Aden y el Océano Pacífico, al este de Etiopía.   <think>      <set name="it">       <set name="topic">somalia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SUDÁFRICA</pattern><template>En el sur de África, en la esquina sur del continente.   <think>      <set name="it">       <set name="topic">sudafrica</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ KOREA DEL SUR</pattern><template>En el este de Asia, en la mitad sur de la Península de Korea, junto al Mar de Japón y el Mar Amarillo, al sur de Korea del Norte.   <think>      <set name="it">       <set name="topic">korea del sur</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL ESPACIO</pattern><template>   <set name="it">      <set name="topic">El espacio</set>     </set> nos rodea.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ ESPAÑA</pattern><template>   <set name="it">      <set name="topic">España</set>     </set> está en la Península Ibérica, al sudoeste de Europa.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SRI LANKA</pattern><template>En el sur de Asia, es una isla del Océano Índico situada al sur de la India.   <think>      <set name="it">       <set name="topic">sri lanka</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ESTOCOLMO</pattern><template>   <set name="it">      <set name="topic">Estocolmo</set>     </set> es una ciudad de Suecia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ STONEWALL</pattern><template>   <set name="it">      <set name="topic">Stonewall</set>     </set> es una ciudad de  Mississippi.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SUDÁN</pattern><template>En el norte de África, al lado del Mar Rojo, entre Egipto y Eritrea.   <think>      <set name="it">       <set name="topic">sudan</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SUEZ</pattern><template>   <set name="it">      <set name="topic">Suez</set>     </set> es el canal entre el Mar Mediterráneo y el Mar Rojo.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SURINAM</pattern><template>Al norte de sudamérica, al lado de la Guyana.   <think>      <set name="it">       <set name="topic">surinam</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SVALBARD</pattern><template>Son unas islas que están entre el Océnao Ártico, el Mar de Barents, el Mar de Groenlandia y el Mar de Noruega, al norte de Noruega.   <think>      <set name="it">       <set name="topic">svalbard</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SWAZILAND</pattern><template>Al sur de África, entre Mozambique y Sudáfrica.   <think>      <set name="it">       <set name="topic">swaziland</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SUECIA</pattern><template>   <set name="it">Suecia</set> es un país del norte de Europa, que limita con Finlandia y Noruega.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SUIZA</pattern><template>   <set name="it">Suiza</set> es un país de centroeuropa, situado entre Italia, Austria y Francia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SYDNEY</pattern><template>   <set name="it">Sydney</set> es una ciudad australiana.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ SIRIA</pattern><template>Está en Oriente Medio, junto al Mar Mediterráneo, entre Líbano Y Turquía.   <think>      <set name="it">       <set name="topic">siria</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ TAIPEI</pattern><template>Es la capital de Taiwan.  <think>      <set name="it">       <set name="topic">Taipei</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ TAIWAN</pattern><template>   <set name="it">Taiwan</set> es un país isla de Asia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ TAJIKISTÁN</pattern><template>En Asia central, al oeste de China.   <think>      <set name="it">       <set name="topic">tajikistan</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ TANZANIA</pattern><template>En África oriental, entre Kenya y Mozambique.   <think>      <set name="it">       <set name="topic">tanzania</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ TENNESSEE</pattern><template>   <set name="it">Tennessee</set> está en el sur de Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ TEXAS</pattern><template>   <set name="it">Texas</set> está en la región central del sur de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ TAILANDIA</pattern><template>   <set name="it">      <set name="topic">Tailandia</set>     </set> está en el sudeste asiático, entre Burma and Camboya.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL AEROPUERTO</pattern><template>Donde veas bajar aviones.<think>      <set name="it">       <set name="topic">aeropuerto</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS BAHAMAS</pattern><template>En el caribe, al sur de Florida.   <think>      <set name="it">       <set name="topic">las bahamas</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS ISLAS BAHAMAS</pattern><template>En el caribe, al sur de Florida. <think>      <set name="it">       <set name="topic">las bahamas</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL BAÑO</pattern><template>Como siempre, al fondo a la derecha.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL CENTRO</pattern><template>Mmmm, eso depende.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ GAMBIA</pattern><template>En el oeste de África, Junto al Atlántico norte y a Senegal.   <think>      <set name="it">       <set name="topic">gambia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL LOUVRE</pattern><template>Paris.</template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS FILIPINAS</pattern><template>En el Pacífico sur.</template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS ISLAS FILIPINAS</pattern><template>En el Pacífico sur.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL ROBOT</pattern><template>El robot está aquí, en tu ordenador.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL SOL</pattern><template>El Sol está en el centro del Sistema Solar.<think>      <set name="it">       <set name="topic">sol</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ TOGO</pattern><template>En África occidental, entre Benin y Ghana.   <think>      <set name="it">       <set name="topic">togo</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ TOKELAU</pattern><template>En Oceania, es un grupo de islas del Pacífico Sur. Están a mitad de camino entre hawaii y Nueva Zelanda.   <think>      <set name="it">       <set name="topic">tokelau</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ TOKYO</pattern><template>   <set name="it">Tokyo</set> es una ciudad de Japón.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ TOLEDO</pattern><template>   <set name="it">      <set name="topic">Toledo</set>     </set> es una ciudad de España y también otra de Ohio.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ TONGA</pattern><template>En Oceania, es un archipiélago que está en el Pacífico Sur.   <think>      <set name="it">       <set name="topic">tonga</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ TORONTO</pattern><template>   <set name="it">Toronto</set> es una ciudad de Canadá.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ TRINIDAD Y TOBAGO</pattern><template>En el Caribe, al nordeste de Venezuela.   <think>      <set name="it">       <set name="topic">trinidad y tobago</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ TRINIDAD</pattern><template>   <set name="it">      <set name="topic">Trinidad</set>     </set> es una isla de las Antillas.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ TROY</pattern><template>   <set name="it">      <set name="topic">Troy</set>     </set> es una ciudad de Nueva York.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ TUNICIA</pattern><template>Al norte de África, junto al Mar Mediterráneo, entre Algeria y Libia.   <think>      <set name="it">       <set name="topic">tunicia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ TURQUÍA</pattern><template>   <set name="it">      <set name="topic">Turquía</set>     </set> está en el sudoeste asiático, entre Europa y Oriente Medio.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ TURKMENISTÁN</pattern><template>Está en Asia Central, bordeando el Mar Caspio, entre Iran aynd Kazajstan.   <think>      <set name="it">       <set name="topic">turkmenistan</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ TUVALU</pattern><template>En Oceania, es un grupo de islas formado por nueve atolones de coral al sur del Océano Pacífico.   <think>      <set name="it">       <set name="topic">tuvalu</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ UGANDA</pattern><template>En África oriental, al oeste de Kenya.   <think>      <set name="it">       <set name="topic">uganda</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ UCRANIA</pattern><template>En Europa del este, junto al Mar Negro, entre Polonia y Rusia.   <think>      <set name="it">       <set name="topic">ucrania</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ EMIRATOS ÁRABES UNIDOS</pattern><template>En el Oriente Medio, junto al Golfo de Omán y al Golfo Pérsico, entre Oman y Arabia Saudi.   <think>      <set name="it">       <set name="topic">emiratos arabes unidos</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁN LOS EMIRATOS ÁRABES UNIDOS</pattern><template>En el Oriente Medio, junto al Golfo de Omán y al Golfo Pérsico, entre Oman y Arabia Saudi.   <think>      <set name="it">       <set name="topic">emiratos arabes unidos</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL REINO UNIDO</pattern><template>En el oeste de Europa, al noroeste de Francia.   <think>      <set name="it">       <set name="topic">reino unido</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ESTADOS UNIDOS</pattern><template>En América del Norte, limitado por los océanos Atlántico y Pacífico, entre Canadá y México.   <think>      <set name="it">       <set name="topic">estados unidos</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁN LOS ESTADOS UNIDOS</pattern><template>En América del Norte, limitado por los océanos Atlántico y Pacífico, entre Canadá y México.  <think>      <set name="it">       <set name="topic">estados unidos</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ URANO</pattern><template>   <set name="it">      <set name="topic">Urano</set>     </set> es el séptimo planeta del Sistema Solar, entre las órbitas de Saturno y Neptuno.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ URUGUAY</pattern><template>Al sur de sudamérica, entre Argentina y Brasil.   <think>      <set name="it">       <set name="topic">uruguay</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ USA</pattern><template>   <set name="it">      <set name="topic">USA</set>     </set> está en norteamérica, entre Canadá y México.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ UTAH</pattern><template>   <set name="it">Utah</set> está al oeste de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ UZBEKISTÁN</pattern><template>En Asia Central, al norte de Afganistán.   <think>      <set name="it">       <set name="topic">uzbekistan</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ VANCOUVER</pattern><template>En Canadá.</template></category> 
+<category><pattern>_ DÓNDE ESTÁ VANUATU</pattern><template>En Oceania, es un grupo de islas del Pacífico Sur.   <think>      <set name="it">       <set name="topic">vanuatu</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ VENEZUELA</pattern><template>Al norte de América del Sur, topcando el Mar del Caribe, entre Colombia y Guyana.   <think>      <set name="it">       <set name="topic">venezuela</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ VERMONT</pattern><template>   <set name="it">      <set name="topic">Vermont</set>     </set> está en Nueva Inglaterra, entre Nueva York y New Hampshire, en la orilla oeste del río Connecticut.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ VIENA</pattern><template>   <think>      <set name="it">       <set name="topic">Viena</set>      </set>     </think>  es la ciudad más importante de Austria.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ VIETNAM</pattern><template>   <set name="it">      <set name="topic">Vietnam</set>     </set> está en el sudeste asiático.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ VIRGINIA</pattern><template>   <set name="it">Virginia</set> está al este de los Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁN LAS ISLAS VÍRGENES</pattern><template>En el Caribe, al este de Puerto Rico.   <think>      <set name="it">       <set name="topic">islas virgenes</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ VOYAGER</pattern><template>   <set name="it">      <set name="topic">Voyager</set>     </set> está perdido en el cuadrante Delta.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ WAKE ISLAND</pattern><template>En Oceania, es una isla del Pacífico Norte, a dos tercios de camino entre Hawaii y el norte del as islas Marianas.   <think>      <set name="it">       <set name="topic">wake island</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ GALES</pattern><template>   <set name="it">Gales</set> está situada en una pequeña isla de la costa de Europa.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ VARSOVIA</pattern><template>   <set name="it">      <set name="topic">Varsovia</set>     </set> es una ciudad de Polonia.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ WASHINGTON</pattern><template>   <set name="it">      <set name="topic">Washington</set>     </set> es el estado de la esquina noroeste de Estados Unidos.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ EL SÁHARA</pattern><template>Al norte de África, entre Mauritania y Marruecos.   <think>      <set name="it">       <set name="topic">sahara</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ SAMOA</pattern><template>En Oceania, a mitad de camino entre Hawaii y Nueva Zelanda.   <think>      <set name="it">       <set name="topic">samoa</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ WONDERLAND</pattern><template>   <set name="it">      <set name="topic">Wonderland</set>     </set> está en el futuro.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ WYOMING</pattern><template>   <set name="it">      <set name="topic">Wyoming</set>     </set> es un estado del oeste de los Estados Unidos, entre Montana y Colorado.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ YAKIMA</pattern><template>   <set name="it">      <set name="topic">Yakima</set>     </set> es una ciudad y un río de Washington.</template></category>  
+<category><pattern>_ DÓNDE ESTÁ YEMEN</pattern><template>En Orienta Medio. Limita con el Mar Arábigo, el Golfo de Aden y el Mar Rojo,entre Oman y Arabia Saudí.   <think>      <set name="it">       <set name="topic">yemen</set>      </set>     </think>    </template></category>    
+<category><pattern>_ DÓNDE ESTÁ ZAIRE</pattern><template>En el centro de África, al noroeste de Angola.   <think>      <set name="it">       <set name="topic">zaire</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ZAMBIA</pattern><template>Al sur de África, al este de Angola.   <think>      <set name="it">       <set name="topic">zambia</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ZIMBABWE</pattern><template>Al sur de África, al nordeste de  Botswana.   <think>      <set name="it">       <set name="topic">zimbabwe</set>      </set>     </think>    </template></category>  
+<category><pattern>_ DÓNDE ESTÁ ZURICH</pattern><template>   <set name="it">Zurich</set> es una ciudad suiza.</template></category>  
+<category><pattern>QUÉ ANIMAL ES SAGRADO EN LA INDIA</pattern><template>La vaca.</template></category> 
+<category><pattern>QUÉ SIGNIFICA USA</pattern><template>United States of America</template></category> 
+
+
+</aiml>

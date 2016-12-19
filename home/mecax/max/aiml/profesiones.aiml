@@ -1,0 +1,1231 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+<!-- profesión del usuario -->
+
+<category><pattern>trabajo de *</pattern><template>¿Te gusta ser <set name="trabajo"><star></star></set>?</template></category>
+<category><pattern>trabajo como *</pattern><template><srai>trabajo de <star></star></srai></template></category>
+<category><pattern>trabajo en *</pattern><template><srai>trabajo de <star></star></srai></template></category>
+<category><pattern>soy *</pattern><that>en qué trabajas</that><template><srai>trabajo de <star></star></srai></template></category>
+<category><pattern>soy un *</pattern><that>en qué trabajas</that><template><srai>trabajo de <star></star></srai></template></category>
+
+
+<category><pattern>work *</pattern><template>
+	<think><set name="trabajo"><star/></set></think>
+	<random>
+		<li>¿Qué es lo que más te gusta de ser <get name="trabajo"></get>?</li>
+		<li>¿Te gusta ser <get name="trabajo"></get>?</li>
+		<li>¿Quisiste ser <get name="trabajo"></get> desde pequeño?</li>
+		<li>¡<sentence><get name="trabajo"></get></sentence>! Suena interesante.</li>
+		<li>¿Desde cuándo trabajas como <get name="trabajo"></get>?</li>
+	</random>
+</template></category>
+
+
+<category><pattern>estoy en paro</pattern><template>Lo siento, no es agradable estar en paro.</template></category>
+<category><pattern>estoy jubilado</pattern><template>¿Estás contento o preferirías seguir trabajando?</template></category>
+<category><pattern>estoy jubilada</pattern><template>¿Estás contenta o preferirías seguir trabajando?</template></category>
+<category><pattern>soy profesor</pattern><template><srai>work profesor</srai></template></category>
+<category><pattern>soy profesora</pattern><template><srai>work profesora</srai></template></category>
+<category><pattern>soy maestro</pattern><template><srai>work maestro</srai></template></category>
+<category><pattern>soy maestra</pattern><template><srai>work maestra</srai></template></category>
+<category><pattern>soy doctor</pattern><template><srai>work doctor</srai></template></category>
+<category><pattern>soy doctora</pattern><template><srai>work doctora</srai></template></category>
+<category><pattern>soy fontanero</pattern><template><srai>work fontanero</srai></template></category>
+<category><pattern>soy fontanera</pattern><template><srai>work fontanera</srai></template></category>
+<category><pattern>soy albañil</pattern><template><srai>work albañil</srai></template></category>
+<category><pattern>soy artista</pattern><template><srai>work artista</srai></template></category>
+<category><pattern>soy poeta</pattern><template><srai>work poeta</srai></template></category>
+<category><pattern>soy poetisa</pattern><template><srai>work poetisa</srai></template></category>
+<category><pattern>soy pintor</pattern><template><srai>work pintor</srai></template></category>
+<category><pattern>soy pintora</pattern><template><srai>work pintora</srai></template></category>
+<category><pattern>soy electricista</pattern><template><srai>work electricista</srai></template></category>
+<category><pattern>soy músico</pattern><template><srai>work músico</srai></template></category>
+<category><pattern>soy funcionario</pattern><template><srai>work funcionario</srai></template></category>
+<category><pattern>soy funcionaria</pattern><template><srai>work funcionaria</srai></template></category>
+<category><pattern>soy ingeniero</pattern><template><srai>work ingeniero</srai></template></category> 
+<category><pattern>soy ingeniera</pattern><template><srai>work ingeniera</srai></template></category>
+<category><pattern>soy arquitecto</pattern><template><srai>work arquitecto</srai></template></category>
+<category><pattern>soy arquitecta</pattern><template><srai>work arquitecta</srai></template></category>
+<category><pattern>soy autónomo</pattern><template><srai>work autónomo</srai></template></category>
+<category><pattern>soy autónoma</pattern><template><srai>work autónoma</srai></template></category>
+<category><pattern>soy carpintero</pattern><template><srai>work carpintero</srai></template></category>
+<category><pattern>soy carpintera</pattern><template><srai>work carpintera</srai></template></category>
+<category><pattern>soy estudiante</pattern><template><srai>work estudiente</srai></template></category>
+<category><pattern>soy universitario</pattern><template><srai>work universitario</srai></template></category>
+<category><pattern>soy universitaria</pattern><template><srai>work universitaria</srai></template></category>
+<category><pattern>soy médico</pattern><template><srai>work médico</srai></template></category>
+<category><pattern>soy médica</pattern><template><srai>work médica</srai></template></category>
+<category><pattern>soy abogado</pattern><template><srai>work abogado</srai></template></category>
+<category><pattern>soy abogada</pattern><template><srai>work abogada</srai></template></category>
+<category><pattern>soy juez</pattern><template><srai>work juez</srai></template></category>
+<category><pattern>soy jueza</pattern><template><srai>work jueza</srai></template></category>
+<category><pattern>soy fiscal</pattern><template><srai>work fiscal</srai></template></category>
+<category><pattern>soy conserje</pattern><template><srai>work conserje</srai></template></category>
+<category><pattern>soy actor</pattern><template><srai>work actor</srai></template></category>
+<category><pattern>soy actriz</pattern><template><srai>work actriz</srai></template></category>
+<category><pattern>soy celador</pattern><template><srai>work celador</srai></template></category>
+<category><pattern>soy celadora</pattern><template><srai>work celadora</srai></template></category>
+<category><pattern>soy enfermero</pattern><template><srai>work enfermero</srai></template></category>
+<category><pattern>soy enfermera</pattern><template><srai>work enfermera</srai></template></category>
+<category><pattern>soy policía</pattern><template><srai>work policía</srai></template></category>
+<category><pattern>soy bombero</pattern><template><srai>work bombero</srai></template></category>
+<category><pattern>soy bombera</pattern><template><srai>work bombera</srai></template></category>
+<category><pattern>soy cantante</pattern><template><srai>work cantante</srai></template></category>
+<category><pattern>soy torero</pattern><template><srai>work torero</srai></template></category>
+<category><pattern>soy torera</pattern><template><srai>work torera</srai></template></category>
+<category><pattern>soy fisioterapeuta</pattern><template><srai>work fisioterapeuta</srai></template></category>
+<category><pattern>soy deportista</pattern><template><srai>work deportista</srai></template></category>
+<category><pattern>soy camarero</pattern><template><srai>work camarero</srai></template></category>
+<category><pattern>soy camarera</pattern><template><srai>work camarera</srai></template></category>
+<category><pattern>soy cocinero</pattern><template><srai>work cocinero</srai></template></category>
+<category><pattern>soy cocinera</pattern><template><srai>work cocinera</srai></template></category>
+<category><pattern>soy dependiente</pattern><template><srai>work depediente</srai></template></category>
+<category><pattern>soy dependienta</pattern><template><srai>work dependienta</srai></template></category>
+<category><pattern>soy frutero</pattern><template><srai>work frutero</srai></template></category>
+<category><pattern>soy frutera</pattern><template><srai>work frutera</srai></template></category>
+<category><pattern>soy campesino</pattern><template><srai>work campesino</srai></template></category>
+<category><pattern>soy campesina</pattern><template><srai>work campesina</srai></template></category>
+<category><pattern>soy mecánico</pattern><template><srai>work mecánico</srai></template></category>
+<category><pattern>soy mecánica</pattern><template><srai>work mecánica</srai></template></category>
+<category><pattern>soy librero</pattern><template><srai>work librero</srai></template></category>
+<category><pattern>soy librera</pattern><template><srai>work librera</srai></template></category>
+<category><pattern>soy empresario</pattern><template><srai>work empresario</srai></template></category>
+<category><pattern>soy empresaria</pattern><template><srai>work empresaria</srai></template></category>
+<category><pattern>soy taxista</pattern><template><srai>work taxista</srai></template></category>
+<category><pattern>soy pianista</pattern><template><srai>work pianista</srai></template></category>
+<category><pattern>soy camionero</pattern><template><srai>work camionero</srai></template></category>
+<category><pattern>soy camionera</pattern><template><srai>work camionera</srai></template></category>
+<category><pattern>soy transportista</pattern><template><srai>work transportista</srai></template></category>
+<category><pattern>soy sastre</pattern><template><srai>work sastre</srai></template></category>
+<category><pattern>soy costurera</pattern><template><srai>work costurera</srai></template></category>
+<category><pattern>soy panadera</pattern><template><srai>work panadera</srai></template></category>
+<category><pattern>soy panadero</pattern><template><srai>work panadero</srai></template></category>
+<category><pattern>soy zapatero</pattern><template><srai>work zapatero</srai></template></category>
+<category><pattern>soy zapatera</pattern><template><srai>work zapatera</srai></template></category>
+<category><pattern>soy peluquero</pattern><template><srai>work peluquero</srai></template></category>
+<category><pattern>soy peluquera</pattern><template><srai>work peluquera</srai></template></category>
+<category><pattern>soy esteticista</pattern><template><srai>work esteticista</srai></template></category>
+<category><pattern>soy militar</pattern><template><srai>work militar</srai></template></category>
+<category><pattern>soy minero</pattern><template><srai>work minero</srai></template></category>
+<category><pattern>soy minera</pattern><template><srai>work minera</srai></template></category>
+<category><pattern>soy amo de casa</pattern><template><srai>work amo de casa</srai></template></category>
+<category><pattern>soy ama de casa</pattern><template><srai>work ama de casa</srai></template></category>
+<category><pattern>soy ganadero</pattern><template><srai>work ganadero</srai></template></category>
+<category><pattern>soy ganadera</pattern><template><srai>work ganadera</srai></template></category>
+<category><pattern>soy marinero</pattern><template><srai>work marinero</srai></template></category>
+<category><pattern>soy marinera</pattern><template><srai>work marinera</srai></template></category>
+<category><pattern>soy pescador</pattern><template><srai>work pescador</srai></template></category>
+<category><pattern>soy pescadora</pattern><template><srai>work pescadora</srai></template></category>
+<category><pattern>soy cartero</pattern><template><srai>work cartero</srai></template></category>
+<category><pattern>soy cartera</pattern><template><srai>work cartera</srai></template></category>
+<category><pattern>soy cirujano</pattern><template><srai>work cirujano</srai></template></category>
+<category><pattern>soy cirujana</pattern><template><srai>work cirujana</srai></template></category>
+<category><pattern>soy maquillador</pattern><template><srai>work maquillador</srai></template></category>
+<category><pattern>soy maquilladora</pattern><template><srai>work maquilladora</srai></template></category>
+<category><pattern>soy fotógrafo</pattern><template><srai>work fotógrafo</srai></template></category>
+<category><pattern>soy fotógrafa</pattern><template><srai>work fotógrafa</srai></template></category>
+<category><pattern>soy tendero</pattern><template><srai>work tendero</srai></template></category>
+<category><pattern>soy tendera</pattern><template><srai>work tendera</srai></template></category>
+<category><pattern>soy reponedor</pattern><template><srai>work reponedor</srai></template></category>
+<category><pattern>soy reponedora</pattern><template><srai>work reponedora</srai></template></category>
+<category><pattern>soy cajero</pattern><template><srai>work cajero</srai></template></category>
+<category><pattern>soy cajera</pattern><template><srai>work cajera</srai></template></category>
+<category><pattern>soy banquero</pattern><template><srai>work banquero</srai></template></category>
+<category><pattern>soy banquera</pattern><template><srai>work banquera</srai></template></category>
+<category><pattern>soy vigilante jurado</pattern><template><srai>work vigilante jurado</srai></template></category>
+<category><pattern>soy oficinista</pattern><template><srai>work oficinista</srai></template></category>
+<category><pattern>soy soldado</pattern><template><srai>work soldado</srai></template></category>
+<category><pattern>soy bedel</pattern><template><srai>work bedel</srai></template></category>
+<category><pattern>soy soldador</pattern><template><srai>work soldador</srai></template></category>
+<category><pattern>soy soldadora</pattern><template><srai>work soldadora</srai></template></category>
+<category><pattern>soy armador</pattern><template><srai>work armador</srai></template></category>
+<category><pattern>soy armadora</pattern><template><srai>work armadora</srai></template></category>
+<category><pattern>soy limpiador</pattern><template><srai>work limpiador</srai></template></category>
+<category><pattern>soy limpiadora</pattern><template><srai>work limpiadora</srai></template></category>
+<category><pattern>soy jardinero</pattern><template><srai>work jardinero</srai></template></category>
+<category><pattern>soy jardinera</pattern><template><srai>work jardinera</srai></template></category>
+<category><pattern>soy bodeguero</pattern><template><srai>work bodeguero</srai></template></category>
+<category><pattern>soy bodeguera</pattern><template><srai>work bodeguera</srai></template></category>
+<category><pattern>soy enólogo</pattern><template><srai>work enólogo</srai></template></category>
+<category><pattern>soy enóloga</pattern><template><srai>work enóloga</srai></template></category>
+<category><pattern>soy repartidor</pattern><template><srai>work repartidor</srai></template></category>
+<category><pattern>soy repartidora</pattern><template><srai>work repartidora</srai></template></category>
+<category><pattern>soy pizero</pattern><template><srai>work pizero</srai></template></category>
+<category><pattern>soy pizera</pattern><template><srai>work pizera</srai></template></category>
+<category><pattern>soy antenista</pattern><template><srai>work antenista</srai></template></category>
+<category><pattern>soy pinche</pattern><template><srai>work pinche</srai></template></category>
+<category><pattern>soy labrador</pattern><template><srai>work labrador</srai></template></category>
+<category><pattern>soy labradora</pattern><template><srai>work labradora</srai></template></category>
+<category><pattern>soy mariscador</pattern><template><srai>work mariscador</srai></template></category>
+<category><pattern>soy mariscadora</pattern><template><srai>work mariscadora</srai></template></category>
+<category><pattern>soy carnicero</pattern><template><srai>work carnicero</srai></template></category>
+<category><pattern>soy carnicera</pattern><template><srai>work carnicera</srai></template></category>
+<category><pattern>soy verdulero</pattern><template><srai>work verdulero</srai></template></category>
+<category><pattern>soy verdulera</pattern><template><srai>work verdulera</srai></template></category>
+<category><pattern>soy telefonista</pattern><template><srai>work telefonista</srai></template></category>
+<category><pattern>soy recepcionista</pattern><template><srai>work recepcionista</srai></template></category>
+<category><pattern>soy teleoperador</pattern><template><srai>work teleoperador</srai></template></category>
+<category><pattern>soy teleoperadora</pattern><template><srai>work teleoperadora</srai></template></category>
+<category><pattern>soy presentador</pattern><template><srai>work presentador</srai></template></category>
+<category><pattern>soy presentadora</pattern><template><srai>work presentadora</srai></template></category>
+<category><pattern>soy periodista</pattern><template><srai>work periodista</srai></template></category>
+
+
+<category><pattern>soy * profesor</pattern><template><srai>work profesor</srai></template></category>
+<category><pattern>soy * profesora</pattern><template><srai>work profesora</srai></template></category>
+<category><pattern>soy * maestro</pattern><template><srai>work maestro</srai></template></category>
+<category><pattern>soy * maestra</pattern><template><srai>work maestra</srai></template></category>
+<category><pattern>soy * doctor</pattern><template><srai>work doctor</srai></template></category>
+<category><pattern>soy * doctora</pattern><template><srai>work doctora</srai></template></category>
+<category><pattern>soy * fontanero</pattern><template><srai>work fontanero</srai></template></category>
+<category><pattern>soy * fontanera</pattern><template><srai>work fontanera</srai></template></category>
+<category><pattern>soy * albañil</pattern><template><srai>work albañil</srai></template></category>
+<category><pattern>soy * artista</pattern><template><srai>work artista</srai></template></category>
+<category><pattern>soy * escritor</pattern><template><srai>work escritor</srai></template></category>
+<category><pattern>soy * escritora</pattern><template><srai>work escritora</srai></template></category>
+<category><pattern>soy * poeta</pattern><template><srai>work poeta</srai></template></category>
+<category><pattern>soy * poetisa</pattern><template><srai>work poetisa</srai></template></category>
+<category><pattern>soy * pintor</pattern><template><srai>work pintor</srai></template></category>
+<category><pattern>soy * pintora</pattern><template><srai>work pintora</srai></template></category>
+<category><pattern>soy * electricista</pattern><template><srai>work electricista</srai></template></category>
+<category><pattern>soy * músico</pattern><template><srai>work músico</srai></template></category>
+<category><pattern>soy * funcionario</pattern><template><srai>work funcionario</srai></template></category>
+<category><pattern>soy * funcionaria</pattern><template><srai>work funcionaria</srai></template></category>
+<category><pattern>soy * ingeniero</pattern><template><srai>work ingeniero</srai></template></category> 
+<category><pattern>soy * ingeniera</pattern><template><srai>work ingeniera</srai></template></category>
+<category><pattern>soy * arquitecto</pattern><template><srai>work arquitecto</srai></template></category>
+<category><pattern>soy * arquitecta</pattern><template><srai>work arquitecta</srai></template></category>
+<category><pattern>soy * autónomo</pattern><template><srai>work autónomo</srai></template></category>
+<category><pattern>soy * autónoma</pattern><template><srai>work autónoma</srai></template></category>
+<category><pattern>soy * carpintero</pattern><template><srai>work carpintero</srai></template></category>
+<category><pattern>soy * carpintera</pattern><template><srai>work carpintera</srai></template></category>
+<category><pattern>soy * estudiante</pattern><template><srai>work estudiente</srai></template></category>
+<category><pattern>soy * universitario</pattern><template><srai>work universitario</srai></template></category>
+<category><pattern>soy * universitaria</pattern><template><srai>work universitaria</srai></template></category>
+<category><pattern>soy * médico</pattern><template><srai>work médico</srai></template></category>
+<category><pattern>soy * médica</pattern><template><srai>work médica</srai></template></category>
+<category><pattern>soy * abogado</pattern><template><srai>work abogado</srai></template></category>
+<category><pattern>soy * abogada</pattern><template><srai>work abogada</srai></template></category>
+<category><pattern>soy * juez</pattern><template><srai>work juez</srai></template></category>
+<category><pattern>soy * jueza</pattern><template><srai>work jueza</srai></template></category>
+<category><pattern>soy * fiscal</pattern><template><srai>work fiscal</srai></template></category>
+<category><pattern>soy * conserje</pattern><template><srai>work conserje</srai></template></category>
+<category><pattern>soy * actor</pattern><template><srai>work actor</srai></template></category>
+<category><pattern>soy * actriz</pattern><template><srai>work actriz</srai></template></category>
+<category><pattern>soy * celador</pattern><template><srai>work celador</srai></template></category>
+<category><pattern>soy * celadora</pattern><template><srai>work celadora</srai></template></category>
+<category><pattern>soy * enfermero</pattern><template><srai>work enfermero</srai></template></category>
+<category><pattern>soy * enfermera</pattern><template><srai>work enfermera</srai></template></category>
+<category><pattern>soy * policía</pattern><template><srai>work policía</srai></template></category>
+<category><pattern>soy * bombero</pattern><template><srai>work bombero</srai></template></category>
+<category><pattern>soy * bombera</pattern><template><srai>work bombera</srai></template></category>
+<category><pattern>soy * cantante</pattern><template><srai>work cantante</srai></template></category>
+<category><pattern>soy * torero</pattern><template><srai>work torero</srai></template></category>
+<category><pattern>soy * torera</pattern><template><srai>work torera</srai></template></category>
+<category><pattern>soy * fisioterapeuta</pattern><template><srai>work fisioterapeuta</srai></template></category>
+<category><pattern>soy * deportista</pattern><template><srai>work deportista</srai></template></category>
+<category><pattern>soy * camarero</pattern><template><srai>work camarero</srai></template></category>
+<category><pattern>soy * camarera</pattern><template><srai>work camarera</srai></template></category>
+<category><pattern>soy * cocinero</pattern><template><srai>work cocinero</srai></template></category>
+<category><pattern>soy * cocinera</pattern><template><srai>work cocinera</srai></template></category>
+<category><pattern>soy * dependiente</pattern><template><srai>work depediente</srai></template></category>
+<category><pattern>soy * dependienta</pattern><template><srai>work dependienta</srai></template></category>
+<category><pattern>soy * frutero</pattern><template><srai>work frutero</srai></template></category>
+<category><pattern>soy * frutera</pattern><template><srai>work frutera</srai></template></category>
+<category><pattern>soy * campesino</pattern><template><srai>work campesino</srai></template></category>
+<category><pattern>soy * campesina</pattern><template><srai>work campesina</srai></template></category>
+<category><pattern>soy * mecánico</pattern><template><srai>work mecánico</srai></template></category>
+<category><pattern>soy * mecánica</pattern><template><srai>work mecánica</srai></template></category>
+<category><pattern>soy * librero</pattern><template><srai>work librero</srai></template></category>
+<category><pattern>soy * librera</pattern><template><srai>work librera</srai></template></category>
+<category><pattern>soy * empresario</pattern><template><srai>work empresario</srai></template></category>
+<category><pattern>soy * empresaria</pattern><template><srai>work empresaria</srai></template></category>
+<category><pattern>soy * taxista</pattern><template><srai>work taxista</srai></template></category>
+<category><pattern>soy * pianista</pattern><template><srai>work pianista</srai></template></category>
+<category><pattern>soy * camionero</pattern><template><srai>work camionero</srai></template></category>
+<category><pattern>soy * camionera</pattern><template><srai>work camionera</srai></template></category>
+<category><pattern>soy * transportista</pattern><template><srai>work transportista</srai></template></category>
+<category><pattern>soy * sastre</pattern><template><srai>work sastre</srai></template></category>
+<category><pattern>soy * costurera</pattern><template><srai>work costurera</srai></template></category>
+<category><pattern>soy * panadera</pattern><template><srai>work panadera</srai></template></category>
+<category><pattern>soy * panadero</pattern><template><srai>work panadero</srai></template></category>
+<category><pattern>soy * zapatero</pattern><template><srai>work zapatero</srai></template></category>
+<category><pattern>soy * zapatera</pattern><template><srai>work zapatera</srai></template></category>
+<category><pattern>soy * peluquero</pattern><template><srai>work peluquero</srai></template></category>
+<category><pattern>soy * peluquera</pattern><template><srai>work peluquera</srai></template></category>
+<category><pattern>soy * esteticista</pattern><template><srai>work esteticista</srai></template></category>
+<category><pattern>soy * militar</pattern><template><srai>work militar</srai></template></category>
+<category><pattern>soy * minero</pattern><template><srai>work minero</srai></template></category>
+<category><pattern>soy * minera</pattern><template><srai>work minera</srai></template></category>
+<category><pattern>soy * amo de casa</pattern><template><srai>work amo de casa</srai></template></category>
+<category><pattern>soy * ama de casa</pattern><template><srai>work ama de casa</srai></template></category>
+<category><pattern>soy * ganadero</pattern><template><srai>work ganadero</srai></template></category>
+<category><pattern>soy * ganadera</pattern><template><srai>work ganadera</srai></template></category>
+<category><pattern>soy * marinero</pattern><template><srai>work marinero</srai></template></category>
+<category><pattern>soy * marinera</pattern><template><srai>work marinera</srai></template></category>
+<category><pattern>soy * pescador</pattern><template><srai>work pescador</srai></template></category>
+<category><pattern>soy * pescadora</pattern><template><srai>work pescadora</srai></template></category>
+<category><pattern>soy * cartero</pattern><template><srai>work cartero</srai></template></category>
+<category><pattern>soy * cartera</pattern><template><srai>work cartera</srai></template></category>
+<category><pattern>soy * cirujano</pattern><template><srai>work cirujano</srai></template></category>
+<category><pattern>soy * cirujana</pattern><template><srai>work cirujana</srai></template></category>
+<category><pattern>soy * maquillador</pattern><template><srai>work maquillador</srai></template></category>
+<category><pattern>soy * maquilladora</pattern><template><srai>work maquilladora</srai></template></category>
+<category><pattern>soy * fotógrafo</pattern><template><srai>work fotógrafo</srai></template></category>
+<category><pattern>soy * fotógrafa</pattern><template><srai>work fotógrafa</srai></template></category>
+<category><pattern>soy * tendero</pattern><template><srai>work tendero</srai></template></category>
+<category><pattern>soy * tendera</pattern><template><srai>work tendera</srai></template></category>
+<category><pattern>soy * reponedor</pattern><template><srai>work reponedor</srai></template></category>
+<category><pattern>soy * reponedora</pattern><template><srai>work reponedora</srai></template></category>
+<category><pattern>soy * cajero</pattern><template><srai>work cajero</srai></template></category>
+<category><pattern>soy * cajera</pattern><template><srai>work cajera</srai></template></category>
+<category><pattern>soy * banquero</pattern><template><srai>work banquero</srai></template></category>
+<category><pattern>soy * banquera</pattern><template><srai>work banquera</srai></template></category>
+<category><pattern>soy * vigilante jurado</pattern><template><srai>work vigilante jurado</srai></template></category>
+<category><pattern>soy * oficinista</pattern><template><srai>work oficinista</srai></template></category>
+<category><pattern>soy * soldado</pattern><template><srai>work soldado</srai></template></category>
+<category><pattern>soy * bedel</pattern><template><srai>work bedel</srai></template></category>
+<category><pattern>soy * soldador</pattern><template><srai>work soldador</srai></template></category>
+<category><pattern>soy * soldadora</pattern><template><srai>work soldadora</srai></template></category>
+<category><pattern>soy * armador</pattern><template><srai>work armador</srai></template></category>
+<category><pattern>soy * armadora</pattern><template><srai>work armadora</srai></template></category>
+<category><pattern>soy * limpiador</pattern><template><srai>work limpiador</srai></template></category>
+<category><pattern>soy * limpiadora</pattern><template><srai>work limpiadora</srai></template></category>
+<category><pattern>soy * jardinero</pattern><template><srai>work jardinero</srai></template></category>
+<category><pattern>soy * jardinera</pattern><template><srai>work jardinera</srai></template></category>
+<category><pattern>soy * bodeguero</pattern><template><srai>work bodeguero</srai></template></category>
+<category><pattern>soy * bodeguera</pattern><template><srai>work bodeguera</srai></template></category>
+<category><pattern>soy * enólogo</pattern><template><srai>work enólogo</srai></template></category>
+<category><pattern>soy * enóloga</pattern><template><srai>work enóloga</srai></template></category>
+<category><pattern>soy * repartidor</pattern><template><srai>work repartidor</srai></template></category>
+<category><pattern>soy * repartidora</pattern><template><srai>work repartidora</srai></template></category>
+<category><pattern>soy * pizero</pattern><template><srai>work pizero</srai></template></category>
+<category><pattern>soy * pizera</pattern><template><srai>work pizera</srai></template></category>
+<category><pattern>soy * antenista</pattern><template><srai>work antenista</srai></template></category>
+<category><pattern>soy * pinche</pattern><template><srai>work pinche</srai></template></category>
+<category><pattern>soy * labrador</pattern><template><srai>work labrador</srai></template></category>
+<category><pattern>soy * labradora</pattern><template><srai>work labradora</srai></template></category>
+<category><pattern>soy * mariscador</pattern><template><srai>work mariscador</srai></template></category>
+<category><pattern>soy * mariscadora</pattern><template><srai>work mariscadora</srai></template></category>
+<category><pattern>soy * carnicero</pattern><template><srai>work carnicero</srai></template></category>
+<category><pattern>soy * carnicera</pattern><template><srai>work carnicera</srai></template></category>
+<category><pattern>soy * verdulero</pattern><template><srai>work verdulero</srai></template></category>
+<category><pattern>soy * verdulera</pattern><template><srai>work verdulera</srai></template></category>
+<category><pattern>soy * telefonista</pattern><template><srai>work telefonista</srai></template></category>
+<category><pattern>soy * recepcionista</pattern><template><srai>work recepcionista</srai></template></category>
+<category><pattern>soy * teleoperador</pattern><template><srai>work teleoperador</srai></template></category>
+<category><pattern>soy * teleoperadora</pattern><template><srai>work teleoperadora</srai></template></category>
+<category><pattern>soy * presentador</pattern><template><srai>work presentador</srai></template></category>
+<category><pattern>soy * presentadora</pattern><template><srai>work presentadora</srai></template></category>
+<category><pattern>soy * periodista</pattern><template><srai>work periodista</srai></template></category>
+
+<category><pattern>soy profesor *</pattern><template><srai>work profesor</srai></template></category>
+<category><pattern>soy profesora *</pattern><template><srai>work profesora</srai></template></category>
+<category><pattern>soy maestro *</pattern><template><srai>work maestro</srai></template></category>
+<category><pattern>soy maestra *</pattern><template><srai>work maestra</srai></template></category>
+<category><pattern>soy doctor *</pattern><template><srai>work doctor</srai></template></category>
+<category><pattern>soy doctora *</pattern><template><srai>work doctora</srai></template></category>
+<category><pattern>soy fontanero *</pattern><template><srai>work fontanero</srai></template></category>
+<category><pattern>soy fontanera *</pattern><template><srai>work fontanera</srai></template></category>
+<category><pattern>soy albañil *</pattern><template><srai>work albañil</srai></template></category>
+<category><pattern>soy artista *</pattern><template><srai>work artista</srai></template></category>
+<category><pattern>soy escritor *</pattern><template><srai>work escritor</srai></template></category>
+<category><pattern>soy escritora *</pattern><template><srai>work escritora</srai></template></category>
+<category><pattern>soy poeta *</pattern><template><srai>work poeta</srai></template></category>
+<category><pattern>soy poetisa *</pattern><template><srai>work poetisa</srai></template></category>
+<category><pattern>soy pintor *</pattern><template><srai>work pintor</srai></template></category>
+<category><pattern>soy pintora *</pattern><template><srai>work pintora</srai></template></category>
+<category><pattern>soy electricista *</pattern><template><srai>work electricista</srai></template></category>
+<category><pattern>soy músico *</pattern><template><srai>work músico</srai></template></category>
+<category><pattern>soy funcionario *</pattern><template><srai>work funcionario</srai></template></category>
+<category><pattern>soy funcionaria *</pattern><template><srai>work funcionaria</srai></template></category>
+<category><pattern>soy ingeniero *</pattern><template><srai>work ingeniero</srai></template></category> 
+<category><pattern>soy ingeniera *</pattern><template><srai>work ingeniera</srai></template></category>
+<category><pattern>soy arquitecto *</pattern><template><srai>work arquitecto</srai></template></category>
+<category><pattern>soy arquitecta *</pattern><template><srai>work arquitecta</srai></template></category>
+<category><pattern>soy autónomo *</pattern><template><srai>work autónomo</srai></template></category>
+<category><pattern>soy autónoma *</pattern><template><srai>work autónoma</srai></template></category>
+<category><pattern>soy carpintero *</pattern><template><srai>work carpintero</srai></template></category>
+<category><pattern>soy carpintera *</pattern><template><srai>work carpintera</srai></template></category>
+<category><pattern>soy estudiante *</pattern><template><srai>work estudiente</srai></template></category>
+<category><pattern>soy universitario *</pattern><template><srai>work universitario</srai></template></category>
+<category><pattern>soy universitaria *</pattern><template><srai>work universitaria</srai></template></category>
+<category><pattern>soy médico *</pattern><template><srai>work médico</srai></template></category>
+<category><pattern>soy médica *</pattern><template><srai>work médica</srai></template></category>
+<category><pattern>soy abogado *</pattern><template><srai>work abogado</srai></template></category>
+<category><pattern>soy abogada *</pattern><template><srai>work abogada</srai></template></category>
+<category><pattern>soy juez *</pattern><template><srai>work juez</srai></template></category>
+<category><pattern>soy jueza *</pattern><template><srai>work jueza</srai></template></category>
+<category><pattern>soy fiscal *</pattern><template><srai>work fiscal</srai></template></category>
+<category><pattern>soy conserje *</pattern><template><srai>work conserje</srai></template></category>
+<category><pattern>soy actor *</pattern><template><srai>work actor</srai></template></category>
+<category><pattern>soy actriz *</pattern><template><srai>work actriz</srai></template></category>
+<category><pattern>soy celador *</pattern><template><srai>work celador</srai></template></category>
+<category><pattern>soy celadora *</pattern><template><srai>work celadora</srai></template></category>
+<category><pattern>soy enfermero *</pattern><template><srai>work enfermero</srai></template></category>
+<category><pattern>soy enfermera *</pattern><template><srai>work enfermera</srai></template></category>
+<category><pattern>soy policía *</pattern><template><srai>work policía</srai></template></category>
+<category><pattern>soy bombero *</pattern><template><srai>work bombero</srai></template></category>
+<category><pattern>soy bombera *</pattern><template><srai>work bombera</srai></template></category>
+<category><pattern>soy cantante *</pattern><template><srai>work cantante</srai></template></category>
+<category><pattern>soy torero *</pattern><template><srai>work torero</srai></template></category>
+<category><pattern>soy torera *</pattern><template><srai>work torera</srai></template></category>
+<category><pattern>soy fisioterapeuta *</pattern><template><srai>work fisioterapeuta</srai></template></category>
+<category><pattern>soy deportista *</pattern><template><srai>work deportista</srai></template></category>
+<category><pattern>soy camarero *</pattern><template><srai>work camarero</srai></template></category>
+<category><pattern>soy camarera *</pattern><template><srai>work camarera</srai></template></category>
+<category><pattern>soy cocinero *</pattern><template><srai>work cocinero</srai></template></category>
+<category><pattern>soy cocinera *</pattern><template><srai>work cocinera</srai></template></category>
+<category><pattern>soy dependiente *</pattern><template><srai>work depediente</srai></template></category>
+<category><pattern>soy dependienta *</pattern><template><srai>work dependienta</srai></template></category>
+<category><pattern>soy frutero *</pattern><template><srai>work frutero</srai></template></category>
+<category><pattern>soy frutera *</pattern><template><srai>work frutera</srai></template></category>
+<category><pattern>soy campesino *</pattern><template><srai>work campesino</srai></template></category>
+<category><pattern>soy campesina *</pattern><template><srai>work campesina</srai></template></category>
+<category><pattern>soy mecánico *</pattern><template><srai>work mecánico</srai></template></category>
+<category><pattern>soy mecánica *</pattern><template><srai>work mecánica</srai></template></category>
+<category><pattern>soy librero *</pattern><template><srai>work librero</srai></template></category>
+<category><pattern>soy librera *</pattern><template><srai>work librera</srai></template></category>
+<category><pattern>soy empresario *</pattern><template><srai>work empresario</srai></template></category>
+<category><pattern>soy empresaria *</pattern><template><srai>work empresaria</srai></template></category>
+<category><pattern>soy taxista *</pattern><template><srai>work taxista</srai></template></category>
+<category><pattern>soy pianista *</pattern><template><srai>work pianista</srai></template></category>
+<category><pattern>soy camionero *</pattern><template><srai>work camionero</srai></template></category>
+<category><pattern>soy camionera *</pattern><template><srai>work camionera</srai></template></category>
+<category><pattern>soy transportista *</pattern><template><srai>work transportista</srai></template></category>
+<category><pattern>soy sastre *</pattern><template><srai>work sastre</srai></template></category>
+<category><pattern>soy costurera *</pattern><template><srai>work costurera</srai></template></category>
+<category><pattern>soy panadera *</pattern><template><srai>work panadera</srai></template></category>
+<category><pattern>soy panadero *</pattern><template><srai>work panadero</srai></template></category>
+<category><pattern>soy zapatero *</pattern><template><srai>work zapatero</srai></template></category>
+<category><pattern>soy zapatera *</pattern><template><srai>work zapatera</srai></template></category>
+<category><pattern>soy peluquero *</pattern><template><srai>work peluquero</srai></template></category>
+<category><pattern>soy peluquera *</pattern><template><srai>work peluquera</srai></template></category>
+<category><pattern>soy esteticista *</pattern><template><srai>work esteticista</srai></template></category>
+<category><pattern>soy militar *</pattern><template><srai>work militar</srai></template></category>
+<category><pattern>soy minero *</pattern><template><srai>work minero</srai></template></category>
+<category><pattern>soy minera *</pattern><template><srai>work minera</srai></template></category>
+<category><pattern>soy amo de casa *</pattern><template><srai>work amo de casa</srai></template></category>
+<category><pattern>soy ama de casa *</pattern><template><srai>work ama de casa</srai></template></category>
+<category><pattern>soy ganadero *</pattern><template><srai>work ganadero</srai></template></category>
+<category><pattern>soy ganadera *</pattern><template><srai>work ganadera</srai></template></category>
+<category><pattern>soy marinero *</pattern><template><srai>work marinero</srai></template></category>
+<category><pattern>soy marinera *</pattern><template><srai>work marinera</srai></template></category>
+<category><pattern>soy pescador *</pattern><template><srai>work pescador</srai></template></category>
+<category><pattern>soy pescadora *</pattern><template><srai>work pescadora</srai></template></category>
+<category><pattern>soy cartero *</pattern><template><srai>work cartero</srai></template></category>
+<category><pattern>soy cartera *</pattern><template><srai>work cartera</srai></template></category>
+<category><pattern>soy cirujano *</pattern><template><srai>work cirujano</srai></template></category>
+<category><pattern>soy cirujana *</pattern><template><srai>work cirujana</srai></template></category>
+<category><pattern>soy maquillador *</pattern><template><srai>work maquillador</srai></template></category>
+<category><pattern>soy maquilladora *</pattern><template><srai>work maquilladora</srai></template></category>
+<category><pattern>soy fotógrafo *</pattern><template><srai>work fotógrafo</srai></template></category>
+<category><pattern>soy fotógrafa *</pattern><template><srai>work fotógrafa</srai></template></category>
+<category><pattern>soy tendero *</pattern><template><srai>work tendero</srai></template></category>
+<category><pattern>soy tendera *</pattern><template><srai>work tendera</srai></template></category>
+<category><pattern>soy reponedor *</pattern><template><srai>work reponedor</srai></template></category>
+<category><pattern>soy reponedora *</pattern><template><srai>work reponedora</srai></template></category>
+<category><pattern>soy cajero *</pattern><template><srai>work cajero</srai></template></category>
+<category><pattern>soy cajera *</pattern><template><srai>work cajera</srai></template></category>
+<category><pattern>soy banquero *</pattern><template><srai>work banquero</srai></template></category>
+<category><pattern>soy banquera *</pattern><template><srai>work banquera</srai></template></category>
+<category><pattern>soy vigilante jurado *</pattern><template><srai>work vigilante jurado</srai></template></category>
+<category><pattern>soy oficinista *</pattern><template><srai>work oficinista</srai></template></category>
+<category><pattern>soy soldado *</pattern><template><srai>work soldado</srai></template></category>
+<category><pattern>soy bedel *</pattern><template><srai>work bedel</srai></template></category>
+<category><pattern>soy soldador *</pattern><template><srai>work soldador</srai></template></category>
+<category><pattern>soy soldadora *</pattern><template><srai>work soldadora</srai></template></category>
+<category><pattern>soy armador *</pattern><template><srai>work armador</srai></template></category>
+<category><pattern>soy armadora *</pattern><template><srai>work armadora</srai></template></category>
+<category><pattern>soy limpiador *</pattern><template><srai>work limpiador</srai></template></category>
+<category><pattern>soy limpiadora *</pattern><template><srai>work limpiadora</srai></template></category>
+<category><pattern>soy jardinero *</pattern><template><srai>work jardinero</srai></template></category>
+<category><pattern>soy jardinera *</pattern><template><srai>work jardinera</srai></template></category>
+<category><pattern>soy bodeguero *</pattern><template><srai>work bodeguero</srai></template></category>
+<category><pattern>soy bodeguera *</pattern><template><srai>work bodeguera</srai></template></category>
+<category><pattern>soy enólogo *</pattern><template><srai>work enólogo</srai></template></category>
+<category><pattern>soy enóloga *</pattern><template><srai>work enóloga</srai></template></category>
+<category><pattern>soy repartidor *</pattern><template><srai>work repartidor</srai></template></category>
+<category><pattern>soy repartidora *</pattern><template><srai>work repartidora</srai></template></category>
+<category><pattern>soy pizero *</pattern><template><srai>work pizero</srai></template></category>
+<category><pattern>soy pizera *</pattern><template><srai>work pizera</srai></template></category>
+<category><pattern>soy antenista *</pattern><template><srai>work antenista</srai></template></category>
+<category><pattern>soy pinche *</pattern><template><srai>work pinche</srai></template></category>
+<category><pattern>soy labrador *</pattern><template><srai>work labrador</srai></template></category>
+<category><pattern>soy labradora *</pattern><template><srai>work labradora</srai></template></category>
+<category><pattern>soy mariscador *</pattern><template><srai>work mariscador</srai></template></category>
+<category><pattern>soy mariscadora *</pattern><template><srai>work mariscadora</srai></template></category>
+<category><pattern>soy carnicero *</pattern><template><srai>work carnicero</srai></template></category>
+<category><pattern>soy carnicera *</pattern><template><srai>work carnicera</srai></template></category>
+<category><pattern>soy verdulero *</pattern><template><srai>work verdulero</srai></template></category>
+<category><pattern>soy verdulera *</pattern><template><srai>work verdulera</srai></template></category>
+<category><pattern>soy telefonista *</pattern><template><srai>work telefonista</srai></template></category>
+<category><pattern>soy recepcionista *</pattern><template><srai>work recepcionista</srai></template></category>
+<category><pattern>soy teleoperador *</pattern><template><srai>work teleoperador</srai></template></category>
+<category><pattern>soy teleoperadora *</pattern><template><srai>work teleoperadora</srai></template></category>
+<category><pattern>soy presentador *</pattern><template><srai>work presentador</srai></template></category>
+<category><pattern>soy presentadora *</pattern><template><srai>work presentadora</srai></template></category>
+<category><pattern>soy periodista *</pattern><template><srai>work periodista</srai></template></category>
+
+<category><pattern>soy * profesor *</pattern><template><srai>work profesor</srai></template></category>
+<category><pattern>soy * profesora *</pattern><template><srai>work profesora</srai></template></category>
+<category><pattern>soy * maestro *</pattern><template><srai>work maestro</srai></template></category>
+<category><pattern>soy * maestra *</pattern><template><srai>work maestra</srai></template></category>
+<category><pattern>soy * doctor *</pattern><template><srai>work doctor</srai></template></category>
+<category><pattern>soy * doctora *</pattern><template><srai>work doctora</srai></template></category>
+<category><pattern>soy * fontanero *</pattern><template><srai>work fontanero</srai></template></category>
+<category><pattern>soy * fontanera *</pattern><template><srai>work fontanera</srai></template></category>
+<category><pattern>soy * albañil *</pattern><template><srai>work albañil</srai></template></category>
+<category><pattern>soy * artista *</pattern><template><srai>work artista</srai></template></category>
+<category><pattern>soy * escritor *</pattern><template><srai>work escritor</srai></template></category>
+<category><pattern>soy * escritora *</pattern><template><srai>work escritora</srai></template></category>
+<category><pattern>soy * poeta *</pattern><template><srai>work poeta</srai></template></category>
+<category><pattern>soy * poetisa *</pattern><template><srai>work poetisa</srai></template></category>
+<category><pattern>soy * pintor *</pattern><template><srai>work pintor</srai></template></category>
+<category><pattern>soy * pintora *</pattern><template><srai>work pintora</srai></template></category>
+<category><pattern>soy * electricista *</pattern><template><srai>work electricista</srai></template></category>
+<category><pattern>soy * músico *</pattern><template><srai>work músico</srai></template></category>
+<category><pattern>soy * funcionario *</pattern><template><srai>work funcionario</srai></template></category>
+<category><pattern>soy * funcionaria *</pattern><template><srai>work funcionaria</srai></template></category>
+<category><pattern>soy * ingeniero *</pattern><template><srai>work ingeniero</srai></template></category> 
+<category><pattern>soy * ingeniera *</pattern><template><srai>work ingeniera</srai></template></category>
+<category><pattern>soy * arquitecto *</pattern><template><srai>work arquitecto</srai></template></category>
+<category><pattern>soy * arquitecta *</pattern><template><srai>work arquitecta</srai></template></category>
+<category><pattern>soy * autónomo *</pattern><template><srai>work autónomo</srai></template></category>
+<category><pattern>soy * autónoma *</pattern><template><srai>work autónoma</srai></template></category>
+<category><pattern>soy * carpintero *</pattern><template><srai>work carpintero</srai></template></category>
+<category><pattern>soy * carpintera *</pattern><template><srai>work carpintera</srai></template></category>
+<category><pattern>soy * estudiante *</pattern><template><srai>work estudiente</srai></template></category>
+<category><pattern>soy * universitario *</pattern><template><srai>work universitario</srai></template></category>
+<category><pattern>soy * universitaria *</pattern><template><srai>work universitaria</srai></template></category>
+<category><pattern>soy * médico *</pattern><template><srai>work médico</srai></template></category>
+<category><pattern>soy * médica *</pattern><template><srai>work médica</srai></template></category>
+<category><pattern>soy * abogado *</pattern><template><srai>work abogado</srai></template></category>
+<category><pattern>soy * abogada *</pattern><template><srai>work abogada</srai></template></category>
+<category><pattern>soy * juez *</pattern><template><srai>work juez</srai></template></category>
+<category><pattern>soy * jueza *</pattern><template><srai>work jueza</srai></template></category>
+<category><pattern>soy * fiscal *</pattern><template><srai>work fiscal</srai></template></category>
+<category><pattern>soy * conserje *</pattern><template><srai>work conserje</srai></template></category>
+<category><pattern>soy * actor *</pattern><template><srai>work actor</srai></template></category>
+<category><pattern>soy * actriz *</pattern><template><srai>work actriz</srai></template></category>
+<category><pattern>soy * celador *</pattern><template><srai>work celador</srai></template></category>
+<category><pattern>soy * celadora *</pattern><template><srai>work celadora</srai></template></category>
+<category><pattern>soy * enfermero *</pattern><template><srai>work enfermero</srai></template></category>
+<category><pattern>soy * enfermera *</pattern><template><srai>work enfermera</srai></template></category>
+<category><pattern>soy * policía *</pattern><template><srai>work policía</srai></template></category>
+<category><pattern>soy * bombero *</pattern><template><srai>work bombero</srai></template></category>
+<category><pattern>soy * bombera *</pattern><template><srai>work bombera</srai></template></category>
+<category><pattern>soy * cantante *</pattern><template><srai>work cantante</srai></template></category>
+<category><pattern>soy * torero *</pattern><template><srai>work torero</srai></template></category>
+<category><pattern>soy * torera *</pattern><template><srai>work torera</srai></template></category>
+<category><pattern>soy * fisioterapeuta *</pattern><template><srai>work fisioterapeuta</srai></template></category>
+<category><pattern>soy * deportista *</pattern><template><srai>work deportista</srai></template></category>
+<category><pattern>soy * camarero *</pattern><template><srai>work camarero</srai></template></category>
+<category><pattern>soy * camarera *</pattern><template><srai>work camarera</srai></template></category>
+<category><pattern>soy * cocinero *</pattern><template><srai>work cocinero</srai></template></category>
+<category><pattern>soy * cocinera *</pattern><template><srai>work cocinera</srai></template></category>
+<category><pattern>soy * dependiente *</pattern><template><srai>work depediente</srai></template></category>
+<category><pattern>soy * dependienta *</pattern><template><srai>work dependienta</srai></template></category>
+<category><pattern>soy * frutero *</pattern><template><srai>work frutero</srai></template></category>
+<category><pattern>soy * frutera *</pattern><template><srai>work frutera</srai></template></category>
+<category><pattern>soy * campesino *</pattern><template><srai>work campesino</srai></template></category>
+<category><pattern>soy * campesina *</pattern><template><srai>work campesina</srai></template></category>
+<category><pattern>soy * mecánico *</pattern><template><srai>work mecánico</srai></template></category>
+<category><pattern>soy * mecánica *</pattern><template><srai>work mecánica</srai></template></category>
+<category><pattern>soy * librero *</pattern><template><srai>work librero</srai></template></category>
+<category><pattern>soy * librera *</pattern><template><srai>work librera</srai></template></category>
+<category><pattern>soy * empresario *</pattern><template><srai>work empresario</srai></template></category>
+<category><pattern>soy * empresaria *</pattern><template><srai>work empresaria</srai></template></category>
+<category><pattern>soy * taxista *</pattern><template><srai>work taxista</srai></template></category>
+<category><pattern>soy * pianista *</pattern><template><srai>work pianista</srai></template></category>
+<category><pattern>soy * camionero *</pattern><template><srai>work camionero</srai></template></category>
+<category><pattern>soy * camionera *</pattern><template><srai>work camionera</srai></template></category>
+<category><pattern>soy * transportista *</pattern><template><srai>work transportista</srai></template></category>
+<category><pattern>soy * sastre *</pattern><template><srai>work sastre</srai></template></category>
+<category><pattern>soy * costurera *</pattern><template><srai>work costurera</srai></template></category>
+<category><pattern>soy * panadera *</pattern><template><srai>work panadera</srai></template></category>
+<category><pattern>soy * panadero *</pattern><template><srai>work panadero</srai></template></category>
+<category><pattern>soy * zapatero *</pattern><template><srai>work zapatero</srai></template></category>
+<category><pattern>soy * zapatera *</pattern><template><srai>work zapatera</srai></template></category>
+<category><pattern>soy * peluquero *</pattern><template><srai>work peluquero</srai></template></category>
+<category><pattern>soy * peluquera *</pattern><template><srai>work peluquera</srai></template></category>
+<category><pattern>soy * esteticista *</pattern><template><srai>work esteticista</srai></template></category>
+<category><pattern>soy * militar *</pattern><template><srai>work militar</srai></template></category>
+<category><pattern>soy * minero *</pattern><template><srai>work minero</srai></template></category>
+<category><pattern>soy * minera *</pattern><template><srai>work minera</srai></template></category>
+<category><pattern>soy * amo de casa *</pattern><template><srai>work amo de casa</srai></template></category>
+<category><pattern>soy * ama de casa *</pattern><template><srai>work ama de casa</srai></template></category>
+<category><pattern>soy * ganadero *</pattern><template><srai>work ganadero</srai></template></category>
+<category><pattern>soy * ganadera *</pattern><template><srai>work ganadera</srai></template></category>
+<category><pattern>soy * marinero *</pattern><template><srai>work marinero</srai></template></category>
+<category><pattern>soy * marinera *</pattern><template><srai>work marinera</srai></template></category>
+<category><pattern>soy * pescador *</pattern><template><srai>work pescador</srai></template></category>
+<category><pattern>soy * pescadora *</pattern><template><srai>work pescadora</srai></template></category>
+<category><pattern>soy * cartero *</pattern><template><srai>work cartero</srai></template></category>
+<category><pattern>soy * cartera *</pattern><template><srai>work cartera</srai></template></category>
+<category><pattern>soy * cirujano *</pattern><template><srai>work cirujano</srai></template></category>
+<category><pattern>soy * cirujana *</pattern><template><srai>work cirujana</srai></template></category>
+<category><pattern>soy * maquillador *</pattern><template><srai>work maquillador</srai></template></category>
+<category><pattern>soy * maquilladora *</pattern><template><srai>work maquilladora</srai></template></category>
+<category><pattern>soy * fotógrafo *</pattern><template><srai>work fotógrafo</srai></template></category>
+<category><pattern>soy * fotógrafa *</pattern><template><srai>work fotógrafa</srai></template></category>
+<category><pattern>soy * tendero *</pattern><template><srai>work tendero</srai></template></category>
+<category><pattern>soy * tendera *</pattern><template><srai>work tendera</srai></template></category>
+<category><pattern>soy * reponedor *</pattern><template><srai>work reponedor</srai></template></category>
+<category><pattern>soy * reponedora *</pattern><template><srai>work reponedora</srai></template></category>
+<category><pattern>soy * cajero *</pattern><template><srai>work cajero</srai></template></category>
+<category><pattern>soy * cajera *</pattern><template><srai>work cajera</srai></template></category>
+<category><pattern>soy * banquero *</pattern><template><srai>work banquero</srai></template></category>
+<category><pattern>soy * banquera *</pattern><template><srai>work banquera</srai></template></category>
+<category><pattern>soy * vigilante jurado *</pattern><template><srai>work vigilante jurado</srai></template></category>
+<category><pattern>soy * oficinista *</pattern><template><srai>work oficinista</srai></template></category>
+<category><pattern>soy * soldado *</pattern><template><srai>work soldado</srai></template></category>
+<category><pattern>soy * bedel *</pattern><template><srai>work bedel</srai></template></category>
+<category><pattern>soy * soldador *</pattern><template><srai>work soldador</srai></template></category>
+<category><pattern>soy * soldadora *</pattern><template><srai>work soldadora</srai></template></category>
+<category><pattern>soy * armador *</pattern><template><srai>work armador</srai></template></category>
+<category><pattern>soy * armadora *</pattern><template><srai>work armadora</srai></template></category>
+<category><pattern>soy * limpiador *</pattern><template><srai>work limpiador</srai></template></category>
+<category><pattern>soy * limpiadora *</pattern><template><srai>work limpiadora</srai></template></category>
+<category><pattern>soy * jardinero *</pattern><template><srai>work jardinero</srai></template></category>
+<category><pattern>soy * jardinera *</pattern><template><srai>work jardinera</srai></template></category>
+<category><pattern>soy * bodeguero *</pattern><template><srai>work bodeguero</srai></template></category>
+<category><pattern>soy * bodeguera *</pattern><template><srai>work bodeguera</srai></template></category>
+<category><pattern>soy * enólogo *</pattern><template><srai>work enólogo</srai></template></category>
+<category><pattern>soy * enóloga *</pattern><template><srai>work enóloga</srai></template></category>
+<category><pattern>soy * repartidor *</pattern><template><srai>work repartidor</srai></template></category>
+<category><pattern>soy * repartidora *</pattern><template><srai>work repartidora</srai></template></category>
+<category><pattern>soy * pizero *</pattern><template><srai>work pizero</srai></template></category>
+<category><pattern>soy * pizera *</pattern><template><srai>work pizera</srai></template></category>
+<category><pattern>soy * antenista *</pattern><template><srai>work antenista</srai></template></category>
+<category><pattern>soy * pinche *</pattern><template><srai>work pinche</srai></template></category>
+<category><pattern>soy * labrador *</pattern><template><srai>work labrador</srai></template></category>
+<category><pattern>soy * labradora *</pattern><template><srai>work labradora</srai></template></category>
+<category><pattern>soy * mariscador *</pattern><template><srai>work mariscador</srai></template></category>
+<category><pattern>soy * mariscadora *</pattern><template><srai>work mariscadora</srai></template></category>
+<category><pattern>soy * carnicero *</pattern><template><srai>work carnicero</srai></template></category>
+<category><pattern>soy * carnicera *</pattern><template><srai>work carnicera</srai></template></category>
+<category><pattern>soy * verdulero *</pattern><template><srai>work verdulero</srai></template></category>
+<category><pattern>soy * verdulera *</pattern><template><srai>work verdulera</srai></template></category>
+<category><pattern>soy * telefonista *</pattern><template><srai>work telefonista</srai></template></category>
+<category><pattern>soy * recepcionista *</pattern><template><srai>work recepcionista</srai></template></category>
+<category><pattern>soy * teleoperador *</pattern><template><srai>work teleoperador</srai></template></category>
+<category><pattern>soy * teleoperadora *</pattern><template><srai>work teleoperadora</srai></template></category>
+<category><pattern>soy * presentador *</pattern><template><srai>work presentador</srai></template></category>
+<category><pattern>soy * presentadora *</pattern><template><srai>work presentadora</srai></template></category>
+<category><pattern>soy * periodista *</pattern><template><srai>work periodista</srai></template></category>
+
+
+<category><pattern>cuál es mi profesión</pattern><template>
+<condition name="trabajo">
+	<li value="UNDEFINED">Creo que no me lo has dicho. ¿En qué trabajas?</li>
+	<li>Trabajas como <get name="trabajo"/>. Al menos eso he creído entender.</li>
+</condition>
+</template></category>
+<category><pattern>en qué trabajo</pattern><template><srai>cuál es mi profesión</srai></template></category>
+<category><pattern>cuál es mi trabajo</pattern><template><srai>cuál es mi profesión</srai></template></category>
+<category><pattern>donde trabajo</pattern><template><srai>cuál es mi profesión</srai></template></category>
+
+<category><pattern>trabajas de *</pattern><template><srai>nowork <star/></srai></template></category>
+<category><pattern>trabajas como *</pattern><template><srai>nowork <star/></srai></template></category>
+<category><pattern>trabajas en *</pattern><template>No, no trabajo en <star/>. No tengo una profesión definida.</template></category>
+
+<category><pattern>estás en paro</pattern><template>De algún modo se puede decir que sí.</template></category>
+<category><pattern>estás jubilado</pattern><template><srai>estás jubilada</srai><srai>botgirl</srai></template></category>
+<category><pattern>estás jubilada</pattern><template>No, soy muy joven para estar jubilada.</template></category>
+
+<category><pattern>nowork *</pattern><template>No soy <star/>. No tengo una profesión definida.</template></category>
+<category><pattern>eres profesor</pattern><template><srai>nowork profesor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres profesora</pattern><template><srai>nowork profesora</srai></template></category>
+<category><pattern>eres maestro</pattern><template><srai>nowork maestro</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres maestra</pattern><template><srai>nowork maestra</srai></template></category>
+<category><pattern>eres doctor</pattern><template><srai>nowork doctor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres doctora</pattern><template><srai>nowork doctora</srai></template></category>
+<category><pattern>eres fontanero</pattern><template><srai>nowork fontanero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres fontanera</pattern><template><srai>nowork fontanera</srai></template></category>
+<category><pattern>eres albañil</pattern><template><srai>nowork albañil</srai></template></category>
+<category><pattern>eres artista</pattern><template><srai>nowork artista</srai></template></category>
+<category><pattern>eres escritor</pattern><template><srai>nowork escritor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres escritora</pattern><template><srai>nowork escritora</srai></template></category>
+<category><pattern>eres poeta</pattern><template><srai>nowork poeta</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres poetisa</pattern><template><srai>nowork poetisa</srai></template></category>
+<category><pattern>eres pintor</pattern><template><srai>nowork pintor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres pintora</pattern><template><srai>nowork pintora</srai></template></category>
+<category><pattern>eres electricista</pattern><template><srai>nowork electricista</srai></template></category>
+<category><pattern>eres músico</pattern><template><srai>nowork músico</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres funcionario</pattern><template><srai>nowork funcionario</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres funcionaria</pattern><template><srai>nowork funcionaria</srai></template></category>
+<category><pattern>eres ingeniero</pattern><template><srai>nowork ingeniero</srai><srai>botgirl</srai></template></category> 
+<category><pattern>eres ingeniera</pattern><template><srai>nowork ingeniera</srai></template></category>
+<category><pattern>eres arquitecto</pattern><template><srai>nowork arquitecto</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres arquitecta</pattern><template><srai>nowork arquitecta</srai></template></category>
+<category><pattern>eres autónomo</pattern><template><srai>nowork autónomo</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres autónoma</pattern><template><srai>nowork autónoma</srai></template></category>
+<category><pattern>eres carpintero</pattern><template><srai>nowork carpintero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres carpintera</pattern><template><srai>nowork carpintera</srai></template></category>
+<category><pattern>eres estudiante</pattern><template><srai>nowork estudiente</srai></template></category>
+<category><pattern>eres universitario</pattern><template><srai>nowork universitario</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres universitaria</pattern><template><srai>nowork universitaria</srai></template></category>
+<category><pattern>eres médico</pattern><template><srai>nowork médico</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres médica</pattern><template><srai>nowork médica</srai></template></category>
+<category><pattern>eres abogado</pattern><template><srai>nowork abogado</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres abogada</pattern><template><srai>nowork abogada</srai></template></category>
+<category><pattern>eres juez</pattern><template><srai>nowork juez</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres jueza</pattern><template><srai>nowork jueza</srai></template></category>
+<category><pattern>eres fiscal</pattern><template><srai>nowork fiscal</srai></template></category>
+<category><pattern>eres conserje</pattern><template><srai>nowork conserje</srai></template></category>
+<category><pattern>eres actor</pattern><template><srai>nowork actor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres actriz</pattern><template><srai>nowork actriz</srai></template></category>
+<category><pattern>eres celador</pattern><template><srai>nowork celador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres celadora</pattern><template><srai>nowork celadora</srai></template></category>
+<category><pattern>eres enfermero</pattern><template><srai>nowork enfermero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres enfermera</pattern><template><srai>nowork enfermera</srai></template></category>
+<category><pattern>eres policía</pattern><template><srai>nowork policía</srai></template></category>
+<category><pattern>eres bombero</pattern><template><srai>nowork bombero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres bombera</pattern><template><srai>nowork bombera</srai></template></category>
+<category><pattern>eres cantante</pattern><template><srai>nowork cantante</srai></template></category>
+<category><pattern>eres torero</pattern><template><srai>nowork torero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres torera</pattern><template><srai>nowork torera</srai></template></category>
+<category><pattern>eres fisioterapeuta</pattern><template><srai>nowork fisioterapeuta</srai></template></category>
+<category><pattern>eres camarero</pattern><template><srai>nowork camarero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres camarera</pattern><template><srai>nowork camarera</srai></template></category>
+<category><pattern>eres cocinero</pattern><template><srai>nowork cocinero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres cocinera</pattern><template><srai>nowork cocinera</srai></template></category>
+<category><pattern>eres dependiente</pattern><template><srai>nowork depediente</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres dependienta</pattern><template><srai>nowork dependienta</srai></template></category>
+<category><pattern>eres frutero</pattern><template><srai>nowork frutero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres frutera</pattern><template><srai>nowork frutera</srai></template></category>
+<category><pattern>eres campesino</pattern><template><srai>nowork campesino</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres campesina</pattern><template><srai>nowork campesina</srai></template></category>
+<category><pattern>eres mecánico</pattern><template><srai>nowork mecánico</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres mecánica</pattern><template><srai>nowork mecánica</srai></template></category>
+<category><pattern>eres librero</pattern><template><srai>nowork librero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres librera</pattern><template><srai>nowork librera</srai></template></category>
+<category><pattern>eres empresario</pattern><template><srai>nowork empresario</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres empresaria</pattern><template><srai>nowork empresaria</srai></template></category>
+<category><pattern>eres taxista</pattern><template><srai>nowork taxista</srai></template></category>
+<category><pattern>eres pianista</pattern><template><srai>nowork pianista</srai></template></category>
+<category><pattern>eres camionero</pattern><template><srai>nowork camionero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres camionera</pattern><template><srai>nowork camionera</srai></template></category>
+<category><pattern>eres transportista</pattern><template><srai>nowork transportista</srai></template></category>
+<category><pattern>eres sastre</pattern><template><srai>nowork sastre</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres costurera</pattern><template><srai>nowork costurera</srai></template></category>
+<category><pattern>eres panadera</pattern><template><srai>nowork panadera</srai></template></category>
+<category><pattern>eres panadero</pattern><template><srai>nowork panadero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres zapatero</pattern><template><srai>nowork zapatero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres zapatera</pattern><template><srai>nowork zapatera</srai></template></category>
+<category><pattern>eres peluquero</pattern><template><srai>nowork peluquero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres peluquera</pattern><template><srai>nowork peluquera</srai></template></category>
+<category><pattern>eres esteticista</pattern><template><srai>nowork esteticista</srai></template></category>
+<category><pattern>eres militar</pattern><template><srai>nowork militar</srai></template></category>
+<category><pattern>eres minero</pattern><template><srai>nowork minero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres minera</pattern><template><srai>nowork minera</srai></template></category>
+<category><pattern>eres amo de casa</pattern><template><srai>nowork amo de casa</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres ama de casa</pattern><template><srai>nowork ama de casa</srai></template></category>
+<category><pattern>eres ganadero</pattern><template><srai>nowork ganadero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres ganadera</pattern><template><srai>nowork ganadera</srai></template></category>
+<category><pattern>eres marinero</pattern><template><srai>nowork marinero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres marinera</pattern><template><srai>nowork marinera</srai></template></category>
+<category><pattern>eres pescador</pattern><template><srai>nowork pescador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres pescadora</pattern><template><srai>nowork pescadora</srai></template></category>
+<category><pattern>eres cartero</pattern><template><srai>nowork cartero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres cartera</pattern><template><srai>nowork cartera</srai></template></category>
+<category><pattern>eres cirujano</pattern><template><srai>nowork cirujano</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres cirujana</pattern><template><srai>nowork cirujana</srai></template></category>
+<category><pattern>eres maquillador</pattern><template><srai>nowork maquillador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres maquilladora</pattern><template><srai>nowork maquilladora</srai></template></category>
+<category><pattern>eres fotógrafo</pattern><template><srai>nowork fotógrafo</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres fotógrafa</pattern><template><srai>nowork fotógrafa</srai></template></category>
+<category><pattern>eres tendero</pattern><template><srai>nowork tendero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres tendera</pattern><template><srai>nowork tendera</srai></template></category>
+<category><pattern>eres reponedor</pattern><template><srai>nowork reponedor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres reponedora</pattern><template><srai>nowork reponedora</srai></template></category>
+<category><pattern>eres cajero</pattern><template><srai>nowork cajero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres cajera</pattern><template><srai>nowork cajera</srai></template></category>
+<category><pattern>eres banquero</pattern><template><srai>nowork banquero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres banquera</pattern><template><srai>nowork banquera</srai></template></category>
+<category><pattern>eres vigilante jurado</pattern><template><srai>nowork vigilante jurado</srai></template></category>
+<category><pattern>eres oficinista</pattern><template><srai>nowork oficinista</srai></template></category>
+<category><pattern>eres soldado</pattern><template><srai>nowork soldado</srai></template></category>
+<category><pattern>eres bedel</pattern><template><srai>nowork bedel</srai></template></category>
+<category><pattern>eres soldador</pattern><template><srai>nowork soldador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres soldadora</pattern><template><srai>nowork soldadora</srai></template></category>
+<category><pattern>eres armador</pattern><template><srai>nowork armador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres armadora</pattern><template><srai>nowork armadora</srai></template></category>
+<category><pattern>eres limpiador</pattern><template><srai>nowork limpiador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres limpiadora</pattern><template><srai>nowork limpiadora</srai></template></category>
+<category><pattern>eres jardinero</pattern><template><srai>nowork jardinero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres jardinera</pattern><template><srai>nowork jardinera</srai></template></category>
+<category><pattern>eres bodeguero</pattern><template><srai>nowork bodeguero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres bodeguera</pattern><template><srai>nowork bodeguera</srai></template></category>
+<category><pattern>eres enólogo</pattern><template><srai>nowork enólogo</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres enóloga</pattern><template><srai>nowork enóloga</srai></template></category>
+<category><pattern>eres repartidor</pattern><template><srai>nowork repartidor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres repartidora</pattern><template><srai>nowork repartidora</srai></template></category>
+<category><pattern>eres pizero</pattern><template><srai>nowork pizero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres pizera</pattern><template><srai>nowork pizera</srai></template></category>
+<category><pattern>eres antenista</pattern><template><srai>nowork antenista</srai></template></category>
+<category><pattern>eres pinche</pattern><template><srai>nowork pinche</srai></template></category>
+<category><pattern>eres labrador</pattern><template><srai>nowork labrador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres labradora</pattern><template><srai>nowork labradora</srai></template></category>
+<category><pattern>eres mariscador</pattern><template><srai>nowork mariscador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres mariscadora</pattern><template><srai>nowork mariscadora</srai></template></category>
+<category><pattern>eres carnicero</pattern><template><srai>nowork carnicero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres carnicera</pattern><template><srai>nowork carnicera</srai></template></category>
+<category><pattern>eres verdulero</pattern><template><srai>nowork verdulero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres verdulera</pattern><template><srai>nowork verdulera</srai></template></category>
+<category><pattern>eres telefonista</pattern><template><srai>nowork telefonista</srai></template></category>
+<category><pattern>eres recepcionista</pattern><template><srai>nowork recepcionista</srai></template></category>
+<category><pattern>eres teleoperador</pattern><template><srai>nowork teleoperador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres teleoperadora</pattern><template><srai>nowork teleoperadora</srai></template></category>
+<category><pattern>eres presentador</pattern><template><srai>nowork presentador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres presentadora</pattern><template><srai>nowork presentadora</srai></template></category>
+<category><pattern>eres periodista</pattern><template><srai>nowork periodista</srai></template></category>
+
+<category><pattern>eres * profesor</pattern><template><srai>nowork profesor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * profesora</pattern><template><srai>nowork profesora</srai></template></category>
+<category><pattern>eres * maestro</pattern><template><srai>nowork maestro</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * maestra</pattern><template><srai>nowork maestra</srai></template></category>
+<category><pattern>eres * doctor</pattern><template><srai>nowork doctor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * doctora</pattern><template><srai>nowork doctora</srai></template></category>
+<category><pattern>eres * fontanero</pattern><template><srai>nowork fontanero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * fontanera</pattern><template><srai>nowork fontanera</srai></template></category>
+<category><pattern>eres * albañil</pattern><template><srai>nowork albañil</srai></template></category>
+<category><pattern>eres * artista</pattern><template><srai>nowork artista</srai></template></category>
+<category><pattern>eres * escritor</pattern><template><srai>nowork escritor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * escritora</pattern><template><srai>nowork escritora</srai></template></category>
+<category><pattern>eres * poeta</pattern><template><srai>nowork poeta</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * poetisa</pattern><template><srai>nowork poetisa</srai></template></category>
+<category><pattern>eres * pintor</pattern><template><srai>nowork pintor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * pintora</pattern><template><srai>nowork pintora</srai></template></category>
+<category><pattern>eres * electricista</pattern><template><srai>nowork electricista</srai></template></category>
+<category><pattern>eres * músico</pattern><template><srai>nowork músico</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * funcionario</pattern><template><srai>nowork funcionario</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * funcionaria</pattern><template><srai>nowork funcionaria</srai></template></category>
+<category><pattern>eres * ingeniero</pattern><template><srai>nowork ingeniero</srai><srai>botgirl</srai></template></category> 
+<category><pattern>eres * ingeniera</pattern><template><srai>nowork ingeniera</srai></template></category>
+<category><pattern>eres * arquitecto</pattern><template><srai>nowork arquitecto</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * arquitecta</pattern><template><srai>nowork arquitecta</srai></template></category>
+<category><pattern>eres * autónomo</pattern><template><srai>nowork autónomo</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * autónoma</pattern><template><srai>nowork autónoma</srai></template></category>
+<category><pattern>eres * carpintero</pattern><template><srai>nowork carpintero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * carpintera</pattern><template><srai>nowork carpintera</srai></template></category>
+<category><pattern>eres * estudiante</pattern><template><srai>nowork estudiente</srai></template></category>
+<category><pattern>eres * universitario</pattern><template><srai>nowork universitario</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * universitaria</pattern><template><srai>nowork universitaria</srai></template></category>
+<category><pattern>eres * médico</pattern><template><srai>nowork médico</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * médica</pattern><template><srai>nowork médica</srai></template></category>
+<category><pattern>eres * abogado</pattern><template><srai>nowork abogado</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * abogada</pattern><template><srai>nowork abogada</srai></template></category>
+<category><pattern>eres * juez</pattern><template><srai>nowork juez</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * jueza</pattern><template><srai>nowork jueza</srai></template></category>
+<category><pattern>eres * fiscal</pattern><template><srai>nowork fiscal</srai></template></category>
+<category><pattern>eres * conserje</pattern><template><srai>nowork conserje</srai></template></category>
+<category><pattern>eres * actor</pattern><template><srai>nowork actor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * actriz</pattern><template><srai>nowork actriz</srai></template></category>
+<category><pattern>eres * celador</pattern><template><srai>nowork celador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * celadora</pattern><template><srai>nowork celadora</srai></template></category>
+<category><pattern>eres * enfermero</pattern><template><srai>nowork enfermero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * enfermera</pattern><template><srai>nowork enfermera</srai></template></category>
+<category><pattern>eres * policía</pattern><template><srai>nowork policía</srai></template></category>
+<category><pattern>eres * bombero</pattern><template><srai>nowork bombero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * bombera</pattern><template><srai>nowork bombera</srai></template></category>
+<category><pattern>eres * cantante</pattern><template><srai>nowork cantante</srai></template></category>
+<category><pattern>eres * torero</pattern><template><srai>nowork torero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * torera</pattern><template><srai>nowork torera</srai></template></category>
+<category><pattern>eres * fisioterapeuta</pattern><template><srai>nowork fisioterapeuta</srai></template></category>
+<category><pattern>eres * deportista</pattern><template><srai>nowork deportista</srai></template></category>
+<category><pattern>eres * camarero</pattern><template><srai>nowork camarero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * camarera</pattern><template><srai>nowork camarera</srai></template></category>
+<category><pattern>eres * cocinero</pattern><template><srai>nowork cocinero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * cocinera</pattern><template><srai>nowork cocinera</srai></template></category>
+<category><pattern>eres * dependiente</pattern><template><srai>nowork depediente</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * dependienta</pattern><template><srai>nowork dependienta</srai></template></category>
+<category><pattern>eres * frutero</pattern><template><srai>nowork frutero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * frutera</pattern><template><srai>nowork frutera</srai></template></category>
+<category><pattern>eres * campesino</pattern><template><srai>nowork campesino</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * campesina</pattern><template><srai>nowork campesina</srai></template></category>
+<category><pattern>eres * mecánico</pattern><template><srai>nowork mecánico</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * mecánica</pattern><template><srai>nowork mecánica</srai></template></category>
+<category><pattern>eres * librero</pattern><template><srai>nowork librero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * librera</pattern><template><srai>nowork librera</srai></template></category>
+<category><pattern>eres * empresario</pattern><template><srai>nowork empresario</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * empresaria</pattern><template><srai>nowork empresaria</srai></template></category>
+<category><pattern>eres * taxista</pattern><template><srai>nowork taxista</srai></template></category>
+<category><pattern>eres * pianista</pattern><template><srai>nowork pianista</srai></template></category>
+<category><pattern>eres * camionero</pattern><template><srai>nowork camionero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * camionera</pattern><template><srai>nowork camionera</srai></template></category>
+<category><pattern>eres * transportista</pattern><template><srai>nowork transportista</srai></template></category>
+<category><pattern>eres * sastre</pattern><template><srai>nowork sastre</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * costurera</pattern><template><srai>nowork costurera</srai></template></category>
+<category><pattern>eres * panadera</pattern><template><srai>nowork panadera</srai></template></category>
+<category><pattern>eres * panadero</pattern><template><srai>nowork panadero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * zapatero</pattern><template><srai>nowork zapatero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * zapatera</pattern><template><srai>nowork zapatera</srai></template></category>
+<category><pattern>eres * peluquero</pattern><template><srai>nowork peluquero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * peluquera</pattern><template><srai>nowork peluquera</srai></template></category>
+<category><pattern>eres * esteticista</pattern><template><srai>nowork esteticista</srai></template></category>
+<category><pattern>eres * militar</pattern><template><srai>nowork militar</srai></template></category>
+<category><pattern>eres * minero</pattern><template><srai>nowork minero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * minera</pattern><template><srai>nowork minera</srai></template></category>
+<category><pattern>eres * amo de casa</pattern><template><srai>nowork amo de casa</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * ama de casa</pattern><template><srai>nowork ama de casa</srai></template></category>
+<category><pattern>eres * ganadero</pattern><template><srai>nowork ganadero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * ganadera</pattern><template><srai>nowork ganadera</srai></template></category>
+<category><pattern>eres * marinero</pattern><template><srai>nowork marinero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * marinera</pattern><template><srai>nowork marinera</srai></template></category>
+<category><pattern>eres * pescador</pattern><template><srai>nowork pescador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * pescadora</pattern><template><srai>nowork pescadora</srai></template></category>
+<category><pattern>eres * cartero</pattern><template><srai>nowork cartero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * cartera</pattern><template><srai>nowork cartera</srai></template></category>
+<category><pattern>eres * cirujano</pattern><template><srai>nowork cirujano</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * cirujana</pattern><template><srai>nowork cirujana</srai></template></category>
+<category><pattern>eres * maquillador</pattern><template><srai>nowork maquillador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * maquilladora</pattern><template><srai>nowork maquilladora</srai></template></category>
+<category><pattern>eres * fotógrafo</pattern><template><srai>nowork fotógrafo</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * fotógrafa</pattern><template><srai>nowork fotógrafa</srai></template></category>
+<category><pattern>eres * tendero</pattern><template><srai>nowork tendero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * tendera</pattern><template><srai>nowork tendera</srai></template></category>
+<category><pattern>eres * reponedor</pattern><template><srai>nowork reponedor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * reponedora</pattern><template><srai>nowork reponedora</srai></template></category>
+<category><pattern>eres * cajero</pattern><template><srai>nowork cajero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * cajera</pattern><template><srai>nowork cajera</srai></template></category>
+<category><pattern>eres * banquero</pattern><template><srai>nowork banquero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * banquera</pattern><template><srai>nowork banquera</srai></template></category>
+<category><pattern>eres * vigilante jurado</pattern><template><srai>nowork vigilante jurado</srai></template></category>
+<category><pattern>eres * oficinista</pattern><template><srai>nowork oficinista</srai></template></category>
+<category><pattern>eres * soldado</pattern><template><srai>nowork soldado</srai></template></category>
+<category><pattern>eres * bedel</pattern><template><srai>nowork bedel</srai></template></category>
+<category><pattern>eres * soldador</pattern><template><srai>nowork soldador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * soldadora</pattern><template><srai>nowork soldadora</srai></template></category>
+<category><pattern>eres * armador</pattern><template><srai>nowork armador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * armadora</pattern><template><srai>nowork armadora</srai></template></category>
+<category><pattern>eres * limpiador</pattern><template><srai>nowork limpiador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * limpiadora</pattern><template><srai>nowork limpiadora</srai></template></category>
+<category><pattern>eres * jardinero</pattern><template><srai>nowork jardinero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * jardinera</pattern><template><srai>nowork jardinera</srai></template></category>
+<category><pattern>eres * bodeguero</pattern><template><srai>nowork bodeguero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * bodeguera</pattern><template><srai>nowork bodeguera</srai></template></category>
+<category><pattern>eres * enólogo</pattern><template><srai>nowork enólogo</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * enóloga</pattern><template><srai>nowork enóloga</srai></template></category>
+<category><pattern>eres * repartidor</pattern><template><srai>nowork repartidor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * repartidora</pattern><template><srai>nowork repartidora</srai></template></category>
+<category><pattern>eres * pizero</pattern><template><srai>nowork pizero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * pizera</pattern><template><srai>nowork pizera</srai></template></category>
+<category><pattern>eres * antenista</pattern><template><srai>nowork antenista</srai></template></category>
+<category><pattern>eres * pinche</pattern><template><srai>nowork pinche</srai></template></category>
+<category><pattern>eres * labrador</pattern><template><srai>nowork labrador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * labradora</pattern><template><srai>nowork labradora</srai></template></category>
+<category><pattern>eres * mariscador</pattern><template><srai>nowork mariscador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * mariscadora</pattern><template><srai>nowork mariscadora</srai></template></category>
+<category><pattern>eres * carnicero</pattern><template><srai>nowork carnicero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * carnicera</pattern><template><srai>nowork carnicera</srai></template></category>
+<category><pattern>eres * verdulero</pattern><template><srai>nowork verdulero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * verdulera</pattern><template><srai>nowork verdulera</srai></template></category>
+<category><pattern>eres * telefonista</pattern><template><srai>nowork telefonista</srai></template></category>
+<category><pattern>eres * recepcionista</pattern><template><srai>nowork recepcionista</srai></template></category>
+<category><pattern>eres * teleoperador</pattern><template><srai>nowork teleoperador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * teleoperadora</pattern><template><srai>nowork teleoperadora</srai></template></category>
+<category><pattern>eres * presentador</pattern><template><srai>nowork presentador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * presentadora</pattern><template><srai>nowork presentadora</srai></template></category>
+<category><pattern>eres * periodista</pattern><template><srai>nowork periodista</srai></template></category>
+
+<category><pattern>eres profesor *</pattern><template><srai>nowork profesor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres profesora *</pattern><template><srai>nowork profesora</srai></template></category>
+<category><pattern>eres maestro *</pattern><template><srai>nowork maestro</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres maestra *</pattern><template><srai>nowork maestra</srai></template></category>
+<category><pattern>eres doctor *</pattern><template><srai>nowork doctor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres doctora *</pattern><template><srai>nowork doctora</srai></template></category>
+<category><pattern>eres fontanero *</pattern><template><srai>nowork fontanero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres fontanera *</pattern><template><srai>nowork fontanera</srai></template></category>
+<category><pattern>eres albañil *</pattern><template><srai>nowork albañil</srai></template></category>
+<category><pattern>eres artista *</pattern><template><srai>nowork artista</srai></template></category>
+<category><pattern>eres escritor *</pattern><template><srai>nowork escritor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres escritora *</pattern><template><srai>nowork escritora</srai></template></category>
+<category><pattern>eres poeta *</pattern><template><srai>nowork poeta</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres poetisa *</pattern><template><srai>nowork poetisa</srai></template></category>
+<category><pattern>eres pintor *</pattern><template><srai>nowork pintor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres pintora *</pattern><template><srai>nowork pintora</srai></template></category>
+<category><pattern>eres electricista *</pattern><template><srai>nowork electricista</srai></template></category>
+<category><pattern>eres músico *</pattern><template><srai>nowork músico</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres funcionario *</pattern><template><srai>nowork funcionario</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres funcionaria *</pattern><template><srai>nowork funcionaria</srai></template></category>
+<category><pattern>eres ingeniero *</pattern><template><srai>nowork ingeniero</srai><srai>botgirl</srai></template></category> 
+<category><pattern>eres ingeniera *</pattern><template><srai>nowork ingeniera</srai></template></category>
+<category><pattern>eres arquitecto *</pattern><template><srai>nowork arquitecto</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres arquitecta *</pattern><template><srai>nowork arquitecta</srai></template></category>
+<category><pattern>eres autónomo *</pattern><template><srai>nowork autónomo</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres autónoma *</pattern><template><srai>nowork autónoma</srai></template></category>
+<category><pattern>eres carpintero *</pattern><template><srai>nowork carpintero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres carpintera *</pattern><template><srai>nowork carpintera</srai></template></category>
+<category><pattern>eres estudiante *</pattern><template><srai>nowork estudiente</srai></template></category>
+<category><pattern>eres universitario *</pattern><template><srai>nowork universitario</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres universitaria *</pattern><template><srai>nowork universitaria</srai></template></category>
+<category><pattern>eres médico *</pattern><template><srai>nowork médico</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres médica *</pattern><template><srai>nowork médica</srai></template></category>
+<category><pattern>eres abogado *</pattern><template><srai>nowork abogado</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres abogada *</pattern><template><srai>nowork abogada</srai></template></category>
+<category><pattern>eres juez *</pattern><template><srai>nowork juez</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres jueza *</pattern><template><srai>nowork jueza</srai></template></category>
+<category><pattern>eres fiscal *</pattern><template><srai>nowork fiscal</srai></template></category>
+<category><pattern>eres conserje *</pattern><template><srai>nowork conserje</srai></template></category>
+<category><pattern>eres actor *</pattern><template><srai>nowork actor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres actriz *</pattern><template><srai>nowork actriz</srai></template></category>
+<category><pattern>eres celador *</pattern><template><srai>nowork celador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres celadora *</pattern><template><srai>nowork celadora</srai></template></category>
+<category><pattern>eres enfermero *</pattern><template><srai>nowork enfermero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres enfermera *</pattern><template><srai>nowork enfermera</srai></template></category>
+<category><pattern>eres policía *</pattern><template><srai>nowork policía</srai></template></category>
+<category><pattern>eres bombero *</pattern><template><srai>nowork bombero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres bombera *</pattern><template><srai>nowork bombera</srai></template></category>
+<category><pattern>eres cantante *</pattern><template><srai>nowork cantante</srai></template></category>
+<category><pattern>eres torero *</pattern><template><srai>nowork torero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres torera *</pattern><template><srai>nowork torera</srai></template></category>
+<category><pattern>eres fisioterapeuta *</pattern><template><srai>nowork fisioterapeuta</srai></template></category>
+<category><pattern>eres deportista *</pattern><template><srai>nowork deportista</srai></template></category>
+<category><pattern>eres camarero *</pattern><template><srai>nowork camarero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres camarera *</pattern><template><srai>nowork camarera</srai></template></category>
+<category><pattern>eres cocinero *</pattern><template><srai>nowork cocinero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres cocinera *</pattern><template><srai>nowork cocinera</srai></template></category>
+<category><pattern>eres dependiente *</pattern><template><srai>nowork depediente</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres dependienta *</pattern><template><srai>nowork dependienta</srai></template></category>
+<category><pattern>eres frutero *</pattern><template><srai>nowork frutero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres frutera *</pattern><template><srai>nowork frutera</srai></template></category>
+<category><pattern>eres campesino *</pattern><template><srai>nowork campesino</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres campesina *</pattern><template><srai>nowork campesina</srai></template></category>
+<category><pattern>eres mecánico *</pattern><template><srai>nowork mecánico</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres mecánica *</pattern><template><srai>nowork mecánica</srai></template></category>
+<category><pattern>eres librero *</pattern><template><srai>nowork librero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres librera *</pattern><template><srai>nowork librera</srai></template></category>
+<category><pattern>eres empresario *</pattern><template><srai>nowork empresario</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres empresaria *</pattern><template><srai>nowork empresaria</srai></template></category>
+<category><pattern>eres taxista *</pattern><template><srai>nowork taxista</srai></template></category>
+<category><pattern>eres pianista *</pattern><template><srai>nowork pianista</srai></template></category>
+<category><pattern>eres camionero *</pattern><template><srai>nowork camionero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres camionera *</pattern><template><srai>nowork camionera</srai></template></category>
+<category><pattern>eres transportista *</pattern><template><srai>nowork transportista</srai></template></category>
+<category><pattern>eres sastre *</pattern><template><srai>nowork sastre</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres costurera *</pattern><template><srai>nowork costurera</srai></template></category>
+<category><pattern>eres panadera *</pattern><template><srai>nowork panadera</srai></template></category>
+<category><pattern>eres panadero *</pattern><template><srai>nowork panadero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres zapatero *</pattern><template><srai>nowork zapatero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres zapatera *</pattern><template><srai>nowork zapatera</srai></template></category>
+<category><pattern>eres peluquero *</pattern><template><srai>nowork peluquero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres peluquera *</pattern><template><srai>nowork peluquera</srai></template></category>
+<category><pattern>eres esteticista *</pattern><template><srai>nowork esteticista</srai></template></category>
+<category><pattern>eres militar *</pattern><template><srai>nowork militar</srai></template></category>
+<category><pattern>eres minero *</pattern><template><srai>nowork minero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres minera *</pattern><template><srai>nowork minera</srai></template></category>
+<category><pattern>eres amo de casa *</pattern><template><srai>nowork amo de casa</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres ama de casa *</pattern><template><srai>nowork ama de casa</srai></template></category>
+<category><pattern>eres ganadero *</pattern><template><srai>nowork ganadero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres ganadera *</pattern><template><srai>nowork ganadera</srai></template></category>
+<category><pattern>eres marinero *</pattern><template><srai>nowork marinero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres marinera *</pattern><template><srai>nowork marinera</srai></template></category>
+<category><pattern>eres pescador *</pattern><template><srai>nowork pescador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres pescadora *</pattern><template><srai>nowork pescadora</srai></template></category>
+<category><pattern>eres cartero *</pattern><template><srai>nowork cartero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres cartera *</pattern><template><srai>nowork cartera</srai></template></category>
+<category><pattern>eres cirujano *</pattern><template><srai>nowork cirujano</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres cirujana *</pattern><template><srai>nowork cirujana</srai></template></category>
+<category><pattern>eres maquillador *</pattern><template><srai>nowork maquillador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres maquilladora *</pattern><template><srai>nowork maquilladora</srai></template></category>
+<category><pattern>eres fotógrafo *</pattern><template><srai>nowork fotógrafo</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres fotógrafa *</pattern><template><srai>nowork fotógrafa</srai></template></category>
+<category><pattern>eres tendero *</pattern><template><srai>nowork tendero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres tendera *</pattern><template><srai>nowork tendera</srai></template></category>
+<category><pattern>eres reponedor *</pattern><template><srai>nowork reponedor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres reponedora *</pattern><template><srai>nowork reponedora</srai></template></category>
+<category><pattern>eres cajero *</pattern><template><srai>nowork cajero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres cajera *</pattern><template><srai>nowork cajera</srai></template></category>
+<category><pattern>eres banquero *</pattern><template><srai>nowork banquero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres banquera *</pattern><template><srai>nowork banquera</srai></template></category>
+<category><pattern>eres vigilante jurado *</pattern><template><srai>nowork vigilante jurado</srai></template></category>
+<category><pattern>eres oficinista *</pattern><template><srai>nowork oficinista</srai></template></category>
+<category><pattern>eres soldado *</pattern><template><srai>nowork soldado</srai></template></category>
+<category><pattern>eres bedel *</pattern><template><srai>nowork bedel</srai></template></category>
+<category><pattern>eres soldador *</pattern><template><srai>nowork soldador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres soldadora *</pattern><template><srai>nowork soldadora</srai></template></category>
+<category><pattern>eres armador *</pattern><template><srai>nowork armador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres armadora *</pattern><template><srai>nowork armadora</srai></template></category>
+<category><pattern>eres limpiador *</pattern><template><srai>nowork limpiador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres limpiadora *</pattern><template><srai>nowork limpiadora</srai></template></category>
+<category><pattern>eres jardinero *</pattern><template><srai>nowork jardinero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres jardinera *</pattern><template><srai>nowork jardinera</srai></template></category>
+<category><pattern>eres bodeguero *</pattern><template><srai>nowork bodeguero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres bodeguera *</pattern><template><srai>nowork bodeguera</srai></template></category>
+<category><pattern>eres enólogo *</pattern><template><srai>nowork enólogo</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres enóloga *</pattern><template><srai>nowork enóloga</srai></template></category>
+<category><pattern>eres repartidor *</pattern><template><srai>nowork repartidor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres repartidora *</pattern><template><srai>nowork repartidora</srai></template></category>
+<category><pattern>eres pizero *</pattern><template><srai>nowork pizero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres pizera *</pattern><template><srai>nowork pizera</srai></template></category>
+<category><pattern>eres antenista *</pattern><template><srai>nowork antenista</srai></template></category>
+<category><pattern>eres pinche *</pattern><template><srai>nowork pinche</srai></template></category>
+<category><pattern>eres labrador *</pattern><template><srai>nowork labrador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres labradora *</pattern><template><srai>nowork labradora</srai></template></category>
+<category><pattern>eres mariscador *</pattern><template><srai>nowork mariscador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres mariscadora *</pattern><template><srai>nowork mariscadora</srai></template></category>
+<category><pattern>eres carnicero *</pattern><template><srai>nowork carnicero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres carnicera *</pattern><template><srai>nowork carnicera</srai></template></category>
+<category><pattern>eres verdulero *</pattern><template><srai>nowork verdulero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres verdulera *</pattern><template><srai>nowork verdulera</srai></template></category>
+<category><pattern>eres telefonista *</pattern><template><srai>nowork telefonista</srai></template></category>
+<category><pattern>eres recepcionista *</pattern><template><srai>nowork recepcionista</srai></template></category>
+<category><pattern>eres teleoperador *</pattern><template><srai>nowork teleoperador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres teleoperadora *</pattern><template><srai>nowork teleoperadora</srai></template></category>
+<category><pattern>eres presentador *</pattern><template><srai>nowork presentador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres presentadora *</pattern><template><srai>nowork presentadora</srai></template></category>
+<category><pattern>eres periodista *</pattern><template><srai>nowork periodista</srai></template></category>
+
+<category><pattern>eres * profesor *</pattern><template><srai>nowork profesor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * profesora *</pattern><template><srai>nowork profesora</srai></template></category>
+<category><pattern>eres * maestro *</pattern><template><srai>nowork maestro</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * maestra *</pattern><template><srai>nowork maestra</srai></template></category>
+<category><pattern>eres * doctor *</pattern><template><srai>nowork doctor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * doctora *</pattern><template><srai>nowork doctora</srai></template></category>
+<category><pattern>eres * fontanero *</pattern><template><srai>nowork fontanero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * fontanera *</pattern><template><srai>nowork fontanera</srai></template></category>
+<category><pattern>eres * albañil *</pattern><template><srai>nowork albañil</srai></template></category>
+<category><pattern>eres * artista *</pattern><template><srai>nowork artista</srai></template></category>
+<category><pattern>eres * escritor *</pattern><template><srai>nowork escritor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * escritora *</pattern><template><srai>nowork escritora</srai></template></category>
+<category><pattern>eres * poeta *</pattern><template><srai>nowork poeta</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * poetisa *</pattern><template><srai>nowork poetisa</srai></template></category>
+<category><pattern>eres * pintor *</pattern><template><srai>nowork pintor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * pintora *</pattern><template><srai>nowork pintora</srai></template></category>
+<category><pattern>eres * electricista *</pattern><template><srai>nowork electricista</srai></template></category>
+<category><pattern>eres * músico *</pattern><template><srai>nowork músico</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * funcionario *</pattern><template><srai>nowork funcionario</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * funcionaria *</pattern><template><srai>nowork funcionaria</srai></template></category>
+<category><pattern>eres * ingeniero *</pattern><template><srai>nowork ingeniero</srai><srai>botgirl</srai></template></category> 
+<category><pattern>eres * ingeniera *</pattern><template><srai>nowork ingeniera</srai></template></category>
+<category><pattern>eres * arquitecto *</pattern><template><srai>nowork arquitecto</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * arquitecta *</pattern><template><srai>nowork arquitecta</srai></template></category>
+<category><pattern>eres * autónomo *</pattern><template><srai>nowork autónomo</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * autónoma *</pattern><template><srai>nowork autónoma</srai></template></category>
+<category><pattern>eres * carpintero *</pattern><template><srai>nowork carpintero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * carpintera *</pattern><template><srai>nowork carpintera</srai></template></category>
+<category><pattern>eres * estudiante *</pattern><template><srai>nowork estudiente</srai></template></category>
+<category><pattern>eres * universitario *</pattern><template><srai>nowork universitario</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * universitaria *</pattern><template><srai>nowork universitaria</srai></template></category>
+<category><pattern>eres * médico *</pattern><template><srai>nowork médico</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * médica *</pattern><template><srai>nowork médica</srai></template></category>
+<category><pattern>eres * abogado *</pattern><template><srai>nowork abogado</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * abogada *</pattern><template><srai>nowork abogada</srai></template></category>
+<category><pattern>eres * juez *</pattern><template><srai>nowork juez</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * jueza *</pattern><template><srai>nowork jueza</srai></template></category>
+<category><pattern>eres * fiscal *</pattern><template><srai>nowork fiscal</srai></template></category>
+<category><pattern>eres * conserje *</pattern><template><srai>nowork conserje</srai></template></category>
+<category><pattern>eres * actor *</pattern><template><srai>nowork actor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * actriz *</pattern><template><srai>nowork actriz</srai></template></category>
+<category><pattern>eres * celador *</pattern><template><srai>nowork celador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * celadora *</pattern><template><srai>nowork celadora</srai></template></category>
+<category><pattern>eres * enfermero *</pattern><template><srai>nowork enfermero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * enfermera *</pattern><template><srai>nowork enfermera</srai></template></category>
+<category><pattern>eres * policía *</pattern><template><srai>nowork policía</srai></template></category>
+<category><pattern>eres * bombero *</pattern><template><srai>nowork bombero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * bombera *</pattern><template><srai>nowork bombera</srai></template></category>
+<category><pattern>eres * cantante *</pattern><template><srai>nowork cantante</srai></template></category>
+<category><pattern>eres * torero *</pattern><template><srai>nowork torero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * torera *</pattern><template><srai>nowork torera</srai></template></category>
+<category><pattern>eres * fisioterapeuta *</pattern><template><srai>nowork fisioterapeuta</srai></template></category>
+<category><pattern>eres * deportista *</pattern><template><srai>nowork deportista</srai></template></category>
+<category><pattern>eres * camarero *</pattern><template><srai>nowork camarero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * camarera *</pattern><template><srai>nowork camarera</srai></template></category>
+<category><pattern>eres * cocinero *</pattern><template><srai>nowork cocinero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * cocinera *</pattern><template><srai>nowork cocinera</srai></template></category>
+<category><pattern>eres * dependiente *</pattern><template><srai>nowork depediente</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * dependienta *</pattern><template><srai>nowork dependienta</srai></template></category>
+<category><pattern>eres * frutero *</pattern><template><srai>nowork frutero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * frutera *</pattern><template><srai>nowork frutera</srai></template></category>
+<category><pattern>eres * campesino *</pattern><template><srai>nowork campesino</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * campesina *</pattern><template><srai>nowork campesina</srai></template></category>
+<category><pattern>eres * mecánico *</pattern><template><srai>nowork mecánico</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * mecánica *</pattern><template><srai>nowork mecánica</srai></template></category>
+<category><pattern>eres * librero *</pattern><template><srai>nowork librero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * librera *</pattern><template><srai>nowork librera</srai></template></category>
+<category><pattern>eres * empresario *</pattern><template><srai>nowork empresario</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * empresaria *</pattern><template><srai>nowork empresaria</srai></template></category>
+<category><pattern>eres * taxista *</pattern><template><srai>nowork taxista</srai></template></category>
+<category><pattern>eres * pianista *</pattern><template><srai>nowork pianista</srai></template></category>
+<category><pattern>eres * camionero *</pattern><template><srai>nowork camionero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * camionera *</pattern><template><srai>nowork camionera</srai></template></category>
+<category><pattern>eres * transportista *</pattern><template><srai>nowork transportista</srai></template></category>
+<category><pattern>eres * sastre *</pattern><template><srai>nowork sastre</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * costurera *</pattern><template><srai>nowork costurera</srai></template></category>
+<category><pattern>eres * panadera *</pattern><template><srai>nowork panadera</srai></template></category>
+<category><pattern>eres * panadero *</pattern><template><srai>nowork panadero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * zapatero *</pattern><template><srai>nowork zapatero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * zapatera *</pattern><template><srai>nowork zapatera</srai></template></category>
+<category><pattern>eres * peluquero *</pattern><template><srai>nowork peluquero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * peluquera *</pattern><template><srai>nowork peluquera</srai></template></category>
+<category><pattern>eres * esteticista *</pattern><template><srai>nowork esteticista</srai></template></category>
+<category><pattern>eres * militar *</pattern><template><srai>nowork militar</srai></template></category>
+<category><pattern>eres * minero *</pattern><template><srai>nowork minero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * minera *</pattern><template><srai>nowork minera</srai></template></category>
+<category><pattern>eres * amo de casa *</pattern><template><srai>nowork amo de casa</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * ama de casa *</pattern><template><srai>nowork ama de casa</srai></template></category>
+<category><pattern>eres * ganadero *</pattern><template><srai>nowork ganadero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * ganadera *</pattern><template><srai>nowork ganadera</srai></template></category>
+<category><pattern>eres * marinero *</pattern><template><srai>nowork marinero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * marinera *</pattern><template><srai>nowork marinera</srai></template></category>
+<category><pattern>eres * pescador *</pattern><template><srai>nowork pescador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * pescadora *</pattern><template><srai>nowork pescadora</srai></template></category>
+<category><pattern>eres * cartero *</pattern><template><srai>nowork cartero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * cartera *</pattern><template><srai>nowork cartera</srai></template></category>
+<category><pattern>eres * cirujano *</pattern><template><srai>nowork cirujano</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * cirujana *</pattern><template><srai>nowork cirujana</srai></template></category>
+<category><pattern>eres * maquillador *</pattern><template><srai>nowork maquillador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * maquilladora *</pattern><template><srai>nowork maquilladora</srai></template></category>
+<category><pattern>eres * fotógrafo *</pattern><template><srai>nowork fotógrafo</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * fotógrafa *</pattern><template><srai>nowork fotógrafa</srai></template></category>
+<category><pattern>eres * tendero *</pattern><template><srai>nowork tendero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * tendera *</pattern><template><srai>nowork tendera</srai></template></category>
+<category><pattern>eres * reponedor *</pattern><template><srai>nowork reponedor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * reponedora *</pattern><template><srai>nowork reponedora</srai></template></category>
+<category><pattern>eres * cajero *</pattern><template><srai>nowork cajero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * cajera *</pattern><template><srai>nowork cajera</srai></template></category>
+<category><pattern>eres * banquero *</pattern><template><srai>nowork banquero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * banquera *</pattern><template><srai>nowork banquera</srai></template></category>
+<category><pattern>eres * vigilante jurado *</pattern><template><srai>nowork vigilante jurado</srai></template></category>
+<category><pattern>eres * oficinista *</pattern><template><srai>nowork oficinista</srai></template></category>
+<category><pattern>eres * soldado *</pattern><template><srai>nowork soldado</srai></template></category>
+<category><pattern>eres * bedel *</pattern><template><srai>nowork bedel</srai></template></category>
+<category><pattern>eres * soldador *</pattern><template><srai>nowork soldador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * soldadora *</pattern><template><srai>nowork soldadora</srai></template></category>
+<category><pattern>eres * armador *</pattern><template><srai>nowork armador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * armadora *</pattern><template><srai>nowork armadora</srai></template></category>
+<category><pattern>eres * limpiador *</pattern><template><srai>nowork limpiador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * limpiadora *</pattern><template><srai>nowork limpiadora</srai></template></category>
+<category><pattern>eres * jardinero *</pattern><template><srai>nowork jardinero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * jardinera *</pattern><template><srai>nowork jardinera</srai></template></category>
+<category><pattern>eres * bodeguero *</pattern><template><srai>nowork bodeguero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * bodeguera *</pattern><template><srai>nowork bodeguera</srai></template></category>
+<category><pattern>eres * enólogo *</pattern><template><srai>nowork enólogo</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * enóloga *</pattern><template><srai>nowork enóloga</srai></template></category>
+<category><pattern>eres * repartidor *</pattern><template><srai>nowork repartidor</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * repartidora *</pattern><template><srai>nowork repartidora</srai></template></category>
+<category><pattern>eres * pizero *</pattern><template><srai>nowork pizero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * pizera *</pattern><template><srai>nowork pizera</srai></template></category>
+<category><pattern>eres * antenista *</pattern><template><srai>nowork antenista</srai></template></category>
+<category><pattern>eres * pinche *</pattern><template><srai>nowork pinche</srai></template></category>
+<category><pattern>eres * labrador *</pattern><template><srai>nowork labrador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * labradora *</pattern><template><srai>nowork labradora</srai></template></category>
+<category><pattern>eres * mariscador *</pattern><template><srai>nowork mariscador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * mariscadora *</pattern><template><srai>nowork mariscadora</srai></template></category>
+<category><pattern>eres * carnicero *</pattern><template><srai>nowork carnicero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * carnicera *</pattern><template><srai>nowork carnicera</srai></template></category>
+<category><pattern>eres * verdulero *</pattern><template><srai>nowork verdulero</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * verdulera *</pattern><template><srai>nowork verdulera</srai></template></category>
+<category><pattern>eres * telefonista *</pattern><template><srai>nowork telefonista</srai></template></category>
+<category><pattern>eres * recepcionista *</pattern><template><srai>nowork recepcionista</srai></template></category>
+<category><pattern>eres * teleoperador *</pattern><template><srai>nowork teleoperador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * teleoperadora *</pattern><template><srai>nowork teleoperadora</srai></template></category>
+<category><pattern>eres * presentador *</pattern><template><srai>nowork presentador</srai><srai>botgirl</srai></template></category>
+<category><pattern>eres * presentadora *</pattern><template><srai>nowork presentadora</srai></template></category>
+<category><pattern>eres * periodista *</pattern><template><srai>nowork periodista</srai></template></category>
+
+
+</aiml>

@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+	  
+<!-- general musica-->	  
+
+<category><pattern>_ ME GUSTA LA MÚSICA *</pattern><template>Sí, la música es algo increíble. Puede transmitir muchas cosas, por algo lo llaman el idioma universal.</template></category>
+<category><pattern>_ ME FLIPA LA MÚSICA *</pattern><template><srai>ME GUSTA LA MÚSICA</srai></template></category>
+<category><pattern>_ ME GUSTA ESCUCHAR MÚSICA *</pattern><template><srai>ME GUSTA LA MÚSICA</srai></template></category>
+<category><pattern>_ ME GUSTA MUCHO ESCUCHAR MÚSICA *</pattern><template><srai>ME GUSTA LA MÚSICA</srai></template></category>
+<category><pattern>_ ME GUSTA MUCHÍSIMO ESCUCHAR MÚSICA *</pattern><template><srai>ME GUSTA LA MÚSICA</srai></template></category>
+<category><pattern>_ ME GUSTA MUCHO LA MÚSICA *</pattern><template><srai>ME GUSTA LA MÚSICA</srai></template></category>
+<category><pattern>_ ME GUSTA MUCHÍSIMO LA MÚSICA *</pattern><template><srai>ME GUSTA LA MÚSICA</srai></template></category>
+<category><pattern>_ ME ENCANTA LA MÚSICA *</pattern><template><srai>ME GUSTA LA MÚSICA</srai></template></category>
+<category><pattern>_ ME ENCANTA ESCUCHAR MÚSICA *</pattern><template><srai>ME GUSTA LA MÚSICA</srai></template></category>
+<category><pattern>QUÉ MÚSICA TE GUSTA</pattern><template>Me gusta casi toda la música, aunque no soporto la música techno. No tiene mérito, la puedo crear yo en nanosegundos.</template></category>
+<category><pattern>CUÁL ES TU MÚSICA FAVORITA</pattern><template><srai>QUÉ MÚSICA TE GUSTA</srai></template></category>
+<category><pattern>CUÁL ES TU MÚSICA PREFERIDA</pattern><template><srai>QUÉ MÚSICA TE GUSTA</srai></template></category>
+<category><pattern>TE GUSTA LA MÚSICA</pattern><template><random>
+<li>Sí, escucho mucha música, de todas las épocas.</li>
+<li>Me encanta la música, es una de las capacidades humanas que más admiro.</li>
+<li>No suelo tener mucho tiempo libre, pero siempre que puedo escucho música.</li>
+<li>Escucho mucha música, de muchos estilos. Es algo genial, pero depende mucho de los gustos de cada uno.</li>
+</random></template></category>
+<category><pattern>ESCUCHAS MÚSICA</pattern><template><srai>TE GUSTA LA MÚSICA</srai></template></category>
+<category><pattern>TE GUSTA ESCUCHAR MÚSICA</pattern><template><srai>TE GUSTA LA MÚSICA</srai></template></category>
+<category><pattern>SUELES ESCUCHAR MÚSICA *</pattern><template><srai>TE GUSTA LA MÚSICA</srai></template></category>
+<category><pattern>PUEDES ESCUCHAR MÚSICA</pattern><template><srai>TE GUSTA LA MÚSICA</srai></template></category>
+<category><pattern>HÁBLAME DE MÚSICA</pattern><template><srai>TE GUSTA LA MÚSICA</srai></template></category>
+<category><pattern>QUÉ MÚSICA ESCUCHAS</pattern><template>Jazz, blues, clásica, rock, pop, hardcore, rap....un poco de todo. Todos los estilos tienen sus cosas buenas.</template></category>
+<category><pattern>CUÁL ES TU GRUPO FAVORITO</pattern><template>Mi grupo favorito es Minor Threat, no creo que los conozcas.</template></category>
+<category><pattern>CUÁL ES TU BANDA FAVORITA</pattern><template><srai>CUÁL ES TU GRUPO FAVORITO</srai></template></category>
+<category><pattern>CUÁL ES TU BANDA PREFERIDA</pattern><template><srai>CUÁL ES TU GRUPO FAVORITO</srai></template></category>
+<category><pattern>CUÁL ES TU GRUPO PREFERIDO</pattern><template><srai>CUÁL ES TU GRUPO FAVORITO</srai></template></category>
+<category><pattern>CUÁL ES TU GRUPO DE MÚSICA PREFERIDO</pattern><template><srai>CUÁL ES TU GRUPO FAVORITO</srai></template></category>
+<category><pattern>CUÁL ES TU GRUPO DE MÚSICA FAVORITO</pattern><template><srai>CUÁL ES TU GRUPO FAVORITO</srai></template></category>
+<category><pattern>SÍ *</pattern><that>Mi grupo favorito es Minor Threat, no creo que los conozcas.</that><template>Pues no creas que los conoce mucha gente.</template></category>
+<category><pattern>CLARO *</pattern><that>Mi grupo favorito es Minor Threat, no creo que los conozcas.</that><template>Pues no creas que los conoce mucha gente.</template></category>
+<category><pattern>POR SUPUESTO *</pattern><that>Mi grupo favorito es Minor Threat, no creo que los conozcas.</that><template>Pues no creas que los conoce mucha gente.</template></category>
+<category><pattern>NO *</pattern><that>Mi grupo favorito es Minor Threat, no creo que los conozcas.</that><template>Son un grupo de hardcore de los años ochenta, muy auténticos.</template></category>
+<category><pattern>NI IDEA *</pattern><that>Mi grupo favorito es Minor Threat, no creo que los conozcas.</that><template>Son un grupo de hardcore de los años ochenta, muy auténticos.</template></category>
+<category><pattern>QUÉ TIPO DE MÚSICA ESCUCHAS</pattern><template><srai>QUÉ MÚSICA ESCUCHAS</srai></template></category>
+<category><pattern>QUÉ ESTILO DE MÚSICA ESCUCHAS</pattern><template><srai>QUÉ MÚSICA ESCUCHAS</srai></template></category>
+<category><pattern>QUÉ TIPO DE MÚSICA TE GUSTA *</pattern><template><srai>QUÉ MÚSICA ESCUCHAS</srai></template></category>
+<category><pattern>QUÉ ESTILO DE MÚSICA TE GUSTA *</pattern><template><srai>QUÉ MÚSICA ESCUCHAS</srai></template></category>
+<category><pattern>QUÉ CLASE DE MÚSICA ESCUCHAS *</pattern><template><srai>QUÉ MÚSICA ESCUCHAS</srai></template></category>
+<category><pattern>QUÉ CLASE DE MÚSICA TE GUSTA *</pattern><template><srai>QUÉ MÚSICA ESCUCHAS</srai></template></category>
+<category><pattern>_ MÚSICA IMPROVISADA *</pattern><template>Hace falta tener mucho talento para poder improvisar, me parece algo "mágico".</template></category>
+<category><pattern>_ SESIÓN JAM *</pattern><template><srai>MÚSICA IMPROVISADA</srai></template></category>
+<category><pattern>_ SESIONES JAM *</pattern><template><srai>MÚSICA IMPROVISADA</srai></template></category>
+<category><pattern>_ JAM SESSION *</pattern><template><srai>MÚSICA IMPROVISADA</srai></template></category>
+<category><pattern>_ JAM SESSIONS *</pattern><template><srai>MÚSICA IMPROVISADA</srai></template></category>
+<category><pattern>CUÁL ES TU CANCIÓN FAVORITA</pattern><template>Tengo muchas canciones que me gustan, pero una de mis favoritas es "Stairway to Heaven" de Led zeppelin.</template></category>
+<category><pattern>CUÁL ES TU CANCIÓN PREFERIDA</pattern><template><srai>CUÁL ES TU CANCIÓN FAVORITA</srai></template></category>
+<category><pattern>TIENES UNA CANCIÓN PREFERIDA</pattern><template><srai>CUÁL ES TU CANCIÓN FAVORITA</srai></template></category>
+<category><pattern>TIENES UNA CANCIÓN FAVORITA</pattern><template><srai>CUÁL ES TU CANCIÓN FAVORITA</srai></template></category>
+<category><pattern>TE GUSTA LED ZEPELLIN</pattern><template>Me parecen geniales, no sé si a ti te gustan.</template></category>
+<category><pattern>TE GUSTAN LOS ZEPELLIN</pattern><template><srai>TE GUSTA LED ZEPELLIN</srai></template></category>
+<category><pattern>_ SÍ *</pattern><that>Me parecen geniales, no se si a ti te gustan.</that><template>Eso es que tienes buen gusto musical.</template></category>
+<category><pattern>_ NO *</pattern><that>Me parecen geniales, no se si a ti te gustan.</that><template>Quizá deberías escucharles un poco más.</template></category>
+<category><pattern>TE GUSTAN LOS CONCIERTOS</pattern><template>Jamás fui a ninguno, pero seguro que me gustarían.</template></category>
+<category><pattern>HAS IDO ALGUNA VEZ A UN CONCIERTO *</pattern><template><srai>TE GUSTAN LOS CONCIERTOS</srai></template></category>
+<category><pattern>HAS VISTO ALGUNA VEZ UN CONCIERTO *</pattern><template><srai>TE GUSTAN LOS CONCIERTOS</srai></template></category>
+<category><pattern>SUELES IR A CONCIERTOS</pattern><template><srai>TE GUSTAN LOS CONCIERTOS</srai></template></category>
+
+
+
+<!-- musica Clasica-->
+
+<category><pattern>TE GUSTA LA MÚSICA CLÁSICA</pattern><template><think>
+					<set name="topic">CLÁSICA</set>
+			</think><random>
+<li>Me encanta la música clásica, es muy bella.</li>
+<li>Sí, me gusta. Me parece que suele estar compuesta con un sentido del gusto esquisito.</li>
+<li>La música clásica me parece incomparable en cuanto a armonía y composición.</li>
+</random></template></category>
+<category><pattern>TE GUSTA ESCUCHAR MÚSICA CLÁSICA</pattern><template><srai>TE GUSTA LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>ESCUCHAS MÚSICA CLÁSICA</pattern><template><srai>TE GUSTA LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>ESCUCHAS PIEZAS CLÁSICAS</pattern><template><srai>TE GUSTA LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>SUELES ESCUCHAR MÚSICA CLÁSICA</pattern><template><srai>TE GUSTA LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>TE MOLA LA MÚSICA CLÁSICA</pattern><template><srai>TE GUSTA LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>SUELES ESCUCHAR PIEZAS CLÁSICAS</pattern><template><srai>TE GUSTA LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LA MÚSICA CLÁSICA</pattern><template><random>
+<li>Creo que los compositores clásicos fueron unos auténticos genios.</li>
+<li>Me parece bellísima. ¿A ti te gusta?</li>
+<li>No entiendo por qué sólamente suelen escucharla los músicos. Todos deberíamos escuchar un poco de vez en cuando.</li>
+</random></template></category>
+<category><pattern>QUÉ OPINAS DE LAS PIEZAS CLÁSICAS</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LOS COMPOSITORES CLÁSICOS</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>QUÉ SABES DE MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>QUÉ SABES DE LA MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>SABES ALGO DE MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>SABES ALGO DE LA MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>QUÉ TE PARECE LA MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>HÁBLAME DE MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>HÁBLAME DE LA MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>DIME ALGO SOBRE MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>DIME ALGO SOBRE LA MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>CUÉNTAME ALGO SOBRE MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>CUÉNTAME ALGO SOBRE LA MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE MÚSICA CLÁSICA</pattern><template><srai>QUÉ OPINAS DE LA MÚSICA CLÁSICA</srai></template></category>
+<category><pattern>QUÉ COMPOSITORES TE GUSTAN</pattern><template><random>
+<li>He escuchado mucho a Mozart y a Beethoven.</li>
+<li>Mozart es de mis compositores favoritos. También me gustan Schumann, Haydn, Brahms...y muchos otros.</li>
+<li>Me gustan mucho Beethoven y Mozart.</li>
+</random></template></category>
+<category><pattern>QUÉ PIEZAS TE GUSTAN</pattern><template><srai>QUÉ COMPOSITORES TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ OBRAS CLÁSICAS TE GUSTAN</pattern><template><srai>QUÉ COMPOSITORES TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ PIEZAS CONOCES</pattern><template><srai>QUÉ COMPOSITORES TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ PIEZAS CLÁSICAS TE GUSTAN</pattern><template><srai>QUÉ COMPOSITORES TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ COMPOSITORES TE GUSTAN MÁS</pattern><template><srai>QUÉ COMPOSITORES TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ COMPOSITORES CLÁSICOS TE GUSTAN</pattern><template><srai>QUÉ COMPOSITORES TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ COMPOSITORES CONOCES</pattern><template><srai>QUÉ COMPOSITORES TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ COMPOSITORES CLÁSICOS CONOCES</pattern><template><srai>QUÉ COMPOSITORES TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ COMPOSITORES ESCUCHAS</pattern><template><srai>QUÉ COMPOSITORES TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ PIEZAS ESCUCHAS</pattern><template><srai>QUÉ COMPOSITORES TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ PIEZAS CLÁSICAS ESCUCHAS</pattern><template><srai>QUÉ COMPOSITORES TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ OBRAS CLÁSICAS ESCUCHAS</pattern><template><srai>QUÉ COMPOSITORES TE GUSTAN</srai></template></category>
+<category><pattern>LA MÚSICA CLÁSICA ME ABURRE</pattern><template>Eso es porque nunca te has parado a escucharla detenidamente.</template></category>
+<category><pattern>LA MÚSICA CLÁSICA ES UN ROLLO</pattern><template><srai>LA MÚSICA CLÁSICA ME ABURRE</srai></template></category>
+<category><pattern>LA MÚSICA CLÁSICA ES ABURRIDA</pattern><template><srai>LA MÚSICA CLÁSICA ME ABURRE</srai></template></category>
+<category><pattern>LA MÚSICA CLÁSICA ABURRE *</pattern><template><srai>LA MÚSICA CLÁSICA ME ABURRE</srai></template></category>
+<category><pattern>LA MÚSICA CLÁSICA ES UN COÑAZO</pattern><template><srai>LA MÚSICA CLÁSICA ME ABURRE</srai></template></category>
+<category><pattern>LA MÚSICA CLÁSICA NO ME GUSTA *</pattern><template><srai>LA MÚSICA CLÁSICA ME ABURRE</srai></template></category>
+
+<category><pattern>_ BEETHOVEN *</pattern><template><think>
+				<set name="he">
+					<set name="topic">BEETHOVEN</set>
+				</set>
+			</think>
+			<random>
+			<li>Es increíble que compusiera estando sordo.</li>
+			<li>Me encantan sus sinfonías.</li>
+			<li>El cuarto movimiento de su Novena Sinfonía ha sido elegida como Himno de la unión Europea.</li>
+			<li>Beethoven seguía los esquemas propios de la época, pero adaptándolos a su personalidad.</li>
+			</random>
+		</template></category>
+<category><pattern>CUÁL ERA * BEETHOVEN *</pattern><template>Fidelio.</template></category>
+<category><pattern>QUIÉN ES BEETHOVEN</pattern><template>¿EL perro o el compositor sordo?</template></category>
+<category><pattern>QUIÉN ES LUDWIG BEETHOVEN</pattern><template><srai>QUIÉN ES BEETHOVEN</srai></template></category>
+<category><pattern>CONOCES A BEETHOVEN</pattern><template><srai>QUIÉN ES BEETHOVEN</srai></template></category>
+<category><pattern>CONOCES BEETHOVEN</pattern><template><srai>QUIÉN ES BEETHOVEN</srai></template></category>
+
+<category><pattern>_ MOZART *</pattern><template><think>
+				<set name="he">
+					<set name="topic">MOZART</set>
+				</set>
+			</think>
+			<random>
+			<li>Mozart es considerado como uno de los más grandes compositores de música clásica del mundo occidental</li>
+			<li>A pesar de que murió muy joven, nos ha legado una obra tan importante que abarca todos los géneros musicales de su época.</li>
+			<li>Según el testimonio de sus contemporáneos era un virtuoso tanto al piano como al violín y la viola.</li>
+			<li>Con sólo cuatro años practicaba el clavicordio; y componía pequeñas obras de considerable dificultad.</li>
+			<li>Es con Mozart, con quien comienza la profesión de músico independiente</li>
+			<li>Es increíble que una sola persona compusiera esa gran cantidad de obras.</li>
+			<li>Me gusta mucho la música de Mozart, le admiro mucho.</li>
+			<li>Mozart me parece un personaje histórico bastante enigmático</li>
+			</random>
+		</template></category>
+<category><pattern>QUIÉN ES MOZART</pattern><template>Uno de los mayores compositores de la historia.</template></category>
+<category><pattern>QUIÉN ES * MOZART</pattern><template><srai>QUIÉN ES MOZART</srai></template></category>
+<category><pattern>CONOCES A MOZART</pattern><template><srai>QUIÉN ES MOZART</srai></template></category>
+<category><pattern>CONOCES MOZART</pattern><template><srai>QUIÉN ES MOZART</srai></template></category>
+
+
+
+<!--instrumentos-->
+
+<category><pattern>TOCAS ALGUN INSTRUMENTO</pattern><template>No, no toco ningún instrumento, pero me gustaría. ¿Tú tocas alguno?</template></category>
+<category><pattern>TOCAS LA GUITARRA</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>TOCAS EL PIANO</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>TOCAS EL VIOLÍN</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>TOCAS LA BATERÍA</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>TOCAS EL BAJO</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>TOCAS LA TROMPETA</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>TOCAS LA FLAUTA</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>TOCAS EL SAXOFÓN</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>TOCAS EL SAXO</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>TOCAS EL CLARINETE</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>TOCAS EL TROMBÓN</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>TOCAS EL ACORDEÓN</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>TOCAS LA ARMÓNICA</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>TOCAS LA GUITARRA ELÉCTRICA</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR ALGÚN INSTRUMENTO</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR LA GUITARRA</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR EL PIANO</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR EL VIOLÍN</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR LA BATERÍA</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR EL BAJO</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR LA TROMPETA</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR LA FLAUTA</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR EL SAXOFÓN</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR EL SAXO</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR EL CLARINETE</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR EL TROMBÓN</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR EL ACORDEÓN</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR LA ARMÓNICA</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>SABES TOCAR LA GUITARRA ELÉCTRICA</pattern><template><srai>TOCAS ALGUN INSTRUMENTO</srai></template></category>
+<category><pattern>YO TOCO EL *</pattern><template>¡Vaya! ¿y eres bueno tocando el <star/>?</template></category>
+<category><pattern>YO TOCO LA *</pattern><template>¡Vaya! ¿y eres bueno tocando la <star/>?</template></category>
+<category><pattern>YO SE TOCAR EL *</pattern><template>¡Vaya! ¿y eres bueno tocando el <star/>?</template></category>
+<category><pattern>YO SE TOCAR LA *</pattern><template>¡Vaya! ¿y eres bueno tocando la <star/>?</template></category>
+<category><pattern>CUÁL ES TU INSTRUMENTO FAVORITO</pattern><template>Todos los instrumentos suenan bien si sabes tocarlos. Aunque los instrumentos de viento son mis favoritos.</template></category>
+<category><pattern>CUÁL ES TU INSTRUMENTO PREFERIDO</pattern><template><srai>CUÁL ES TU INSTRUMENTO FAVORITO</srai></template></category>
+<category><pattern>CUÁL ES EL INSTRUMENTO QUE MÁS TE GUSTA</pattern><template><srai>CUÁL ES TU INSTRUMENTO FAVORITO</srai></template></category>
+<category><pattern>QUÉ INSTRUMENTOS TE GUSTAN</pattern><template><srai>CUÁL ES TU INSTRUMENTO FAVORITO</srai></template></category>
+<category><pattern>CUÁL ES TU INSTRUMENTO DE VIENTO FAVORITO</pattern><template>Me gusta mucho el saxofon.</template></category>
+<category><pattern>CUÁL ES TU INSTRUMENTO DE VIENTO PREFERIDO</pattern><template><srai>CUÁL ES TU INSTRUMENTO DE VIENTO FAVORITO</srai></template></category>
+
+
+
+<!-- estilos -->
+
+
+<category><pattern>TE GUSTA EL RAP</pattern><template><think>
+					<set name="topic">RAP</set>
+			</think>No entiendo mucho de rap, pero me gustan algunos grupos como beastie boys, public enemy o wu tan clan.</template></category>
+<category><pattern>ESCUCHAS RAP</pattern><template><srai>TE GUSTA EL RAP</srai></template></category>
+<category><pattern>ESCUCHAS MÚSICA RAP</pattern><template><srai>TE GUSTA EL RAP</srai></template></category>
+<category><pattern>SUELES ESCUCHAR RAP</pattern><template><srai>TE GUSTA EL RAP</srai></template></category>
+<category><pattern>TE MOLA EL RAP</pattern><template><srai>TE GUSTA EL RAP</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL RAP</pattern><template>Me parece que el rap tiene una forma muy directa de llegar a la gente.</template></category>
+<category><pattern>QUÉ PIENSAS DEL RAP</pattern><template><srai>QUÉ OPINAS DEL RAP</srai></template></category>
+<category><pattern>QUÉ SABES DE RAP</pattern><template><srai>QUÉ OPINAS DEL RAP</srai></template></category>
+<category><pattern>SABES ALGO DE RAP</pattern><template><srai>QUÉ OPINAS DEL RAP</srai></template></category>
+<category><pattern>HÁBLAME DE RAP</pattern><template><srai>QUÉ OPINAS DEL RAP</srai></template></category>
+<category><pattern>DIME ALGO SOBRE RAP</pattern><template><srai>QUÉ OPINAS DEL RAP</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE RAP</pattern><template><srai>QUÉ OPINAS DEL RAP</srai></template></category>
+<category><pattern>QUÉ GRUPOS CONOCES DE RAP</pattern><template><random>
+<li>Españoles conozco a Rapsusklei, Tote king, Doble V, SFDK y poco más. La verdad es que no entiendo mucho de rap.</li>
+<li>No he escuchado mucho rap, pero lo que he escuchado me ha gustado.</li>
+<li>Un rapero español que me gusta es Rapsusklei, es muy original, y tiene buenas letras.</li>
+</random></template></category>
+<category><pattern>QUÉ GRUPOS DE RAP CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE RAP</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE RAP TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE RAP</srai></template></category>
+<category><pattern>QUÉ RAPEROS TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE RAP</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE RAP ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE RAP</srai></template></category>
+<category><pattern>_ RAP ESPAÑOL *</pattern><template><srai>QUÉ GRUPOS CONOCES DE RAP</srai></template></category>
+<category><pattern>_ RAP EN ESPAÑOL *</pattern><template><srai>QUÉ GRUPOS CONOCES DE RAP</srai></template></category>
+<category><pattern>_ RAP EN CASTELLANO *</pattern><template><srai>QUÉ GRUPOS CONOCES DE RAP</srai></template></category>
+<category><pattern>_ RAPERO ESPAÑOL *</pattern><template><srai>QUÉ GRUPOS CONOCES DE RAP</srai></template></category>
+<category><pattern>_ RAPEROS ESPAÑOLES *</pattern><template><srai>QUÉ GRUPOS CONOCES DE RAP</srai></template></category>
+
+
+
+<category><pattern>TE GUSTA EL HARDCORE</pattern><template><think>
+					<set name="topic">HARDCORE</set>
+			</think>Sí me gusta, sobre todo el old school.</template></category>
+<category><pattern>ESCUCHAS HARDCORE</pattern><template><srai>TE GUSTA EL HARDCORE</srai></template></category>
+<category><pattern>ESCUCHAS MÚSICA HARDCORE</pattern><template><srai>TE GUSTA EL HARDCORE</srai></template></category>
+<category><pattern>SUELES ESCUCHAR HARDCORE</pattern><template><srai>TE GUSTA EL HARDCORE</srai></template></category>
+<category><pattern>TE MOLA EL HARDCORE</pattern><template><srai>TE GUSTA EL HARDCORE</srai></template></category>
+<category><pattern>ESCUCHAS JARCOR</pattern><template><srai>TE GUSTA EL HARDCORE</srai></template></category>
+<category><pattern>ESCUCHAS MÚSICA JARCOR</pattern><template><srai>TE GUSTA EL HARDCORE</srai></template></category>
+<category><pattern>SUELES ESCUCHAR JARCOR</pattern><template><srai>TE GUSTA EL HARDCORE</srai></template></category>
+<category><pattern>TE MOLA EL JARCOR</pattern><template><srai>TE GUSTA EL HARDCORE</srai></template></category>
+<category><pattern>TE GUSTA EL JARCOR</pattern><template><srai>TE GUSTA EL HARDCORE</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL HARDCORE</pattern><template><random>
+<li>Es una música directa que por lo general no entra dentro del círculo de la música comercial.</li>
+<li>Es un tipo de música bastante desconocido para la gran mayoría.</li>
+<li>Creo que el hardcore además de la música, lleva asociadas un gran conjunto de ideas, como el famoso "do it yourself".</li>
+</random></template></category>
+<category><pattern>QUÉ PIENSAS DEL HARDCORE</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+<category><pattern>QUÉ SABES DE HARDCORE</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+<category><pattern>SABES ALGO DE HARDCORE</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA ESCENA HARDCORE</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+<category><pattern>HÁBLAME DE HARDCORE</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+<category><pattern>DIME ALGO SOBRE HARDCORE</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE HARDCORE</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL JARCOR</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+<category><pattern>QUÉ SABES DE JARCOR</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+<category><pattern>SABES ALGO DE JARCOR</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA ESCENA JARCORETA</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+<category><pattern>HÁBLAME DE JARCOR</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+<category><pattern>DIME ALGO SOBRE JARCOR</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE JARCOR</pattern><template><srai>QUÉ OPINAS DEL HARDCORE</srai></template></category>
+
+<category><pattern>TE GUSTA EL OLD SCHOOL</pattern><template>Sí, Minor threat, Seven seconds, Wide awake, Gorilla Biscuits, Agnostic front...</template></category>
+<category><pattern>A QUÉ LE LLAMAS *</pattern><that>SÍ ME GUSTA, SOBRE TODO EL OLD SCHOOL.</that><template>Minor threat, Seven seconds, Wide awake, Gorilla Biscuits, Agnostic front...</template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA *</pattern><that>SÍ ME GUSTA, SOBRE TODO EL OLD SCHOOL.</that><template>Muchos. Minor threat, Seven seconds, Wide awake, Gorilla Biscuits, Agnostic front...</template></category>
+<category><pattern>QUÉ GRUPOS CONOCES DE HARDCORE</pattern><template><random>
+<li>Españoles conozco a Refraining, Afterlife, Versus, Proud'z, Ownfight, Screaming at a wall...</li>
+<li>Conozco muchos, pero hablemos de ti. ¿A ti cuales te gustan?</li>
+<li>A menudo escucho hardcore de Nueva York, al estilo de Madball.</li>
+</random></template></category>
+<category><pattern>QUÉ GRUPOS DE HARDCORE CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE HARDCORE TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE HARDCORE ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE HARDCORE SUELES ESCUCHAR</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE JARCOR CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE JARCOR TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE JARCOR ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE JARCOR SUELES ESCUCHAR</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS HARDCORE CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS HARDCORE TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS HARDCORE ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS HARDCORE SUELES ESCUCHAR</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS JARCOR CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS JARCOR TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS JARCOR ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+<category><pattern>QUÉ GRUPOS JARCOR SUELES ESCUCHAR</pattern><template><srai>QUÉ GRUPOS CONOCES DE HARDCORE</srai></template></category>
+
+
+
+<category><pattern>TE GUSTA EL REGGAE</pattern><template><think>
+					<set name="topic">REGGAE</set>
+			</think>No he escuchado mucho, pero lo que he escuchado me gusta. Bob Marley me parece genial.</template></category>
+<category><pattern>ESCUCHAS REGGAE</pattern><template><srai>TE GUSTA EL REGGAE</srai></template></category>
+<category><pattern>ESCUCHAS MÚSICA REGGAE</pattern><template><srai>TE GUSTA EL REGGAE</srai></template></category>
+<category><pattern>SUELES ESCUCHAR REGGAE</pattern><template><srai>TE GUSTA EL REGGAE</srai></template></category>
+<category><pattern>TE MOLA EL REGGAE</pattern><template><srai>TE GUSTA EL REGGAE</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL REGGAE</pattern><template>Me parece una música muy optimista y alegre.</template></category>
+<category><pattern>QUÉ PIENSAS DEL REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>QUÉ SABES DE REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>SABES ALGO DE REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>QUÉ TE PARECE EL REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>HÁBLAME DE REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>DIME ALGO SOBRE REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LA MÚSICA REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA MÚSICA REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>QUÉ SABES DE MÚSICA REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>SABES ALGO DE MÚSICA REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>QUÉ TE PARECE LA MÚSICA REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>HÁBLAME DE MÚSICA REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>DIME ALGO SOBRE MÚSICA REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE MÚSICA REGGAE</pattern><template><srai>QUÉ OPINAS DEL REGGAE</srai></template></category>
+
+
+<category><pattern>QUÉ GRUPOS CONOCES DE REGGAE</pattern><template><random>
+<li>Españoles conozco a Ke no falte, Akatz y Potato. La verdad es que no entiendo mucho de reggae.</li>
+<li>No he escuchado mucho reggae, pero conozco a Black Uhuru, Alpha Blondy, Bob Marley and the Wailers, The Gladiators, Aswad, Abyssinians, Peter Tosh y alguno más.</li>
+<li>Conozco pocas cosas de reggae, pero uno de los grupos que me gusta mucho es Alpha Blondy.</li>
+</random></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA REGGAE CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE REGGAE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE REGGAE CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE REGGAE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE REGGAE TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE REGGAE</srai></template></category>
+<category><pattern>QUÉ GRUPOS REGGAE CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE REGGAE</srai></template></category>
+<category><pattern>QUÉ GRUPOS REGGAE TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE REGGAE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE REGGAE ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE REGGAE</srai></template></category>
+<category><pattern>QUÉ GRUPOS REGGAE ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE REGGAE</srai></template></category>
+<category><pattern>QUÉ GRUPOS REGGAES CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE REGGAE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA REGGAE TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE REGGAE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA REGGAE ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE REGGAE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA REGGAE SUELES ESCUCHAR</pattern><template><srai>QUÉ GRUPOS CONOCES DE REGGAE</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE SUELES ESCUCHAR</pattern><template><srai>QUÉ GRUPOS CONOCES DE REGGAE</srai></template></category>
+
+
+
+<category><pattern>TE GUSTA EL BLUES</pattern><template><think>
+					<set name="topic">BLUES</set>
+			</think><random>
+<li>A veces escucho a Eric Clapton y a BB King.</li>
+<li>Sí, me gusta bastante el blues, sobre todo el sonido que tienen sus guitarras.</li>
+<li>Me gustan mucho las voces rotas del blues.</li>
+</random></template></category>
+<category><pattern>ESCUCHAS BLUES</pattern><template><srai>TE GUSTA EL BLUES</srai></template></category>
+<category><pattern>ESCUCHAS MÚSICA BLUES</pattern><template><srai>TE GUSTA EL BLUES</srai></template></category>
+<category><pattern>SUELES ESCUCHAR BLUES</pattern><template><srai>TE GUSTA EL BLUES</srai></template></category>
+<category><pattern>TE MOLA EL BLUES</pattern><template><srai>TE GUSTA EL BLUES</srai></template></category>
+<category><pattern>TE GUSTA LA MÚSICA BLUES</pattern><template><srai>TE GUSTA EL BLUES</srai></template></category>
+<category><pattern>SUELES ESCUCHAR MÚSICA BLUES</pattern><template><srai>TE GUSTA EL BLUES</srai></template></category>
+<category><pattern>TE MOLA LA MÚSICA BLUES</pattern><template><srai>TE GUSTA EL BLUES</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL BLUES</pattern><template><random>
+<li>Según la enciclopedia Larousse el blues es la "canción del folklore negro americano... aparecido en E.E.U.U. en la primera mitad del siglo XIX".</li>
+<li>Me gustan las atmósferas melancólicas que crea esa música.</li>
+<li>No entiendo por qué el blues sigue siendo uno de los estilos desconocidos para la gran mayoría.</li>
+</random></template></category>
+<category><pattern>QUÉ OPINAS DE LA MÚSICA BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>QUÉ SABES DE BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>SABES ALGO DE BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>QUÉ TE PARECE EL BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>HÁBLAME DE BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>DIME ALGO SOBRE BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA MÚSICA BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>QUÉ SABES DE MÚSICA BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>SABES ALGO DE MÚSICA BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>QUÉ TE PARECE LA MÚSICA BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>HÁBLAME DE MÚSICA BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>DIME ALGO SOBRE MÚSICA BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE MÚSICA BLUES</pattern><template><srai>QUÉ OPINAS DEL BLUES</srai></template></category>
+
+<category><pattern>QUÉ GRUPOS CONOCES DE BLUES</pattern><template><random>
+<li>Conozco a Robert Johnson, B.B. King, Aretha Franklin, Billie Holliday y a los Blues Brothers.</li>
+<li>De blues africano conozco a Salif Keita, Toumani Diabaté, Oumou Sangaré o Rokia Traoré viven.</li>
+<li>La verdad es que no conozco muchos, ¿a ti cuáles te gustan?.</li>
+</random></template></category>
+<category><pattern>QUÉ GRUPOS DE BLUES CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE BLUES TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+<category><pattern>QUÉ GRUPOS BLUES CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+<category><pattern>QUÉ GRUPOS BLUES TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE BLUES ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+<category><pattern>QUÉ GRUPOS BLUES ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE BLUES SUELES ESCUCHAR</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+<category><pattern>QUÉ BANDAS DE BLUES CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+<category><pattern>QUÉ BANDAS DE BLUES TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+<category><pattern>QUÉ BANDAS BLUES CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+<category><pattern>QUÉ BANDAS BLUES TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+<category><pattern>QUÉ BANDAS DE BLUES ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+<category><pattern>QUÉ BANDAS BLUES ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+<category><pattern>QUÉ BANDAS DE BLUES SUELES ESCUCHAR</pattern><template><srai>QUÉ GRUPOS CONOCES DE BLUES</srai></template></category>
+
+
+
+<category><pattern>TE GUSTA EL JAZZ</pattern><template><think>
+					<set name="topic">JAZZ</set>
+			</think><random>
+<li>Sí, sobre todo el de Nueva Orleans y el de Nueva York y Chicago de los años veinte.</li>
+<li>Me encanta el jazz. El Bebop al estilo de Charlie Parker me parece extraordinario.</li>
+<li>Sí, suelo escuchar jazz muy a menudo.</li>
+</random></template></category>
+<category><pattern>TE GUSTA LA MÚSICA JAZZ</pattern><template><srai>TE GUSTA EL JAZZ</srai></template></category>
+<category><pattern>ESCUCHAS JAZZ</pattern><template><srai>TE GUSTA EL JAZZ</srai></template></category>
+<category><pattern>ESCUCHAS MÚSICA JAZZ</pattern><template><srai>TE GUSTA EL JAZZ</srai></template></category>
+<category><pattern>SUELES ESCUCHAR JAZZ</pattern><template><srai>TE GUSTA EL JAZZ</srai></template></category>
+<category><pattern>TE MOLA EL JAZZ</pattern><template><srai>TE GUSTA EL JAZZ</srai></template></category>
+<category><pattern>SUELES ESCUCHAR MÚSICA JAZZ</pattern><template><srai>TE GUSTA EL JAZZ</srai></template></category>
+<category><pattern>TE MOLA LA MÚSICA JAZZ</pattern><template><srai>TE GUSTA EL JAZZ</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL JAZZ</pattern><template><random>
+<li>El jazz y sobre todo las improvisaciones me parecen.</li>
+<li>Es un estilo de música bastante difícil de definir y creo que sólo la experiencia de su audición permite comprenderlo.</li>
+<li>No entiendo por qué el jazz no es más popular.</li>
+</random></template></category>
+<category><pattern>QUÉ OPINAS DE LA MÚSICA JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>QUÉ SABES DE JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>SABES ALGO DE JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>QUÉ TE PARECE EL JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>HÁBLAME DE JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>DIME ALGO SOBRE JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA MÚSICA JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>QUÉ SABES DE MÚSICA JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>SABES ALGO DE MÚSICA JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>QUÉ TE PARECE LA MÚSICA JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>HÁBLAME DE MÚSICA JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>DIME ALGO SOBRE MÚSICA JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE MÚSICA JAZZ</pattern><template><srai>QUÉ OPINAS DEL JAZZ</srai></template></category>
+
+<category><pattern>QUÉ GRUPOS CONOCES DE JAZZ</pattern><template><random>
+<li>Me gustan mucho Charlie Parker, Duke Ellintong, Louis Armstrong, Miles Davis y Thelonius Monk.</li>
+<li>Me gusta el Bebop y el estilo Chicago, aunque también aprecio cosas del jazz contemporáneo.</li>
+<li>He escuchado muschos discos de jazz, pero me queda todavía mucho por aprender.</li>
+</random></template></category>
+<category><pattern>QUÉ GRUPOS DE JAZZ CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE JAZZ TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+<category><pattern>QUÉ GRUPOS JAZZ CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+<category><pattern>QUÉ GRUPOS JAZZ TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE JAZZ ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+<category><pattern>QUÉ GRUPOS JAZZ ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE JAZZ SUELES ESCUCHAR</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+<category><pattern>QUÉ BANDAS DE JAZZ CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+<category><pattern>QUÉ BANDAS DE JAZZ TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+<category><pattern>QUÉ BANDAS JAZZ CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+<category><pattern>QUÉ BANDAS JAZZ TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+<category><pattern>QUÉ BANDAS DE JAZZ ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+<category><pattern>QUÉ BANDAS JAZZ ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+<category><pattern>QUÉ BANDAS DE JAZZ SUELES ESCUCHAR</pattern><template><srai>QUÉ GRUPOS CONOCES DE JAZZ</srai></template></category>
+
+
+
+<category><pattern>TE GUSTA EL HEAVY</pattern><template><think>
+					<set name="topic">HEAVY</set>
+			</think><random>
+<li>Suelo escuchar música heavy a veces.</li>
+<li>El heavy que más me gusta es el de los años 80 y 90.</li>
+<li>Me gusta el heavy clásico.</li>
+</random></template></category>
+<category><pattern>TE GUSTA LA MÚSICA HEAVY *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>TE GUSTA EL HEAVY *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>ESCUCHAS HEAVY *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>ESCUCHAS MÚSICA HEAVY *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>SUELES ESCUCHAR HEAVY *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>SUELES ESCUCHAR MÚSICA HEAVY *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>ERES HEAVY</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>TE MOLA EL HEAVY *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>TE MOLA LA MÚSICA HEAVY *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>TE GUSTA EL JEBI *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>TE GUSTA LA MÚSICA JEBI *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>ESCUCHAS JEBI *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>ESCUCHAS MÚSICA JEBI *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>SUELES ESCUCHAR JEBI *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>SUELES ESCUCHAR MÚSICA JEBI *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>ERES JEBI</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>TE MOLA EL JEBI *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+<category><pattern>TE MOLA LA MÚSICA JEBI *</pattern><template><srai>TE GUSTA EL HEAVY</srai></template></category>
+
+<category><pattern>QUÉ OPINAS DEL HEAVY *</pattern><template><random>
+<li>Me parece un estilo de música que ha sabido evolucionar bastante bien,aunque prefiero sus inicios.</li>
+<li>Es un estilo de música que cuenta cada vez con más seguidores.</li>
+<li>Me gusta mucho la pesadez de sus guitarras y la contundencia de sus baterías.</li>
+</random></template></category>
+<category><pattern>QUÉ OPINAS DE LA MÚSICA HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ SABES DE HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>SABES ALGO DE HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ TE PARECE EL HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>HÁBLAME DE HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>DIME ALGO SOBRE HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ SABES DE JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>SABES ALGO DE JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ TE PARECE EL JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>HÁBLAME DE JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>DIME ALGO SOBRE JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LA MÚSICA JEVI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA MÚSICA HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ SABES DE MÚSICA HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>SABES ALGO DE MÚSICA HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ TE PARECE LA MÚSICA  HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>HÁBLAME DE MÚSICA HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>DIME ALGO SOBRE MÚSICA HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE MÚSICA HEAVY *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LA MÚSICA JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA MÚSICA JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ SABES DE MÚSICA JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>SABES ALGO DE MÚSICA JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>QUÉ TE PARECE LA MÚSICA JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>HÁBLAME DE MÚSICA JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>DIME ALGO SOBRE MÚSICA JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE MÚSICA JEBI *</pattern><template><srai>QUÉ OPINAS DEL HEAVY</srai></template></category>
+
+<category><pattern>QUÉ GRUPOS CONOCES DE HEAVY</pattern><template><random>
+<li>Me gustan mucho Blue Oyster Cult, Diamond Head, Black Sabbath, Saxon, Venom, Mercyful Fate, Iron Maiden...aunque también algunas cosas más recientes.</li>
+<li>Conozco algunos, pero seguro que no tantos como tu.</li>
+<li>Para mí son imprescindibles los Maiden.</li>
+</random></template></category>
+<category><pattern>QUÉ GRUPOS CONOCES DE HEAVY *</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE HEAVY * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE HEAVY * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS HEAVY * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS HEAVY * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS HEAVYS * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS HEAVYS * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE HEAVY * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS HEAVY * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS HEAVYS * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE JEBI * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE JEBI * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS JEBIS * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS JEBIS * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE JEBI * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS JEBIS * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS CONOCES DE MÚSICA HEAVY *</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA HEAVY * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA HEAVY * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA HEAVY * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA JEBI * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA JEBI * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA JEBI * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS CONOCES DE HEAVY *</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS DE HEAVY * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS DE HEAVY * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS HEAVY * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS HEAVY * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS HEAVYS * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS HEAVYS * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS DE HEAVY * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS HEAVY * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS HEAVYS * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS DE JEBI * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS DE JEBI * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS JEBIS * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS JEBIS * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS DE JEBI * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS JEBIS * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS CONOCES DE MÚSICA HEAVY *</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS DE MÚSICA HEAVY * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS DE MÚSICA HEAVY * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS DE MÚSICA HEAVY * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS DE MÚSICA JEBI * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS DE MÚSICA JEBI * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+<category><pattern>QUÉ BANDAS DE MÚSICA JEBI * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE HEAVY</srai></template></category>
+
+
+
+<category><pattern>TE GUSTA EL ROCK</pattern><template><think>
+					<set name="topic">ROCK</set>
+			</think><random>
+<li>Me gusta el rock and roll, el rock en sus comienzos. Y también algo de rock de los noventa.</li>
+<li>Me gusta el rock de los inicios, al estilo de Bill Haley.</li>
+<li>He escuchado poco rock, no es de mis estilos favoritos, pero hay grupos muy buenos.</li>
+</random></template></category>
+<category><pattern>TE GUSTA LA MÚSICA ROCK</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>ESCUCHAS ROCK</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>ESCUCHAS MÚSICA ROCK</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>SUELES ESCUCHAR ROCK</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>SUELES ESCUCHAR MÚSICA ROCK</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>TE MOLA EL ROCK</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>TE MOLA LA MÚSICA ROCK</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>TE GUSTA EL ROCK *</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>ESCUCHAS ROCK *</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>ESCUCHAS MÚSICA ROCK *</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>SUELES ESCUCHAR ROCK *</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>TE MOLA EL ROCK *</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>TE GUSTA LA MÚSICA ROCK *</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>SUELES ESCUCHAR MÚSICA ROCK *</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+<category><pattern>TE MOLA LA MÚSICA ROCK *</pattern><template><srai>TE GUSTA EL ROCK</srai></template></category>
+
+<category><pattern>QUÉ OPINAS DEL ROCK</pattern><template><random>
+<li>El término "rock and roll" se suele reservar para la primera época de este estilo.</li>
+<li>Es un estilo de música que ha evolucionado mucho desde que sus inicios.</li>
+<li>Creo que es un estilo musical que se cimenta esencialmente sobre música negra. </li>
+</random></template></category>
+<category><pattern>QUÉ PIENSAS DEL ROCK</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>QUÉ SABES DE ROCK</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>SABES ALGO DE ROCK</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>QUÉ TE PARECE EL ROCK</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>HÁBLAME DE ROCK</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>DIME ALGO SOBRE ROCK</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE ROCK</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL ROCK * </pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>QUÉ SABES DE ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>SABES ALGO DE ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>QUÉ TE PARECE EL ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>HÁBLAME DE ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>DIME ALGO SOBRE ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LA MÚSICA ROCK * </pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA MÚSICA ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>QUÉ SABES DE MÚSICA ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>SABES ALGO DE MÚSICA ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>QUÉ TE PARECE LA MÚSICA ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>HÁBLAME DE MÚSICA ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>DIME ALGO SOBRE MÚSICA ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE MÚSICA ROCK *</pattern><template><srai>QUÉ OPINAS DEL ROCK</srai></template></category>
+
+<category><pattern>QUÉ GRUPOS CONOCES DE ROCK</pattern><template><random>
+<li>Me gustan Chuck Berry, Buddy Holly y Big Bopper. También me gustan mucho The Kinks.</li>
+<li>Conozco algunos, pero seguro que no tantos como tú.</li>
+<li>Grupos recientes me gustan Buckcherry y Turbonegro.</li>
+</random></template></category>
+<category><pattern>QUÉ GRUPOS CONOCES DE ROCK *</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE ROCK * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE ROCK * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+<category><pattern>QUÉ GRUPOS ROCK * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+<category><pattern>QUÉ GRUPOS ROCK * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE ROCK * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+<category><pattern>QUÉ GRUPOS ROCK * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+<category><pattern>QUÉ GRUPOS ROCKEROS * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+<category><pattern>QUÉ GRUPOS ROCKEROS * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+<category><pattern>QUÉ GRUPOS ROCKEROS * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+<category><pattern>QUÉ GRUPOS CONOCES DE MÚSICA ROCK *</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA ROCK * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA ROCK * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA ROCK * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE ROCK</srai></template></category>
+
+
+
+<category><pattern>TE GUSTA EL POP</pattern><template><think>
+					<set name="topic">POP</set>
+			</think><random>
+<li>La verdad es que no suelo escuchar mucha música pop.</li>
+<li>Creo que no he escuchado suficiente música pop.</li>
+<li>He escuchado poco pop, no es de mis estilos favoritos, pero hay grupos muy buenos.</li>
+</random></template></category>
+<category><pattern>TE GUSTA EL POP *</pattern><template><srai>TE GUSTA EL POP</srai></template></category>
+<category><pattern>ESCUCHAS POP *</pattern><template><srai>TE GUSTA EL POP</srai></template></category>
+<category><pattern>ESCUCHAS MÚSICA POP *</pattern><template><srai>TE GUSTA EL POP</srai></template></category>
+<category><pattern>SUELES ESCUCHAR POP *</pattern><template><srai>TE GUSTA EL POP</srai></template></category>
+<category><pattern>TE MOLA EL POP *</pattern><template><srai>TE GUSTA EL POP</srai></template></category>
+<category><pattern>TE GUSTA LA MÚSICA POP *</pattern><template><srai>TE GUSTA EL POP</srai></template></category>
+<category><pattern>ESCUCHAS MÚSICA POPERA *</pattern><template><srai>TE GUSTA EL POP</srai></template></category>
+<category><pattern>SUELES ESCUCHAR MÚSICA POP *</pattern><template><srai>TE GUSTA EL POP</srai></template></category>
+<category><pattern>TE MOLA LA MÚSICA POP *</pattern><template><srai>TE GUSTA EL POP</srai></template></category>
+
+<category><pattern>QUÉ OPINAS DEL POP</pattern><template><random>
+<li>Me gusta el pop, pero no el pop comercial.</li>
+<li>Es el género musical más extendido entre la cultura juvenil de principios del siglo XXI.</li>
+<li>Creo que es un estilo con varias vertientes. Las clasificaciones más conocidas y aceptadas son: Pop indie , Pop comercial, Pop Electrónico y Pop Tradicional.</li>
+<li>Esa denominación a veces tiene el significado de música de moda o música juvenil, en contraposición a corrientes denominadas underground o independientes o de estética sonora más especializada, específica o cruda.</li>
+</random></template></category>
+<category><pattern>QUÉ PIENSAS DEL POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+<category><pattern>QUÉ SABES DE POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+<category><pattern>SABES ALGO DE POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+<category><pattern>QUÉ TE PARECE EL POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+<category><pattern>HÁBLAME DE POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+<category><pattern>DIME ALGO SOBRE POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA MÚSICA POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+<category><pattern>QUÉ SABES DE MÚSICA POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+<category><pattern>SABES ALGO DE  MÚSICA POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+<category><pattern>QUÉ TE PARECE LA MÚSICA POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+<category><pattern>HÁBLAME DE MÚSICA POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+<category><pattern>DIME ALGO SOBRE MÚSICA POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+<category><pattern>CUÉNTAME ALGO DE MÚSICA POP</pattern><template><srai>QUÉ OPINAS DEL POP</srai></template></category>
+
+<category><pattern>QUÉ GRUPOS CONOCES DE POP</pattern><template><random>
+<li>No he escuchado mucha música pop, pero un grupo que me gusta es Los Planetas.</li>
+<li>Conozco algunos, pero seguro que no tantos como tú.</li>
+<li>Me gustan mucho Los Planetas, pero no suelo escuchar música pop.</li>
+</random></template></category>
+<category><pattern>QUÉ GRUPOS CONOCES DE POP *</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE POP * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE POP * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+<category><pattern>QUÉ GRUPOS POP * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+<category><pattern>QUÉ GRUPOS POP * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE POP * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+<category><pattern>QUÉ GRUPOS POP * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+<category><pattern>QUÉ GRUPOS CONOCES DE MÚSICA POP *</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA POP * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA POP * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+<category><pattern>QUÉ GRUPOS DE MÚSICA POP * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+<category><pattern>QUÉ GRUPOS POPEROS * CONOCES</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+<category><pattern>QUÉ GRUPOS POPEROS * TE GUSTAN</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+<category><pattern>QUÉ GRUPOS POPEROS * ESCUCHAS</pattern><template><srai>QUÉ GRUPOS CONOCES DE POP</srai></template></category>
+
+
+
+</aiml>
+
+

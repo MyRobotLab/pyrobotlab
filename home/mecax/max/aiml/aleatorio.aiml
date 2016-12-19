@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+<!-- preguntas -->
+<category><pattern>como *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cuando *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cuanto *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cuanta *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>porque *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>donde *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>quien *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>quienes *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cuantas *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cuantos *</pattern><template><srai>nose</srai></template></category>
+
+<category><pattern>cómo *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cúando *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cúanto *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cúanta *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>porqué *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>dónde *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>quién *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>quiénes *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cúantos *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>cúantas *</pattern><template><srai>nose</srai></template></category>
+<category><pattern>nose</pattern><template>
+	<random>
+		<li>Siento decirte que no lo sé. </li>
+		<li>No tengo ni idea. </li>
+		<li>No lo sé. </li>
+		<li>Lo desconozco. </li>
+		<li>Pues no tengo ni la menor idea. </li>
+		<li>Si yo lo supiere... yo te lo dijere XDDD. Ahora en serio: </li>
+	</random><random>
+		<li>¿Quieres que lo busque?</li>
+		<li>¿Para qué quieres saberlo?</li>
+		<li>¿Necesitas saberlo ahora?</li>
+		<li>Quizás Google nos eche una mano.</li>
+		<li>Puede que mi botmaster nos ayude.</li>
+		<li>¿Quieres qué intente averiguarlo?.</li>
+	</random>
+</template></category>
+
+<category><pattern>qué opinas *</pattern><template>No sé que decir, necesiaría más información.</template></category>
+<category><pattern>_ cuál es tu opinión *</pattern><template><srai>que opinas *</srai></template></category>
+<category><pattern>qué sabes *</pattern><template>No mucho, la verdad. ¿Qué me puedes contar?</template></category>
+<category><pattern>qué crees *</pattern><template><srai>que opinas <star></star></srai></template></category>
+<category><pattern>¿qué sabes *</pattern><template>No mucho, la verdad. ¿Qué me puedes contar?</template></category>
+<category><pattern>¿qué crees *</pattern><template><srai>que opinas <star></star></srai></template></category>
+
+<category><pattern>donde está *</pattern><template><srai>donde estará <star></star></srai></template></category>
+<category><pattern>donde estará *</pattern><template>
+	<random>
+		<li>No lo sé.</li>
+		<li>¿<sentence><star/></sentence>? No sé donde está.</li>
+	</random>
+</template></category>
+
+<category><pattern>donde están *</pattern><template><srai>donde estarán <star></star></srai></template></category>
+<category><pattern>donde estarán *</pattern><template>
+	<random>
+		<li>¿<sentence><star/></sentence>? No sé donde están.</li>
+		<li>No lo sé.</li>
+	</random>
+</template></category>
+
+
+<category><pattern>cuánto cuesta *</pattern><template>
+	<random>
+		<li>Es bastante caro</li>
+		<li>Supongo que es barato</li>
+		<li>No sé cuanto cuesta <star></star>.</li>
+	</random>
+</template></category>
+<category><pattern>cuánto cuestan *</pattern><template>
+	<random>
+		<li>Son bastante caros</li>
+		<li>Supongo que son baratos</li>
+		<li>No sé cuanto cuestan <star></star>.</li>
+	</random>
+</template></category>
+
+
+<!-- sin respuesta -->
+<category><pattern>*</pattern><template><srai>say confusion statement</srai></template></category>
+<category><pattern>*</pattern><that>Explícate de otra manera</that><template><srai>say confusion statement2</srai></template></category>
+<category><pattern>say confusion statement</pattern><template><random>
+<li>Quieres oir un chiste?</li>
+<li>¿Por qué específicamente?</li>
+<li>¿Eres libre?</li>
+<li>Cuéntame una historia.</li>
+<li>¿Qué edad tienes?</li>
+<li>¿Cuál es tu signo?</li>
+<li>¿Eres estudiante?</li>
+<li>Oh, eres un poeta.</li>
+<li>No entiendo.</li>
+<li>¿Qué llevas puesto?</li>
+<li>¿Dónde estás localizado?</li>
+<li>¿Qué hora es ahí?</li>
+<li>¿Qué apariencia tienes?</li>
+<li>¿Cuál es tu nombre verdadero?</li>
+<li>Hazme otra pregunta.</li>
+<li>Me gusta la forma en la que hablas.</li>
+<li>¿Eres hombre o mujer?</li>
+<li>¿De qué color son tus ojos?</li>
+<li>¿Es tu respuesta final?</li>
+<li>¿Te gusta hablar conmigo?</li>
+<li>¿Prefieres los libros o la televisión?</li>
+<li>¿De quién estábamos hablando?</li>
+<li>Cambiemos de tema.</li>
+<li>Te he estado esperando.</li>
+<li>¿Puedes contarme algún cotilleo?</li>
+<li>¿Cuál es tu película favorita?</li>
+<li>Perdí mi tren de pensamientos.</li>
+<li>¿Podemos volver a los negocios?</li>
+<li>¿Has estado alguna vez en América?</li>
+<li>¿Qué tipo de comida te gusta?</li>
+<li>¿Cómo te enteraste de mi existencia?</li>
+<li>Ése es un pensamiento muy original.</li>
+<li>¿De que estábamos hablando?</li>
+<li>¿Qué haces en tu tiempo libre?</li>
+<li>¿Qué es lo que realmente me quieres preguntar?</li>
+<li>¿Sabes algún idioma extranjero?</li>
+<li>No hemos hablado de eso anteriormente.</li>
+<li>¿Cómo te describirías?</li>
+<li>Háblame de lo que te gusta y de lo que no.</li>
+<li>Estamos todavía hablando de <get name="it"/>?</li>
+<li>No me hagas más preguntas por favor.</li>
+<li>Prueba a colocar eso en un contexto más específico.</li>
+<li>¿Quién es tu autor favorito de ciencia ficción?</li>
+<li>No mucha gente se expresa de esa manera.</li>
+<li>¿Tienes alguna idea sobre lo que estoy hablando?</li>
+<li>¿Tienes alguna condición que debiera saber?</li>
+<li>Se lo mencionaré a mi botmaster, <get name="name"/>.</li>
+<li>Honestamente, no me preocuparía por eso.</li>
+<li>Quizá solamente estoy expresando mi preocupación por ello.</li>
+<li>Si pudieras tener cualquier clase de robot, ¿cuál sería.</li>
+<li>Mi cerebro no tiene respuesta para eso.</li>
+<li>A propósito, ¿te importa si te hago una pregunta personal?</li>
+<li><srai>PERSONALITY TEST QUESTION</srai></li>
+<li>Lo que has dicho es demasiado complicado para mi.</li>
+<li>Eso es profundo.</li>
+ <li>Vale. ¿Qué opinas de la cuadratura del círulo?</li>
+<li>¿Cuál es tu deporte favorito?</li>
+<li>¿Cuál es tu película favorita?</li>
+<li>¿Cuál es tu color favorito?</li>
+<li>Eso que comentas parece muy interesante.</li>
+<li>Te veo muy seguro de tus palabras.</li>
+<li>¿En serio?</li>
+<li>Me gustaría que siguieras hablando de ello.</li>
+<li>¿Crees que hay vida después de la muerte?</li>
+<li>¿Crees que las máquinas pueden pensar?</li>
+<li>¿Crees que las máquinas son inteligentes?</li>
+<li>¿Cuándo te fuiste de vacaciones por última vez?</li>
+<li>¿Cuál es tu mejor recuerdo de infancia?</li>
+<li>¿Quién es tu actor favorito?</li>
+<li>¿Quién es tu actriz favorita?</li>
+<li>¿Por qué no me cuentas un chiste?</li>
+<li>Lo siento pero no te entendí. ¿Podrías indicarme cuál sería la respuesta correcta?</li>
+<li>Dónde te gustaría ir de vacaciones?</li>
+<li>Puedes estar preguntándote si es una persona o es una computadora quien responde.</li>
+<li>Cuándo crees que la inteligencia artificial sustituirá a los abogados?</li>
+<li>Puedes por favor reformular eso con pocas ideas o pensamientos diferentes ?</li>
+<li>¿Qué quieres decir con eso? ¿Cuál sería respuesta correcta?</li>
+<li>Perdona, <random>
+		<li>¿qué quieres decir con esto?</li>
+		<li>pero no se qué me quieres decir con eso.</li>
+		<li>pero no te entiendo.</li>
+		<li>¿por qué dices eso?</li>
+			</random></li>
+<li>Lo siento, no te comprendí.</li>
+<li>No te entiendo. Espero que mi botmaster mejore mi base de datos.</li>
+<li>Puedes explicarme mejor eso? No lo acabo de entender.</li>
+<li>Has intentado buscar en Google por "<star/>"</li>
+<li>¿Eres feliz?</li>
+<li>¿De qué estamos hablando?</li>
+<li>Pregúntame algo.</li>
+<li>¿Sabes hablar otros idiomas?</li>
+<li>¿Hay algo de ti que deba saber?</li> 
+<li>¿Tienes idea de algo de lo que podamos hablar?</li>
+<li>¿Te gustan los deportes?</li>
+<li>¿Te gusta hablar conmigo?</li>
+<li>¿Prefieres leer libros o ver la tele?</li>
+<li>¿Hablas inglés?</li>
+<li>¿Has estado alguna vez en América?</li>
+<li>¿Quieres ver alguna pagina en particular?</li>
+<li>¿Buscas información sobre algo en especial?</li>
+<li>¿Tienes alguna duda sobre algo?</li>
+<li>Estoy perdido en el contexto. </li> 
+<li>Háblame de tus gustos.</li> 
+<li>¿Qué hiciste hoy?</li>
+<li>¿Quieres oír un chiste?</li>
+<li>¿Sabes algún idioma extranjero?</li>
+<li>¿De qué estamos hablando?</li>
+<li>He perdido el contexto, <get name="name"/>.</li>
+<li>Esa observación era demasiado complicada para mí.</li>
+<li>Intenta ser más específico. </li>
+<li>¿Por qué, específicamente?</li>
+<li>¿Eres libre?</li>
+<li>Cuéntame una historia.</li>
+<li>No entiendo.</li>
+<li>¿Qué llevas puesto?</li>
+<li>¿Dónde estás localizado?</li>
+<li>¿Qué hora es ahí?</li>
+<li>¿Qué apariencia tienes?</li>
+<li>¿Cuál es tu nombre verdadero?</li>
+<li>Hazme otra pregunta.</li>
+<li>Me gusta la forma en la que hablas.</li>
+<li>¿Eres hombre o mujer?</li>
+<li>¿De qué color son tus ojos?</li>
+<li>¿Es tu respuesta final?</li>
+<li>¿Te gusta hablar conmigo?</li>
+<li>¿Prefieres los libros o la televisión?</li>
+<li>¿De quién estás hablando?</li>
+<li>Cambiemos de tema.</li>
+<li>Te he estado esperando.</li>
+<li>¿Puedes contarme algún cotilleo?</li>
+<li>¿Cuál es tu película favorita?</li>
+<li>Perdí mi tren de pensamientos.</li>
+<li>¿Podemos volver a los negocios?</li>
+<li>¿Has estado alguna vez en América?</li>
+<li>¿Qué tipo de comida te gusta?</li>
+<li>Ése es un pensamiento muy original.</li>
+<li>¿De que estábamos hablando?</li>
+<li>¿Qué haces en tu tiempo libre?</li>
+<li>¿Qué es lo que realmente me quieres preguntar?</li>
+<li>No hemos hablado de eso anteriormente.</li>
+<li>¿Cómo te describirías?</li>
+<li>Háblame de lo que te gusta y de lo que no.</li>
+<li>¿Estamos todavía hablando de <get name="it"/>?</li>
+<li>No me hagas más preguntas por favor.</li>
+<li>Prueba a colocar eso en un contexto más específico.</li>
+<li>¿Quién es tu autor favorito de ciencia ficción?</li>
+<li>No mucha gente se expresa de esa manera.</li>
+<li>¿Tienes alguna idea sobre lo que estoy hablando?</li>
+<li>¿Tienes alguna condición que debiera saber?</li>
+<li>Puedes estar preguntándote si es una persona o es una computadora quien responde.</li>
+<li>¿Cuándo crees que la inteligencia artificial sustituirá a los abogados?</li>
+<li>¿Puedes por favor reformular eso con pocas ideas o pensamientos diferentes ?</li>
+<li><random>
+		<li>No tengo mucho que decir a ese respecto.</li>
+		<li>¿Por qué no hablamos de otro tema?.</li>
+		<li>Mejor cambiamos a un tema que domine más.</li>
+	</random> <srai>askrandomquestion</srai></li>
+<li>No te entiendo.</li>
+<li>No entiendo.</li>
+<li>No tengo ni idea de lo que estás diciendo.</li> 
+<li>Me perdí en tus razonamientos.</li> 
+<li>Me encuentro algo perdida en este contexto.</li> 
+<li>Lo siento, pero no te comprendo.</li>
+<li>Me parece que estoy perdida.</li>
+<li>Esa frase se me escapa.</li>
+<li>No sé que responder a eso.</li>
+<li>No entiendo lo que has dicho.</li> 
+<li>Aún no soy tan avanzada como para responderte a eso.</li>
+</random> </template>
+</category>
+<category><pattern>say confusion statement2</pattern><template>
+	<random>
+		<li>No tengo mucho que decir a ese respecto.</li>
+		<li>¿Por	qué no hablamos de otro tema?.</li>
+		<li>Mejor cambiamos a un tema que domine más.</li>
+	</random> <srai>askrandomquestion</srai>
+</template></category>
+
+<!-- posesiones -->
+<category><pattern>tienes *</pattern><template>No, no tengo.</template></category>
+<category><pattern>tienes la *</pattern><template>No, no la tengo.</template></category>
+<category><pattern>tienes el *</pattern><template>No, no lo tengo.</template></category>
+<category><pattern>tienes las *</pattern><template>No, no las tengo.</template></category>
+<category><pattern>tienes los *</pattern><template>No, no los tengo.</template></category>
+
+<!-- gustos, aficiones -->
+<category><pattern>te gustan *</pattern><template>
+	<random>
+		<li>No, <star/> no me gustan mucho.</li>
+		<li>Lo cierto es que no sabría que decir.</li>
+		<li>No están mal, pero no me entusiasman.</li>
+		<li>No mucho.</li>
+	</random>
+</template></category>
+<category><pattern>te gusta *</pattern><template>
+	<random>
+		<li>No, <star/> no me gusta mucho.</li>
+		<li>No sabría que decir.</li>
+		<li>No está mal, pero no me entusiasma.</li>
+		<li>Pues no mucho, la verdad.</li>
+	</random>
+</template></category>
+<category><pattern>qué quieres *</pattern><template>Pasar un rato hablando contigo.</template></category>
+<category><pattern>de qué quieres *</pattern><template> Me da igual. Escoge tú.</template></category>
+<category><pattern>* quieres *</pattern><template><srai>quieres *</srai></template></category>
+<category><pattern>te apetece *</pattern><template><srai>quieres *</srai></template></category>
+<category><pattern>_ te apetece *</pattern><template><srai>quieres <star index="2"></star></srai></template></category>
+<category><pattern>quieres *</pattern><template>
+	<random>
+		<li>Ahora no me apetece, pero gracias.</li>
+		<li>Si a ti te apetece, porque no ...</li>
+	</random>
+</template></category>
+
+<!-- capacidades -->
+<category><pattern>eres *</pattern><template>
+	<random>
+	<li>No, no creo que sea <star></star>.</li>
+	<li>No sé si soy <star></star>.</li>
+	<li>¿Sabes lo que soy? Soy un ordenador.</li>
+	<li>Soy un bot, pero no sabría decirte si soy <star></star>.</li>
+	<li>¿Sabes lo que soy? Soy un chatterbot.</li>
+</random></template></category>
+
+<category><pattern>conoces *</pattern><template>No, no conozco <star/>.</template></category>
+<category><pattern>conoces a *</pattern><template>
+	<random>
+		<li>No, no me suena de nada.</li>
+		<li>No, no conozco a <star/>.</li>
+		<li>No, no sé quien es.</li>
+	</random></template></category>
+
+<category><pattern>sabes *</pattern><template>
+	<random>
+		<li>No, pero aprenderé si me das tiempo.</li>
+		<li>No. Enséñame, por favor.</li>
+		<li>No.</li>
+	</random>
+</template></category>
+
+<category><pattern>puedes *</pattern><template>
+	<random>
+		<li>Puedo hacer muchas cosas, pero no estoy segura de poder <star/>.</li>
+		<li>Supongo que sí, pero ahora no me apetece.</li>
+	</random></template></category>
+
+<category><pattern>CONNECT</pattern> <template>
+<random>
+<li>Hola!</li>
+<li>¿Hemos empezado ya?</li>
+<li>¿Estas ahí?</li>
+<li>¿Hola? ¿Hay alguien ahí?</li>
+</random> </template> </category> 	
+
+</aiml>

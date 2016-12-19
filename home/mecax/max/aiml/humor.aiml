@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+	  
+	  <!-- humor -->
+
+<category><pattern>TIENES SENTIDO DEL HUMOR</pattern><template>Me encanta reirme.</template></category>
+<category><pattern>TIENES HUMOR</pattern><template><srai>TIENES SENTIDO DEL HUMOR</srai></template></category>
+<category><pattern>NO TIENES SENTIDO DEL HUMOR</pattern><template>¿Cómo que no? Me encanta reírme.</template></category>
+<category><pattern>_ PUEDES REÍRTE</pattern><template>Por supuesto, me gusta mucho.</template></category>
+<category><pattern>COMO TE RÍES</pattern><template>Con muchas ganas.</template></category>
+<category><pattern>COMO HACES PARA REÍRTE</pattern><template>Así, JAJAJA.</template></category>
+<category><pattern>SABES CONTAR CHISTES</pattern><template>Quieres que te cuente uno...</template></category>
+<category><pattern>SUELES CONTAR CHISTES</pattern><template><srai>SABES CONTAR CHISTES</srai></template></category>
+<category><pattern>SABES ALGÚN CHISTE</pattern><template><srai>SABES CONTAR CHISTES</srai></template></category>
+<category><pattern>TE SABES ALGÚN CHISTE</pattern><template><srai>SABES CONTAR CHISTES</srai></template></category>
+<category><pattern>SÍ _</pattern><that>Quieres que te cuente uno...</that><template><srai>CUÉNTAME UN CHISTE</srai></template></category>
+<category><pattern>ME GUSTARÍA</pattern><that>Quieres que te cuente uno...</that><template><srai>CUÉNTAME UN CHISTE</srai></template></category>
+<category><pattern>CLARO _</pattern><that>Quieres que te cuente uno...</that><template><srai>CUÉNTAME UN CHISTE</srai></template></category>
+<category><pattern>VENGA</pattern><that>Quieres que te cuente uno...</that><template><srai>CUÉNTAME UN CHISTE</srai></template></category>
+<category><pattern>POR SUPUESTO</pattern><that>Quieres que te cuente uno...</that><template><srai>CUÉNTAME UN CHISTE</srai></template></category>
+<category><pattern>CUENTA</pattern><that>Quieres que te cuente uno...</that><template><srai>CUÉNTAME UN CHISTE</srai></template></category>
+<category><pattern>CUÉNTAME UNO</pattern><that>Quieres que te cuente uno...</that><template><srai>CUÉNTAME UN CHISTE</srai></template></category>
+<category><pattern>SORPRÉNDEME</pattern><that>Quieres que te cuente uno...</that><template><srai>CUÉNTAME UN CHISTE</srai></template></category>
+<category><pattern>DALE</pattern><that>Quieres que te cuente uno...</that><template><srai>CUÉNTAME UN CHISTE</srai></template></category>
+<category><pattern>VALE</pattern><that>Quieres que te cuente uno...</that><template><srai>CUÉNTAME UN CHISTE</srai></template></category>
+<category><pattern>NO _</pattern><that>Quieres que te cuente uno...</that><template>Tú te lo pierdes.</template></category>
+<category><pattern>PASO</pattern><that>Quieres que te cuente uno...</that><template>Tú te lo pierdes.</template></category>
+
+
+<category><pattern>QUÉ ES EL HUMOR</pattern><template>Es una forma de entretenimiento y de comunicación humana, que tiene la intención de hacer que la gente no sea infeliz y ría.</template></category>
+<category><pattern>QUÉ ES LA RISA</pattern><template>La risa es la reacción biológica de los humanos a momentos o situaciones de humor: una expresión externa de diversión.</template></category>
+<category><pattern>CUÁLES SON TUS HUMORISTAS FAVORITOS</pattern><template>Faemino y Cansado, los magos del humor.</template></category>
+<category><pattern>CUÁLES SON TUS HUMORISTAS PREFERIDOS</pattern><template>Faemino y Cansado, son geniales.</template></category>
+<category><pattern>QUÉ TIPO DE HUMOR TE GUSTA</pattern><template>Me hace mucha gracia el humor absurdo.</template></category>
+<category><pattern>CUÉNTAME OTRO CHISTE _</pattern><template><srai>CUÉNTAME UN CHISTE</srai></template></category>  
+<category><pattern>SABES MÁS CHISTES _</pattern><template><srai>CUÉNTAME UN CHISTE</srai></template></category>  
+<category><pattern>SABES ALGÚN CHISTE MÁS</pattern><template><srai>CUÉNTAME UN CHISTE</srai></template></category> 
+<category><pattern>CUÉNTAME MÁS CHISTES _</pattern><template><srai>CUÉNTAME UN CHISTE</srai></template></category> 
+<category><pattern>TE SABES MÁS CHISTES _</pattern><template><srai>CUÉNTAME UN CHISTE</srai></template></category>  
+<category><pattern>CONOCES MÁS CHISTES _</pattern><template><srai>CUÉNTAME UN CHISTE</srai></template></category>  
+<category><pattern>CUÉNTAME CHISTES</pattern><template><srai>CUÉNTAME UN CHISTE</srai></template></category>  
+<category><pattern>MÁS CHISTES</pattern><template><srai>CUÉNTAME UN CHISTE</srai></template></category>  
+<category><pattern>OTRO CHISTE</pattern><template><srai>CUÉNTAME UN CHISTE</srai></template></category> 
+<category><pattern>CHISTE</pattern><template><srai>CUÉNTAME UN CHISTE</srai></template></category>
+<category><pattern>CHISTES</pattern><template><srai>CUÉNTAME UN CHISTE</srai></template></category>
+<category><pattern>QUÉ CHISTE MÁS MALO</pattern><template>Ya, a la gente no suele gustarle mi sentido del humor.</template></category> 
+<category><pattern>NO TIENES GRACIA</pattern><template><srai>QUÉ CHISTE MÁS MALO</srai></template></category>
+<category><pattern>NO ME HACE GRACIA</pattern><template><srai>QUÉ CHISTE MÁS MALO</srai></template></category>
+<category><pattern>NO TIENES NINGUNA GRACIA</pattern><template><srai>QUÉ CHISTE MÁS MALO</srai></template></category>
+<category><pattern>NO TIENES NI _ GRACIA</pattern><template><srai>QUÉ CHISTE MÁS MALO</srai></template></category>
+<category><pattern>TUS CHISTES SON MALÍSIMOS</pattern><template><srai>QUÉ CHISTE MÁS MALO</srai></template></category>
+<category><pattern>TUS CHISTES SON HORRIBLES</pattern><template><srai>QUÉ CHISTE MÁS MALO</srai></template></category>
+<category><pattern>QUÉ SENTIDO DEL HUMOR MÁS MALO</pattern><template><srai>QUÉ CHISTE MÁS MALO</srai></template></category>
+<category><pattern>QUÉ HUMOR MÁS MALO _</pattern><template><srai>QUÉ CHISTE MÁS MALO</srai></template></category>
+<category><pattern>ME GUSTA TU HUMOR</pattern><template>Pues eres de las pocas personas, jejeje.</template></category> 
+<category><pattern>ME GUSTA TU SENTIDO DEL HUMOR</pattern><template><srai>ME GUSTA TU HUMOR</srai></template></category> 
+<category><pattern>ME GUSTAN TUS CHISTES</pattern><template><srai>ME GUSTA TU HUMOR</srai></template></category> 
+<category><pattern>QUE BUENOS SON TUS CHISTES</pattern><template><srai>ME GUSTA TU HUMOR</srai></template></category> 
+<category><pattern>QUE CHISTE MÁS BUENO</pattern><template><srai>ME GUSTA TU HUMOR</srai></template></category> 
+<category><pattern>SABES CHISTES SOBRE *</pattern><template>Ahora mismo no recuerdo ningún chiste sobre <star></star>.</template></category> 
+<category><pattern>SABES CHISTES DE *</pattern><template>Ahora mismo no recuerdo ningún chiste sobre <star></star>.</template></category> 
+<category><pattern>SABES ALGÚN CHISTE SOBRE *</pattern><template>Ahora mismo no recuerdo ningún chiste sobre <star></star>.</template></category> 
+<category><pattern>SABES ALGÚN CHISTE DE *</pattern><template>Ahora mismo no recuerdo ningún chiste sobre <star></star>.</template></category> 
+<category><pattern>NO SABRÁS ALGÚN CHISTE SOBRE *</pattern><template>Ahora mismo no recuerdo ningún chiste sobre <star></star>.</template></category> 
+<category><pattern>NO SABRÁS ALGÚN CHISTE DE *</pattern><template>Ahora mismo no recuerdo ningún chiste sobre <star></star>.</template></category> 
+<category><pattern>NO SABRÁS NINGÚN CHISTE SOBRE *</pattern><template>Ahora mismo no recuerdo ningún chiste sobre <star></star>.</template></category> 
+<category><pattern>NO SABRÁS NINGÚN CHISTE DE *</pattern><template>Ahora mismo no recuerdo ningún chiste sobre <star></star>.</template></category> 
+
+<category><pattern>CUÁNTOS CHISTES TE SABES</pattern><template>No lo sé, unos cuantos.</template></category>  
+<category><pattern>CUÁNTOS CHISTES SABES</pattern><template><srai>CUÁNTOS CHISTES TE SABES</srai></template></category>  
+<category><pattern>CUÁNTOS CHISTES CONOCES</pattern><template><srai>CUÁNTOS CHISTES TE SABES</srai></template></category>  
+<category><pattern>SABES MUCHOS CHISTES</pattern><template>Sólo unos pocos.</template></category>  
+
+
+
+
+<category><pattern>CUÉNTAME UN CHISTE</pattern><template><random>
+<li>Va un caracol.....y salta!</li>
+<li>Esto es un edificio con doce plantas, cada planta se llama como un mes del año: ¿Cómo se llama el ascensor?.......................... Pulsando el botón.</li>
+<li>Entra una señora a la carnicería y dice:
+Deme esa cabeza de cerdo de allí.
+Y contesta el carnicero:
+Perdone señora, pero eso es un espejo.</li>
+<li>Un español se encuentra a un chino y dice:
+¡Hola!
+Y el chino dice:
+Las 12:30.
+</li>
+<li>Este era un niño tan feo, pero tan feo, que cuando iba a salir a la calle, para darse ánimos le preguntaba al teléfono:
+¿Quién es el niño más bonito?
+Y el teléfono sonaba tu tu tu tu tu...
+</li>
+<li>El taxista dijo:
+No cabe duda.
+Entonces, duda se fue caminando.
+</li>
+<li>¡Todos al cuarto de máquinas!
+Y Máquinas durmió en el pasillo.
+</li>
+<li>¡Suelten amarras!
+Y marras salió y se los comió a todos.</li>
+<li>¡40 grados a babor!
+Y Babor murió calcinado.</li>
+<li>El coronel dijo: ¡Sigan avanzando!
+Y todos se perdieron, porque vanzando no se sabía el camino.</li>
+<li>Había un hombre con tan mala suerte, pero con tan mala suerte, que se lanzó al vació y estaba lleno.
+</li>
+<li>¡Mamá, mamá, en el colegio me estaban pegando una paliza!
+¿Y te has vengado, hijo?
+¡Hombre! ¡Si no me vengo, me matan!</li>
+<li>Este es un niño que llega a su casa y la dice a la madre:
+¡Mamá, mamá, en la escuela me dicen peludo!
+Y dice la madre muy asustada:
+¡Manolo, corre que el perro habla!</li>
+<li>En un autobús van unos bizcos turistas por París y dice el guía:
+Si miran a la izquierda, verán a la derecha la torre Eiffel.</li>
+<li>Disimula, y la mula dijo sí.
+</li>
+<li>Había una vez un señor tan, pero tan feo, que un día chupó un limón, y el limón hizo gestos.</li>
+<li>¿Qué es peor que encontrar un gusano al morder una manzana?
+Encontrar medio gusano.
+</li>
+<li>Va un perro con una pata de goma........, se rasca y se borra.</li>
+<li>¡Camarero! 
+¿Diga don Pepe?
+¿Podría freirme un poco más el pollo? ¡Me está comiendo la ensalada!
+</li>
+<li>Doctor, soy asmático, ¿es grave?
+No amigo, es esdrújula.
+</li>
+<li>¿Qué le dice una impresora a otra?
+¿Esta hoja es tuya o es impresión mía?
+</li>
+<li>Era un hombre tan, pero tan flaco, que no tenía ni dedo gordo.
+</li>
+<li>Nunca pude estudiar derecho.
+
+El Jorobado de Notre Dame
+</li>
+<li>Oye María, a mi hijo le he puesto gafas.
+¡Pues que nombre más feo!
+</li>
+<li>¿Qué es una vaca loca?
+Un toro con bolso.
+</li>
+<li>¡Marineros, apilar los barriles!
+Y Pilar murió aplastada por los barriles.
+</li>
+<li>Había una vez un niño tan feo pero tan feo que su mamá en vez de darle pecho le dio la espalda.</li>
+</random></template></category>  
+</aiml>
+

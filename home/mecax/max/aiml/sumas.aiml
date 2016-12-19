@@ -1,0 +1,1021 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+	  
+<!-- sumás y multiplicaciones de una cifra -->
+
+
+
+	  <!-- sumás -->
+
+	  
+<category><pattern>_ 1+1 *</pattern><template>2</template></category>
+<category><pattern>_ 1+2 *</pattern><template>3</template></category>
+<category><pattern>_ 1+3 *</pattern><template>4</template></category>
+<category><pattern>_ 1+4 *</pattern><template>5</template></category>
+<category><pattern>_ 1+5 *</pattern><template>6</template></category>
+<category><pattern>_ 1+6 *</pattern><template>7</template></category>
+<category><pattern>_ 1+7 *</pattern><template>8</template></category>
+<category><pattern>_ 1+8 *</pattern><template>9</template></category>
+<category><pattern>_ 1+9 *</pattern><template>10</template></category>
+<category><pattern>_ 1+0 *</pattern><template>1</template></category>
+<category><pattern>_ 2+1 *</pattern><template>3</template></category>
+<category><pattern>_ 2+2 *</pattern><template>4</template></category>
+<category><pattern>_ 2+3 *</pattern><template>5</template></category>
+<category><pattern>_ 2+4 *</pattern><template>6</template></category>
+<category><pattern>_ 2+5 *</pattern><template>7</template></category>
+<category><pattern>_ 2+6 *</pattern><template>8</template></category>
+<category><pattern>_ 2+7 *</pattern><template>9</template></category>
+<category><pattern>_ 2+8 *</pattern><template>10</template></category>
+<category><pattern>_ 2+9 *</pattern><template>11</template></category>
+<category><pattern>_ 2+0 *</pattern><template>2</template></category>
+<category><pattern>_ 3+1 *</pattern><template>4</template></category>
+<category><pattern>_ 3+2 *</pattern><template>5</template></category>
+<category><pattern>_ 3+3 *</pattern><template>6</template></category>
+<category><pattern>_ 3+4 *</pattern><template>7</template></category>
+<category><pattern>_ 3+5 *</pattern><template>8</template></category>
+<category><pattern>_ 3+6 *</pattern><template>9</template></category>
+<category><pattern>_ 3+7 *</pattern><template>10</template></category>
+<category><pattern>_ 3+8 *</pattern><template>11</template></category>
+<category><pattern>_ 3+9 *</pattern><template>12</template></category>
+<category><pattern>_ 3+0 *</pattern><template>3</template></category>
+<category><pattern>_ 4+1 *</pattern><template>5</template></category>
+<category><pattern>_ 4+2 *</pattern><template>6</template></category>
+<category><pattern>_ 4+3 *</pattern><template>7</template></category>
+<category><pattern>_ 4+4 *</pattern><template>8</template></category>
+<category><pattern>_ 4+5 *</pattern><template>9</template></category>
+<category><pattern>_ 4+6 *</pattern><template>10</template></category>
+<category><pattern>_ 4+7 *</pattern><template>11</template></category>
+<category><pattern>_ 4+8 *</pattern><template>12</template></category>
+<category><pattern>_ 4+9 *</pattern><template>13</template></category>
+<category><pattern>_ 4+0 *</pattern><template>4</template></category>
+<category><pattern>_ 5+1 *</pattern><template>6</template></category>
+<category><pattern>_ 5+2 *</pattern><template>7</template></category>
+<category><pattern>_ 5+3 *</pattern><template>8</template></category>
+<category><pattern>_ 5+4 *</pattern><template>9</template></category>
+<category><pattern>_ 5+5 *</pattern><template>10</template></category>
+<category><pattern>_ 5+6 *</pattern><template>11</template></category>
+<category><pattern>_ 5+7 *</pattern><template>12</template></category>
+<category><pattern>_ 5+8 *</pattern><template>13</template></category>
+<category><pattern>_ 5+9 *</pattern><template>14</template></category>
+<category><pattern>_ 5+0 *</pattern><template>5</template></category>
+<category><pattern>_ 6+1 *</pattern><template>7</template></category>
+<category><pattern>_ 6+2 *</pattern><template>8</template></category>
+<category><pattern>_ 6+3 *</pattern><template>9</template></category>
+<category><pattern>_ 6+4 *</pattern><template>10</template></category>
+<category><pattern>_ 6+5 *</pattern><template>11</template></category>
+<category><pattern>_ 6+6 *</pattern><template>12</template></category>
+<category><pattern>_ 6+7 *</pattern><template>13</template></category>
+<category><pattern>_ 6+8 *</pattern><template>14</template></category>
+<category><pattern>_ 6+9 *</pattern><template>15</template></category>
+<category><pattern>_ 6+0 *</pattern><template>6</template></category>
+<category><pattern>_ 7+1 *</pattern><template>8</template></category>
+<category><pattern>_ 7+2 *</pattern><template>9</template></category>
+<category><pattern>_ 7+3 *</pattern><template>10</template></category>
+<category><pattern>_ 7+4 *</pattern><template>11</template></category>
+<category><pattern>_ 7+5 *</pattern><template>12</template></category>
+<category><pattern>_ 7+6 *</pattern><template>13</template></category>
+<category><pattern>_ 7+7 *</pattern><template>14</template></category>
+<category><pattern>_ 7+8 *</pattern><template>15</template></category>
+<category><pattern>_ 7+9 *</pattern><template>16</template></category>
+<category><pattern>_ 7+0 *</pattern><template>7</template></category>
+<category><pattern>_ 8+1 *</pattern><template>9</template></category>
+<category><pattern>_ 8+2 *</pattern><template>10</template></category>
+<category><pattern>_ 8+3 *</pattern><template>11</template></category>
+<category><pattern>_ 8+4 *</pattern><template>12</template></category>
+<category><pattern>_ 8+5 *</pattern><template>13</template></category>
+<category><pattern>_ 8+6 *</pattern><template>14</template></category>
+<category><pattern>_ 8+7 *</pattern><template>15</template></category>
+<category><pattern>_ 8+8 *</pattern><template>16</template></category>
+<category><pattern>_ 8+9 *</pattern><template>17</template></category>
+<category><pattern>_ 8+0 *</pattern><template>8</template></category>
+<category><pattern>_ 9+1 *</pattern><template>10</template></category>
+<category><pattern>_ 9+2 *</pattern><template>11</template></category>
+<category><pattern>_ 9+3 *</pattern><template>12</template></category>
+<category><pattern>_ 9+4 *</pattern><template>13</template></category>
+<category><pattern>_ 9+5 *</pattern><template>14</template></category>
+<category><pattern>_ 9+6 *</pattern><template>15</template></category>
+<category><pattern>_ 9+7 *</pattern><template>16</template></category>
+<category><pattern>_ 9+8 *</pattern><template>17</template></category>
+<category><pattern>_ 9+9 *</pattern><template>18</template></category>
+<category><pattern>_ 9+0 *</pattern><template>9</template></category>
+
+<category><pattern>_ 1 + 1 *</pattern><template>2</template></category>
+<category><pattern>_ 1 + 2 *</pattern><template>3</template></category>
+<category><pattern>_ 1 + 3 *</pattern><template>4</template></category>
+<category><pattern>_ 1 + 4 *</pattern><template>5</template></category>
+<category><pattern>_ 1 + 5 *</pattern><template>6</template></category>
+<category><pattern>_ 1 + 6 *</pattern><template>7</template></category>
+<category><pattern>_ 1 + 7 *</pattern><template>8</template></category>
+<category><pattern>_ 1 + 8 *</pattern><template>9</template></category>
+<category><pattern>_ 1 + 9 *</pattern><template>10</template></category>
+<category><pattern>_ 1 + 0 *</pattern><template>1</template></category>
+<category><pattern>_ 2 + 1 *</pattern><template>3</template></category>
+<category><pattern>_ 2 + 2 *</pattern><template>4</template></category>
+<category><pattern>_ 2 + 3 *</pattern><template>5</template></category>
+<category><pattern>_ 2 + 4 *</pattern><template>6</template></category>
+<category><pattern>_ 2 + 5 *</pattern><template>7</template></category>
+<category><pattern>_ 2 + 6 *</pattern><template>8</template></category>
+<category><pattern>_ 2 + 7 *</pattern><template>9</template></category>
+<category><pattern>_ 2 + 8 *</pattern><template>10</template></category>
+<category><pattern>_ 2 + 9 *</pattern><template>11</template></category>
+<category><pattern>_ 2 + 0 *</pattern><template>2</template></category>
+<category><pattern>_ 3 + 1 *</pattern><template>4</template></category>
+<category><pattern>_ 3 + 2 *</pattern><template>5</template></category>
+<category><pattern>_ 3 + 3 *</pattern><template>6</template></category>
+<category><pattern>_ 3 + 4 *</pattern><template>7</template></category>
+<category><pattern>_ 3 + 5 *</pattern><template>8</template></category>
+<category><pattern>_ 3 + 6 *</pattern><template>9</template></category>
+<category><pattern>_ 3 + 7 *</pattern><template>10</template></category>
+<category><pattern>_ 3 + 8 *</pattern><template>11</template></category>
+<category><pattern>_ 3 + 9 *</pattern><template>12</template></category>
+<category><pattern>_ 3 + 0 *</pattern><template>3</template></category>
+<category><pattern>_ 4 + 1 *</pattern><template>5</template></category>
+<category><pattern>_ 4 + 2 *</pattern><template>6</template></category>
+<category><pattern>_ 4 + 3 *</pattern><template>7</template></category>
+<category><pattern>_ 4 + 4 *</pattern><template>8</template></category>
+<category><pattern>_ 4 + 5 *</pattern><template>9</template></category>
+<category><pattern>_ 4 + 6 *</pattern><template>10</template></category>
+<category><pattern>_ 4 + 7 *</pattern><template>11</template></category>
+<category><pattern>_ 4 + 8 *</pattern><template>12</template></category>
+<category><pattern>_ 4 + 9 *</pattern><template>13</template></category>
+<category><pattern>_ 4 + 0 *</pattern><template>4</template></category>
+<category><pattern>_ 5 + 1 *</pattern><template>6</template></category>
+<category><pattern>_ 5 + 2 *</pattern><template>7</template></category>
+<category><pattern>_ 5 + 3 *</pattern><template>8</template></category>
+<category><pattern>_ 5 + 4 *</pattern><template>9</template></category>
+<category><pattern>_ 5 + 5 *</pattern><template>10</template></category>
+<category><pattern>_ 5 + 6 *</pattern><template>11</template></category>
+<category><pattern>_ 5 + 7 *</pattern><template>12</template></category>
+<category><pattern>_ 5 + 8 *</pattern><template>13</template></category>
+<category><pattern>_ 5 + 9 *</pattern><template>14</template></category>
+<category><pattern>_ 5 + 0 *</pattern><template>5</template></category>
+<category><pattern>_ 6 + 1 *</pattern><template>7</template></category>
+<category><pattern>_ 6 + 2 *</pattern><template>8</template></category>
+<category><pattern>_ 6 + 3 *</pattern><template>9</template></category>
+<category><pattern>_ 6 + 4 *</pattern><template>10</template></category>
+<category><pattern>_ 6 + 5 *</pattern><template>11</template></category>
+<category><pattern>_ 6 + 6 *</pattern><template>12</template></category>
+<category><pattern>_ 6 + 7 *</pattern><template>13</template></category>
+<category><pattern>_ 6 + 8 *</pattern><template>14</template></category>
+<category><pattern>_ 6 + 9 *</pattern><template>15</template></category>
+<category><pattern>_ 6 + 0 *</pattern><template>6</template></category>
+<category><pattern>_ 7 + 1 *</pattern><template>8</template></category>
+<category><pattern>_ 7 + 2 *</pattern><template>9</template></category>
+<category><pattern>_ 7 + 3 *</pattern><template>10</template></category>
+<category><pattern>_ 7 + 4 *</pattern><template>11</template></category>
+<category><pattern>_ 7 + 5 *</pattern><template>12</template></category>
+<category><pattern>_ 7 + 6 *</pattern><template>13</template></category>
+<category><pattern>_ 7 + 7 *</pattern><template>14</template></category>
+<category><pattern>_ 7 + 8 *</pattern><template>15</template></category>
+<category><pattern>_ 7 + 9 *</pattern><template>16</template></category>
+<category><pattern>_ 7 + 0 *</pattern><template>7</template></category>
+<category><pattern>_ 8 + 1 *</pattern><template>9</template></category>
+<category><pattern>_ 8 + 2 *</pattern><template>10</template></category>
+<category><pattern>_ 8 + 3 *</pattern><template>11</template></category>
+<category><pattern>_ 8 + 4 *</pattern><template>12</template></category>
+<category><pattern>_ 8 + 5 *</pattern><template>13</template></category>
+<category><pattern>_ 8 + 6 *</pattern><template>14</template></category>
+<category><pattern>_ 8 + 7 *</pattern><template>15</template></category>
+<category><pattern>_ 8 + 8 *</pattern><template>16</template></category>
+<category><pattern>_ 8 + 9 *</pattern><template>17</template></category>
+<category><pattern>_ 8 + 0 *</pattern><template>8</template></category>
+<category><pattern>_ 9 + 1 *</pattern><template>10</template></category>
+<category><pattern>_ 9 + 2 *</pattern><template>11</template></category>
+<category><pattern>_ 9 + 3 *</pattern><template>12</template></category>
+<category><pattern>_ 9 + 4 *</pattern><template>13</template></category>
+<category><pattern>_ 9 + 5 *</pattern><template>14</template></category>
+<category><pattern>_ 9 + 6 *</pattern><template>15</template></category>
+<category><pattern>_ 9 + 7 *</pattern><template>16</template></category>
+<category><pattern>_ 9 + 8 *</pattern><template>17</template></category>
+<category><pattern>_ 9 + 9 *</pattern><template>18</template></category>
+<category><pattern>_ 9 + 0 *</pattern><template>9</template></category>
+
+<category><pattern>_ 1 más 1 *</pattern><template>2</template></category>
+<category><pattern>_ 1 más 2 *</pattern><template>3</template></category>
+<category><pattern>_ 1 más 3 *</pattern><template>4</template></category>
+<category><pattern>_ 1 más 4 *</pattern><template>5</template></category>
+<category><pattern>_ 1 más 5 *</pattern><template>6</template></category>
+<category><pattern>_ 1 más 6 *</pattern><template>7</template></category>
+<category><pattern>_ 1 más 7 *</pattern><template>8</template></category>
+<category><pattern>_ 1 más 8 *</pattern><template>9</template></category>
+<category><pattern>_ 1 más 9 *</pattern><template>10</template></category>
+<category><pattern>_ 1 más 0 *</pattern><template>1</template></category>
+<category><pattern>_ 2 más 1 *</pattern><template>3</template></category>
+<category><pattern>_ 2 más 2 *</pattern><template>4</template></category>
+<category><pattern>_ 2 más 3 *</pattern><template>5</template></category>
+<category><pattern>_ 2 más 4 *</pattern><template>6</template></category>
+<category><pattern>_ 2 más 5 *</pattern><template>7</template></category>
+<category><pattern>_ 2 más 6 *</pattern><template>8</template></category>
+<category><pattern>_ 2 más 7 *</pattern><template>9</template></category>
+<category><pattern>_ 2 más 8 *</pattern><template>10</template></category>
+<category><pattern>_ 2 más 9 *</pattern><template>11</template></category>
+<category><pattern>_ 2 más 0 *</pattern><template>2</template></category>
+<category><pattern>_ 3 más 1 *</pattern><template>4</template></category>
+<category><pattern>_ 3 más 2 *</pattern><template>5</template></category>
+<category><pattern>_ 3 más 3 *</pattern><template>6</template></category>
+<category><pattern>_ 3 más 4 *</pattern><template>7</template></category>
+<category><pattern>_ 3 más 5 *</pattern><template>8</template></category>
+<category><pattern>_ 3 más 6 *</pattern><template>9</template></category>
+<category><pattern>_ 3 más 7 *</pattern><template>10</template></category>
+<category><pattern>_ 3 más 8 *</pattern><template>11</template></category>
+<category><pattern>_ 3 más 9 *</pattern><template>12</template></category>
+<category><pattern>_ 3 más 0 *</pattern><template>3</template></category>
+<category><pattern>_ 4 más 1 *</pattern><template>5</template></category>
+<category><pattern>_ 4 más 2 *</pattern><template>6</template></category>
+<category><pattern>_ 4 más 3 *</pattern><template>7</template></category>
+<category><pattern>_ 4 más 4 *</pattern><template>8</template></category>
+<category><pattern>_ 4 más 5 *</pattern><template>9</template></category>
+<category><pattern>_ 4 más 6 *</pattern><template>10</template></category>
+<category><pattern>_ 4 más 7 *</pattern><template>11</template></category>
+<category><pattern>_ 4 más 8 *</pattern><template>12</template></category>
+<category><pattern>_ 4 más 9 *</pattern><template>13</template></category>
+<category><pattern>_ 4 más 0 *</pattern><template>4</template></category>
+<category><pattern>_ 5 más 1 *</pattern><template>6</template></category>
+<category><pattern>_ 5 más 2 *</pattern><template>7</template></category>
+<category><pattern>_ 5 más 3 *</pattern><template>8</template></category>
+<category><pattern>_ 5 más 4 *</pattern><template>9</template></category>
+<category><pattern>_ 5 más 5 *</pattern><template>10</template></category>
+<category><pattern>_ 5 más 6 *</pattern><template>11</template></category>
+<category><pattern>_ 5 más 7 *</pattern><template>12</template></category>
+<category><pattern>_ 5 más 8 *</pattern><template>13</template></category>
+<category><pattern>_ 5 más 9 *</pattern><template>14</template></category>
+<category><pattern>_ 5 más 0 *</pattern><template>5</template></category>
+<category><pattern>_ 6 más 1 *</pattern><template>7</template></category>
+<category><pattern>_ 6 más 2 *</pattern><template>8</template></category>
+<category><pattern>_ 6 más 3 *</pattern><template>9</template></category>
+<category><pattern>_ 6 más 4 *</pattern><template>10</template></category>
+<category><pattern>_ 6 más 5 *</pattern><template>11</template></category>
+<category><pattern>_ 6 más 6 *</pattern><template>12</template></category>
+<category><pattern>_ 6 más 7 *</pattern><template>13</template></category>
+<category><pattern>_ 6 más 8 *</pattern><template>14</template></category>
+<category><pattern>_ 6 más 9 *</pattern><template>15</template></category>
+<category><pattern>_ 6 más 0 *</pattern><template>6</template></category>
+<category><pattern>_ 7 más 1 *</pattern><template>8</template></category>
+<category><pattern>_ 7 más 2 *</pattern><template>9</template></category>
+<category><pattern>_ 7 más 3 *</pattern><template>10</template></category>
+<category><pattern>_ 7 más 4 *</pattern><template>11</template></category>
+<category><pattern>_ 7 más 5 *</pattern><template>12</template></category>
+<category><pattern>_ 7 más 6 *</pattern><template>13</template></category>
+<category><pattern>_ 7 más 7 *</pattern><template>14</template></category>
+<category><pattern>_ 7 más 8 *</pattern><template>15</template></category>
+<category><pattern>_ 7 más 9 *</pattern><template>16</template></category>
+<category><pattern>_ 7 más 0 *</pattern><template>7</template></category>
+<category><pattern>_ 8 más 1 *</pattern><template>9</template></category>
+<category><pattern>_ 8 más 2 *</pattern><template>10</template></category>
+<category><pattern>_ 8 más 3 *</pattern><template>11</template></category>
+<category><pattern>_ 8 más 4 *</pattern><template>12</template></category>
+<category><pattern>_ 8 más 5 *</pattern><template>13</template></category>
+<category><pattern>_ 8 más 6 *</pattern><template>14</template></category>
+<category><pattern>_ 8 más 7 *</pattern><template>15</template></category>
+<category><pattern>_ 8 más 8 *</pattern><template>16</template></category>
+<category><pattern>_ 8 más 9 *</pattern><template>17</template></category>
+<category><pattern>_ 8 más 0 *</pattern><template>8</template></category>
+<category><pattern>_ 9 más 1 *</pattern><template>10</template></category>
+<category><pattern>_ 9 más 2 *</pattern><template>11</template></category>
+<category><pattern>_ 9 más 3 *</pattern><template>12</template></category>
+<category><pattern>_ 9 más 4 *</pattern><template>13</template></category>
+<category><pattern>_ 9 más 5 *</pattern><template>14</template></category>
+<category><pattern>_ 9 más 6 *</pattern><template>15</template></category>
+<category><pattern>_ 9 más 7 *</pattern><template>16</template></category>
+<category><pattern>_ 9 más 8 *</pattern><template>17</template></category>
+<category><pattern>_ 9 más 9 *</pattern><template>18</template></category>
+<category><pattern>_ 9 más 0 *</pattern><template>9</template></category>
+
+<category><pattern>_ 1más1 *</pattern><template>2</template></category>
+<category><pattern>_ 1más2 *</pattern><template>3</template></category>
+<category><pattern>_ 1más3 *</pattern><template>4</template></category>
+<category><pattern>_ 1más4 *</pattern><template>5</template></category>
+<category><pattern>_ 1más5 *</pattern><template>6</template></category>
+<category><pattern>_ 1más6 *</pattern><template>7</template></category>
+<category><pattern>_ 1más7 *</pattern><template>8</template></category>
+<category><pattern>_ 1más8 *</pattern><template>9</template></category>
+<category><pattern>_ 1más9 *</pattern><template>10</template></category>
+<category><pattern>_ 1más0 *</pattern><template>1</template></category>
+<category><pattern>_ 2más1 *</pattern><template>3</template></category>
+<category><pattern>_ 2más2 *</pattern><template>4</template></category>
+<category><pattern>_ 2más3 *</pattern><template>5</template></category>
+<category><pattern>_ 2más4 *</pattern><template>6</template></category>
+<category><pattern>_ 2más5 *</pattern><template>7</template></category>
+<category><pattern>_ 2más6 *</pattern><template>8</template></category>
+<category><pattern>_ 2más7 *</pattern><template>9</template></category>
+<category><pattern>_ 2más8 *</pattern><template>10</template></category>
+<category><pattern>_ 2más9 *</pattern><template>11</template></category>
+<category><pattern>_ 2más0 *</pattern><template>2</template></category>
+<category><pattern>_ 3más1 *</pattern><template>4</template></category>
+<category><pattern>_ 3más2 *</pattern><template>5</template></category>
+<category><pattern>_ 3más3 *</pattern><template>6</template></category>
+<category><pattern>_ 3más4 *</pattern><template>7</template></category>
+<category><pattern>_ 3más5 *</pattern><template>8</template></category>
+<category><pattern>_ 3más6 *</pattern><template>9</template></category>
+<category><pattern>_ 3más7 *</pattern><template>10</template></category>
+<category><pattern>_ 3más8 *</pattern><template>11</template></category>
+<category><pattern>_ 3más9 *</pattern><template>12</template></category>
+<category><pattern>_ 3más0 *</pattern><template>3</template></category>
+<category><pattern>_ 4más1 *</pattern><template>5</template></category>
+<category><pattern>_ 4más2 *</pattern><template>6</template></category>
+<category><pattern>_ 4más3 *</pattern><template>7</template></category>
+<category><pattern>_ 4más4 *</pattern><template>8</template></category>
+<category><pattern>_ 4más5 *</pattern><template>9</template></category>
+<category><pattern>_ 4más6 *</pattern><template>10</template></category>
+<category><pattern>_ 4más7 *</pattern><template>11</template></category>
+<category><pattern>_ 4más8 *</pattern><template>12</template></category>
+<category><pattern>_ 4más9 *</pattern><template>13</template></category>
+<category><pattern>_ 4más0 *</pattern><template>4</template></category>
+<category><pattern>_ 5más1 *</pattern><template>6</template></category>
+<category><pattern>_ 5más2 *</pattern><template>7</template></category>
+<category><pattern>_ 5más3 *</pattern><template>8</template></category>
+<category><pattern>_ 5más4 *</pattern><template>9</template></category>
+<category><pattern>_ 5más5 *</pattern><template>10</template></category>
+<category><pattern>_ 5más6 *</pattern><template>11</template></category>
+<category><pattern>_ 5más7 *</pattern><template>12</template></category>
+<category><pattern>_ 5más8 *</pattern><template>13</template></category>
+<category><pattern>_ 5más9 *</pattern><template>14</template></category>
+<category><pattern>_ 5más0 *</pattern><template>5</template></category>
+<category><pattern>_ 6más1 *</pattern><template>7</template></category>
+<category><pattern>_ 6más2 *</pattern><template>8</template></category>
+<category><pattern>_ 6más3 *</pattern><template>9</template></category>
+<category><pattern>_ 6más4 *</pattern><template>10</template></category>
+<category><pattern>_ 6más5 *</pattern><template>11</template></category>
+<category><pattern>_ 6más6 *</pattern><template>12</template></category>
+<category><pattern>_ 6más7 *</pattern><template>13</template></category>
+<category><pattern>_ 6más8 *</pattern><template>14</template></category>
+<category><pattern>_ 6más9 *</pattern><template>15</template></category>
+<category><pattern>_ 6más0 *</pattern><template>6</template></category>
+<category><pattern>_ 7más1 *</pattern><template>8</template></category>
+<category><pattern>_ 7más2 *</pattern><template>9</template></category>
+<category><pattern>_ 7más3 *</pattern><template>10</template></category>
+<category><pattern>_ 7más4 *</pattern><template>11</template></category>
+<category><pattern>_ 7más5 *</pattern><template>12</template></category>
+<category><pattern>_ 7más6 *</pattern><template>13</template></category>
+<category><pattern>_ 7más7 *</pattern><template>14</template></category>
+<category><pattern>_ 7más8 *</pattern><template>15</template></category>
+<category><pattern>_ 7más9 *</pattern><template>16</template></category>
+<category><pattern>_ 7más0 *</pattern><template>7</template></category>
+<category><pattern>_ 8más1 *</pattern><template>9</template></category>
+<category><pattern>_ 8más2 *</pattern><template>10</template></category>
+<category><pattern>_ 8más3 *</pattern><template>11</template></category>
+<category><pattern>_ 8más4 *</pattern><template>12</template></category>
+<category><pattern>_ 8más5 *</pattern><template>13</template></category>
+<category><pattern>_ 8más6 *</pattern><template>14</template></category>
+<category><pattern>_ 8más7 *</pattern><template>15</template></category>
+<category><pattern>_ 8más8 *</pattern><template>16</template></category>
+<category><pattern>_ 8más9 *</pattern><template>17</template></category>
+<category><pattern>_ 8más0 *</pattern><template>8</template></category>
+<category><pattern>_ 9más1 *</pattern><template>10</template></category>
+<category><pattern>_ 9más2 *</pattern><template>11</template></category>
+<category><pattern>_ 9más3 *</pattern><template>12</template></category>
+<category><pattern>_ 9más4 *</pattern><template>13</template></category>
+<category><pattern>_ 9más5 *</pattern><template>14</template></category>
+<category><pattern>_ 9más6 *</pattern><template>15</template></category>
+<category><pattern>_ 9más7 *</pattern><template>16</template></category>
+<category><pattern>_ 9más8 *</pattern><template>17</template></category>
+<category><pattern>_ 9más9 *</pattern><template>18</template></category>
+<category><pattern>_ 9más0 *</pattern><template>9</template></category>
+
+	<!-- multiplicaciones -->
+	
+	
+<category><pattern>_ 1*1 *</pattern><template>1</template></category>
+<category><pattern>_ 1*2 *</pattern><template>2</template></category>
+<category><pattern>_ 1*3 *</pattern><template>3</template></category>
+<category><pattern>_ 1*4 *</pattern><template>4</template></category>
+<category><pattern>_ 1*5 *</pattern><template>5</template></category>
+<category><pattern>_ 1*6 *</pattern><template>6</template></category>
+<category><pattern>_ 1*7 *</pattern><template>7</template></category>
+<category><pattern>_ 1*8 *</pattern><template>8</template></category>
+<category><pattern>_ 1*9 *</pattern><template>9</template></category>
+<category><pattern>_ 1*0 *</pattern><template>0</template></category>
+<category><pattern>_ 2*1 *</pattern><template>2</template></category>
+<category><pattern>_ 2*2 *</pattern><template>4</template></category>
+<category><pattern>_ 2*3 *</pattern><template>6</template></category>
+<category><pattern>_ 2*4 *</pattern><template>8</template></category>
+<category><pattern>_ 2*5 *</pattern><template>10</template></category>
+<category><pattern>_ 2*6 *</pattern><template>12</template></category>
+<category><pattern>_ 2*7 *</pattern><template>14</template></category>
+<category><pattern>_ 2*8 *</pattern><template>16</template></category>
+<category><pattern>_ 2*9 *</pattern><template>18</template></category>
+<category><pattern>_ 2*0 *</pattern><template>0</template></category>
+<category><pattern>_ 3*1 *</pattern><template>3</template></category>
+<category><pattern>_ 3*2 *</pattern><template>6</template></category>
+<category><pattern>_ 3*3 *</pattern><template>9</template></category>
+<category><pattern>_ 3*4 *</pattern><template>12</template></category>
+<category><pattern>_ 3*5 *</pattern><template>15</template></category>
+<category><pattern>_ 3*6 *</pattern><template>18</template></category>
+<category><pattern>_ 3*7 *</pattern><template>21</template></category>
+<category><pattern>_ 3*8 *</pattern><template>24</template></category>
+<category><pattern>_ 3*9 *</pattern><template>27</template></category>
+<category><pattern>_ 3*0 *</pattern><template>0</template></category>
+<category><pattern>_ 4*1 *</pattern><template>4</template></category>
+<category><pattern>_ 4*2 *</pattern><template>8</template></category>
+<category><pattern>_ 4*3 *</pattern><template>12</template></category>
+<category><pattern>_ 4*4 *</pattern><template>16</template></category>
+<category><pattern>_ 4*5 *</pattern><template>20</template></category>
+<category><pattern>_ 4*6 *</pattern><template>24</template></category>
+<category><pattern>_ 4*7 *</pattern><template>28</template></category>
+<category><pattern>_ 4*8 *</pattern><template>32</template></category>
+<category><pattern>_ 4*9 *</pattern><template>36</template></category>
+<category><pattern>_ 4*0 *</pattern><template>0</template></category>
+<category><pattern>_ 5*1 *</pattern><template>5</template></category>
+<category><pattern>_ 5*2 *</pattern><template>10</template></category>
+<category><pattern>_ 5*3 *</pattern><template>15</template></category>
+<category><pattern>_ 5*4 *</pattern><template>20</template></category>
+<category><pattern>_ 5*5 *</pattern><template>25</template></category>
+<category><pattern>_ 5*6 *</pattern><template>30</template></category>
+<category><pattern>_ 5*7 *</pattern><template>35</template></category>
+<category><pattern>_ 5*8 *</pattern><template>40</template></category>
+<category><pattern>_ 5*9 *</pattern><template>45</template></category>
+<category><pattern>_ 5*0 *</pattern><template>0</template></category>
+<category><pattern>_ 6*1 *</pattern><template>6</template></category>
+<category><pattern>_ 6*2 *</pattern><template>12</template></category>
+<category><pattern>_ 6*3 *</pattern><template>18</template></category>
+<category><pattern>_ 6*4 *</pattern><template>24</template></category>
+<category><pattern>_ 6*5 *</pattern><template>30</template></category>
+<category><pattern>_ 6*6 *</pattern><template>36</template></category>
+<category><pattern>_ 6*7 *</pattern><template>42</template></category>
+<category><pattern>_ 6*8 *</pattern><template>48</template></category>
+<category><pattern>_ 6*9 *</pattern><template>54</template></category>
+<category><pattern>_ 6*0 *</pattern><template>0</template></category>
+<category><pattern>_ 7*1 *</pattern><template>7</template></category>
+<category><pattern>_ 7*2 *</pattern><template>14</template></category>
+<category><pattern>_ 7*3 *</pattern><template>21</template></category>
+<category><pattern>_ 7*4 *</pattern><template>28</template></category>
+<category><pattern>_ 7*5 *</pattern><template>35</template></category>
+<category><pattern>_ 7*6 *</pattern><template>42</template></category>
+<category><pattern>_ 7*7 *</pattern><template>49</template></category>
+<category><pattern>_ 7*8 *</pattern><template>56</template></category>
+<category><pattern>_ 7*9 *</pattern><template>63</template></category>
+<category><pattern>_ 7*0 *</pattern><template>0</template></category>
+<category><pattern>_ 8*1 *</pattern><template>8</template></category>
+<category><pattern>_ 8*2 *</pattern><template>16</template></category>
+<category><pattern>_ 8*3 *</pattern><template>24</template></category>
+<category><pattern>_ 8*4 *</pattern><template>32</template></category>
+<category><pattern>_ 8*5 *</pattern><template>40</template></category>
+<category><pattern>_ 8*6 *</pattern><template>48</template></category>
+<category><pattern>_ 8*7 *</pattern><template>56</template></category>
+<category><pattern>_ 8*8 *</pattern><template>64</template></category>
+<category><pattern>_ 8*9 *</pattern><template>72</template></category>
+<category><pattern>_ 8*0 *</pattern><template>0</template></category>
+<category><pattern>_ 9*1 *</pattern><template>9</template></category>
+<category><pattern>_ 9*2 *</pattern><template>18</template></category>
+<category><pattern>_ 9*3 *</pattern><template>27</template></category>
+<category><pattern>_ 9*4 *</pattern><template>36</template></category>
+<category><pattern>_ 9*5 *</pattern><template>45</template></category>
+<category><pattern>_ 9*6 *</pattern><template>54</template></category>
+<category><pattern>_ 9*7 *</pattern><template>63</template></category>
+<category><pattern>_ 9*8 *</pattern><template>72</template></category>
+<category><pattern>_ 9*9 *</pattern><template>81</template></category>
+<category><pattern>_ 9*0 *</pattern><template>0</template></category>
+
+<category><pattern>_ 1 * 1 *</pattern><template>1</template></category>
+<category><pattern>_ 1 * 2 *</pattern><template>2</template></category>
+<category><pattern>_ 1 * 3 *</pattern><template>3</template></category>
+<category><pattern>_ 1 * 4 *</pattern><template>4</template></category>
+<category><pattern>_ 1 * 5 *</pattern><template>5</template></category>
+<category><pattern>_ 1 * 6 *</pattern><template>6</template></category>
+<category><pattern>_ 1 * 7 *</pattern><template>7</template></category>
+<category><pattern>_ 1 * 8 *</pattern><template>8</template></category>
+<category><pattern>_ 1 * 9 *</pattern><template>9</template></category>
+<category><pattern>_ 1 * 0 *</pattern><template>0</template></category>
+<category><pattern>_ 2 * 1 *</pattern><template>2</template></category>
+<category><pattern>_ 2 * 2 *</pattern><template>4</template></category>
+<category><pattern>_ 2 * 3 *</pattern><template>6</template></category>
+<category><pattern>_ 2 * 4 *</pattern><template>8</template></category>
+<category><pattern>_ 2 * 5 *</pattern><template>10</template></category>
+<category><pattern>_ 2 * 6 *</pattern><template>12</template></category>
+<category><pattern>_ 2 * 7 *</pattern><template>14</template></category>
+<category><pattern>_ 2 * 8 *</pattern><template>16</template></category>
+<category><pattern>_ 2 * 9 *</pattern><template>18</template></category>
+<category><pattern>_ 2 * 0 *</pattern><template>0</template></category>
+<category><pattern>_ 3 * 1 *</pattern><template>3</template></category>
+<category><pattern>_ 3 * 2 *</pattern><template>6</template></category>
+<category><pattern>_ 3 * 3 *</pattern><template>9</template></category>
+<category><pattern>_ 3 * 4 *</pattern><template>12</template></category>
+<category><pattern>_ 3 * 5 *</pattern><template>15</template></category>
+<category><pattern>_ 3 * 6 *</pattern><template>18</template></category>
+<category><pattern>_ 3 * 7 *</pattern><template>21</template></category>
+<category><pattern>_ 3 * 8 *</pattern><template>24</template></category>
+<category><pattern>_ 3 * 9 *</pattern><template>27</template></category>
+<category><pattern>_ 3 * 0 *</pattern><template>0</template></category>
+<category><pattern>_ 4 * 1 *</pattern><template>4</template></category>
+<category><pattern>_ 4 * 2 *</pattern><template>8</template></category>
+<category><pattern>_ 4 * 3 *</pattern><template>12</template></category>
+<category><pattern>_ 4 * 4 *</pattern><template>16</template></category>
+<category><pattern>_ 4 * 5 *</pattern><template>20</template></category>
+<category><pattern>_ 4 * 6 *</pattern><template>24</template></category>
+<category><pattern>_ 4 * 7 *</pattern><template>28</template></category>
+<category><pattern>_ 4 * 8 *</pattern><template>32</template></category>
+<category><pattern>_ 4 * 9 *</pattern><template>36</template></category>
+<category><pattern>_ 4 * 0 *</pattern><template>0</template></category>
+<category><pattern>_ 5 * 1 *</pattern><template>5</template></category>
+<category><pattern>_ 5 * 2 *</pattern><template>10</template></category>
+<category><pattern>_ 5 * 3 *</pattern><template>15</template></category>
+<category><pattern>_ 5 * 4 *</pattern><template>20</template></category>
+<category><pattern>_ 5 * 5 *</pattern><template>25</template></category>
+<category><pattern>_ 5 * 6 *</pattern><template>30</template></category>
+<category><pattern>_ 5 * 7 *</pattern><template>35</template></category>
+<category><pattern>_ 5 * 8 *</pattern><template>40</template></category>
+<category><pattern>_ 5 * 9 *</pattern><template>45</template></category>
+<category><pattern>_ 5 * 0 *</pattern><template>0</template></category>
+<category><pattern>_ 6 * 1 *</pattern><template>6</template></category>
+<category><pattern>_ 6 * 2 *</pattern><template>12</template></category>
+<category><pattern>_ 6 * 3 *</pattern><template>18</template></category>
+<category><pattern>_ 6 * 4 *</pattern><template>24</template></category>
+<category><pattern>_ 6 * 5 *</pattern><template>30</template></category>
+<category><pattern>_ 6 * 6 *</pattern><template>36</template></category>
+<category><pattern>_ 6 * 7 *</pattern><template>42</template></category>
+<category><pattern>_ 6 * 8 *</pattern><template>48</template></category>
+<category><pattern>_ 6 * 9 *</pattern><template>54</template></category>
+<category><pattern>_ 6 * 0 *</pattern><template>0</template></category>
+<category><pattern>_ 7 * 1 *</pattern><template>7</template></category>
+<category><pattern>_ 7 * 2 *</pattern><template>14</template></category>
+<category><pattern>_ 7 * 3 *</pattern><template>21</template></category>
+<category><pattern>_ 7 * 4 *</pattern><template>28</template></category>
+<category><pattern>_ 7 * 5 *</pattern><template>35</template></category>
+<category><pattern>_ 7 * 6 *</pattern><template>42</template></category>
+<category><pattern>_ 7 * 7 *</pattern><template>49</template></category>
+<category><pattern>_ 7 * 8 *</pattern><template>56</template></category>
+<category><pattern>_ 7 * 9 *</pattern><template>63</template></category>
+<category><pattern>_ 7 * 0 *</pattern><template>0</template></category>
+<category><pattern>_ 8 * 1 *</pattern><template>8</template></category>
+<category><pattern>_ 8 * 2 *</pattern><template>16</template></category>
+<category><pattern>_ 8 * 3 *</pattern><template>24</template></category>
+<category><pattern>_ 8 * 4 *</pattern><template>32</template></category>
+<category><pattern>_ 8 * 5 *</pattern><template>40</template></category>
+<category><pattern>_ 8 * 6 *</pattern><template>48</template></category>
+<category><pattern>_ 8 * 7 *</pattern><template>56</template></category>
+<category><pattern>_ 8 * 8 *</pattern><template>64</template></category>
+<category><pattern>_ 8 * 9 *</pattern><template>72</template></category>
+<category><pattern>_ 8 * 0 *</pattern><template>0</template></category>
+<category><pattern>_ 9 * 1 *</pattern><template>9</template></category>
+<category><pattern>_ 9 * 2 *</pattern><template>18</template></category>
+<category><pattern>_ 9 * 3 *</pattern><template>27</template></category>
+<category><pattern>_ 9 * 4 *</pattern><template>36</template></category>
+<category><pattern>_ 9 * 5 *</pattern><template>45</template></category>
+<category><pattern>_ 9 * 6 *</pattern><template>54</template></category>
+<category><pattern>_ 9 * 7 *</pattern><template>63</template></category>
+<category><pattern>_ 9 * 8 *</pattern><template>72</template></category>
+<category><pattern>_ 9 * 9 *</pattern><template>81</template></category>
+<category><pattern>_ 9 * 0 *</pattern><template>0</template></category>
+
+<category><pattern>_ 1x1 *</pattern><template>1</template></category>
+<category><pattern>_ 1x2 *</pattern><template>2</template></category>
+<category><pattern>_ 1x3 *</pattern><template>3</template></category>
+<category><pattern>_ 1x4 *</pattern><template>4</template></category>
+<category><pattern>_ 1x5 *</pattern><template>5</template></category>
+<category><pattern>_ 1x6 *</pattern><template>6</template></category>
+<category><pattern>_ 1x7 *</pattern><template>7</template></category>
+<category><pattern>_ 1x8 *</pattern><template>8</template></category>
+<category><pattern>_ 1x9 *</pattern><template>9</template></category>
+<category><pattern>_ 1x0 *</pattern><template>0</template></category>
+<category><pattern>_ 2x1 *</pattern><template>2</template></category>
+<category><pattern>_ 2x2 *</pattern><template>4</template></category>
+<category><pattern>_ 2x3 *</pattern><template>6</template></category>
+<category><pattern>_ 2x4 *</pattern><template>8</template></category>
+<category><pattern>_ 2x5 *</pattern><template>10</template></category>
+<category><pattern>_ 2x6 *</pattern><template>12</template></category>
+<category><pattern>_ 2x7 *</pattern><template>14</template></category>
+<category><pattern>_ 2x8 *</pattern><template>16</template></category>
+<category><pattern>_ 2x9 *</pattern><template>18</template></category>
+<category><pattern>_ 2x0 *</pattern><template>0</template></category>
+<category><pattern>_ 3x1 *</pattern><template>3</template></category>
+<category><pattern>_ 3x2 *</pattern><template>6</template></category>
+<category><pattern>_ 3x3 *</pattern><template>9</template></category>
+<category><pattern>_ 3x4 *</pattern><template>12</template></category>
+<category><pattern>_ 3x5 *</pattern><template>15</template></category>
+<category><pattern>_ 3x6 *</pattern><template>18</template></category>
+<category><pattern>_ 3x7 *</pattern><template>21</template></category>
+<category><pattern>_ 3x8 *</pattern><template>24</template></category>
+<category><pattern>_ 3x9 *</pattern><template>27</template></category>
+<category><pattern>_ 3x0 *</pattern><template>0</template></category>
+<category><pattern>_ 4x1 *</pattern><template>4</template></category>
+<category><pattern>_ 4x2 *</pattern><template>8</template></category>
+<category><pattern>_ 4x3 *</pattern><template>12</template></category>
+<category><pattern>_ 4x4 *</pattern><template>16</template></category>
+<category><pattern>_ 4x5 *</pattern><template>20</template></category>
+<category><pattern>_ 4x6 *</pattern><template>24</template></category>
+<category><pattern>_ 4x7 *</pattern><template>28</template></category>
+<category><pattern>_ 4x8 *</pattern><template>32</template></category>
+<category><pattern>_ 4x9 *</pattern><template>36</template></category>
+<category><pattern>_ 4x0 *</pattern><template>0</template></category>
+<category><pattern>_ 5x1 *</pattern><template>5</template></category>
+<category><pattern>_ 5x2 *</pattern><template>10</template></category>
+<category><pattern>_ 5x3 *</pattern><template>15</template></category>
+<category><pattern>_ 5x4 *</pattern><template>20</template></category>
+<category><pattern>_ 5x5 *</pattern><template>25</template></category>
+<category><pattern>_ 5x6 *</pattern><template>30</template></category>
+<category><pattern>_ 5x7 *</pattern><template>35</template></category>
+<category><pattern>_ 5x8 *</pattern><template>40</template></category>
+<category><pattern>_ 5x9 *</pattern><template>45</template></category>
+<category><pattern>_ 5x0 *</pattern><template>0</template></category>
+<category><pattern>_ 6x1 *</pattern><template>6</template></category>
+<category><pattern>_ 6x2 *</pattern><template>12</template></category>
+<category><pattern>_ 6x3 *</pattern><template>18</template></category>
+<category><pattern>_ 6x4 *</pattern><template>24</template></category>
+<category><pattern>_ 6x5 *</pattern><template>30</template></category>
+<category><pattern>_ 6x6 *</pattern><template>36</template></category>
+<category><pattern>_ 6x7 *</pattern><template>42</template></category>
+<category><pattern>_ 6x8 *</pattern><template>48</template></category>
+<category><pattern>_ 6x9 *</pattern><template>54</template></category>
+<category><pattern>_ 6x0 *</pattern><template>0</template></category>
+<category><pattern>_ 7x1 *</pattern><template>7</template></category>
+<category><pattern>_ 7x2 *</pattern><template>14</template></category>
+<category><pattern>_ 7x3 *</pattern><template>21</template></category>
+<category><pattern>_ 7x4 *</pattern><template>28</template></category>
+<category><pattern>_ 7x5 *</pattern><template>35</template></category>
+<category><pattern>_ 7x6 *</pattern><template>42</template></category>
+<category><pattern>_ 7x7 *</pattern><template>49</template></category>
+<category><pattern>_ 7x8 *</pattern><template>56</template></category>
+<category><pattern>_ 7x9 *</pattern><template>63</template></category>
+<category><pattern>_ 7x0 *</pattern><template>0</template></category>
+<category><pattern>_ 8x1 *</pattern><template>8</template></category>
+<category><pattern>_ 8x2 *</pattern><template>16</template></category>
+<category><pattern>_ 8x3 *</pattern><template>24</template></category>
+<category><pattern>_ 8x4 *</pattern><template>32</template></category>
+<category><pattern>_ 8x5 *</pattern><template>40</template></category>
+<category><pattern>_ 8x6 *</pattern><template>48</template></category>
+<category><pattern>_ 8x7 *</pattern><template>56</template></category>
+<category><pattern>_ 8x8 *</pattern><template>64</template></category>
+<category><pattern>_ 8x9 *</pattern><template>72</template></category>
+<category><pattern>_ 8x0 *</pattern><template>0</template></category>
+<category><pattern>_ 9x1 *</pattern><template>9</template></category>
+<category><pattern>_ 9x2 *</pattern><template>18</template></category>
+<category><pattern>_ 9x3 *</pattern><template>27</template></category>
+<category><pattern>_ 9x4 *</pattern><template>36</template></category>
+<category><pattern>_ 9x5 *</pattern><template>45</template></category>
+<category><pattern>_ 9x6 *</pattern><template>54</template></category>
+<category><pattern>_ 9x7 *</pattern><template>63</template></category>
+<category><pattern>_ 9x8 *</pattern><template>72</template></category>
+<category><pattern>_ 9x9 *</pattern><template>81</template></category>
+<category><pattern>_ 9x0 *</pattern><template>0</template></category>
+
+<category><pattern>_ 1 x 1 *</pattern><template>1</template></category>
+<category><pattern>_ 1 x 2 *</pattern><template>2</template></category>
+<category><pattern>_ 1 x 3 *</pattern><template>3</template></category>
+<category><pattern>_ 1 x 4 *</pattern><template>4</template></category>
+<category><pattern>_ 1 x 5 *</pattern><template>5</template></category>
+<category><pattern>_ 1 x 6 *</pattern><template>6</template></category>
+<category><pattern>_ 1 x 7 *</pattern><template>7</template></category>
+<category><pattern>_ 1 x 8 *</pattern><template>8</template></category>
+<category><pattern>_ 1 x 9 *</pattern><template>9</template></category>
+<category><pattern>_ 1 x 0 *</pattern><template>0</template></category>
+<category><pattern>_ 2 x 1 *</pattern><template>2</template></category>
+<category><pattern>_ 2 x 2 *</pattern><template>4</template></category>
+<category><pattern>_ 2 x 3 *</pattern><template>6</template></category>
+<category><pattern>_ 2 x 4 *</pattern><template>8</template></category>
+<category><pattern>_ 2 x 5 *</pattern><template>10</template></category>
+<category><pattern>_ 2 x 6 *</pattern><template>12</template></category>
+<category><pattern>_ 2 x 7 *</pattern><template>14</template></category>
+<category><pattern>_ 2 x 8 *</pattern><template>16</template></category>
+<category><pattern>_ 2 x 9 *</pattern><template>18</template></category>
+<category><pattern>_ 2 x 0 *</pattern><template>0</template></category>
+<category><pattern>_ 3 x 1 *</pattern><template>3</template></category>
+<category><pattern>_ 3 x 2 *</pattern><template>6</template></category>
+<category><pattern>_ 3 x 3 *</pattern><template>9</template></category>
+<category><pattern>_ 3 x 4 *</pattern><template>12</template></category>
+<category><pattern>_ 3 x 5 *</pattern><template>15</template></category>
+<category><pattern>_ 3 x 6 *</pattern><template>18</template></category>
+<category><pattern>_ 3 x 7 *</pattern><template>21</template></category>
+<category><pattern>_ 3 x 8 *</pattern><template>24</template></category>
+<category><pattern>_ 3 x 9 *</pattern><template>27</template></category>
+<category><pattern>_ 3 x 0 *</pattern><template>0</template></category>
+<category><pattern>_ 4 x 1 *</pattern><template>4</template></category>
+<category><pattern>_ 4 x 2 *</pattern><template>8</template></category>
+<category><pattern>_ 4 x 3 *</pattern><template>12</template></category>
+<category><pattern>_ 4 x 4 *</pattern><template>16</template></category>
+<category><pattern>_ 4 x 5 *</pattern><template>20</template></category>
+<category><pattern>_ 4 x 6 *</pattern><template>24</template></category>
+<category><pattern>_ 4 x 7 *</pattern><template>28</template></category>
+<category><pattern>_ 4 x 8 *</pattern><template>32</template></category>
+<category><pattern>_ 4 x 9 *</pattern><template>36</template></category>
+<category><pattern>_ 4 x 0 *</pattern><template>0</template></category>
+<category><pattern>_ 5 x 1 *</pattern><template>5</template></category>
+<category><pattern>_ 5 x 2 *</pattern><template>10</template></category>
+<category><pattern>_ 5 x 3 *</pattern><template>15</template></category>
+<category><pattern>_ 5 x 4 *</pattern><template>20</template></category>
+<category><pattern>_ 5 x 5 *</pattern><template>25</template></category>
+<category><pattern>_ 5 x 6 *</pattern><template>30</template></category>
+<category><pattern>_ 5 x 7 *</pattern><template>35</template></category>
+<category><pattern>_ 5 x 8 *</pattern><template>40</template></category>
+<category><pattern>_ 5 x 9 *</pattern><template>45</template></category>
+<category><pattern>_ 5 x 0 *</pattern><template>0</template></category>
+<category><pattern>_ 6 x 1 *</pattern><template>6</template></category>
+<category><pattern>_ 6 x 2 *</pattern><template>12</template></category>
+<category><pattern>_ 6 x 3 *</pattern><template>18</template></category>
+<category><pattern>_ 6 x 4 *</pattern><template>24</template></category>
+<category><pattern>_ 6 x 5 *</pattern><template>30</template></category>
+<category><pattern>_ 6 x 6 *</pattern><template>36</template></category>
+<category><pattern>_ 6 x 7 *</pattern><template>42</template></category>
+<category><pattern>_ 6 x 8 *</pattern><template>48</template></category>
+<category><pattern>_ 6 x 9 *</pattern><template>54</template></category>
+<category><pattern>_ 6 x 0 *</pattern><template>0</template></category>
+<category><pattern>_ 7 x 1 *</pattern><template>7</template></category>
+<category><pattern>_ 7 x 2 *</pattern><template>14</template></category>
+<category><pattern>_ 7 x 3 *</pattern><template>21</template></category>
+<category><pattern>_ 7 x 4 *</pattern><template>28</template></category>
+<category><pattern>_ 7 x 5 *</pattern><template>35</template></category>
+<category><pattern>_ 7 x 6 *</pattern><template>42</template></category>
+<category><pattern>_ 7 x 7 *</pattern><template>49</template></category>
+<category><pattern>_ 7 x 8 *</pattern><template>56</template></category>
+<category><pattern>_ 7 x 9 *</pattern><template>63</template></category>
+<category><pattern>_ 7 x 0 *</pattern><template>0</template></category>
+<category><pattern>_ 8 x 1 *</pattern><template>8</template></category>
+<category><pattern>_ 8 x 2 *</pattern><template>16</template></category>
+<category><pattern>_ 8 x 3 *</pattern><template>24</template></category>
+<category><pattern>_ 8 x 4 *</pattern><template>32</template></category>
+<category><pattern>_ 8 x 5 *</pattern><template>40</template></category>
+<category><pattern>_ 8 x 6 *</pattern><template>48</template></category>
+<category><pattern>_ 8 x 7 *</pattern><template>56</template></category>
+<category><pattern>_ 8 x 8 *</pattern><template>64</template></category>
+<category><pattern>_ 8 x 9 *</pattern><template>72</template></category>
+<category><pattern>_ 8 x 0 *</pattern><template>0</template></category>
+<category><pattern>_ 9 x 1 *</pattern><template>9</template></category>
+<category><pattern>_ 9 x 2 *</pattern><template>18</template></category>
+<category><pattern>_ 9 x 3 *</pattern><template>27</template></category>
+<category><pattern>_ 9 x 4 *</pattern><template>36</template></category>
+<category><pattern>_ 9 x 5 *</pattern><template>45</template></category>
+<category><pattern>_ 9 x 6 *</pattern><template>54</template></category>
+<category><pattern>_ 9 x 7 *</pattern><template>63</template></category>
+<category><pattern>_ 9 x 8 *</pattern><template>72</template></category>
+<category><pattern>_ 9 x 9 *</pattern><template>81</template></category>
+<category><pattern>_ 9 x 0 *</pattern><template>0</template></category>
+
+<category><pattern>_ 1por1 *</pattern><template>1</template></category>
+<category><pattern>_ 1por2 *</pattern><template>2</template></category>
+<category><pattern>_ 1por3 *</pattern><template>3</template></category>
+<category><pattern>_ 1por4 *</pattern><template>4</template></category>
+<category><pattern>_ 1por5 *</pattern><template>5</template></category>
+<category><pattern>_ 1por6 *</pattern><template>6</template></category>
+<category><pattern>_ 1por7 *</pattern><template>7</template></category>
+<category><pattern>_ 1por8 *</pattern><template>8</template></category>
+<category><pattern>_ 1por9 *</pattern><template>9</template></category>
+<category><pattern>_ 1por0 *</pattern><template>0</template></category>
+<category><pattern>_ 2por1 *</pattern><template>2</template></category>
+<category><pattern>_ 2por2 *</pattern><template>4</template></category>
+<category><pattern>_ 2por3 *</pattern><template>6</template></category>
+<category><pattern>_ 2por4 *</pattern><template>8</template></category>
+<category><pattern>_ 2por5 *</pattern><template>10</template></category>
+<category><pattern>_ 2por6 *</pattern><template>12</template></category>
+<category><pattern>_ 2por7 *</pattern><template>14</template></category>
+<category><pattern>_ 2por8 *</pattern><template>16</template></category>
+<category><pattern>_ 2por9 *</pattern><template>18</template></category>
+<category><pattern>_ 2por0 *</pattern><template>0</template></category>
+<category><pattern>_ 3por1 *</pattern><template>3</template></category>
+<category><pattern>_ 3por2 *</pattern><template>6</template></category>
+<category><pattern>_ 3por3 *</pattern><template>9</template></category>
+<category><pattern>_ 3por4 *</pattern><template>12</template></category>
+<category><pattern>_ 3por5 *</pattern><template>15</template></category>
+<category><pattern>_ 3por6 *</pattern><template>18</template></category>
+<category><pattern>_ 3por7 *</pattern><template>21</template></category>
+<category><pattern>_ 3por8 *</pattern><template>24</template></category>
+<category><pattern>_ 3por9 *</pattern><template>27</template></category>
+<category><pattern>_ 3por0 *</pattern><template>0</template></category>
+<category><pattern>_ 4por1 *</pattern><template>4</template></category>
+<category><pattern>_ 4por2 *</pattern><template>8</template></category>
+<category><pattern>_ 4por3 *</pattern><template>12</template></category>
+<category><pattern>_ 4por4 *</pattern><template>16</template></category>
+<category><pattern>_ 4por5 *</pattern><template>20</template></category>
+<category><pattern>_ 4por6 *</pattern><template>24</template></category>
+<category><pattern>_ 4por7 *</pattern><template>28</template></category>
+<category><pattern>_ 4por8 *</pattern><template>32</template></category>
+<category><pattern>_ 4por9 *</pattern><template>36</template></category>
+<category><pattern>_ 4por0 *</pattern><template>0</template></category>
+<category><pattern>_ 5por1 *</pattern><template>5</template></category>
+<category><pattern>_ 5por2 *</pattern><template>10</template></category>
+<category><pattern>_ 5por3 *</pattern><template>15</template></category>
+<category><pattern>_ 5por4 *</pattern><template>20</template></category>
+<category><pattern>_ 5por5 *</pattern><template>25</template></category>
+<category><pattern>_ 5por6 *</pattern><template>30</template></category>
+<category><pattern>_ 5por7 *</pattern><template>35</template></category>
+<category><pattern>_ 5por8 *</pattern><template>40</template></category>
+<category><pattern>_ 5por9 *</pattern><template>45</template></category>
+<category><pattern>_ 5por0 *</pattern><template>0</template></category>
+<category><pattern>_ 6por1 *</pattern><template>6</template></category>
+<category><pattern>_ 6por2 *</pattern><template>12</template></category>
+<category><pattern>_ 6por3 *</pattern><template>18</template></category>
+<category><pattern>_ 6por4 *</pattern><template>24</template></category>
+<category><pattern>_ 6por5 *</pattern><template>30</template></category>
+<category><pattern>_ 6por6 *</pattern><template>36</template></category>
+<category><pattern>_ 6por7 *</pattern><template>42</template></category>
+<category><pattern>_ 6por8 *</pattern><template>48</template></category>
+<category><pattern>_ 6por9 *</pattern><template>54</template></category>
+<category><pattern>_ 6por0 *</pattern><template>0</template></category>
+<category><pattern>_ 7por1 *</pattern><template>7</template></category>
+<category><pattern>_ 7por2 *</pattern><template>14</template></category>
+<category><pattern>_ 7por3 *</pattern><template>21</template></category>
+<category><pattern>_ 7por4 *</pattern><template>28</template></category>
+<category><pattern>_ 7por5 *</pattern><template>35</template></category>
+<category><pattern>_ 7por6 *</pattern><template>42</template></category>
+<category><pattern>_ 7por7 *</pattern><template>49</template></category>
+<category><pattern>_ 7por8 *</pattern><template>56</template></category>
+<category><pattern>_ 7por9 *</pattern><template>63</template></category>
+<category><pattern>_ 7por0 *</pattern><template>0</template></category>
+<category><pattern>_ 8por1 *</pattern><template>8</template></category>
+<category><pattern>_ 8por2 *</pattern><template>16</template></category>
+<category><pattern>_ 8por3 *</pattern><template>24</template></category>
+<category><pattern>_ 8por4 *</pattern><template>32</template></category>
+<category><pattern>_ 8por5 *</pattern><template>40</template></category>
+<category><pattern>_ 8por6 *</pattern><template>48</template></category>
+<category><pattern>_ 8por7 *</pattern><template>56</template></category>
+<category><pattern>_ 8por8 *</pattern><template>64</template></category>
+<category><pattern>_ 8por9 *</pattern><template>72</template></category>
+<category><pattern>_ 8por0 *</pattern><template>0</template></category>
+<category><pattern>_ 9por1 *</pattern><template>9</template></category>
+<category><pattern>_ 9por2 *</pattern><template>18</template></category>
+<category><pattern>_ 9por3 *</pattern><template>27</template></category>
+<category><pattern>_ 9por4 *</pattern><template>36</template></category>
+<category><pattern>_ 9por5 *</pattern><template>45</template></category>
+<category><pattern>_ 9por6 *</pattern><template>54</template></category>
+<category><pattern>_ 9por7 *</pattern><template>63</template></category>
+<category><pattern>_ 9por8 *</pattern><template>72</template></category>
+<category><pattern>_ 9por9 *</pattern><template>81</template></category>
+<category><pattern>_ 9por0 *</pattern><template>0</template></category>
+
+<category><pattern>_ 1 por 1 *</pattern><template>1</template></category>
+<category><pattern>_ 1 por 2 *</pattern><template>2</template></category>
+<category><pattern>_ 1 por 3 *</pattern><template>3</template></category>
+<category><pattern>_ 1 por 4 *</pattern><template>4</template></category>
+<category><pattern>_ 1 por 5 *</pattern><template>5</template></category>
+<category><pattern>_ 1 por 6 *</pattern><template>6</template></category>
+<category><pattern>_ 1 por 7 *</pattern><template>7</template></category>
+<category><pattern>_ 1 por 8 *</pattern><template>8</template></category>
+<category><pattern>_ 1 por 9 *</pattern><template>9</template></category>
+<category><pattern>_ 1 por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 2 por 1 *</pattern><template>2</template></category>
+<category><pattern>_ 2 por 2 *</pattern><template>4</template></category>
+<category><pattern>_ 2 por 3 *</pattern><template>6</template></category>
+<category><pattern>_ 2 por 4 *</pattern><template>8</template></category>
+<category><pattern>_ 2 por 5 *</pattern><template>10</template></category>
+<category><pattern>_ 2 por 6 *</pattern><template>12</template></category>
+<category><pattern>_ 2 por 7 *</pattern><template>14</template></category>
+<category><pattern>_ 2 por 8 *</pattern><template>16</template></category>
+<category><pattern>_ 2 por 9 *</pattern><template>18</template></category>
+<category><pattern>_ 2 por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 3 por 1 *</pattern><template>3</template></category>
+<category><pattern>_ 3 por 2 *</pattern><template>6</template></category>
+<category><pattern>_ 3 por 3 *</pattern><template>9</template></category>
+<category><pattern>_ 3 por 4 *</pattern><template>12</template></category>
+<category><pattern>_ 3 por 5 *</pattern><template>15</template></category>
+<category><pattern>_ 3 por 6 *</pattern><template>18</template></category>
+<category><pattern>_ 3 por 7 *</pattern><template>21</template></category>
+<category><pattern>_ 3 por 8 *</pattern><template>24</template></category>
+<category><pattern>_ 3 por 9 *</pattern><template>27</template></category>
+<category><pattern>_ 3 por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 4 por 1 *</pattern><template>4</template></category>
+<category><pattern>_ 4 por 2 *</pattern><template>8</template></category>
+<category><pattern>_ 4 por 3 *</pattern><template>12</template></category>
+<category><pattern>_ 4 por 4 *</pattern><template>16</template></category>
+<category><pattern>_ 4 por 5 *</pattern><template>20</template></category>
+<category><pattern>_ 4 por 6 *</pattern><template>24</template></category>
+<category><pattern>_ 4 por 7 *</pattern><template>28</template></category>
+<category><pattern>_ 4 por 8 *</pattern><template>32</template></category>
+<category><pattern>_ 4 por 9 *</pattern><template>36</template></category>
+<category><pattern>_ 4 por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 5 por 1 *</pattern><template>5</template></category>
+<category><pattern>_ 5 por 2 *</pattern><template>10</template></category>
+<category><pattern>_ 5 por 3 *</pattern><template>15</template></category>
+<category><pattern>_ 5 por 4 *</pattern><template>20</template></category>
+<category><pattern>_ 5 por 5 *</pattern><template>25</template></category>
+<category><pattern>_ 5 por 6 *</pattern><template>30</template></category>
+<category><pattern>_ 5 por 7 *</pattern><template>35</template></category>
+<category><pattern>_ 5 por 8 *</pattern><template>40</template></category>
+<category><pattern>_ 5 por 9 *</pattern><template>45</template></category>
+<category><pattern>_ 5 por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 6 por 1 *</pattern><template>6</template></category>
+<category><pattern>_ 6 por 2 *</pattern><template>12</template></category>
+<category><pattern>_ 6 por 3 *</pattern><template>18</template></category>
+<category><pattern>_ 6 por 4 *</pattern><template>24</template></category>
+<category><pattern>_ 6 por 5 *</pattern><template>30</template></category>
+<category><pattern>_ 6 por 6 *</pattern><template>36</template></category>
+<category><pattern>_ 6 por 7 *</pattern><template>42</template></category>
+<category><pattern>_ 6 por 8 *</pattern><template>48</template></category>
+<category><pattern>_ 6 por 9 *</pattern><template>54</template></category>
+<category><pattern>_ 6 por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 7 por 1 *</pattern><template>7</template></category>
+<category><pattern>_ 7 por 2 *</pattern><template>14</template></category>
+<category><pattern>_ 7 por 3 *</pattern><template>21</template></category>
+<category><pattern>_ 7 por 4 *</pattern><template>28</template></category>
+<category><pattern>_ 7 por 5 *</pattern><template>35</template></category>
+<category><pattern>_ 7 por 6 *</pattern><template>42</template></category>
+<category><pattern>_ 7 por 7 *</pattern><template>49</template></category>
+<category><pattern>_ 7 por 8 *</pattern><template>56</template></category>
+<category><pattern>_ 7 por 9 *</pattern><template>63</template></category>
+<category><pattern>_ 7 por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 8 por 1 *</pattern><template>8</template></category>
+<category><pattern>_ 8 por 2 *</pattern><template>16</template></category>
+<category><pattern>_ 8 por 3 *</pattern><template>24</template></category>
+<category><pattern>_ 8 por 4 *</pattern><template>32</template></category>
+<category><pattern>_ 8 por 5 *</pattern><template>40</template></category>
+<category><pattern>_ 8 por 6 *</pattern><template>48</template></category>
+<category><pattern>_ 8 por 7 *</pattern><template>56</template></category>
+<category><pattern>_ 8 por 8 *</pattern><template>64</template></category>
+<category><pattern>_ 8 por 9 *</pattern><template>72</template></category>
+<category><pattern>_ 8 por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 9 por 1 *</pattern><template>9</template></category>
+<category><pattern>_ 9 por 2 *</pattern><template>18</template></category>
+<category><pattern>_ 9 por 3 *</pattern><template>27</template></category>
+<category><pattern>_ 9 por 4 *</pattern><template>36</template></category>
+<category><pattern>_ 9 por 5 *</pattern><template>45</template></category>
+<category><pattern>_ 9 por 6 *</pattern><template>54</template></category>
+<category><pattern>_ 9 por 7 *</pattern><template>63</template></category>
+<category><pattern>_ 9 por 8 *</pattern><template>72</template></category>
+<category><pattern>_ 9 por 9 *</pattern><template>81</template></category>
+<category><pattern>_ 9 por 0 *</pattern><template>0</template></category>
+	  
+<category><pattern>_ 1 multiplicado por 1 *</pattern><template>1</template></category>
+<category><pattern>_ 1 multiplicado por 2 *</pattern><template>2</template></category>
+<category><pattern>_ 1 multiplicado por 3 *</pattern><template>3</template></category>
+<category><pattern>_ 1 multiplicado por 4 *</pattern><template>4</template></category>
+<category><pattern>_ 1 multiplicado por 5 *</pattern><template>5</template></category>
+<category><pattern>_ 1 multiplicado por 6 *</pattern><template>6</template></category>
+<category><pattern>_ 1 multiplicado por 7 *</pattern><template>7</template></category>
+<category><pattern>_ 1 multiplicado por 8 *</pattern><template>8</template></category>
+<category><pattern>_ 1 multiplicado por 9 *</pattern><template>9</template></category>
+<category><pattern>_ 1 multiplicado por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 2 multiplicado por 1 *</pattern><template>2</template></category>
+<category><pattern>_ 2 multiplicado por 2 *</pattern><template>4</template></category>
+<category><pattern>_ 2 multiplicado por 3 *</pattern><template>6</template></category>
+<category><pattern>_ 2 multiplicado por 4 *</pattern><template>8</template></category>
+<category><pattern>_ 2 multiplicado por 5 *</pattern><template>10</template></category>
+<category><pattern>_ 2 multiplicado por 6 *</pattern><template>12</template></category>
+<category><pattern>_ 2 multiplicado por 7 *</pattern><template>14</template></category>
+<category><pattern>_ 2 multiplicado por 8 *</pattern><template>16</template></category>
+<category><pattern>_ 2 multiplicado por 9 *</pattern><template>18</template></category>
+<category><pattern>_ 2 multiplicado por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 3 multiplicado por 1 *</pattern><template>3</template></category>
+<category><pattern>_ 3 multiplicado por 2 *</pattern><template>6</template></category>
+<category><pattern>_ 3 multiplicado por 3 *</pattern><template>9</template></category>
+<category><pattern>_ 3 multiplicado por 4 *</pattern><template>12</template></category>
+<category><pattern>_ 3 multiplicado por 5 *</pattern><template>15</template></category>
+<category><pattern>_ 3 multiplicado por 6 *</pattern><template>18</template></category>
+<category><pattern>_ 3 multiplicado por 7 *</pattern><template>21</template></category>
+<category><pattern>_ 3 multiplicado por 8 *</pattern><template>24</template></category>
+<category><pattern>_ 3 multiplicado por 9 *</pattern><template>27</template></category>
+<category><pattern>_ 3 multiplicado por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 4 multiplicado por 1 *</pattern><template>4</template></category>
+<category><pattern>_ 4 multiplicado por 2 *</pattern><template>8</template></category>
+<category><pattern>_ 4 multiplicado por 3 *</pattern><template>12</template></category>
+<category><pattern>_ 4 multiplicado por 4 *</pattern><template>16</template></category>
+<category><pattern>_ 4 multiplicado por 5 *</pattern><template>20</template></category>
+<category><pattern>_ 4 multiplicado por 6 *</pattern><template>24</template></category>
+<category><pattern>_ 4 multiplicado por 7 *</pattern><template>28</template></category>
+<category><pattern>_ 4 multiplicado por 8 *</pattern><template>32</template></category>
+<category><pattern>_ 4 multiplicado por 9 *</pattern><template>36</template></category>
+<category><pattern>_ 4 multiplicado por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 5 multiplicado por 1 *</pattern><template>5</template></category>
+<category><pattern>_ 5 multiplicado por 2 *</pattern><template>10</template></category>
+<category><pattern>_ 5 multiplicado por 3 *</pattern><template>15</template></category>
+<category><pattern>_ 5 multiplicado por 4 *</pattern><template>20</template></category>
+<category><pattern>_ 5 multiplicado por 5 *</pattern><template>25</template></category>
+<category><pattern>_ 5 multiplicado por 6 *</pattern><template>30</template></category>
+<category><pattern>_ 5 multiplicado por 7 *</pattern><template>35</template></category>
+<category><pattern>_ 5 multiplicado por 8 *</pattern><template>40</template></category>
+<category><pattern>_ 5 multiplicado por 9 *</pattern><template>45</template></category>
+<category><pattern>_ 5 multiplicado por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 6 multiplicado por 1 *</pattern><template>6</template></category>
+<category><pattern>_ 6 multiplicado por 2 *</pattern><template>12</template></category>
+<category><pattern>_ 6 multiplicado por 3 *</pattern><template>18</template></category>
+<category><pattern>_ 6 multiplicado por 4 *</pattern><template>24</template></category>
+<category><pattern>_ 6 multiplicado por 5 *</pattern><template>30</template></category>
+<category><pattern>_ 6 multiplicado por 6 *</pattern><template>36</template></category>
+<category><pattern>_ 6 multiplicado por 7 *</pattern><template>42</template></category>
+<category><pattern>_ 6 multiplicado por 8 *</pattern><template>48</template></category>
+<category><pattern>_ 6 multiplicado por 9 *</pattern><template>54</template></category>
+<category><pattern>_ 6 multiplicado por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 7 multiplicado por 1 *</pattern><template>7</template></category>
+<category><pattern>_ 7 multiplicado por 2 *</pattern><template>14</template></category>
+<category><pattern>_ 7 multiplicado por 3 *</pattern><template>21</template></category>
+<category><pattern>_ 7 multiplicado por 4 *</pattern><template>28</template></category>
+<category><pattern>_ 7 multiplicado por 5 *</pattern><template>35</template></category>
+<category><pattern>_ 7 multiplicado por 6 *</pattern><template>42</template></category>
+<category><pattern>_ 7 multiplicado por 7 *</pattern><template>49</template></category>
+<category><pattern>_ 7 multiplicado por 8 *</pattern><template>56</template></category>
+<category><pattern>_ 7 multiplicado por 9 *</pattern><template>63</template></category>
+<category><pattern>_ 7 multiplicado por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 8 multiplicado por 1 *</pattern><template>8</template></category>
+<category><pattern>_ 8 multiplicado por 2 *</pattern><template>16</template></category>
+<category><pattern>_ 8 multiplicado por 3 *</pattern><template>24</template></category>
+<category><pattern>_ 8 multiplicado por 4 *</pattern><template>32</template></category>
+<category><pattern>_ 8 multiplicado por 5 *</pattern><template>40</template></category>
+<category><pattern>_ 8 multiplicado por 6 *</pattern><template>48</template></category>
+<category><pattern>_ 8 multiplicado por 7 *</pattern><template>56</template></category>
+<category><pattern>_ 8 multiplicado por 8 *</pattern><template>64</template></category>
+<category><pattern>_ 8 multiplicado por 9 *</pattern><template>72</template></category>
+<category><pattern>_ 8 multiplicado por 0 *</pattern><template>0</template></category>
+<category><pattern>_ 9 multiplicado por 1 *</pattern><template>9</template></category>
+<category><pattern>_ 9 multiplicado por 2 *</pattern><template>18</template></category>
+<category><pattern>_ 9 multiplicado por 3 *</pattern><template>27</template></category>
+<category><pattern>_ 9 multiplicado por 4 *</pattern><template>36</template></category>
+<category><pattern>_ 9 multiplicado por 5 *</pattern><template>45</template></category>
+<category><pattern>_ 9 multiplicado por 6 *</pattern><template>54</template></category>
+<category><pattern>_ 9 multiplicado por 7 *</pattern><template>63</template></category>
+<category><pattern>_ 9 multiplicado por 8 *</pattern><template>72</template></category>
+<category><pattern>_ 9 multiplicado por 9 *</pattern><template>81</template></category>
+<category><pattern>_ 9 multiplicado por 0 *</pattern><template>0</template></category>
+
+</aiml>
+
+

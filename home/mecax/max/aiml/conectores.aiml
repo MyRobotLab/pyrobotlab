@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+<!-- preposiciones -->
+<category><pattern>a *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>ante *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>cabe *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>con *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>contra *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>de *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>desde *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>en *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>entre *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>hacia *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>hasta *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>para *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>por *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>según *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>sin *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>sobre *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>tras *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>según</pattern><template>Sé más específico, según... ¿qué?</template></category>
+<category><pattern>sin</pattern><template>¿Sin...?, sin... ¿qué más?</template></category>
+
+<!-- artículos -->
+<category><pattern>el *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>la *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>las *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>los *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>un *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>una *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>unos *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>unas *</pattern><template><srai><star /></srai></template></category>
+
+<!-- demostrativos -->
+<category><pattern>este *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>esta *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>estos *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>estas *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>esa *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>eso *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>esas *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>esos *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>aquél *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>aquella *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>aquellos *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>aquellas *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>algún *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>alguna *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>algunos *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>algunas *</pattern><template><srai><star /></srai></template></category>
+
+<!-- posesivos -->
+<category><pattern>mi *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>tu *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>su *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>nuestra *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>nuestro *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>vuestra *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>vuestro *</pattern><template><srai><star /></srai></template></category>
+
+<!-- pronombres personales -->
+<category><pattern>yo *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>tú *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>él *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>ella *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>nosotros *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>vosotros *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>ellos *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>ellas *</pattern><template><srai><star /></srai></template></category>
+
+<!-- pronombres -->
+<category><pattern>me *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>te *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>se *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>nos *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>os *</pattern><template><srai><star /></srai></template></category>
+
+<!-- conectores -->
+<category><pattern>pues *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>creo que *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>que *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>y *</pattern><template><srai><star /></srai></template></category>
+
+<!-- adverbios de tiempo -->
+<category><pattern>entonces *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>despues *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>mañana *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>noche *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>día *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>pasado mañana *</pattern><template><srai><star /></srai></template></category>
+
+<!-- adverbios de lugar -->
+<category><pattern>aquí *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>allí *</pattern><template><srai><star /></srai></template></category>
+<category><pattern>lejos *</pattern><template><srai><star /></srai></template></category>
+
+<!-- frases hechas -->
+<category><pattern>digo que *</pattern><template><srai><star/></srai></template></category>
+<category><pattern>así que *</pattern><template><srai><star/></srai></template></category>
+</aiml>
