@@ -89,8 +89,6 @@ def heard(data):
 ######################################################################
 # Create ProgramAB chat bot ( This is the inmoov "brain" )
 ######################################################################
-#neopixel = Runtime.createAndStart("neopixel","Serial")
-#neopixel.connect("COM3", 57600, 8, 1, 0)
 inmoovSuper = Runtime.createAndStart("inmoovSuper", "ProgramAB")
 # mouth service, speech synthesis
 mouth = Runtime.createAndStart("i01.mouth", "NaturalReaderSpeech")
@@ -345,7 +343,33 @@ rightArm.omoplate.setVelocity(30)
 webgui.autoStartBrowser(False)
 webgui.startService()
 BareBonesBrowserLaunch.openURL("http://localhost:8888/#service/i01.ear")
-
+######################################################################
+#Setting the Arduino for NeoPixel
+#Through RX/TX:
+#arduino1 = Runtime.createAndStart("arduino1","Arduino")
+#arduino1.setBoardNano()
+#connecting arduino1 to arduino Serial1 instead to a COMX
+#arduino1.connect(right,"Serial1")
+#Through USB:
+arduino1 = Runtime.createAndStart("arduino", "Arduino")
+arduino1.connect("COM13") 
+#Starting NeoPixel Service
+neopixel = Runtime.createAndStart("neopixel","NeoPixel")
+#neopixel.attach(arduino, pin, number of pixel)
+neopixel.attach(arduino1, 8, 16)
+#Animations;
+#"Color Wipe"
+#"Larson Scanner"
+#"Theater Chase"
+#"Theater Chase Rainbow"
+#"Rainbow"
+#"Rainbow Cycle"
+#"Flash Random"
+#"Ironman"
+#speed: 1-65535   1=full speed, 2=2x slower than 1, 10=10x slower than 1
+#starting a animation
+#neopixel.setAnimation("Animation Name", red, green, blue, speed)
+neopixel.setAnimation("Ironman", 0, 0, 255, 1) #running Theater Chase with color red at full speed
 ######################################################################
 # END MAIN SERVICE SETUP SECTION
 ######################################################################
