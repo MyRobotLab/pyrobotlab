@@ -351,9 +351,9 @@ sleep(3)
 #arduino1.setBoardNano()
 sleep(2)
 #connecting arduino1 to arduino Serial1 instead to a COMX
-#arduino1.connect(right,"Serial1")
+#arduino1.connect(arduino1,"Serial1")
 #Through USB:
-arduino1 = Runtime.createAndStart("arduino", "Arduino")
+arduino1 = Runtime.createAndStart("arduino1", "Arduino")
 arduino1.connect("COM13") 
 #Starting NeoPixel Service
 neopixel = Runtime.createAndStart("neopixel","NeoPixel")
