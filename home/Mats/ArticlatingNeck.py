@@ -1,3 +1,5 @@
+# This is one alternative to sync servos. 
+# There is an alternate way to do it in https://github.com/MyRobotLab/pyrobotlab/blob/master/home/Mats/SyncServos.py
 # Start the Arduino
 arduino = Runtime.createAndStart("Arduino","Arduino")
 arduino.connect("COM4")
