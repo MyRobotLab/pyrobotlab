@@ -1,32 +1,24 @@
-com="COM4"
+com="COM3"
 pin=2
-serial="Serial3"
+serial="Serial1"
+
 import time
 arduino = Runtime.createAndStart("i01.right","Arduino")
 arduino.connect(com)
 arduino2 = Runtime.createAndStart("arduino2","Arduino")
 i01 = Runtime.createAndStart("i01", "InMoov")
 
-
 arduino2.connect(arduino,serial) 
 sleep(1)
 
 neopixel = Runtime.createAndStart("neopixel","NeoPixel")
-neopixel.attach(arduino2, pin, 16)
- 
+neopixel.attach(arduino2, pin, 12)
 
 neopixel.setAnimation("Theater Chase", 255, 0, 0, 1) #running Theater Chase with color red at full speed
+i01.startMouth() 
+i01.startLeftHand(com) 
+
 sleep(5)
+
 neopixel.animationStop()
 neopixel.turnOff()
-
-sleep(2)
-
-i01.startRightHand(com)
-
-neopixel.turnOn()
-neopixel.setAnimation("Ironman", 255, 255, 255, 1) #running Theater Chase with color red at full speed
-sleep(5)
-neopixel.animationStop()
-neopixel.turnOff()
-i01.rightHand.detach()
