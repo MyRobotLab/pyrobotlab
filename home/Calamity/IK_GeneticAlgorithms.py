@@ -1,5 +1,5 @@
 #start ik service
-ik=Runtime.createAndStart("ik","InverseKinematics3D");
+ik=Runtime.createAndStart("ik","IntegratedMovement");
 
 #arduino service
 arduino = Runtime.createAndStart("arduino","Arduino")
