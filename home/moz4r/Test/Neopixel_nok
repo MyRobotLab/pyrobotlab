@@ -2,23 +2,24 @@ com="COM3"
 pin=2
 serial="Serial1"
 
-import time
-arduino = Runtime.createAndStart("i01.right","Arduino")
-arduino.connect(com)
-arduino2 = Runtime.createAndStart("arduino2","Arduino")
 i01 = Runtime.createAndStart("i01", "InMoov")
 
+import time
+arduino = Runtime.createAndStart("i01.left","Arduino")
+arduino.connect(com)
+
+arduino2 = Runtime.createAndStart("arduino2","Arduino")
 arduino2.connect(arduino,serial) 
 sleep(1)
+i01.startMouth() 
+i01.startLeftHand(com)
 
 neopixel = Runtime.createAndStart("neopixel","NeoPixel")
-neopixel.attach(arduino2, pin, 12)
+neopixel.attach(arduino2, pin, 16)
+sleep(1)
 
-neopixel.setAnimation("Theater Chase", 255, 0, 0, 1) #running Theater Chase with color red at full speed
-i01.startMouth() 
-i01.startLeftHand(com) 
-
-sleep(5)
-
+neopixel.setAnimation("Flash Random", 0, 255, 0, 1)
+sleep(1)
+neopixel.setAnimation("Ironman", 255, 255, 255, 1)
+i01.mouth.speakBlocking("ok you have my attention")
 neopixel.animationStop()
-neopixel.turnOff()
