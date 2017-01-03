@@ -57,8 +57,8 @@ Voice="Ryan" # Bruno in French for NaturalReaderSpeech
 #Voice="upmc-pierre-hsmm" #French voice
 voiceType = Voice
 
-client_id = "90a98ba0-a028-4b61-9e7a-10a22b186944"
-client_secret = "SZDqSTcKxwUMiPEievXKWleXAYMWuD1Tm1D2igskvus"
+client_id = "xxxx"
+client_secret = "xxxx"
 
 global human
 global inmoov
