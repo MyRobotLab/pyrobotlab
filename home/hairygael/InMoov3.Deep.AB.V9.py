@@ -34,7 +34,7 @@ rightPort = "COM7"
 headPort = leftPort
 
 gesturesPath = "C:\Myrobotlab\ProgramAB bots\gestures"
-mp3Path = "C:\Myrobotlab\myrobotlab.1.0.1851/audiofile\MP3/"
+#mp3Path = "C:\Myrobotlab\myrobotlab.1.0.1851/audiofile\MP3/"
 
 aimlPath = "C:\Myrobotlab\myrobotlab.1.0.1851\ProgramAB"
 aimlBotName = "inmoovSuper"
