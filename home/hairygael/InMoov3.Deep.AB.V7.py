@@ -104,7 +104,7 @@ mouth.setVoice(voiceType)
 #Stadium(amount=100.0)
 #Chorus(delay=1.466;amp1=0.54)
 #FIRFilter(type=3;fc1=500.0;fc2=2)
-mouth.setAudioEffects("Volume(amount=1.75) + TractScaler(amount=0.95) + F0Scale(f0Add=3.0)")
+#mouth.setAudioEffects("Volume(amount=1.75) + TractScaler(amount=0.95) + F0Scale(f0Add=3.0)")
 #mouth.setLanguage(lang)
 
 ######################################################################
