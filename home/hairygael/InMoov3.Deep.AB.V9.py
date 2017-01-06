@@ -37,7 +37,7 @@ gesturesPath = "C:\Myrobotlab\ProgramAB bots\gestures"
 #mp3Path = "C:\Myrobotlab\myrobotlab.1.0.1851/audiofile\MP3/"
 
 aimlPath = "C:\Myrobotlab\myrobotlab.1.0.1851\ProgramAB"
-aimlBotName = "inmoovSuper"
+aimlBotName = "inmoovWebkit"
 aimlUserName = "Gael"
 #botVoice = "Ryan"
 #############################################################
@@ -113,8 +113,8 @@ mouth.setLanguage(lang)
 ear = Runtime.createAndStart("i01.ear", "WebkitSpeechRecognition")
 ear.addListener("publishText", python.name, "heard");
 ear.addMouth(mouth)
-#inmoovSuper.setPath(aimlPath)
-inmoovSuper.startSession(aimlUserName, aimlBotName)
+#inmoovWebkit.setPath(aimlPath)
+inmoovWebkit.startSession(aimlUserName, aimlBotName)
 
 ######################################################################
 # Html filter to clean the output from programab.  (just in case)
@@ -129,8 +129,8 @@ WebkitSpeechRecognitionFix.startClock()
 ######################################################################
 # MRL Routing webkitspeechrecognition/ear -> program ab -> htmlfilter -> mouth
 ######################################################################
-ear.addTextListener(inmoovSuper)
-inmoovSuper.addTextListener(htmlfilter)
+ear.addTextListener(inmoovWebkit)
+inmoovWebkit.addTextListener(htmlfilter)
 htmlfilter.addTextListener(mouth)
 ######################################################################
 #Gets the battery level
