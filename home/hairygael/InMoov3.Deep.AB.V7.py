@@ -112,7 +112,10 @@ mouth.setVoice(voiceType)
 ear = Runtime.createAndStart("i01.ear", "WebkitSpeechRecognition")
 ear.addListener("publishText", python.name, "heard");
 ear.addMouth(mouth)
-
+######################################################################
+WebkitSpeechRecognitionFix = Runtime.start("WebkitSpeechRecognitionFix","Clock")
+WebkitSpeechRecognitionFix.setInterval(1000)
+WebkitSpeechRecognitionFix.startClock()
 ######################################################################
 # MRL Routing webkitspeechrecognition/ear -> program ab -> htmlfilter -> mouth
 ######################################################################
