@@ -34,7 +34,7 @@ except:
 if isNez==1 and (ScriptType=="RightSide" or ScriptType=="Full"):
 	if RightPortIsConnected:
 		
-		#on déclare le servo
+		#on declare le servo
 		rotationCylindre = Runtime.create("rotationCylindre", "Servo")
 		rotationCylindre.map(0,180,ThisSkeletonPartConfig.getint('SERVO_MINIMUM', 'rotationCylindre'),ThisSkeletonPartConfig.getint('SERVO_MAXIMUM', 'rotationCylindre')) 
 		rotationCylindre.setVelocity(ThisSkeletonPartConfig.getint('DEF_SPEED', 'rotationCylindre'))
