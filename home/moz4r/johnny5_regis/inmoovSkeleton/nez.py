@@ -61,7 +61,7 @@ if isNez==1 and (ScriptType=="RightSide" or ScriptType=="Full"):
 		rotationCylindre.rest()
 		berceau.rest()
 		sleep(1)
-		#on detache pour pas que ça brule !
+		#on detache pour pas que ca brule !
 		rotationCylindre.detach()
 		berceau.detach()
 		
