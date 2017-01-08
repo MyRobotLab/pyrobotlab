@@ -86,6 +86,3 @@ webgui.startBrowser("http://localhost:8888/#/service/webkitspeechrecognition")
 # sphinx.attach(mouth)
 speech.speakBlocking("okay i am ready for conversation")
 
-
-
-
