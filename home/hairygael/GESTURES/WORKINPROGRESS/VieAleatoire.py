@@ -1,13 +1,12 @@
 def VieAleatoire():
+	#if MoveBodyRandom==1 and MoveHeadRandom==1:
+	global MoveBodyRandom
 	global MoveHeadRandom
-	if MoveHeadRandom==1:
-	    MoveHeadTimer.startClock()
-	elif MoveHeadRandom==0:
-	    MoveHeadTimer.stopClock()
-	if MoveBodyRandom==1:
-	    MoveBodyTimer.startClock()
-	elif MoveBodyRandom==0:
-	    MoveBodyTimer.stopClock()
-
+	MoveBodyRandomize()
+	MoveHeadRandomize()
+	MoveHeadTimer.startClock()
+	MoveBodyTimer.startClock()
+	MoveBodyRandom=1
+	MoveHeadRandom=1
 	
 	
