@@ -98,15 +98,15 @@ ear.startListening()
 
 def lookrightside():
   i01.setHeadSpeed(0.70, 0.70)
-  i01.moveHead(85,40)
+  i01.moveHead(90,40)
 
 def lookleftside():
   i01.setHeadSpeed(0.70, 0.70)
-  i01.moveHead(85,130)
+  i01.moveHead(90,130)
 
 def lookinmiddle():
   i01.setHeadSpeed(0.70, 0.70)
-  i01.moveHead(85,86)
+  i01.moveHead(90,90)
 
 def trackHumans():
   i01.headTracking.faceDetect()
