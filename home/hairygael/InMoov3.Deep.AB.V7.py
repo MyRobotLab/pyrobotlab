@@ -262,7 +262,7 @@ if startInMoov:
    #i01.startLeftHand(leftPort)
    i01.startTorso("COM20")
 #################
-   #i01.startPIR("COM20",30)
+   #i01.startPIR("COM20",23)
 
 
 
