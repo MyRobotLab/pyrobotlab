@@ -3284,6 +3284,147 @@
       <template><srai>START FACE RECOGNIZER</srai></template>
     </category>
     
-  </topic>
+  <topic name="GESTURES">
+<category><pattern>MAKE A SIGNATURE</pattern>
+<template>Okay give the paper - I will do that for you <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>signature()</param>
+          </mrl>
+        </oob></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>PLAY UTUBE</pattern>
+<template>Okay <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>PlayUtub()</param>
+          </mrl>
+        </oob></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>PLAY UTUB</pattern>
+<template>Okay <oob>
+          <mrl>
+            <service>python</service>
+            <method>exec</method>
+            <param>PlayUtub()</param>
+          </mrl>
+        </oob></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>PLAY YOU TUBE</pattern>
+<template><srai>PLAY UTUB</srai></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>SHOW ME A PICTURE OF A *</pattern>
+<template>Okay <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>FindImage("<star/>")</param>
+        </mrl>
+        </oob></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>SHOW ME A PICTURE OF THE *</pattern>
+<template><srai>SHOW ME A PICTURE OF A * </srai></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>FIX THE MICROPHONE</pattern>
+<template>Okay <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>WebkitSpeechRecognitionON()</param>
+        </mrl>
+        </oob></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>OPEN FACEBOOK</pattern>
+<template><random>
+               <li>Launching facebook </li>
+               <li>Getting facebook started </li>
+               <li>Right away, sir! </li>
+            </random><oob>
+            <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>BareBonesBrowserLaunch.openURL("http://www.facebook.com")</param>
+          </mrl></oob></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>ROBOT RESEARCH *</pattern>
+<template><random>
+               <li>Launching browser </li>
+               <li>Searching for you! </li>
+               <li>Looking on the net! </li>
+            </random><oob>
+            <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>BareBonesBrowserLaunch.openURL("https://encrypted.google.com/#q=<star/>")</param>
+          </mrl></oob></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>ROBOTIC RESEARCH *</pattern>
+<template>I will do that
+        <oob><mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>inmoovsearch("<star/>")</param>
+        </mrl></oob></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>YOUTUBE *</pattern>
+<template>Lets play
+        <oob><mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>BareBonesBrowserLaunch.openURL("https://www.youtube.com/results?search_query=<star/>")</param>
+        </mrl></oob></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>RANDOM PAUSE</pattern>
+<template>Thanks
+        <oob><mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>VieAleatoire()</param>
+        </mrl></oob></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>RANDOM LIFE</pattern>
+<template><srai>RANDOM PAUSE</srai></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>STOP RANDOM PAUSE</pattern>
+<template>Okay
+        <oob><mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>VieAleatoireStop()</param>
+        </mrl></oob></template>
+</category></topic>
+
+<topic name="GESTURES">
+<category><pattern>STOP RANDOM LIFE</pattern>
+<template><srai>STOP RANDOM PAUSE</srai></template>
+</category></topic>
 
 </aiml>
