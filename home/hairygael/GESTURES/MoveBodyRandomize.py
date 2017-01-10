@@ -33,6 +33,4 @@ def MoveBodyStart():
 	
 MoveBodyTimer.addListener("pulse", python.name, "MoveBody")
 MoveBodyTimer.addListener("clockStopped", python.name, "MoveBodyStopped")		
-MoveBodyTimer.addListener("clockStarted", python.name, "MoveBodyStart")	
-MoveBodyTimer = Runtime.start("MoveBodyTimer","Clock")
-MoveBodyTimer.setInterval(10)
+MoveBodyTimer.addListener("clockStarted", python.name, "MoveBodyStart")
