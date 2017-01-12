@@ -1,4 +1,4 @@
-#MARTY I2C PI SERVO TEST
+#MARTY I2C PI
 #SCRIPT BASED ON MATS WORK
 from time import sleep
 raspi = Runtime.createAndStart("RasPi","RasPi")
@@ -8,17 +8,43 @@ adaFruit16c.setController("RasPi","1","0x40")
 # This part is common for both devices and creates two servo instances
 # on port 3 and 8 on the Adafruit16CServoDriver
 # Change the names of the servos and the pin numbers to your usage
-thumb = Runtime.createAndStart("Thumb", "Servo")
+cuisseDroite = Runtime.createAndStart("cuisseDroite", "Servo")
+genouDroite = Runtime.createAndStart("genouDroite", "Servo")
+chevilleDroite = Runtime.createAndStart("chevilleDroite", "Servo")
+cuisseGauche = Runtime.createAndStart("cuisseGauche", "Servo")
+genouGauche = Runtime.createAndStart("genouGauche", "Servo")
+chevilleGauche = Runtime.createAndStart("chevilleGauche", "Servo")
 sleep(1)
-thumb.setVelocity(30)
-# attach it to the pwm board - pin 3 & 8
-thumb.attach(adaFruit16c,0)
-thumb.moveTo(90)
+cuisseDroite.enableAutoAttach(1)
+genouDroite.enableAutoAttach(1)
+chevilleDroite.enableAutoAttach(1)
+cuisseGauche.enableAutoAttach(1)
+genouGauche.enableAutoAttach(1)
+chevilleGauche.enableAutoAttach(1)
+
+
+cuisseDroite.setVelocity(30)
+genouDroite.setVelocity(30)
+chevilleDroite.setVelocity(30)
+cuisseGauche.setVelocity(30)
+genouGauche.setVelocity(30)
+chevilleGauche.setVelocity(30)
+
+cuisseDroite.attach(adaFruit16c,0)
 sleep(1)
-thumb.setVelocity(10)
-thumb.moveTo(180)
-sleep(5)
-thumb.detach()
-sleep(5)
-thumb.attach(adaFruit16c,0)
-thumb.moveTo(90)
+genouDroite.attach(adaFruit16c,1)
+sleep(1)
+chevilleDroite.attach(adaFruit16c,2)
+sleep(1)
+cuisseGauche.attach(adaFruit16c,4)
+sleep(1)
+genouGauche.attach(adaFruit16c,5)
+sleep(1)
+chevilleGauche.attach(adaFruit16c,6)
+sleep(1)
+cuisseDroite.moveTo(90)
+genouDroite.moveTo(90)
+chevilleDroite.moveTo(90)
+cuisseGauche.moveTo(90)
+genouGauche.moveTo(90)
+chevilleGauche.moveTo(90)
