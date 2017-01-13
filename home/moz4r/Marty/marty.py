@@ -32,7 +32,6 @@ genouGauche.setRest(genouGaucheRest)
 chevilleGauche.setRest(chevilleGaucheRest)
 
 
-
 cuisseDroite.attach(adaFruit16c,0)
 sleep(1)
 genouDroite.attach(adaFruit16c,1)
@@ -46,14 +45,6 @@ sleep(1)
 chevilleGauche.attach(adaFruit16c,15)
 sleep(1)
 
-cuisseDroite.enableAutoAttach(1)
-genouDroite.enableAutoAttach(1)
-chevilleDroite.enableAutoAttach(1)
-cuisseGauche.enableAutoAttach(1)
-genouGauche.enableAutoAttach(1)
-chevilleGauche.enableAutoAttach(1)
-
-
 
 cuisseDroite.setVelocity(30)
 genouDroite.setVelocity(30)
@@ -63,33 +54,53 @@ genouGauche.setVelocity(30)
 chevilleGauche.setVelocity(30)
 
 
-cuisseDroite.rest()
-genouDroite.rest()
-chevilleDroite.rest()
-cuisseGauche.rest()
-genouGauche.rest()
-chevilleGauche.rest()
+
+cuisseDroite.moveTo(cuisseDroiteRest)
+genouDroite.moveTo(genouDroiteRest)
+chevilleDroite.moveTo(genouDroiteRest)
+cuisseGauche.moveTo(cuisseGaucheRest)
+genouGauche.moveTo(chevilleGaucheRest)
+chevilleGauche.moveTo(chevilleGaucheRest)
+
+
 
 sleep(3)
+
+cuisseDroite.attach()
+genouDroite.attach()
+chevilleDroite.attach()
+cuisseGauche.attach()
+genouGauche.attach()
+chevilleGauche.attach()
 
 
 chevilleDroite.moveTo(chevilleDroiteRest+30)
 chevilleGauche.moveTo(chevilleGaucheRest+40)
-sleep(3)
+sleep(5)
 cuisseGauche.moveTo(cuisseGaucheRest+40)
-sleep(3)
+sleep(2)
+chevilleDroite.moveTo(chevilleDroiteRest-40)
+chevilleGauche.moveTo(chevilleGaucheRest-30)
+sleep(4)
+cuisseGauche.moveTo(cuisseGaucheRest)
+sleep(2)
 chevilleDroite.moveTo(chevilleDroiteRest)
 chevilleGauche.moveTo(chevilleGaucheRest)
+
+sleep(2)
+cuisseDroite.moveTo(cuisseDroiteRest)
+genouDroite.moveTo(genouDroiteRest)
+chevilleDroite.moveTo(genouDroiteRest)
+cuisseGauche.moveTo(cuisseGaucheRest)
+genouGauche.moveTo(chevilleGaucheRest)
+chevilleGauche.moveTo(chevilleGaucheRest)
+
 sleep(3)
-cuisseGauche.rest()
-sleep(5)
 
-
-
-cuisseDroite.rest()
-genouDroite.rest()
-chevilleDroite.rest()
-cuisseGauche.rest()
-genouGauche.rest()
-chevilleGauche.rest()
+cuisseDroite.detach()
+genouDroite.detach()
+chevilleDroite.detach()
+cuisseGauche.detach()
+genouGauche.detach()
+chevilleGauche.detach()
 
