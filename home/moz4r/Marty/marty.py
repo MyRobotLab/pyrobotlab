@@ -43,7 +43,7 @@ cuisseGauche.attach(adaFruit16c,4)
 sleep(1)
 genouGauche.attach(adaFruit16c,5)
 sleep(1)
-chevilleGauche.attach(adaFruit16c,6)
+chevilleGauche.attach(adaFruit16c,15)
 sleep(1)
 
 cuisseDroite.enableAutoAttach(1)
@@ -92,3 +92,4 @@ chevilleDroite.rest()
 cuisseGauche.rest()
 genouGauche.rest()
 chevilleGauche.rest()
+
