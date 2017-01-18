@@ -1,6 +1,6 @@
 #file : InMoov2Deep.full.byGael.LangevinV7.py
 
-
+# this will run with versions of MRL 1.0.107
 # this script is provided as a basic guide
 # most parts can be run by uncommenting them
 # InMoov now can be started in modular pieces
