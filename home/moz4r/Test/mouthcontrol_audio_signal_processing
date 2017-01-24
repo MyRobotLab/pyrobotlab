@@ -1,0 +1,108 @@
+import os
+#analog pin range are 14-18 on uno, 54-70 on mega
+#I use A5 :
+AnalogPinFromSoundCard=59
+HowManyPollsBySecond=100
+sensibility=20
+jawMIN=81
+jawMAX=120
+jawPin=26
+arduinPortCom="COM3"
+
+#let start arduino
+left = Runtime.start("left", "Arduino")
+left.connect(arduinPortCom)
+
+mouth = Runtime.createAndStart("mouth", "MarySpeech")
+mouth.setVoice("cmu-slt-hsmm")
+jaw = Runtime.createAndStart("jaw","Servo")
+jaw.map(0,180,jawMIN,jawMAX)
+jaw.attach(left, jawPin)
+
+#If we want to play custom mp3
+AudioPlayer = Runtime.createAndStart("AudioPlayer", "AudioFile")
+
+#we define some vars:
+#exemple if we put somewhere NewMouthControlActivated=1, so the jaw will move
+global AudioInputValues
+AudioInputValues=[]
+global NewMouthControlActivated
+NewMouthControlActivated=0
+AudioSignalProcessingCalibration=0
+
+#We need to intercept some actions like When the robot start speaking to attach the jaw servo
+python.subscribe(AudioPlayer.getName(),"publishAudioStart")
+python.subscribe(AudioPlayer.getName(),"publishAudioEnd")
+python.subscribe(mouth.getName(),"publishStartSpeaking")
+python.subscribe(mouth.getName(),"publishEndSpeaking")
+
+def onAudioStart(data):
+	if NewMouthControlActivated:
+		jaw.attach()
+
+def onAudioEnd(data):
+	if NewMouthControlActivated:
+		jaw.detach()
+	
+def onEndSpeaking(text):
+	if NewMouthControlActivated:
+		jaw.detach()		
+	
+def onStartSpeaking(text):
+	if NewMouthControlActivated:
+		jaw.attach()
+		
+#The arduino input pin poller :
+def publishPin(pins):
+	global AudioInputValues
+	for pin in range(0, len(pins)):
+		if AudioSignalProcessingCalibration:
+			AudioInputValues.append(pins[pin].value)
+		if NewMouthControlActivated:
+			if pins[pin].value>minAudioValue:
+				jaw.moveTo(pins[pin].value)
+				
+left.addListener("publishPinArray","python","publishPin")
+left.enablePin(AnalogPinFromSoundCard,HowManyPollsBySecond)
+
+#this function usefull to calculate a maximum average
+def maxAverage(list,howMany):
+	sortedAudioInputValues=sorted(list)
+	maxAvg=[]
+	for value in range(-1, -howMany, -1):
+		maxAvg.append(sortedAudioInputValues[value])
+	return sum(maxAvg) / len(maxAvg)
+
+#LET START THE CALIBRATION PROCESS
+#of course it can be done only one time
+
+mouth.speakBlocking("At this time I have no mouthcontrol, so, Time to calibrate the audio signal processing !")
+mouth.speakBlocking("To find minimal value I need to be quiet 3 seconds, hush !")
+
+AudioSignalProcessingCalibration=1
+sleep(3)
+AudioSignalProcessingCalibration=0
+minAudioValue = (sum(AudioInputValues) / len(AudioInputValues)) + sensibility
+
+mouth.speakBlocking("To find maximal value I need to say something !")
+AudioInputValues=[]
+AudioSignalProcessingCalibration=1
+mouth.speakBlocking("ABCD12345")
+AudioSignalProcessingCalibration=0
+maxAudioValue=maxAverage(AudioInputValues,10)
+
+#time to map the jaw from min/max audio input values
+jaw.map(minAudioValue,maxAudioValue,jawMIN,jawMAX)
+
+#we analyse the test
+if maxAudioValue==minAudioValue:
+	mouth.speakBlocking("Dude I cannot check the audio input signal, please I can't do all for you")
+if maxAudioValue-minAudioValue<300:
+	NewMouthControlActivated=1
+	mouth.speakBlocking("Dude I found data but it is not perfect. Don't worry it will be worky ! You can check AREF of arduino")
+	
+if maxAudioValue-minAudioValue>=300:
+	NewMouthControlActivated=1
+	mouth.speakBlocking("wahoooo so nice dude , the new mouth control worky great, c 3 p o speaking : ")
+	
+AudioPlayer.playFileBlocking(os.getcwd().replace("\\", "/")+'/Hello sir, I am C3po unicyborg relations.mp3')
