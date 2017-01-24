@@ -77,17 +77,17 @@ def maxAverage(list,howMany):
 #of course it can be done only one time
 
 mouth.speakBlocking("At this time I have no mouthcontrol, so, Time to calibrate the audio signal processing !")
-mouth.speakBlocking("To find minimal value I need to be quiet 3 seconds, hush !")
+mouth.speakBlocking("To find minimal value I need to be quiet 5 seconds, hush !")
 
 AudioSignalProcessingCalibration=1
-sleep(3)
+sleep(5)
 AudioSignalProcessingCalibration=0
 minAudioValue = (sum(AudioInputValues) / len(AudioInputValues)) + sensibility
 
 mouth.speakBlocking("To find maximal value I need to say something !")
 AudioInputValues=[]
 AudioSignalProcessingCalibration=1
-mouth.speakBlocking("ABCD12345")
+mouth.speakBlocking("123456789")
 AudioSignalProcessingCalibration=0
 maxAudioValue=maxAverage(AudioInputValues,10)
 
