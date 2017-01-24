@@ -1,4 +1,5 @@
 import os
+from time import sleep
 #analog pin range are 14-18 on uno, 54-70 on mega
 #I use A5 :
 AnalogPinFromSoundCard=59
@@ -87,13 +88,13 @@ minAudioValue = (sum(AudioInputValues) / len(AudioInputValues)) + sensibility
 mouth.speakBlocking("To find maximal value I need to say something !")
 AudioInputValues=[]
 AudioSignalProcessingCalibration=1
-mouth.speakBlocking("123456789")
+mouth.speakBlocking("123456")
 AudioSignalProcessingCalibration=0
 maxAudioValue=maxAverage(AudioInputValues,10)
 
 #time to map the jaw from min/max audio input values
 jaw.map(minAudioValue,maxAudioValue,jawMIN,jawMAX)
-
+sleep(1)
 #we analyse the test
 if maxAudioValue==minAudioValue:
 	mouth.speakBlocking("Dude I cannot check the audio input signal, please I can't do all for you")
