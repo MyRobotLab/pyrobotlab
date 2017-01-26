@@ -53,7 +53,7 @@ aimlUserName = "Gael"
 lang="EN" #for NaturalReaderSpeech
 #lang="en_US" #for MarySpeech
 Voice="Ryan" # Bruno in French for NaturalReaderSpeech
-#Voice="cmu-bdl" #for MarySpeech
+#Voice="cmu-bdl-hsmm" #for MarySpeech
 #Voice="upmc-pierre-hsmm" #French voice
 voiceType = Voice
 
