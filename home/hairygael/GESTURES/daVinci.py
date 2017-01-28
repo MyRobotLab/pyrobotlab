@@ -1,4 +1,4 @@
-def davinci():
+def daVinci():
   inMoov.setHandSpeed("left", 1.0, 1.0, 1.0, 1.0, 1.0, 0.65)
   inMoov.setHandSpeed("right", 1.0, 1.0, 1.0, 1.0, 1.0, 0.65)
   inMoov.setArmSpeed("left", 0.75, 0.75, 0.75, 0.75)
