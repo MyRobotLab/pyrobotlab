@@ -9,13 +9,13 @@ import threading
 # the bot.
 #############################################################
 # All bot specific hardware configuration goes here.
-leftPort = "COM31"
-rightPort = "COM21"
+leftPort = "COM5"
+rightPort = "COM6"
 headPort = leftPort
 
-gesturesPath = "c:/dev/workspace.kmw/pyrobotlab/home/kwatters/harry/gestures"
+gesturesPath = "c:/dev/workspace/pyrobotlab/home/kwatters/harry/gestures"
 
-aimlPath = "c:/dev/workspace.kmw/pyrobotlab/home/kwatters/harry"
+aimlPath = "c:/dev/workspace/pyrobotlab/home/kwatters/harry"
 aimlBotName = "harry"
 aimlUserName = "Kevin"
 botVoice = "Rod"
@@ -51,7 +51,7 @@ htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 
 ######################################################################
 # mouth service, speech synthesis
-mouth = Runtime.createAndStart("i01.mouth", "AcapelaSpeech")
+mouth = Runtime.createAndStart("i01.mouth", "NaturalReaderSpeech")
 mouth.setVoice(botVoice)
 
 ######################################################################
