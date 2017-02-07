@@ -81,9 +81,9 @@ def heard(data):
 ######################################################################
 #neopixel = Runtime.createAndStart("neopixel","Serial")
 #neopixel.connect("COM3", 57600, 8, 1, 0)
-inmoovWebKit = Runtime.createAndStart("inmoovWebKit", "ProgramAB")
-#inmoovWebKit.setPath(aimlPath)
-inmoovWebKit.startSession(aimlUserName, aimlBotName)
+inmoovFrench = Runtime.createAndStart("inmoovFrench", "ProgramAB")
+#inmoovFrench.setPath(aimlPath)
+inmoovFrench.startSession(aimlUserName, aimlBotName)
 
 ######################################################################
 # Html filter to clean the output from programab.  (just in case)
