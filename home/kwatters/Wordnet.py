@@ -13,7 +13,7 @@ from org.myrobotlab.service import AcapelaSpeech
 # start swing and webgui
 ######################################################################
 webgui = Runtime.createAndStart("webgui", "WebGui")
-gui = Runtime.createAndStart("gui", "GUIService")
+gui = Runtime.createAndStart("gui", "Swing")
 
 ######################################################################
 # start solr connection

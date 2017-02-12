@@ -54,7 +54,7 @@ def heard(data):
 ######################################################################
 
 # launch the swing gui?
-# gui = Runtime.createAndStart("gui", "GUIService");
+# gui = Runtime.createAndStart("gui", "Swing");
 
 ######################################################################
 # Create ProgramAB chat bot ( This is the inmoov "brain" )
