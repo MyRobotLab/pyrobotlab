@@ -5,7 +5,7 @@
 from org.myrobotlab.service import Arduino
 from org.myrobotlab.service import Servo
 from org.myrobotlab.service import Runtime
-from org.myrobotlab.service import Swing
+from org.myrobotlab.service import SwingGui
 from org.myrobotlab.service import Speech
 from time import sleep
 
@@ -16,7 +16,7 @@ calib = {}
 speech = Runtime.createAndStart("speech","Speech") # For voice feedback
 #ear = Runtime.createAndStart("listen","Sphinx") # For hearing spoken commands
 
-gui = Runtime.start("gui", "Swing")
+gui = Runtime.start("gui", "SwingGui")
 keyboard = Runtime.start("keyboard", "Keyboard") # For getting user confirmation
 
 #keyboard.addKeyListener(python)
