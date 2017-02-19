@@ -24,10 +24,11 @@ i01.mouth.speakBlocking("voice test voice test")
 MoveRandomTimer = Runtime.start("MoveRandomTimer","Clock")
 
 def MoveRandom(timedata):
-	i01.leftHand.thumb.setVelocity(random.uniform(10,300))
+	i01.leftHand.thumb.setVelocity(random.randint(10,300))
 	i01.leftHand.thumb.moveTo(random.uniform(10.1,140.2))
 	MoveRandomTimer.setInterval(random.randint(500,900))
 	i01.mouth.speak("test")
 	
 MoveRandomTimer.addListener("pulse", python.name, "MoveRandom")
 MoveRandomTimer.startClock()
+	
