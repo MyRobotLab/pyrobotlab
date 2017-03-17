@@ -1,4 +1,5 @@
 speech = Runtime.start("speech", "VoiceRss")
 speech.setKey("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 speech.setLanguage("en-gb")
+speech.setRate(0)
 speech.speakBlocking("it works, yes I believe it does")
