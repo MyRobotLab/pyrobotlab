@@ -15,3 +15,5 @@ clock.addListener("pulse","log","log")
 
 # start the clock
 clock.startClock()
+# optional : wait the first loop before execution start
+# clock.startClock(1)
