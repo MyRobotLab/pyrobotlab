@@ -53,6 +53,7 @@ i01.head.rothead.setRest(90)
 #################
 i01.startEyesTracking(leftPort,22,24)
 i01.startHeadTracking(leftPort)
+# mrl > 1999 : i01.startHeadTracking(leftPort,12,13)
 ############################################################
 #to tweak the default PID values
 i01.eyesTracking.pid.setPID("eyeX",12.0,1.0,0.1)
