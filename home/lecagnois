@@ -1,0 +1,27 @@
+# ##############################################################################
+# 								TIMERS ACTION
+# ##############################################################################
+
+###############################################################################
+# Timer function to autostart webkit microphone every 10seconds
+# only if robot not actualy speaking
+###############################################################################
+HealthCheck = Runtime.start("HealthCheck","Clock")
+HealthCheck.setInterval(60000)
+
+def HealthCheck_def(timedata):
+
+	#### modif JPM
+	minute = str(timedata)[14:16]
+	heure = str(timedata)[11:13]
+	if minute =="00" :
+		talkBlocking("il est "+heure+" heure")
+              
+	
+	if RobotIsErrorMode==1:
+		if error_red:
+			PlayNeopixelAnimation("Flash Random", 255, 0, 0, 5)
+	
+
+HealthCheck.addListener("pulse", python.name, "HealthCheck_def")		
+HealthCheck.startClock()
