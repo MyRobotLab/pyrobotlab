@@ -15,7 +15,15 @@ def onLeapData(data):
     # if the data has a right hand, print out some info about it.
     print("Right Index =" + str(data.rightHand.index))
     # update a position of
-    writer.writerows(data.rightHand.index)
+    columns = [ data.rightHand.thumb, 
+                data.rightHand.index, 
+                data.rightHand.middle,
+                data.rightHand.ring,
+                data.rightHand.pinky,
+                data.rightHand.posX,
+                data.rightHand.posY,
+                data.rightHand.posZ ]
+    writer.writerow(columns)
     
   else:
     # the right hand wasn't found.
