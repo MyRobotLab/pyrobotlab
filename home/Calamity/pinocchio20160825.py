@@ -12,8 +12,8 @@ import socket
 pcName = socket.gethostname()
 if (pcName == "Christian-PC"):
   basePath = "D:\Users\Christian\Desktop\InMoov"
-  leftPort = "COM15"
-  rightPort = "COM11"
+  leftPort = "COM22"
+  rightPort = "COM3"
 elif (pcName == "Samsung"):
   basePath = "C:\Users\chris_000\Desktop\InMoov"
   leftPort = "COM20"
@@ -54,7 +54,7 @@ def heard(data):
 ######################################################################
 
 # launch the swing gui?
-# gui = Runtime.createAndStart("gui", "SwingGui");
+# gui = Runtime.createAndStart("gui", "GUIService");
 
 ######################################################################
 # Create ProgramAB chat bot ( This is the inmoov "brain" )
@@ -69,8 +69,11 @@ htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 
 ######################################################################
 # mouth service, speech synthesis
-mouth = Runtime.createAndStart("i01.mouth", "AcapelaSpeech")
-mouth.setVoice(botVoice)
+mouth = Runtime.createAndStart("i01.mouth", "VoiceRss")
+mouth.setKey("***")
+mouth.setLanguage("en-gb")
+mouth.setRate(0)
+#mouth.setVoice(botVoice)
 
 ######################################################################
 # the "ear" of the inmoov TODO: replace this with just base inmoov ear?
@@ -94,9 +97,10 @@ if startInMoov:
   #i01.startAll(leftPort, rightPort)
   i01.startMouth()
   i01.startMouthControl(leftPort)
-  i01.head.jaw.setMinMax(60,90)
+  i01.head.jaw.map(0,180,60,90)
   i01.mouthControl.setmouth(60,90)
   i01.head.jaw.setRest(90)
+  i01.head.jaw.setVelocity(100)
   i01.head.neck.map(0,180,20,160)
   i01.head.neck.setRest(90)
   i01.head.neck.setVelocity(185)
@@ -122,9 +126,9 @@ else:
 # Launch the web gui and create the webkit speech recognition gui
 # This service works in Google Chrome only with the WebGui
 #################################################################
-webgui=Runtime.create("WebGui","WebGui")
-webgui.autoStartBrowser(False)
-webgui.startService()
+#webgui=Runtime.create("WebGui","WebGui")
+#webgui.autoStartBrowser(False)
+#webgui.startService()
 
 ######################################################################
 # END MAIN SERVICE SETUP SECTION
@@ -143,4 +147,7 @@ sleep(3)
 startAll()
 pinocchio.getResponse("hello");
 #pinocchio.getResponse("start in move")
-startIK3D() 
+#startIK3D() 
+
+i01.startVinMoov()
+i01.startIntegratedMovement()
