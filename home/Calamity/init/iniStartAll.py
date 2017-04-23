@@ -1,11 +1,11 @@
 headTilt=Runtime.createAndStart("headTilt","Servo")
 # OpenCV
-opencv = i01.startOpenCV()
-opencv.setCameraIndex(2)
-opencv.capture()
-opencvR = Runtime.createAndStart("opencvR","OpenCV")
-opencvR.setCameraIndex(0)
-opencvR.capture()
+#opencv = i01.startOpenCV()
+#opencv.setCameraIndex(2)
+#opencv.capture()
+#opencvR = Runtime.createAndStart("opencvR","OpenCV")
+#opencvR.setCameraIndex(0)
+#opencvR.capture()
 
 def startAll():
   startLeftArm()
