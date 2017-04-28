@@ -1,6 +1,9 @@
+#This script allows to control a robot with differential steering using a joystick for example xbox360-controller
+#worky on build 2105
 from math import expm1
 #Variables
 saberPort = "/dev/ttyUSB0"
+controller = 3
 
 #Initializing Motorcontroller
 saber = Runtime.start("saber", "Sabertooth")
@@ -9,13 +12,20 @@ sleep(5)
 
 #Initializing Joystick
 joystick = Runtime.start("joystick","Joystick")
+#joystick = Runtime.createAndStart("joystick","Joystick")
+#joystick.setController(controller)
+#joystick.addInputListener(python)
 print(joystick.getControllers())
 python.subscribe("joystick","publishJoystickInput")
-joystick.setController(0)
+joystick.setController(controller)
 joystick.startPolling()
 
 motMixLOld = 0
 motMixROld = 0
+rT2 = 0
+joyY = 0
+joyX = 0
+
 
 def onJoystickInput(data):
 	print (data)
