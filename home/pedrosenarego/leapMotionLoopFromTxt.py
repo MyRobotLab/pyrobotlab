@@ -3,7 +3,10 @@ import csv
 f = open("Index.csv", "rb")
 reader = csv.reader(f, delimiter='\t', lineterminator='\n',)
 columns = list(reader)
-   
+
+print(columns)
+#indexarino = ((100-columns)*1.8)
+#servo01.moveTo(indexarino)   
   
 # set the servo pin that we'll control
 servoPin = 3

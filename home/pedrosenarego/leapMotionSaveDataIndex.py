@@ -8,21 +8,15 @@ def onLeapData(data):
   # right hand first
   #create file
   global writer
-  f = open("Index.csv", "wb")
-  writer = csv.writer(f)
+  f = open("Index.csv", "a")
+  writer = csv.writer(f, delimiter='\t', lineterminator='\n',)
   
   if (data.rightHand):
     # if the data has a right hand, print out some info about it.
     print("Right Index =" + str(data.rightHand.index))
     # update a position of
-    columns = [ data.rightHand.thumb, 
-                data.rightHand.index, 
-                data.rightHand.middle,
-                data.rightHand.ring,
-                data.rightHand.pinky,
-                data.rightHand.posX,
-                data.rightHand.posY,
-                data.rightHand.posZ ]
+    columns = [ data.rightHand.index,
+                ]
     writer.writerow(columns)
     
   else:
