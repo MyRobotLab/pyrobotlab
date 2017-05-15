@@ -1,4 +1,4 @@
-OpenWeatherMap=Runtime.createAndStart("OpenWeatherMapTranslator", "OpenWeatherMap")
+OpenWeatherMap=Runtime.createAndStart("OpenWeatherMap", "OpenWeatherMap")
 OpenWeatherMap.setApiKey("YOUR_KEY") #https://home.openweathermap.org/
 OpenWeatherMap.setUnits("metric") # or imperial
 OpenWeatherMap.setLang("fr") # en / de ...
