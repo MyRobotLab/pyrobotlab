@@ -42,6 +42,7 @@ def onJoystickInput(data):
   # define the x and y variables as global
   global x
   global y
+  update = False
   # a debug statement to print the data being returned from the joystick
   print(data, data.id, data.value)
   if data.id == u'ry':
@@ -51,10 +52,12 @@ def onJoystickInput(data):
   if data.id == u'x':
      # assign the value to the global variable "x"
      x = data.value
+     update = True
      print("button x is ", data.value)
   if data.id == u'y':
      # assign the joystick value to the global variable y
      y = data.value
+     update = True
      # print("button y is ", data.value)
   if data.id == 'z':
      print("axis z is ", data.value)
@@ -63,9 +66,10 @@ def onJoystickInput(data):
      
   # at this point we have the latest values for x and y saved in global memory
   # compute the values to send to the motors
-  lefty=y+x                  
-  righty=y-x
-  # send the values to the motors.
-  leftMotor.move(lefty)
-  rightMotor.move(righty)
+  if update:
+    lefty=y+x                  
+    righty=y-x
+    # send the values to the motors.
+    leftMotor.move(lefty)
+    rightMotor.move(righty)
  
