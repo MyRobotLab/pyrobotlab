@@ -20,10 +20,10 @@
 
 	# we want them sent to python so we subscribe to
 	# the publishOSCMessage method
-	python.subscribe("osc", "publishOSCMessage")
+	python.subscribe("osc", "publishOscMessage")
 
 	# the messages will come back to us in onOscMessage
-	def onOSCMessage(message):
+	def onOscMessage(message):
 	  print(message)
 	  data = message.getArguments()
 	  for d in data:
