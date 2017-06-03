@@ -11,7 +11,7 @@
 	# sendMsg(topic, arg1, arg2, arg3, ...)
 	osc.sendMsg("/test", "this is a string", 3, 7.5, "another string")
 	osc.sendMsg("/newTopic", 18, "hello", 4.5)
-	osc.sendMsg("/somewhere/else", "this", "is", 7, 3.3, "variable arguments")
+	osc.sendMsg("/somewhere", "this", "is", 7, 3.3, "variable arguments")
 
 	# to listen we choose a port - and an address filter
 	osc.listen("/*", 6000) # this should be everything ..
