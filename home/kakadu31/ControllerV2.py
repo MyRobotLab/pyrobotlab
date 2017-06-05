@@ -1,5 +1,5 @@
 #This script allows to control a robot with differential steering using a joystick for example xbox360-controller
-#worky on build 2105
+#worky on build 2234
 from math import expm1
 #Variables
 saberPort = "/dev/ttyUSB0"
