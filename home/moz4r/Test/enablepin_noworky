@@ -1,0 +1,11 @@
+i01 = Runtime.createAndStart("i01", "InMoov")
+
+right = Runtime.create("i01.right", "Arduino")
+right.setBoard("atmega2560")
+right = Runtime.start("i01.right", "Arduino")
+right.connect("COM29")
+
+
+right.enablePin(23,1)
+i01.startRightHand("COM29")
+right.enablePin(23,1)
