@@ -1,4 +1,5 @@
-# Start the Adafruit16CServodriver that can be used for all PCA9685 devices
+# From version 1.0.2316 use attach instead of setController
+# Start the Adafruit16CSe#rvodriver that can be used for all PCA9685 devices
 adaFruit16c = Runtime.createAndStart("AdaFruit16C","Adafruit16CServoDriver")
 #
 # This part of the script is for the Arduino
@@ -6,7 +7,8 @@ adaFruit16c = Runtime.createAndStart("AdaFruit16C","Adafruit16CServoDriver")
 # Change COM4 to the port where your Arduino is connected
 arduino = Runtime.createAndStart("Arduino","Arduino")
 arduino.connect("COM4")
-adaFruit16c.setController("Arduino","1","0x40")
+# adaFruit16c.setController("Arduino","1","0x40")
+adaFruit16c.attach("Arduino","1","0x40")
 #
 # This part creates two servo instances
 # on port 3 and 8 on the Adafruit16CServoDriver
