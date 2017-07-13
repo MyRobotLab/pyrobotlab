@@ -10,11 +10,13 @@ arduino = Runtime.createAndStart("Arduino","Arduino")
 arduino.connect("COM3")
 # Sleep so that the Arduino can be initialized
 sleep(4)
-ads1115.setController(arduino,"1","0x48")
+# From version 1.0.2316 use attach instead of setController
+# ads1115.setController(arduino,"1","0x48")
+ads1115.attach(arduino,"1","0x48")
 
 # This section is to be used if you use the i2c pins of the Raspberry PI
 # raspi = Runtime.createAndStart("Raspi","RasPi")
-# ads1115.setController(raspi,"1","0x48")
+# ads1115.attach(raspi,"1","0x48")
 
 # This section is common and shows how you can get the raw adc values and the voltages
 ads1115.refresh()
