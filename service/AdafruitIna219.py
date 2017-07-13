@@ -10,12 +10,16 @@ arduino = Runtime.createAndStart("Arduino","Arduino")
 arduino.connect("COM3")
 raspi = Runtime.createAndStart("RasPi","RasPi")
 ina219 = Runtime.createAndStart("AdafruitIna219","AdafruitIna219")
-ina219.setController(arduino,"1","0x40")
+# From version 1.0.2316 use attach instead of setController
+ina219.setController(arduino,"1","0x40")'
+ina219.attach(arduino,"1","0x40")
 # 
 # This section shows is if you use the GPIO i2c pins on the RaspBerry Pi directly
 raspi = Runtime.createAndStart("RasPi","RasPi")
 ina219 = Runtime.createAndStart("AdafruitIna219","AdafruitIna219")
-ina219.setController(raspi,"1","0x40")
+# From version 1.0.2316 use attach instead of setController
+# ina219.setController(raspi,"1","0x40")
+ina219.attach(raspi,"1","0x40")
 #
 # This sections shows how to get the values from the service
 ina219.refresh()
