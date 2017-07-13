@@ -1,6 +1,8 @@
+# From version 1.0.2316 use attach instead of setController
 # This script is if you use the GPOI pins of the Raspberry PI
 raspi = Runtime.createAndStart("RasPi","RasPi")
-adaFruit16c.setController("RasPi","1","0x40")
+# adaFruit16c.setController("RasPi","1","0x40")
+adaFruit16c.attach("RasPi","1","0x40")
 #
 # This part is common for both devices and creates two servo instances
 # on port 3 and 8 on the Adafruit16CServoDriver
