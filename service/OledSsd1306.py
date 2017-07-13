@@ -5,9 +5,11 @@ arduino.connect("COM3")
 # raspi = Runtime.createAndStart("RasPi","RasPi")
 # Select the Arduino as controller for the OLED on bus 1 and i2c address 0x3C
 oled = Runtime.createAndStart("OLED","OledSsd1306")
-oled.setController(arduino,"1","0x3C")
+# From version 1.0.2316 use attach instead of setController
+# oled.setController(arduino,"1","0x3C")
+oled.attach(arduino,"1","0x3C")
 # Alternative if you use the RasPi
-# oled.setController(raspi,"1","0x3C")
+# oled.attach(raspi,"1","0x3C")
 # Demo to show how to write images
 # Images arrays are created using the LCDAssistance as described here:
 # https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples
