@@ -3,7 +3,9 @@ arduino = Runtime.createAndStart("Arduino","Arduino")
 arduino.connect("COM3")
 # Select the Arduino as controller for the IO extender on bus 1 and i2c address 0x38
 pcf = Runtime.createAndStart("Pcf","Pcf8574")
-pcf.setController(arduino,"1","0x38")
+# From version 1.0.2316 use attach instead of setController
+# pcf.setController(arduino,"1","0x38")
+pcf.attach(arduino,"1","0x38")
 # Set four pins as output. 
 pcf.pinMode(0,"OUTPUT")
 pcf.pinMode(1,"OUTPUT")
