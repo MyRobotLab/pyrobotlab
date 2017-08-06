@@ -1,29 +1,25 @@
-###############################
+###################################################
+# This is a basic script to carry on a conversation
+# with ghost
+###################################################
 
-from org.myrobotlab.service import Runtime
+# create service 
+ghost = Runtime.start("ghost", "WebGui")
+ear = Runtime.start("ear", "WebkitSpeechRecognition")
+ghostchat = Runtime.start("ghostchat", "ProgramAB")
+htmlfilter = Runtime.start("htmlfilter", "HtmlFilter")
+mouth = Runtime.start("mouth", "NaturalReaderSpeech")
 
-from java.lang import String
-
-Ghost = Runtime.createAndStart("Ghost", "WebGui")
-
-wksr = Runtime.createAndStart("webkitspeechrecognition", "WebkitSpeechRecognition")
-
-ghostchat = Runtime.createAndStart("ghostchat", "ProgramAB")
-
-ghostchat.startSession("ProgramAB/bots", "ghostchat")
-
-htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
-
-NaturalReaderSpeech = Runtime.createAndStart("speech", "NaturalReaderSpeech")
+# start a chatbot session
+ghostchat.start("ProgramAB/bots", "ghostchat")
 
 voices = NaturalReaderSpeech.getVoices()
+# I've also tried removing this because I got an iteration error for this line
+# for voice in voices:  
+#          NaturalReaderSpeech.setVoice("Ryan")
 
-for voice in voices:  //I've also tried removing this because I got an iteration error for this line
-
-          NaturalReaderSpeech.setVoice("Ryan")
-
-wksr.addTextListener(ghostchat)
-
+# - I'll need to check on these - might
+# need to just "attach" some services together
+ear.addTextListener(ghostchat)
 ghostchat.addTextListener(htmlfilter)
-
-htmlfilter.addTextListener(NaturalReaderSpeech)
+htmlfilter.addTextListener(mouth)
