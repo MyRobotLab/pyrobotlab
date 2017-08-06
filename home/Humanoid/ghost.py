@@ -11,7 +11,7 @@ htmlfilter = Runtime.start("htmlfilter", "HtmlFilter")
 mouth = Runtime.start("mouth", "NaturalReaderSpeech")
 
 # start a chatbot session
-ghostchat.start("ProgramAB/bots", "ghostchat")
+ghostchat.startSession("ProgramAB/bots", "ghostchat")
 
 voices = NaturalReaderSpeech.getVoices()
 # I've also tried removing this because I got an iteration error for this line
