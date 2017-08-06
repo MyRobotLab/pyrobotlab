@@ -13,7 +13,7 @@ mouth = Runtime.start("mouth", "NaturalReaderSpeech")
 # start a chatbot session
 ghostchat.startSession("ProgramAB/bots", "ghostchat")
 
-voices = NaturalReaderSpeech.getVoices()
+voices = mouth.getVoices()
 # I've also tried removing this because I got an iteration error for this line
 # for voice in voices:  
 #          NaturalReaderSpeech.setVoice("Ryan")
