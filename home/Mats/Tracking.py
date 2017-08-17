@@ -4,6 +4,7 @@ from org.myrobotlab.opencv import OpenCVFilterAffine
 cameraIndex = 0
 port = 'COM3'
 arduino = Runtime.start("tracker.controller","Arduino")
+pid = Runtime.start("tracker.pid","Pid")
 sleep(5)
 arduino.connect(port)
 sleep(4)
@@ -17,19 +18,12 @@ y.attach(arduino,12)
 y.setMinMax(60,140)
 #
 tracker = Runtime.start("tracker","Tracking")
+pid.setPID("x", 20.0, 5.0, 0.1);
+pid.setPID("y", 20.0, 5.0, 0.1);
 affine = OpenCVFilterAffine("affine")
 affine.setAngle(180.0)
 opencv = Runtime.getService("tracker.opencv")
 tracker.preFilters.add(affine)
 opencv.setDisplayFilter("affine")
-def restart():
-	print 'Facedetect started'
-	tracker.faceDetect()
-	sleep(30)
-	print 'Facedetect stop'
-	tracker.stopTracking()
-	x.rest()
-	y.rest()
-	sleep(3)
-while (1==1):
-	restart()	
+tracker.faceDetect()
+
