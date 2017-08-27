@@ -47,8 +47,8 @@ i01.systemCheck()
 # WebGUI - for more information see
 # http://myrobotlab.org/service/WebGUI
 
-# XMPP - for more information see
-# http://myrobotlab.org/service/XMPP
+# Xmpp - for more information see
+# http://myrobotlab.org/service/Xmpp
 
 # system check - called at anytime
 #i01.systemCheck()

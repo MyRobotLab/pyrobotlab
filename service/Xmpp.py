@@ -1,5 +1,5 @@
 # simple script to show how to send a message to and recieve a message from
-# using a robot with the XMPP service 
+# using a robot with the Xmpp service 
 
 # create an xmpp service
 xmpp = Runtime.createAndStart("xmpp","Xmpp")
