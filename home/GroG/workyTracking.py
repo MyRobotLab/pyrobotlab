@@ -1,4 +1,4 @@
-useVirtualArduino = True;
+useVirtualArduino = False;
 xPin = 9;
 yPin = 6;
 arduinoPort = "COM5";
