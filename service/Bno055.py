@@ -2,9 +2,13 @@ arduino = Runtime.createAndStart("arduino","Arduino")
 arduino.connect("COM11")
 
 bno = Runtime.createAndStart("bno","Bno055")
+<<<<<<< HEAD
 # From version 1.0.2316 use attach instead of setController
 # bno.setController(arduino)
 bno.attach(arduino)
+=======
+bno.setController(arduino)
+>>>>>>> master
 
 # interrupt pin is attach to pin 8
 bno.attachInterruptPin(arduino, 8)

@@ -1,0 +1,15 @@
+from org.myrobotlab.service import Runtime
+from java.lang import String
+
+holygrail = Runtime.createAndStart("holygrail", "WebGui")
+wksr = Runtime.createAndStart("webkitspeechrecognition", "WebkitSpeechRecognition")
+YOURBOTNAME= Runtime.createAndStart("YOURBOTNAME", "ProgramAB")
+YOURBOTNAME.startSession("ProgramAB/bots", "YOURBOTNAME")
+htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
+acapelaSpeech = Runtime.createAndStart("speech", "AcapelaSpeech")
+voices = acapelaSpeech.getVoices()
+for voice in voices:
+    acapelaSpeech.setVoice("Ryan")
+wksr.addTextListener(YOURBOTNAME)
+YOURBOTNAME.addTextListener(htmlfilter)
+htmlfilter.addTextListener(acapelaSpeech)

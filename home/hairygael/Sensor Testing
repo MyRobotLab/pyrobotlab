@@ -1,0 +1,14 @@
+#This simple sensor InMoov script was tested on MyRobotLab version 1.0.1851
+#The result should be seen in the Oscope and in the java tab.
+
+left=Runtime.create("i01.left", "Arduino")
+left.setBoard("atmega2560")
+left = Runtime.start("i01.left", "Arduino")
+left.connect("COM20")
+ 
+def publishPin(pins):
+    for pin in range(0, len(pins)):
+        print pins[pin].address, pins[pin].value
+ 
+left.addListener("publishPinArray","python","publishPin")
+left.enablePin(30,1) # THE NUMBER 1 IS HOW MANY POLLS / SECONDS

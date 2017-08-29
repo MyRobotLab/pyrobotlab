@@ -1,0 +1,2 @@
+myServo = Runtime.createAndStart("myServo", "Servo")
+myServo.setMinMax(10,50)

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>WHAT IS YOUR NAME</pattern>
+    <template>
+      <condition name = "language">
+        <li value = "french">
+          <think><set var = "action">DONNE LA MAIN</set></think>
+          <random>
+            <li><bot name="name"/>.</li>
+            <li>Je suis <bot name="name"/>.</li>
+            <li>Je m'appelle <bot name = "name"/>.</li>
+            <li>On m'appelle <bot name = "name"/>.</li>
+            <li><bot name = "botmaster"/> m'a nommé <bot name = "name"/>.</li>
+            <li>
+              Je dis que je suis <bot name = "name"/>. Mais je suis...
+              <srai>PINOCCHIOLYING</srai>
+              <random>
+                <li>
+                  <think><set var = "action">SUPERMAN</set></think>
+                </li>
+                <li><think><set var = "action">QUEEN</set></think></li>
+              </random>
+            </li>
+          </random>
+        </li>
+        <li>
+          <think><set var = "action">SHAKE HAND</set></think>
+          <random>
+            <li><bot name="name"/>.</li>
+            <li>I am<bot name="name"/>.</li>
+            <li>My name is <bot name = "name"/>.</li>
+            <li>They call me <bot name = "name"/>.</li>
+            <li><bot name = "botmaster"/> named me as <bot name = "name"/>.</li>
+            <li>
+              I'm saying that I'm <bot name = "name"/>. But I am...
+              <srai>PINOCCHIOLYING</srai>
+              <random>
+                <li>
+                  <think><set var = "action">SUPERMAN</set></think>
+                </li>
+                <li><think><set var = "action">QUEEN</set></think></li>
+               </random>
+            </li>
+          </random>
+        </li>
+      </condition>
+      <srai><get var = "action"/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>QUEL EST TON NOM</pattern>
+    <template><srai>WHAT IS YOUR NAME</srai></template>
+  </category>
+</aiml>

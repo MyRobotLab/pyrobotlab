@@ -1,0 +1,108 @@
+0,AT EASY,*,*,<srai>REST</srai>,asraix.aiml
+0,RELAX,*,*,<srai>REST</srai>,asraix.aiml
+0,PUT YOUR HEAD UP,*,*,<srai>HEAD UP</srai>,asraix.aiml
+0,* HEAD UP,*,*,<srai>HEAD UP</srai>,asraix.aiml
+0,HEAD UP *,*,*,<srai>HEAD UP</srai>,asraix.aiml
+0,* HEAD UP *,*,*,<srai>HEAD UP</srai>,asraix.aiml
+0,HEADS UP,*,*,<srai>HEAD UP</srai>,asraix.aiml
+0,LOOK UP,*,*,<srai>HEAD UP</srai>,asraix.aiml
+0,PUT YOUR HEAD DOWN,*,*,<srai>HEAD DOWN</srai>,asraix.aiml
+0,* HEAD DOWN,*,*,<srai>HEAD DOWN</srai>,asraix.aiml
+0,HEAD DOWN *,*,*,<srai>HEAD DOWN</srai>,asraix.aiml
+0,* HEAD DOWN *,*,*,<srai>HEAD DOWN</srai>,asraix.aiml
+0,LOOK DOWN,*,*,<srai>HEAD DOWN</srai>,asraix.aiml
+0,^ NECK TO THE LEFT,*,*,<srai>NECK LEFT</srai>,asraix.aiml
+0,^ NECK TO THE RIGHT,*,*,<srai>NECK RIGHT</srai>,asraix.aiml
+0,PUT YOUR HEAD TO THE LEFT,*,*,<srai>HEAD LEFT</srai>,asraix.aiml
+0,LOOK TO THE LEFT,*,*,<srai>HEAD LEFT</srai>,asraix.aiml
+0,PUT YOUR HEAD TO THE RIGHT,*,*,<srai>HEAD RIGHT</srai>,asraix.aiml
+0,LOOK TO THE RIGHT,*,*,<srai>HEAD RIGHT</srai>,asraix.aiml
+0,OPEN YOUR ARMS,*,*,<srai>ARMS OPEN</srai>,asraix.aiml
+0,ARMS CLOSE,*,*,<srai>ARMS CLOSED</srai>,asraix.aiml
+0,CLOSE YOUR ARMS,*,*,<srai>ARMS CLOSED</srai>,asraix.aiml
+0,PUT YOUR ARMS TO THE AIR,*,*,<srai>ARMS AIR</srai>,asraix.aiml
+0,PUT YOUR HANDS TO THE AIR,*,*,<srai>ARMS AIR</srai>,asraix.aiml
+0,ARMS TO THE AIR,*,*,<srai>ARMS AIR</srai>,asraix.aiml
+0,RAISE YOUR ARMS,*,*,<srai>ARMS AIR</srai>,asraix.aiml
+0,RAISE YOUR HANDS,*,*,<srai>ARMS AIR</srai>,asraix.aiml
+0,PUT YOUR ARMS DOWN,*,*,<srai>ARMS DOWN</srai>,asraix.aiml
+0,LOW YOUR ARMS,*,*,<srai>ARMS DOWN</srai>,asraix.aiml
+0,OPEN HANDS,*,*,<srai>OPEN HAND</srai>,asraix.aiml
+0,OPEN * HANDS,*,*,<srai>OPEN HAND</srai>,asraix.aiml
+0,OPEN * HAND,*,*,<srai>OPEN HAND</srai>,asraix.aiml
+0,CLOSE * HANDS,*,*,<srai>CLOSE HAND</srai>,asraix.aiml
+0,CLOSE * HAND,*,*,<srai>CLOSE HAND</srai>,asraix.aiml
+0,CLOSE HANDS,*,*,<srai>CLOSE HAND</srai>,asraix.aiml
+0,* STAR WARS,*,*,<srai>STAR WARS</srai>,asraix.aiml
+0,* STAR WARS *,*,*,<srai>STAR WARS</srai>,asraix.aiml
+0,STAR WARS *,*,*,<srai>STAR WARS</srai>,asraix.aiml
+0,SHOW ME YOUR NECK,*,*,<srai>CAN I SEE YOUR NECK</srai>,asraix.aiml
+0,SHOW ME YOUR NECK *,*,*,<srai>CAN I SEE YOUR NECK</srai>,asraix.aiml
+0,* SHOW ME YOUR NECK,*,*,<srai>CAN I SEE YOUR NECK</srai>,asraix.aiml
+0,* SHOW ME YOUR NECK *,*,*,<srai>CAN I SEE YOUR NECK</srai>,asraix.aiml
+0,* SEEING BIRDS,*,*,<srai>BIRDS</srai>,asraix.aiml
+0,* SEE BIRDS,*,*,<srai>BIRDS</srai>,asraix.aiml
+0,LOOK BIRDS,*,*,<srai>BIRDS</srai>,asraix.aiml
+0,DO I SEE BIRDS,*,*,<srai>BIRDS</srai>,asraix.aiml
+0,WHAT SEASON *,*,*,<srai>SEASON</srai>,asraix.aiml
+0,* WHICH SEASON *,*,*,<srai>SEASON</srai>,asraix.aiml
+0,* WHAT SEASON *,*,*,<srai>SEASON</srai>,asraix.aiml
+0,WHICH SEASON *,*,*,<srai>SEASON</srai>,asraix.aiml
+0,^ WHAT DAY OF WEEK ARE WE,*,*,<srai>DAY OF WEEK</srai>,asraix.aiml
+0,^ WHAT DAY OF WEEK ^ TODAY,*,*,<srai>DAY OF WEEK</srai>,asraix.aiml
+0,^ WHICH DAY OF WEEK ARE WE,*,*,<srai>DAY OF WEEK</srai>,asraix.aiml
+0,^ WHAT DAY OF WEEK WE STAND,*,*,<srai>DAY OF WEEK</srai>,asraix.aiml
+0,^ WHICH DAY OF WEEK WE STAND,*,*,<srai>DAY OF WEEK</srai>,asraix.aiml
+0,^ WHICH DAY OF WEEK ^ TOMORROW,*,*,<srai>TOMORROW DAY OF WEEK</srai>,asraix.aiml
+0,TOMORROW WHICH DAY OF WEEK *,*,*,<srai>TOMORROW DAY OF WEEK</srai>,asraix.aiml
+0,TOMORROW WHAT DAY OF WEEK *,*,*,<srai>TOMORROW DAY OF WEEK</srai>,asraix.aiml
+0,^ WHAT DAY OF WEEK ^ TOMORROW,*,*,<srai>TOMORROW DAY OF WEEK</srai>,asraix.aiml
+0,^ YEAR ARE WE ^,*,*,<srai>CURRENT YEAR</srai>,asraix.aiml
+0,^ YEAR ^ WE STAND ^,*,*,<srai>CURRENT YEAR</srai>,asraix.aiml
+0,^ MONTH WE ARE ^,*,*,<srai>MONTH</srai>,asraix.aiml
+0,^ MONTH ARE WE ^,*,*,<srai>MONTH</srai>,asraix.aiml
+0,^ MONTH WE STAND ^,*,*,<srai>MONTH</srai>,asraix.aiml
+0,^ GIVE ME THE TIME ^,*,*,<srai>TIME</srai>,asraix.aiml
+0,^ CURRENT TIME ^,*,*,<srai>TIME</srai>,asraix.aiml
+0,WHAT TIME IS IT,*,*,<srai>TIME</srai>,asraix.aiml
+0,WHAT IS THE TIME,*,*,<srai>TIME</srai>,asraix.aiml
+0,^ DATE ^ TODAY,*,*,<srai>^ TODAY DATE ^</srai>,asraix.aiml
+0,^ PART ^ DAY ARE WE,*,*,<srai>DAY PHASE</srai>,asraix.aiml
+0,^ PART ^ DAY WE STAND,*,*,<srai>DAY PHASE</srai>,asraix.aiml
+0,^ GIVE ^ DATE ^ TIME ^,*,*,<srai>DATE AND TIME</srai>,asraix.aiml
+0,WHAT IS ^ DATE ^ TIME ^,*,*,<srai>DATE AND TIME</srai>,asraix.aiml
+0,GIVE ME TIME AND DATE,*,*,<srai>DATE AND TIME</srai>,asraix.aiml
+0,WHAT IS ^ TIME ^ DATE ^,*,*,<srai>DATE AND TIME</srai>,asraix.aiml
+0,^ WHAT DAY IS TOMORROW ^,*,*,<srai>DATE TOMORROW</srai>,asraix.aiml
+0,^ YOU ^ SEND ^ EMAILS,*,*,<srai>CAN YOU SEND EMAIL</srai>,asraix.aiml
+0,^ YOU ^ WRITE ^ EMAILS,*,*,<srai>CAN YOU SEND EMAIL</srai>,asraix.aiml
+0,^ YOU SEND ^ EMAIL ^,*,*,<srai>CAN YOU SEND EMAIL</srai>,asraix.aiml
+0,^ YOU WRITE ^ EMAIL ^,*,*,<srai>CAN YOU SEND EMAIL</srai>,asraix.aiml
+0,SEND EMAIL *,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,SEND AN EMAIL *,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,SEND ME AN EMAIL,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,SEND ME AN EMAIL *,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,* SEND ME AN EMAIL,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,* SEND ME AN EMAIL *,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,* SEND * EMAIL,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,* SEND * EMAIL *,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,WRITE EMAIL *,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,WRITE AN EMAIL *,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,WRITE ME AN EMAIL,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,WRITE ME AN EMAIL *,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,* WRITE ME AN EMAIL,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,* WRITE ME AN EMAIL *,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,* WRITE * EMAIL,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,* WRITE * EMAIL *,*,*,<srai>SEND EMAIL</srai>,asraix.aiml
+0,* <SET>CONTACT</SET>,FOR WHOM YOU WISH TO SEND THE EMAIL,SEND EMAIL,Email sent.<oob><mrl><service>python</service><method>exec</method><param>emailtest("<map><name>contact2email</name><star/></map>"#Comma"<get name="emailcontent"/>"#Comma"<get name="emailsub"/>")</param></mrl></oob>,asraix.aiml
+0,* <SET>CONTACT</SET> *,FOR WHOM YOU WISH TO SEND THE EMAIL,SEND EMAIL,Email sent.<oob><mrl><service>python</service><method>exec</method><param>emailtest("<map><name>contact2email</name><star/></map>"#Comma"<get name="emailcontent"/>"#Comma"<get name="emailsub"/>")</param></mrl></oob>,asraix.aiml
+0,<SET>CONTACT</SET> *,FOR WHOM YOU WISH TO SEND THE EMAIL,SEND EMAIL,Email sent.<oob><mrl><service>python</service><method>exec</method><param>emailtest("<map><name>contact2email</name><star/></map>"#Comma"<get name="emailcontent"/>"#Comma"<get name="emailsub"/>")</param></mrl></oob>,asraix.aiml
+0,^ ADD ^ EVENT ^,*,*,<srai>CREATE EVENT</srai>,asraix.aiml
+0,^ ADD ^ SCHEDULE ^,*,*,<srai>CREATE EVENT</srai>,asraix.aiml
+0,^ START ^ EVENT ^,*,*,<srai>CREATE EVENT</srai>,asraix.aiml
+0,^ START ^ SCHEDULE ^,*,*,<srai>CREATE EVENT</srai>,asraix.aiml
+0,^ CREATE ^ EVENT AT *,*,*,<think><set name="topic">google calendar</set><set name="eventlocation"><star index="3"/></set></think>What is the subject of the event?,asraix.aiml
+0,^ ADD ^ EVENT AT *,*,*,<think><set name="topic">google calendar</set><set name="eventlocation"><star index="3"/></set></think>What is the subject of the event?,asraix.aiml
+0,^ ADD ^ EVENT IN *,*,*,<think><set name="topic">google calendar</set><set name="eventlocation"><star index="3"/></set></think>What is the subject of the event?,asraix.aiml
+0,^ START ^ EVENT AT *,*,*,<think><set name="topic">google calendar</set><set name="eventlocation"><star index="3"/></set></think>What is the subject of the event?,asraix.aiml
+0,^ START ^ EVENT IN *,*,*,<think><set name="topic">google calendar</set><set name="eventlocation"><star index="3"/></set></think>What is the subject of the event?,asraix.aiml

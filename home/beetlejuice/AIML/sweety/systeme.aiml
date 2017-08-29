@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+
+<category><pattern>IP</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getIp()</param>
+			</mrl>
+      </oob></template>
+</category>
+
+<category><pattern>^ TON ADRESSE IP ^</pattern>
+<template><srai>IP</srai></template>
+</category>
+</aiml>

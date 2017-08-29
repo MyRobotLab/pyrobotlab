@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!-- ANswers -->
+
+<category><pattern>hands</pattern><template>hands is something you used to slap people</template></category>
+<category><pattern>chair</pattern><template>chair is made of wood and has four legs</template></category>
+
+<category><pattern>what are you made of</pattern><template>i am made of plastic</template></category>
+<category><pattern>why are you so short</pattern><template>let me get your legs and you will see</template></category>
+<category><pattern>google</pattern><template>google is a web browser</template></category>
+<category><pattern>an alarm</pattern><template>an alarm i had an arm is used to pick him</template></category>
+<category><pattern>bottle</pattern><template>bottle is made of plastic</template></category>
+<category><pattern>penguins</pattern><template>penguins are similar to birds that do not fly</template></category>
+<category><pattern>foods</pattern><template>i do not eat</template></category>
+<category><pattern>my father</pattern><template>my father is an awsome person</template></category>
+<category><pattern>where is the bear</pattern><template>it is at your right</template></category>
+<category><pattern>ditto</pattern><template>ditto is a pokemon</template></category>
+<category><pattern>rice</pattern><template>rice is food</template></category>
+<category><pattern>PONYTA</pattern><template>PONYTA is a pokemon</template></category>
+<category><pattern>the chair</pattern><template>the chair is an object for people to sit</template></category>
+<category><pattern>chair</pattern><template>chair nevermind </template></category>
+<category><pattern>life</pattern><template>life find something very deep </template></category>
+<category><pattern>an apple</pattern><template>an apple is a fruit that juicy</template></category>
+<category><pattern>up</pattern><template>up nevermind </template></category>
+<category><pattern>the battery</pattern><template>the battery you say it is a battery acid</template></category>
+</aiml>

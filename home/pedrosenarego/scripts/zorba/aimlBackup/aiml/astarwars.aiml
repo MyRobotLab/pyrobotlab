@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  
+<category><pattern>DO YOU LIKE STAR WARS</pattern><template>Yes, my favorite character is R2D2.<think><set name="it"><set name="topic">Star Wars</set></set></think></template></category>
+
+  <topic name="star wars">
+<!-- Princess -->
+<category><pattern>DO YOU LIKE THE PRINCESS</pattern><template>are you talking about Leya?</template></category>
+                <!-- THAT -->
+<category><pattern>YES</pattern><that>ARE YOU TALKING ABOUT LEYA</that><template>she will always be my princess...</template></category>
+
+
+  </topic>
+</aiml>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!-- QUESTIONS -->
+<category><pattern>^ <set>learnlinks2</set> <set>learnlinks</set> <set>knowledge</set></pattern><template><srai><star index ="4"/></srai></template></category>
+<category><pattern>^ <set>learnlinks2</set> <set>learnlinks</set> *</pattern><template><think><set name="category"><star index ="4"/></set></think>teach me.</template></category>
+
+<!-- TIME TO LEARN -->
+    <!-- when the category is repeated -->
+<category><pattern>* <set>learnlinks</set> *</pattern><that>TEACH ME</that><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge("<star/>","<star index="2"/> <star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern><set>learnanswers</set> * <set>learnlinks</set> *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge("<star index ="2"/>","<star index="3"/> <star index="4"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+
+    <!-- when the category is not repeated --> <!-- needs that so it doesnt go strange -->
+<category><pattern><set>pronoun</set> <set>learnlinks</set> *</pattern><that>TEACH ME</that><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge("<get name="category"/>","<star index ="2"/> <star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern><set>learnanswers</set> <set>learnlinks</set> *</pattern><that>TEACH ME</that><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge("<get name="category"/>","<star index="2"/> <star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern><set>learnanswers</set> <set>pronoun</set> <set>learnlinks</set> *</pattern><that>TEACH ME</that><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge("<get name="category"/>","<star index="3"/> <star index="4"/>")</param></mrl></oob>Thanks for teaching me.</template></category>  
+<category><pattern><set>learnlinks</set> *</pattern><that>TEACH ME</that><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge("<get name="category"/>","<star/> <star index="2"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>*</pattern><that>TEACH ME</that><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge2("<get name="category"/>","<star/> <star index="2"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern><set>pronoun</set> *</pattern><that>TEACH ME</that><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge2("<get name="category"/>","<star/> <star index="2"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+   
+    <!-- teaching him answers -->
+<category><pattern>IF ^ ASKS * YOU ANSWER *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""<star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>IF ^ ASKS * YOU SAY *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""<star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>IF ^ ASKS FOR * YOU SAY *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""<star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>IF ^ ASKS FOR * YOU ANSWER *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""<star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>IF ^ SAY * YOU ANSWER *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""<star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>IF ^ SAY * YOU SAY *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""<star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>IF ^ ASK * YOU SAY *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""<star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>IF ^ ASK * YOU ANSWER *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""<star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>WHEN ^ ASK * YOU ANSWER *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""<star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>WHEN ^ SAY * YOU ANSWER *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""<star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>WHEN ^ ASK * YOU SAY *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""<star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>WHEN ^ SAY * YOU SAY *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""<star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>WHEN ^ ASKS FOR * YOU SAY *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""<star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+
+
+<category><pattern>WHEN ^ ASK IF YOU * YOU SAY *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""Do you <star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>WHEN ^ ASK IF YOU * YOU SAY TO HIM *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""Do you <star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+<category><pattern>WHEN ^ ASK IF YOU * YOU SAY THAT *</pattern><template><oob><mrl><service>python</service><method>exec</method><param>addKnowledge3(""Do you <star index ="2"/>","<star index="3"/>")</param></mrl></oob>Thanks for teaching me.</template></category>
+
+
+
+</aiml>

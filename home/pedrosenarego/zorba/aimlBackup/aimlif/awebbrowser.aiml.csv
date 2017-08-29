@@ -1,0 +1,6 @@
+0,OPEN <SET>WEBSITES</SET>,*,*,done.<oob><mrl><service>python</service><method>exec</method><param>browser("<map><name>websites2url</name><star/></map>")</param></mrl></oob>,awebbrowser.aiml
+0,SEARCH <SET>WEBSITES</SET> FOR *,*,*,done.<oob><mrl><service>python</service><method>exec</method><param>browserSearch("<map><name>websites2url</name><star/></map>"#Comma"<star index="2"/>")</param></mrl></oob>,awebbrowser.aiml
+0,SEARCH *,*,*,.<oob><mrl><service>python</service><method>exec</method><param>searchGoogle("<star/>")</param></mrl></oob>,awebbrowser.aiml
+0,WHO IS *,*,*,.<oob><mrl><service>python</service><method>exec</method><param>searchGoogle("who is"+" "+"<star/>")</param></mrl></oob>,awebbrowser.aiml
+0,WHAT IS *,*,*,.<oob><mrl><service>python</service><method>exec</method><param>searchGoogle("what is"+" "+"<star/>")</param></mrl></oob>,awebbrowser.aiml
+0,HOW FAR *,*,*,.<oob><mrl><service>python</service><method>exec</method><param>searchGoogle("how far"+" "+"<star/>")</param></mrl></oob>,awebbrowser.aiml

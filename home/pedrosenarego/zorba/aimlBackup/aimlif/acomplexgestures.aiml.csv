@@ -1,0 +1,2 @@
+0,STAR WARS,*,*,<think><set name="topic">star wars</set></think><oob><mrl><service>python</service><method>exec</method><param>starwars()</param></mrl></oob>,acomplexgestures.aiml
+0,BIRDS,*,*,<oob><mrl><service>python</service><method>exec</method><param>birds()</param></mrl></oob>,acomplexgestures.aiml

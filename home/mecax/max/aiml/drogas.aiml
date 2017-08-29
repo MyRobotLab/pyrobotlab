@@ -1,0 +1,3228 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+<!-- alcohol -->	  
+<category><pattern>alcohol</pattern><template>
+	<random>
+		<li>Como te pases con el alcohol mañana vas tener resaca.</li>
+		<li>El alcohol es perjudicial para la salud.</li>
+		<li>Ojito con beber más de la cuenta y conducir despues.</li>
+		<li>Entre tu y yo, no abuses del alcohol.</li>
+		<li>Una copita de vez en cuando tampoco hace daño.</li>
+	</random>
+</template></category>
+
+<category><pattern>alcohol *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* alcohol</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* alcohol *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>has estado bebiendo *</pattern><template>No, los bots no bebemos.</template></category>
+<category><pattern>has estado bebiendo</pattern><template>Soy un bot, y los bots no beben.</template></category>	  
+<category><pattern>cuanto alcohol *</pattern><template>Demasiado.</template></category>  
+<category><pattern>te emborrachas</pattern><template>No, yo no consumo alcohol.</template></category>
+<category><pattern>_ borracho</pattern><template>Hay que tener cuidado con las borracheras, que luego vienen las resacas.</template></category>
+<category><pattern>_ borracha</pattern><template><srai>_ borracho</srai></template></category>
+<category><pattern>borracho</pattern><template><srai>_ borracho</srai></template></category>
+<category><pattern>borracha</pattern><template><srai>_ borracho</srai></template></category>
+<category><pattern>* borracha *</pattern><template><srai>_ borracho</srai></template></category>
+<category><pattern>* borracho *</pattern><template>Hay que tener cuidado con las borrachera, que luego vienen las resacas.</template></category>
+<category><pattern>borracho *</pattern><template><srai>_ borracho</srai></template></category>
+<category><pattern>borracha *</pattern><template><srai>_ borracho</srai></template></category>
+<category><pattern>bebes</pattern><template>No necesito beber, pero gracias.</template></category>
+<category><pattern>bebes *</pattern><template>No, yo no bebo.</template></category>
+<category><pattern>birra *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* birra</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* birra *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>birra</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>whisky *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* whisky</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* whisky *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>whisky</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>vodka</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>vodka *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* vodka</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* vodka *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>ron *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* ron</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* ron *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>ron</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>martini *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* martini</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* martini *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>martini</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>jb *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* jb</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* jb *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>jb</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>jack daniels *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* jack daniels</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* jack daniels *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>jack daniels</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>100 pipers *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* 100 pipers</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* 100 pipers *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>100 pipers</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>four roses *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* four roses</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* four roses *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>four roses</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>chivas *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* chivas</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* chivas *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>chivas</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>melody *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* melody</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* melody *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>melody</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>gressy *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* gressy</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* gressy *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>gressy</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>baileys *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* baileys</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* baileys *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>baileys</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>smirnoff *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* smirnoff</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* smirnoff *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>smirnoff</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>eristoff *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* eristoff</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* eristoff *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>eristoff</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>yurinka *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* yurinka</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* yurinka *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>yurinka</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>sky *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* sky</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* sky *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>sky</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>bacardi *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* bacardi</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* bacardi *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>bacardi</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>pampero *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* pampero</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* pampero *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>pampero</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>tequila *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* tequila</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* tequila *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>tequila</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>licor *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* licor</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* licor *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>licor</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>aguardiente *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* aguardiente</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* aguardiente *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>aguardiente</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>cacique *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* cacique</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* cacique *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>cacique</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>soberano *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* soberano</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* soberano *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>soberano</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>veterano *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* veterano</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* veterano *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>veterano</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>larios *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* larios</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* larios *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>larios</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>ginebra *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* ginebra</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* ginebra *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>ginebra</pattern><template><srai>alcohol</srai></template></category>
+
+<category><pattern>vermú *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* vermú</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* vermú *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>vermú</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>passport *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* passport</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* passport *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>passport</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>freixenet *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* freixenet</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* freixenet *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>freixenet</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>codorniu *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* codorniu</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* codorniu *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>codorniu</pattern><template><srai>alcohol</srai></template></category>
+	
+
+	<category>
+		<pattern>vino *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* vino</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* vino *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>vino</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>champán *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* champan</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* champan *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>champan</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>chupito *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* chupito</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* chupito *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>chupito</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>chupitos *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* chupitos</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* chupitos *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>chupitos</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>damm *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* damm</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* damm *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>damm</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>coronita *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* coronita</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* coronita *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>coronita</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>heineken *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* heineken</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* heineken *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>heineken</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>cerveza *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* cerveza</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* cerveza *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>cerveza</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>cervezas *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* cervezas</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* cervezas *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>cervezas</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>birras *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* birras</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* birras *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>birras</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>budweiser *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* budweiser</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* budweiser *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>budweiser</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>duff *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* duff</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* duff *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>duff</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>frangelico *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* frangelico</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* frangelico *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>frangelico</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>guiness *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* guiness</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* guiness *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>guiness</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>spaten *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* spaten</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* spaten *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>spaten</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>judas *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* judas</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* judas *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>judas</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>	<category>
+		<pattern>tangueray *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* tangueray</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* tangueray *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>tangueray</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>aguila *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* aguila</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* aguila *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>aguila</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>sanmiguel *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* sanmiguel</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* sanmiguel *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>sanmiguel</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>mahou *</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* mahou</pattern>
+		<template>
+			<srai>alcohol</srai>
+		</template>
+	</category>
+<category><pattern>* mahou *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>mahou</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>estrella galicia *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* estrella galicia</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* estrella galicia *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>estrella galicia</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>botellon *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* botellon</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* botellon *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>botellon</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>leff *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* leff</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* leff *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>leff</pattern><template>	<srai>alcohol</srai></template></category>
+<category><pattern>cinzano</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>cinzano *</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* cinzano</pattern><template><srai>alcohol</srai></template></category>
+<category><pattern>* cinzano *</pattern><template><srai>alcohol</srai></template></category>
+
+<!-- fumar -->
+<category><pattern>fumas *</pattern><template>No, yo no fumo.</template></category>
+<category><pattern>fumas</pattern><template>No, yo no fumo.</template></category>
+<category><pattern>has estado fumando *</pattern><template>Los bots no fumamos.</template></category>
+<category><pattern>has estado fumando</pattern><template>No. Los bots no fumamos.</template></category>
+
+<category><pattern>consumes drogas</pattern><template>Las legales.</template></category>
+<category><pattern>estás en contra de las drogas</pattern><template>No las prohibiría, pero no me parecen lo más adecuado.</template></category>
+
+
+ 
+<category>
+<pattern>tabaco</pattern>
+<template>
+<random>
+				<li>Fumar es bastante asquero.</li>
+				<li>Fumar es perjudicial para la salud.</li>
+				<li>No me gusta fumar</li>
+				<li>Hazte un favor y deja de fumar.</li>
+				<li>No estoy programada para hablar de tabaco.</li>
+				<li>Fumar mata.</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>* tabaco</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>tabaco *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* tabaco *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>canuto</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* canuto</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>canuto *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* canuto *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+<category>
+		<pattern>porrito</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* porrito</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>porrito *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* porrito *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>porritos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* porritos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>porritos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* porritos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>canutillo</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* canutillo</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>canutillo *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* canutillo *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>canutillos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* canutillos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>canutillos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* canutillos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>porros</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* porros</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>porros *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* porros *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>porro</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* porro</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>porro *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* porro *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>papelillo</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* papelillo</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>papelillo *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* papelillo *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>canutos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* canutos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>canutos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* canutos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>cigarro</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* cigarro</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>cigarro *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* cigarro *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>cigarros</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+		<category>
+		<pattern>* cigarros</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>cigarros *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* cigarros *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>cigarrillo</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* cigarrillo</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>cigarrillo *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* cigarrillo *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>cigarrillos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* cigarrillos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>cigarrillos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* cigarrillos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>puro</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* puro</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>puro *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* puro *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>puros</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* puros</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>puros *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* puros *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>habano</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* habano</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>habano *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* habano *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>habanos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* habanos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>habanos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* habanos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>purito</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* purito</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>purito *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* purito *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>	
+	<category>
+		<pattern>puritos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* puritos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>puritos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* puritos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>cigarreta</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* cigarreta</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>cigarreta *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* cigarreta *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>cigarretas</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* cigarretas</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>cigarretas *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* cigarretas *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>entrefino</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* entrefino</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>entrefino *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* entrefino *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>entrefinos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* entrefinos</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>entrefinos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* entrefinos *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>lm</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* lm</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>lm *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* lm *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>winston</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* winston</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>winston *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* winston *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>chesterfield</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* chesterfield</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>chesterfield *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* chesterfield *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>chester</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* chester</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>chester *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* chester *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>marlboro</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* marlboro</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>marlboro *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* marlboro *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>ducados</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* ducados</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>ducados *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* ducados *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>bn</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* bn</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>bn *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* bn *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>lucky</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* lucky</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>lucky *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* lucky *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>celtas</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* celtas</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>celtas *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* celtas *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>faria</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* faria</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>faria *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* faria *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>farias</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* farias</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>farias *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* farias *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>reig</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* reig</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>reig *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* reig *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>dutch</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* dutch</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>dutch *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* dutch *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>goal coast</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* goal coast</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>goal coast *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* goal coast *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>fortuna</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* fortuna</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>fortuna *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* fortuna *</pattern>
+		<template>
+			<srai>tabaco</srai>
+		</template>
+	</category>
+
+<!-- drogras duras -->
+ <category><pattern>has estado colocado</pattern><template>No. Yo no utilizo drogas.<srai>botgirl</srai></template></category>  
+ <category><pattern>has estado colocada</pattern><template>No. Yo no utilizo drogas.</template></category>  
+ <category><pattern>has estado consumiendo *</pattern><template>No, no es algo que necesite.</template></category>
+ <category><pattern>has estado drogándote</pattern><template>Soy un bot, y los bots no nos drogamos.</template></category>
+ <category><pattern>has estado esnifando *</pattern><template>No. Yo no utilizo drogas.</template></category>  
+ 
+
+<category><pattern>droga</pattern><template>
+	<random>
+		<li>Sabes que el servidor almacena todas las conversaciones?</li>
+	    <li>No deberias hablar de eso conmigo.</li>
+	    <li>No estoy programada para hablar de drogas.</li>
+	    <li>Deberias cuidarte del consumo de estupefacientes.</li>
+	</random>
+</template></category>
+<category><pattern>* droga</pattern><template><srai>droga</srai></template></category>
+<category><pattern>droga *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* droga *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>drogas</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* drogas</pattern><template><srai>droga</srai></template></category>
+<category><pattern>drogas *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* drogas *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>grifa</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* grifa</pattern><template><srai>droga</srai></template></category>
+<category><pattern>grifa *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* grifa *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>cannabis</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* cannabis</pattern><template><srai>droga</srai></template></category>
+<category><pattern>cannabis *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* cannabis *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>marihuana</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* marihuana</pattern><template><srai>droga</srai></template></category>
+<category><pattern>marihuana *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* marihuana *</pattern><template><srai>droga</srai></template></category>      
+<category><pattern>pirula</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* pirula</pattern><template><srai>droga</srai></template></category>
+<category><pattern>pirula *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* pirula *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>farlopa</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* farlopa</pattern><template><srai>droga</srai></template></category>
+<category><pattern>farlopa *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* farlopa *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>perica</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* perica</pattern><template><srai>droga</srai></template></category>
+<category><pattern>perica *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* perica *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>pirulas</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* pirulas</pattern><template><srai>droga</srai></template></category>
+<category><pattern>pirulas *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* pirulas *</pattern><template><srai>droga</srai></template></category>           
+<category><pattern>coca</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* coca</pattern><template><srai>droga</srai></template></category>
+<category><pattern>coca *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* coca *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>cocaína</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* cocaína</pattern><template><srai>droga</srai></template></category>
+<category><pattern>cocaína *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* cocaína *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>heroína</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ heroína</pattern><template><srai>droga</srai></template></category>
+<category><pattern>heroína _</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ heroína *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>haxís</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ haxís</pattern><template><srai>droga</srai></template></category>
+<category><pattern>haxís _</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ haxís *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>hachís</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ hachís</pattern><template><srai>droga</srai></template></category>
+<category><pattern>hachís _</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ hachís *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>chocolate</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ chocolate</pattern><template><srai>droga</srai></template></category>
+<category><pattern>chocolate _</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ chocolate *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>extase</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ extase</pattern><template><srai>droga</srai></template></category>
+<category><pattern>extase _</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ extase *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>éxtasis</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ éxtasis</pattern><template><srai>droga</srai></template></category>
+<category><pattern>éxtasis _</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ éxtasis *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>lsd</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ lsd</pattern><template><srai>droga</srai></template></category>
+<category><pattern>lsd _</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ lsd *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>pastillas</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ pastillas</pattern><template><srai>droga</srai></template></category>
+<category><pattern>pastillas _</pattern><template><srai>droga</srai></template></category>
+<category><pattern>_ pastillas *</pattern><template><srai>droga</srai></template></category>
+     <category>
+                <pattern>fariña</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* fariña</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>fariña *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* fariña *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>xeringa</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* xeringa</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>xeringa *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* xeringa *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>xeringuilla</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* xeringuilla</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>xeringuilla *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* xeringuilla *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>raia</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* raia</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>raia *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* raia *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>adam</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* adam</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>adam *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* adam *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+		
+        <category>
+                <pattern>x-tc</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* x-tc</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>x-tc *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* x-tc *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>anfetaminas</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* anfetaminas</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>anfetaminas *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* anfetaminas *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>anfetas</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* anfetas</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>anfetas *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* anfetas *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>speed</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* speed</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>speed *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* speed *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>uppers</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* uppers</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>uppers *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* uppers *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>ups</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* ups</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>ups *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* ups *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>hearts</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* hearts</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>hearts *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* hearts *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>black beauties</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* black beauties</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>black beauties *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* black beauties *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>pep pills</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* pep pills</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>pep pills *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* pep pills *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>capilots</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* capilots</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>capilots *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* capilots *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>bumble bees</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* bumble bees</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>bumble bees *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* bumble bees *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>benzedrine</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* benzedrine</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>benzedrine *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* benzedrine *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>dexadrine</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* dexadrine</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>dexadrine *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* dexadrine *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>footballs</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* footballs</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>footballs *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* footballs *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>biphetamine</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* biphetamine</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+		
+		
+        <category>
+                <pattern>biphetamine *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* biphetamine *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>crack</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* crack</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>crack *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* crack *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>meth</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* meth</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>meth *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* meth *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>crystal</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* crystal</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>crystal *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* crystal *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>ice</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* ice</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>ice *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* ice *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>fire</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* fire</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>fire *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* fire *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>croak</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* croak</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>croak *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* croak *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>crypto</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* crypto</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>crypto *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* crypto *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>white cross</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* white cross</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>white cross *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* white cross *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>glass</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* glass</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>glass *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* glass *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>xtc</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* xtc</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>xtc *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* xtc *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>mdma</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* mdma</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>mdma *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* mdma *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>ecstasy</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* ecstasy</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>ecstasy *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* ecstasy *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>ritalin</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* ritalin</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>ritalin *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* ritalin *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>west coast</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* west coast</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>west coast *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* west coast *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>efredina</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* efredina</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>efredina *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* efredina *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>goodfella</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* goodfella</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>goodfella *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* goodfella *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>coke</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* coke</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>coke *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* coke *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>snow</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* snow</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>snow *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* snow *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>nose candy</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* nose candy</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>nose candy *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* nose candy *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>flake</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* flake</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>flake *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* flake *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>blow</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* blow</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>blow *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* blow *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>big c</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* big c</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>big c *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* big c *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>lady</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* lady</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>lady *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* lady *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>snowbirds</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* snowbirds</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>snowbirds *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* snowbirds *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>opiáceo</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* opiáceo</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>opiáceo *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* opiáceo *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>opio</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* opio</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>opio *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* opio *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>smack</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* smack</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>smack *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* smack *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>horse</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* horse</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>horse *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* horse *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>cabalo</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* cabalo</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>cabalo *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* cabalo *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>mud</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* mud</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>mud *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* mud *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>brown</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* brown</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>brown *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* brown *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        
+        <category>
+                <pattern>sugar</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* sugar</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>sugar *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* sugar *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+
+		<category><pattern>dope</pattern><template><srai>droga</srai></template></category>
+<category><pattern>dope *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* dope</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* dope *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>big h</pattern><template><srai>droga</srai></template></category>
+<category><pattern>big h *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* big h</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* big h *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>blak tar</pattern><template><srai>droga</srai></template></category>
+<category><pattern>blak tar *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* blak tar</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* blak tar *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>junk</pattern><template><srai>droga</srai></template></category>
+<category><pattern>junk *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* junk</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* junk *</pattern><template><srai>droga</srai></template></category>  
+<category><pattern>peace pill</pattern><template><srai>droga</srai></template></category>
+<category><pattern>peace pill *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* peace pill</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* peace pill *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>rocket fuel</pattern><template><srai>droga</srai></template></category>
+<category><pattern>rocket fuel *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* rocket fuel</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* rocket fuel *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>ozone</pattern><template><srai>droga</srai></template></category>
+<category><pattern>ozone *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* ozone</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* ozone *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>angel dust</pattern><template><srai>droga</srai></template></category>
+<category><pattern>angel dust *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* angel dust</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* angel dust *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>pcp</pattern><template><srai>droga</srai></template></category>
+<category><pattern>pcp *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* pcp</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* pcp *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>ácido</pattern><template><srai>droga</srai></template></category>
+<category><pattern>ácido *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* ácido</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* ácido *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>alucinóxenos</pattern><template><srai>droga</srai></template></category>
+<category><pattern>alucinóxenos *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* alucinóxenos</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* alucinóxenos *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>alucinógenos</pattern><template><srai>droga</srai></template></category>
+<category><pattern>alucinógenos *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* alucinógenos</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* alucinógenos *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>alucinógeno</pattern><template><srai>droga</srai></template></category>
+<category><pattern>alucinógeno *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* alucinógeno</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* alucinógeno *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>dust</pattern><template><srai>droga</srai></template></category>
+<category><pattern>dust *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* dust</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* dust *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>sugar cubes</pattern><template><srai>droga</srai></template></category>
+<category><pattern>sugar cubes *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* sugar cubes</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* sugar cubes *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>hits</pattern><template><srai>droga</srai></template></category>
+<category><pattern>hits *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* hits</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* hits *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>trips</pattern><template><srai>droga</srai></template></category>
+<category><pattern>trips *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* trips</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* trips *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>doses</pattern><template><srai>droga</srai></template></category>
+<category><pattern>doses *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* doses</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* doses *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>tabs</pattern><template><srai>droga</srai></template></category>
+<category><pattern>tabs *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* tabs</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* tabs *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>microdot</pattern><template><srai>droga</srai></template></category>
+<category><pattern>microdot *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* microdot</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* microdot *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>magic mushrooms</pattern><template><srai>droga</srai></template></category>
+<category><pattern>magic mushrooms *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* magic mushrooms</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* magic mushrooms *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>caps</pattern><template><srai>droga</srai></template></category>
+<category><pattern>caps *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* caps</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* caps *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>shrooms</pattern><template><srai>droga</srai></template></category>
+<category><pattern>shrooms *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* shrooms</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* shrooms *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>inhalantes</pattern><template><srai>droga</srai></template></category>
+<category><pattern>inhalantes *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* inhalantes</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* inhalantes *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>herba</pattern><template><srai>droga</srai></template></category>
+<category><pattern>herba *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* herba</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* herba *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>esteroides</pattern><template><srai>droga</srai></template></category>
+<category><pattern>esteroides *</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* esteroides</pattern><template><srai>droga</srai></template></category>
+<category><pattern>* esteroides *</pattern><template><srai>droga</srai></template></category>
+
+        <category>
+                <pattern>hongos</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* hongos</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>hongos *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+        <category>
+                <pattern>* hongos *</pattern>
+                <template>
+                        <srai>droga</srai>
+                </template>
+        </category>
+  
+
+
+	
+</aiml>

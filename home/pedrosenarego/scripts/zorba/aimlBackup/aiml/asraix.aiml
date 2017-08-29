@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  
+<!--BASIC GESTURES  -->
+<category><pattern>AT EASY</pattern><template><srai>REST</srai></template></category> 
+<category><pattern>RELAX</pattern><template><srai>REST</srai></template></category> 
+<category><pattern>RELAX YOUR HAIR</pattern><template><srai>RELAX HEAD</srai></template></category>
+<category><pattern>REST YOUR HEAD</pattern><template><srai>RELAX HEAD</srai></template></category> 
+
+<category><pattern>RELAX YOUR HANDS</pattern><template><srai>RELAX HEAD</srai></template></category> 
+<category><pattern>REST YOUR HANDS</pattern><template><srai>RELAX HEAD</srai></template></category> 
+
+<!-- head up/down-->
+<category><pattern>PUT YOUR HEAD UP</pattern><template><srai>HEAD UP</srai></template></category>
+<category><pattern>* HEAD UP</pattern><template><srai>HEAD UP</srai></template></category>
+<category><pattern>HEAD UP *</pattern><template><srai>HEAD UP</srai></template></category>
+<category><pattern>* HEAD UP *</pattern><template><srai>HEAD UP</srai></template></category>
+<category><pattern>HEADS UP</pattern><template><srai>HEAD UP</srai></template></category>
+<category><pattern>LOOK UP</pattern><template><srai>HEAD UP</srai></template></category>
+<category><pattern>LOOK TO THE AIR</pattern><template><srai>HEAD UP</srai></template></category>
+
+<category><pattern>PUT YOUR HEAD DOWN</pattern><template><srai>HEAD DOWN</srai></template></category>
+<category><pattern>* HEAD DOWN</pattern><template><srai>HEAD DOWN</srai></template></category>
+<category><pattern>HEAD DOWN *</pattern><template><srai>HEAD DOWN</srai></template></category>
+<category><pattern>* HEAD DOWN *</pattern><template><srai>HEAD DOWN</srai></template></category>
+<category><pattern>LOOK DOWN</pattern><template><srai>HEAD DOWN</srai></template></category>
+<!-- pend neck left/right-->
+<category><pattern>^ NECK TO THE LEFT</pattern><template><srai>NECK LEFT</srai></template></category>
+
+<category><pattern>^ NECK TO THE RIGHT</pattern><template><srai>NECK RIGHT</srai></template></category>
+<!-- head left and right-->
+<category><pattern>PUT YOUR HEAD TO THE LEFT</pattern><template><srai>HEAD LEFT</srai></template></category>
+<category><pattern>LOOK TO THE LEFT</pattern><template><srai>HEAD LEFT</srai></template></category>
+<category><pattern>LOOK LEFT</pattern><template><srai>HEAD LEFT</srai></template></category>
+
+<category><pattern>PUT YOUR HEAD TO THE RIGHT</pattern><template><srai>HEAD RIGHT</srai></template></category>
+<category><pattern>LOOK TO THE RIGHT</pattern><template><srai>HEAD RIGHT</srai></template></category>
+<category><pattern>LOOK RIGHT</pattern><template><srai>HEAD RIGHT</srai></template></category>
+
+<!-- arms closed/open-->
+<category><pattern>OPEN YOUR ARMS</pattern><template><srai>ARMS OPEN</srai></template></category>
+
+<category><pattern>ARMS CLOSE</pattern><template><srai>ARMS CLOSED</srai></template></category>
+<category><pattern>CLOSE YOUR ARMS</pattern><template><srai>ARMS CLOSED</srai></template></category>
+<!-- arms up/down-->
+<category><pattern>PUT YOUR ARMS TO THE AIR</pattern><template><srai>ARMS AIR</srai></template></category>
+<category><pattern>PUT YOUR HANDS TO THE AIR</pattern><template><srai>ARMS AIR</srai></template></category>
+<category><pattern>ARMS TO THE AIR</pattern><template><srai>ARMS AIR</srai></template></category>
+<category><pattern>RAISE YOUR ARMS</pattern><template><srai>ARMS AIR</srai></template></category>
+<category><pattern>RAISE YOUR HANDS</pattern><template><srai>ARMS AIR</srai></template></category>
+<!-- bicep up/down-->
+<category><pattern>BICEP</pattern><template><srai>BICEP UP</srai></template></category>
+<category><pattern>RELAX BICEP</pattern><template><srai>BICEP DOWN</srai></template></category>
+<category><pattern>RELAX YOUR BICEP</pattern><template><srai>BICEP DOWN</srai></template></category>
+
+<category><pattern>PUT YOUR ARMS DOWN</pattern><template><srai>ARMS DOWN</srai></template></category>
+<category><pattern>LOW YOUR ARMS</pattern><template><srai>ARMS DOWN</srai></template></category>
+<!-- open/close hands-->
+<category><pattern>OPEN HANDS</pattern><template><srai>OPEN HAND</srai></template></category>
+<category><pattern>OPEN * HANDS</pattern><template><srai>OPEN HAND</srai></template></category>
+<category><pattern>OPEN * HAND</pattern><template><srai>OPEN HAND</srai></template></category>
+
+<category><pattern>CLOSE * HANDS</pattern><template><srai>CLOSE HAND</srai></template></category>
+<category><pattern>CLOSE * HAND</pattern><template><srai>CLOSE HAND</srai></template></category>
+<category><pattern>CLOSE HANDS</pattern><template><srai>CLOSE HAND</srai></template></category>
+
+<!-- COMPLEX GESTURES -->
+<!--sad  -->
+<category><pattern>UNHAPPY</pattern><template><srai>SAD</srai></template></category>
+<!-- star wars-->
+<category><pattern>* STAR WARS</pattern><template><srai>STAR WARS</srai></template></category>
+<category><pattern>* STAR WARS *</pattern><template><srai>STAR WARS</srai></template></category>
+<category><pattern>STAR WARS *</pattern><template><srai>STAR WARS</srai></template></category>
+<!-- can i see your neck-->
+<category><pattern>SHOW ME YOUR NECK</pattern><template><srai>CAN I SEE YOUR NECK</srai></template></category>
+<category><pattern>SHOW ME YOUR NECK *</pattern><template><srai>CAN I SEE YOUR NECK</srai></template></category>
+<category><pattern>* SHOW ME YOUR NECK</pattern><template><srai>CAN I SEE YOUR NECK</srai></template></category>
+<category><pattern>* SHOW ME YOUR NECK *</pattern><template><srai>CAN I SEE YOUR NECK</srai></template></category>
+<!-- birds-->
+<category><pattern>* SEEING BIRDS</pattern><template><srai>BIRDS</srai></template></category>
+<category><pattern>* SEE BIRDS</pattern><template><srai>BIRDS</srai></template></category>
+<category><pattern>LOOK BIRDS</pattern><template><srai>BIRDS</srai></template></category>
+<category><pattern>DO I SEE BIRDS</pattern><template><srai>BIRDS</srai></template></category>
+
+<!-- DATE -->
+<category><pattern>WHAT SEASON *</pattern><template><srai>SEASON</srai></template></category>
+<category><pattern>* WHICH SEASON *</pattern><template><srai>SEASON</srai></template></category>
+<category><pattern>* WHAT SEASON *</pattern><template><srai>SEASON</srai></template></category>
+<category><pattern>WHICH SEASON *</pattern><template><srai>SEASON</srai></template></category>
+
+<category><pattern>^ WHAT DAY OF WEEK ARE WE</pattern><template><srai>DAY OF WEEK</srai></template></category>
+<category><pattern>^ WHAT DAY OF WEEK ^ TODAY</pattern><template><srai>DAY OF WEEK</srai></template></category>
+<category><pattern>^ WHICH DAY OF WEEK ARE WE</pattern><template><srai>DAY OF WEEK</srai></template></category>
+<category><pattern>^ WHAT DAY OF WEEK WE STAND</pattern><template><srai>DAY OF WEEK</srai></template></category>
+<category><pattern>^ WHICH DAY OF WEEK WE STAND</pattern><template><srai>DAY OF WEEK</srai></template></category>
+
+<category><pattern>^ WHICH DAY OF WEEK ^ TOMORROW</pattern><template><srai>TOMORROW DAY OF WEEK</srai></template></category>
+<category><pattern>TOMORROW  WHICH DAY OF WEEK *</pattern><template><srai>TOMORROW DAY OF WEEK</srai></template></category>
+<category><pattern>TOMORROW WHAT DAY OF WEEK *</pattern><template><srai>TOMORROW DAY OF WEEK</srai></template></category>
+<category><pattern>^ WHAT DAY OF WEEK ^ TOMORROW</pattern><template><srai>TOMORROW DAY OF WEEK</srai></template></category>
+
+<category><pattern>^ YEAR ARE WE ^</pattern><template><srai>CURRENT YEAR</srai></template></category>
+<category><pattern>^ YEAR ^ WE STAND ^</pattern><template><srai>CURRENT YEAR</srai></template></category>
+
+<category><pattern>^ MONTH WE ARE ^</pattern><template><srai>MONTH</srai></template></category>
+<category><pattern>^ MONTH ARE WE ^</pattern><template><srai>MONTH</srai></template></category>
+<category><pattern>^ MONTH WE STAND ^</pattern><template><srai>MONTH</srai></template></category>
+
+<category><pattern>^ GIVE ME THE TIME ^</pattern><template><srai>TIME</srai></template></category>
+<category><pattern>^ CURRENT TIME ^</pattern><template><srai>TIME</srai></template></category>
+<category><pattern>WHAT TIME IS IT</pattern><template><srai>TIME</srai></template></category>
+<category><pattern>WHAT IS THE TIME</pattern><template><srai>TIME</srai></template></category>
+
+<category><pattern>^ DATE ^ TODAY</pattern><template><srai>^ TODAY DATE ^</srai></template></category>
+
+<category><pattern>^ PART ^ DAY ARE WE</pattern><template><srai>DAY PHASE</srai></template></category>
+<category><pattern>^ PART ^ DAY WE STAND</pattern><template><srai>DAY PHASE</srai></template></category>
+
+<category><pattern>^ GIVE ^ DATE ^ TIME ^</pattern><template><srai>DATE AND TIME</srai></template></category>
+<category><pattern>WHAT IS ^ DATE ^ TIME ^</pattern><template><srai>DATE AND TIME</srai></template></category>
+<category><pattern>GIVE ME TIME AND DATE</pattern><template><srai>DATE AND TIME</srai></template></category>
+<category><pattern>WHAT IS ^ TIME ^ DATE ^</pattern><template><srai>DATE AND TIME</srai></template></category>
+
+<category><pattern>^ WHAT DAY IS TOMORROW ^</pattern><template><srai>DATE TOMORROW</srai></template></category>
+
+
+<!-- EMAIL -->
+<!--can you send email?-->
+<category><pattern>^ YOU ^ SEND ^ EMAILS</pattern><template><srai>CAN YOU SEND EMAIL</srai></template></category>
+<category><pattern>^ YOU ^ WRITE ^ EMAILS</pattern><template><srai>CAN YOU SEND EMAIL</srai></template></category>
+<category><pattern>^ YOU SEND ^ EMAIL ^</pattern><template><srai>CAN YOU SEND EMAIL</srai></template></category>
+<category><pattern>^ YOU WRITE ^ EMAIL ^</pattern><template><srai>CAN YOU SEND EMAIL</srai></template></category>
+
+<!--email start --> 
+<category><pattern>SEND EMAIL *</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>SEND AN EMAIL ^</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>SEND ME AN EMAIL</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>SEND ME AN EMAIL *</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>* SEND ME AN EMAIL</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>* SEND ME AN EMAIL *</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>* SEND * EMAIL</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>* SEND * EMAIL *</pattern><template><srai>SEND EMAIL</srai></template></category>
+
+<category><pattern>WRITE EMAIL *</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>WRITE AN EMAIL *</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>WRITE ME AN EMAIL</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>WRITE ME AN EMAIL *</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>* WRITE ME AN EMAIL</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>* WRITE ME AN EMAIL *</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>* WRITE * EMAIL</pattern><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>* WRITE * EMAIL *</pattern><template><srai>SEND EMAIL</srai></template></category>
+
+
+
+<topic name="send email">
+<!--contact choose-->
+<category><pattern>* <set>contact</set></pattern><that>FOR WHOM YOU WISH TO SEND THE EMAIL</that><template>Email sent.<oob><mrl><service>python</service><method>exec</method><param>emailtest("<map><name>contact2email</name><star/></map>","<get name="emailcontent"/>","<get name="emailsub"/>")</param></mrl></oob></template></category>
+<category><pattern>* <set>contact</set> *</pattern><that>FOR WHOM YOU WISH TO SEND THE EMAIL</that><template>Email sent.<oob><mrl><service>python</service><method>exec</method><param>emailtest("<map><name>contact2email</name><star/></map>","<get name="emailcontent"/>","<get name="emailsub"/>")</param></mrl></oob></template></category>
+<category><pattern><set>contact</set> *</pattern><that>FOR WHOM YOU WISH TO SEND THE EMAIL</that><template>Email sent.<oob><mrl><service>python</service><method>exec</method><param>emailtest("<map><name>contact2email</name><star/></map>","<get name="emailcontent"/>","<get name="emailsub"/>")</param></mrl></oob></template></category>
+
+</topic>
+
+<!--GOOGLE CALENDAR-->
+<!--start of event-->
+<category><pattern>^ ADD ^ EVENT ^</pattern><template><srai>CREATE EVENT</srai></template></category>
+<category><pattern>^ ADD ^ SCHEDULE ^</pattern><template><srai>CREATE EVENT</srai></template></category>
+<category><pattern>^ START ^ EVENT ^</pattern><template><srai>CREATE EVENT</srai></template></category>
+<category><pattern>^ START ^ SCHEDULE ^</pattern><template><srai>CREATE EVENT</srai></template></category>
+
+
+<category><pattern>^ CREATE ^ EVENT AT *</pattern><template><think><set name="topic">google calendar</set><set name="eventlocation"><star index="3"/></set></think>What is the subject of the event?</template></category>
+<category><pattern>^ START ^ EVENT AT *</pattern><template><think><set name="topic">google calendar</set><set name="eventlocation"><star index="3"/></set></think>What is the subject of the event?</template></category>
+<category><pattern>^ START ^ EVENT IN *</pattern><template><think><set name="topic">google calendar</set><set name="eventlocation"><star index="3"/></set></think>What is the subject of the event?</template></category>
+<category><pattern>^ ADD ^ EVENT AT *</pattern><template><think><set name="topic">google calendar</set><set name="eventlocation"><star index="3"/></set></think>What is the subject of the event?</template></category>
+<category><pattern>^ ADD ^ EVENT IN *</pattern><template><think><set name="topic">google calendar</set><set name="eventlocation"><star index="3"/></set></think>What is the subject of the event?</template></category>
+<category><pattern>^ START ^ EVENT AT *</pattern><template><think><set name="topic">google calendar</set><set name="eventlocation"><star index="3"/></set></think>What is the subject of the event?</template></category>
+<category><pattern>^ START ^ EVENT IN *</pattern><template><think><set name="topic">google calendar</set><set name="eventlocation"><star index="3"/></set></think>What is the subject of the event?</template></category>
+
+
+<topic name="google calendar">
+ 
+</topic>
+
+<!--WEBBROWSER-->
+<category><pattern>SEARCH <set>websites</set> *</pattern><template>done.<oob><mrl><service>python</service><method>exec</method><param>browserSearch("<map><name>websites2urlsearch</name><star/></map>","<star index="2"/>")</param></mrl></oob></template></category>
+
+
+ 
+
+</aiml>

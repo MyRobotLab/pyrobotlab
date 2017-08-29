@@ -1,0 +1,5 @@
+youtube:www.youtube.com/
+google:www.google.com/
+facebook:www.facebook.com/
+google calendar:calendar.google.com/calendar/render#main_7
+schedule:calendar.google.com/calendar/render#main_7

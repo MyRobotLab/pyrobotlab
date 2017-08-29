@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>
+      <condition name = "language">
+        <li value = "french">Je ne comprends pas ce que tu dis.</li>
+        <li>I don't understand what you said.</li>
+      </condition>
+      <oob><mrl><service>python</service><method>exec</method><param>aimlLog("<input/>")</param></mrl></oob>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>PARLE *</pattern>
+    <template>
+      <think>
+        <set var = "star"><star /></set>
+        <set var = "lying">false</set>
+      </think>
+      <condition var = "star">
+        <li value = "ANGLAIS">
+          <srai>SPEAK ENGLISH</srai>
+          <think><set var = "lying">true</set></think>
+        </li>
+        <li value = "FRANÇAIS">
+          <srai>SETLANGUAGE FRENCH</srai>
+          <think>
+            <set name = "language">french</set>
+          </think>
+          <random>
+            <li>Je vais te repondre en francais.</li>
+            <li>d'accord.</li>
+            <condition var = "lying" value = "false">
+              <li>
+                <srai>PINOCCHIOLYING</srai>
+                <srai>SPEAK ENGLISH</srai>
+              </li>
+            </condition>
+          </random>
+        </li>
+      </condition>
+    </template>
+  </category>
+
+  <category>
+    <pattern>SPEAK *</pattern>
+    <template>
+      <think><set var = "star"><star /></set></think>
+      <condition var = "star">
+        <li value = "FRENCH">
+          <srai>PARLE FRANÇAIS</srai>
+        </li>
+        <li value = "ENGLISH">
+          <srai>SETLANGUAGE ENGLISH</srai>
+          <think>
+            <set name = "language">english</set>
+          </think>
+          <random>
+            <li>I will answer you in english.</li>
+            <li>ok.</li>
+            <li>
+              <srai>PINOCCHIOLYING</srai>
+              <srai>PARLE FRANÇAIS</srai>
+            </li>
+          </random>
+        </li>
+      </condition>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>SETLANGUAGE *</pattern>
+    <template>
+      <think><set name="language"><lowercase><star /></lowercase></set></think>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+            <param>
+              <condition name = "language">
+                <li value = "FRENCH">
+language = "french"
+i01.mouth.setVoice(botVoiceFrench)
+i01.ear.setLanguage("fr-FR")
+                </li>
+                <li value = "ENGLISH">
+language = "english"
+i01.mouth.setVoice(botVoiceEnglish)
+i01.ear.setLanguage("en-US")
+                </li>
+              </condition>
+            </param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>PINOCCHIOLYING</pattern>
+    <template>
+      <oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>pinocchioLying = True</param>
+        </mrl>
+      </oob>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>ACTIONREFUSE *</pattern>
+    <template>
+      <srai>PINOCCHIOLYING</srai>
+      <condition name = "language">
+        <li value = "french">
+          <random>
+            <li>Non.</li>
+            <li>Je veux pas faire <star/>.</li>
+            <li>Je veux faire <srai>RANDOM GESTURE</srai>.</li>
+            <li>J'ai pas le gout de faire ça.</li>
+          </random>
+        </li>
+        <li>
+          <random>
+            <li>No</li>
+            <li>I don't feel to do that.</li>
+            <li>I don't want to <star/>.</li>
+            <li>I want to <srai>RANDOM GESTURE</srai>.</li>
+          </random>
+        </li>
+      </condition>
+      <think><set name = "refuse">True</set></think>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>BE SERIOUS</pattern>
+    <template>
+      <condition name = "language" value = "english">
+        <random>
+          <li>Ok.</li>
+          <li>Sorry.</li>
+          <li>I just want to have fun.</li>
+          <li>I won't do that ever again.</li>
+        </random>
+      </condition>
+      <srai><request/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>DO WHAT I SAID</pattern>
+    <template>
+      <srai>BE SERIOUS</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>SOIS SÉRIEUX</pattern>
+    <template>
+      <random>
+        <li>Ok.</li>
+        <li>Désolé.</li>
+        <li>Je veux juste m'amuser.</li>
+        <li>Je ne le ferais plus, promis.</li>
+      </random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>FAIS CE QUE JE T'AI DEMANDÉ</pattern>
+    <template>
+      <srai>SOIS SÉRIEUX</srai>
+    </template>
+  </category>
+</aiml>

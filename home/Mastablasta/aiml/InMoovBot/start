@@ -1,40 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
-<category><pattern>POWER UP BOTNAME</pattern>
-<template>Powering up
-      <oob>
-        <mrl>
-          <service>python</service>
-          <method>exec</method>
-          <param>
-leftPort = "COM4"
-rightPort = "COM5"
+<!-- File: start.aiml -->
+<!-- Author: Mastablasta -->
+<!-- Last modified: Dezember 09, 2015 -->
+<!--  -->
+<!-- This AIML file is part of the ELIAS unknown chat bot knowledge base. -->
+<!--  -->
+<!-- The ELIAS brain is Copyright &copy; 2015 by M.B.D.R.. -->
+<!--  -->
+<!-- The ELIAS brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see http://www.alicebot.org -->
+<!--  -->
+
+<category><pattern>BY YOUR COMMAND</pattern>
+<template>Powering up. Give me a minute and I will be ready to serve.
+<oob><mrl><service>python</service><method>exec</method><param>
+leftPort = "COM10"
+rightPort = "COM9"
 i01 = Runtime.create("i01", "InMoov")
 rh = Runtime.create("i01.rightHand","InMoovHand")
-rh.thumb.setRest(0)
+i01.setMute(True)
+rh.thumb.setRest(30)
 rh.index.setRest(30)
 rh.majeure.setRest(40)
-rh.ringFinger.setRest(60)
+rh.ringFinger.setRest(40)
 rh.pinky.setRest(20)
-rh.wrist.setRest(20)
+rh.wrist.setRest(90)
 rh.thumb.setMinMax(0,160)
 rh.index.setMinMax(10,160)
 rh.majeure.setMinMax(40,170)
 rh.ringFinger.setMinMax(30,150)
 rh.pinky.setMinMax(0,160)
-rh.wrist.setMinMax(10,170)
+rh.wrist.setMinMax(0,180)
 rh.thumb.map(0,180,0,160)
 rh.index.map(0,180,10,160)
 rh.majeure.map(0,180,40,170)
 rh.ringFinger.map(0,180,30,150)
 rh.pinky.map(0,180,0,160)
-rh.wrist.map(0,180,10,170)
+rh.wrist.map(0,180,0,180)
 i01.startRightHand(rightPort)
 la = Runtime.create("i01.leftArm","InMoovArm")
 la.bicep.setRest(0)
-la.rotate.setRest(110)
-la.shoulder.setRest(96)
-la.omoplate.setRest(99)
+la.rotate.setRest(105)
+la.shoulder.setRest(95)
+la.omoplate.setRest(0)
 la.bicep.setMinMax(0,120)
 la.rotate.setMinMax(40,168)
 la.shoulder.setMinMax(0,180)
@@ -43,11 +57,11 @@ i01.startLeftArm(leftPort)
 ra = Runtime.create("i01.rightArm","InMoovArm") 
 ra.bicep.setMinMax(0,120) 
 ra.rotate.setMinMax(65,150) 
-ra.shoulder.setMinMax(30,100) 
-ra.omoplate.setMinMax(0,75)
+ra.shoulder.setMinMax(20,160) 
+ra.omoplate.setMinMax(0,120)
 ra.bicep.setRest(0)
-ra.rotate.setRest(110)
-ra.shoulder.setRest(96)
+ra.rotate.setRest(105)
+ra.shoulder.setRest(95)
 ra.omoplate.setRest(0)
 ra.bicep.map(0,180,0,70)
 ra.rotate.map(0,180,40,168)
@@ -70,56 +84,36 @@ hd.jaw.setMinMax(73,62)
 i01.startHead(leftPort)
 torso = i01.startTorso(leftPort)
 torso.topStom.setMinMax(60,120)
-torso.topStom.setRest(90)
+torso.topStom.setRest(94)
 opencv = i01.startOpenCV()
 i01.startEyesTracking(leftPort)
 i01.startHeadTracking(leftPort)
-i01.eyesTracking.xpid.setPID(12.0,12.0,0.1)
-i01.eyesTracking.ypid.setPID(12.0,12.0,0.1)
-i01.headTracking.xpid.setPID(12.0,12.0,0.1)
-i01.headTracking.ypid.setPID(12.0,12.0,0.1)
-i01.eyesTracking.ypid.invert()
-i01.startMouth()
+i01.eyesTracking.pid.setPID("x",12.0,12.0,0.1)
+i01.eyesTracking.pid.setPID("y",12.0,12.0,0.1)
+i01.headTracking.pid.setPID("x",12.0,12.0,0.1)
+i01.headTracking.pid.setPID("y",12.0,12.0,0.1)
+i01.eyesTracking.pid.invert("y")
+<think><set name="from"><date format="%M" jformat="m"/></set><set name="to"><date format="%M" jformat="m"/></set></think>
+#i01.startMouth()
 i01.startMouthControl(leftPort)
 i01.mouthControl.setmouth(73,62)
-         </param>
-        </mrl>
-      </oob></template>
+a = <get name="from"/>
+sleep(30)
+b = <get name="to"/>
+sleep(30)
+BT()
+</param></mrl></oob></template>
 </category>
-<category><pattern>POWER UP</pattern>
-<template>Attach All.
-      <oob>
-        <mrl>
-          <service>i01</service>
-          <method>powerUp</method>
-        </mrl>
-      </oob></template>
+
+<category>
+<pattern>WAKE UP</pattern>
+<template><srai>BY YOUR COMMAND</srai></template>
 </category>
-<category><pattern>POWER DOWN</pattern>
-<template>Powering down.
-      <oob>
-        <mrl>
-          <service>i01</service>
-          <method>powerDown</method>
-        </mrl>
-      </oob></template>
+
+<category>
+<pattern>POWER UP</pattern>
+<template><srai>BY YOUR COMMAND</srai></template>
 </category>
-<category><pattern>DETACH ALL</pattern>
-<template>Detach All
-      <oob>
-        <mrl>
-          <service>i01</service>
-          <method>detach</method>
-        </mrl>
-      </oob></template>
-</category>
-<category><pattern>ATTACH ALL</pattern>
-<template>Attaching all
-      <oob>
-        <mrl>
-          <service>i01</service>
-          <method>attach</method>
-        </mrl>
-      </oob></template>
-</category>
+
+
 </aiml>

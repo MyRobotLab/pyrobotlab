@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!-- File: ontology.aiml -->
+<!-- Author: CEO Gael Langevin -->
+<!-- Last modified: October 10, 2016 -->
+<!--  -->
+<!-- This AIML file is part of the Alice 0.0.5 chat bot knowledge base. -->
+<!--  -->
+<!-- This AIML file is powered by MyRobotLab. -->
+<!--  -->
+<!-- The InMoov design is created by Gael Langevin. -->
+<!--  -->  
+<!-- The InMoov design is released under the Creative commons License CC-BY-NC -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see http://www.inmoov.fr -->
+<!--  -->
+<category><pattern>IS A <set>mammal</set> A MAMMAL</pattern>
+<template>Yes</template>
+</category>
+<category><pattern>IS A * A MAMMAL</pattern>
+<template>unknown</template>
+</category>
+<category><pattern>IS A <set>bird</set> A BIRD</pattern>
+<template>Yes</template>
+</category>
+<category><pattern>IS A * A BIRD</pattern>
+<template>unknown</template>
+</category>
+<category><pattern>DOES A <set>mammal</set> HAVE <set>mammalfeature</set></pattern>
+<template>Yes</template>
+</category>
+<category><pattern>DOES A <set>mammal</set> HAVE *</pattern>
+<template>unknown</template>
+</category>
+<category><pattern>DOES A <set>bird</set> HAVE <set>birdfeature</set></pattern>
+<template>Yes</template>
+</category>
+<category><pattern>DOES A <set>bird</set> HAVE *</pattern>
+<template>unknown</template>
+</category>
+</aiml>

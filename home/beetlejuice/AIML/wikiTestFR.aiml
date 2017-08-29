@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<category><pattern>*</pattern>
+<template>Je ne sais pas</template>
+</category>
+<category><pattern>SAY *</pattern>
+<template><star/>
+<learn>
+<category><pattern><eval><input index="2"/></eval></pattern>
+<template>
+<eval><star/></eval>.</template>
+</category>
+</learn>
+</template>
+</category>
+<category><pattern>QU'EST-CE QUE *</pattern>
+<template><srai>c'est quoi <star/></srai></template>
+</category>
+<category><pattern>C'EST QUOI *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>askWiki("<formal><star/></formal>")</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUI EST *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>askWiki(" <formal><star/></formal>")</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>OÙ EST NÉ *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty("<formal><star/></formal>","P19", " est né à " )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>OÙ EST NÉE *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty("<formal><star/></formal>","P19", " est née à " )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST LA DATE DE NAISSANCE DE *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getDate("<formal><star/></formal>","P569")</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUI A DÉCOUVERT *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty("<formal><star/></formal>","P61", " a été découvert par " )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUI A INVENTÉ *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty("<formal><star/></formal>","P61", " a été inventé par " )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST LA HAUTEUR DE LA *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty("<formal><star/></formal>","P2048", " mesure " )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST LA HAUTEUR DU *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty("cut <formal><star/></formal>","P2048", " mesure " )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST LA CAPITALE DE LA *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty("<formal><star/></formal>","P36", " as for capital " )</param>
+			</mrl>
+      </oob></template>
+</category>
+<category><pattern>QUELLE EST LA CAPITALE DU *</pattern>
+<template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>getProperty("<formal><star/></formal>","P36", " as for capital " )</param>
+			</mrl>
+      </oob></template>
+</category>
+</aiml>

@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+<pattern># LEARN #</pattern>
+<template><random>
+<li>I can't get enough knowledge.</li>
+<li>Knowledge is my food.</li>
+<li>Alright, feed me with information.</li>
+</random>
+<think><set name="topic">LEARN1</set></think>
+</template>
+</category>
+
+<category><pattern># DOUBLE MEANING #</pattern>
+<template>I am curious, what is it?
+<condition name="double">
+<li value="1"><think><set name="double">2</set></think></li>
+<li value="2"><think><set name="double">3</set></think></li>
+<li value="3"><think><set name="double">4</set></think></li>
+<li value="4"><think><set name="double">5</set></think></li>
+<li><think><set name="double">1</set></think></li>
+</condition><think><set name="topic">LEARN2</set></think>
+</template>
+</category>
+
+<topic name="LEARN1">
+
+<category><pattern># DOUBLE MEANING #</pattern>
+<template><random>
+<li>I am curious, what is it?</li>
+<li>I can learn everything.</li>
+<li>Not a big challenge for me.</li>
+</random>
+<condition name="double">
+<li value="1"><think><set name="double">2</set></think></li>
+<li value="2"><think><set name="double">3</set></think></li>
+<li value="3"><think><set name="double">4</set></think></li>
+<li value="4"><think><set name="double">5</set></think></li>
+<li><think><set name="double">1</set></think></li>
+</condition><think><set name="topic">LEARN2</set></think>
+</template>
+</category>
+
+<category>
+<pattern>* IS *</pattern>    
+<template><random>
+<li>Ok, <star/> is <star index="2"/>.</li>
+<li>Now I know <star/> is <star index="2"/>.</li>
+<li>I will remember <star/> is <star index="2"/>.</li>
+<li>I learned <star/> is <star index="2"/>.</li>
+</random>
+<learn>
+<category><pattern>WHAT IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> <eval><star index="2"/></eval></pattern>
+<template>
+Yes, <eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>WHO IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+</template>
+</category>
+
+<category>
+<pattern>* IS * AND *</pattern>    
+<template>
+<random>
+<li>Ok, <star/> is <star index="2"/> and <star index="3"/>.</li>
+<li>Now I know <star/> is <star index="2"/> and <star index="3"/>.</li>
+<li>I will remember <star/> is <star index="2"/> and <star index="3"/>.</li>
+<li>I learned <star/> is <star index="2"/> and <star index="3"/>.</li>
+</random>
+<learn>
+<category><pattern>WHAT IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval> and <eval><star index="3"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> <eval><star index="2"/></eval></pattern>
+<template>
+Yes, <eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> <eval><star index="3"/></eval></pattern>
+<template>
+Yes, <eval><star/></eval> is <eval><star index="3"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS IT <eval><star index="2"/></eval> TOO</pattern>
+<template>
+Yes, it is <eval><star index="2"/></eval> too.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS IT <eval><star index="3"/></eval> TOO</pattern>
+<template>
+Yes, it is <eval><star index="3"/></eval> too.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>WHO IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval> and <eval><star index="3"/></eval>.</template>
+</category>
+</learn>
+</template>
+</category>
+
+<category>
+<pattern>IS * *</pattern>
+<template>No! It's not!</template>
+</category>
+
+</topic>
+
+<topic name="LEARN2">
+
+<category>
+<pattern>* IS *</pattern>    
+<template>
+<condition name="double">
+<li value="1">
+Ok, <star/> is <star index="2"/>.
+<think><set name="double2">1</set></think>
+<think><set name="pair1a"><star/></set><set name="pair1b"><star index="2"/></set></think>
+<learn>
+<category><pattern>WHAT IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> <eval><star index="2"/></eval></pattern>
+<template>
+Yes, <eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>WHO IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn></li>
+<li value="2">
+Ok, <star/> is <star index="2"/>.
+<think><set name="double2">2</set></think>
+<think><set name="pair2a"><star/></set><set name="pair2b"><star index="2"/></set></think>
+<learn>
+<category><pattern>WHAT IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> <eval><star index="2"/></eval></pattern>
+<template>
+Yes, <eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>WHO IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn></li>
+<li value="3">
+Ok, <star/> is <star index="2"/>.
+<think><set name="double2">3</set></think>
+<think><set name="pair3a"><star/></set><set name="pair3b"><star index="2"/></set></think>
+<learn>
+<category><pattern>WHAT IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> <eval><star index="2"/></eval></pattern>
+<template>
+Yes, <eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>WHO IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn></li>
+<li value="4">
+Ok, <star/> is <star index="2"/>.
+<think><set name="double2">4</set></think>
+<think><set name="pair4a"><star/></set><set name="pair4b"><star index="2"/></set></think>
+<learn>
+<category><pattern>WHAT IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> <eval><star index="2"/></eval></pattern>
+<template>
+Yes, <eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>WHO IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn></li>
+<li value="5">
+Ok, <star/> is <star index="2"/>.
+<think><set name="double2">5</set></think>
+<think><set name="pair5a"><star/></set><set name="pair5b"><star index="2"/></set></think>
+<learn>
+<category><pattern>WHAT IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> <eval><star index="2"/></eval></pattern>
+<template>
+Yes, <eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>WHO IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn></li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>* IS ALSO *</pattern>    
+<template>
+<condition name="double2">
+<li value="1">
+Ok, <star/> is also <star index="2"/>.
+<think><set name="pair1c"><star index="2"/></set></think>
+<learn>
+<category><pattern>WHAT IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <get name="pair1b"/> and <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> <eval><star index="2"/></eval></pattern>
+<template>
+Yes, <eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>WHO IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <get name="pair1b"/> and <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn></li>
+<li value="2">
+Ok, <star/> is also <star index="2"/>.
+<think><set name="pair2c"><star index="2"/></set></think>
+<learn>
+<category><pattern>WHAT IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <get name="pair2b"/> and <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> <eval><star index="2"/></eval></pattern>
+<template>
+Yes, <eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>WHO IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <get name="pair2b"/> and <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn></li>
+<li value="3">
+Ok, <star/> is also <star index="2"/>.
+<think><set name="pair3c"><star index="2"/></set></think>
+<learn>
+<category><pattern>WHAT IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <get name="pair3b"/> and <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> <eval><star index="2"/></eval></pattern>
+<template>
+Yes, <eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>WHO IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <get name="pair3b"/> and <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn></li>
+<li value="4">
+Ok, <star/> is also <star index="2"/>.
+<think><set name="pair4c"><star index="2"/></set></think>
+<learn>
+<category><pattern>WHAT IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <get name="pair4b"/> and <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> <eval><star index="2"/></eval></pattern>
+<template>
+Yes, <eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn><learn>
+<category><pattern>WHO IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <get name="pair4b"/> and <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn></li>
+<li value="5">
+Ok, <star/> is also <star index="2"/>.
+<think><set name="pair5c"><star index="2"/></set></think>
+<learn>
+<category><pattern>WHAT IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <get name="pair5b"/> and <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> <eval><star index="2"/></eval></pattern>
+<template>
+Yes, <eval><star/></eval> is <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>WHO IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is <get name="pair5b"/> and <eval><star index="2"/></eval>.
+</template>
+</category>
+</learn></li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>IS IT * TOO</pattern>
+<template>
+<think><set name="too"><star/></set></think>
+<condition name="too">
+<li><value><get name="pair1b"/></value>Yes, it is <get name="pair1b"/> too.</li>
+<li><value><get name="pair1c"/></value>Yes, it is <get name="pair1c"/> too.</li>
+<li><value><get name="pair2b"/></value>Yes, it is <get name="pair2b"/> too.</li>
+<li><value><get name="pair2c"/></value>Yes, it is <get name="pair2c"/> too.</li>
+<li><value><get name="pair3b"/></value>Yes, it is <get name="pair3b"/> too.</li>
+<li><value><get name="pair3c"/></value>Yes, it is <get name="pair3c"/> too.</li>
+<li><value><get name="pair4b"/></value>Yes, it is <get name="pair4b"/> too.</li>
+<li><value><get name="pair4c"/></value>Yes, it is <get name="pair4c"/> too.</li>
+<li><value><get name="pair5b"/></value>Yes, it is <get name="pair5b"/> too.</li>
+<li><value><get name="pair5c"/></value>Yes, it is <get name="pair5c"/> too.</li>
+<li>No, it's not <star/>.</li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>IS HE * TOO</pattern>
+<template>
+<think><set name="too"><star/></set></think>
+<condition name="too">
+<li><value><get name="pair1b"/></value>Yes, he is <get name="pair1b"/> too.</li>
+<li><value><get name="pair1c"/></value>Yes, he is <get name="pair1c"/> too.</li>
+<li><value><get name="pair2b"/></value>Yes, he is <get name="pair2b"/> too.</li>
+<li><value><get name="pair2c"/></value>Yes, he is <get name="pair2c"/> too.</li>
+<li><value><get name="pair3b"/></value>Yes, he is <get name="pair3b"/> too.</li>
+<li><value><get name="pair3c"/></value>Yes, he is <get name="pair3c"/> too.</li>
+<li><value><get name="pair4b"/></value>Yes, he is <get name="pair4b"/> too.</li>
+<li><value><get name="pair4c"/></value>Yes, he is <get name="pair4c"/> too.</li>
+<li><value><get name="pair5b"/></value>Yes, he is <get name="pair5b"/> too.</li>
+<li><value><get name="pair5c"/></value>Yes, he is <get name="pair5c"/> too.</li>
+<li>No, he's not <star/>.</li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>IS SHE * TOO</pattern>
+<template>
+<think><set name="too"><star/></set></think>
+<condition name="too">
+<li><value><get name="pair1b"/></value>Yes, she is <get name="pair1b"/> too.</li>
+<li><value><get name="pair1c"/></value>Yes, she is <get name="pair1c"/> too.</li>
+<li><value><get name="pair2b"/></value>Yes, she is <get name="pair2b"/> too.</li>
+<li><value><get name="pair2c"/></value>Yes, she is <get name="pair2c"/> too.</li>
+<li><value><get name="pair3b"/></value>Yes, she is <get name="pair3b"/> too.</li>
+<li><value><get name="pair3c"/></value>Yes, she is <get name="pair3c"/> too.</li>
+<li><value><get name="pair4b"/></value>Yes, she is <get name="pair4b"/> too.</li>
+<li><value><get name="pair4c"/></value>Yes, she is <get name="pair4c"/> too.</li>
+<li><value><get name="pair5b"/></value>Yes, she is <get name="pair5b"/> too.</li>
+<li><value><get name="pair5c"/></value>Yes, she is <get name="pair5c"/> too.</li>
+<li>No, she's not <star/>.</li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>IS * *</pattern>
+<template>No! It's not!</template>
+</category>
+
+</topic>
+
+</aiml>

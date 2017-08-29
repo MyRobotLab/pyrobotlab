@@ -1,0 +1,4 @@
+jsenabled:true
+name:default
+topic:unknown
+language:french

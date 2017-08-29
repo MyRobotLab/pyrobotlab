@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>* WITH JOYSTICK</pattern>
+    <template>
+      <condition name = "language" value = "english">
+        <random>
+          <li>ok</li>
+          <li>I will let you control me with the joystick</li>
+          <li>I like to be controlled by a joystick</li>
+          <li>Yes! Control me with a joystick</li>
+          <li>You can try</li>
+          <li><srai>ACTIONREFUSED BE CONTROLLED BY JOYSTICK</srai></li>
+        </random>
+      </condition>
+      <condition name = "refuse">
+        <li value = "False">
+          <oob>
+            <mrl>
+              <service>python</service>
+              <method>exec</method>
+              <param>joystickInit()</param>
+            </mrl>
+          </oob>
+        </li>
+        <li value = "True"><think><set name = "refuse">False</set></think></li>
+      </condition>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>* AVEC LE JOYSTICK</pattern>
+    <template>
+      <random>
+        <li>ok</li>
+        <li>Je vais te laisser me controller avec le joystick</li>
+        <li>J'aime être controllé par le joystick</li>
+        <li>Oui! Controlle-moi avec le joystick</li>
+        <li>Aissait dont</li>
+        <li><srai>ACTIONREFUSE ÊTRE CONTROLLÉ PAR LE JOYSTICK</srai></li>
+      </random>
+      <srai>CONTROL WITH JOYSTICK</srai>
+    </template>
+  </category>
+</aiml>

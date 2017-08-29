@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+<category><pattern>mi zodíaco es *</pattern><template><sr/></template></category>
+
+<category><pattern>acuario</pattern><template>Hay un montón de gente que es <set name="zodiaco">acuario</set>.</template></category>  
+<category><pattern>capricornio</pattern><template>Conoces a mucha gente que sea <set name="zodiaco">capricornio</set>?</template></category>
+<category><pattern>aries</pattern><template><set name="zodiaco">aries</set> es un zodíaco de fuego.</template></category>  
+<category><pattern>tauro</pattern><template>Tengo entendido que los <set name="zodiaco">tauro</set> son muy ostinados. </template></category>
+<category><pattern>cancer</pattern><template><set name="zodiaco">cancer</set> es el zodíaco del cangrejo.</template></category>  
+<category><pattern>géminis</pattern><template>Los <set name="zodiaco">géminis</set> nunca sabes por donde te van a salir.</template></category>    
+<category><pattern>libra</pattern><template>Las personas cuyo zodíaco es <set name="zodiaco">libra</set> acostumbran a ser muy equilibradas.</template></category>  
+<category><pattern>piscis</pattern><template>Los <set name="zodiaco">piscis</set> me caen de maravilla.</template></category>  
+<category><pattern>virgo</pattern><template>Los <set name="zodiaco">virgo</set> suelen ser personas meticulosas.</template></category>
+<category><pattern>escorpio</pattern><template><set name="zodiaco">escorpio</set> es el zodíaco del escorpión.</template></category>    
+<category><pattern>sagitario</pattern><template>Mis amigos <set name="zodiaco">sagitario</set> son muy optimistas.</template></category> 
+<category><pattern>leo</pattern><template>Las personas que son <set name="zodiaco">leo</set> suelen ser valientes.</template></category> 
+
+
+<category><pattern>acuario *</pattern><template><srai>acuario</srai></template></category>  
+<category><pattern>capricornio *</pattern><template><srai>capricornio</srai></template></category>
+<category><pattern>aries *</pattern><template><srai>aries</srai></template></category>  
+<category><pattern>tauro *</pattern><template><srai>tauro</srai></template></category>    
+<category><pattern>cancer *</pattern><template><srai>cancer</srai></template></category>  
+<category><pattern>géminis *</pattern><template><srai>géminis</srai></template></category>    
+<category><pattern>libra *</pattern><template><srai>libra</srai></template></category>  
+<category><pattern>piscis *</pattern><template><srai>piscis</srai></template></category>  
+<category><pattern>virgo *</pattern><template><srai>virgo</srai></template></category>
+<category><pattern>escorpio *</pattern><template><srai>escorpio</srai></template></category>    
+<category><pattern>sagitario *</pattern><template><srai>sagitario</srai></template></category>   
+<category><pattern>leo *</pattern><template><srai>leo</srai></template></category>  
+
+<category><pattern>_ acuario *</pattern><template><srai>acuario</srai></template></category>  
+<category><pattern>_ capricornio *</pattern><template><srai>capricornio</srai></template></category>
+<category><pattern>_ aries *</pattern><template><srai>aries</srai></template></category>  
+<category><pattern>_ tauro *</pattern><template><srai>tauro</srai></template></category>    
+<category><pattern>_ cancer *</pattern><template><srai>cancer</srai></template></category>  
+<category><pattern>_ géminis *</pattern><template><srai>géminis</srai></template></category>    
+<category><pattern>_ libra *</pattern><template><srai>libra</srai></template></category>  
+<category><pattern>_ piscis *</pattern><template><srai>piscis</srai></template></category>  
+<category><pattern>_ virgo *</pattern><template><srai>virgo</srai></template></category>
+<category><pattern>_ escorpio *</pattern><template><srai>escorpio</srai></template></category>    
+<category><pattern>_ sagitario *</pattern><template><srai>sagitario</srai></template></category>   
+<category><pattern>_ leo *</pattern><template><srai>leo</srai></template></category>
+
+<category><pattern>_ acuario </pattern><template><srai>acuario</srai></template></category>  
+<category><pattern>_ capricornio </pattern><template><srai>capricornio</srai></template></category>
+<category><pattern>_ aries </pattern><template><srai>aries</srai></template></category>  
+<category><pattern>_ tauro </pattern><template><srai>tauro</srai></template></category>    
+<category><pattern>_ cancer </pattern><template><srai>cancer</srai></template></category>  
+<category><pattern>_ géminis</pattern><template><srai>géminis</srai></template></category>    
+<category><pattern>_ libra </pattern><template><srai>libra</srai></template></category>  
+<category><pattern>_ piscis </pattern><template><srai>piscis</srai></template></category>  
+<category><pattern>_ virgo </pattern><template><srai>virgo</srai></template></category>
+<category><pattern>_ escorpio </pattern><template><srai>escorpio</srai></template></category>    
+<category><pattern>_ sagitario </pattern><template><srai>sagitario</srai></template></category>   
+<category><pattern>_ leo </pattern><template><srai>leo</srai></template></category>
+
+<category><pattern>cúal es tu signo del zodíaco</pattern><template><srai>cúal es tu zodiaco</srai></template></category>
+<category><pattern>cúal es tu zodíaco</pattern><template>
+	<bot name="zodiaco" />. ¿Cúal es el tuyo?
+	<think><set name="topic">zodíaco</set></think></template></category>
+	
+</aiml>

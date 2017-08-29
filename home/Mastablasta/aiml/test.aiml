@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<category>
+<pattern>GOOGLE *</pattern>
+<template>Here we go...
+<oob><mrl><service>python</service><method>exec</method>
+<param>BareBonesBrowserLaunch.openURL("https://www.google.de/?hl=en&amp;gws_rd=cr&amp;ei=OGXxVrfAAoWrsQGptYWgDg#safe=off&amp;hl=en&amp;q=<star/>")</param>
+</mrl></oob>    
+</template>    
+</category>
+
+<category>
+<pattern>WIKI *</pattern>
+<template>
+<random>
+<li>here we go</li>
+<li>this is what I found</li>
+<li>listen to this</li>
+<li>ok</li>
+<li>I found this on the web</li>
+</random>
+<oob><mrl><service>python</service><method>exec</method>
+<param>
+sleep(2)
+query = "<star/>"
+wdf.setWebSite("enwiki") 
+wdf.setLanguage("en")
+speech.speakBlocking(wdf.getLabel(query))
+speech.speakBlocking(wdf.getDescription(query))
+</param>
+</mrl></oob>    
+</template>    
+</category>
+
+<category>
+<pattern>MUSIC *</pattern>
+<template>Here we go...
+<oob><mrl><service>python</service><method>exec</method>
+<param>BareBonesBrowserLaunch.openURL("https://www.youtube.com/results?search_query=<star/>")</param>
+</mrl></oob>    
+</template>    
+</category>
+
+<category><pattern>WEATHER IN *</pattern>
+<template><sraix service="pannous">WEATHER IN <star/></sraix>
+</template>
+</category>
+
+</aiml>

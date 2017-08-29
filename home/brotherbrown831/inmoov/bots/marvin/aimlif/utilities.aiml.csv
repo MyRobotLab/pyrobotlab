@@ -1,0 +1,128 @@
+0,FIRSTLETTER * *,*,*,<star/>,utilities.aiml
+0,FIRSTLETTER *,*,*,<star/>,utilities.aiml
+0,REMAININGLETTERS * *,*,*,<star index="2"/>,utilities.aiml
+0,REMAININGLETTERS *,*,*,undefined,utilities.aiml
+0,REMAININGLETTERS,*,*,undefined,utilities.aiml
+0,NTH 0 *,*,*,<star/> has no zeroth letter.,utilities.aiml
+0,COUNTLETTERS *,*,*,<think>#Newline<set var="letters"><explode><star/></explode> end</set>#Newline<set var="count">0</set>#Newline</think>#Newline<condition>#Newline<li><var>letters</var><value>end</value> <get var="count"/></li>#Newline<li><think>#Newline<set var="letters"><srai>REMAININGLETTERS <get var="letters"/></srai></set>#Newline<set var="count"><map><name>successor</name><get var="count"/></map></set></think> <loop/></li>#Newline</condition>,utilities.aiml
+0,NTH <SET>NUMBER</SET> *,*,*,<think>#Newline<set var="nth"><star/></set>#Newline<set var="count">1</set>#Newline<set var="letters"><explode><star index="2"/></explode> end</set>#Newline</think>#Newline<condition>#Newline<li><var>letters</var><value>end</value> <star index="2"/> has only <map><name>predecessor</name><get var="count"/></map> letters.</li>#Newline<li><var>count</var><value><get var="nth"/></value> #NewlineThe <map><name>number2ordinal</name><get var="nth"/></map> letter is <srai>FIRSTLETTER <get var="letters"/></srai></li>#Newline<li><think>#Newline<set var="letters"><srai>REMAININGLETTERS <get var="letters"/></srai></set>#Newline<set var="count"><map><name>successor</name><get var="count"/></map></set>#Newline</think> <loop/></li>#Newline</condition>,utilities.aiml
+0,PERSON *,*,*,<person><star/></person>,utilities.aiml
+0,ISANAME * *,*,*,<srai>ISANAME <star/></srai>,utilities.aiml
+0,LOGICALOR FALSE,*,*,false,utilities.aiml
+0,LOGICALOR FALSE *,*,*,<srai>LOGICALOR <star/></srai>,utilities.aiml
+0,LOGICALOR TRUE,*,*,true,utilities.aiml
+0,LOGICALOR TRUE *,*,*,true,utilities.aiml
+0,REMOVEITEM * FROM LIST NIL,*,*,NIL,utilities.aiml
+0,REMOVEITEM * FROM LIST CONS * NIL,*,*,<think><set name="isequalto"><srai>IS <star/> EQUALTO <star index="2"/></srai></set></think>#Newline<condition name="isequalto">#Newline<li value="true">NIL</li>#Newline<li>CONS <star index="2"/> NIL</li>#Newline</condition>,utilities.aiml
+0,REMOVEITEM * FROM LIST CONS * CONS *,*,*,<think><set name="isequalto"><srai>IS <star/> EQUALTO <star index="2"/></srai></set></think>#Newline<condition name="isequalto">#Newline<li value="true"><srai>REMOVEITEM <star/> FROM LIST CONS <star index="3"/></srai></li>#Newline<li>CONS <star index="2"/> <srai>REMOVEITEM <star/> FROM LIST CONS <star index="3"/></srai></li>#Newline</condition>,utilities.aiml
+0,RANDOMCHAR,*,*,<think><set name="randomchar">#Newline<random>#Newline<li>0</li>#Newline<li>1</li>#Newline<li>2</li>#Newline<li>3</li>#Newline<li>4</li>#Newline<li>5</li>#Newline<li>6</li>#Newline<li>7</li>#Newline<li>8</li>#Newline<li>9</li>#Newline<li>A</li>#Newline<li>B</li>#Newline<li>C</li>#Newline<li>D</li>#Newline<li>E</li>#Newline<li>F</li>#Newline<li>G</li>#Newline<li>H</li>#Newline<li>I</li>#Newline<li>J</li>#Newline<li>K</li>#Newline<li>L</li>#Newline<li>M</li>#Newline<li>N</li>#Newline<li>O</li>#Newline<li>P</li>#Newline<li>Q</li>#Newline<li>R</li>#Newline<li>S</li>#Newline<li>T</li>#Newline<li>U</li>#Newline<li>V</li>#Newline<li>W</li>#Newline<li>X</li>#Newline<li>Y</li>#Newline<li>Z</li>#Newline</random>#Newline</set>#Newline</think>#Newline<random><li><lowercase><get name="randomchar"/></lowercase></li>#Newline<li><uppercase><get name="randomchar"/></uppercase></li>#Newline</random>,utilities.aiml
+0,ISADIGIT 3,*,*,true,utilities.aiml
+0,ISADIGIT 2,*,*,true,utilities.aiml
+0,ISADIGIT 1,*,*,true,utilities.aiml
+0,ISADIGIT 0,*,*,true,utilities.aiml
+0,ISADIGIT 7,*,*,true,utilities.aiml
+0,ISADIGIT 6,*,*,true,utilities.aiml
+0,ISADIGIT 5,*,*,true,utilities.aiml
+0,ISADIGIT 4,*,*,true,utilities.aiml
+0,ISADIGIT *,*,*,false,utilities.aiml
+0,ISADIGIT 9,*,*,true,utilities.aiml
+0,ISADIGIT 8,*,*,true,utilities.aiml
+0,_,WHICH ITEM WOULD YOU LIKE TO REMOVE,REMOVE LIST ITEM,<think><set name="selecteditem"><star/></set>#Newline<set name="topic">unknown</set>#Newline</think>#Newline<condition name="selecteditem">#Newline<li value="None of the above"><srai><star/></srai></li>#Newline<li><srai>REMOVE <star/> FROM LIST <get name="listname"/></srai></li>#Newline</condition>,utilities.aiml
+0,SENTENCELENGTH,*,*,0,utilities.aiml
+0,SENTENCELENGTH *,*,*,1,utilities.aiml
+0,SENTENCELENGTH * *,*,*,<map><name>successor</name><srai>SENTENCELENGTH <star index="2"/></srai></map>,utilities.aiml
+0,IMPLODE *,*,*,<star/>,utilities.aiml
+0,IMPLODE * *,*,*,<srai> IMPLODE <star/></srai><srai>IMPLODE <star index="2"/></srai>,utilities.aiml
+0,ATOMICLISTMEMBER *,*,*,false,utilities.aiml
+0,ATOMICLISTMEMBER * *,*,*,<think><set name="isequalto"><srai>IS <star/> EQUALTO <star index="2"/></srai></set>#Newline</think>#Newline<condition name="isequalto">#Newline<li value="true">true</li>#Newline<li>false</li>#Newline</condition>,utilities.aiml
+0,ATOMICLISTMEMBER * * *,*,*,<think><set name="isequalto"><srai>IS <star/> EQUALTO <star index="2"/></srai></set>#Newline</think>#Newline<condition name="isequalto">#Newline<li value="true">true</li>#Newline<li><srai>ATOMICLISTMEMBER <star/> <star index="3"/></srai></li>#Newline</condition>,utilities.aiml
+0,YES,WOULD YOU LIKE TO MAKE A * LIST,*,<srai>MAKE A <thatstar/> LIST</srai>,utilities.aiml
+0,THAT,*,*,<that/>,utilities.aiml
+0,THAT 2 3,*,*,<that index="2#Comma3"/>,utilities.aiml
+0,THAT 2 2,*,*,<that index="2#Comma2"/>,utilities.aiml
+0,THAT 2 1,*,*,<that index="2#Comma1"/>,utilities.aiml
+0,THAT 2 4,*,*,<that index="2#Comma4"/>,utilities.aiml
+0,THAT 1 3,*,*,<that index="1#Comma3"/>,utilities.aiml
+0,THAT 1 2,*,*,<that index="1#Comma2"/>,utilities.aiml
+0,THAT 1 1,*,*,<that index="1#Comma1"/>,utilities.aiml
+0,THAT 1 4,*,*,<that index="1#Comma4"/>,utilities.aiml
+0,MY * LIST,*,*,Would you like to make a <star/> list?,utilities.aiml
+0,GENERATE PASSWORD,*,*,<srai>IMPLODE <srai>RANDOMCHAR</srai><srai>RANDOMCHAR</srai><srai>RANDOMCHAR</srai><srai>RANDOMCHAR</srai><srai>RANDOMCHAR</srai><srai>RANDOMCHAR</srai><srai>RANDOMCHAR</srai><srai>RANDOMCHAR</srai></srai>,utilities.aiml
+0,DELETE MY * LIST,*,*,Deleting your list.#Newline<learnf>#Newline<category><pattern>MY <eval><star/></eval> LIST</pattern>#Newline<template>NIL</template>#Newline</category>#Newline</learnf>,utilities.aiml
+0,DELETE MY LIST,*,*,Deleting your list.#Newline<learnf>#Newline<category><pattern>MYLIST</pattern>#Newline<template>NIL</template>#Newline</category>#Newline</learnf>,utilities.aiml
+0,ISANEMAILADDRESS UNKNOWN,*,*,false,utilities.aiml
+0,ISANEMAILADDRESS *,*,*,false,utilities.aiml
+0,ISANEMAILADDRESS * AT * DOT *,*,*,true,utilities.aiml
+0,CAR NIL,*,*,NIL,utilities.aiml
+0,CAR *,*,*,undefined,utilities.aiml
+0,CAR CONS * NIL,*,*,<star/>,utilities.aiml
+0,CAR CONS * CONS *,*,*,<star/>,utilities.aiml
+0,IS _ EQUALTO *,*,*,<think><set var="star"><star/></set>#Newline</think>#Newline<condition var="star">#Newline<li><value><star index="2"/></value>true</li>#Newline<li>false</li>#Newline</condition>,utilities.aiml
+0,ISSHORTANSWER *,*,*,true,utilities.aiml
+0,ISSHORTANSWER * *,*,*,true,utilities.aiml
+0,ISSHORTANSWER * * *,*,*,true,utilities.aiml
+0,ISSHORTANSWER * * * *,*,*,false,utilities.aiml
+0,SUCCESSOR,*,*,0,utilities.aiml
+0,SUCCESSOR <SET>NUMBER</SET>,*,*,<map><name>successor</name><star/></map>,utilities.aiml
+0,REMOVE * FROM MY * LIST,*,*,<srai>REMOVE <star/> FROM LIST MY <star index="2"/> LIST</srai>,utilities.aiml
+0,REMOVE * FROM MY LIST,*,*,<srai>REMOVE <star/> FROM LIST MYLIST</srai>,utilities.aiml
+0,REMOVE * FROM LIST *,*,*,<think>#Newline<set name="listname"><star index="2"/></set> #Newline<set name="isamember"><srai>LISTMEMBER <star/> OF LIST <srai><get name="listname"/></srai></srai></set>#Newline</think>#Newline<!--#NewlineList name=<get name="listname"/>.#NewlineList value=<srai><get name="listname"/></srai>.#Newline-->#Newline<condition name="isamember">#Newline<li value="true">Taking <star/> off your list.#Newline<learnf>#Newline<category><pattern><eval><get name="listname"/></eval></pattern>#Newline<template><eval><srai>REMOVEITEM <star/> FROM LIST <srai><get name="listname"/></srai></srai></eval></template>#Newline</category>#Newline</learnf>#Newline</li>#Newline<li>#Newline<oob><dialog>#Newline<title>Which item?</title>#Newline<list><srai>XMLITEMIZE <srai><get name="listname"/></srai></srai>#Newline</list>#Newline</dialog></oob>  #Newline<think><set name="topic">REMOVE LIST ITEM</set></think> #NewlineI couldn't find <star/> on your list.  #NewlineWhich item would you like to remove?#Newline</li>#Newline</condition>,utilities.aiml
+0,LOGICALAND FALSE,*,*,false,utilities.aiml
+0,LOGICALAND FALSE *,*,*,false,utilities.aiml
+0,LOGICALAND TRUE,*,*,true,utilities.aiml
+0,LOGICALAND TRUE *,*,*,<srai>LOGICALAND <star/></srai>,utilities.aiml
+0,PREDECESSOR <SET>NUMBER</SET>,*,*,<map><name>predecessor</name><star/></map>,utilities.aiml
+0,CDR NIL,*,*,NIL,utilities.aiml
+0,CDR *,*,*,undefined,utilities.aiml
+0,CDR CONS * NIL,*,*,NIL,utilities.aiml
+0,CDR CONS * CONS *,*,*,CONS <star index="2"/>,utilities.aiml
+0,XMLITEMIZE NIL,*,*,Your list is empty.,utilities.aiml
+0,XMLITEMIZE *,*,*,undefined,utilities.aiml
+0,XMLITEMIZE CONS * NIL,*,*,<item><star/></item>,utilities.aiml
+0,XMLITEMIZE CONS * CONS *,*,*,<item><star/></item><srai>XMLITEMIZE CONS <star index="2"/></srai>,utilities.aiml
+0,READ MY * LIST,*,*,Here is your <star/> list: <srai>COMMASEPARATE <srai>MY <star/> LIST</srai></srai>,utilities.aiml
+0,READ MY LIST,*,*,Here is your list: <srai>COMMASEPARATE <srai>MYLIST</srai></srai>,utilities.aiml
+0,ISANUMBER <SET>NUMBER</SET>,*,*,true,utilities.aiml
+0,ISANUMBER *,*,*,false,utilities.aiml
+0,ISAPHONENUMBER <SET>NUMBER</SET>,*,*,true,utilities.aiml
+0,ISAPHONENUMBER <SET>NUMBER</SET> *,*,*,<srai>ISAPHONENUMBER <star/></srai>,utilities.aiml
+0,ISAPHONENUMBER PLUS *,*,*,<srai>ISAPHONENUMBER <star/></srai>,utilities.aiml
+0,ISAPHONENUMBER DASH *,*,*,<srai>ISAPHONENUMBER <star/></srai>,utilities.aiml
+0,ISAPHONENUMBER LPAREN *,*,*,<srai>ISAPHONENUMBER <star/></srai>,utilities.aiml
+0,ISAPHONENUMBER RPAREN *,*,*,<srai>ISAPHONENUMBER <star/></srai>,utilities.aiml
+0,ISAPHONENUMBER *,*,*,false,utilities.aiml
+0,INPUT,*,*,<input index="1"/>,utilities.aiml
+0,INPUT 3,*,*,<input index="3"/>,utilities.aiml
+0,INPUT 2,*,*,<input index="2"/>,utilities.aiml
+0,INPUT 4,*,*,<input index="4"/>,utilities.aiml
+0,LEARNEQUAL * EQUALTO *,*,*,<learn>#Newline<category>#Newline<pattern>TESTEQUAL <eval><star/></eval> EQUALTO <eval><star/></eval></pattern>#Newline<template>true</template>#Newline</category>#Newline<category>#Newline<pattern>TESTEQUAL <eval><star/></eval> EQUALTO *</pattern>#Newline<template>false</template>#Newline</category>#Newline<category>#Newline<pattern>TESTEQUAL * EQUALTO <eval><star/></eval></pattern>#Newline<template>false</template>#Newline</category>#Newline</learn>,utilities.aiml
+0,ADD 1 PLUS <SET>NUMBER</SET>,*,*,<map name="successor"><star/></map>,utilities.aiml
+0,ADD 0 PLUS <SET>NUMBER</SET>,*,*,<star/>,utilities.aiml
+0,ADD * PLUS *,*,*,<srai>ADD 1 PLUS <srai>ADD <map name="predecessor"><star/></map> PLUS#Newline<star index="2"/></srai></srai>,utilities.aiml
+0,ADD _ TO MY * LIST,*,*,<srai>ADD <star/> TO MY <star index="2"/> LIST</srai>,utilities.aiml
+0,ADD _ TO MY LIST,*,*,I've added <star/> to your list.#Newline<learnf>#Newline<category><pattern>MYLIST</pattern>#Newline<template><eval><srai>CONS <star/> <srai>MYLIST</srai></srai></eval>#Newline</template>#Newline</category>#Newline</learnf>,utilities.aiml
+0,ADD _ TO LIST,*,*,<srai>ADD <star/> TO MY LIST</srai>,utilities.aiml
+0,WHAT IS MY LIST CALLED,*,*,Your list is called MYLIST.,utilities.aiml
+0,FORMATPHONENUMBER *,*,*,<star/>,utilities.aiml
+0,FORMATPHONENUMBER * *,*,*,<think>#Newline<set name="firstword"><lowercase><star/></lowercase></set>#Newline</think>#Newline<condition name="firstword">#Newline<li value="dash">-<srai>FORMATPHONENUMBER <star index="2"/></srai></li>#Newline<li value="plus">+<srai>FORMATPHONENUMBER <star index="2"/></srai></li>#Newline<li value="lparen">(<srai>FORMATPHONENUMBER <star index="2"/></srai></li>#Newline<li value="rparen">(<srai>FORMATPHONENUMBER <star index="2"/></srai></li>#Newline<li><star/><srai>FORMATPHONENUMBER <star index="2"/></srai></li>#Newline</condition>,utilities.aiml
+0,COMMASEPARATE NIL,*,*,Your list is empty.,utilities.aiml
+0,COMMASEPARATE *,*,*,undefined,utilities.aiml
+0,COMMASEPARATE CONS * NIL,*,*,<star/>,utilities.aiml
+0,COMMASEPARATE CONS * CONS *,*,*,<star/>#Comma <srai>COMMASEPARATE CONS <star index="2"/></srai>,utilities.aiml
+0,LISTMEMBER * OF LIST NIL,*,*,false,utilities.aiml
+0,LISTMEMBER * OF LIST CONS * NIL,*,*,<think><set name="isequalto"><srai>IS <star/> EQUALTO <star index="2"/></srai></set></think>#Newline<condition name="isequalto">#Newline<li value="true">true</li>#Newline<li>false</li>#Newline</condition>,utilities.aiml
+0,LISTMEMBER * OF LIST CONS * CONS *,*,*,<think><set name="isequalto"><srai>IS <star/> EQUALTO <star index="2"/></srai></set></think>#Newline<condition name="isequalto">#Newline<li value="true">true</li>#Newline<li><srai>LISTMEMBER <star/> OF LIST CONS <star index="3"/></srai></li>#Newline</condition>,utilities.aiml
+0,RESPONSE,*,*,<response index="1"/>,utilities.aiml
+0,RESPONSE 3,*,*,<response index="3"/>,utilities.aiml
+0,RESPONSE 2,*,*,<response index="2"/>,utilities.aiml
+0,RESPONSE 4,*,*,<response index="4"/>,utilities.aiml
+0,MAKE A * LIST,*,*,Initializing your <star/> list.#Newline<learnf>#Newline<category><pattern>MY <eval><star/></eval> LIST</pattern>#Newline<template>NIL</template>#Newline</category>#Newline</learnf>,utilities.aiml
+0,MAKE A LIST,*,*,Initializing your list.#Newline<learnf>#Newline<category><pattern>MYLIST</pattern>#Newline<template>NIL</template>#Newline</category>#Newline</learnf>,utilities.aiml
+0,CONS *,*,*,undefined,utilities.aiml
+0,CONS * NIL,*,*,CONS <star/> NIL,utilities.aiml
+0,CONS * CONS *,*,*,CONS <star/> CONS <star index="2"/>,utilities.aiml
+0,COUNT TO <SET>NUMBER</SET>,*,*,<think><set name="count">0</set>#Newline</think>#Newline<condition name="count">#Newline<li><value><star/></value></li>#Newline<li><set name="count"><map><name>successor</name><get name="count"/></map></set> <loop/></li>#Newline</condition>,utilities.aiml
+0,REQUEST,*,*,<request index="1"/>,utilities.aiml
+0,REQUEST 3,*,*,<request index="3"/>,utilities.aiml
+0,REQUEST 2,*,*,<request index="2"/>,utilities.aiml
+0,REQUEST 4,*,*,<request index="4"/>,utilities.aiml

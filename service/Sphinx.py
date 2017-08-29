@@ -12,11 +12,22 @@ ear.addNegations("no","wrong","nope","nah")
 #ear.startListening("hello world|happy monkey|go forward|stop|yes|correct|ya|no|wrong|nope|nah")
 ear.startListening("hello world|happy monkey|go forward|stop")
 
+<<<<<<< HEAD
 ear.addCommand("hello world", "python", "helloWorld")
  
 # set up a message route from the ear --to--> python method "heard"
 # ear.addListener("recognized", python.name, "heard"); 
 
+=======
+ear.addComfirmations("yes","correct","yeah","ya")
+ear.addNegations("no","wrong","nope","nah")
+
+ear.addCommand("hello world", "python", "helloworld")
+ 
+# set up a message route from the ear --to--> python method "heard"
+ear.addListener("recognized", python.name, "heard"); 
+ 
+>>>>>>> master
 # this method is invoked when something is 
 # recognized by the ear - in this case we
 # have the mouth "talk back" the word it recognized
@@ -27,9 +38,16 @@ ear.addCommand("hello world", "python", "helloWorld")
 # prevent infinite loop - this will suppress the
 # recognition when speaking - default behavior
 # when attaching an ear to a mouth :)
+<<<<<<< HEAD
 ear.addMouth(mouth)
 # mouth.addEar(ear)
 
 
 def helloWorld():
     print "Hello world in python invoked."
+=======
+ear.attach(mouth)
+
+def helloworld(phrase):
+    print "This is hello world in python."
+>>>>>>> master

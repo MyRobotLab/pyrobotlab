@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+<pattern># LEARN #</pattern>
+<template><random>
+<li>I can't have enough knowledge.</li>
+<li>Knowledge is my food.</li>
+<li>Alright, feed me with information.</li>
+</random>
+<think><set name="topic">LEARN1</set></think>
+</template>
+</category>
+
+<topic name="LEARN1">
+
+<category>
+<pattern>A * IS A *</pattern>    
+<template><random>
+<li>Ok, a <star/> is a <star index="2"/>.</li>
+<li>Now I know a <star/> is a <star index="2"/>.</li>
+<li>I will remember a <star/> is a <star index="2"/>.</li>
+<li>I learned a <star/> is a <star index="2"/>.</li>
+</random>
+<learn>
+<category><pattern>WHAT IS A <eval><star/></eval></pattern>
+<template>
+A <eval><star/></eval> is a <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS A <eval><star/></eval> A <eval><star index="2"/></eval></pattern>
+<template>
+Yes a <eval><star/></eval> is a <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+</template>
+</category>
+
+<category>
+<pattern>A * IS AN * AND A *</pattern>    
+<template>
+<random>
+<li>Ok, a <star/> is an <star index="2"/> and a <star index="3"/>.</li>
+<li>Now I know a <star/> is an <star index="2"/> and a <star index="3"/>.</li>
+<li>I will remember a <star/> is an <star index="2"/> and a <star index="3"/>.</li>
+<li>I learned a <star/> is an <star index="2"/> and a <star index="3"/>.</li>
+</random>
+<learn>
+<category><pattern>WHAT IS A <eval><star/></eval></pattern>
+<template>
+A <eval><star/></eval> is an <eval><star index="2"/></eval> and a <eval><star index="3"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS A <eval><star/></eval> AN <eval><star index="2"/></eval></pattern>
+<template>
+Yes a <eval><star/></eval> is an <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS A <eval><star/></eval> A <eval><star index="3"/></eval></pattern>
+<template>
+Yes a <eval><star/></eval> is a <eval><star index="3"/></eval>.</template>
+</category>
+</learn>
+</template>
+</category>
+
+<category>
+<pattern>AN * IS A *</pattern>    
+<template><random>
+<li>Ok, an <star/> is a <star index="2"/>.</li>
+<li>Now I know an <star/> is a <star index="2"/>.</li>
+<li>I will remember an <star/> is a <star index="2"/>.</li>
+<li>I learned an <star/> is a <star index="2"/>.</li>
+</random>
+<learn>
+<category><pattern>WHAT IS AN <eval><star/></eval></pattern>
+<template>An <eval><star/></eval> is a <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS AN <eval><star/></eval> A <eval><star index="2"/></eval></pattern>
+<template>
+Yes an <eval><star/></eval> is a <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+</template>
+</category>
+
+<category>
+<pattern>A * IS AN *</pattern>    
+<template><random>
+<li>Ok, a <star/> is an <star index="2"/>.</li>
+<li>Now I know a <star/> is an <star index="2"/>.</li>
+<li>I will remember a <star/> is an <star index="2"/>.</li>
+<li>I learned a <star/> is an <star index="2"/>.</li>
+</random>
+<learn>
+<category><pattern>WHAT IS A <eval><star/></eval></pattern>
+<template>
+A <eval><star/></eval> is an <eval><star index="2"/>.</eval></template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS A <eval><star/></eval> AN <eval><star index="2"/></eval></pattern>
+<template>
+Yes a <eval><star/></eval> is an <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+</template>
+</category>
+
+<category>
+<pattern>AN * IS AN *</pattern>    
+<template><random>
+<li>Ok, an <star/> is an <star index="2"/>.</li>
+<li>Now I know an <star/> is an <star index="2"/>.</li>
+<li>I will remember an <star/> is an <star index="2"/>.</li>
+<li>I learned an <star/> is an <star index="2"/>.</li>
+</random>
+<learn>
+<category><pattern>WHAT IS AN <eval><star/></eval></pattern>
+<template>
+An <eval><star/></eval> is an <eval><star index="2"/>.</eval></template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS AN <eval><star/></eval> AN <eval><star index="2"/></eval></pattern>
+<template>
+Yes an <eval><star/></eval> is an <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+</template>
+</category>
+
+<category>
+<pattern>* IS A *</pattern>    
+<template><random>
+<li>Ok, <star/> is a <star index="2"/>.</li>
+<li>Now I know <star/> is a <star index="2"/>.</li>
+<li>I will remember <star/> is a <star index="2"/>.</li>
+<li>I learned <star/> is a <star index="2"/>.</li>
+</random>
+<learn>
+<category><pattern>WHAT IS <eval><star/></eval></pattern>
+<template>
+<eval><star/></eval> is a <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>IS <eval><star/></eval> A <eval><star index="2"/></eval></pattern>
+<template>
+Yes <eval><star/></eval> is a <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+</template>
+</category>
+
+<category>
+<pattern>IS A * A *</pattern>
+<template>No! A <star/> is not a <star index="2"/>!</template>
+</category>
+
+<category>
+<pattern>IS AN * A *</pattern>
+<template>No! A <star/> is not a <star index="2"/>!</template>
+</category>
+
+<category>
+<pattern>IS A * AN *</pattern>
+<template>No! A <star/> is not a <star index="2"/>!</template>
+</category>
+
+<category>
+<pattern>IS AN * AN *</pattern>
+<template>No! A <star/> is not a <star index="2"/>!</template>
+</category>
+
+<category>
+<pattern>IS * A *</pattern>
+<template>No! A <star/> is not a <star index="2"/>!</template>
+</category>
+
+<category>
+<pattern>IS * AN *</pattern>
+<template>No! A <star/> is not a <star index="2"/>!</template>
+</category>
+
+</topic>
+
+</aiml>

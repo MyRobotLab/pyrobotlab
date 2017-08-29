@@ -1,0 +1,6 @@
+refuse:False
+jsenabled:true
+lastCommand:be serious
+name:Christian
+topic:unknown
+language:english

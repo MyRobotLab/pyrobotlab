@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  
+<!--EMAIL  -->
+<category><pattern>CAN YOU SEND EMAIL</pattern><template>Yes, should i send an email?</template></category>
+<category><pattern>^ <set>afirmative</set> ^</pattern><that>YES, SHOULD I SEND AN EMAIL</that><template><srai>SEND EMAIL</srai></template></category>
+<category><pattern>^ <set>negations</set> ^</pattern><that>YES, SHOULD I SEND AN EMAIL</that><template>ok.</template></category>
+
+<category><pattern>WHAT IS THE EMAIL OF <set>contact</set></pattern><template><map><name>contact2email</name><star/></map></template></category>
+<category><pattern>SEND EMAIL</pattern><template><think><set name="topic">send email</set></think>What is the subject of the email?</template></category>
+
+<topic name="send email"> 
+
+<!--email subject --> 
+<category><pattern>_</pattern><that>WHAT IS THE SUBJECT OF THE EMAIL</that><template><think><set name="emailsub"><star/></set></think> What is the content?</template></category>
+
+<!--EMAIL-CONTENT --> 
+<category><pattern>_</pattern><that>WHAT IS THE CONTENT</that><template><think><set name="emailcontent"><star/></set></think>For whom you wish to send the email?</template></category>
+
+<!--EMAIL-TO --> 
+<category><pattern><set>contact</set></pattern><that>FOR WHOM YOU WISH TO SEND THE EMAIL</that><template>Email sent.<oob><mrl><service>python</service><method>exec</method><param>emailtest("<map><name>contact2email</name><star/></map>","<get name="emailcontent"/>","<get name="emailsub"/>")</param></mrl></oob></template></category>
+<category><pattern>*</pattern><that>FOR WHOM YOU WISH TO SEND THE EMAIL</that><template>No contact for that name wanna try another?</template></category>
+
+<category><pattern>^ <set>negations</set> ^</pattern><that>NO CONTACT FOR THAT NAME WANNA TRY ANOTHER</that><template>ok.</template></category>
+<category><pattern>^ <set>afirmative</set> ^</pattern><that>NO CONTACT FOR THAT NAME WANNA TRY ANOTHER</that><template>For whom you wish to send the email?</template></category>
+<category><pattern>*</pattern><that>NO CONTACT FOR THAT NAME WANNA TRY ANOTHER</that><template>I guess that means no.</template></category>
+
+</topic>
+</aiml>

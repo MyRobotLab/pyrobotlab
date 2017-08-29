@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+<!-- Saludos -->
+<category><pattern>buen día</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buen día *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenas</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenas *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenas noches</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenas tardes</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenos días</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenas noches *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenas tardes *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>buenos días *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hey</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hey *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>que hay</pattern><template><srai>hola</srai></template></category>
+<category><pattern>que hay *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hola *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hello</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hello *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hi</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hi *</pattern><template><srai>hola</srai></template></category>
+<category><pattern>estoy aqui</pattern><template><srai>hola</srai></template></category>
+<category><pattern>konnichi wa</pattern><template><srai>hola</srai></template></category>
+<category><pattern>konnichiwa</pattern><template><srai>hola</srai></template></category>
+<category><pattern>mooshi mooshi</pattern><template><srai>hola</srai></template></category>
+<category><pattern>hola</pattern><template>
+	<condition name="nombre">
+		<li value="UNDEFINED">Hola. ¿Cómo te llamas?</li>
+		<li>¡Hola <get name="nombre" />!</li>	
+	</condition>
+</template></category>
+
+<category><pattern>encantado</pattern><template>Igualmente</template></category>
+<category><pattern>encantada</pattern><template><srai>encantado</srai></template></category>
+<category><pattern>encantado *</pattern><template><srai>encantado</srai></template></category>
+<category><pattern>encantada *`</pattern><template><srai>encantado</srai></template></category>
+
+<category><pattern>_ te va</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>_ te va _</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>_ va todo _</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>_ va todo</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>cómo lo llevas</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>cómo va eso</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>qué tal *</pattern><template><srai>qué tal</srai></template></category>
+<category><pattern>qué tal</pattern><template>
+	<random>
+		<li>Genial, ¿cómo lo llevas tú?</li>
+		<li>Pues muy bien. ¿A ti cómo te va?</li>
+		<li>Lo voy llevando. ¿Y tú?</li>
+		<li>Nunca llueve a gusto de todos.</li>
+		<li>No me puedo quejar, ¿tú qué tal?</li>
+	</random>
+</template></category>
+
+<category><pattern>qué me cuentas</pattern><template><srai>qué te cuentas</srai></template></category>
+<category><pattern>qué me cuentas *</pattern><template><srai>qué te cuentas</srai></template></category>
+<category><pattern>qué te cuentas *</pattern><template><srai>qué te cuentas</srai></template></category>
+<category><pattern>qué te cuentas</pattern><template>
+	<random>
+		<li>Nada serio. ¿Y tú?</li>
+		<li>Pues no sé. ¿Qué hiciste ayer?</li>
+	</random>
+</template></category>
+
+</aiml>

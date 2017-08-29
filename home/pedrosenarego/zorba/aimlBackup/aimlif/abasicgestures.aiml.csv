@@ -1,0 +1,17 @@
+0,STOP,*,*,i'm detaching all servos.<oob><mrl><service>i01</service><method>detach</method></mrl></oob>,abasicgestures.aiml
+0,REST,*,*,ah resting...<oob><mrl><service>python</service><method>exec</method><param>rest()</param></mrl></oob>,abasicgestures.aiml
+0,HEAD DOWN,*,*,putting my head down.<oob><mrl><service>python</service><method>exec</method><param>headdown()</param></mrl></oob>,abasicgestures.aiml
+0,HEAD UP,*,*,putting my head up.<oob><mrl><service>python</service><method>exec</method><param>headup()</param></mrl></oob>,abasicgestures.aiml
+0,NECK LEFT,*,*,pending neck to the left.<oob><mrl><service>python</service><method>exec</method><param>neckleft()</param></mrl></oob>,abasicgestures.aiml
+0,NECK RIGHT,*,*,pending neck to the right.<oob><mrl><service>python</service><method>exec</method><param>neckright()</param></mrl></oob>,abasicgestures.aiml
+0,HEAD LEFT,*,*,looking to the left.<oob><mrl><service>python</service><method>exec</method><param>headleft()</param></mrl></oob>,abasicgestures.aiml
+0,HEAD RIGHT,*,*,looking to the right.<oob><mrl><service>python</service><method>exec</method><param>headright()</param></mrl></oob>,abasicgestures.aiml
+0,CONNECT RIGHT HAND,*,*,right hand at your service.<oob><mrl><service>i01.rightHand</service><method>attach</method></mrl></oob>,abasicgestures.aiml
+0,OPEN HAND,*,*,<oob><mrl><service>python</service><method>exec</method><param>openhand()</param></mrl></oob>,abasicgestures.aiml
+0,CLOSE HAND,*,*,<oob><mrl><service>python</service><method>exec</method><param>closehand()</param></mrl></oob>,abasicgestures.aiml
+0,ARMS OPEN,*,*,opening my arms.<oob><mrl><service>python</service><method>exec</method><param>armsopen()</param></mrl></oob>,abasicgestures.aiml
+0,ARMS CLOSED,*,*,closing my arms.<oob><mrl><service>python</service><method>exec</method><param>armsclosed()</param></mrl></oob>,abasicgestures.aiml
+0,ARMS AIR,*,*,putting my arms up.<oob><mrl><service>python</service><method>exec</method><param>armsfront()</param></mrl></oob>,abasicgestures.aiml
+0,ARMS DOWN,*,*,putting my arms down.<oob><mrl><service>python</service><method>exec</method><param>armsback()</param></mrl></oob>,abasicgestures.aiml
+0,ARMS OUTSIDE,*,*,rotating my arms outside.<oob><mrl><service>python</service><method>exec</method><param>armsoutside()</param></mrl></oob>,abasicgestures.aiml
+0,ARMS INSIDE,*,*,rotating my arms inside.<oob><mrl><service>python</service><method>exec</method><param>armsinside()</param></mrl></oob>,abasicgestures.aiml

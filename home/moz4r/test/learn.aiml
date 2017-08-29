@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+<pattern># apprentissage #</pattern>
+<template><random>
+<li>j'aime apprendre</li>
+</random>
+<think><set name="topic">LEARN1</set></think>
+</template>
+</category>
+
+<topic name="LEARN1">
+
+<category>
+<pattern>UN * EST UN *</pattern>    
+<template>
+<li>Ok, un <star/> est un <star index="2"/>.</li>
+<learn>
+<category><pattern>C EST QUOI UN <eval><star/></eval></pattern>
+<template>
+UN <eval><star/></eval> EST UN <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+<learn>
+<category><pattern>EST-CE QU UN <eval><star/></eval> EST UN <eval><star index="2"/></eval></pattern>
+<template>
+Oui un <eval><star/></eval> est un <eval><star index="2"/></eval>.</template>
+</category>
+</learn>
+</template>
+</category>
+
+
+<category>
+<pattern>EST-CE QU UN * EST UN *</pattern>
+<template>Non un <star/> n'est pas un <star index="2"/>!</template>
+</category>
+
+</topic>
+
+<category>
+<pattern># sauvegarde #</pattern>    
+<template>
+<oob>
+        <mrl>
+          <service>python</service>
+          <method>exec</method>
+          <param>writeAIML()</param>
+        </mrl>
+</oob>
+ok it is saved
+</template>
+</category>
+
+
+</aiml>

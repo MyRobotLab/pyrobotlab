@@ -25,7 +25,7 @@ if (not arduino.isConnected()):
 	print "connecting arduino"
 	arduino.connect(port)
 	print "attaching servo"
-  servo.attach(arduino.getName(), servoPing)
+  servo.attach(arduino.getName(), servoPin)
 	# add the python service as a listener to the joystick event YAxisRaw
 	joystick.addListener("YAxisRaw", python.name, "y")
 	# add the ptyon service as a listener to the joystick event buttons

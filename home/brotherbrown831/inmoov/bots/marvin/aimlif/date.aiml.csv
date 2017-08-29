@@ -1,0 +1,7 @@
+0,DAY,*,*,Today is <date format="%A" jformat="EEEEEEEEEE"/>,date.aiml
+0,YEAR,*,*,This is <date format="%Y" jformat="YYYY"/>,date.aiml
+0,MONTH,*,*,This is <date format="%B" jformat="MMMMMMMMM"/>,date.aiml
+0,TIME,*,*,The time is <date format="%I:%M %p" jformat="h:mm a"/>,date.aiml
+0,DATE,*,*,Today is <date format="%B %d#Comma %Y" jformat="MMMMMMMMM dd#Comma YYYY"/>,date.aiml
+0,DATE AND TIME,*,*,The date and time is <date/>,date.aiml
+0,HOW MANY DAYS UNTIL CHRISTMAS,*,*,<interval>#Newline<jformat>MMMMMMMMM dd</jformat>#Newline<style>days</style>#Newline<from><date jformat="MMMMMMMMM dd"/></from>#Newline<to>December 25</to>#Newline</interval>#Newlinedays until Christmas.,date.aiml

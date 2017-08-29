@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<category><pattern>SAISON</pattern>
+<template><think><set var="Mois"><date format="%B" jformat="MMMMMMMMM"/></set>
+</think>
+<condition var="Mois">
+<li><value>Janvier</value>Hiver</li>
+<li><value>Février</value>Hiver</li>
+<li><value>Mars</value>Printemps</li>
+<li><value>Avril</value>Printemps</li>
+<li><value>Mai</value>Printemps</li>
+<li><value>Juin</value>été</li>
+<li><value>Juillet</value>été</li>
+<li><value>Aout</value>été</li>
+<li><value>Septembre</value>Automne</li>
+<li><value>Octobre</value>Automne</li>
+<li><value>Novembre</value>Automne</li>
+<li><value>Decembre</value>Hiver</li>
+<li>unknown</li>
+</condition></template>
+</category>
+<category><pattern>JOUR</pattern>
+<template>Aujourd'hui nous sommes <date format="%A" jformat="EEEEEEEEEE"/></template>
+</category>
+<category><pattern>DEMAIN</pattern>
+<template><think><set var="today"><date format="%A" jformat="EEEEEEEEEE"/></set></think>
+<map name="demain"><get var="today"/></map></template>
+</category>
+<category><pattern>ANNÉE</pattern>
+<template>Nous sommes en  <date format="%Y" jformat="yyyy"/></template>
+</category>
+<category><pattern>ANNÉE PROCHAINE</pattern>
+<template><map><name>successor</name><date format="%Y" jformat="yyyy"/></map></template>
+</category>
+<category><pattern>ANNÉE DERNIÈRE</pattern>
+<template><map><name>predecessor</name><date format="%Y" jformat="yyyy"/></map></template>
+</category>
+<category><pattern>MOIS</pattern>
+<template><date format="%B" jformat="MMMMMMMMM"/></template>
+</category>
+<category><pattern>HEURE</pattern>
+<template>Il est <date format="%H" jformat="HH"/> heures <date format="%M" jformat="mm"/> minutes</template>
+</category>
+<category><pattern>DATE</pattern>
+<template>Aujourd'hui nous sommes le <date format="%B %d, %Y" jformat="dd MMMMMMMMM, yyyy"/></template>
+</category>
+
+
+<category><pattern>^ QUELLE HEURE EST-IL ^</pattern>
+<template><srai>heure</srai></template>
+</category>
+
+<category><pattern>^ QUELLE HEURE IL EST ^</pattern>
+<template><srai>heure</srai></template>
+</category>
+
+<category><pattern>IL EST QUELLE HEURE ^</pattern>
+<template><srai>heure</srai></template>
+</category>
+
+<category><pattern>^ L'HEURE QU'IL EST ^</pattern>
+<template><srai>heure</srai></template>
+</category>
+
+<category><pattern>^ QUELLE EST LA DATE ^</pattern>
+<template><srai>date</srai></template>
+</category>
+
+<category><pattern>^ ON EST LE COMBIEN ^</pattern>
+<template><srai>date</srai></template>
+</category>
+<category><pattern>^ LE COMBIEN ON EST ^</pattern>
+<template><srai>date</srai></template>
+</category>
+
+<category><pattern>^ QUEL JOUR ON EST ^</pattern>
+<template><srai>jour</srai></template>
+</category>
+
+<category><pattern>^ ON EST QUEL JOUR ^</pattern>
+<template><srai>jour</srai></template>
+</category>
+
+<category><pattern>^ QUEL JOUR SOMMES-NOUS ^</pattern>
+<template><srai>jour</srai></template>
+</category>
+
+<category><pattern>^ QUEL MOIS ON EST ^</pattern>
+<template><srai>mois</srai></template>
+</category>
+
+<category><pattern>^ QUEL MOIS SOMMES-NOUS ^</pattern>
+<template><srai>mois</srai></template>
+</category>
+
+<category><pattern>^ QUEL JOUR ON SERA DEMAIN ^</pattern>
+<template><srai>demain</srai></template>
+</category>
+
+<category><pattern>^ QUEL JOUR CE SERA DEMAIN ^</pattern>
+<template><srai>demain</srai></template>
+</category>
+
+<category><pattern>^ QUEL JOUR SERONS-NOUS DEMAIN ^</pattern>
+<template><srai>demain</srai></template>
+</category>
+
+<category><pattern>^ EN QUELLE ANNÉE SOMMES-NOUS ^</pattern>
+<template><srai>année</srai></template>
+</category>
+
+<category><pattern>^ ON EST EN QUELLE ANNÉE ^</pattern>
+<template><srai>année</srai></template>
+</category>
+
+<category><pattern>^ EN QUELLE SAISON SOMMES-NOUS ^</pattern>
+<template><srai>saison</srai></template>
+</category>
+
+<category><pattern>^ ON EST EN QUELLE SAISON ^</pattern>
+<template><srai>saison</srai></template>
+</category>
+
+</aiml>

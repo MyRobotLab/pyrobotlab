@@ -1,7 +1,7 @@
 # variables dependent on your setup
 
 boardType = "atmega2560"  # atmega168 | atmega328p | atmega2560 | atmega1280 | atmega32u4
-comPort = "COM8" # com4 for atmega328 com8 for mega2560
+comPort = "COM3" # com4 for atmega328 com8 for mega2560
 SHIFT = 47
 LATCH = 48
 DATA = 49
@@ -29,11 +29,6 @@ def shiftOut(value):
 		arduino.digitalWrite(SHIFT, arduino.LOW)
 	arduino.digitalWrite(LATCH, arduino.HIGH)	# copy    
 
-# leds patterns
-# smile = 00111011
-# notHappy = "01111100"
-# speechLess = "00111101"
-# Speaking B00000000,B00100000,B00111000,B00100000,B10000000
 
 def smile():
 	shiftOut([1,1,0,1,1,1,0,0]) #	send data
@@ -50,8 +45,9 @@ def talk():
 	sleep(0.05)
 	shiftOut([0,0,0,0,0,1,0,0]) #	send data
 	sleep(0.05)
-
-while (1) :
+x = 0
+while (x<2) :
+	x=x+1
 	smile()
 	sleep(1)
 	notHappy()

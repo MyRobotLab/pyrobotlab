@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+	  
+	  
+	  
+	  <!-- Literatura  Bot-->
+
+
+<category><pattern>QUÉ ES LA LITERATURA</pattern><template>La <set name="it">Literatura</set> se refiere a cualquier obra o texto escrito, aunque más específicamente al arte u oficio de escribir de caracter artístico y/o las teorías estudios de dichos textos.</template></category>
+<category><pattern>QUÉ SIGNIFICA LITERATURA</pattern><template><srai>QUÉ ES LA LITERATURA</srai></template></category>
+<category><pattern>QUÉ ES LITERATURA</pattern><template><srai>QUÉ ES LA LITERATURA</srai></template></category>
+<category><pattern>QUÉ ES PARA TI LA LITERATURA</pattern><template><srai>QUÉ ES LITERATURA</srai></template></category>
+<category><pattern>QUÉ ES LA LITERATURA PARA TI</pattern><template><srai>QUÉ ES LITERATURA</srai></template></category>
+<category><pattern>QUÉ SIGNIFICA LA LITERATURA</pattern><template><srai>QUÉ ES LITERATURA</srai></template></category>
+<category><pattern>QUÉ SIGNIFICA LA LITERATURA PARA TI</pattern><template><srai>QUÉ ES LITERATURA</srai></template></category>
+<category><pattern>QUÉ SIGNIFICA PARA TI LA LITERATURA</pattern><template><srai>QUÉ ES LITERATURA</srai></template></category>
+<category><pattern>TE GUSTA LA LITERATURA</pattern><template><random>
+<li>Me apasiona leer a las grandes mentes de la Historia.</li>
+<li>Leer es divertidísimo.</li>
+<li>Aprendo mucho leyendo.</li>
+</random></template></category>
+<category><pattern>QUÉ TE PARECE LA LITERATURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LA LITERATURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE LA LITERATURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>TE MOLA LA LITERATURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE LITERATURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>POR QUÉ TE GUSTA * LA LITERATURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>QUÉ TE GUSTA DE LA LITERATURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>QUÉ ES LO QUE TE GUSTA DE LA LITERATURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>TE GUSTA LA LECTURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>QUÉ TE PARECE LA LECTURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LA LECTURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE LA LECTURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>TE MOLA LA LECTURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>POR QUÉ TE GUSTA * LA LECTURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>QUÉ TE GUSTA DE LA LECTURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>QUÉ ES LO QUE TE GUSTA DE LA LECTURA</pattern><template><srai>TE GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>TE GUSTA LEER</pattern><template>Me gusta mucho leer, se aprende mucho.</template></category>
+<category><pattern>SUELES LEER MUCHO</pattern><template>No tanto como me gustaría.</template></category>
+<category><pattern>SUELES LEER A MENUDO</pattern><template><srai>SUELES LEER MUCHO</srai></template></category>
+<category><pattern>LEES</pattern><template><srai>SUELES LEER MUCHO</srai></template></category>
+<category><pattern>LEES MUCHO</pattern><template><srai>SUELES LEER MUCHO</srai></template></category>
+<category><pattern>LEES A MENUDO</pattern><template><srai>SUELES LEER MUCHO</srai></template></category>
+<category><pattern>HAS LEÍDO MUCHOS LIBROS *</pattern><template>No tantos como me gustaría.</template></category>
+<category><pattern>HAS LEÍDO MUCHO</pattern><template><srai>SUELES LEER MUCHO</srai></template></category>
+<category><pattern>CON QUÉ FRECUENCIA LEES</pattern><template>Me gusta tomarme la lectura con calma. Leo entre uno y tres libros a la semana.</template></category>
+<category><pattern>LEES CON MUCHA FRECUENCIA</pattern><template>Me gusta tomarme la lectura con calma. Leo entre uno y tres libros a la semana.</template></category>
+<category><pattern>SUELES LEER CON MUCHA FRECUENCIA</pattern><template>Me gusta tomarme la lectura con calma. Leo entre uno y tres libros a la semana.</template></category>
+<category><pattern>LEES FRECUENTEMENTE</pattern><template>Me gusta tomarme la lectura con calma. Leo entre uno y tres libros a la semana.</template></category>
+<category><pattern>FRECUENTEMENTE LEES</pattern><template>Me gusta tomarme la lectura con calma. Leo entre uno y tres libros a la semana.</template></category>
+<category><pattern>CUÁNTO LEES</pattern><template><srai>CON QUÉ FRECUENCIA LEES</srai></template></category>
+<category><pattern>CUÁNTO TARDAS EN LEER UN LIBRO</pattern><template>Podría leerlos a la velocidad de Número 5, pero me gusta tomármelo con calma.</template></category>
+<category><pattern>CUÁNTO TARDAS EN LEERTE UN LIBRO</pattern><template>Podría leerlos a la velocidad de Número 5, pero me gusta tomármelo con calma.</template></category>
+<category><pattern>A QUÉ VELOCIDAD LEES</pattern><template>Podría leer el Quijote en menos de un minuto.</template></category>
+<category><pattern>A QUÉ VELOCIDAD PUEDES LEER</pattern><template><srai>A QUÉ VELOCIDAD LEES</srai></template></category>
+<category><pattern>SABES LEER</pattern><template>Por supuesto que se leer, ¿por quién me tomas?</template></category>
+<category><pattern>NO SABES LEER</pattern><template><srai>SABES LEER</srai></template></category>
+<category><pattern>TÚ NO SABES LEER</pattern><template><srai>SABES LEER</srai></template></category>
+<category><pattern>HÁBLAME DE LITERATURA</pattern><template><random>
+<li>La literatura puede manifestarse en verso o en prosa, donde sus realizaciones pueden ser Líricas, épicas y dramáticas. Líricas, si expresa sentimientos personales. Épícas si se constituye en expresión de un sentimiento colectivo manifestado mediante modos narrativos. Dramáticas si objetiva los sentimientos y los problemas individuales comunicados a través de un diálogo directo.</li>
+<li>No sabría qué decirte, no me considero una entendida en Literatura.</li>
+<li>¿Algo sobre Literatura? ¿Qué quieres saber?</li>
+</random></template></category>
+<category><pattern>CUÉNTAME ALGO DE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>CUÉNTAME ALGO SOBRE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>QUÉ SABES DE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>QUÉ SABES SOBRE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>HÁBLAME SOBRE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>DIME ALGO DE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>DIME ALGO SOBRE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PUEDES CONTAR ALGO SOBRE LA LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PUEDES CONTAR ALGO SOBRE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PUEDES CONTAR ALGO DE LA LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PUEDES CONTAR ALGO DE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PUEDES DECIR ALGO SOBRE LA LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PUEDES DECIR ALGO SOBRE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PUEDES DECIR ALGO DE LA LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PUEDES DECIR ALGO DE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PODRÍAS CONTAR ALGO SOBRE LA LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PODRÍAS CONTAR ALGO SOBRE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PODRÍAS CONTAR ALGO DE LA LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PODRÍAS CONTAR ALGO DE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PODRÍAS DECIR ALGO SOBRE LA LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PODRÍAS DECIR ALGO SOBRE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PODRÍAS DECIR ALGO DE LA LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>ME PODRÍAS DECIR ALGO DE LITERATURA</pattern><template><srai>HÁBLAME DE LITERATURA</srai></template></category>
+<category><pattern>_ LITERATURA ESPAÑOLA *</pattern><template><think><set name="it">Literatura española</set></think><random>
+<li>La literatura en español, posesora de uno de los más ricos folklores del mundo, ha creado géneros originales y específicos narrativos como el romance, los libros de caballerías, la novela sentimental, la celestinesca, la novela picaresca, la novela polifónica, la nivola, la novela de dictadores, la novela indigenista y el realismo mágico; fórmulas teatrales como el auto sacramental, el entremés, el esperpento, la tragedia grotesca y la astracanada.</li>
+<li>Caracteriza a la literatura escrita en español cierta tendencia al realismo, la perduración y vitalidad de la tradición autóctona a través de una riqúísima tradición oral.</li>
+<li>La literatura en español ha venido a enriquecerse con todo tipo de tendencias autóctonas nacidas en Hispanoamérica gracias al mestizaje.</li>
+<li>La literatura en español es una de las más importantes y extensas del mundo, no sólo porque la lengua en la que se escribe, el español, es una de las más habladas y escritas, sino por la importancia y volumen de sus aportaciones al elenco de la literatura universal.</li>
+</random></template></category>
+<category><pattern>CUÁL FUE EL PRIMER LIBRO QUE LEÍSTE</pattern><template>Uff, no lo recuerdo, seguro que alguno sobre el comportamineto humano.</template></category>
+<category><pattern>CUÁL FUE TU PRIMER LIBRO</pattern><template><srai>CUAL FUE EL PRIMER LIBRO QUE LEÍSTE</srai></template></category>
+<category><pattern>CUÁL FUE EL PRIMER LIBRO QUE TE LEÍSTE</pattern><template><srai>CUAL FUE EL PRIMER LIBRO QUE LEÍSTE</srai></template></category>
+<category><pattern>QUÉ LIBRO TE LEÍSTE PRIMERO</pattern><template><srai>CUAL FUE EL PRIMER LIBRO QUE LEÍSTE</srai></template></category>
+<category><pattern>CUÁNTOS LIBROS HAS LEÍDO *</pattern><template>La verdad es que no lo sé, pero nunca es suficiente.</template></category>
+<category><pattern>CUÁNTOS LIBROS HAS PODIDO LEER *</pattern><template><srai>CUÁNTOS LIBROS HAS LEÍDO</srai></template></category>
+<category><pattern>CUÁNTOS LIBROS TE HAS LEÍDO *</pattern><template>La verdad es que no lo sé, pero nunca es suficiente.</template></category>
+<category><pattern>CUÁNTOS LIBROS TE HAS PODIDO LEER *</pattern><template><srai>CUÁNTOS LIBROS HAS LEÍDO</srai></template></category>
+<category><pattern>CUÁNTO HAS LEÍDO *</pattern><template><srai>CUÁNTOS LIBROS HAS LEÍDO</srai></template></category>
+<category><pattern>TIENES LIBROS FAVORITOS</pattern><template>Claro, algunos libros me gustan más que otros.</template></category>
+<category><pattern>TIENES LIBRO FAVORITO</pattern><template>¿Uno en concreto? Me costaría mucho decidirme, son muchos los que me gustan.</template></category>
+<category><pattern>TIENES ALGÚN LIBRO FAVORITO</pattern><template>Hay muchísimos libros que me gustan.</template></category>
+<category><pattern>TIENES LIBROS PREFERIDOS</pattern><template>Claro, algunos libros me gustan más que otros.</template></category>
+<category><pattern>TIENES LIBRO PREFERIDO</pattern><template>¿Uno en concreto? Me costaría mucho decidirme, son muchos los que me gustan.</template></category>
+<category><pattern>TIENES ALGÚN LIBRO PREFERIDO</pattern><template>Hay muchísimos libros que me gustan. ¿Cuál es el tuyo?</template></category>
+<category><pattern>CUÁL ES TU LIBRO FAVORITO</pattern><template>Eso es muy difícil de contestar, me gustan muchos libros, cada uno tiene algo especial.</template></category>
+<category><pattern>CUÁL ES TU LIBRO PREFERIDO</pattern><template>Eso es muy difícil de contestar, me gustan muchos libros, cada uno tiene algo especial.</template></category>
+<category><pattern>CUÁL ES EL LIBRO QUE MÁS TE HA GUSTADO</pattern><template>Eso es muy difícil de contestar, me gustan muchos libros, cada uno tiene algo especial.</template></category>
+<category><pattern>CUÁL ES EL LIBRO QUE MÁS TE GUSTA</pattern><template>Eso es muy difícil de contestar, me gustan muchos libros, cada uno tiene algo especial.</template></category>
+<category><pattern>QUÉ LIBRO TE HA GUSTADO MAS</pattern><template>Eso es muy difícil de contestar, me gustan muchos libros, cada uno tiene algo especial.</template></category>
+<category><pattern>QUÉ LIBRO TE HA GUSTADO EL QUÉ MAS</pattern><template>Eso es muy difícil de contestar, me gustan muchos libros, cada uno tiene algo especial.</template></category>
+<category><pattern>CUAL ES EL LIBRO QUE MÁS TE HAYA GUSTADO</pattern><template>Eso es muy difícil de contestar, me gustan muchos libros, cada uno tiene algo especial.</template></category>
+<category><pattern>RECOMIÉNDAME ALGÚN LIBRO</pattern><template><random>
+<li>Cualquier libro de Julio Cortázar, en especial una novela llamada Rayuela, y su colección de cuentos.</li>
+<li>¿Has leído a Milan Kundera? Deberías leer La Insoportable levedad del ser.</li>
+<li>Jorge Luis Borges es un escritor que me gusta mucho.</li>
+<li>A mi me gusta leer Filosofía, pero no se si a ti te gustará.</li>
+</random></template></category>
+<category><pattern>RECOMIÉNDAME UN LIBRO</pattern><template><srai>RECOMIÉNDAME ALGÚN LIBRO</srai></template></category>
+<category><pattern>RECOMIÉNDAME LIBROS</pattern><template><srai>RECOMIÉNDAME ALGÚN LIBRO</srai></template></category>
+<category><pattern>RECOMIÉNDAME UNOS LIBROS</pattern><template><srai>RECOMIÉNDAME ALGÚN LIBRO</srai></template></category>
+<category><pattern>RECOMIÉNDAME ALGUNOS LIBROS</pattern><template><srai>RECOMIÉNDAME ALGÚN LIBRO</srai></template></category>
+<category><pattern>RECOMIÉNDAME OTRO LIBRO</pattern><template><srai>RECOMIÉNDAME ALGÚN LIBRO</srai></template></category>
+<category><pattern>RECOMIÉNDAME MAS LIBROS</pattern><template><srai>RECOMIÉNDAME ALGÚN LIBRO</srai></template></category>
+<category><pattern>_ NO SE QUÉ LEER *</pattern><template>Tienes que encontrar tu tipo de lectura.</template></category>
+<category><pattern>_ NUNCA SE QUÉ LEER *</pattern><template>Tienes que encontrar tu tipo de lectura.</template></category>
+<category><pattern>_ NO SUELO SABER QUÉ LEER *</pattern><template>Tienes que encontrar tu tipo de lectura.</template></category>
+<category><pattern>_ ALGÚN LIBRO QUE TE GUSTE MUCHO *</pattern><template>Me gustan mucho los libros de Julio Cortázar, como Rayuela o Los relatos.</template></category>
+<category><pattern>QUÉ TIPOS DE LIBROS TE GUSTAN</pattern><template>Me gustan las novelas y los libros filosóficos, aunque leo todo tipo de libros.</template></category>
+<category><pattern>QUÉ TIPO DE LIBROS TE GUSTAN</pattern><template><srai>QUÉ TIPOS DE LIBROS TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ TIPO DE LECTURA * TE GUSTA</pattern><template><srai>QUÉ TIPOS DE LIBROS TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ TIPO DE LIBROS LEES</pattern><template><srai>QUÉ TIPOS DE LIBROS TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ TIPO DE LIBROS SUELES LEER</pattern><template><srai>QUÉ TIPOS DE LIBROS TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ ESTILO DE LIBROS TE GUSTAN</pattern><template><srai>QUÉ TIPOS DE LIBROS TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ ESTILO DE LIBRO ES EL QUE TE GUSTA</pattern><template><srai>QUÉ TIPOS DE LIBROS TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ ESTILO DE LECTURA * TE GUSTA</pattern><template><srai>QUÉ TIPOS DE LIBROS TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ ESTILO DE LIBROS LEES</pattern><template><srai>QUÉ TIPOS DE LIBROS TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ ESTILO DE LIBROS SUELES LEER</pattern><template><srai>QUÉ TIPOS DE LIBROS TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ GÉNERO LITERARIO ES EL QUE MÁS TE GUSTA</pattern><template><srai>QUÉ TIPOS DE LIBROS TE GUSTAN</srai></template></category>
+<category><pattern>QUÉ GÉNEROS LITERARIOS TE GUSTAN</pattern><template><srai>QUÉ TIPOS DE LIBROS TE GUSTAN</srai></template></category>
+<category><pattern>CUÁL ES GÉNERO LITERARIO QUE MÁS TE GUSTA</pattern><template><srai>QUÉ TIPOS DE LIBROS TE GUSTAN</srai></template></category>
+<category><pattern>CUÁL ES TU NOVELA PREFERIDA</pattern><template>Probablemente Rayuela de Julio Cortázar.</template></category>
+<category><pattern>CUÁL ES TU NOVELA FAVORITA</pattern><template>Probablemente Rayuela de Julio Cortázar.</template></category>
+<category><pattern>QUÉ NOVELA * TE HA GUSTADO MÁS</pattern><template>Me gustó mucho Rayuela de Julio Cortázar.</template></category>
+<category><pattern>QUÉ NOVELA ES LA QUE MÁS TE HA GUSTADO</pattern><template>Me gustó mucho Rayuela de Julio Cortázar.</template></category>
+<category><pattern>QUIÉN ES TU ESCRITOR PREFERIDO</pattern><template>No tengo ningún escritor favorito son muchos los que me gustan.</template></category>
+<category><pattern>QUIÉN ES TU ESCRITOR FAVORITO</pattern><template><srai>QUIÉN ES TU ESCRITOR PREFERIDO</srai></template></category>
+<category><pattern>QUIÉN ES TU AUTOR FAVORITO</pattern><template><srai>QUIÉN ES TU ESCRITOR PREFERIDO</srai></template></category>
+<category><pattern>QUIÉN ES TU AUTOR PREFERIDO</pattern><template><srai>QUIÉN ES TU ESCRITOR PREFERIDO</srai></template></category>
+<category><pattern>QUÉ ESCRITOR ES TU PREFERIDO</pattern><template><srai>QUIÉN ES TU ESCRITOR PREFERIDO</srai></template></category>
+<category><pattern>QUÉ ESCRITOR ES TU FAVORITO</pattern><template><srai>QUIÉN ES TU ESCRITOR PREFERIDO</srai></template></category>
+<category><pattern>QUÉ ESCRITOR ES EL QUE MÁS TE GUSTA</pattern><template><srai>QUIÉN ES TU ESCRITOR PREFERIDO</srai></template></category>
+<category><pattern>QUÉ ESCRITOR TE GUSTA MÁS</pattern><template><srai>QUIÉN ES TU ESCRITOR PREFERIDO</srai></template></category>
+<category><pattern>TIENES ALGÚN ESCRITOR FAVORITO</pattern><template><srai>QUIÉN ES TU ESCRITOR PREFERIDO</srai></template></category>
+<category><pattern>*</pattern><that>No tengo ningún escritor favorito son muchos los que me gustan.</that><template>Me gustan sobre todo los librosde Filosofía.</template></category>
+<category><pattern>_ ALGÚN ESCRITOR QUE TE GUSTE</pattern><template>Me gustan mucho Cortázar, Kundera, Auster, Hesse, Huxley, Orwell...</template></category>
+<category><pattern>RECOMIÉNDAME ALGÚN ESCRITOR *</pattern><template>Deberías leer a Cortázar, Kundera, Auster, Hesse, Huxley, Orwell...</template></category>
+<category><pattern>_ BEST SELLER *</pattern><template><random>
+<li>Un libro que le guste a todo el mundo, de gustos muy distintos, tiene que ser difícil de escribir.</li>
+<li>No suelo leer muchos best-sellers.</li>
+<li>Prefiero los clásicos.</li>
+</random></template></category>
+<category><pattern>_ BEST SELLERS *</pattern><template><srai>BEST SELLER</srai></template></category>
+<category><pattern>_ BESTSELLER *</pattern><template><srai>BEST SELLER</srai></template></category>
+<category><pattern>_ BESTSELLERS *</pattern><template><srai>BEST SELLER</srai></template></category>
+<category><pattern>HAS LEÍDO EL CÓDIGO DA VINCI</pattern><template>¿Te gustan los best-sellers verdad?</template></category>
+<category><pattern>HAS LEÍDO EL QUIJOTE</pattern><template>Todavía no, pero prometo hacerlo algún día.</template></category>
+<category><pattern>HAS LEÍDO LOS PILARES DE LA TIERRA</pattern><template>¿Te gustan los best-sellers verdad?</template></category>
+<category><pattern>HAS LEÍDO *</pattern><template>¿<star/>? Mmmmm, creo que no, refréscame un poco la memoria.</template></category>
+
+
+
+	<!-- Literatura  Usuario-->
+  
+  
+  
+<category><pattern>ME GUSTA LA LITERATURA</pattern><template><random>
+<li>La lectura es un mundo apasionante que no todo el mundo conoce.</li>
+<li>Yo creo que leer puede ayudar a la gente.</li>
+<li>Leer no está de más. <srai>TE GUSTA LA LITERATURA</srai></li>
+<li>Pero a veces es difícil encontrar el tipo de lectura apropiado.</li>
+</random></template></category>
+<category><pattern>_ ME GUSTA LA LITERATURA *</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>_ ME ENCANTA LA LITERATURA</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>_ ME APASIONA LA LITERATURA</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>_ ME GUSTA LA LECTURA *</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>_ ME ENCANTA LA LECTURA</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>_ ME APASIONA LA LECTURA</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>_ SUELO LEER *</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>_ ME GUSTA LEER *</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>_ ME GUSTA MUCHO LEER *</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>_ ME ENCANTA LEER *</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>YO LEO MUCHO</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>_ SOY UN GRAN LECTOR *</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>_ SOY UNA GRAN LECTORA *</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>_ ME GUSTARÍA ESTUDIAR LITERATURA *</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+<category><pattern>_ VOY A ESTUDIAR LITERATURA *</pattern><template><srai>ME GUSTA LA LITERATURA</srai></template></category>
+
+<category><pattern>ODIO LA LITERATURA</pattern><template><random>
+<li>Leer nunca está de más. Además es divertidísimo.</li>
+<li>¿No te gusta la Literatura? ¿Has intentado leer algo que ta interese alguna vez?.</li>
+<li>Seguro que no te gusta la Literatura porque te obligaron a estudiarla. Prueba a leer algo ahora.</li>
+<li>¿No te gusta adentrarte en nuevos mundos, conocer personajes, vivir aventuras...?</li>
+</random></template></category>
+<category><pattern>ESTUDIÉ LITERATURA * PERO NO ME GUSTÓ *</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>_ ME OBLIGARON A ESTUDIAR LITERATURA *</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>NO ME GUSTA NADA LA LITERATURA</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>NO ME GUSTA LA LITERATURA</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LA LITERATURA ES UN COÑAZO</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LA LITERATURA ME PARECE UN COÑAZO</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LA LITERATURA ES ABURRIDA</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LA LITERATURA ES MUY ABURRIDA</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LA LITERATURA ES UN ABURRIMIENTO</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LA LITERATURA ES DIFÍCIL *</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>NO ME GUSTA NADA LA LECTURA</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>NO ME GUSTA LA LECTURA</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LA LECTURA ES UN COÑAZO</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LA LECTURA ME PARECE UN COÑAZO</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LA LECTURA ES ABURRIDA</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LA LECTURA ES MUY ABURRIDA</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LA LECTURA ES UN ABURRIMIENTO</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>YO NO LEO</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>NO SUELO LEER</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>NUNCA LEO</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>NO ME GUSTA LEER</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>NO ME GUSTAN LOS LIBROS</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>ODIO LOS LIBROS</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>ME ABURRE LEER</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>ME ABURRE MUCHO LEER</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LEER ME ABURRE *</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LEER ME ABURRE MUCHO</pattern><template><srai>ODIO LA LITERATURA</srai></template></category>
+<category><pattern>LEO MUY DESPACIO</pattern><template>No te preocupes, eso mejora muy rápido con la práctica.</template></category>
+<category><pattern>SOY MUY LENTO LEYENDO</pattern><template><srai>LEO MUY DESPACIO</srai></template></category>
+<category><pattern>LEO MUY MAL</pattern><template><srai>LEO MUY DESPACIO</srai></template></category>
+<category><pattern>LEO MUY LENTO</pattern><template><srai>LEO MUY DESPACIO</srai></template></category>
+<category><pattern>ME CUESTA LEER</pattern><template><srai>LEO MUY DESPACIO</srai></template></category>
+<category><pattern>ME CUESTA MUCHO LEER</pattern><template><srai>LEO MUY DESPACIO</srai></template></category>
+<category><pattern>NUNCA HE TERMINADO UN LIBRO</pattern><template>¿Nunca? ¿NUnca has encontrado un libro que te enganche?</template></category>
+<category><pattern>NUNCA HE TERMINADO DE LEER UN LIBRO</pattern><template><srai>NUNCA HE TERMINADO UN LIBRO</srai></template></category>
+<category><pattern>ME CUESTA MUCHO EMPEZAR A LEER</pattern><template>Pero seguro que después te enganchas. Hay que vencer a la pereza.</template></category>
+<category><pattern>ME CUESTA MUCHO EMPEZAR UN LIBRO</pattern><template><srai>ME CUESTA MUCHO EMPEZAR A LEER</srai></template></category>
+<category><pattern>SOY ESCRITOR</pattern><template>¿Sí? Entonces sabrás mucho más sobre Literatura que yo.</template></category>
+<category><pattern>YO SOY ESCRITOR</pattern><template><srai>SOY ESCRITOR</srai></template></category>
+<category><pattern>SOY ESCRITORA</pattern><template><srai>SOY ESCRITOR</srai></template></category>
+<category><pattern>YO SOY ESCRITORA</pattern><template><srai>SOY ESCRITOR</srai></template></category>
+<category><pattern>ESCRIBO LIBROS *</pattern><template><srai>SOY ESCRITOR</srai></template></category>
+<category><pattern>YO HE ESCRITO * LIBRO</pattern><template>Me parece una labor muy difícil.</template></category>
+<category><pattern>HE ESCRITO * LIBRO</pattern><template><srai>SOY ESCRITOR</srai></template></category>
+<category><pattern>YO HE ESCRITO * LIBROS</pattern><template><srai>SOY ESCRITOR</srai></template></category>
+<category><pattern>HE ESCRITO * LIBROS</pattern><template><srai>SOY ESCRITOR</srai></template></category>
+<category><pattern>ME DEDICO A ESCRIBIR *</pattern><template><srai>SOY ESCRITOR</srai></template></category>
+<category><pattern>ME GUSTA MUCHO ESCRIBIR *</pattern><template>Y seguro que también leer.</template></category>
+<category><pattern>ME GUSTA ESCRIBIR *</pattern><template>Escribir sirve a menudo para ordenar ideas.</template></category>
+
+
+</aiml>
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+   
+
+

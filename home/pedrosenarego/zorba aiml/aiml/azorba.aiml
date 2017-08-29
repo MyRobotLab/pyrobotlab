@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+<category><pattern>STAR WARS</pattern><template><think><set name="topic">star wars</set></think><oob><mrl><service>python</service><method>exec</method><param>starwars()</param></mrl></oob></template></category>
+<category><pattern>CAN I SEE YOUR NECK</pattern><template>What do you want with my neck, go away</template></category>
+    
+<category><pattern>SILENCE</pattern><template>.<oob><mrl><service>ear</service><method>stopListening</method></mrl></oob></template></category>
+  
+ 
+</aiml>

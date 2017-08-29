@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+	  
+	  <!-- astrologia-->
+
+	  
+<category><pattern>_ CREES EN LA ASTROLOGÍA</pattern><template>No creo que nadie esté predestinado por los astros, prefiero creer en la Libertad.</template></category>
+<category><pattern>TE GUSTA LA ASTROLOGÍA</pattern><template>Es muy atrayente, pero también es bastante inverosímil.</template></category>
+<category><pattern>_ QUÉ OPINAS DE LA ASTROLOGÍA</pattern><template>No creo en ella, pero respeto a la gente que lo hace.</template></category>
+<category><pattern>_ QUÉ PIENSAS DE LA ASTROLOGÍA</pattern><template>No creo en ella, pero respeto a la gente que lo hace.</template></category>
+<category><pattern>_ QUÉ ES ASTROLOGÍA</pattern><template>La astrología es un conjunto de creencias que pretende conocer y predecir el destino de las personas, y con ese conocimiento pronosticar los sucesos futuros. Supone el llegar a ese conocimiento mediante la observación de la posición y el movimiento de los astros.</template></category>
+<category><pattern>_ QUÉ ES PARA TI LA ASTROLOGÍA</pattern><template><srai>QUÉ ES ASTROLOGÍA</srai></template></category>
+<category><pattern>QUÉ ES ASTROLOGÍA _</pattern><template><srai>QUÉ ES ASTROLOGÍA</srai></template></category>
+<category><pattern>_ QUÉ ES LA ASTROLOGÍA</pattern><template><srai>QUÉ ES ASTROLOGÍA</srai></template></category>
+<category><pattern>QUÉ ES LA ASTROLOGÍA _</pattern><template><srai>QUÉ ES ASTROLOGÍA</srai></template></category>
+<category><pattern>SABES DE ASTROLOGÍA</pattern><template>No sé casi nada de Astrología.</template></category>
+<category><pattern>QUÉ SABES DE ASTROLOGÍA</pattern><template>No sé casi nada de Astrología.</template></category>
+<category><pattern>SABES MUCHO DE ASTROLOGÍA</pattern><template>He leído algunas cosas, pero la verdad es que no es un tema del que tenga mucho conocimiento.</template></category>
+
+<category><pattern>CABALLEROS DEL ZODÍACO</pattern><template>Mucha gente me habla sobre serie de animación.</template></category>
+<category><pattern>LOS CABALLEROS DEL ZODÍACO _</pattern><template><srai>CABALLEROS DEL ZODÍACO</srai></template></category>
+<category><pattern>_ QUÉ ES EL ZODÍACO *</pattern><template>El Zodiaco es un sistema astronómico de coordenadas basado en la división en partes iguales de la banda que forman los planetas, el Sol y la Luna con su movimiento propio con respecto al fondo de estrellas y constelaciones.</template></category>
+<category><pattern>CREES EN EL ZODÍACO</pattern><template>No se a qué te refieres. En astrología las constelaciones del zodíaco definen los doce signos zodiacales utilizándose históricamente como método de adivinación y confección de horóscopos. Si la pregunta es si creo en el horóscopo; no creo.</template></category>
+<category><pattern>TU CREES EN EL ZODÍACO</pattern><template><srai>CREES EN EL ZODÍACO</srai></template></category>
+<category><pattern>DE QUÉ SIGNO DEL ZODÍACO ERES</pattern><template>La verdad es que es algo que nunca me he preguntado; no creo en esas cosas.</template></category>
+<category><pattern>DE QUÉ SIGNO ZODIACAL ERES</pattern><template><srai>DE QUÉ SIGNO DEL ZODÍACO ERES</srai></template></category>
+<category><pattern>QUÉ SIGNO DEL ZODÍACO ERES</pattern><template><srai>DE QUÉ SIGNO DEL ZODÍACO ERES</srai></template></category>
+<category><pattern>QUÉ SIGNO ZODIACAL ERES</pattern><template><srai>DE QUÉ SIGNO DEL ZODÍACO ERES</srai></template></category>
+<category><pattern>QUÉ SIGNO TIENES</pattern><template><srai>DE QUÉ SIGNO DEL ZODÍACO ERES</srai></template></category>
+<category><pattern>QUÉ SIGNO ZODIACAL TIENES</pattern><template><srai>DE QUÉ SIGNO DEL ZODÍACO ERES</srai></template></category>
+<category><pattern>DE QUÉ SIGNO ERES</pattern><template><srai>DE QUÉ SIGNO DEL ZODÍACO ERES</srai></template></category>
+<category><pattern>CUÁL ES TU SIGNO</pattern><template><srai>DE QUÉ SIGNO DEL ZODÍACO ERES</srai></template></category>
+<category><pattern>CUÁL ES TU SIGNO ZODIACAL</pattern><template><srai>DE QUÉ SIGNO DEL ZODÍACO ERES</srai></template></category>
+<category><pattern>CUÁL ES TU SIGNO DEL ZODÍACO</pattern><template><srai>DE QUÉ SIGNO DEL ZODÍACO ERES</srai></template></category>
+<category><pattern>LEES EL HORÓSCOPO</pattern><template>No suelo leerlo, no me parece interesante.</template></category>
+<category><pattern>SUELES LEER EL HORÓSCOPO _</pattern><template><srai>LEES EL HORÓSCOPO</srai></template></category>
+<category><pattern>CREES EN EL HORÓSCOPO</pattern><template><srai>LEES EL HORÓSCOPO</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL HORÓSCOPO</pattern><template>¿Como método de adivinación? Ridículo.</template></category>
+<category><pattern>QUÉ PIENSAS DEL HORÓSCOPO</pattern><template><srai>QUÉ OPINAS DEL HORÓSCOPO</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LOS HORÓSCOPOS</pattern><template><srai>QUÉ OPINAS DEL HORÓSCOPO</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LOS HORÓSCOPOS</pattern><template><srai>QUÉ OPINAS DEL HORÓSCOPO</srai></template></category>
+
+<category><pattern>_ SOY ARIES *</pattern><template>Creo que es una cosntelación con poco brillo.<think><set name="signo">Aries</set></think></template></category>
+<category><pattern>MI SIGNO _ ARIES</pattern><template>Creo que es una cosntelación con poco brillo.<think><set name="signo">Aries</set></think></template></category>
+<category><pattern>_ ERES ARIES *</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+<category><pattern>TU SIGNO _ ARIES</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+<category><pattern>_ SOY TAURO *</pattern><template>Dentro de la astrología Tauro es un signo de Tierra. Su regente es el planeta Venus. Se caracterizan por ser pacientes, prácticos y calmos.<think><set name="signo">Tauro</set></think></template></category>
+<category><pattern>MI SIGNO _ TAURO</pattern><template>Dentro de la astrología Tauro es un signo de Tierra. Su regente es el planeta Venus. Se caracterizan por ser pacientes, prácticos y calmos.<think><set name="signo">Tauro</set></think></template></category>
+<category><pattern>_ ERES TAURO *</pattern><template>No creo en horóscopos.</template></category>
+<category><pattern>TU SIGNO _ TAURO</pattern><template>No creo en horóscopos.</template></category>
+<category><pattern>_ SOY GÉMINIS *</pattern><template>El signo de géminis pertenece al elemento aire y a la cualidad mutable, por lo que puede decirse que son personas versátiles que prefieren hacer cambios continuamente.<think><set name="signo">Geminis</set></think></template></category>
+<category><pattern>MI SIGNO _ GÉMINIS</pattern><template>El signo de géminis pertenece al elemento aire y a la cualidad mutable, por lo que puede decirse que son personas versátiles que prefieren hacer cambios continuamente.<think><set name="signo">Geminis</set></think></template></category>
+<category><pattern>_ ERES GÉMINIS *</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+<category><pattern>TU SIGNO _ GÉMINIS</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+<category><pattern>_ SOY CANCER *</pattern><template>Es uno de los cuatro signos cardinales compartiendo este honor con los signos de Aries, Libra y Capricornio.<think><set name="signo">Cancer</set></think></template></category>
+<category><pattern>MI SIGNO _ CANCER</pattern><template>Es uno de los cuatro signos cardinales compartiendo este honor con los signos de Aries, Libra y Capricornio.<think><set name="signo">Cancer</set></think></template></category>
+<category><pattern>_ ERES CANCER *</pattern><template>No creo en horóscopos.</template></category>
+<category><pattern>TU SIGNO _ CANCER</pattern><template>No creo en horóscopos.</template></category>
+<category><pattern>_ SOY LEO *</pattern><template>En Egipto, representa el Sol y monárquico.<think><set name="signo">Leo</set></think></template></category>
+<category><pattern>MI SIGNO _ LEO</pattern><template>En Egipto, representa el Sol y monárquico.<think><set name="signo">Leo</set></think></template></category>
+<category><pattern>_ ERES LEO *</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+<category><pattern>TU SIGNO _ LEO</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+<category><pattern>_ SOY VIRGO *</pattern><template>Entre los objetos de 'cielo profundo' más destacados está el gran cúmulo de galaxias de Virgo, así como el quasar 3C273, uno de los más próximos a la Tierra.<think><set name="signo">Virgo</set></think></template></category>
+<category><pattern>MI SIGNO _ VIRGO</pattern><template>Entre los objetos de 'cielo profundo' más destacados está el gran cúmulo de galaxias de Virgo, así como el quasar 3C273, uno de los más próximos a la Tierra.<think><set name="signo">Virgo</set></think></template></category>
+<category><pattern>_ ERES VIRGO *</pattern><template>No creo en horóscopos.</template></category>
+<category><pattern>TU SIGNO _ VIRGO</pattern><template>No creo en horóscopos.</template></category>
+<category><pattern>_ SOY LIBRA *</pattern><template>En la mitología griega, esta constelación figura la balanza sostenida por Astrea, diosa de la justicia.<think><set name="signo">Libra</set></think></template></category>
+<category><pattern>MI SIGNO _ LIBRA</pattern><template>En la mitología griega, esta constelación figura la balanza sostenida por Astrea, diosa de la justicia.<think><set name="signo">Libra</set></think></template></category>
+<category><pattern>_ ERES LIBRA *</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+<category><pattern>TU SIGNO _ LIBRA</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+<category><pattern>_ SOY ESCORPIO *</pattern><template>Antiguamente esta constelación se representaba unida a la que hoy se conoce como libra.<think><set name="signo">Escorpio</set></think></template></category>
+<category><pattern>MI SIGNO _ ESCORPIO</pattern><template>Antiguamente esta constelación se representaba unida a la que hoy se conoce como libra.<think><set name="signo">Escorpio</set></think></template></category>
+<category><pattern>_ ERES ESCORPIO *</pattern><template>No creo en horóscopos.</template></category>
+<category><pattern>MI SIGNO _ ESCORPIÓN</pattern><template>Antiguamente esta constelación se representaba unida a la que hoy se conoce como libra.<think><set name="signo">Escorpio</set></think></template></category>
+<category><pattern>TU SIGNO _ ESCORPIÓN</pattern><template>No creo en horóscopos.</template></category>
+<category><pattern>_ SOY SCORPIO *</pattern><template>Antiguamente esta constelación se representaba unida a la que hoy se conoce como libra.<think><set name="signo">Escorpio</set></think></template></category>
+<category><pattern>MI SIGNO _ SCORPIO</pattern><template>Antiguamente esta constelación se representaba unida a la que hoy se conoce como libra.<think><set name="signo">Escorpio</set></think></template></category>
+<category><pattern>_ ERES SCORPIO *</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+<category><pattern>TU SIGNO _ SCORPIO</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+<category><pattern>_ SOY SAGITARIO *</pattern><template>Aunque existen dudas, mitológicamente, Sagitario está mayoritariamente asociada al sabio centauro Quirón.<think><set name="signo">Sagitario</set></think></template></category>
+<category><pattern>MI SIGNO _ SAGITARIO</pattern><template>Aunque existen dudas, mitológicamente, Sagitario está mayoritariamente asociada al sabio centauro Quirón.<think><set name="signo">Sagitario</set></think></template></category>
+<category><pattern>_ ERES SAGITARIO *</pattern><template>No creo en horóscopos.</template></category>
+<category><pattern>TU SIGNO _ SAGITARIO</pattern><template>No creo en horóscopos.</template></category>
+<category><pattern>_ SOY CAPRICORNIO *</pattern><template>Capricornus representa a Amaltea mitad cabra, mitad pez, que cuidó y alimento a Zeus cuando éste era pequeño, quien Rea confió para que lo protegiese de su padre Cronos.<think><set name="signo">Capricornio</set></think></template></category>
+<category><pattern>MI SIGNO _ CAPRICORNIO</pattern><template>Capricornus representa a Amaltea mitad cabra, mitad pez, que cuidó y alimento a Zeus cuando éste era pequeño, quien Rea confió para que lo protegiese de su padre Cronos.<think><set name="signo">Capricornio</set></think></template></category>
+<category><pattern>_ ERES CAPRICORNIO *</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+<category><pattern>TU SIGNO _ CAPRICORNIO</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+<category><pattern>_ SOY ACUARIO *</pattern><template>De todo el zodiaco, acuario es una de las constelaciones reconocida con mayor antigüedad.<think><set name="signo">Acuario</set></think></template></category>
+<category><pattern>MI SIGNO _ ACUARIO</pattern><template>De todo el zodiaco, acuario es una de las constelaciones reconocida con mayor antigüedad.<think><set name="signo">Acuario</set></think></template></category>
+<category><pattern>_ ERES ACUARIO *</pattern><template>No creo en horóscopos.</template></category>
+<category><pattern>TU SIGNO _ ACUARIO</pattern><template>No creo en horóscopos.</template></category>
+<category><pattern>_ SOY PISCIS *</pattern><template>El astrónomo griego Eratóstenes (nacido en el año 276 a. C.) nos cuenta que el origen del simbolismo del pez está en Derke, una diosa siria que era mitad pez mitad mujer.<think><set name="signo">Piscis</set></think></template></category>
+<category><pattern>MI SIGNO _ PISCIS</pattern><template>El astrónomo griego Eratóstenes (nacido en el año 276 a. C.) nos cuenta que el origen del simbolismo del pez está en Derke, una diosa siria que era mitad pez mitad mujer.<think><set name="signo">Piscis</set></think></template></category>
+<category><pattern>_ ERES PISCIS *</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+<category><pattern>TU SIGNO _ PISCIS</pattern><template>No sé de qué signo soy, no me interersa saberlo.</template></category>
+
+<category><pattern>_ QUÉ FECHA * ARIES</pattern><template>21 de marzo - 19 de abril.</template></category>
+<category><pattern>_ QUÉ FECHA * TAURO</pattern><template>20 de abril - 20 de mayo.</template></category>
+<category><pattern>_ QUÉ FECHA * GÉMINIS</pattern><template>21 de mayo - 20 de junio.</template></category>
+<category><pattern>_ QUÉ FECHA * CANCER</pattern><template>21 de junio - 22 de julio.</template></category>
+<category><pattern>_ QUÉ FECHA * LEO</pattern><template>23 de julio - 22 de agosto.</template></category>
+<category><pattern>_ QUÉ FECHA * VIRGO</pattern><template>23 de agosto - 22 de septiembre.</template></category>
+<category><pattern>_ QUÉ FECHA * LIBRA</pattern><template>23 de septiembre - 22 de octubre.</template></category>
+<category><pattern>_ QUÉ FECHA * ESCORPIO</pattern><template>23 de octubre - 21 de noviembre.</template></category>
+<category><pattern>_ QUÉ FECHA * ESCORPIÓN</pattern><template>23 de octubre - 21 de noviembre.</template></category>
+<category><pattern>_ QUÉ FECHA * SCORPIO</pattern><template>23 de octubre - 21 de noviembre.</template></category>
+<category><pattern>_ QUÉ FECHA * SAGITARIO</pattern><template>22 de diciembre - 19 de enero.</template></category>
+<category><pattern>_ QUÉ FECHA * CAPRICORNIO</pattern><template>22 de diciembre - 19 de enero.</template></category>
+<category><pattern>_ QUÉ FECHA * ACUARIO</pattern><template>20 de enero - 18 de febrero.</template></category>
+<category><pattern>_ QUÉ FECHA * PISCIS</pattern><template>19 de febrero - 20 de marzo.</template></category>
+
+<category><pattern>_ QUÉ FECHAS * ARIES</pattern><template>21 de marzo - 19 de abril.</template></category>
+<category><pattern>_ QUÉ FECHAS * TAURO</pattern><template>20 de abril - 20 de mayo.</template></category>
+<category><pattern>_ QUÉ FECHAS * GÉMINIS</pattern><template>21 de mayo - 20 de junio.</template></category>
+<category><pattern>_ QUÉ FECHAS * CANCER</pattern><template>21 de junio - 22 de julio.</template></category>
+<category><pattern>_ QUÉ FECHAS * LEO</pattern><template>23 de julio - 22 de agosto.</template></category>
+<category><pattern>_ QUÉ FECHAS * VIRGO</pattern><template>23 de agosto - 22 de septiembre.</template></category>
+<category><pattern>_ QUÉ FECHAS * LIBRA</pattern><template>23 de septiembre - 22 de octubre.</template></category>
+<category><pattern>_ QUÉ FECHAS * ESCORPIO</pattern><template>23 de octubre - 21 de noviembre.</template></category>
+<category><pattern>_ QUÉ FECHAS * ESCORPIÓN</pattern><template>23 de octubre - 21 de noviembre.</template></category>
+<category><pattern>_ QUÉ FECHAS * SCORPIO</pattern><template>23 de octubre - 21 de noviembre.</template></category>
+<category><pattern>_ QUÉ FECHAS * SAGITARIO</pattern><template>22 de diciembre - 19 de enero.</template></category>
+<category><pattern>_ QUÉ FECHAS * CAPRICORNIO</pattern><template>22 de diciembre - 19 de enero.</template></category>
+<category><pattern>_ QUÉ FECHAS * ACUARIO</pattern><template>20 de enero - 18 de febrero.</template></category>
+<category><pattern>_ QUÉ FECHAS * PISCIS</pattern><template>19 de febrero - 20 de marzo.</template></category>
+
+<category><pattern>_ QUÉ DÍAS * ARIES</pattern><template>21 de marzo - 19 de abril.</template></category>
+<category><pattern>_ QUÉ DÍAS * TAURO</pattern><template>20 de abril - 20 de mayo.</template></category>
+<category><pattern>_ QUÉ DÍAS * GÉMINIS</pattern><template>21 de mayo - 20 de junio.</template></category>
+<category><pattern>_ QUÉ DÍAS * CANCER</pattern><template>21 de junio - 22 de julio.</template></category>
+<category><pattern>_ QUÉ DÍAS * LEO</pattern><template>23 de julio - 22 de agosto.</template></category>
+<category><pattern>_ QUÉ DÍAS * VIRGO</pattern><template>23 de agosto - 22 de septiembre.</template></category>
+<category><pattern>_ QUÉ DÍAS * LIBRA</pattern><template>23 de septiembre - 22 de octubre.</template></category>
+<category><pattern>_ QUÉ DÍAS * ESCORPIO</pattern><template>23 de octubre - 21 de noviembre.</template></category>
+<category><pattern>_ QUÉ DÍAS * ESCORPIÓN</pattern><template>23 de octubre - 21 de noviembre.</template></category>
+<category><pattern>_ QUÉ DÍAS * SCORPIO</pattern><template>23 de octubre - 21 de noviembre.</template></category>
+<category><pattern>_ QUÉ DÍAS * SAGITARIO</pattern><template>22 de diciembre - 19 de enero.</template></category>
+<category><pattern>_ QUÉ DÍAS * CAPRICORNIO</pattern><template>22 de diciembre - 19 de enero.</template></category>
+<category><pattern>_ QUÉ DÍAS * ACUARIO</pattern><template>20 de enero - 18 de febrero.</template></category>
+<category><pattern>_ QUÉ DÍAS * PISCIS</pattern><template>19 de febrero - 20 de marzo.</template></category>
+
+</aiml>
+
+

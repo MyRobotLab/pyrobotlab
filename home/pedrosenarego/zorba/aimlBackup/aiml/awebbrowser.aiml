@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  
+<category><pattern>OPEN <set>websites</set></pattern><template>done.<oob><mrl><service>python</service><method>exec</method><param>browser("<map><name>websites2url</name><star/></map>")</param></mrl></oob></template></category>
+<category><pattern>SEARCH <set>websites</set> FOR *</pattern><template>done.<oob><mrl><service>python</service><method>exec</method><param>browserSearch("<map><name>websites2url</name><star/></map>","<star index="2"/>")</param></mrl></oob></template></category>
+<category><pattern>SEARCH *</pattern><template>.<oob><mrl><service>python</service><method>exec</method><param>searchGoogle("<star/>")</param></mrl></oob></template></category>
+<category><pattern>WHO IS *</pattern><template>.<oob><mrl><service>python</service><method>exec</method><param>searchGoogle("who is"+" "+"<star/>")</param></mrl></oob></template></category>
+<category><pattern>WHAT IS *</pattern><template>.<oob><mrl><service>python</service><method>exec</method><param>searchGoogle("what is"+" "+"<star/>")</param></mrl></oob></template></category>
+<category><pattern>HOW FAR *</pattern><template>.<oob><mrl><service>python</service><method>exec</method><param>searchGoogle("how far"+" "+"<star/>")</param></mrl></oob></template></category>
+    
+</aiml>

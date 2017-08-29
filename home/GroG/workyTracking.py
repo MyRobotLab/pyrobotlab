@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 useVirtualArduino = False;
+=======
+useVirtualArduino = True;
+>>>>>>> master
 xPin = 9;
 yPin = 6;
 arduinoPort = "COM5";

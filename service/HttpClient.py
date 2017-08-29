@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 ################################################
 # HttpClient service is a service wrapper of the Apache HttpClient
 # So, you can download webpages, images, and a all sorts of 
 # goodies from the internet
 
+=======
+>>>>>>> master
 http = Runtime.start("http","HttpClient")
 
 # blocking methods
@@ -45,6 +48,9 @@ def onHttpResponse(response):
 # make the request and the callbacks will be called when
 # the method completes
 http.post("http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi")
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> master

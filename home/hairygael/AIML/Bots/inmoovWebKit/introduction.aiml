@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!--  -->
+<!--  -->
+  <category>
+    <pattern>HELLO ROBOT</pattern>
+    <template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>setModeVision(1)</param>
+			</mrl>
+      </oob></template>
+  </category>
+
+<category>
+    <pattern>HELLO ROBOT 2</pattern>
+    <template>
+      <random>
+        <li>Hello <get name="name"/>. </li>
+        <li>Good day <get name="name"/>. </li>
+        <li>Hello <get name="name"/>. </li>
+      </random>
+    </template>
+  </category>
+
+
+
+
+  <category>
+    <pattern>* BYE ROBOT *</pattern>
+    <template><oob>
+			<mrl>
+				<service>python</service>
+				<method>exec</method>
+				<param>setModeVision(0)</param>
+			</mrl>
+      </oob></template>
+  </category>  
+
+ 
+  
+</aiml>

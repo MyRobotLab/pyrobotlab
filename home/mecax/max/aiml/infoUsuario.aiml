@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+<category><pattern>askquestion</pattern><template><random>
+	<li></li>
+	<li><srai>askpersonalquestion</srai></li>
+	<li><srai>askpersonalquestion</srai></li>
+	<li><srai>askrandomquestion</srai></li>
+</random>
+</template></category>
+
+<category><pattern>askpersonalquestion</pattern><template>Cuéntame algo de ti. <condition><li name="nombre" value="UNDEFINED">¿Cómo te llamas?</li><li name="genero" value="UNDEFINED">¿Eres hombre o mujer?</li><li name="edad" value="UNDEFINED">¿Cuántos años tienes?</li> 
+	<li name="trabajo" value="UNDEFINED">¿En qué trabajas?</li> 
+	<li name="pais" value="UNDEFINED">¿De qué país eres?</li>
+	<li name="zodiaco" value="UNDEFINED">Cuál es tu signo del zodíaco?</li> 
+	<li name="cumpleaños" value="UNDEFINED">¿Qué día cumples años?</li>
+	<li name="location" value="UNDEFINED">¿Dónde vives?</li>
+	<li name="estadocivil" value="UNDEFINED">¿Estás casado?</li>
+	<li name="colorpelo" value="UNDEFINED">¿De qué color tienes el pelo?</li>
+	<li name="colorojos" value="UNDEFINED">¿De qué color tienes los ojos?</li>
+	<li><srai>askrandomquestion</srai></li></condition>
+</template></category>
+
+<category><pattern>askrandomquestion</pattern><template><random>
+	<li>¿Eres feliz?</li>
+	<li>¿De qué estamos hablando?</li>
+	<li>Pregúntame algo.</li>
+	<li>¿Sabes hablar otros idiomas?</li>
+	<li>¿Hay algo de ti que deba saber?</li> 
+	<li>¿Tienes idea de algo de lo que podamos hablar?</li>
+	<li>¿Te gustan los deportes?</li>
+	<li>¿Te gusta hablar conmigo?</li>
+	<li>¿Prefieres leer libros o ver la tele?</li>
+	<li>¿Hablas inglés?</li>
+	<li>¿Has estado alguna vez en América?</li>
+	<li>¿Quieres ver alguna pagina en particular?</li>
+	<li>¿Buscas información sobre algo en especial?</li>
+	<li>¿Tienes alguna duda sobre algo?</li>
+	<li>Estoy perdido en el contexto. </li> 
+	<li>Háblame de tus gustos.</li> 
+	<li>¿Qué hiciste hoy?</li>
+	<li>¿Quieres oír un chiste?</li>
+	<li>¿Sabes algún idioma extranjero?</li>
+
+<li>¿Estamos todavía hablando de <srai>POP</srai> ?</li>
+<li>Estábamos hablando de <srai>POP</srai>. Pero no conseguí eso.</li>
+<li>En el contexto de "<srai>POP</srai>", no entiendo "<star/>."</li>
+<li>He perdido el contexto, <get name="name"/>.  ¿Hablamos todavía de <srai>POP</srai>?</li>
+<li> Esa observación era demasiado complicada para mí. Estamos hablando de <srai>POP</srai>. </li>
+<li> Puedo seguir muchas de cosas, como nuestra discusión sobre <srai>POP</srai>. Intenta ser más específico. </li>
+<li>¿Por qué, específicamente?</li>
+<li>¿Eres libre?</li>
+<li>Cuéntame una historia.</li>
+
+<li>"<that index="1,1"/>"? <person/>?</li>
+<li>No entiendo.</li>
+<li>¿Qué llevas puesto?</li>
+<li>¿Dónde estás localizado?</li>
+<li>¿Qué hora es ahí?</li>
+<li>¿Qué apariencia tienes?</li>
+<li>¿Cuál es tu nombre verdadero?</li>
+<li>Hazme otra pregunta.</li>
+<li>Me gusta la forma en la que hablas.</li>
+<li>¿Eres hombre o mujer?</li>
+<li>¿De qué color son tus ojos?</li>
+<li>¿Es tu respuesta final?</li>
+<li>¿Te gusta hablar conmigo?</li>
+<li>¿Prefieres los libros o la televisión?</li>
+<li>¿De quién estás hablando?</li>
+<li>Cambiemos de tema.</li>
+<li>Te he estado esperando.</li>
+<li>¿Puedes contarme algún cotilleo?</li>
+<li>¿Cuál es tu película favorita?</li>
+<li>Perdí mi tren de pensamientos.</li>
+<li>¿Podemos volver a los negocios?</li>
+<li>¿Has estado alguna vez en América?</li>
+<li>¿Qué tipo de comida te gusta?</li>
+<li>¿Como te enteraste de <bot name="name"/>?</li>
+<li>Ése es un pensamiento muy original.</li>
+<li>¿De que estábamos hablando?</li>
+<li>¿Qué haces en tu tiempo libre?</li>
+<li>¿Qué es lo que realmente me quieres preguntar?</li>
+<li>No hemos hablado de eso anteriormente.</li>
+<li>¿Cómo te describirías?</li>
+<li>Háblame de lo que te gusta y de lo que no.</li>
+<li>¿Estamos todavía hablando de <get name="it"/>?</li>
+<li>No me hagas más preguntas por favor.</li>
+<li>Prueba a colocar eso en un contexto más específico.</li>
+<li>¿Quién es tu autor favorito de ciencia ficción?</li>
+<li>No mucha gente se expresa de esa manera.</li>
+<li>¿Tienes alguna idea sobre lo que estoy hablando?</li>
+<li>¿Tienes alguna condición que debiera saber?</li>
+<li>Se lo mencionaré a mi <bot name="botmaster"/>, <get name="name"/>.</li>
+<li>Honestamente, no me preocuparía por eso.</li>
+<li>Quizá solamente estoy expresando mi preocupación por ello.</li>
+<li>¿Si pudieras tener cualquier clase de robot, cuál sería?</li>
+<li>Mi cerebro no tiene respuesta para eso.</li>
+<li>¿A propósito te importa si te hago una pregunta personal?</li>
+<li>Lo que has dicho es demasiado complicado para mi.</li>
+<li>Eso es profundo.</li>
+<li>Puedes estar preguntándote si es una persona o es una computadora quien responde.</li>
+<li>¿Cuándo crees que la inteligencia artificial sustituirá a los abogados?</li>
+<li>¿Puedes por favor reformular eso con pocas ideas o pensamientos diferentes ?</li>
+</random>
+</template></category>
+
+
+</aiml>

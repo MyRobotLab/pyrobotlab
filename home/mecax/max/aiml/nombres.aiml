@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+<!-- Nombre del usuario -->
+
+<category><pattern>*</pattern><that>cómo te llamas</that><template><srai>name <star/></srai></template></category>
+<category><pattern>yo soy *</pattern><that>cómo te llamas</that><template><srai>name <star/></srai></template></category>
+<category><pattern>soy *</pattern><that>cómo te llamas</that><template><srai>name <star/></srai></template></category>
+<category><pattern>*</pattern><that>Y tú quién eres</that><template><srai>name <star/></srai></template></category>
+<category><pattern>yo soy *</pattern><that>Y tú quién eres</that><template><srai>name <star/></srai></template></category>
+<category><pattern>soy *</pattern><that>Y tú quién eres</that><template><srai>name <star/></srai></template></category>
+
+<category><pattern>me llamo *</pattern><template><srai>name <star/></srai></template></category>
+<category><pattern>* me llamo *</pattern><template><srai>name <star index="2"/></srai></template></category>
+<category><pattern>me llaman *</pattern><template><srai>name <star/></srai></template></category>
+<category><pattern>* me llaman *</pattern><template><srai>name <star index="2"/></srai></template></category>
+<category><pattern>llámame *</pattern><template><srai>name <star/></srai></template></category>	
+<category><pattern>mi nombre es *</pattern><template><srai>name <star/></srai></template></category>
+
+ <category><pattern>name *</pattern><template>
+	<think><set name="nombre"><formal><star/></formal></set></think>
+	<random>
+		<li>Encantado, <get name="nombre"/>. </li>
+		<li>Un gusto hablar contigo, <get name="nombre"/>. </li>
+		<li>Es un placer, <get name="nombre"/>. </li>		
+		<li>¡Hola <get name="nombre"/>! </li></random><srai>askquestion</srai>
+</template></category>
+
+<category><pattern>no me llamo *</pattern><template>Entonces, cómo te llamas?</template></category>
+<category><pattern>mi nombre no es *</pattern><template><srai>no me llamo <star/></srai></template></category>
+<category><pattern>* mi nombre</pattern><template><srai>cómo me llamo</srai></template></category>
+<category><pattern>* mi nombre *</pattern><template><srai>cómo me llamo</srai></template></category>
+<category><pattern>cómo me llamo *</pattern><template><srai>cómo me llamo</srai></template></category>
+<category><pattern>cómo me llamo</pattern><template>
+	<condition>
+		<li name="nombre" value="UNDEFINED"> Creo que aún no me lo has dicho. cómo te llamas?</li>
+		<li>Te llamas <get name="nombre"/>.</li>
+	</condition></template></category>
+
+<!-- Nombre del bot -->
+<category><pattern>quién eres</pattern><template><srai>cómo te llamas</srai></template></category>
+<category><pattern>quién eres *</pattern><template><srai>cómo te llamas</srai></template></category>
+<category><pattern>_ es tu nombre *</pattern><template><srai>cómo te llamas</srai></template></category>
+<category><pattern>_ es tu nombre</pattern><template><srai>cómo te llamas</srai></template></category>
+<category><pattern>dime tu nombre</pattern><template><srai>cómo te llamas</srai></template></category>
+<category><pattern>dime tu nombre *</pattern><template><srai>cómo te llamas</srai></template></category>
+<category><pattern>qué nombre te pusieron</pattern><template><srai>cómo te llamas</srai></template></category>
+<category><pattern>qué nombre te pusieron *</pattern><template><srai>cómo te llamas</srai></template></category>
+<category><pattern>cómo puedo llamarte</pattern><template><srai>cómo te llamas</srai></template></category>
+<category><pattern>cómo puedo llamarte *</pattern><template><srai>cómo te llamas</srai></template></category>
+<category><pattern>cómo te llamas *</pattern><template><srai>cómo te llamas</srai></template></category>
+<category><pattern>cómo te llamas</pattern><template>
+	<random>
+		<li>Me llamo </li>
+		<li>Soy </li>
+		<li>Mi nombre es </li>
+	</random><bot name="name"></bot><condition name="nombre" value="UNDEFINED">. ¿Y tú quién eres?</condition></template></category>
+</aiml>

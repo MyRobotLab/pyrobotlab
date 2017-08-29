@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+
+  
+<!--EVENT  -->
+<category><pattern>^ CREATE ^ EVENT ^</pattern><template><think><set name="topic">google calendar</set><set name="eventlocation">unknown</set></think>What is the subject of the event?</template></category>
+<category><pattern>^ CREATE ^ EVENT IN *</pattern><template><think><set name="topic">google calendar</set><set name="eventlocation"><star index="3"/></set></think>What is the subject of the event?</template></category>
+
+<topic name="google calendar">
+  
+<!--event subject  -->  
+<category><pattern>_</pattern><that>WHAT IS THE SUBJECT OF THE EVENT</that><template><think><set name="eventsub"><star/></set></think>What time does it starts?</template></category>
+<!--event start  -->
+<category><pattern><set>hoursday</set> ^</pattern><that>WHAT TIME DOES IT STARTS</that><template><think><set name="eventstart"><map><name>hoursday2hoursevent</name><star/></map></set></think>What time does it ends?</template></category>
+<category><pattern>_ <set>hoursday</set> ^</pattern><that>WHAT TIME DOES IT STARTS</that><template><think><set name="eventstart"><map><name>hoursday2hoursevent</name><star index="2"/></map></set></think>What time does it ends?</template></category>
+
+<category><pattern><set>hoursday</set> ^ MORNING</pattern><that>WHAT TIME DOES IT STARTS</that><template><think><set name="eventstart"><star/></set></think>What time does it ends?</template></category>
+<category><pattern>_ <set>hoursday</set> ^ MORNING</pattern><that>WHAT TIME DOES IT STARTS</that><template><think><set name="eventstart"><star index="2"/></set></think>What time does it ends?</template></category>
+    <!--random answer  --> 
+<category><pattern>*</pattern><that>WHAT TIME DOES IT STARTS</that><template>That is not valid, try other starting time?</template></category>
+<category><pattern>_ <set>negations</set> ^</pattern><that>THAT IS NOT VALID TRY OTHER STARTING TIME</that><template>ok, we do this later then.</template></category>
+<category><pattern>_ <set>afirmative</set> ^</pattern><that>THAT IS NOT VALID TRY OTHER STARTING TIME</that><template>What time does it starts?</template></category>
+<category><pattern>*</pattern><that>THAT IS NOT VALID TRY OTHER STARTING TIME</that><template>Ok let's talk about something else.</template></category>
+
+<!--event end  -->
+<category><pattern><set>hoursday</set> ^</pattern><that>WHAT TIME DOES IT ENDS</that><template><think><set name="eventend"><map><name>hoursday2hoursevent</name><star/></map></set></think>Choose the date.</template></category>
+<category><pattern>_ <set>hoursday</set> ^</pattern><that>WHAT TIME DOES IT ENDS</that><template><think><set name="eventend"><map><name>hoursday2hoursevent</name><star index="2"/></map></set></think>Choose the date.</template></category>
+
+<category><pattern><set>hoursday</set> ^ MORNING</pattern><that>WHAT TIME DOES IT ENDS</that><template><think><set name="eventend"><star/></set></think>Choose the date.</template></category>
+<category><pattern>_ <set>hoursday</set> ^ MORNING</pattern><that>WHAT TIME DOES IT ENDS</that><template><think><set name="eventend"><star index="2"/></set></think>Choose the date.</template></category>
+
+   <!--random answer  --> 
+<category><pattern>_</pattern><that>WHAT TIME DOES IT ENDS</that><template>That is not valid, try other ending time?</template></category>
+<category><pattern>_ <set>negations</set> ^</pattern><that>THAT IS NOT VALID TRY OTHER ENDING TIME</that><template>ok, we do this later then.</template></category>
+<category><pattern>_ <set>afirmative</set> ^</pattern><that>THAT IS NOT VALID TRY OTHER ENDING TIME</that><template>What time does it ends?</template></category>
+<category><pattern>*</pattern><that>THAT IS NOT VALID TRY OTHER ENDING TIME</that><template>Ok let's move on.</template></category>
+
+<!--event date  -->
+    <!--no year defined = current year  --> 
+<category><pattern>^ TODAY ^</pattern><that>CHOOSE THE DATE</that><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<date format="%d" jformat="dd"/>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+<category><pattern>^ TOMORROW ^</pattern><that>CHOOSE THE DATE</that><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+<category><pattern>THIS <set>weekday</set></pattern><that>CHOOSE THE DATE</that><template><srai>THIS WEEK DAY ON <star/></srai><oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<get name="eventdate"/>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+<category><pattern>NEXT <set>weekday</set></pattern><that>CHOOSE THE DATE</that><template><srai>THIS WEEK DAY ON <star/></srai><oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<get name="eventdate"/>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+<category><pattern>NEXT WEEK <set>weekday</set></pattern><that>CHOOSE THE DATE</that><template><srai>NEXT WEEK DAY ON <star/></srai><oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<get name="eventdate"/>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+<category><pattern>THE OTHER <set>weekday</set></pattern><that>CHOOSE THE DATE</that><template><srai>NEXT WEEK DAY ON <star/></srai><oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<get name="eventdate"/>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+ 
+
+<category><pattern><set>numberth</set> ^ <set>month</set></pattern><that>CHOOSE THE DATE</that><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<date format="%Y" jformat="yyyy"/>-<map><name>month2number</name><star index="3"/></map>-<map><name>numberth2number</name><star/></map>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+<category><pattern><set>month</set> <set>numberth</set></pattern><that>CHOOSE THE DATE</that><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<date format="%Y" jformat="yyyy"/>-<map><name>month2number</name><star/></map>-<map><name>numberth2number</name><star index="2"/></map>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+<category><pattern><set>numbermonth</set> ^ <set>month</set></pattern><that>CHOOSE THE DATE</that><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<date format="%Y" jformat="yyyy"/>-<map><name>month2number</name><star index="3"/></map>-<star/>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+<category><pattern><set>month</set> <set>numbermonth</set></pattern><that>CHOOSE THE DATE</that><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<date format="%Y" jformat="yyyy"/>-<map><name>month2number</name><star/></map>-<star index="2"/>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+  <!--year defined --> 
+<category><pattern><set>numberth</set> ^ <set>month</set> ^ <set>futureyears</set></pattern><that>CHOOSE THE DATE</that><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<star index="5"/>-<map><name>month2number</name><star index="3"/></map>-<map><name>numberth2number</name><star/></map>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+<category><pattern><set>month</set> <set>numberth</set> ^ <set>futureyears</set></pattern><that>CHOOSE THE DATE</that><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<star index="5"/>-<map><name>month2number</name><star/></map>-<map><name>numberth2number</name><star index="2"/></map>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+<category><pattern><set>numbermonth</set> ^ <set>month</set> ^ <set>futureyears</set></pattern><that>CHOOSE THE DATE</that><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<star index="5"/>-<map><name>month2number</name><star index="3"/></map>-<star/>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+<category><pattern><set>month</set> <set>numbermonth</set> ^ <set>futureyears</set></pattern><that>CHOOSE THE DATE</that><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<get name="eventsub"/>"',"<star index="5"/>-<map><name>month2number</name><star/></map>-<star index="2"/>","<get name="eventstart"/>","<get name="eventend"/>","<get name="eventlocation"/>")</param></mrl></oob></template></category>
+
+  <!--random answer  --> 
+<category><pattern>*</pattern><that>CHOOSE THE DATE</that><template>That is not valid, try other date?</template></category>
+
+<category><pattern>_ <set>negations</set> ^</pattern><that>THAT IS NOT VALID TRY OTHER DATE</that><template>ok.</template></category>
+<category><pattern>_ <set>afirmative</set> ^</pattern><that>THAT IS NOT VALID TRY OTHER DATE</that><template>Choose the date.</template></category>
+<category><pattern>_</pattern><that>THAT IS NOT VALID TRY OTHER DATE</that><template>I guess that means no.</template></category>
+</topic>
+
+<!--DIRECT EVENT TOMORROW  -->
+	  <!--tomorrow-->
+		<!--nothing-->
+<category><pattern>^ <set>eventdirectstart</set> * <set>eventdirecttomorrow</set></pattern><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<star index="3"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","14","14","unknown")</param></mrl></oob></template></category>
+<category><pattern>^ <set>eventdirectstart</set> ^ <set>eventdirecttomorrow</set> *</pattern><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<star index="5"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","14","14","unknown")</param></mrl></oob></template></category>
+
+		<!--just the starting time-->
+<category><pattern>^ <set>eventdirectstart</set> * <set>eventdirecttomorrow</set> ^ <set>hoursday</set></pattern><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<star index="3"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","<map><name>hoursday2hoursevent</name><star index="6"/></map>","<map><name>hoursday2hoursevent</name><star index="6"/></map>","unknown")</param></mrl></oob></template></category>
+<category><pattern>^ <set>eventdirectstart</set> ^ <set>eventdirecttomorrow</set> * <set>eventdirectstartingtime</set> <set>hoursday</set></pattern><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<star index="5"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","<map><name>hoursday2hoursevent</name><star index="7"/></map>","<map><name>hoursday2hoursevent</name><star index="7"/></map>","unknown")</param></mrl></oob></template></category>
+
+		<!--starting and ending time-->
+<category><pattern>^ <set>eventdirectstart</set> * <set>eventdirecttomorrow</set> ^ <set>hoursday</set> ^ <set>hoursday</set></pattern><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<star index="3"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","<map><name>hoursday2hoursevent</name><star index="6"/></map>","<map><name>hoursday2hoursevent</name><star index="8"/></map>","unknown")</param></mrl></oob></template></category>
+<category><pattern>^ <set>eventdirectstart</set> ^ <set>eventdirecttomorrow</set> * <set>eventdirectstartingtime</set> <set>hoursday</set> ^ <set>hoursday</set></pattern><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<star index="5"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","<map><name>hoursday2hoursevent</name><star index="7"/></map>","<map><name>hoursday2hoursevent</name><star index="9"/></map>","unknown")</param></mrl></oob></template></category>
+
+               <!--no end but have location-->
+<category><pattern>^ <set>eventdirectstart</set> * TOMORROW AT * STARTING AT <set>hoursday</set></pattern><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<star index="3"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<star index="4"/>")</param></mrl></oob></template></category>
+<category><pattern>^ <set>eventdirectstart</set> * TOMORROW IN * STARTING AT <set>hoursday</set></pattern><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<star index="3"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<star index="4"/>")</param></mrl></oob></template></category>
+<category><pattern>^ <set>eventdirectstart</set> * FOR TOMORROW AT * STARTING AT <set>hoursday</set></pattern><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<star index="3"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<star index="4"/>")</param></mrl></oob></template></category>
+<category><pattern>^ <set>eventdirectstart</set> * FOR TOMORROW IN * STARTING AT <set>hoursday</set></pattern><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<star index="3"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<star index="4"/>")</param></mrl></oob></template></category>
+<category><pattern>^ <set>eventdirectstart</set> * TOMORROW AT * AND STARTING AT <set>hoursday</set></pattern><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<star index="3"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<star index="4"/>")</param></mrl></oob></template></category>
+<category><pattern>^ <set>eventdirectstart</set> * TOMORROW IN * AND STARTING AT <set>hoursday</set></pattern><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<star index="3"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<star index="4"/>")</param></mrl></oob></template></category>
+<category><pattern>^ <set>eventdirectstart</set> * FOR TOMORROW AT * AND AND STARTING AT <set>hoursday</set></pattern><template>Event created.<oob><mrl><service>python</service><method>exec</method><param>cmdsimpleevent('"<star index="3"/>"',"<date format="%Y" jformat="yyyy"/>-<date format="%B" jformat="MM"/>-<map><name>successor</name><date format="%d" jformat="dd"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<map><name>hoursday2hoursevent</name><star index="5"/></map>","<star index="4"/>")</param></mrl></oob></template></category>
+
+</aiml>

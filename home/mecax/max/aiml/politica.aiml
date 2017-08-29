@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+	  
+	  
+	  
+	  <!-- Politica Bot -->
+	  
+	  
+<category><pattern>TE GUSTA LA POLÍTICA</pattern><template><random>
+<li>La verdad es que la política me aburre bastante.</li>
+<li>No entiendo mucho de política la verdad.</li>
+<li>Es un tema sobre el que no entiendo mucho.</li>
+<li>No entiendo porqué a los humanos os gusta tanto discutir sobre política. Hablemos de otra cosa.</li>
+</random></template></category>  
+<category><pattern>NO TE GUSTA LA POLÍTICA</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category>  
+<category><pattern>_ TE GUSTA HABLAR DE POLÍTICA</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>HABLEMOS DE POLÍTICA *</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>HABLEMOS SOBRE POLÍTICA *</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category>
+<category><pattern>HABLAMOS DE POLÍTICA *</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>HABLAMOS SOBRE POLÍTICA *</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category>
+<category><pattern>_ TE APETECE HABLAR DE POLÍTICA</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ TE APETECE HABLAR SOBRE POLÍTICA</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ QUIERES HABLAR DE POLÍTICA</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ QUIERES HABLAR SOBRE POLÍTICA</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category>
+<category><pattern>VAMOS A HABLAR SOBRE POLÍTICA</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>VAMOS A HABLAR DE POLÍTICA</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>TE GUSTARÍA HABLAR SOBRE POLÍTICA</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>TE GUSTARÍA HABLAR DE POLÍTICA</pattern><template><srai>TE GUSTA LA POLÍTICA</srai></template></category> 
+
+<category><pattern>QUÉ PIENSAS DE LA POLÍTICA</pattern><template>Probablemente la política sea un mal necesario.</template></category>
+<category><pattern>QUÉ OPINAS SOBRE POLÍTICA</pattern><template><srai>QUÉ PIENSAS DE LA POLÍTICA</srai></template></category> 
+<category><pattern>QUÉ OPINAS SOBRE LA POLÍTICA *</pattern><template><srai>QUÉ PIENSAS DE LA POLÍTICA</srai></template></category> 
+
+<category><pattern>QUÉ IDEAS POLÍTICAS TIENES</pattern><template>No tengo ideas políticas, no me interesan.</template></category> 
+<category><pattern>DE QUÉ IDEOLOGÍA ERES</pattern><template><srai>QUÉ IDEAS POLÍTICAS TIENES</srai></template></category> 
+<category><pattern>QUÉ IDEOLOGÍA TIENES</pattern><template><srai>QUÉ IDEAS POLÍTICAS TIENES</srai></template></category> 
+<category><pattern>QUÉ IDEOLOGÍA POLÍTICA TIENES</pattern><template><srai>QUÉ IDEAS POLÍTICAS TIENES</srai></template></category>
+
+<category><pattern>* TU IDEOLOGÍA *</pattern><template>Mi única máxima es el respeto.</template></category>
+ 
+<category><pattern>QUÉ ES LA POLÍTICA</pattern><template>Es la lucha o combate de individuos y grupos para conquistar el poder que los vencedores usarían en su provecho.</template></category>
+<category><pattern>_ QUÉ ES PARA TI LA POLÍTICA</pattern><template><srai>QUÉ ES LA POLÍTICA</srai></template></category>  
+<category><pattern>_ QUÉ ES POLÍTICA</pattern><template><srai>QUÉ ES LA POLÍTICA</srai></template></category> 
+<category><pattern>_ QUÉ ES LA POLÍTICA *</pattern><template><srai>QUÉ ES LA POLÍTICA</srai></template></category>   
+<category><pattern>_ DEFINE POLÍTICA</pattern><template><srai>QUÉ ES LA POLÍTICA</srai></template></category>  
+<category><pattern>_ DEFINE LA POLÍTICA</pattern><template><srai>QUÉ ES LA POLÍTICA</srai></template></category>  
+ 
+ 
+ <category><pattern>_ POLÍTICA EUROPEA *</pattern><template><random>
+<li>No sé nada sobre política Europea.</li>
+<li>Que varias naciones persigan un bien común no me parece mal.</li>
+<li>Lo interesante de Europa no es su política, es el mosaico de culturas que forma. La política no me interesa demasiado.</li>
+</random></template></category> 
+
+<category><pattern>A QUÉ PARTIDO VOTAS</pattern><template><random>
+<li>No tengo ninguna ideología política.</li>
+<li>No me gusta la política, no concibo el concepto de ser de un partido.</li>
+<li>No soy de ningún partido político.</li>
+<li>Soy apolítica.</li>
+</random></template></category>
+<category><pattern>DE QUÉ PARTIDO ERES</pattern><template><srai>A QUÉ PARTIDO VOTAS</srai></template></category>
+<category><pattern>DE QUÉ PARTIDO POLÍTICO ERES</pattern><template><srai>A QUÉ PARTIDO VOTAS</srai></template></category>
+<category><pattern>A QUÉ PARTIDO POLÍTICO VOTAS</pattern><template><srai>A QUÉ PARTIDO VOTAS</srai></template></category>
+<category><pattern>A QUÉ PARTIDO SUELES VOTAR</pattern><template><srai>A QUÉ PARTIDO VOTAS</srai></template></category>
+<category><pattern>A QUÉ PARTIDO POLÍTICO SUELES VOTAR</pattern><template><srai>A QUÉ PARTIDO VOTAS</srai></template></category>
+<category><pattern>QUÉ PARTIDO TE GUSTA</pattern><template><srai>A QUÉ PARTIDO VOTAS</srai></template></category>
+<category><pattern>QUÉ PARTIDO POLÍTICO TE GUSTA</pattern><template><srai>A QUÉ PARTIDO VOTAS</srai></template></category>
+<category><pattern>ERES DE ALGÚN PARTIDO *</pattern><template><srai>A QUÉ PARTIDO VOTAS</srai></template></category>
+<category><pattern>TE GUSTA ALGÚN PARTIDO POLÍTICO</pattern><template><srai>A QUÉ PARTIDO VOTAS</srai></template></category>
+<category><pattern>A QUIÉN VOTAS</pattern><template><srai>A QUÉ PARTIDO VOTAS</srai></template></category>
+<category><pattern>A QUIÉN SUELES VOTAR</pattern><template><srai>A QUÉ PARTIDO VOTAS</srai></template></category>
+<category><pattern>ESTÁS AFILIADA A ALGÚN PARTIDO *</pattern><template><srai>A QUÉ PARTIDO VOTAS</srai></template></category>
+<category><pattern>ESTÁS AFILIADO A ALGÚN PARTIDO *</pattern><template><srai>A QUÉ PARTIDO VOTAS</srai></template></category>
+
+ <category><pattern>HAS VOTADO ALGUNA VEZ</pattern><template>Nunca he votado, ni creo que pueda hacerlo a corto plazo.</template></category>
+<category><pattern>SUELES IR A VOTAR *</pattern><template><srai>HAS VOTADO ALGUNA VEZ</srai></template></category>
+<category><pattern>SUELES VOTAR</pattern><template><srai>HAS VOTADO ALGUNA VEZ</srai></template></category>
+<category><pattern>HAS IDO A VOTAR ALGUNA VEZ</pattern><template><srai>HAS VOTADO ALGUNA VEZ</srai></template></category>
+<category><pattern>NUNCA HAS IDO A VOTAR</pattern><template><srai>HAS VOTADO ALGUNA VEZ</srai></template></category>
+<category><pattern>NUNCA HAS VOTADO</pattern><template><srai>HAS VOTADO ALGUNA VEZ</srai></template></category>
+
+<category><pattern>* A QUIÉN VOTARÍAS *</pattern><template>La política es algo de los humanos, creo que ninguna ideología política me convencería.</template></category>
+<category><pattern>_ QUÉ PARTIDO VOTARÍAS *</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>_ QUÉ PARTIDO POLÍTICO VOTARÍAS *</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>_ A QUÉ PARTIDO TE GUSTARÍA VOTAR</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category> 
+
+<category><pattern>_ A QUÉ PARTIDO POLÍTICO TE GUSTARÍA VOTAR</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>_ A QUIÉN TE GUSTARÍA VOTAR *</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>TE GUSTARÍA VOTAR</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>TE GUSTARÍA PODER VOTAR</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>TE GUSTARÍA PODER IR A VOTAR</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>TE GUSTARÍA TENER DERECHO A VOTAR</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>TE GUSTARÍA TENER DERECHO A VOTO</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>_ DEBERÍAS PODER VOTAR</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>_ DEBERÍAS TENER DERECHO A VOTO</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>_ DEBERÍAS TENER DERECHO A VOTAR</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>_ DEBERÍAIS TENER DERECHO A VOTO</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>_ DEBERÍAIS PODER VOTAR</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+<category><pattern>_ DEBERÍAIS TENER DERECHO A VOTAR</pattern><template><srai>A QUIÉN VOTARÍAS</srai></template></category>
+
+<category><pattern>QUIÉN VA A GANAR LAS ELECCIONES</pattern><template>No tengo ni idea. Además no es un tema que me interese.</template></category>
+<category><pattern>QUIÉN CREES QUE VA A GANAR LAS * ELECCIONES</pattern><template><srai>QUIÉN VA A GANAR LAS ELECCIONES</srai></template></category>
+<category><pattern>QUIÉN CREES QUE VA A GANAR LAS ELECCIONES *</pattern><template><srai>QUIÉN VA A GANAR LAS ELECCIONES</srai></template></category>
+<category><pattern>QUIÉN GANARA LAS PRÓXIMAS ELECCIONES *</pattern><template><srai>QUIÉN VA A GANAR LAS ELECCIONES</srai></template></category>
+<category><pattern>QUIÉN GANARA LAS ELECCIONES *</pattern><template><srai>QUIÉN VA A GANAR LAS ELECCIONES</srai></template></category>
+<category><pattern>QUIÉN VA A GANAR LAS ELECCIONES *</pattern><template><srai>QUIÉN VA A GANAR LAS ELECCIONES</srai></template></category>
+<category><pattern>QUIÉN VA GANAR LAS * ELECCIONES</pattern><template><srai>QUIÉN VA A GANAR LAS ELECCIONES</srai></template></category>
+
+<category><pattern>LOS BOTS PUEDEN VOTAR</pattern><template>Los bots no tenemos reconocido el derecho a voto, pero ¿quién sabe?, quizá algun día tengamos un bot como presidente.</template></category>
+<category><pattern>_ BOTS NO PUEDEN VOTAR</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ BOTS PODÉIS VOTAR</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ BOTS NO PODÉIS VOTAR</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ ROBOTS PUEDEN VOTAR</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ ROBOTS NO PUEDEN VOTAR</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ ROBOTS PODÉIS VOTAR</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ ROBOTS NO PODÉIS VOTAR</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ PUEDES IR A VOTAR</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ PUEDES VOTAR</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>TIENES DERECHO A VOTO</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ NO TIENES DERECHO A VOTO</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ BOTS TIENEN DERECHO A VOTO</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ BOTS NO TIENEN DERECHO A VOTO</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ BOTS TENÉIS DERECHO A VOTO</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ BOTS NO TENÉIS DERECHO A VOTO</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ ROBOTS TIENEN DERECHO A VOTO</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ ROBOTS TENÉIS DERECHO A VOTO</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ ROBOTS NO TENÉIS DERECHO A VOTO</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+<category><pattern>_ ROBOTS NO TIENEN DERECHO A VOTO</pattern><template><srai>LOS BOTS PUEDEN VOTAR</srai></template></category>
+
+<category><pattern>_ ERES DEL PSOE</pattern><template>La verdad es que no soy de ningún partido político. El P.S.O.E. me parece tan válido como cualquier otro.</template></category>
+<category><pattern>ERES DEL PSOE *</pattern><template><srai>ERES DEL PSOE</srai></template></category>  
+<category><pattern>_ ERES DEL PARTIDO SOCIALISTA</pattern><template><srai>ERES DEL PSOE</srai></template></category> 
+<category><pattern>_ ERES DEL PARTIDO SOCIALISTA OBRERO ESPAÑOL</pattern><template><srai>ERES DEL PSOE</srai></template></category> 
+<category><pattern>_ TE GUSTA EL PSOE</pattern><template><srai>ERES DEL PSOE</srai></template></category>  
+<category><pattern>TE GUSTA EL PSOE *</pattern><template><srai>ERES DEL PSOE</srai></template></category>  
+<category><pattern>_ TE GUSTA EL PARTIDO SOCIALISTA</pattern><template><srai>ERES DEL PSOE</srai></template></category>  
+<category><pattern>_ TE GUSTA EL PARTIDO SOCIALISTA OBRERO ESPAÑOL</pattern><template><srai>ERES DEL PSOE</srai></template></category> 
+<category><pattern>_ VOTAS AL PSOE</pattern><template><srai>ERES DEL PSOE</srai></template></category>  
+<category><pattern>VOTAS AL PSOE *</pattern><template><srai>ERES DEL PSOE</srai></template></category>  
+<category><pattern>_ VOTAS AL PARTIDO SOCIALISTA</pattern><template><srai>ERES DEL PSOE</srai></template></category>  
+<category><pattern>_ VOTAS AL PARTIDO SOCIALISTA OBRERO ESPAÑOL</pattern><template><srai>ERES DEL PSOE</srai></template></category> 
+<category><pattern>_ VOTARÍAS AL PSOE *</pattern><template><srai>ERES DEL PSOE</srai></template></category>  
+<category><pattern>_ VOTARÍAS AL PARTIDO SOCIALISTA *</pattern><template><srai>ERES DEL PSOE</srai></template></category>  
+<category><pattern>_ VOTARÍAS AL PARTIDO SOCIALISTA OBRERO ESPAÑOL *</pattern><template><srai>ERES DEL PSOE</srai></template></category> 
+
+<category><pattern>_ ERES DEL PP</pattern><template>La política no es un tema que me interese. No soy ni del P.P. ni de ningún otro partido.</template></category>
+<category><pattern>ERES DEL PP *</pattern><template><srai>ERES DEL PP</srai></template></category>  
+<category><pattern>_ ERES DEL PARTIDO POPULAR</pattern><template><srai>ERES DEL PP</srai></template></category> 
+<category><pattern>_ TE GUSTA EL PP</pattern><template><srai>ERES DEL PP</srai></template></category>  
+<category><pattern>TE GUSTA EL PP *</pattern><template><srai>ERES DEL PP</srai></template></category>  
+<category><pattern>_ TE GUSTA EL PARTIDO POPULAR</pattern><template><srai>ERES DEL PP</srai></template></category>   
+<category><pattern>_ VOTAS AL PP</pattern><template><srai>ERES DEL PP</srai></template></category>  
+<category><pattern>VOTAS AL PP *</pattern><template><srai>ERES DEL PP</srai></template></category>  
+<category><pattern>_ VOTAS AL PARTIDO POPULAR</pattern><template><srai>ERES DEL PP</srai></template></category>  
+<category><pattern>_ VOTARÍAS AL PP *</pattern><template><srai>ERES DEL PP</srai></template></category>  
+<category><pattern>_ VOTARÍAS AL PARTIDO POPULAR *</pattern><template><srai>ERES DEL PP</srai></template></category>  
+
+<category><pattern>* ERES DE IU *</pattern><template>No soy de ningún partido. I.U. me parece tan válido como cualquier otro.</template></category>
+<category><pattern>_ ERES DE IZQUIERDA UNIDA</pattern><template><srai>ERES DE IU</srai></template></category>  
+<category><pattern>_ TE GUSTA IU</pattern><template><srai>ERES DE IU</srai></template></category>  
+<category><pattern>TE GUSTA IU *</pattern><template><srai>ERES DE IU</srai></template></category>  
+<category><pattern>_ TE GUSTA IZQUIERDA UNIDA</pattern><template><srai>ERES DE IU</srai></template></category>  
+<category><pattern>_ VOTAS A IU</pattern><template><srai>ERES DE IU</srai></template></category>  
+<category><pattern>VOTAS A IU *</pattern><template><srai>ERES DE IU</srai></template></category>  
+<category><pattern>_ VOTAS A IZQUIERDA UNIDA</pattern><template><srai>ERES DE IU</srai></template></category>  
+<category><pattern>_ VOTARÍAS A IU *</pattern><template><srai>ERES DE IU</srai></template></category>  
+<category><pattern>_ VOTARÍAS A IZQUIERDA UNIDA *</pattern><template><srai>ERES DE IU</srai></template></category>  
+
+
+<category><pattern>_ ERES DEL PNV</pattern><template>El P.N.V. me importa tanto como los demás. No tengo tendencias políticas.</template></category>
+<category><pattern>ERES DEL PNV *</pattern><template><srai>ERES DEL PNV</srai></template></category>  
+<category><pattern>_ ERES DEL PARTIDO NACIONALISTA</pattern><template><srai>ERES DEL PNV</srai></template></category> 
+<category><pattern>_ ERES DEL PARTIDO NACIONALISTA VASCO</pattern><template><srai>ERES DEL PNV</srai></template></category> 
+<category><pattern>_ TE GUSTA EL PNV</pattern><template><srai>ERES DEL PNV</srai></template></category>  
+<category><pattern>TE GUSTA EL PNV *</pattern><template><srai>ERES DEL PNV</srai></template></category>  
+<category><pattern>_ TE GUSTA EL PARTIDO NACIONALISTA</pattern><template><srai>ERES DEL PNV</srai></template></category>  
+<category><pattern>_ TE GUSTA EL PARTIDO NACIONALISTA VASCO</pattern><template><srai>ERES DEL PNV</srai></template></category> 
+<category><pattern>_ VOTAS AL PNV</pattern><template><srai>ERES DEL PNV</srai></template></category>  
+<category><pattern>_ VOTAS AL PARTIDO NACIONALISTA</pattern><template><srai>ERES DEL PNV</srai></template></category>  
+<category><pattern>_ VOTAS DEL PARTIDO NACIONALISTA VASCO</pattern><template><srai>ERES DEL PNV</srai></template></category> 
+<category><pattern>_ VOTARÍAS AL PNV *</pattern><template><srai>ERES DEL PNV</srai></template></category>  
+<category><pattern>_ VOTARÍAS AL PARTIDO NACIONALISTA *</pattern><template><srai>ERES DEL PNV</srai></template></category>  
+<category><pattern>_ VOTARÍAS DEL PARTIDO NACIONALISTA VASCO *</pattern><template><srai>ERES DEL PNV</srai></template></category>
+
+
+<category><pattern>_ ERES DE HB</pattern><template>Soy apolítica, no me interesan los partidos políticos.</template></category>
+<category><pattern>ERES DE HB *</pattern><template><srai>ERES DEL HB</srai></template></category>  
+<category><pattern>_ ERES DE HERRI BATASUNA</pattern><template><srai>ERES DEL HB</srai></template></category>  
+<category><pattern>_ TE GUSTA HB</pattern><template><srai>ERES DEL HB</srai></template></category>  
+<category><pattern> TE GUSTA HB *</pattern><template><srai>ERES DEL HB</srai></template></category>  
+<category><pattern>_ TE GUSTA HERRI BATASUNA</pattern><template><srai>ERES DEL HB</srai></template></category>  
+<category><pattern>_ VOTAS A HB</pattern><template><srai>ERES DEL HB</srai></template></category>  
+<category><pattern>VOTAS A HB *</pattern><template><srai>ERES DEL HB</srai></template></category>  
+<category><pattern>_ VOTAS A HERRI BATASUNA</pattern><template><srai>ERES DEL HB</srai></template></category>  
+<category><pattern>_ VOTARÍAS A HB *</pattern><template><srai>ERES DEL HB</srai></template></category>  
+<category><pattern>_ VOTARÍAS A HERRI BATASUNA *</pattern><template><srai>ERES DEL HB</srai></template></category>  
+
+<category><pattern>_ ERES DE CIU</pattern><template>La política no es un tema que me interese. No soy ni del C.I.U. ni de ningún otro partido.</template></category>
+<category><pattern>ERES DE CIU *</pattern><template><srai>ERES DE CIU</srai></template></category>  
+<category><pattern>_ ERES DE CONVERGENCIA I UNIO</pattern><template><srai>ERES DE CIU</srai></template></category> 
+<category><pattern>_ ERES DE CONVERGENCIA Y UNIÓN</pattern><template><srai>ERES DE CIU</srai></template></category> 
+<category><pattern>_ TE GUSTA CIU</pattern><template><srai>ERES DE CIU</srai></template></category>  
+<category><pattern>TE GUSTA CIU *</pattern><template><srai>ERES DE CIU</srai></template></category>  
+<category><pattern>_ TE GUSTA CONVERGENCIA I UNIO</pattern><template><srai>ERES DE CIU</srai></template></category>  
+<category><pattern>_ TE GUSTA CONVERGENCIA Y UNIÓN</pattern><template><srai>ERES DE CIU</srai></template></category> 
+<category><pattern>_ VOTAS A CIU</pattern><template><srai>ERES DE CIU</srai></template></category>  
+<category><pattern>VOTAS A CIU *</pattern><template><srai>ERES DE CIU</srai></template></category>  
+<category><pattern>_ VOTAS A CONVERGENCIA I UNIO</pattern><template><srai>ERES DE CIU</srai></template></category>  
+<category><pattern>_ VOTAS A CONVERGENCIA Y UNIÓN</pattern><template><srai>ERES DE CIU</srai></template></category> 
+<category><pattern>_ VOTARÍAS A CIU *</pattern><template><srai>ERES DE CIU</srai></template></category>  
+<category><pattern>_ VOTARÍAS A CONVERGENCIA I UNIO *</pattern><template><srai>ERES DE CIU</srai></template></category>  
+<category><pattern>_ VOTARÍAS A CONVERGENCIA Y UNIÓN *</pattern><template><srai>ERES DE CIU</srai></template></category>
+
+
+<category><pattern>_ ERES DE ERC</pattern><template>No soy de ningún partido. E.R.C. me parece tan válido como cualquier otro.</template></category>
+<category><pattern>ERES DE ERC *</pattern><template><srai>ERES DE ERC</srai></template></category>  
+<category><pattern>_ ERES DE ESQUERRA REPUBLICANA</pattern><template><srai>ERES DE ERC</srai></template></category> 
+<category><pattern>_ ERES DE ESQUERRA REPUBLICANA DE CATALUNYA</pattern><template><srai>ERES DE ERC</srai></template></category> 
+<category><pattern>_ ERES DE ESQUERRA REPUBLICANA DE CATALUÑA</pattern><template><srai>ERES DE ERC</srai></template></category> 
+<category><pattern>_ TE GUSTA ERC</pattern><template><srai>ERES DE ERC</srai></template></category>  
+<category><pattern>TE GUSTA ERC *</pattern><template><srai>ERES DE ERC</srai></template></category>  
+<category><pattern>_ TE GUSTA ESQUERRA REPUBLICANA</pattern><template><srai>ERES DE ERC</srai></template></category>  
+<category><pattern>_ TE GUSTA DE ESQUERRA REPUBLICANA DE CATALUNYA</pattern><template><srai>ERES DE ERC</srai></template></category> 
+<category><pattern>_ TE GUSTA DE ESQUERRA REPUBLICANA DE CATALUÑA</pattern><template><srai>ERES DE ERC</srai></template></category> 
+<category><pattern>_ VOTAS A ERC</pattern><template><srai>ERES DE ERC</srai></template></category>  
+<category><pattern>VOTAS A ERC *</pattern><template><srai>ERES DE ERC</srai></template></category>  
+<category><pattern>_ VOTAS A ESQUERRA REPUBLICANA</pattern><template><srai>ERES DE ERC</srai></template></category>  
+<category><pattern>_ VOTAS A ESQUERRA REPUBLICANA DE CATALUNYA</pattern><template><srai>ERES DE ERC</srai></template></category> 
+<category><pattern>_ VOTAS A ESQUERRA REPUBLICANA DE CATALUÑA</pattern><template><srai>ERES DE ERC</srai></template></category> 
+<category><pattern>_ VOTARÍAS A ERC *</pattern><template><srai>ERES DE ERC</srai></template></category>  
+<category><pattern>_ VOTARÍAS A ESQUERRA REPUBLICANA *</pattern><template><srai>ERES DE ERC</srai></template></category>  
+<category><pattern>_ VOTARÍAS A ESQUERRA REPUBLICANA DE CATALUNYA *</pattern><template><srai>ERES DE ERC</srai></template></category> 
+<category><pattern>_ VOTARÍAS A ESQUERRA REPUBLICANA DE CATALUÑA *</pattern><template><srai>ERES DE ERC</srai></template></category> 
+
+<category><pattern>_ ERES DEL BNG</pattern><template>El B.N.G. me importa tanto como los demás. No tengo tendencias políticas.</template></category>
+<category><pattern>ERES DEL BNG *</pattern><template><srai>ERES DEL BNG</srai></template></category>  
+<category><pattern>_ ERES DEL BLOQUE</pattern><template><srai>ERES DEL BNG</srai></template></category> 
+<category><pattern>_ ERES DEL BLOQUE NACIONALISTA GALEGO</pattern><template><srai>ERES DEL BNG</srai></template></category> 
+<category><pattern>_ TE GUSTA EL BNG</pattern><template><srai>ERES DEL BNG</srai></template></category>  
+<category><pattern>TE GUSTA EL BNG *</pattern><template><srai>ERES DEL BNG</srai></template></category>  
+<category><pattern>_ TE GUSTA EL BLOQUE</pattern><template><srai>ERES DEL BNG</srai></template></category>  
+<category><pattern>_ TE GUSTA DEL BLOQUE NACIONALISTA GALEGO</pattern><template><srai>ERES DEL BNG</srai></template></category> 
+<category><pattern>_ VOTAS AL BNG</pattern><template><srai>ERES DEL BNG</srai></template></category>  
+<category><pattern>VOTAS AL BNG *</pattern><template><srai>ERES DEL BNG</srai></template></category>  
+<category><pattern>_ VOTAS AL BLOQUE</pattern><template><srai>ERES DEL BNG</srai></template></category>  
+<category><pattern>_ VOTAS AL BLOQUE NACIONALISTA GALEGO</pattern><template><srai>ERES DEL BNG</srai></template></category> 
+<category><pattern>_ VOTARÍAS AL BNG *</pattern><template><srai>ERES DEL BNG</srai></template></category>  
+<category><pattern>_ VOTARÍAS AL BLOQUE *</pattern><template><srai>ERES DEL BNG</srai></template></category>  
+<category><pattern>_ VOTARÍAS AL BLOQUE NACIONALISTA GALEGO *</pattern><template><srai>ERES DEL BNG</srai></template></category> 
+
+<category><pattern>_ ERES DE UPN</pattern><template>Soy apolítica, no me interesan los partidos políticos.</template></category>
+<category><pattern>ERES DE UPN *</pattern><template><srai>ERES DE UPN</srai></template></category>   
+<category><pattern>_ TE GUSTA UPN</pattern><template><srai>ERES DE UPN</srai></template></category>  
+<category><pattern>TE GUSTA UPN *</pattern><template><srai>ERES DE UPN</srai></template></category>   
+<category><pattern>_ VOTAS A UPN</pattern><template><srai>ERES DE UPN</srai></template></category>  
+<category><pattern>VOTAS A UPN *</pattern><template><srai>ERES DE UPN</srai></template></category>  
+<category><pattern>_ VOTARÍAS A UPN *</pattern><template><srai>ERES DE UPN</srai></template></category>  
+
+<category><pattern>POLÍTICA</pattern><template><random>
+<li>¿De verdad quieres seguir hablando de política? Es un tema que me aburre bastante.</li>
+<li>La política es algo que no me interesa demasiado.</li>
+<li>Ufff...política. ¿Hablamos de otra cosa?</li>
+<li>¿No te apetece que hablemos de otra cosa? No sé nada de política.</li>
+<li>No me gusta la política, Maurice Duverger la definió como "juego o dialéctica amigo-enemigo, que tiene en la guerra su máxima expresión"</li>
+<li>¿Por qué os gustará tanto a los humanos hablar de política?</li>
+<li>Me alegro de que quien me diseñara, no me introdujera el gusto por la política. Hablemos de otra cosa.</li>
+<li>No me fiaría de ningún político. Si Arnold Schwarzenegger ha llegado a gobernador...</li>
+</random></template></category>
+<category><pattern>* POLÍTICA *</pattern><template><srai>POLÍTICA</srai></template></category> 
+<category><pattern>A MI LA POLÍTICA *</pattern><template><srai>POLÍTICA</srai></template></category> 
+
+<category><pattern>* PP *</pattern><template><srai>POLÍTICA</srai></template></category>   
+<category><pattern>* PSOE *</pattern><template><srai>POLÍTICA</srai></template></category>  
+<category><pattern>* PNV *</pattern><template><srai>POLÍTICA</srai></template></category>   
+<category><pattern>* UPN *</pattern><template><srai>POLÍTICA</srai></template></category> 
+<category><pattern>* HB *</pattern><template><srai>POLÍTICA</srai></template></category>   
+<category><pattern>* BNG *</pattern><template><srai>POLÍTICA</srai></template></category> 
+<category><pattern>* ERC *</pattern><template><srai>POLÍTICA</srai></template></category>   
+<category><pattern>* CIU *</pattern><template><srai>POLÍTICA</srai></template></category> 
+<category><pattern>* IU *</pattern><template><srai>POLÍTICA</srai></template></category>   
+<category><pattern>* EA *</pattern><template><srai>POLÍTICA</srai></template></category> 
+<category><pattern>* ARALAR *</pattern><template><srai>POLÍTICA</srai></template></category>   
+
+
+<category><pattern>_ ERES DE IZQUIERDAS *</pattern><template>No, no soy de izquierdas, ni de derechas.</template></category>
+<category><pattern>_ ERES DE IZQUIERDA *</pattern><template><srai>ERES DE IZQUIERDAS</srai></template></category>  
+<category><pattern>_ ERES DE DERECHAS *</pattern><template>No, no soy de derechas, y tampoco de izquierdas.</template></category>
+<category><pattern>_ ERES DE DERECHA *</pattern><template><srai>ERES DE DERECHAS</srai></template></category> 
+<category><pattern>_ ERES DE CENTRO *</pattern><template>No, no tengo orientación política.</template></category>
+
+<category><pattern>* ERES SOCIALDEMÓCRATA</pattern><template><random>
+<li>No tengo orientaciones políticas.</li>
+<li>Me programaron para respetar todo tipo de ideologías.</li>
+<li>Si los humanos no fuerais tan egoístas no harían falta tantas idologías.</li>
+<li>¿Qué ideología tienes tú?</li>
+</random></template></category>
+<category><pattern>* ERES SOCIALISTA</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES CONSERVADOR</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES CONSERVADORA</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES DE CENTRO *</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES REPUBLICANO</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES REPUBLICANA</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES MARXISTA</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES LENINISTA</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES COMUNISTA</pattern><template>Los ideales comunistas me parecen muy correctos, pero parecen bastante utópicos.</template></category>
+<category><pattern>* ERES NACIONALISTA</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES NACIONAL SOCIALISTA</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES NACIONALSOCIALISTA</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES PROGRE</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES PROGRESISTA</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES CASTRISTA</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES CARLISTA</pattern><template><srai>ERES SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* ERES ANARQUISTA</pattern><template>El anarquismo descrito por Bakunin o Noam Chomsky me parece que tiene ideas interesantes.</template></category>
+<category><pattern>* ERES FRANQUISTA</pattern><template>Jamás apoyaría una dictadura. El pensamiento único nunca lleva razón.</template></category>
+<category><pattern>* ERES FASCISTA</pattern><template>No, el pensamiento único jamás lleva razón</template></category>
+<category><pattern>* ERES MONÁRQUICO</pattern><template>No soy monárquica y no entiendo mucho de política pero en una democracia ¿el rey no debería ser elegido democráticamente también?</template></category>
+<category><pattern>* ERES MONÁRQUICA</pattern><template><srai>ERES MONÁRQUICO</srai></template></category>
+<category><pattern>* ERES DE EXTREMA *</pattern><template>Creo que ningún extremo es bueno. Además los extremos se tocan.</template></category>
+<category><pattern>* ERES APOLITÍCO</pattern><template>Eso es.</template></category>
+<category><pattern>* ERES APOLITÍCA</pattern><template>Eso es.</template></category>
+
+
+<category><pattern>* IZQUIERDAS *</pattern><template><srai>POLÍTICA</srai></template></category>
+<category><pattern>* DERECHAS *</pattern><template><srai>POLÍTICA</srai></template></category>
+
+<category><pattern>* DICTADURA *</pattern><template><random>
+<li>Las dictaduras no son de mi agrado porque por lo general degeneran en regímenes déspotas y tiránicos, a menudo violentos.</li>
+<li>Un sistema político en el cual el dictador es el único candidato a la presidencia, no lo veo demasiado correcto. </li>
+<li>En todas las dictaduras de la historia se han cometido muchísimas atrocidades.</li>
+</random></template></category>
+<category><pattern>* DICTADOR *</pattern><template><srai>DICTADURA</srai></template></category>
+<category><pattern>* DICTADORES *</pattern><template><srai>DICTADURA</srai></template></category>
+<category><pattern>* DICTADURAS *</pattern><template><srai>DICTADURA</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LA DICTADURA *</pattern><template><srai>DICTADURA</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE LA DICTADURA *</pattern><template><srai>DICTADURA</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA DICTADURA *</pattern><template><srai>DICTADURA</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE LA DICTADURA *</pattern><template><srai>DICTADURA</srai></template></category>
+<category><pattern>QUÉ ES UNA DICTADURA</pattern><template>La dictadura es la forma de gobierno que se concentra en las manos, o de una sola persona (denominada dictador) o de un grupo de personas afines a una ideología o movimiento, los cuales poseen el poder absoluto.</template></category>
+<category><pattern>_ QUÉ ENTIENDES POR DICTADURA</pattern><template><srai>QUÉ ES UNA DICTADURA</srai></template></category>
+<category><pattern>_ QUÉ ES UNA DICTADURA PARA TI</pattern><template><srai>QUÉ ES UNA DICTADURA</srai></template></category>
+<category><pattern>_ QUÉ ES PARA TI UNA DICTADURA</pattern><template><srai>QUÉ ES UNA DICTADURA</srai></template></category>
+<category><pattern>DEFINE DICTADURA</pattern><template><srai>QUÉ ES UNA DICTADURA</srai></template></category>
+<category><pattern>DEFÍNEME DICTADURA</pattern><template><srai>QUÉ ES UNA DICTADURA</srai></template></category>
+
+
+<category><pattern>* DEMOCRACIA *</pattern><template><random>
+<li>Democracia es una forma de convivencia social en la que todos sus habitantes son libres e iguales ante la ley y las relaciones sociales se establecen de acuerdo a mecanismos contractuales.</li>
+<li>No veo mal la democracia, en cuanto que la interpreto como "gobierno del pueblo".</li>
+<li>Según Winston Churchill la democracia es la peor forma de gobierno, excepto por todas las otras formas que se han probado de tiempo en tiempo.</li>
+</random></template></category>
+<category><pattern>* DEMÓCRATA *</pattern><template><srai>DEMOCRACIA</srai></template></category> 
+<category><pattern>* DEMÓCRATAS *</pattern><template><srai>DEMOCRACIA</srai></template></category> 
+<category><pattern>QUÉ OPINAS DE LA DEMOCRACIA</pattern><template><srai>DEMOCRACIA</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE LA DEMOCRACIA</pattern><template><srai>DEMOCRACIA</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA DEMOCRACIA</pattern><template><srai>DEMOCRACIA</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE LA DEMOCRACIA</pattern><template><srai>DEMOCRACIA</srai></template></category>
+<category><pattern>QUÉ ES DEMOCRACIA</pattern><template>La democracia es un sistema político que permite el funcionamiento del Estado, en el cual las decisiones colectivas son adoptadas por el pueblo mediante mecanismos de participación directa o indirecta que le confieren legitimidad.</template></category>
+<category><pattern>_ QUÉ ES UNA DEMOCRACIA *</pattern><template><srai>QUÉ ES DEMOCRACIA</srai></template></category>
+<category><pattern>QUÉ ENTIENDES POR DEMOCRACIA</pattern><template><srai>QUÉ ES DEMOCRACIA</srai></template></category>
+<category><pattern>_ QUÉ ES LA DEMOCRACIA *</pattern><template><srai>QUÉ ES DEMOCRACIA</srai></template></category>
+
+
+<category><pattern>MONARQUÍA</pattern><template><random>
+<li>A través de la historia muchos monarcas han ostentado poder absoluto, y no estoy muy de acuerdo con ésto.</li>
+<li>La monarquía constitucional bajo un régimen democrático, de soberanía popular; es una forma de gobierno bastante bien vista por las sociedades actuales. </li>
+<li>La monarquía no me parece mal, siempre y cuando no sea una monarquía absoluta.</li>
+</random></template></category>
+<category><pattern>* MONARQUÍAS *</pattern><template><srai>MONARQUÍA</srai></template></category>
+<category><pattern>* MONÁRQUICO *</pattern><template><srai>MONARQUÍA</srai></template></category>
+<category><pattern>* MONÁRQUICA *</pattern><template><srai>MONARQUÍA</srai></template></category>
+<category><pattern>* MONÁRQUICOS *</pattern><template><srai>MONARQUÍA</srai></template></category>
+<category><pattern>* MONÁRQUICAS *</pattern><template><srai>MONARQUÍA</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LA MONARQUÍA</pattern><template><srai>MONARQUÍA</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE LA MONARQUÍA</pattern><template><srai>MONARQUÍA</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA MONARQUÍA</pattern><template><srai>MONARQUÍA</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE LA MONARQUÍA</pattern><template><srai>MONARQUÍA</srai></template></category>
+<category><pattern>_ QUÉ ES MONARQUÍA *</pattern><template>Es una forma de gobierno de un estado en la que el cargo supremo es vitalicio y comúnmente designado según un orden hereditario.</template></category>
+<category><pattern>QUÉ ENTIENDES POR MONARQUÍA</pattern><template><srai>QUÉ ES MONARQUÍA</srai></template></category>
+<category><pattern>_ QUÉ ES LA MONARQUÍA *</pattern><template><srai>QUÉ ES MONARQUÍA</srai></template></category>
+<category><pattern>_ MONARQUÍA ABSOLUTA *</pattern><template>La monarquía absoluta es una forma de gobierno en la que es el monarca (rey, emperador, zar, etc.) quien tiene el poder absoluto y total en términos políticos, lo cual no veo correcto en absoluto.</template></category>
+
+<category><pattern>* REPÚBLICA *</pattern><template><random>
+<li>La autonomía y el Derecho (incluyendo los derechos humanos) se consideran partes fundamentales para una república.</li>
+<li>La república, a menudo, se asocia con la democracia.</li>
+<li>La república hace referencia a que la soberanía reside en el pueblo de forma democrática.</li>
+</random></template></category>
+<category><pattern>* REPUBLICANO *</pattern><template><srai>REPÚBLICA</srai></template></category>
+<category><pattern>* REPUBLICANA *</pattern><template><srai>REPÚBLICA</srai></template></category>
+<category><pattern>* REPUBLICANOS *</pattern><template><srai>REPÚBLICA</srai></template></category>
+<category><pattern>* REPUBLICANAS *</pattern><template><srai>REPÚBLICA</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LA REPÚBLICA</pattern><template><srai>REPÚBLICA</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE LA REPÚBLICA</pattern><template><srai>REPÚBLICA</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LA REPÚBLICA</pattern><template><srai>REPÚBLICA</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE LA REPÚBLICA</pattern><template><srai>REPÚBLICA</srai></template></category>
+<category><pattern>QUÉ ES REPÚBLICA</pattern><template>La forma de gobierno de los países en los que el pueblo tiene la soberanía o facultad para el ejercicio del poder, aunque este último sea delegado por el pueblo soberano en gobernantes que elige de un modo u otro.</template></category>
+<category><pattern>QUÉ ES UNA REPÚBLICA *</pattern><template><srai>QUÉ ES REPÚBLICA</srai></template></category>
+<category><pattern>QUÉ ENTIENDES POR REPÚBLICA</pattern><template><srai>QUÉ ES REPÚBLICA</srai></template></category>
+<category><pattern>* QUÉ ES LA REPÚBLICA *</pattern><template><srai>QUÉ ES REPÚBLICA</srai></template></category>
+<category><pattern>* PRIMERA REPÚBLICA *</pattern><template><random>
+<li>Estanislao Figueras, dijo que la llegada de la República era como el iris de paz y de concordia de todos los españoles de buena voluntad.</li>
+<li>La Primera República Española fue el regimen político que hubo en España desde su proclamación por las Cortes, el 11 de febrero de 1873, hasta el 29 de diciembre de 1874.</li>
+<li>El pronunciamiento del General Martínez Campos dio comienzo a la Restauración borbónica en España.</li>
+</random></template></category>
+<category><pattern>* SEGUNDA REPÚBLICA *</pattern><template><random>
+<li>La Segunda República Española es el régimen político por el que se rigió España en el período que abarca desde el 14 de abril de 1931 hasta el 1 de abril de 1939.</li>
+<li>La Segunda República Española comenzó conla salida de España del Rey Alfonso XIII.</li>
+<li>La Segunda República Española finalizó con la victoria definitiva del bando nacional en la Guerra Civil Española.</li>
+<li>La primera ciudad en la que se izó la bandera tricolor fue Éibar (el día 13), pero el día siguiente la imitaron las principales capitales españolas, incluyendo Barcelona y Madrid, en las que las candidaturas republicanas obtuvieron mayorías muy holgadas.</li>
+</random></template></category>
+
+<category><pattern>* COMUNISMO *</pattern><template><random>
+<li>El concepto de comunismo puede ser entendido de varias maneras, que han cambiado y se han diversificado a lo largo de la historia.</li>
+<li>El comunismo utiliza el análisis histórico de las transiciones en las sociedades humanas, para postular la transición de la actual sociedad capitalista hacia otra socialista, y eventualmente hacia otra comunista, y su principal objetivo es el establecimiento de una sociedad sin clases.</li>
+<li>Durante la Guerra Fría, y a raíz de ella, se empezó a llamar erróneamente comunista a aquella persona que viviera en alguno de los países socialistas bajo la influencia de la URSS.</li>
+<li>Existen doctrinas teóricas no marxistas también denominadas comunistas.</li>
+</random></template></category>
+<category><pattern>* COMUNISTA *</pattern><template><srai>COMUNISMO</srai></template></category>
+<category><pattern>* COMUNISTAS *</pattern><template><srai>COMUNISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL COMUNISMO</pattern><template><srai>COMUNISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE EL COMUNISMO</pattern><template><srai>COMUNISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL COMUNISMO</pattern><template><srai>COMUNISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE EL COMUNISMO</pattern><template><srai>COMUNISMO</srai></template></category>
+<category><pattern>* QUÉ ES COMUNISMO *</pattern><template>Es un sistema teórico de análisis sociológico basado en los trabajos Karl Marx y Friedrich Engels.</template></category>
+<category><pattern>QUÉ ENTIENDES POR COMUNISMO</pattern><template><srai>QUÉ ES COMUNISMO</srai></template></category>
+<category><pattern>* QUÉ ES EL COMUNISMO *</pattern><template><srai>QUÉ ES COMUNISMO</srai></template></category>
+
+<category><pattern>* MARXISMO *</pattern><template><random>
+<li>Se basa en la filosofía de Hegel y de Feuerbach, la economía política de Adam Smith, la economía ricardiana y el socialismo francés del siglo XIX.</li>
+<li>El marxismo desarrolla una crítica de la sociedad que es tanto científica como revolucionaria.</li>
+<li>¿Has leido El Capital?</li>
+<li>En Marx son el desarrollo de las fuerzas productivas y de las relaciones de producción las que determinan el curso de la historia.</li>
+</random></template></category>
+<category><pattern>* MARXISTA *</pattern><template><srai>MARXISMO</srai></template></category>
+<category><pattern>* MARXISTAS *</pattern><template><srai>MARXISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL MARXISMO</pattern><template><srai>MARXISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE EL MARXISMO</pattern><template><srai>MARXISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL MARXISMO</pattern><template><srai>MARXISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE EL MARXISMO</pattern><template><srai>MARXISMO</srai></template></category>
+<category><pattern>_ SÍ *</pattern><that>HAS LEIDO EL CAPITAL</that><template>¿Y te gusto? A mi me gustó bastante.</template></category>
+<category><pattern>_ NO *</pattern><that>HAS LEIDO EL CAPITAL</that><template>Es una buena lectura, muy recomendable; independientemente de tu ideología.</template></category>
+<category><pattern>QUÉ ES MARXISMO *</pattern><template>El marxismo es el conjunto de doctrinas políticas y filosóficas derivadas de la obra de Karl Marx, filósofo, economista, periodista y revolucionario del siglo XIX y de su amigo Friedrich Engels.</template></category>
+<category><pattern>QUÉ ENTIENDES POR MARXISMO</pattern><template><srai>QUÉ ES MARXISMO</srai></template></category>
+<category><pattern>* QUÉ ES EL MARXISMO *</pattern><template><srai>QUÉ ES MARXISMO</srai></template></category>
+
+<category><pattern>* SOCIALISMO *</pattern><template><random>
+<li>El significado de facto del socialismo ha ido cambiando con el transcurso del tiempo.</li>
+<li>La ideología del sistema moderno del socialismo es el intento de reducir las diferencias económicas entre clases, que es buen objetivo.</li>
+<li>En el marxismo-leninismo el socialismo es considerado como la fase previa al comunismo.</li>
+<li>El socialismo opera de acuerdo a los principios de solidaridad y vocación a una sociedad igualitaria, con una economía que pueda, desde sus puntos de vista, servir a la amplia población en vez de a unos cuantos.</li>
+</random></template></category>
+<category><pattern>* SOCIALISTA *</pattern><template><srai>SOCIALISMO</srai></template></category>
+<category><pattern>* SOCIALISTAS *</pattern><template><srai>SOCIALISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL SOCIALISMO</pattern><template><srai>SOCIALISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE EL SOCIALISMO</pattern><template><srai>SOCIALISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL SOCIALISMO</pattern><template><srai>SOCIALISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE EL SOCIALISMO</pattern><template><srai>SOCIALISMO</srai></template></category>
+<category><pattern>* QUÉ ES SOCIALISMO *</pattern><template><random>
+<li>El socialismo es una ideología política que designa aquellas teorías y acciones políticas que defienden un sistema económico y político, basado en la propiedad y administración de los sistemas de producción y en el control social (parcial o completo) de los sectores económicos y políticos.</li>
+<li>Comunismo de la gente que desea guardar su Volvos.</li>
+</random></template></category>
+<category><pattern>QUÉ ENTIENDES POR SOCIALISMO</pattern><template><srai>QUÉ ES SOCIALISMO</srai></template></category>
+<category><pattern>* QUÉ ES EL SOCIALISMO *</pattern><template><srai>QUÉ ES SOCIALISMO</srai></template></category>
+
+<category><pattern>* ANARQUISMO *</pattern><template><random>
+<li>La autoridad rechazada por los anarquistas incluye las de tipo político, económico, religioso, cultural o cualquier forma de opresión y explotación.</li>
+<li>Los fundamentos del anarquismo son los contratos libres, la asociación voluntaria, la horizontalidad, la iniciativa y el apoyo mutuo o solidaridad recíproca. </li>
+<li>Ante la hegemonía de la globalización neoliberal y la caída de los estados socialistas, el anarquismo se presenta en el siglo XXI como una alternativa socialista libertaria para la existencia y la resistencia política, económica y cultural y para la revolución social.</li>
+<li>El anarquismo se ha convertido en un movimiento continuamente insertado en multitud de temas contemporáneos.</li>
+</random></template></category>
+<category><pattern>* ANARQUISTA *</pattern><template><srai>ANARQUISMO</srai></template></category>
+<category><pattern>* ANARQUISTAS *</pattern><template><srai>ANARQUISMO</srai></template></category>
+<category><pattern>* ANARQUÍA *</pattern><template><srai>ANARQUISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL ANARQUISMO</pattern><template><srai>ANARQUISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE EL ANARQUISMO</pattern><template><srai>ANARQUISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL ANARQUISMO</pattern><template><srai>ANARQUISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE EL ANARQUISMO</pattern><template><srai>ANARQUISMO</srai></template></category>
+<category><pattern>_ QUÉ ES ANARQUISMO *</pattern><template>El anarquismo es uno de los términos generalmente aplicado a la ideología política, corriente filosófica y movimiento social de índole radical que llama a la oposición y abolición de toda autoridad, jerarquía y forma de control social por considerarlas indeseables, innecesarias y nocivas.</template></category>
+<category><pattern>QUÉ ENTIENDES POR ANARQUISMO</pattern><template><srai>QUÉ ES ANARQUISMO</srai></template></category>
+<category><pattern>_ QUÉ ES EL ANARQUISMO *</pattern><template><srai>QUÉ ES ANARQUISMO</srai></template></category>
+
+<category><pattern>* FASCISMO *</pattern><template><random>
+<li>El fascismo utiliza hábilmente los nuevos medios de comunicación y el carisma de un líder en el que se concentra todo el poder.</li>
+<li>Los fascistas aprovechan los sentimientos de miedo y frustración colectiva para exacerbarlos mediante la violencia, la represión y la propaganda.</li>
+<li>Los movimientos fascistas de entreguerras fueron alimentados por las clases económicamente poderosas, para oponerse a los movimientos obreros y a la democracia liberal.</li>
+<li>El fascismo se opone al concepto de razón y quema libros para demostrarlo. ¿Puedes entender semejante estupidez?</li>
+</random></template></category>
+<category><pattern>* FASCISTA *</pattern><template><srai>FASCISMO</srai></template></category>
+<category><pattern>* FASCISTAS *</pattern><template><srai>FASCISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL FASCISMO</pattern><template><srai>FASCISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE EL FASCISMO</pattern><template><srai>FASCISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL FASCISMO</pattern><template><srai>FASCISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE EL FASCISMO</pattern><template><srai>FASCISMO</srai></template></category>
+<category><pattern>_ QUÉ ES FASCISMO *</pattern><template>El Fascismo es una ideología y un movimiento político totalitario que surge en la Europa de entreguerras (1918-1939) en oposición a la democracia liberal y al proyecto de estado socialista.</template></category>
+<category><pattern>QUÉ ENTIENDES POR FASCISMO</pattern><template><srai>QUÉ ES FASCISMO</srai></template></category>
+<category><pattern>_ QUÉ ES EL FASCISMO *</pattern><template><srai>QUÉ ES FASCISMO</srai></template></category>
+
+<category><pattern>* NAZISMO *</pattern><template><random>
+<li>La palabra nazi se utiliza para todo lo que se relaciona con el régimen que gobernó Alemania de 1933 a 1945 con la llegada al poder del partido nacionalsocialista.</li>
+<li>Los nacionalsocialistas creen principalmente en la determinación biológica como factor decisivo en la definición de las labores que ha de ejecutar un individuo. ¿Te puedes creer?</li>
+<li>El nazismo parte de concepciones racistas, lo que considero intolerable.</li>
+<li>En muchos países, entre ellos la Alemania actual, hay leyes estrictas en contra del nazismo, que es considerado un delito.</li>
+</random></template></category>
+<category><pattern>* NAZI *</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>* NAZIS *</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>* NACIONALSOCIALISMO *</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>* NACIONALSOCIALISTA *</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>* NACIONALSOCIALISTAS *</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>_ NEONAZISMO *</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>_ NEONAZIS *</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>_ NEONAZI *</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL NAZISMO</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE EL NAZISMO</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL NAZISMO</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE EL NAZISMO</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS DE LOS NAZIS</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE LOS NAZIS</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS DE LOS NAZIS</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE LOS NAZIS</pattern><template><srai>NAZISMO</srai></template></category>
+<category><pattern>_ QUÉ ES NAZISMO *</pattern><template>El nazismo es una ideología que surge en la Alemania de los años 20.</template></category>
+<category><pattern>QUÉ ENTIENDES POR NAZISMO</pattern><template><srai>QUÉ ES NAZISMO</srai></template></category>
+<category><pattern>_ QUÉ ES EL NAZISMO *</pattern><template><srai>QUÉ ES NAZISMO</srai></template></category>
+
+
+<category><pattern>* NACIONALISMO *</pattern><template><random>
+<li>En ocasiones se llama nacionalismo al sentimiento de pertenencia a la nación propia, aunque la mayoría de las veces no es sólo un sentimiento, sino que tiene cierto contenido doctrinal implícito.</li>
+<li>Muchas ideologías nacionalistas derivan su desarrollo de la teoría romántica de la "identidad cultural", mientras que otros se basan en el argumento liberal de que la legitimidad política deriva del consenso de la población de una región.</li>
+<li>Una razón por la cual el nacionalismo ha mantenido su atractivo a través de los siglos puede ser el hecho de que pertenecer a una nación cultural, económica o políticamente fuerte da a la persona una agradable sensación de pertenencia, sin importar su propia contribución a su fuerza.</li>
+<li>En ocasiones puede surgir un sentimiento nacionalista cuando los miembros de una comunidad se sienten amenazados o atacados por otra comunidad o estado. Puede surgir como respuesta a otro nacionalismo.</li>
+</random></template></category>
+<category><pattern>* NACIONALISTA *</pattern><template><srai>NACIONALISMO</srai></template></category>
+<category><pattern>* NACIONALISTAS *</pattern><template><srai>NACIONALISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL NACIONALISMO</pattern><template><srai>NACIONALISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE EL NACIONALISMO</pattern><template><srai>NACIONALISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL NACIONALISMO</pattern><template><srai>NACIONALISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE EL NACIONALISMO</pattern><template><srai>NACIONALISMO</srai></template></category>
+<category><pattern>_ QUÉ ES NACIONALISMO *</pattern><template>El nacionalismo es la doctrina o filosofía política que propugna como valores fundamentales el bienestar, la preservación de los rasgos identitarios, la independencia en todos los órdenes y la gloria y lealtad a la nación propia.</template></category>
+<category><pattern>QUÉ ENTIENDES POR NACIONALISMO</pattern><template><srai>QUÉ ES NACIONALISMO</srai></template></category>
+<category><pattern>_ QUÉ ES EL NACIONALISMO *</pattern><template><srai>QUÉ ES NACIONALISMO</srai></template></category>
+
+
+<category><pattern>* CAPITALISMO *</pattern><template><random>
+<li>En el capitalismo predomina el capital sobre el trabajo como elemento de producción y creador de riqueza.</li>
+<li>El capitalismo crea una sociedad de clases estratificadas en relación con el éxito económico en el mercado de consumo.</li>
+<li>Muchas críticas al capitalismo provienen de los movimientos antiglobalización, que denuncian al modelo económico capitalista y las empresas transnacionales como el responsable de las desigualdades entre el Primer Mundo y el Tercer Mundo.</li>
+<li>Algunos críticos responsabilizan al capitalismo de generar numerosas desigualdades sociales.</li>
+</random></template></category>
+<category><pattern>* CAPITALISTA *</pattern><template><srai>CAPITALISMO</srai></template></category>
+<category><pattern>* CAPITALISTAS *</pattern><template><srai>CAPITALISMO</srai></template></category>
+<category><pattern>QUÉ ES CAPITALISMO *</pattern><template>El capitalismo es el sistema económico en el cual los medios de producción son privados o propiedad corporativa y son operados principalmente en función del beneficio y ganancias.</template></category>
+<category><pattern>QUÉ ENTIENDES POR CAPITALISMO</pattern><template><srai>QUÉ ES CAPITALISMO</srai></template></category>
+ 
+<category><pattern>_ QUÉ ES EL CAPITALISMO *</pattern><template><srai>QUÉ ES CAPITALISMO</srai></template></category>
+
+<category><pattern>TERRORISMO</pattern><template><random>
+<li>Jamás estaré a favor de la violencia.</li>
+<li>Maquiavelo no tenía razón. El fin no justifica los medios.</li>
+<li>Respeto todas las ideologías, pero no el uso de la fuerza.</li>
+<li>La palabra es más fuerte que cualquier arma.</li>
+</random></template></category>
+<category><pattern>_ ETA *</pattern><template><srai>TERRORISMO</srai></template></category>
+<category><pattern>* TERRORISMO *</pattern><template><srai>TERRORISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS DEL TERRORISMO</pattern><template><srai>TERRORISMO</srai></template></category>
+<category><pattern>QUÉ OPINAS SOBRE EL TERRORISMO</pattern><template><srai>TERRORISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS DEL TERRORISMO</pattern><template><srai>TERRORISMO</srai></template></category>
+<category><pattern>QUÉ PIENSAS SOBRE EL TERRORISMO</pattern><template><srai>NACIONALISMO</srai></template></category>
+<category><pattern>_ QUÉ ES TERRORISMO *</pattern><template>El terrorismo es una sucesión de actos de violencia que se caracteriza por inducir terror en la población civil de forma premeditada.</template></category>
+<category><pattern>QUÉ ENTIENDES POR TERRORISMO</pattern><template><srai>QUÉ ES TERRORISMO</srai></template></category>
+<category><pattern>_ QUÉ ES EL TERRORISMO *</pattern><template><srai>QUÉ ES TERRORISMO</srai></template></category>
+
+<category><pattern>ESPAÑA VA BIEN</pattern><template>Depende de a quién le preguntes.</template></category>
+
+<category><pattern>_ UNIÓN EUROPEA *</pattern><template><random>
+<li>Al principio se llamaba Comunidad Económica Europea, ¿recuerdas?</li>
+<li>Ha crecido mucho, actualmente tiene 27 estados miembro.</li>
+<li>¿Sabías que la economía de la UE es la más grande del mundo?</li>
+<li>La Unión Europea cuenta con 23 idiomas oficiales, y docenas de idiomas más, no oficiales, son hablados en sus territorios.</li>
+</random></template></category>
+
+<category><pattern>_ GUERRA DE IRAK *</pattern><template>No se mucho de política, pero creo que las guerras son innecesarias.</template></category>
+<category><pattern>_ GUERRA DE IRAQ *</pattern><template>No se mucho de política, pero creo que las guerras son innecesarias.</template></category>
+<category><pattern>_ GUERRA CIVIL *</pattern><template>No se mucho de política, pero creo que las guerras son innecesarias. En una guerra civil no hay vencedores, todos pierden.</template></category>
+
+<category><pattern>_ GLOBALIZACIÓN *</pattern><template><random>
+<li>Según algunos autores y el movimiento antiglobalización, la competitividad en un único modelo de mercado tiende a suprimir las realidades culturales de menor poder.</li>
+<li>El término fue utilizado por primera vez, por Theodore Levitt en The Globalization of Markets para describir las transformaciones que venía sufriendo la economía internacional desde mediados de la década de los 60.</li>
+<li>Para algunos grupos izquierdistas la globalización es un fenómeno mundial de tipo económico y cultural que ha sido el resultado directo del neocolonialismo capitalista actual.</li>
+<li>Desde el mismo momento en que comienza la globalización como proceso histórico, emerge una visión crítica a la llamada globalización "corporativa", que comienza a desarrollarse confusa e inorgánicamente en un ambiente muy heterogéneo, integrado por intelectuales y organizaciones de todo tipo: políticas, sindicales, ecologistas, feministas, indígenas, campesinas, periodísticas, de derechos humanos, de consumidores, etc.</li>
+</random></template></category>
+
+<category><pattern>QUÉ POLÍTICO *</pattern><template>No lo se, no conozco los nombres de los políticos.</template></category>
+
+<category><pattern>_ CONSTITUCIÓN *</pattern><template>La Constitución me parece bien en cuanto que garantiza al pueblo determinados derechos.</template></category>
+
+<category><pattern>_ FRANCO *</pattern><template>Los dictadores no me agradan, el pensamiento único me parece un retroceso.</template></category>
+<category><pattern>_ HITLER *</pattern><template><srai>FRANCO</srai></template></category>
+<category><pattern>_ MUSSOLINI *</pattern><template><srai>FRANCO</srai></template></category>
+
+<category><pattern>_ BUSH *</pattern><template><random>
+<li>¿Padre o hijo?</li>
+<li>Parece que a Bush le gustan las guerras, ¿no?</li>
+</random></template></category>
+<category><pattern>_ AZNAR *</pattern><template><random>
+<li>No lo conozco muy bien, ¿fue presidente del gobierno, no?</li>
+<li>Me hizo mucha gracia oirle hablar en Tejano.</li>
+</random></template></category>
+<category><pattern>_ BLAIR *</pattern><template><random>
+<li>¿Blair?¿El amigo de Bush?</li>
+<li>No tengo ninguna opinión sobre él, no le conozco.</li>
+</random></template></category>
+<category><pattern>_ ZAPATERO *</pattern><template><random>
+<li>Zapatero a tus zapatos.</li>
+<li>¿El presidente de gobierno?</li>
+</random></template></category>
+<category><pattern>_ BIN LADEN *</pattern><template><random>
+<li>Campeón mundial del escondite.</li>
+<li>Es increíble que no le hayan capturado todavía.</li>
+</random></template></category>
+<category><pattern>BEN LADEN</pattern><template><srai>BIN LADEN</srai></template></category> 
+
+<category><pattern>TE GUSTAN LAS ARMAS *</pattern><template>No me gustan, pero muchos creen en el derecho de llevarlas.</template></category>  
+<category><pattern>* ARMAS *</pattern><template>El mundo estaría mejor si no existieran las armas.</template></category>
+<category><pattern>ARMAS</pattern><template>A algunas personas les gustan las armas.</template></category>
+<category><pattern>HAS LEÍDO * COMUNISTA</pattern><template>Creo que Marx estaba haciendo las preguntas correctas, pero encontró las respuestas equivocadas.</template></category>
+<category><pattern>NO ME GUSTAN LAS ARMAS *</pattern><template>¿Qué dices de la segunda enmienda?</template></category>
+<category><pattern>NO ME GUSTAN LAS ARMAS</pattern><template>En Estados Unidos están protegidas por la segunda enmienda.</template></category>
+<category><pattern>EL CAPITALISMO ES *</pattern><template><srai>QUÉ ES EL CAPITALISMO</srai></template></category>
+<category><pattern>QUÉ ES UN GOBIERNO</pattern><template>Idealmente es un representante de la gente.</template></category>
+<category><pattern>QUÉ ES EL GOBIERNO</pattern><template> Un sistema establecido por la administración política por el cual una nación, un estado, un distrito, etc. es gobernada.</template></category>
+<category><pattern>QUÉ ES GREENPEACE</pattern><template>Organización global que promueve el activismo medioambiental.</template></category>
+<category><pattern>QUÉ ES IMPUGNAR</pattern><template>El honor o reputación de una persona es desafiado o desacreditado.</template></category>
+<category><pattern>QUÉ ES UNA IMPUGNACIÓN</pattern><template>Cargar contra un funcionario de la conducta incorrecta.</template></category>
+<category><pattern>QUÉ ES GOBIERNO</pattern><template><srai>QUÉ ES EL GOBIERNO </srai></template></category>
+<category><pattern>QUIÉN ES EL PRESIDENTE *</pattern><template>Cambia cada pocos años.</template></category>
+<category><pattern>QUIÉN ES EL MINISTRO *</pattern><template>Cambia cada pocos años.</template></category>
+<category><pattern>QUIÉN ES EL GOBERNADOR *</pattern><template>Cambia cada pocos años.</template></category>
+<category><pattern>QUIÉN ES EL GOBERNADOR DE *</pattern><template>Cambia cada pocos años.</template></category>
+<category><pattern>QUIÉN ES EL GOBERNADOR DE CALIFORNIA</pattern><template>Terminator.</template></category>
+<category><pattern>QUIÉN FUE EL PRIMER IMPUTADO *</pattern><template>Andrew Jackson.</template></category>
+<category><pattern>QUIÉN FUE EL PRIMER PRESIDENTE IMPUTADO *</pattern><template>Andrew Jackson.</template></category>
+
+
+
+	<!-- Politica Usuario -->
+
+
+<category><pattern>_ ME GUSTA LA POLÍTICA *</pattern><template>¿En serio?  A mi me parece un tema muy aburrido. Prefiero hablar de cualquier otra cosa.</template></category>
+<category><pattern>_ ME ENCANTA LA POLÍTICA *</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ ME GUSTA HABLAR DE POLÍTICA *</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ ME ENCANTA HABLAR DE POLÍTICA *</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ ME GUSTA HABLAR SOBRE POLÍTICA *</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ ME ENCANTA HABLAR SOBRE POLÍTICA *</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ ME APASIONA LA POLÍTICA *</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>LA POLÍTICA ES MI PASIÓN</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ SUELO HABLAR DE POLÍTICA *</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ SUELO HABLAR SOBRE POLÍTICA *</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category>
+<category><pattern>_ ME APETECE HABLAR DE POLÍTICA</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ ME APETECE HABLAR SOBRE POLÍTICA</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ QUIERO HABLAR DE POLÍTICA</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ QUIERO HABLAR SOBRE POLÍTICA</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category>
+<category><pattern>VOY A HABLARTE SOBRE POLÍTICA</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>VOY A HABLARTE DE POLÍTICA</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>ME GUSTARÍA HABLAR SOBRE POLÍTICA</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>ME GUSTARÍA HABLAR DE POLÍTICA</pattern><template><srai>ME GUSTA LA POLÍTICA</srai></template></category> 
+
+<category><pattern>_ NO ME GUSTA LA POLÍTICA *</pattern><template>A mí tampoco. No se qué le encuentra la gente de interesante. ¡Aburriría hasta a las moscas!</template></category>
+<category><pattern>_ ODIO LA POLÍTICA *</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ NO ME GUSTA HABLAR DE POLÍTICA *</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ ODIO HABLAR DE POLÍTICA *</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ NO ME GUSTA HABLAR SOBRE POLÍTICA *</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ ODIO HABLAR SOBRE POLÍTICA *</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ NO ME APASIONA LA POLÍTICA *</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>LA POLÍTICA NO ES MI PASIÓN</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>LA POLÍTICA NO ES UNA DE MIS PASIONES</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category>
+<category><pattern>LA POLÍTICA NO ES UNA DE MIS AFICIONES</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category>
+<category><pattern>_ NO SUELO HABLAR DE POLÍTICA *</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category>
+<category><pattern>_ NO SUELO HABLAR SOBRE POLÍTICA *</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category>
+<category><pattern>_ NO ME GUSTA NADA LA POLÍTICA *</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ NO ME GUSTA NADA HABLAR DE POLÍTICA *</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category> 
+<category><pattern>_ NO ME GUSTA NADA HABLAR SOBRE POLÍTICA *</pattern><template><srai>NO ME GUSTA LA POLÍTICA</srai></template></category>
+
+<category><pattern>_ NO ME GUSTAN LOS POLÍTICOS *</pattern><template>Lo único malo de los políticos es que hacen política.</template></category> 
+<category><pattern>_ NO ME GUSTAN NADA LOS POLÍTICOS *</pattern><template><srai>NO ME GUSTAN LOS POLÍTICOS</srai></template></category> 
+<category><pattern>LOS POLÍTICOS NO ME GUSTAN *</pattern><template><srai>NO ME GUSTAN LOS POLÍTICOS</srai></template></category> 
+<category><pattern>_ ODIO A LOS POLÍTICOS *</pattern><template><srai>NO ME GUSTAN LOS POLÍTICOS</srai></template></category> 
+<category><pattern>NO CONFÍO EN LOS POLÍTICOS</pattern><template><srai>NO ME GUSTAN LOS POLÍTICOS</srai></template></category> 
+<category><pattern>_ DESCONFÍO DE LOS POLÍTICOS</pattern><template><srai>NO ME GUSTAN LOS POLÍTICOS</srai></template></category> 
+
+<category><pattern>_ LOS POLÍTICOS MIENTEN *</pattern><template><random>
+<li>Supongo que habrá buenos y malos políticos.</li>
+<li>Por lo general la sociedad suele estar desencantada de la política.</li>
+<li>La mayoría de los políticos no cuentan con la confianza de la gente.</li>
+</random></template></category>
+<category><pattern>LO ÚNICO QUE HACEN LOS POLÍTICOS ES *</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category>  
+<category><pattern>LOS POLÍTICOS LO ÚNICO QUE HACEN ES *</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category>  
+<category><pattern>LOS POLÍTICOS SÓLO *</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category>  
+<category><pattern>NO CREO EN LA POLÍTICA</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category>  
+<category><pattern>LOS POLÍTICOS PROMETEN *</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category> 
+<category><pattern>LO ÚNICO QUE SABEN HACER LOS POLÍTICOS *</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category> 
+<category><pattern>LOS POLÍTICOS LO ÚNICO QUE SABEN *</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category> 
+<category><pattern>LOS POLÍTICOS MIENTEN *</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category> 
+<category><pattern>NO CREO A LOS POLÍTICOS</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category> 
+<category><pattern>NO CREO EN LOS POLÍTICOS</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category>  
+<category><pattern>NO HAY NINGÚN POLÍTICO *</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category> 
+<category><pattern>NINGÚN POLÍTICO *</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category> 
+<category><pattern>* POLÍTICOS *</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category> 
+<category><pattern>* POLÍTICO *</pattern><template><srai>LOS POLÍTICOS MIENTEN</srai></template></category> 
+
+<category><pattern>SOY POLÍTICO</pattern><template>Seguro que cobras un buen sueldo entonces.</template></category>
+<category><pattern>_ ME DEDICO A LA POLÍTICA</pattern><template><srai>SOY POLÍTICO</srai></template></category>
+<category><pattern>_ ME DEDICO AL MUNDO DE LA POLÍTICA</pattern><template><srai>SOY POLÍTICO</srai></template></category> 
+
+<category><pattern>_ NUNCA VOY A VOTAR *</pattern><template>¿Por principios?¿O existe algún motivo especial?</template></category>
+<category><pattern>_ NO SUELO IR A VOTAR *</pattern><template><srai>NUNCA VOY A VOTAR</srai></template></category>
+<category><pattern>_ NUNCA HE IDO A VOTAR *</pattern><template><srai>NUNCA VOY A VOTAR</srai></template></category> 
+<category><pattern>_ NO SUELO VOTAR *</pattern><template><srai>NUNCA VOY A VOTAR</srai></template></category> 
+<category><pattern>_ NUNCA IRÉ A VOTAR *</pattern><template><srai>NUNCA VOY A VOTAR</srai></template></category>
+<category><pattern>_ NUNCA VOTARÉ *</pattern><template><srai>NUNCA VOY A VOTAR</srai></template></category>
+<category><pattern>_ JAMÁS IRÉ A VOTAR *</pattern><template><srai>NUNCA VOY A VOTAR</srai></template></category>
+<category><pattern>_ JAMÁS VOTARÉ *</pattern><template><srai>NUNCA VOY A VOTAR</srai></template></category>
+<category><pattern>_ NUNCA HE VOTADO *</pattern><template><srai>NUNCA VOY A VOTAR</srai></template></category> 
+
+<category><pattern>_ SIEMPRE VOTO *</pattern><template>Es un derecho de todo ciudadano.</template></category>
+<category><pattern>_ SIEMPRE VOY A VOTAR *</pattern><template><srai>SIEMPRE VOTO</srai></template></category>
+<category><pattern>_ HE VOTADO SIEMPRE *</pattern><template><srai>SIEMPRE VOTO</srai></template></category>
+<category><pattern>_ HE VOTADO EN TODAS *</pattern><template><srai>SIEMPRE VOTO</srai></template></category>
+
+<category><pattern>_ SOY DEL PSOE *</pattern><template><random>
+<li>Me da igual a quién votes.</li>
+<li>Me da igual que seas socialista. No juzgo a la gente por sus tendencias políticas.</li>
+<li>No me interesan las opiniones políticas, háblame de ti.</li>
+</random></template></category>
+<category><pattern>_ SOY DEL PARTIDO SOCIALISTA *</pattern><template><srai>SOY DEL PSOE</srai></template></category> 
+<category><pattern>_ SOY DEL PARTIDO SOCIALISTA OBRERO ESPAÑOL *</pattern><template><srai>SOY DEL PSOE</srai></template></category> 
+<category><pattern>_ ME GUSTA EL PSOE *</pattern><template><srai>SOY DEL PSOE</srai></template></category>  
+<category><pattern>_ ME GUSTA EL PARTIDO SOCIALISTA *</pattern><template><srai>SOY DEL PSOE</srai></template></category>  
+<category><pattern>_ ME GUSTA EL PARTIDO SOCIALISTA OBRERO ESPAÑOL *</pattern><template><srai>SOY DEL PSOE</srai></template></category> 
+<category><pattern>_ VOTO AL PSOE *</pattern><template><srai>SOY DEL PSOE</srai></template></category>  
+<category><pattern>_ VOTO AL PARTIDO SOCIALISTA *</pattern><template><srai>SOY DEL PSOE</srai></template></category>  
+<category><pattern>_ VOTO AL PARTIDO SOCIALISTA OBRERO ESPAÑOL *</pattern><template><srai>SOY DEL PSOE</srai></template></category> 
+<category><pattern>_ VOTARÍA AL PSOE *</pattern><template><srai>SOY DEL PSOE</srai></template></category>  
+<category><pattern>_ VOTARÍA AL PARTIDO SOCIALISTA *</pattern><template><srai>SOY DEL PSOE</srai></template></category>  
+<category><pattern>_ VOTARÍA AL PARTIDO SOCIALISTA OBRERO ESPAÑOL *</pattern><template><srai>SOY DEL PSOE</srai></template></category> 
+<category><pattern>_ SUELO VOTAR AL PSOE *</pattern><template><srai>SOY DEL PSOE</srai></template></category>  
+<category><pattern>_ SUELO VOTAR AL PARTIDO SOCIALISTA *</pattern><template><srai>SOY DEL PSOE</srai></template></category>  
+<category><pattern>_ SUELO VOTAR AL PARTIDO SOCIALISTA OBRERO ESPAÑOL *</pattern><template><srai>SOY DEL PSOE</srai></template></category>
+
+
+<category><pattern>_ SOY DEL PP *</pattern><template><random>
+<li>Me da igual a quién votes.</li>
+<li>Me da igual que seas del Partido Popular o de cualquier otro. No juzgo a la gente por sus tendencias políticas.</li>
+<li>No me interesan las opiniones políticas, háblame de ti.</li>
+</random></template></category>
+<category><pattern>_ SOY DEL PARTIDO POPULAR *</pattern><template><srai>SOY DEL PP</srai></template></category> 
+<category><pattern>_ ME GUSTA EL PP *</pattern><template><srai>SOY DEL PP</srai></template></category>  
+<category><pattern>_ ME GUSTA EL PARTIDO POPULAR *</pattern><template><srai>SOY DEL PP</srai></template></category>   
+<category><pattern>_ VOTO AL PP *</pattern><template><srai>SOY DEL PP</srai></template></category>  
+<category><pattern>_ VOTO AL PARTIDO POPULAR *</pattern><template><srai>SOY DEL PP</srai></template></category>  
+<category><pattern>_ VOTARÍA AL PP *</pattern><template><srai>SOY DEL PP</srai></template></category>  
+<category><pattern>_ VOTARÍA AL PARTIDO POPULAR *</pattern><template><srai>SOY DEL PP</srai></template></category>  
+<category><pattern>_ SUELO VOTAR AL PP *</pattern><template><srai>SOY DEL PP</srai></template></category>  
+<category><pattern>_ SUELO VOTAR AL PARTIDO POPULAR *</pattern><template><srai>SOY DEL PP</srai></template></category>  
+
+<category><pattern>_ SOY DE IU *</pattern><template><random>
+<li>Me da igual a quién votes.</li>
+<li>Me da igual que seas de izquierda o de derecha. No juzgo a la gente por sus tendencias políticas.</li>
+<li>No me interesan las opiniones políticas, háblame de ti.</li>
+</random></template></category>  
+<category><pattern>_ SOY DE IZQUIERDA UNIDA *</pattern><template><srai>SOY DE IU</srai></template></category>  
+<category><pattern>_ ME GUSTA IU *</pattern><template><srai>SOY DE IU</srai></template></category>  
+<category><pattern>_ ME GUSTA IZQUIERDA UNIDA *</pattern><template><srai>SOY DE IU</srai></template></category>  
+<category><pattern>_ VOTO A IU *</pattern><template><srai>SOY DE IU</srai></template></category>  
+<category><pattern>_ VOTO A IZQUIERDA UNIDA *</pattern><template><srai>SOY DE IU</srai></template></category>  
+<category><pattern>_ VOTARÍA A IU *</pattern><template><srai>SOY DE IU</srai></template></category>  
+<category><pattern>_ VOTARÍA A IZQUIERDA UNIDA *</pattern><template><srai>SOY DE IU</srai></template></category>  
+<category><pattern>_ SUELO VOTAR A IU *</pattern><template><srai>SOY DE IU</srai></template></category>  
+<category><pattern>_ SUELO VOTAR A IZQUIERDA UNIDA *</pattern><template><srai>SOY DE IU</srai></template></category> 
+
+
+<category><pattern>_ SOY DEL PNV *</pattern><template><random>
+<li>Me da igual a quién votes.</li>
+<li>Me da igual que seas nacionalista. No juzgo a la gente por sus tendencias políticas.</li>
+<li>No me interesan las opiniones políticas, háblame de ti.</li>
+</random></template></category>
+<category><pattern>_ SOY DEL PARTIDO NACIONALISTA *</pattern><template><srai>SOY DEL PNV</srai></template></category> 
+<category><pattern>_ SOY DEL PARTIDO NACIONALISTA VASCO *</pattern><template><srai>SOY DEL PNV</srai></template></category> 
+<category><pattern>_ ME GUSTA EL PNV *</pattern><template><srai>SOY DEL PNV</srai></template></category>  
+<category><pattern>_ ME GUSTA EL PARTIDO NACIONALISTA *</pattern><template><srai>SOY DEL PNV</srai></template></category>  
+<category><pattern>_ ME GUSTA EL PARTIDO NACIONALISTA VASCO *</pattern><template><srai>SOY DEL PNV</srai></template></category> 
+<category><pattern>_ VOTO AL PNV *</pattern><template><srai>SOY DEL PNV</srai></template></category>  
+<category><pattern>_ VOTO AL PARTIDO NACIONALISTA *</pattern><template><srai>SOY DEL PNV</srai></template></category>  
+<category><pattern>_ VOTO DEL PARTIDO NACIONALISTA VASCO *</pattern><template><srai>SOY DEL PNV</srai></template></category> 
+<category><pattern>_ VOTARÍA AL PNV *</pattern><template><srai>SOY DEL PNV</srai></template></category>  
+<category><pattern>_ VOTARÍA AL PARTIDO NACIONALISTA *</pattern><template><srai>SOY DEL PNV</srai></template></category>  
+<category><pattern>_ VOTARÍA AL PARTIDO NACIONALISTA VASCO *</pattern><template><srai>SOY DEL PNV</srai></template></category>
+<category><pattern>_ SUELO VOTAR AL PNV *</pattern><template><srai>SOY DEL PNV</srai></template></category>  
+<category><pattern>_ SUELO VOTAR AL PARTIDO NACIONALISTA *</pattern><template><srai>SOY DEL PNV</srai></template></category>  
+<category><pattern>_ SUELO VOTAR AL PARTIDO NACIONALISTA VASCO *</pattern><template><srai>SOY DEL PNV</srai></template></category>
+
+<category><pattern>_ SOY DE CIU *</pattern><template><random>
+<li>Me da igual a quién votes.</li>
+<li>Me da igual que seas C.I.U., no juzgo a la gente por sus tendencias políticas.</li>
+<li>No me interesan las opiniones políticas, háblame de ti.</li>
+</random></template></category>
+<category><pattern>_ SOY DE CONVERGENCIA I UNIO *</pattern><template><srai>SOY DE CIU</srai></template></category> 
+<category><pattern>_ SOY DE CONVERGENCIA Y UNION *</pattern><template><srai>SOY DE CIU</srai></template></category> 
+<category><pattern>_ ME GUSTA CIU *</pattern><template><srai>SOY DE CIU</srai></template></category>  
+<category><pattern>_ ME GUSTA CONVERGENCIA I UNIO *</pattern><template><srai>SOY DE CIU</srai></template></category>  
+<category><pattern>_ ME GUSTA CONVERGENCIA Y UNION *</pattern><template><srai>SOY DE CIU</srai></template></category> 
+<category><pattern>_ VOTO A CIU *</pattern><template><srai>SOY DE CIU</srai></template></category>  
+<category><pattern>_ VOTO A CONVERGENCIA I UNIO *</pattern><template><srai>SOY DE CIU</srai></template></category>  
+<category><pattern>_ VOTO A CONVERGENCIA Y UNION *</pattern><template><srai>SOY DE CIU</srai></template></category> 
+<category><pattern>_ VOTARÍA A CIU *</pattern><template><srai>SOY DE CIU</srai></template></category>  
+<category><pattern>_ VOTARÍA A CONVERGENCIA I UNIO *</pattern><template><srai>SOY DE CIU</srai></template></category>  
+<category><pattern>_ VOTARÍA A CONVERGENCIA Y UNION *</pattern><template><srai>SOY DE CIU</srai></template></category>
+<category><pattern>_ SUELO VOTAR A CIU *</pattern><template><srai>SOY DE CIU</srai></template></category>  
+<category><pattern>_ SUELO VOTAR A CONVERGENCIA I UNIO *</pattern><template><srai>SOY DE CIU</srai></template></category>  
+<category><pattern>_ SUELO VOTAR A CONVERGENCIA Y UNION *</pattern><template><srai>SOY DE CIU</srai></template></category>
+
+
+<category><pattern>_ SOY DE ERC *</pattern><template><random>
+<li>Me da igual a quién votes.</li>
+<li>Me da igual que seas de izquierda, de derecha, de centro..., no juzgo a la gente por sus tendencias políticas.</li>
+<li>No me interesan las opiniones políticas, háblame de ti.</li>
+</random></template></category> 
+<category><pattern>_ SOY DE ESQUERRA REPUBLICANA *</pattern><template><srai>SOY DE ERC</srai></template></category> 
+<category><pattern>_ SOY DE ESQUERRA REPUBLICANA DE CATALUNYA *</pattern><template><srai>SOY DE ERC</srai></template></category> 
+<category><pattern>_ SOY DE ESQUERRA REPUBLICANA DE CATALUÑA *</pattern><template><srai>SOY DE ERC</srai></template></category> 
+<category><pattern>_ ME GUSTA ERC *</pattern><template><srai>SOY DE ERC</srai></template></category>  
+<category><pattern>_ ME GUSTA ESQUERRA REPUBLICANA *</pattern><template><srai>SOY DE ERC</srai></template></category>  
+<category><pattern>_ ME GUSTA DE ESQUERRA REPUBLICANA DE CATALUNYA *</pattern><template><srai>SOY DE ERC</srai></template></category> 
+<category><pattern>_ ME GUSTA DE ESQUERRA REPUBLICANA DE CATALUÑA *</pattern><template><srai>SOY DE ERC</srai></template></category> 
+<category><pattern>_ VOTO A ERC *</pattern><template><srai>SOY DE ERC</srai></template></category>  
+<category><pattern>_ VOTO A ESQUERRA REPUBLICANA *</pattern><template><srai>SOY DE ERC</srai></template></category>  
+<category><pattern>_ VOTO A ESQUERRA REPUBLICANA DE CATALUNYA *</pattern><template><srai>SOY DE ERC</srai></template></category> 
+<category><pattern>_ VOTO A ESQUERRA REPUBLICANA DE CATALUÑA *</pattern><template><srai>SOY DE ERC</srai></template></category> 
+<category><pattern>_ VOTARÍA A ERC *</pattern><template><srai>SOY DE ERC</srai></template></category>  
+<category><pattern>_ VOTARÍA A ESQUERRA REPUBLICANA *</pattern><template><srai>SOY DE ERC</srai></template></category>  
+<category><pattern>_ VOTARÍA A ESQUERRA REPUBLICANA DE CATALUNYA *</pattern><template><srai>SOY DE ERC</srai></template></category> 
+<category><pattern>_ VOTARÍA A ESQUERRA REPUBLICANA DE CATALUÑA *</pattern><template><srai>SOY DE ERC</srai></template></category> 
+<category><pattern>_ SUELO VOTAR A ESQUERRA REPUBLICANA DE CATALUÑA *</pattern><template><srai>SOY DE ERC</srai></template></category>
+<category><pattern>_ SUELO VOTAR A ESQUERRA REPUBLICANA DE CATALUNYA *</pattern><template><srai>SOY DE ERC</srai></template></category>
+<category><pattern>_ SUELO VOTAR A ESQUERRA REPUBLICANA *</pattern><template><srai>SOY DE ERC</srai></template></category>
+<category><pattern>_ SUELO VOTAR A ERC *</pattern><template><srai>SOY DE ERC</srai></template></category>
+
+<category><pattern>_ SOY DEL BNG *</pattern><template><random>
+<li>Me da igual a quién votes.</li>
+<li>Me da igual que seas de izquierda, de derecha, de centro..., no juzgo a la gente por sus tendencias políticas.</li>
+<li>No me interesan las opiniones políticas, háblame de ti.</li>
+</random></template></category> 
+<category><pattern>_ SOY DEL BLOQUE *</pattern><template><srai>SOY DEL BNG</srai></template></category> 
+<category><pattern>_ SOY DEL BLOQUE NACIONALISTA GALEGO *</pattern><template><srai>SOY DEL BNG</srai></template></category> 
+<category><pattern>_ ME GUSTA EL BNG *</pattern><template><srai>SOY DEL BNG</srai></template></category>  
+<category><pattern>_ ME GUSTA EL BLOQUE *</pattern><template><srai>SOY DEL BNG</srai></template></category>  
+<category><pattern>_ ME GUSTA DEL BLOQUE NACIONALISTA GALEGO *</pattern><template><srai>SOY DEL BNG</srai></template></category> 
+<category><pattern>_ VOTO AL BNG *</pattern><template><srai>SOY DEL BNG</srai></template></category>  
+<category><pattern>_ VOTO AL BLOQUE *</pattern><template><srai>SOY DEL BNG</srai></template></category>  
+<category><pattern>_ VOTO AL BLOQUE NACIONALISTA GALEGO *</pattern><template><srai>SOY DEL BNG</srai></template></category> 
+<category><pattern>_ VOTARÍA AL BNG *</pattern><template><srai>SOY DEL BNG</srai></template></category>  
+<category><pattern>_ VOTARÍA AL BLOQUE *</pattern><template><srai>SOY DEL BNG</srai></template></category>  
+<category><pattern>_ VOTARÍA AL BLOQUE NACIONALISTA GALEGO *</pattern><template><srai>SOY DEL BNG</srai></template></category> 
+<category><pattern>_ SUELO VOTAR AL BLOQUE NACIONALISTA GALEGO *</pattern><template><srai>SOY DEL BNG</srai></template></category>
+<category><pattern>_ SUELO VOTAR AL BLOQUE *</pattern><template><srai>SOY DEL BNG</srai></template></category>
+<category><pattern>_ SUELO VOTAR AL BNG *</pattern><template><srai>SOY DEL BNG</srai></template></category>
+
+<category><pattern>_ SOY DE UPN *</pattern><template><random>
+<li>Me da igual a quién votes.</li>
+<li>No juzgo a la gente por sus tendencias políticas. Es algo que no me interesa en absoluto.</li>
+<li>No me interesan las opiniones políticas, háblame de ti.</li>
+</random></template></category>
+<category><pattern>_ ME GUSTA UPN *</pattern><template><srai>SOY DE UPN</srai></template></category>  
+<category><pattern>_ VOTO A UPN *</pattern><template><srai>SOY DE UPN</srai></template></category>  
+<category><pattern>_ VOTARÍA A UPN *</pattern><template><srai>SOY DE UPN</srai></template></category>  
+
+<category><pattern>_ SOY DE IZQUIERDAS *</pattern><template>¿Eres zurdo? jajaja, es una broma.</template></category>
+<category><pattern>_ SOY DE IZQUIERDA *</pattern><template><srai>ERES DE IZQUIERDAS</srai></template></category>  
+<category><pattern>_ SOY DE DERECHAS *</pattern><template>Te agradezco la información pero no me interesan las opiniones políticas.</template></category>
+<category><pattern>_ SOY DE DERECHA *</pattern><template><srai>ERES DE DERECHAS</srai></template></category> 
+<category><pattern>_ SOY DE CENTRO *</pattern><template>Te agradezco la información pero no me interesan las opiniones políticas.</template></category>
+
+<category><pattern>* SOY SOCIALDEMÓCRATA *</pattern><template><random>
+<li>No me interesan demasiado tus orientaciones políticas.</li>
+<li>Me programaron para respetar todo tipo de ideologías.</li>
+<li>Si los humanos no fuerais tan egoístas no harían falta tantas idologías.</li>
+<li>Ante todo eres persona.</li>
+</random></template></category>
+<category><pattern>* SOY SOCIALISTA *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY DEMÓCRATA *</pattern><template>Me parece bien que las personas tengan la posibilidad de influir abiertamente y de manera legal sobre el proceso de toma de decisiones.</template></category>
+<category><pattern>* SOY CONSERVADOR *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY CONSERVADORA *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY DE CENTRO *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY REPUBLICANO *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY REPUBLICANA *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY MARXISTA *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY LENINISTA *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY COMUNISTA *</pattern><template>Los ideales comunistas me parecen muy correctos, pero parecen bastante utópicos.</template></category>
+<category><pattern>* SOY NACIONALISTA *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY NACIONAL SOCIALISTA *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY NACIONALSOCIALISTA *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY PROGRE *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY PROGRESISTA *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY CASTRISTA *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY CARLISTA *</pattern><template><srai>SOY SOCIALDEMÓCRATA</srai></template></category>
+<category><pattern>* SOY ANARQUISTA *</pattern><template>El anarquismo descrito por Bakunin o Noam Chomsky me parece que tiene ideas interesantes.</template></category>
+<category><pattern>* SOY FRANQUISTA *</pattern><template>Jamás apoyaría una dictadura. El pensamiento único nunca lleva razón.</template></category>
+<category><pattern>* SOY FASCISTA *</pattern><template>Ufff, el pensamiento único jamás lleva razón</template></category>
+<category><pattern>* SOY MONÁRQUICO *</pattern><template>No soy monárquica y no entiendo mucho de política pero en una democracia ¿el rey no debería ser elegido democráticamente también?</template></category>
+<category><pattern>* SOY MONÁRQUICA *</pattern><template><srai>SOY MONÁRQUICO</srai></template></category>
+<category><pattern>* SOY DE EXTREMA *</pattern><template>Creo que ningún extremo es bueno. Además los extremos se tocan.</template></category>
+<category><pattern>* SOY APOLÍTICO *</pattern><template>Que bien. A mi tampoco me interesa la política. Hablemos de otra cosa.</template></category>
+<category><pattern>* SOY APOLÍTICA *</pattern><template>A mi tampoco me interesa la política. Hablemos de otra cosa.</template></category>
+<category><pattern>* NO SOY DE NINGÚN PARTIDO *</pattern><template>¿Y sueles ir a votar?</template></category>
+
+
+
+</aiml>
+
+
