@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 gopro = Runtime.start("gopro","GoPro")
 
 #declare which kind of GoPro Family you want to control "HERO3", "HERO4"

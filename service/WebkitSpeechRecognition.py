@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # start the service
 webkitspeechrecognition = Runtime.start("webkitspeechrecognition","WebkitSpeechRecognition")
 # always listen
@@ -21,6 +20,5 @@ def onText(data):
          lightOn()
      elif (data == "light off"):
          lightOff()
-    
+
 webkitspeechrecognition.addListener("publishText","python","onText")
->>>>>>> master

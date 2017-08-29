@@ -2,13 +2,11 @@ arduino = Runtime.createAndStart("arduino","Arduino")
 arduino.connect("COM11")
 
 bno = Runtime.createAndStart("bno","Bno055")
-<<<<<<< HEAD
+
 # From version 1.0.2316 use attach instead of setController
 # bno.setController(arduino)
 bno.attach(arduino)
-=======
-bno.setController(arduino)
->>>>>>> master
+
 
 # interrupt pin is attach to pin 8
 bno.attachInterruptPin(arduino, 8)
@@ -21,7 +19,7 @@ def onInterrupt(data):
   print event.pitch
   #be sure to reset the interrupt so we can get new one
   bno.resetInterrupt()
-  
+
 
 bno.addListener("publishInterrupt","python","onInterrupt")
 

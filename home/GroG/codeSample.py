@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-# BLEEDING EDGE DEVELOP SCRIPT !!!!!
+# BLEEDING EDGE DEVELOP SCRIPT - MERGED with master !!!!!
 # this is my most awesome code sample on the develop branch
-# its cutting edge - but if you want to see it 
+# its cutting edge - but if you want to see it
 # you supply ?branch=develop at the end of the documentation url
 
 useVirtualArduino = False;
@@ -43,7 +42,7 @@ sleep(3);
 =======
 # MASTER RELEASED STABLE SCRIPT SCRIPT !!!!!
 # this is my most awesome code sample on the develop branch
-# its cutting edge - but if you want to see it 
+# its cutting edge - but if you want to see it
 # you supply ?branch=develop at the end of the documentation url
 
 useVirtualArduino = False;
@@ -82,5 +81,5 @@ sleep(3);
 # do lk optical point tracking
 # t01.startLKTracking();
 # do face tracking
->>>>>>> master
+
 t01.faceDetect();

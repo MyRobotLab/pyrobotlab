@@ -1,3 +1,4 @@
+# PLEASE MERGE THIS FILE - SHOULD SHOW HOW TO USE ARDUINO OR RASPI BOTH !
 <<<<<<< HEAD
 # From version 1.0.2316 use attach instead of setController
 # Start the Adafruit16CSe#rvodriver that can be used for all PCA9685 devices
@@ -33,5 +34,5 @@ elbow = Runtime.createAndStart("Elbow", "Servo")
 # attach it to the pwm board - pin 3 & 8
 thumb.attach(adaFruit16c,3)
 elbow.attach(adaFruit16c,8)
-# When this script has been executed you should be able to 
+# When this script has been executed you should be able to
 # move the servos using the GUI or using python
