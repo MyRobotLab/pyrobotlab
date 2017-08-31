@@ -14,7 +14,7 @@ opencv.addFilter("rotate_270degrees", "Transpose") #Rotate captured image 90 deg
 opencv.capture() # start capturing from the camera
 
 
-# Jaw movement when speaking vaiables
+# Jaw movement when speaking variables
 delaytime = .05
 delaytimestop = .45
 delaytimeletter = .1
@@ -103,10 +103,10 @@ right_elbowServoPort = 6
 right_elbow_min      = 0
 right_elbow_max      = 180
 right_elbow_rest     = 90
-#right_elbow = Runtime.create("right_elbow", "Servo")
-#right_elbow.attach(adafruit16c, right_elbowServoPort)
-#right_elbow.setRest(right_elbow_rest)
-#right_elbow.moveTo(right_elbow_rest)
+right_elbow = Runtime.create("right_elbow", "Servo")
+right_elbow.attach(adafruit16c, right_elbowServoPort)
+right_elbow.setRest(right_elbow_rest)
+right_elbow.moveTo(right_elbow_rest)
 
 ######################################################################
 # helper function to help debug recognized speech from webkit/sphinx
