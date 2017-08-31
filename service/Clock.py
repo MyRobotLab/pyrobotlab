@@ -1,5 +1,4 @@
 # start the services
-this is a test
 python = Runtime.start("python","Python")
 clock = Runtime.start("clock","Clock")
 log   = Runtime.start("log","Log")
