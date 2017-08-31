@@ -25,7 +25,7 @@ arduino.connect("/dev/ttyUSB0")
 
 # Start the Adafruit16CServodriver that can be used for all PCA9685 devices
 adafruit16c = Runtime.createAndStart("adafruit16c","Adafruit16CServoDriver")
-adafruit16c.setController("arduino","1","0x40")
+adafruit16c.attach("arduino","1","0x40")
 
 ######################################################################
 # mouth service, speech synthesis - takes a minute to load
