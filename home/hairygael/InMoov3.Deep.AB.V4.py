@@ -4,6 +4,7 @@ import time
 import random
 ##import subprocess
 from org.myrobotlab.net import BareBonesBrowserLaunch 
+import os
 
 #############################################################
 # This is the InMoov script
@@ -17,9 +18,13 @@ leftPort = "COM20"
 rightPort = "COM7"
 headPort = leftPort
 
-gesturesPath = "C:\Myrobotlab\ProgramAB bots\gestures"
-
-aimlPath = "C:/Myrobotlab/myrobotlab.1.0.1412/develop/ProgramAB"
+if environ['WORKDIR'] is not Nothing:
+  gesturesPath = WORKDIR + "..\ProgramAB bots\gestures"
+  aimlPath = WORKDIR + "..\myrobotlab.1.0.1412\develop\ProgramAB"
+else:
+  gesturesPath = "C:\MyRobotLab\ProgramAB bots\gestures"
+  aimlPath = "C:\MyRobotLab\myrobotlab.1.0.1412\develop\ProgramAB"
+  
 aimlBotName = "inmoovWebKit"
 aimlUserName = "Gael"
 botVoice = "Ryan"
