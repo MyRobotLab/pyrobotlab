@@ -1,8 +1,9 @@
 #########################################
-# BoofCV.py
+# Speech.py
 # description: used as a general template
-# categories: [general]
-# possibly more info @: http://myrobotlab.org/service/BoofCV
+# categories: general
+# more info @: http://myrobotlab.org/service/Speech
 #########################################
+
 # start the service
-boofcv = Runtime.start("boofcv","BoofCV")
+speech = Runtime.start('speech','Speech')
