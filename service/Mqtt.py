@@ -1,21 +1,25 @@
-from time import sleep
-
-topic = "mrl"
+topic = "inmoov/test"
 qos = 2
-broker = "tcp://iot.eclipse.org:1883" #if you have your own just change the hostname/IP
-clientID = "MRL MQTT python"
+broker = "tcp://broker.mqttdashboard.com:1883" 
 
-mqtt1 = Runtime.createAndStart("mqtt", "Mqtt")
-mqtt1.startService()
+clientID = "MRLMQTTpython1"
+mqtt1 = Runtime.createAndStart("Mqtt", "Mqtt")
 print mqtt1.getDescription()
 
 mqtt1.setBroker(broker)
 mqtt1.setQos(qos)
 mqtt1.setPubTopic(topic)
 mqtt1.setClientId(clientID)
-mqtt1.startClient()
+mqtt1.connect(broker)
+# authentification mqtt1.connect(broker,"guest","guest")
 
-sleep(1)
+mqtt1.subscribe("inmoov/test", 0)
+mqtt1.publish("hello inmoov world")
 
-mqtt1.subscribe("mrl/#", 2)
-mqtt1.publish("Greetings from MRL python")
+mqtt1.addListener("publishMqttMsgString", "python", "publishMqttMsgString")
+	 
+#  MQTT call-back
+
+def publishMqttMsgString(msg):
+	print "message : ",msg[0]
+print "topic : ",msg[1]
