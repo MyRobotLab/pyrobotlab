@@ -9,13 +9,13 @@ import threading
 # the bot.
 #############################################################
 # All bot specific hardware configuration goes here.
-leftPort = "COM5"
-rightPort = "COM6"
+leftPort = "/dev/ttyACM0"
+rightPort = "/dev/ttyACM1"
 headPort = leftPort
 
-gesturesPath = "c:/dev/workspace/pyrobotlab/home/kwatters/harry/gestures"
+gesturesPath = "/home/pi/github/pyrobotlab/home/kwatters/harry/gestures"
 
-aimlPath = "c:/dev/workspace/pyrobotlab/home/kwatters/harry"
+aimlPath = "/home/pi/github/pyrobotlab/home/kwatters/harry"
 aimlBotName = "harry"
 aimlUserName = "Kevin"
 botVoice = "Rod"
