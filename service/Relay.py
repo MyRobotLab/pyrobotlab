@@ -13,7 +13,7 @@ arduino = Runtime.createAndStart("arduino","Arduino")
 arduino.connect("COM3")
 
 relay.arduino=arduino
-relay.pin=1
+relay.pin=8
 relay.onValue=0
 
 relay.on()
