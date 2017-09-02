@@ -1,22 +1,22 @@
-topic = "inmoov/test"
+topic = "myrobotlab/test"
 qos = 2
 broker = "tcp://broker.mqttdashboard.com:1883" 
 
 clientID = "MRLMQTTpython1"
-mqtt1 = Runtime.createAndStart("Mqtt", "Mqtt")
-print mqtt1.getDescription()
+mqtt = Runtime.createAndStart("Mqtt", "Mqtt")
+print mqtt.getDescription()
 
-mqtt1.setBroker(broker)
-mqtt1.setQos(qos)
-mqtt1.setPubTopic(topic)
-mqtt1.setClientId(clientID)
-mqtt1.connect(broker)
-# authentification mqtt1.connect(broker,"guest","guest")
+mqtt.setBroker(broker)
+mqtt.setQos(qos)
+mqtt.setPubTopic(topic)
+mqtt.setClientId(clientID)
+mqtt.connect(broker)
+# authentification mqtt.connect(broker,"guest","guest")
 
-mqtt1.subscribe("inmoov/test", 0)
-mqtt1.publish("hello inmoov world")
+mqtt.subscribe("myrobotlab/test", 0)
+mqtt.publish("hello myrobotlab world")
 
-mqtt1.addListener("publishMqttMsgString", "python", "publishMqttMsgString")
+mqtt.addListener("publishMqttMsgString", "python", "publishMqttMsgString")
 	 
 #  MQTT call-back
 
