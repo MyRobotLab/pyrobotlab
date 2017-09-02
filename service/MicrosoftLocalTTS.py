@@ -15,6 +15,6 @@ print microsoftlocaltts.getVoices();
 # 1 Microsoft Hortense Desktop - French
 
 microsoftlocaltts.setVoice("0")
-microsoftlocaltts.speak(u"Hello this is an english voice")
+microsoftlocaltts.speakBlocking(u"Hello this is an english voice")
 microsoftlocaltts.setVoice("1")
 microsoftlocaltts.speakBlocking(u"Bonjour ceci est une voix française, je teste les accents aussi avec le mot éléphant")
