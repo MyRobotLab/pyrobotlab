@@ -1,3 +1,8 @@
+#########################################
+# Mqtt.py
+# more info @: http://myrobotlab.org/service/Mqtt
+#########################################
+
 topic = "myrobotlab/test"
 qos = 2
 broker = "tcp://broker.mqttdashboard.com:1883" 
