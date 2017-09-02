@@ -3,7 +3,7 @@ qos = 2
 broker = "tcp://broker.mqttdashboard.com:1883" 
 
 clientID = "MRLMQTTpython1"
-mqtt = Runtime.createAndStart("Mqtt", "Mqtt")
+mqtt = Runtime.createAndStart("mqtt", "Mqtt")
 print mqtt.getDescription()
 
 mqtt.setBroker(broker)
