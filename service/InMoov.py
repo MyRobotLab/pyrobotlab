@@ -5,14 +5,22 @@
 # e.g. you say -> open hand, InMoov will ask -> "Did you say open hand?", you will need to
 # respond with a confirmation ("yes","correct","yeah","ya")
 
+
+useVirtualArduinos = True
+
 rightPort = "COM8"
 
-i01 = Runtime.createAndStart("i01", "InMoov")
+i01 = Runtime.start("i01", "InMoov")
+
+if (useVirtualArduinos):
+    rightVirtual = Runtime.start("rightVirtual","VirtualArduino")
+    leftVirtual  = Runtime.start("leftVirtual","VirtualArduino")
+    rightVirtual.connect(rightPort)
+
 # starting parts
 i01.startEar()
 i01.startMouth()
 #to tweak the default voice
-i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
 ##############
 i01.startRightHand(rightPort)
 # tweaking defaults settings of right hand
@@ -39,7 +47,7 @@ ear.addCommand("close hand", "python", "handclose")
 ear.addCommand("capture gesture", ear.getName(), "captureGesture")
 ear.addCommand("manual", ear.getName(), "lockOutAllGrammarExcept", "voice control")
 ear.addCommand("voice control", ear.getName(), "clearLock")
- 
+
 ear.addComfirmations("yes","correct","yeah","ya")
 ear.addNegations("no","wrong","nope","nah")
 
