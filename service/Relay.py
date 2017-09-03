@@ -9,7 +9,7 @@
 
 relay = Runtime.start('relay','Relay')
 
-arduino = Runtime.createAndStart("arduino","Arduino")
+arduino = Runtime.start("arduino","Arduino")
 arduino.connect("COM3")
 
 relay.arduino=arduino
