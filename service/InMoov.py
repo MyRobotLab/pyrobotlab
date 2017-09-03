@@ -4,18 +4,25 @@
 # for any command which you say - you will be required to say a confirmation
 # e.g. you say -> open hand, InMoov will ask -> "Did you say open hand?", you will need to
 # respond with a confirmation ("yes","correct","yeah","ya")
-
+useRightVirtualArduino = True
+useLeftVirtualArduino = True
+useVirtualInMoov = True
 
 useVirtualArduinos = True
 
 rightPort = "COM8"
+leftPort = "COM10"
 
 i01 = Runtime.start("i01", "InMoov")
 
-if (useVirtualArduinos):
+if (useRightVirtualArduino):
     rightVirtual = Runtime.start("rightVirtual","VirtualArduino")
-    leftVirtual  = Runtime.start("leftVirtual","VirtualArduino")
     rightVirtual.connect(rightPort)
+
+if (useLeftVirtualArduino):
+    leftVirtual  = Runtime.start("leftVirtual","VirtualArduino")
+    leftVirtual.connect(leftPort)
+
 
 # starting parts
 i01.startEar()
