@@ -2,7 +2,8 @@ Additional static object libraries required for dl4j to run on the Raspberry Pi
 
 place the following Raspberry Pi arm static object files in the mrl /libraries/native/ directory
 
-cross compiled for the Raspberry Pi Arm processor from the nd4j and dl4j github source (0.8.1 snapshot): 
+cross compiled for the Raspberry Pi Arm processor from the nd4j and dl4j github source (0.8.1 snapshot):
+https://github.com/CheekyMonkey/libnd4j 
 libjnind4jcpu.so
 libnd4jcpu.so
 
