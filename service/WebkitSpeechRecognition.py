@@ -1,7 +1,14 @@
+#########################################
+# WebkitSpeechRecognition.py
+# more info @: http://myrobotlab.org/service/WebkitSpeechRecognition
+#########################################
+
 # start the service
 webkitspeechrecognition = Runtime.start("webkitspeechrecognition","WebkitSpeechRecognition")
-# always listen
+# auto rearm microphone
 # webkitspeechrecognition.setAutoListen(True)
+# speedup recognition
+# webkitspeechrecognition.setContinuous(False)
 =======
 webgui = Runtime.start("webgui","WebGui")
 webkitspeechrecognition = Runtime.start("webkitspeechrecognition","WebkitSpeechRecognition")
