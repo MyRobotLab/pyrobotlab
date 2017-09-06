@@ -32,5 +32,11 @@ print pcf.read(5)
 print pcf.read(6)
 print pcf.read(7)
 
+# Script to change the volume of the Max9744
+# https://github.com/MyRobotLab/pyrobotlab/blob/master/home/Mats/Max9744.py
+# It's similar to the pcf8574 in that it only writes a single byte
+# The volume is controlled by writing a value between 0 and 63
 
-
+# volume = 16
+# pcf.setController(arduino,"0","0x4B")
+# pcf.writeRegister(volume)

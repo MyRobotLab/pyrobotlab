@@ -1,27 +1,29 @@
 arduino = Runtime.createAndStart("arduino","Arduino")
-arduino.connect("COM3")
+arduino.connect("COM5")
 # arduino.setSampleRate(30000)
 
 
 readAnalogPin = 0
-arduino.arduino.enablePin(readAnalogPin)
+arduino.enablePin(readAnalogPin)
 arduino.addListener("publishPin", "python", "input")
 
 
-pid = Runtime.createAndStart("pid","Pid")
-pid.setMode(1)
-#set the range of the "correction"
-pid.setOutputRange(-5, 5)
+pid = Runtime.start("pid","Pid")
+
 #set Kp, kd, ki kp = gain, how strong it react kd = how fast it react ki= take care of the sum of errors (differences between target and actual value) in the time
-pid.setPID(10.0, 0, 1.0)
-pid.setControllerDirection(0)
+pid.setPID("x", 10.0, 0, 1.0)
+pid.setMode("x", 1)
+#set the range of the "correction"
+pid.setOutputRange("x", -5, 5)
+
+# pid.setControllerDirection("x", 0)
 
 #set a starting analog value, which will pilot the MOSFET on the Gate
 heaterValue = 512
 
 
-def input():
- thermistorPin = msg_arduino_publishPin.data[0]
+def onPin(data):
+ thermistorPin = data
  print 'thermistor value is', thermistorPin.value
  global heaterValue
  global futureHeaterValue
