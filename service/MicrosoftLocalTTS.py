@@ -13,7 +13,7 @@ print microsoftlocaltts.getVoices();
 # exemple :
 # 0 Microsoft Zira Desktop - English (United States)
 # 1 Microsoft Hortense Desktop - French
-
+# override tts.exe temp output path : microsoftlocaltts.ttsExeOutputFilePath="c:\\tmp\\"
 microsoftlocaltts.setVoice("0")
 microsoftlocaltts.speakBlocking(u"Hello this is an english voice")
 microsoftlocaltts.setVoice("1")
