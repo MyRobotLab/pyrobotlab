@@ -1,5 +1,5 @@
 # A script to test tracking on the Raspberry Pi driving servos with the AdaFruit16ServoDriver service
-# as at mrl development build version 2423
+# as at mrl development build version 2489
 # a mashup of code taken from Mats:
 # https://github.com/MyRobotLab/pyrobotlab/blob/master/home/Mats/Tracking.py
 # and also from Grog:
