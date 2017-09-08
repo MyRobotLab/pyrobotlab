@@ -1,4 +1,4 @@
-# A script to test tracking on the Raspberry Pi driving servos with the AdaFruit16ServoDriver service
+# A script to test opencv tracking in MyRobotLab with an Arduino connected to a Raspberry Pi 3
 # as at mrl development build version 2489
 # a mashup of code taken from Mats:
 # https://github.com/MyRobotLab/pyrobotlab/blob/master/home/Mats/Tracking.py
