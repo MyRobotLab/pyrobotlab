@@ -5,7 +5,6 @@ def picturebothside():
   i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
   i01.setHeadSpeed(0.65, 0.65)
   i01.moveHead(109,90)
-  i01.moveJaw(50)
   i01.moveArm("left",90,105,24,75)
   i01.moveArm("right",90,115,23,68)
   i01.moveHand("left",50,86,97,74,106,119)
