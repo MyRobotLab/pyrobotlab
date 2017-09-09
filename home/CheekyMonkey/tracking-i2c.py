@@ -6,6 +6,8 @@
 # http://myrobotlab.org/content/tracking-results
 #
 
+import time
+
 xPin = 0;
 yPin = 1;
 
@@ -46,27 +48,41 @@ y = tracker.getY();
 
 tracker.connect(arduinoPort, xPin, yPin, cameraIndex);
 
+#small delay here to resolve servo/attach glitch
+sleep(5)
 #attach x and y servos to AdaFruit servo driver
-tracker.x.attach(adaFruit16c3,xPin,85,20);
-tracker.y.attach(adaFruit16c3,yPin,70,20);
+tracker.x.attach(adaFruit16c3,xPin,70,20);
+tracker.y.attach(adaFruit16c3,yPin,60,20);
 
 tracker.x.setVelocity(20);
 tracker.x.setMinMax(60,90);
 #x.setInverted(True);
-tracker.x.setRest(85);
+tracker.x.setRest(70);
 tracker.x.rest();
 tracker.y.setVelocity(20);
 tracker.y.setInverted(True);
-tracker.y.setMinMax(60,75);
-tracker.y.setRest(70);
+tracker.y.setMinMax(50,75);
+tracker.y.setRest(60);
 tracker.y.rest();
 
 #adjust PID values to suit
-tracker.pid.setPID("tracker.x", 5.0, 1.0, 0.1);
-tracker.pid.setPID("tracker.y", 5.0, 1.0, 0.1);
+pid = Runtime.start("tracker.pid","Pid")
 
-opencv = tracker.getOpenCV();
+
+#tracker.pid.setPID("tracker.x", 5.0, 1.0, 0.1);
+#tracker.pid.setPID("tracker.y", 20.0, 1.0, 0.1);
+#pid.setPID("x", 10.0, 1.0, 0.1);
+#pid.setPID("y", 50.0, 1.0, 0.1);
+
+#opencv = tracker.getOpenCV();
 #opencv.broadcastState();
+
+opencv = Runtime.start("tracker.opencv","OpenCV")
+pid.setPID("x", 10.0, 1.0, 0.1);
+pid.setPID("y", 20.0, 1.0, 0.1);
+sleep(2);
+opencv.capture();
+
 
 # do lk optical point tracking
 # tracker.startLKTracking();
