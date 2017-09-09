@@ -12,7 +12,7 @@ if ('virtual' in globals() and virtual):
 
 # This section is to be used if you use the i2c pins of the Arduino
 arduino = Runtime.start("Arduino","Arduino")
-arduino.connect("COM3")
+arduino.connect(port)
 # Sleep so that the Arduino can be initialized
 sleep(4)
 ads1115.attach(arduino,"1","0x48")
