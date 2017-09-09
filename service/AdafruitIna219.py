@@ -6,17 +6,17 @@
 # This script shows how to use the AdafruitIna219 service
 #
 # This section shows is if you use the Arduino i2c pins
-arduino = Runtime.createAndStart("Arduino","Arduino")
+arduino = Runtime.start("Arduino","Arduino")
 arduino.connect("COM3")
-raspi = Runtime.createAndStart("RasPi","RasPi")
-ina219 = Runtime.createAndStart("AdafruitIna219","AdafruitIna219")
+raspi = Runtime.start("RasPi","RasPi")
+ina219 = Runtime.start("AdafruitIna219","AdafruitIna219")
 # From version 1.0.2316 use attach instead of setController
-ina219.setController(arduino,"1","0x40")'
+# ina219.setController(arduino,"1","0x40")'
 ina219.attach(arduino,"1","0x40")
 # 
 # This section shows is if you use the GPIO i2c pins on the RaspBerry Pi directly
-raspi = Runtime.createAndStart("RasPi","RasPi")
-ina219 = Runtime.createAndStart("AdafruitIna219","AdafruitIna219")
+raspi = Runtime.start("RasPi","RasPi")
+ina219 = Runtime.start("AdafruitIna219","AdafruitIna219")
 # From version 1.0.2316 use attach instead of setController
 # ina219.setController(raspi,"1","0x40")
 ina219.attach(raspi,"1","0x40")
