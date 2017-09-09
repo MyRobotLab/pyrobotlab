@@ -50,6 +50,11 @@ tracker.connect(arduinoPort, xPin, yPin, cameraIndex);
 
 #small delay here to resolve servo/attach glitch
 sleep(5)
+
+#detach x and y servos from Virtual Arduino
+tracker.x.detach()
+tracker.y.detach()
+
 #attach x and y servos to AdaFruit servo driver
 tracker.x.attach(adaFruit16c3,xPin,70,20);
 tracker.y.attach(adaFruit16c3,yPin,60,20);
