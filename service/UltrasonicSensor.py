@@ -13,8 +13,8 @@ python = Runtime.start("python","Python")
 sr04 = Runtime.start("sr04", "UltrasonicSensor")
 arduino = Runtime.start("arduino", "Arduino")
 
-# special virtual boolean which auto-magic testing elves
-# can give them virtual ports to successfully test 24/7 !
+# special virtual boolean which can give auto-magic testing elves
+# the ability to use virtual ports and successfully test 24/7 !
 if ('virtual' in globals() and virtual):
     virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
     virtualArduino.connect(port)
