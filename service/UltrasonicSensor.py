@@ -6,7 +6,7 @@
 #########################################
 
 # config
-port = "COM15"
+port = "COM99"
 
 # start the service
 python = Runtime.start("python","Python")
