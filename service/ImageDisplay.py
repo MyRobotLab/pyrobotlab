@@ -21,12 +21,12 @@ imagedisplay.display("http://www.iep.utm.edu/wp-content/media/Zeno_of_Elea-200x3
 sleep(2)
 imagedisplay.closeAll()
 
-#Display an image scaled a given multiplication factor.
+#Display an image scaled by a given multiplication factor.
 imagedisplay.displayScaled("http://www.iep.utm.edu/wp-content/media/Zeno_of_Elea-200x300.jpg", 2)
 sleep(2)
 imagedisplay.closeAll()
 
-#Display an image faded faded by a given value between 0 and 1 and scaled a given multiplication factor.
+#Display an image faded faded by a given value between 0 and 1 and scaled by a given multiplication factor.
 imagedisplay.displayScaled("http://www.iep.utm.edu/wp-content/media/Zeno_of_Elea-200x300.jpg", 0.1 ,2)
 sleep(2)
 imagedisplay.closeAll()
