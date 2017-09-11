@@ -7,3 +7,10 @@
 
 # start the service
 database = Runtime.start('database','Database')
+database.connectionString="jdbc:mysql://HOST/DATABASE"
+database.jdbcUser="user"
+database.jdbcPassword="password"
+print database.connect()
+resultSet  = database.executeQuery("SELECT * FROM YOUR_TABLE")
+while (resultSet.next()):
+	print resultSet.getString("id")
