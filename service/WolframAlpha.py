@@ -60,7 +60,7 @@ print ("-----------------------------------------")
 
 #Same example as above bnut instead ov extracting all images it only gets the image of the searchobject itself
 #Can be combined with the ImageDisplay service
-import re
-string = wolframalpha.wolframAlpha(keyword,1)
-url = str(re.findall('Image</b><br><img src="http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', string))[26:-2]
-print (url)
+#import re
+#string = wolframalpha.wolframAlpha(keyword,1)
+#url = str(re.findall('Image</b><br><img src="http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', string))[26:-2]
+#print (url)
