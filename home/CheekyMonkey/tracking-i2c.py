@@ -7,6 +7,7 @@
 #
 
 import time
+from org.myrobotlab.opencv import OpenCVFilterPyramidDown
 
 xPin = 0;
 yPin = 1;
@@ -90,7 +91,12 @@ sleep(1);
 tracker.y.setInverted(True);
 sleep(1);
 
-opencv.capture();
+# additional PyramidDown filter for improved framerate on the Pi (~15 fps)
+PreFilterPyramidDown = OpenCVFilterPyramidDown("PreFilterPyramidDown") 
+tracker.preFilters.add(PreFilterPyramidDown)
+tracker.opencv.setDisplayFilter("PreFilterPyramidDown")
+
+#opencv.capture();
 
 # do lk optical point tracking
 # tracker.startLKTracking();
