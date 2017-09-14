@@ -50,7 +50,7 @@ public OpenCVData setOpenCVData(OpenCVData data) {
             
             //Acapulco Rolf
             //14/09/2017
-            //add y position logic identical to  position logic
+            //add y position logic identical to x position logic
             if (ypos + y.scanStep >= y.servoControl.getMaxInput() && y.scanStep > 0 || ypos + y.scanStep <= y.servoControl.getMinInput() && y.scanStep < 0) {
                 y.scanStep *= -1;
                 
