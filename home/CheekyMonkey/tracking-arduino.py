@@ -55,8 +55,8 @@ pid = Runtime.start("tracker.pid","Pid")
 #pid.setPID("y", 20.0, 5.0, 0.1);
 
 opencv = Runtime.start("tracker.opencv","OpenCV")
-pid.setPID("x", 10.0, 1.0, 0.1);
-pid.setPID("y", 50.0, 1.0, 0.1);
+pid.setPID("x", 5.0, 1.0, 0.1);
+pid.setPID("y", 5.0, 1.0, 0.1);
 
 
 #get the tracker opencv service instance
@@ -80,6 +80,8 @@ sleep(2);
 #start the opencv video frame capture
 opencv.capture();
 
+tracker.y.setInverted(True);
+sleep(1);
 
 #opencv.addFilter("lkOpticalTrack1","LKOpticalTrack")
 #opencv.setDisplayFilter("lkOpticalTrack1")
