@@ -83,11 +83,14 @@ pid = Runtime.start("tracker.pid","Pid")
 #opencv.broadcastState();
 
 opencv = Runtime.start("tracker.opencv","OpenCV")
-pid.setPID("x", 10.0, 1.0, 0.1);
-pid.setPID("y", 20.0, 1.0, 0.1);
-sleep(2);
-opencv.capture();
+pid.setPID("x", 5.0, 1.0, 0.1);
+pid.setPID("y", 5.0, 1.0, 0.1);
+sleep(1);
 
+tracker.y.setInverted(True);
+sleep(1);
+
+opencv.capture();
 
 # do lk optical point tracking
 # tracker.startLKTracking();
