@@ -6,6 +6,7 @@
 # http://myrobotlab.org/content/tracking-results
 #
 
+from org.myrobotlab.opencv import OpenCVFilterPyramidDown
 
 #Define the x and y tracking servo pins 
 #articulated neck servos
@@ -76,12 +77,15 @@ sleep(2);
 #rest for a bit
 #sleep(3);
 
+tracker.y.setInverted(True);
+
+# additional PyramidDown filter for improved framerate on the Pi (~15 fps)
+PreFilterPyramidDown = OpenCVFilterPyramidDown("PreFilterPyramidDown") 
+tracker.preFilters.add(PreFilterPyramidDown)
+tracker.opencv.setDisplayFilter("PreFilterPyramidDown")
 
 #start the opencv video frame capture
 opencv.capture();
-
-tracker.y.setInverted(True);
-sleep(1);
 
 #opencv.addFilter("lkOpticalTrack1","LKOpticalTrack")
 #opencv.setDisplayFilter("lkOpticalTrack1")
