@@ -1,6 +1,7 @@
 # start a opencv service
 opencv = Runtime.start("opencv","OpenCV")
 python = Runtime.start("python","Python")
+gui = Runtime.start("gui","SwingGui")
 
 # add python as a listener to OpenCV data
 # this tells the framework - whenever opencv.publishOpenCVData is invoked
@@ -30,7 +31,7 @@ else:
 # adding a canny filter
 opencv.addFilter("Canny")
 opencv.setDisplayFilter("Canny")
-sleep(2)
+sleep(4)
 canny = opencv.getFilter("Canny") 
 # changing parameters
 canny.apertureSize = 3
