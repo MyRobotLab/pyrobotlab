@@ -18,15 +18,20 @@ def onOpenCVData(data):
 
 # to capture from an image on the file system
 # opencv.captureFromImageFile("C:\Users\grperry\Desktop\mars.jpg")
-opencv.capture()
-sleep(4) 
+gui.undockTab("opencv")
+# not for you, it's for test
+if ('virtual' in globals() and virtual):
+  opencv.captureFromImageFile("resource/OpenCV/testData/shapes.png")
+else:
+  opencv.capture()
+ 
 
 #### Canny ########################
 # adding a canny filter
 opencv.addFilter("Canny")
 opencv.setDisplayFilter("Canny")
+sleep(2)
 canny = opencv.getFilter("Canny") 
-
 # changing parameters
 canny.apertureSize = 3
 canny.lowThreshold = 10.0
@@ -72,3 +77,4 @@ opencv.setDisplayFilter("FaceDetect")
 sleep(4)
 opencv.removeFilters()
 opencv.stopCapture()
+gui.dockTab("opencv")
