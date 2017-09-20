@@ -1,4 +1,5 @@
 # start a opencv service
+
 opencv = Runtime.start("opencv","OpenCV")
 python = Runtime.start("python","Python")
 gui = Runtime.start("gui","SwingGui")
@@ -22,41 +23,12 @@ def onOpenCVData(data):
 gui.undockTab("opencv")
 # not for you, it's for test
 if ('virtual' in globals() and virtual):
-  opencv.captureFromImageFile("resource/OpenCV/testData/shapes.png")
-else:
-  opencv.capture()
- 
+  opencv.setMinDelay(500)
+  opencv.setFrameGrabberType("org.bytedeco.javacv.FFmpegFrameGrabber")
+  opencv.setInputSource("file")
+  opencv.setInputFileName("resource/OpenCV/testData/monkeyFace.mp4")
 
-#### Canny ########################
-# adding a canny filter
-opencv.addFilter("Canny")
-opencv.setDisplayFilter("Canny")
-sleep(4)
-canny = opencv.getFilter("Canny") 
-# changing parameters
-canny.apertureSize = 3
-canny.lowThreshold = 10.0
-canny.highThreshold = 200.0
-
-sleep(2)
-
-canny.apertureSize = 5
-canny.lowThreshold = 10.0
-canny.highThreshold = 100.0
-
-sleep(4)
-opencv.removeFilters()
-
-#### PyramidDown ####################
-# scale the view down - faster since updating the screen is 
-# relatively slow
-opencv.addFilter("PyramidDown")
-sleep(4)
-# adding a second pyramid down filter - we need
-# a unique name - so we'll call it PyramidDown2
-opencv.addFilter("PyramidDown2","PyramidDown")
-sleep(4)
-opencv.removeFilters()
+opencv.capture()
 
 #### LKOpticalTrack ####################
 # experiment with Lucas Kanade optical flow/tracking
@@ -74,6 +46,41 @@ opencv.addFilter("FaceDetect")
 opencv.setDisplayFilter("FaceDetect")
 # attempt to set a sample point in the middle 
 # of the video stream - you can 
+
+sleep(4)
+opencv.removeFilters()
+ 
+
+#### PyramidDown ####################
+# scale the view down - faster since updating the screen is 
+# relatively slow
+opencv.addFilter("PyramidDown")
+opencv.setDisplayFilter("PyramidDown")
+sleep(4)
+# adding a second pyramid down filter - we need
+# a unique name - so we'll call it PyramidDown2
+opencv.addFilter("PyramidDown2","PyramidDown")
+opencv.setDisplayFilter("PyramidDown2")
+sleep(4)
+opencv.removeFilters()
+
+
+#### Canny ########################
+# adding a canny filter
+opencv.addFilter("Canny")
+opencv.setDisplayFilter("Canny")
+sleep(4)
+canny = opencv.getFilter("Canny") 
+# changing parameters
+canny.apertureSize = 3
+canny.lowThreshold = 10.0
+canny.highThreshold = 200.0
+
+sleep(2)
+
+canny.apertureSize = 5
+canny.lowThreshold = 10.0
+canny.highThreshold = 100.0
 
 sleep(4)
 opencv.removeFilters()
