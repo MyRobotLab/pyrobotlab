@@ -16,51 +16,52 @@ if ('virtual' in globals() and virtual):
 
 # create a servo controller and a servo 
 arduino = Runtime.start("arduino","Arduino")
-servo01 = Runtime.start("servo01","Servo")
+servo = Runtime.start("servo","Servo")
 
 # initialize arduino
 # arduino.connect("/dev/ttyUSB0")
 arduino.connect(port)
 
 # TODO - set limits
-servo01.setMinMax(0, 180)
+servo.setMinMax(0, 180)
 
 # attach servo
-servo01.attach(arduino.getName(), servoPin)
+servo.attach(arduino.getName(), servoPin)
 
 # fast sweep
-servo01.moveTo(179)
+servo.moveTo(179)
 sleep(0.5)
 
-servo01.moveTo(10)
+servo.moveTo(10)
 sleep(0.5)
 
-servo01.moveTo(179)
+servo.moveTo(179)
 sleep(0.5)
 
-servo01.moveTo(10)
+servo.moveTo(10)
 sleep(0.5)
 
-servo01.moveTo(179)
+servo.moveTo(179)
 sleep(0.5)
 
-servo01.moveTo(10)
+servo.moveTo(10)
 sleep(0.5)
 
 # speed changes
-servo01.setSpeed(0.99) # set speed to 99% of full speed
-servo01.moveTo(90)
-sleep(0.5)
+servo.setVelocity(15) # set velocity to something slow
+servo.moveToBlocking(60)
 
-servo01.setSpeed(0.50) # set speed to 50% of full speed
-servo01.moveTo(180)
-sleep(4)
+servo.setVelocity(200) # set velocity to something fast
+servo.moveToBlocking(180)
 
-servo01.setSpeed(1.0) # set speed to 100% of full speed
+servo.setVelocity(-1) # set velocity to maximum
 
 # moving to rest position
-servo01.rest()
-sleep(0.5)
+servo.rest()
+sleep(2)
 
-# detaching servo
-servo01.detach()
+# turn off power
+servo.disable()
+
+# detaching servo from controller
+servo.detach()
