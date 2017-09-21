@@ -13,13 +13,14 @@
 # virtual = True
 
 # Change to the port that you use
-rightPort = "COM9"
+rightPort = "COM7"
 ##############
 
 # start optional virtual arduino service, used for internal test
 if ('virtual' in globals() and virtual):
     virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
     virtualArduino.connect(rightPort)
+# end used for internal test
 
 #to tweak the default voice
 Voice="cmu-bdl-hsmm" #Male US voice 

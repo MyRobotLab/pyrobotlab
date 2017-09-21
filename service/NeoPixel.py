@@ -21,7 +21,7 @@ arduino = Runtime.start("arduino","Arduino")
 arduino.setBoardMega() #or arduino.setBoardUno()
 arduino.connect(port)
 
-#Starting a second neopixel on optional RX/TX connected slave arduino
+#Starting optional RX/TX connected slave arduino
 arduinoNano = Runtime.start("arduino","Arduino")
 arduinoNano.setBoardNano() #or arduino.setBoardUno()
 arduinoNano.connect(rxtxPort)
