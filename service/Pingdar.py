@@ -1,4 +1,8 @@
-# adjust for your system
+#########################################
+# Pingdar.py
+# more info @: http://myrobotlab.org/service/Pingdar
+#########################################
+# virtual = True
 
 port = "COM3"
 trigPin = 7

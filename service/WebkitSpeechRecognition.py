@@ -5,7 +5,7 @@
 #########################################
 
 # Start the webgui service without starting the browser
-webgui = Runtime.create("WebGui","WebGui")
+webgui = Runtime.create("webgui","WebGui")
 webgui.autoStartBrowser(False)
 webgui.startService()
 
@@ -13,6 +13,7 @@ webgui.startService()
 webgui.startBrowser("http://localhost:8888/#/service/webkitspeechrecognition")
 webkitspeechrecognition = Runtime.start("webkitspeechrecognition","WebkitSpeechRecognition")
 webkitspeechrecognition.setLanguage("en")
+
 # start mouth
 marySpeech = Runtime.start("marySpeech", "MarySpeech")
 
