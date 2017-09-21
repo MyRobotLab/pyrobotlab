@@ -1,17 +1,36 @@
-#working on version 1.0.1566 and over
+#########################################
+# NeoPixel.py
+# more info @: http://myrobotlab.org/service/NeoPixel
+#########################################
 
-from time import sleep
+# virtual = True
+port = "COM3"
+# optional but recommended neopixel connected on a dedicated arduino
+rxtxPort = "Serial2"
+
+# start optional virtual arduino service, used for internal test
+if ('virtual' in globals() and virtual):
+    virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
+    virtualArduino.connect(port)
+    virtualNano = Runtime.start("virtualNano", "VirtualArduino")
+    virtualNano.connect(rxtxPort)
+# end used for internal test
 
 #Starting Arduino Service
-arduino = Runtime.createAndStart("arduino","Arduino")
+arduino = Runtime.start("arduino","Arduino")
 arduino.setBoardMega() #or arduino.setBoardUno()
-arduino.connect("COM15")
+arduino.connect(port)
+
+#Starting a second neopixel on optional RX/TX connected slave arduino
+arduinoNano = Runtime.start("arduino","Arduino")
+arduinoNano.setBoardNano() #or arduino.setBoardUno()
+arduinoNano.connect(rxtxPort)
 
 #Starting NeoPixel Service
-neopixel = Runtime.createAndStart("neopixel","NeoPixel")
+neopixel = Runtime.start("neopixel","NeoPixel")
 
 #neopixel.attach(arduino, pin, number of pixel)
-neopixel.attach(arduino, 29, 16)
+neopixel.attach(arduinoNano, 2, 16)
 
 #Animations;
 #"Color Wipe"
