@@ -9,7 +9,7 @@ trigPin = 7
 echoPin = 8
 servoPin = 4
 
-gui = Runtime.start("gui","SwingGui")
+swinggui = Runtime.start("swinggui","SwingGui")
 
 # start controler
 arduino = Runtime.start("arduino","Arduino")
@@ -28,8 +28,8 @@ if ('virtual' in globals() and virtual):
 arduino.connect(port);
 sr04.attach(arduino, trigPin, echoPin)
 servo.attach(arduino, 2);
-gui.fullscreen(True);
-gui.undockTab("pingdar")
+swinggui.fullscreen(True);
+swinggui.undockTab("pingdar")
 
 # start pingdar
 pingdar.attach(sr04, servo)
@@ -43,5 +43,5 @@ sleep(10)
 
 # stop
 pingdar.stop()
-gui.dockTab("pingdar")
-gui.fullscreen(False);
+swinggui.dockTab("pingdar")
+swinggui.fullscreen(False);

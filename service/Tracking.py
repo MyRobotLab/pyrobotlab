@@ -10,7 +10,7 @@ xServoPin = 13   #change this to the right servo pin if needed, for inmoov this 
 yServoPin = 12   #change this to the right servo pin if needed, for inmoov this is right
 
 tracker = Runtime.start("tracker", "Tracking")
-gui = Runtime.start("gui", "SwingGui")
+swinggui = Runtime.start("swinggui", "SwingGui")
 opencv=tracker.getOpenCV()
 
 # set specifics on each Servo
@@ -50,8 +50,7 @@ if ('virtual' in globals() and virtual):
   opencv.setInputSource("file")
   opencv.setInputFileName("resource/OpenCV/testData/monkeyFace.mp4")
 
-# gui unfreeze
-gui.undockTab("tracker.opencv")
+swinggui.undockTab("tracker.opencv")
 opencv.broadcastState();
 sleep(1)
 
