@@ -27,4 +27,4 @@ mqtt.addListener("publishMqttMsgString", "python", "publishMqttMsgString")
 
 def publishMqttMsgString(msg):
 	print "message : ",msg[0]
-print "topic : ",msg[1]
+  print "topic : ",msg[1]

@@ -1,54 +1,107 @@
-# a very minimal script for InMoov
+#########################################
+# InMoovHand.py
+# more info @: http://myrobotlab.org/service/InMoovHand
+#########################################
+
+#from : InMoov.minimalFingerStarter.py
+# this script is provided as a basic guide
+# most parts can be run by uncommenting them
+# InMoov now can be started in modular pieces through the skeleton.config from full script
 # although this script is very short you can still
-# do voice control of a right hand or finger box
-# for any command which you say - you will be required to say a confirmation
-# e.g. you say -> open hand, InMoov will ask -> "Did you say open hand?", you will need to
-# respond with a confirmation ("yes","correct","yeah","ya")
+# do voice control of a FingerStarter or hand
+# It uses WebkitSpeechRecognition, so you need to use Chrome as your default browser for this script to work
+# virtual = True
 
-rightPort = "COM8"
+# Change to the port that you use
+rightPort = "COM7"
+##############
 
-i01 = Runtime.createAndStart("i01", "InMoov")
-# starting parts
-i01.startEar()
-i01.startMouth()
+# start optional virtual arduino service, used for internal test
+if ('virtual' in globals() and virtual):
+    virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
+    virtualArduino.connect(rightPort)
+# end used for internal test
+
 #to tweak the default voice
-i01.mouth.setGoogleURI("http://thehackettfamily.org/Voice_api/api2.php?voice=Ryan&txt=")
+Voice="cmu-bdl-hsmm" #Male US voice 
+#Voice="cmu-slt-hsmm" #Default female for MarySpeech
+mouth = Runtime.start("i01.mouth", "MarySpeech")
+#mouth.installComponentsAcceptLicense(Voice)
+mouth.setVoice(Voice)
+##############
+# starting InMoov service
+i01 = Runtime.create("i01", "InMoov")
+#Force Arduino to connect (fix Todo)
+right = Runtime.start("i01.right", "Arduino")
+right.connect(rightPort)
+##############
+# Starting parts
+i01.startEar()
+# Start the webgui service without starting the browser
+webgui = Runtime.create("WebGui","WebGui")
+webgui.autoStartBrowser(False)
+webgui.startService()
+# Then start the browsers and show the WebkitSpeechRecognition service named i01.ear
+webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
+# As an alternative you can use the line below to show all services in the browser. In that case you should comment out all lines above that starts with webgui. 
+# webgui = Runtime.createAndStart("webgui","WebGui")
+##############
+i01.startMouth()
+##############
+rightHand = Runtime.create("i01.rightHand","InMoovHand")
+# Tweaking defaults settings of right hand
+# Velocity
+rightHand.index.setVelocity(-1)
+# Mapping
+rightHand.index.map(0,180,42,160)
+# Rest position
+rightHand.index.setRest(0)
+##############
+i01 = Runtime.start("i01","InMoov")
 ##############
 i01.startRightHand(rightPort)
-# tweaking defaults settings of right hand
-#i01.rightHand.thumb.setMinMax(55,135)
-#i01.rightHand.index.setMinMax(0,160)
-#i01.rightHand.majeure.setMinMax(0,140)
-#i01.rightHand.ringFinger.setMinMax(48,145)
-#i01.rightHand.pinky.setMinMax(45,146)
-#i01.rightHand.thumb.map(0,180,55,135)
-#i01.rightHand.index.map(0,180,0,160)
-#i01.rightHand.majeure.map(0,180,0,140)
-#i01.rightHand.ringFinger.map(0,180,48,145)
-#i01.rightHand.pinky.map(0,180,45,146)
-#################
-
-# verbal commands
+i01.rightHand.enableAutoDisable(False)
+i01.rightHand.enableAutoEnable(True)
+##############
+# Verbal commands
 ear = i01.ear
+#always listen
+#ear.setAutoListen(True)
 
-ear.addCommand("attach right hand", "i01.rightHand", "attach")
-ear.addCommand("disconnect right hand", "i01.rightHand", "detach")
-ear.addCommand("rest", i01.getName(), "rest")
-ear.addCommand("open hand", "python", "handopen")
-ear.addCommand("close hand", "python", "handclose")
+ear.addCommand("attach your finger", "i01.rightHand.index", "enable")
+ear.addCommand("disconnect your finger", "i01.rightHand.index", "disable")
+ear.addCommand("rest", "i01.rightHand.index", "rest")## Hardcoded gesture
+ear.addCommand("open your finger", "python", "fingeropen")
+ear.addCommand("close your finger", "python", "fingerclose")
+ear.addCommand("finger to the middle", "python", "fingermiddle")
 ear.addCommand("capture gesture", ear.getName(), "captureGesture")
 ear.addCommand("manual", ear.getName(), "lockOutAllGrammarExcept", "voice control")
 ear.addCommand("voice control", ear.getName(), "clearLock")
- 
+
+# Confirmations and Negations are not supported yet in WebkitSpeechRecognition
+# So commands will execute immediatley
 ear.addComfirmations("yes","correct","yeah","ya")
 ear.addNegations("no","wrong","nope","nah")
 
 ear.startListening()
 
-def handopen():
-  i01.moveHand("left",0,0,0,0,0)
-  i01.moveHand("right",0,0,0,0,0)
+def fingeropen():
+  i01.rightHand.index.setVelocity(20)## Low velocity
+  i01.moveHand("right",0,0,0,0,0,0)## Thumb,index,majeure,ringfinger,pinky,wrist
+  i01.mouth.speak("ok I open my finger")
+  sleep(10)## We give a delay before to disable the servo
+  i01.disable()## We disconnect the servo
 
-def handclose():
-  i01.moveHand("left",180,180,180,180,180)
-  i01.moveHand("right",180,180,180,180,180)
+def fingerclose():
+  i01.rightHand.index.setVelocity(50)## Medium velocity
+  i01.moveHand("right",180,180,180,180,180,90)
+  i01.mouth.speak("my finger is closed")
+  sleep(3)
+  i01.disable()
+
+def fingermiddle():
+  i01.rightHand.index.setVelocity(-1)## Maximum velocity
+  i01.moveHand("right",90,90,90,90,90,90)
+  i01.mouth.speak("ok you have my attention")
+  sleep(3)
+  i01.disable()

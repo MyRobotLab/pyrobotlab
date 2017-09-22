@@ -1,106 +1,105 @@
 # A script to test tracking on the Raspberry Pi driving servos with the AdaFruit16ServoDriver service
-# as at mrl development build version 2423
+# as at mrl development build version 2489
 # a mashup of code taken from Mats:
 # https://github.com/MyRobotLab/pyrobotlab/blob/master/home/Mats/Tracking.py
 # and also from Grog:
 # http://myrobotlab.org/content/tracking-results
 #
 
+import time
+from org.myrobotlab.opencv import OpenCVFilterPyramidDown
 
-#start an AdaFruit16C I2C servo driver service
-adaFruit16c1 = Runtime.createAndStart("AdaFruit16C1","Adafruit16CServoDriver")
+xPin = 0;
+yPin = 1;
 
-#start a Raspberry Pi service
+arduinoPort = "/dev/ttyAMA0";
+
+cameraIndex = 0;
+
+
+#start an AdaFruit16C I2C servo driver instance
+adaFruit16c3 = Runtime.createAndStart("AdaFruit16C3","Adafruit16CServoDriver")
+
+#start a Raspberry Pi instance
 raspi = Runtime.createAndStart("RasPi","RasPi")
 
 #attach the AdaFruit16C I2C servo driver to the Raspberry Pi
-adaFruit16c1.setController("RasPi","1","0x40")
+adaFruit16c3.setController("RasPi","1","0x42")
 
 #set the frequency for the AdaFruit16C I2C servo driver to 50 Hz
-adaFruit16c1.setPWMFreq(1,50)
+adaFruit16c3.setPWMFreq(0,50) 
 
-#Define the AdaFruit16C I2C servo driver x and y tracking servo pins 
-#articulated neck servos
 
-centreneckPin = 1 # vertical motion
-mainneckPin = 2 # horizontal motion
-xPin = 1; # horizontal motion
-yPin = 2; # vertical motion
 
-#set which camera to use. In my case, 0 references the Raspberry Pi camera
-cameraIndex = 0
+#start and connect a Virtual Arduino instance
+virtual = Runtime.start("virtual", "VirtualArduino");
+virtual.connect(arduinoPort);
 
-# set the port to which the Arduino is connected
-# We won't actually use the Arduino for servo connectivity, but this is here to make things worky for now
-# The Virtual Arduino actually might be better here...
-arduinoPort = '/dev/ttyUSB0'
 
-#start an Arduino service instance
-arduino = Runtime.start("tracker.controller","Arduino")
+#start a tracker instance
+tracker = Runtime.start("tracker", "Tracking");
+x = tracker.getX();
+# invert if necessary
+# x.setInverted(True);
 
-#define a tracker PID instance
+y = tracker.getY();
+# invert if necessary
+# y.setInverted(True);
+
+
+tracker.connect(arduinoPort, xPin, yPin, cameraIndex);
+
+#small delay here to resolve servo/attach glitch
+sleep(5)
+
+#detach x and y servos from Virtual Arduino
+tracker.x.detach()
+tracker.y.detach()
+
+#attach x and y servos to AdaFruit servo driver
+tracker.x.attach(adaFruit16c3,xPin,70,20);
+tracker.y.attach(adaFruit16c3,yPin,60,20);
+
+tracker.x.setVelocity(20);
+tracker.x.setMinMax(60,90);
+#x.setInverted(True);
+tracker.x.setRest(70);
+tracker.x.rest();
+tracker.y.setVelocity(20);
+tracker.y.setInverted(True);
+tracker.y.setMinMax(50,75);
+tracker.y.setRest(60);
+tracker.y.rest();
+
+#adjust PID values to suit
 pid = Runtime.start("tracker.pid","Pid")
 
-#connect the arduino to the arduino port
-arduino.connect(arduinoPort)
 
-#rest for a bit
-sleep(1)
+#tracker.pid.setPID("tracker.x", 5.0, 1.0, 0.1);
+#tracker.pid.setPID("tracker.y", 20.0, 1.0, 0.1);
+#pid.setPID("x", 10.0, 1.0, 0.1);
+#pid.setPID("y", 50.0, 1.0, 0.1);
 
-#define the tracker x and y servo instances
-x = Runtime.start("tracker.x","Servo")
-y = Runtime.start("tracker.y","Servo")
-# x.setInverted(True)
-# y.setInverted(True)
-
-#rest again
-sleep(1)
-
-#attach x servo to the AdaFruit16C servo driver, set servo limits, speed and rest position
-x.attach(adaFruit16c1,mainneckPin,90,10)
-x.setMinMax(30,160)
-x.setRest(90)
-x.rest()
-
-#attach y servo to the AdaFruit16C servo driver, set servo limits, speed and rest position
-y.attach(adaFruit16c1,centreneckPin,100,10)
-y.setMinMax(90,160)
-y.setRest(100)
-y.rest()
-
-# start a tracker service instance
-tracker = Runtime.start("tracker","Tracking")
-
-#set the x and y PID values
-pid.setPID("x", 20.0, 5.0, 0.1);
-pid.setPID("y", 20.0, 5.0, 0.1);
-
-#get the tracker opencv service instance
-opencv = Runtime.getService("tracker.opencv")
-
-#as at mrl development build 2423 this next piece is required on the Raspberry Pi (3) under javacv1.3 
-#for opencv to return video frames
-frameGrabberType = "org.bytedeco.javacv.FFmpegFrameGrabber";
-opencv.captureFromResourceFile("/dev/video0");
-opencv.setFrameGrabberType(frameGrabberType);
+#opencv = tracker.getOpenCV();
 #opencv.broadcastState();
-#rest for a bit
-sleep(3);
 
-#start the opencv video frame capture
-opencv.capture();
+opencv = Runtime.start("tracker.opencv","OpenCV")
+pid.setPID("x", 5.0, 1.0, 0.1);
+pid.setPID("y", 5.0, 1.0, 0.1);
+sleep(1);
 
-#opencv.addFilter("PyramidDown1","PyramidDown")
-#opencv.addFilter("Gray1","Gray")
-#opencv.addFilter("lkOpticalTrack1","LKOpticalTrack")
-#opencv.setDisplayFilter("lkOpticalTrack1")
-#sleep(1)
-#opencv.invokeFilterMethod("lkOpticalTrack1","samplePoint",160,120)
+tracker.y.setInverted(True);
+sleep(1);
 
-#start tracking
-tracker.faceDetect()
-#tracker.startLKTracking()
+# additional PyramidDown filter for improved framerate on the Pi (~15 fps)
+PreFilterPyramidDown = OpenCVFilterPyramidDown("PreFilterPyramidDown") 
+tracker.preFilters.add(PreFilterPyramidDown)
+tracker.opencv.setDisplayFilter("PreFilterPyramidDown")
 
-#as at the time of writing, awaiting a possible logic change in the tracker.connect() logic
-#to allow the tracker service to see the I2C connected servos
+#opencv.capture();
 
+# do lk optical point tracking
+# tracker.startLKTracking();
+
+# do face tracking
+#tracker.faceDetect();

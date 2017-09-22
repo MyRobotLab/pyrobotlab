@@ -1,35 +1,29 @@
 # fun with Runtime :)
 
-# install and/or update the Arduino service
-runtime.update("org.myrobotlab.service.Arduino")
-# install and/or update the OpenCV service
-runtime.update("org.myrobotlab.service.OpenCV")
-
-# install and/or update everything
-runtime.updateAll()
-
-# update the bleeding edge myrobotlab.jar
-runtime.updateMyRobotLab()
-
 # prints the days hours minutes your MRL has been alive
-print runtime.getUptime()
+print Runtime.getUptime()
+
+# print the id of your instance of mrl
+print "my mrl version is {}".format(Runtime.getVersion)
+print "myrobotlab id is {}".format(Runtime.getId())
+print "computer {}".format(Runtime.getHostname())
+print "process id {}".format(Runtime.getPid())
 
 # learn about your system
-print runtime.availableProcessors()
-print runtime.getFreeMemory()
-print runtime.getTotalMemory()
+print "{} processors".format(Runtime.availableProcessors())
+print "{} Gb free memory".format(Runtime.getFreeMemory()/10000000)
+print "{} Gb free memory".format(Runtime.getTotalMemory()/10000000)
+
+# get list of currently running services
+services = Runtime.getServices()
+print "list my {} currently running services".format(len(services))
+for service in services:
+  print service.getName()
 
 # create and start an Arduino service
-runtime.createAndStart("arduino", "Arduino")
+Runtime.start("arduino", "Arduino")
 
-# start the auto update system
-# checks and installs updates - interval is 
-# every 300 seconds
-runtime.startAutoUpdate()
-
-# stop the auto update system
-runtime.stopAutoUpdate()
-
+Runtime.noWorky("GroG")
 # the Big Hammer - the last thing
-# MRL will see - shuts everything down
-runtime.exit()
+# MRL will see - shuts everything down in 10 seconds
+# Runtime.shutdown(10)

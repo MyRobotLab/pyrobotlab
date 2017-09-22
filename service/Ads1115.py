@@ -1,21 +1,24 @@
 #
 # Example code for Ads1115 4-channel AD converter on the i2c bus.
 #
+port = "COM3"
+#
+webgui = Runtime.start("WebGui","WebGui")
+ads1115 = Runtime.start("Ads1115","Ads1115")
 
-webgui = Runtime.createAndStart("WebGui","WebGui")
-ads1115 = Runtime.createAndStart("Ads1115","Ads1115")
+if ('virtual' in globals() and virtual):
+    virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
+    virtualArduino.connect(port)
 
 # This section is to be used if you use the i2c pins of the Arduino
-arduino = Runtime.createAndStart("Arduino","Arduino")
-arduino.connect("COM3")
+arduino = Runtime.start("Arduino","Arduino")
+arduino.connect(port)
 # Sleep so that the Arduino can be initialized
 sleep(4)
-# From version 1.0.2316 use attach instead of setController
-# ads1115.setController(arduino,"1","0x48")
 ads1115.attach(arduino,"1","0x48")
 
 # This section is to be used if you use the i2c pins of the Raspberry PI
-# raspi = Runtime.createAndStart("Raspi","RasPi")
+# raspi = Runtime.start("Raspi","RasPi")
 # ads1115.attach(raspi,"1","0x48")
 
 # This section is common and shows how you can get the raw adc values and the voltages
