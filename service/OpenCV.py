@@ -2,7 +2,7 @@
 
 opencv = Runtime.start("opencv","OpenCV")
 python = Runtime.start("python","Python")
-swinggui = Runtime.start("swinggui","SwingGui")
+gui = Runtime.start("gui","SwingGui")
 
 # add python as a listener to OpenCV data
 # this tells the framework - whenever opencv.publishOpenCVData is invoked
@@ -20,7 +20,7 @@ def onOpenCVData(data):
 
 # to capture from an image on the file system
 # opencv.captureFromImageFile("C:\Users\grperry\Desktop\mars.jpg")
-swinggui.undockTab("opencv")
+gui.undockTab("opencv")
 # not for you, it's for test
 if ('virtual' in globals() and virtual):
   opencv.setMinDelay(500)
@@ -85,4 +85,4 @@ canny.highThreshold = 100.0
 sleep(4)
 opencv.removeFilters()
 opencv.stopCapture()
-swinggui.dockTab("opencv")
+gui.dockTab("opencv")
