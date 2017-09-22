@@ -1,29 +1,39 @@
-from time import sleep
-from org.myrobotlab.service.data import Pin
-from org.myrobotlab.service import Arduino
- 
-# variables dependent on your setup
-boardType = "atmega328p"  # atmega168 | atmega328p | atmega2560 | atmega1280 | atmega32u4
+#########################################
+# ThingSpeak.py
+# more info @: http://myrobotlab.org/service/ThingSpeak
+#########################################
+
+# virtual=1
 comPort = "COM12"
+# start optional virtual arduino service, used for internal test
+if ('virtual' in globals() and virtual):
+    virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
+    virtualArduino.connect(comPort)
+# end used for internal test 
+
 readAnalogPin = 15
  
-arduino = runtime.createAndStart("arduino","Arduino")
+arduino = runtime.start("arduino","Arduino")
 thing = runtime.createAndStart("thing","ThingSpeak")
  
-arduino.setBoard(boardType) # atmega168 | mega2560 | etc
-if not arduino.isConnected():
-  arduino.connect(comPort)
-
- 
-thing.setWriteKey("AO4DMKQZY4RLWNNU")
-thing.subscribe("publishPin", arduino.getName(), "update", Pin().getClass())
- 
+arduino.setBoardMega() # setBoardUne | setBoardNano
+arduino.connect(comPort)
+sleep(1)
 # update the gui with configuration changes
 arduino.publishState()
  
+thing.setWriteKey("AO4DMKQZY4RLWNNU")
+
 # start the analog pin sample to display
 # in the oscope
 
 # decrease the sample rate so queues won't overrun
 # arduino.setSampleRate(8000)
-arduino.arduino.enablePin(readAnalogPin)
+
+def publishPin(pins):
+  for pin in range(0, len(pins)):
+    thing.update(pins[pin].value)
+
+arduino.addListener("publishPinArray",python.getName(),"publishPin")
+
+arduino.enablePin(readAnalogPin,1)
