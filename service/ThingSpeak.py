@@ -14,13 +14,13 @@ if ('virtual' in globals() and virtual):
 readAnalogPin = 15
  
 arduino = runtime.start("arduino","Arduino")
-thing = runtime.createAndStart("thing","ThingSpeak")
+thing = runtime.start("thing","ThingSpeak")
  
 arduino.setBoardMega() # setBoardUne | setBoardNano
 arduino.connect(comPort)
 sleep(1)
 # update the gui with configuration changes
-arduino.publishState()
+arduino.broadcastState()
  
 thing.setWriteKey("AO4DMKQZY4RLWNNU")
 
