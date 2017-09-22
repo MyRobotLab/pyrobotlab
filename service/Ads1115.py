@@ -3,7 +3,7 @@
 #
 port = "COM3"
 #
-webgui = Runtime.start("WebGui","WebGui")
+WebGui = Runtime.start("WebGui","WebGui")
 ads1115 = Runtime.start("Ads1115","Ads1115")
 
 if ('virtual' in globals() and virtual):

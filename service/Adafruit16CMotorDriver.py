@@ -11,7 +11,7 @@
 # config
 port = "COM99"
 
-# Runtime.start("webgui", "WebGui");
+# Runtime.start("WebGui", "WebGui");
 arduino = Runtime.start("Arduino", "Arduino");
 arduino.connect(port)
 sleep(5)

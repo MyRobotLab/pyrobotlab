@@ -1,4 +1,4 @@
-webgui = Runtime.createAndStart("WebGui","WebGui")
+WebGui = Runtime.createAndStart("WebGui","WebGui")
 raspi = Runtime.createAndStart("RasPi","RasPi")
 #
 mpu6050 = Runtime.createAndStart("Mpu6050","Mpu6050")
