@@ -1,3 +1,11 @@
+#########################################
+# Servo.py
+# categories: servo
+# more info @: http://myrobotlab.org/service/Servo
+#########################################
+# uncomment for virtual hardware
+# virtual = True
+
 # start the service
 sabertooth = Runtime.start("sabertooth","Sabertooth")
 =======
