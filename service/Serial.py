@@ -41,6 +41,7 @@ serial.write(82)
 serial.write(75)
 serial.write(89)
 
+# writing back from the uart to the serial service
 if ("virtual" in globals() and virtual):
   uart.write(87)
   uart.write(79)
