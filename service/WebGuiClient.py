@@ -1,9 +1,9 @@
 #########################################
 # WebGuiClient.py
-# description: used as a general webguiclient
+# description: used as a general WebGuiclient
 # categories: general
 # more info @: http://myrobotlab.org/service/WebGuiClient
 #########################################
 
 # start the service
-webguiclient = Runtime.start('webguiclient','WebGuiClient')
+WebGuiclient = Runtime.start('WebGuiclient','WebGuiClient')

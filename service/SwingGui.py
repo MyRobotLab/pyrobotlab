@@ -6,4 +6,4 @@
 #########################################
 
 # start the service
-swinggui = Runtime.start('swinggui','SwingGui')
+gui = Runtime.start('gui','SwingGui')

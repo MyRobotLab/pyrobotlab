@@ -4,19 +4,25 @@
 # starts a MotorDualPwm service that connects to the Arduino
 # Before the DiyServo connected directly to the Arduino.
 #
+# Config
+port="COM3"
+# start optional virtual arduino service, used for test
+if ('virtual' in globals() and virtual):
+    virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
+    virtualArduino.connect(port)
 # Start of script for DiyServo
 # Analog input A0 is the same as digital 14 on the Arduino Uno
 A0 = 14
 # Start the Arduino
-arduino = Runtime.createAndStart("Arduino","Arduino")
-arduino.connect("COM3")
+arduino = Runtime.start("Arduino","Arduino")
+arduino.connect(port)
 # Start the MotorDualPwm. You can use also use a different type of Motor
-motor = Runtime.createAndStart("diyservo.motor","MotorDualPwm")
+motor = Runtime.start("diyservo.motor","MotorDualPwm")
 # Tell the motor to attach to the Arduino and what pins to use
-motor.attach(arduino)
 motor.setPwmPins(10,11)
+motor.attach(arduino)
 # Start the DiyServo
-servo = Runtime.createAndStart("diyservo","DiyServo")
+servo = Runtime.start("diyservo","DiyServo")
 servo.attach(arduino,A0) # Attach the analog pin 0
 servo.moveTo(90)
 # At this stage you can use the gui or a script to control the DiyServo

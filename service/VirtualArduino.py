@@ -7,7 +7,7 @@ varduino = Runtime.start("varduino","VirtualArduino")
 # and an arduino service can connect to the "COM5" end
 varduino.connect("COM5")
 
-# Runtime.start("webgui","WebGui")
+# Runtime.start("WebGui","WebGui")
 varduino = Runtime.start("varduino","VirtualArduino")
 
 # start the Arduino service
