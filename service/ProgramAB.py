@@ -15,10 +15,11 @@ mouth = Runtime.start("mouth", "MarySpeech")
 # mouth.speak(String) method
 alice.addTextListener(mouth)
 
-alice.getResponse("What is new?")
+alice.getResponse(u"What is new?")
 sleep(3)
-alice.getResponse("Tell me a joke?")
+alice.getResponse(u"Tell me a joke?")
 sleep(3)
-alice.getResponse("What time is it?")
+alice.getResponse(u"What time is it?")
 sleep(3)
-alice.getResponse("Goodbye")
+# UTF8 test
+alice.getResponse(u"こんにちは")
