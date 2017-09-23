@@ -4,13 +4,13 @@
 # you need chrome browser as default
 #########################################
 
-# Start the webgui service without starting the browser
-webgui = Runtime.create("webgui","WebGui")
-webgui.autoStartBrowser(False)
-webgui.startService()
+# Start the WebGui service without starting the browser
+WebGui = Runtime.create("WebGui","WebGui")
+WebGui.autoStartBrowser(False)
+WebGui.startService()
 
 # Then start the browsers and show the WebkitSpeechRecognition service named webkitspeechrecognition
-webgui.startBrowser("http://localhost:8888/#/service/webkitspeechrecognition")
+WebGui.startBrowser("http://localhost:8888/#/service/webkitspeechrecognition")
 webkitspeechrecognition = Runtime.start("webkitspeechrecognition","WebkitSpeechRecognition")
 webkitspeechrecognition.setLanguage("en")
 

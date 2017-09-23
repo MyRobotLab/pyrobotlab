@@ -19,8 +19,8 @@ arduino.connect(port)
 # give it a second for the serial device to get ready
 sleep(1)
 
-# update the gui with configuration changes
-arduino.publishState()
+# update the GUI with configuration changes
+arduino.broadcastState()
 
 # set the pinMode of pin 8 to output (you can change the pin number if you want)
 arduino.pinMode(8, Arduino.OUTPUT)

@@ -50,7 +50,6 @@ if ('virtual' in globals() and virtual):
   opencv.setInputSource("file")
   opencv.setInputFileName("resource/OpenCV/testData/monkeyFace.mp4")
 
-# gui unfreeze
 gui.undockTab("tracker.opencv")
 opencv.broadcastState();
 sleep(1)
