@@ -19,8 +19,8 @@ arduino.connect(port)
 # Start the MotorDualPwm. You can use also use a different type of Motor
 motor = Runtime.start("diyservo.motor","MotorDualPwm")
 # Tell the motor to attach to the Arduino and what pins to use
-motor.attach(arduino)
 motor.setPwmPins(10,11)
+motor.attach(arduino)
 # Start the DiyServo
 servo = Runtime.start("diyservo","DiyServo")
 servo.attach(arduino,A0) # Attach the analog pin 0
