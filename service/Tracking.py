@@ -24,18 +24,20 @@ servoY.setMinMax(30, 150)  #minimum and maximum settings for the Y servo
 
 # changing Pid values change the 
 # speed and "jumpyness" of the Servos
-# pid = tracker.getPID()
+pid = tracker.getPID()
 
 # these are default setting
 # adjust to make more smooth
 # or faster
-# xpid.setPID(5.0, 5.0, 0.1)
-# ypid.setPID(5.0, 5.0, 0.1)
+
+pid.setPID("x",5.0, 5.0, 0.1)
+pid.setPID("y",5.0, 5.0, 0.1)
 
 # optional filter settings
 opencv = tracker.getOpenCV()
 
 # not for you, it's for test
+#virtual=1
 if ('virtual' in globals() and virtual):
   virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
   virtualArduino.connect(port)
