@@ -1,6 +1,7 @@
 # config 
 port = "COM11"
 # Code to be able to use this script with virtalArduino
+#virtual=1
 if ('virtual' in globals() and virtual):
     virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
     virtualArduino.connect(port)
@@ -11,7 +12,8 @@ bno = Runtime.start("bno","Bno055")
 
 # From version 1.0.2316 use attach instead of setController
 # bno.setController(arduino)
-bno.attach(arduino)
+bno.attach(arduino,"1","0x28")
+#3v=bno.attach(arduino,"1","0x29")
 
 
 # interrupt pin is attach to pin 8
