@@ -35,4 +35,4 @@ audiocapture.stopAudioCapture()
 audiocapture.playAudio()
 
 # save last capture
-audioIn.save("mycapture.wav");
+audiocapture.save("mycapture.wav");
