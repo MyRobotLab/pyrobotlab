@@ -33,3 +33,6 @@ sleep(5)
 audiocapture.stopAudioCapture()
 #it plays audio recorded
 audiocapture.playAudio()
+
+# save last capture
+audioIn.save("mycapture.wav");
