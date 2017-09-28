@@ -1,4 +1,4 @@
-joy = Runtime.createAndStart("joy","Joystick")
+joy = Runtime.start("joy","Joystick")
 #this set which kind of controller you want to poll data from
 #it is the number you can see in the Joystick GUI when you open the list of devices
 joy.setController(2)

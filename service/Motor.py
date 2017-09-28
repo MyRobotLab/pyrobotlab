@@ -1,16 +1,35 @@
+#########################################
+# Motor.py
+# categories: motor
+# more info @: http://myrobotlab.org/service/Motor
+#########################################
+# uncomment for virtual hardware
+virtual = True
+
 # demonstrates the basic motor api
 # an Arduino is used as a motor controller
 # this dc motor has a simple h-bridge
 # 1 pin controls power/speed with pulse width modulation
 # the other controls direction
 
-arduino = Runtime.start("arduino", "Arduino")
-arduino.connect("COM15")
+port = "COM99"
 
+# start the services
+arduino = Runtime.start("arduino", "Arduino")
 m1 = Runtime.start("m1","Motor")
+m1.setPwrPin(3)
+m1.setDirPin(4)
+
+# start optional virtual arduino service, used for test
+if ('virtual' in globals() and virtual):
+    virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
+    virtualArduino.connect(port)
+
+# connect the Arduino - (our motor controller)
+arduino.connect(port)
 
 # connect motor m1 with pwm power pin 3, direction pin 4
-arduino.motorAttach("m1", 3, 4) 
+arduino.attach(m1)
 
 # move both motors forward
 # at 50% power
