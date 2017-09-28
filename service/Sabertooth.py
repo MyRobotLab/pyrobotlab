@@ -6,7 +6,7 @@
 # uncomment for virtual hardware
 # virtual = True
 
-port = "COM99"
+port = "COM14"
 
 # start optional virtual serial service, used for test
 if ("virtual" in globals() and virtual):
@@ -18,29 +18,47 @@ if ("virtual" in globals() and virtual):
 
 # start the services
 sabertooth = Runtime.start("sabertooth","Sabertooth")
-serial = Runtime.start("serial","Serial")
 m1 = Runtime.start("m1","MotorPort")
 m2 = Runtime.start("m2","MotorPort")
 # joy = Runtime.start("joy","Joystick")
 
-# configure & attach services
-sabertooth.attach(serial)
+# configure services
 m1.setPort("m1")
 m2.setPort("m2")
 
+# attach services
+sabertooth.attach(m1)
+sabertooth.attach(m2)
+
 # FIXME - sabertooth.attach(motor1) & sabertooth.attach(motor2)
 # FIXME - motor1.attach(joystick) !
-
 sabertooth.connect(port)
 
-for x in range(0,120):
-  print('power ', x)
-  sabertooth.driveForwardMotor1(x)
-  sleep(0.5)
+m1.stop();
+m2.stop();
+
+# speed up the motor
+for x in range(0,100):
+  pwr = x * .01
+  print('power ', pwr)
+  m1.move(pwr)
+  sleep(0.01)
 
 sleep(1)
 
-for x in range(120, -1, -1):
-  print('power ', x)
-  sabertooth.driveForwardMotor2(x)
-  sleep(0.5)
+# slow down the motor
+for x in range(100, -1, -1):
+  pwr = x * .01
+  print('power ', pwr)
+  m1.move(pwr)
+  sleep(0.01)
+
+# move motor clockwise
+m1.move(0.3)
+sleep(1)
+m1.stop()
+
+# move motor counter-clockwise
+m1.move(-0.3)
+sleep(1)
+m1.stop()
