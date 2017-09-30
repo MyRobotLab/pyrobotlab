@@ -20,15 +20,15 @@ WebGui.autoStartBrowser(False)
 # with the startService command
 WebGui.startService()
 
-# Now that we have the WebGui service runningm we can start the Web Browser
-# sending it to a service page we will create shortly
-# It is very inportant that the part of the path after the service is the same 
-# name that you give your WebKitSpeechRecognition service in this case wksr
-WebGui.startBrowser("http://localhost:8888/#/service/wksr")
-
 # Ok now we need to create and start the WebKitSpeechRecognition Service
 # As with all service, it is created from the Runtime Service and can be started from there
 wksr = Runtime.start("wksr","WebkitSpeechRecognition")
+
+# Now that we have the WebGui service and a WebKitSpeechRecognition Service running 
+# we can start the Web Browser sending it to a service page we have now created.
+# It is very inportant that the part of the path after the service is the same 
+# name that you give your WebKitSpeechRecognition service in this case wksr
+WebGui.startBrowser("http://localhost:8888/#/service/wksr")
 
 # Now I'm an English speaker in Australia, so i will set the language to "en-AU"
 # with the setLanguage command.
