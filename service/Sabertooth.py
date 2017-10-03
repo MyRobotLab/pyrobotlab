@@ -20,7 +20,7 @@ if ("virtual" in globals() and virtual):
 sabertooth = Runtime.start("sabertooth","Sabertooth")
 m1 = Runtime.start("m1","MotorPort")
 m2 = Runtime.start("m2","MotorPort")
-# joy = Runtime.start("joy","Joystick")
+joy = Runtime.start("joy","Joystick")
 
 # configure services
 m1.setPort("m1")
