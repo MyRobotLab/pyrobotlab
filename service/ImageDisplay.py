@@ -6,28 +6,28 @@
  
 #Display an image as it is. The string might be an internet source or path to an image on the computer.
 imagedisplay = Runtime.start("imagedisplay","ImageDisplay")
-imagedisplay.display("http://www.iep.utm.edu/wp-content/media/Zeno_of_Elea-200x300.jpg")
+imagedisplay.display("https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/HONDA_ASIMO.jpg/800px-HONDA_ASIMO.jpg")
 sleep(2)
 #Closes all active images.
 imagedisplay.closeAll()
 
 #Display an image while fading it in at the beginning.
-imagedisplay.displayFadeIn("http://www.iep.utm.edu/wp-content/media/Zeno_of_Elea-200x300.jpg")
+imagedisplay.displayFadeIn("https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/FANUC_6-axis_welding_robots.jpg/800px-FANUC_6-axis_welding_robots.jpg")
 sleep(2)
 imagedisplay.closeAll()
 
 #Display an image faded by a given value between 0 and 1.
-imagedisplay.display("http://www.iep.utm.edu/wp-content/media/Zeno_of_Elea-200x300.jpg", 0.1)
+imagedisplay.display("https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Bio-inspired_Big_Dog_quadruped_robot_is_being_developed_as_a_mule_that_can_traverse_difficult_terrain.tiff/lossy-page1-461px-Bio-inspired_Big_Dog_quadruped_robot_is_being_developed_as_a_mule_that_can_traverse_difficult_terrain.tiff.jpg", 0.1)
 sleep(2)
 imagedisplay.closeAll()
 
 #Display an image scaled by a given multiplication factor.
-imagedisplay.displayScaled("http://www.iep.utm.edu/wp-content/media/Zeno_of_Elea-200x300.jpg", 2)
+imagedisplay.displayScaled("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Asimo_look_new_design.jpg/800px-Asimo_look_new_design.jpg", 2)
 sleep(2)
 imagedisplay.closeAll()
 
 #Display an image faded faded by a given value between 0 and 1 and scaled by a given multiplication factor.
-imagedisplay.displayScaled("http://www.iep.utm.edu/wp-content/media/Zeno_of_Elea-200x300.jpg", 0.1 ,2)
+imagedisplay.displayScaled("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Asimo_look_new_design.jpg/800px-Asimo_look_new_design.jpg", 0.1 ,2)
 sleep(2)
 imagedisplay.closeAll()
 
