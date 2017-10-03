@@ -4,7 +4,7 @@
 # more info @: http://myrobotlab.org/service/MultiWii
 #########################################
 # uncomment for virtual hardware
-virtual = True
+# virtual = True
 
 # port = "/dev/ttyUSB0"
 port = "COM15"
