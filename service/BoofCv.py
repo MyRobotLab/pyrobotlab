@@ -5,4 +5,4 @@
 # possibly more info @: http://myrobotlab.org/service/BoofCV
 #########################################
 # start the service
-boofcv = Runtime.start("boofcv","BoofCV")
+boofcv = Runtime.start("boofcv","BoofCv")
