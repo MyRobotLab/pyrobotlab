@@ -24,12 +24,15 @@ servo02 = Runtime.start("servo02","Servo")
 
 # initialize arduino
 # arduino.connect("/dev/ttyUSB0")
+print("connecting arduino to serial port")
 arduino.connect(port)
 
 # TODO - set limits
+print("setting min max limits of servo")
 servo01.setMinMax(0, 180)
 
 # attach servo
+print("attaching servo with pins to controller")
 servo01.attach(arduino.getName(), servoPin01)
 servo02.attach(arduino.getName(), servoPin02)
 
@@ -38,6 +41,7 @@ servo02.attach(arduino.getName(), servoPin02)
 # servo01.setAutoDisable(True) - FIXME waiting for mrl fix in Servo.java
 
 # fast sweep
+print("fast sweep")
 servo01.moveTo(179)
 sleep(0.5)
 
@@ -58,6 +62,7 @@ sleep(0.5)
 
 # sync servo02 with servo01
 # now servo2 will be a slave to servo01
+print("syncing servo02 with servo01")
 servo02.sync(servo01)
 
 servo01.moveTo(10)
@@ -70,15 +75,16 @@ servo01.moveTo(10)
 sleep(0.5)
 
 # speed changes
-servo01.setSpeed(0.99) # set speed to 99% of full speed
+print("speed changes")
+servo01.setVelocity(0.99) # set speed to 99% of full speed
 servo01.moveTo(90)
 sleep(0.5)
 
-servo01.setSpeed(0.50) # set speed to 50% of full speed
+servo01.setVelocity(0.50) # set speed to 50% of full speed
 servo01.moveTo(180)
 sleep(4)
 
-servo01.setSpeed(1.0) # set speed to 100% of full speed
+servo01.setVelocity(1.0) # set speed to 100% of full speed
 
 # moving to rest position
 servo01.rest()
@@ -98,23 +104,26 @@ servo01.moveTo(10)
 sleep(0.5)
 
 # speed changes
-servo01.setVelocity(15) # set velocity to something slow
+servo01.setVelocity(60) # set velocity to something slow
 servo01.moveToBlocking(60)
 
 servo01.setVelocity(200) # set velocity to something fast
 servo01.moveToBlocking(180)
 
-servo01.setVelocity(-1) # set velocity to maximum
+servo01.setVelocity(-1) # disable incremental velocity
 
 # moving to rest position
+print("servo01 rest")
 servo01.rest()
 sleep(2)
 
 # turn off power
+print("turn of servos pwm")
 servo01.disable()
 servo02.disable()
 
 # detaching servo01 from controller
 # TODO - make arduino.detach() detach all services
+print("detaching servos from controller")
 servo01.detach()
 servo02.detach()
