@@ -13,7 +13,8 @@ speech = Runtime.createAndStart("Speech", "NaturalReaderSpeech")
 speech.setVoice(voiceType)
 speech.setLanguage(lang)
 
-frequency	=  50 #50 Hz servo frequency
+# 50 Hz servo frequency
+frequency	=  50 
  
 adaFruit16c1 = Runtime.createAndStart("AdaFruit16C1","Adafruit16CServoDriver")
 raspi = Runtime.createAndStart("RasPi","RasPi")
@@ -23,7 +24,7 @@ adaFruit16c1.setPWMFreq(0,frequency)
 jawPin = 8
 jawServo = Runtime.createAndStart("jaw","Servo")
 mouth = Runtime.createAndStart("Mouth","MouthControl")
-sleep(20) #fix for servo attach timing issue as at myrobotlab 236x development builds
+sleep(20) # fix for servo attach timing issue as at myrobotlab 236x development builds
 
 jawServo.attach(adaFruit16c1,jawPin,150,-1)
 jaw = mouth.getJaw()
@@ -31,8 +32,8 @@ sleep(1)
 jaw.attach(adaFruit16c1,jawPin)
 
 jawServo.setMinMax(140,180) # set min and max jaw position accordingly for your own use-case
-							# these min/max settings work for me for this particular jaw: https://www.thingiverse.com/thing:992918
-							# @Mats, thanks :) 				
+			    # these min/max settings work for me for this particular jaw: https://www.thingiverse.com/thing:992918
+			    # @Mats, thanks :) 				
 jawServo.setRest(175)
 jawServo.moveTo(100)
 jawServo.rest()
