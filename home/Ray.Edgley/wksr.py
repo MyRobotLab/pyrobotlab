@@ -106,7 +106,3 @@ htmlfilter.addTextListener(mouth)
 # The robot will respond with you can call me fred.
  
 # Next step is Have Fun.
- 
-# Ok now we need to create and start the WebKitSpeechRecognition Service
-# As with all service, it is created from the Runtime Service and can be started from there
-wksr = Runtime.start("wksr","WebkitSpeechRecognition")
