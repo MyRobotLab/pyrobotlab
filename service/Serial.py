@@ -14,7 +14,7 @@ python = Runtime.start("python","Python")
 gui = Runtime.start("gui","SwingGui")
 uart = None
 
-# start optional virtual arduino service, used for test
+# start optional virtual serial service, used for test
 if ("virtual" in globals() and virtual):
     uart = serial.connectVirtualUart(port)
 

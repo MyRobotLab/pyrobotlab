@@ -1,7 +1,22 @@
+#########################################
+# MultiWii.py
+# categories: sensor
+# more info @: http://myrobotlab.org/service/MultiWii
+#########################################
+# uncomment for virtual hardware
+# virtual = True
+
+# port = "/dev/ttyUSB0"
+port = "COM15"
+
+# start optional virtual arduino service, used for test
+if ('virtual' in globals() and virtual):
+    virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
+    virtualArduino.connect(port)
+
 #define POLL_PERIOD 20
 serial = Runtime.start("serial","Serial")
 
-COMPORT= "COM19"
 BAUDRATE = 9600
 #define MSP_SET_RAW_RC        200
 #define MSP_SET_RAW_RC_LENGTH 16
@@ -21,16 +36,18 @@ AUX4     =  7
 
 #RC signals to send to the quad
 #format: { roll, throttle, yaw, pitch, 0, 0, 0, 0 }
-uint16_t rc_signals[8] = { 1234 }; 
+# uint16_t rc_signals[8] = { 1234 }; 
 
 #Buffer for storing the serializes byte form of the RC signals
-uint8_t rc_bytes[16] = { 0 };
+# uint8_t rc_bytes[16] = { 0 };
 
-serial.connect(COMPORT,BAUDRATE,8,1,0);
+serial.connect(port,BAUDRATE,8,1,0);
 
-send_msp(MSP_SET_RAW_RC, rc_bytes, MSP_SET_RAW_RC_LENGTH);
+# send_msp(MSP_SET_RAW_RC, rc_bytes, MSP_SET_RAW_RC_LENGTH);
 
 def arm():
+
+  print("arm movement")
   msgType = 200 # MSP_SET_RAW_RC
   
   # header $M<
@@ -38,7 +55,8 @@ def arm():
   serial.write('M')
   serial.write('<')
   serial.write(msgType)
-  serial.write(MsgLength??)
+  serial.write(16) # ? not sure guessing 0 no payload
+  # serial.write(MsgLength??)
   
   # start checksum
   checksum = 0

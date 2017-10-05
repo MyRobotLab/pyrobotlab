@@ -4,11 +4,13 @@
 #########################################
 
 topic = "myrobotlab/test"
-qos = 2
-broker = "tcp://broker.mqttdashboard.com:1883" 
+qos = 2 # At most once (0), At least once (1), Exactly once (2).
+broker = "tcp://broker.mqttdashboard.com:1883"
 
-clientID = "MRLMQTTpython1"
-mqtt = Runtime.createAndStart("mqtt", "Mqtt")
+clientID = "MrlMqttPython1"
+mqtt = Runtime.start("mqtt", "Mqtt")
+python = Runtime.start("python", "Mqtt")
+
 print mqtt.getDescription()
 
 mqtt.setBroker(broker)
@@ -20,11 +22,12 @@ mqtt.connect(broker)
 
 mqtt.subscribe("myrobotlab/test", 0)
 mqtt.publish("hello myrobotlab world")
+python.subscribe("mqtt", "publishMqttMsgString")
+# or mqtt.addListener("publishMqttMsgString", "python")
 
-mqtt.addListener("publishMqttMsgString", "python", "publishMqttMsgString")
-	 
 #  MQTT call-back
-
-def publishMqttMsgString(msg):
-	print "message : ",msg[0]
+# publishMqttMsgString --> onMqttMsgString(msg)
+def onMqttMsgString(msg):
+  # print "message : ", msg
+  print "message : ",msg[0]
   print "topic : ",msg[1]

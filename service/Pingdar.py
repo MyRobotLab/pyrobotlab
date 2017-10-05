@@ -27,7 +27,7 @@ if ('virtual' in globals() and virtual):
 # attach all the parts
 arduino.connect(port);
 sr04.attach(arduino, trigPin, echoPin)
-servo.attach(arduino, 2);
+servo.attach(arduino, servoPin);
 gui.fullscreen(True);
 gui.undockTab("pingdar")
 
