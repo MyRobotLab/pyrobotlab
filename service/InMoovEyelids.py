@@ -46,6 +46,11 @@ inmooveyelids.attach(arduino,eyelidLeftPin,eyelidRightPin)
 # Set it to True for auto power off servos
 inmooveyelids.setAutoDisable(False)
 
+# servos limits
+inmooveyelids.eyelidleft.map(0,180,20,100)
+inmooveyelids.eyelidright.map(0,180,20,100)
+inmooveyelids.eyelidright.setInverted(True)
+
 inmooveyelids.blink()
 sleep(2)
 inmooveyelids.blink()
