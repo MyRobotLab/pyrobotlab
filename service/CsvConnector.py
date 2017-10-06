@@ -16,6 +16,8 @@ csvconnector = Runtime.start("csvconnector","CsvConnector")
 csvconnector.setFilename("crazybigdata.csv")
 
 csvconnector.setColumns("FirstName", "LastName", "Sex", "Occupation", "Address")
+csvconnector.setSeparator(";")
+csvconnector.addListener("publishDocument","python","onDocument")
 
 # start crawling
 csvconnector.startCrawling()
