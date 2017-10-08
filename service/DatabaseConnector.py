@@ -13,9 +13,8 @@ database.addListener("publishDocument","python","onDocument")
 database.setIdField("actor_id")
 database.setSql("select actor_id, first_name, last_name from actor")
 
+if ('virtual' in globals() and virtual)
 # start crawling
-database.startCrawling()
-
-sleep(5)
-
-database.stopCrawling()
+  database.startCrawling()
+  sleep(5)
+  database.stopCrawling()
