@@ -24,5 +24,7 @@ motor.attach(arduino)
 # Start the DiyServo
 servo = Runtime.start("diyservo","DiyServo")
 servo.attach(arduino,A0) # Attach the analog pin 0
+# Set the PID values. This example shows what DiyServo has as default.
+servo.pid.setPID("diyservo", 0.020, 0.001, 0.0);
 servo.moveTo(90)
 # At this stage you can use the gui or a script to control the DiyServo
