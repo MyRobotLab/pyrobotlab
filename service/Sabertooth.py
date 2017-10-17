@@ -29,6 +29,8 @@ m2.setPort("m2")
 # attach services
 sabertooth.attach(m1)
 sabertooth.attach(m2)
+m1.attach(joy.getAxis("x"))
+
 
 # FIXME - sabertooth.attach(motor1) & sabertooth.attach(motor2)
 # FIXME - motor1.attach(joystick) !
