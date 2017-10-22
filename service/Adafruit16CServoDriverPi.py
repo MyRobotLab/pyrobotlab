@@ -2,15 +2,25 @@
 # This script is if you use the GPOI pins of the Raspberry PI
 raspi = Runtime.createAndStart("RasPi","RasPi")
 # adaFruit16c.setController("RasPi","1","0x40")
+adaFruit16c = Runtime.start("AdaFruit16C","Adafruit16CServoDriver")
 adaFruit16c.attach("RasPi","1","0x40")
 #
 # This part is common for both devices and creates two servo instances
 # on port 3 and 8 on the Adafruit16CServoDriver
 # Change the names of the servos and the pin numbers to your usage
 thumb = Runtime.createAndStart("Thumb", "Servo")
-elbow = Runtime.createAndStart("Elbow", "Servo")
-# attach it to the pwm board - pin 3 & 8
-thumb.attach(adaFruit16c,3)
-elbow.attach(adaFruit16c,8)
+# attach it to the pwm board - pin 9
+thumb.attach(adaFruit16c,9)
 # When this script has been executed you should be able to 
 # move the servos using the GUI or using python
+thumb.setVelocity(40)
+thumb.moveToBlocking(0)
+thumb.moveToBlocking(180)
+thumb.disable()
+sleep(1)
+thumb.enable()
+print "no worky !"
+thumb.moveToBlocking(0)
+thumb.moveToBlocking(180)
+
+
