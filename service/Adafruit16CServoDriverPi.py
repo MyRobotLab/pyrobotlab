@@ -16,10 +16,6 @@ thumb.attach(adaFruit16c,9)
 thumb.setVelocity(40)
 thumb.moveToBlocking(0)
 thumb.moveToBlocking(180)
-thumb.disable()
-sleep(1)
-thumb.enable()
-print "no worky !"
 thumb.moveToBlocking(0)
 thumb.moveToBlocking(180)
 
