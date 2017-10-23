@@ -1,47 +1,29 @@
+#########################################
+# InMoov.py
+# more info @: http://myrobotlab.org/service/InMoov
+#########################################
 # a very minimal script for InMoov
+# this script is provided as a basic guide for InMoov service
+# InMoov now can be started in modular pieces through the skeleton.config from full script
 # although this script is very short you can still
-# do voice control of a right hand or finger box
-# for any command which you say - you will be required to say a confirmation
-# e.g. you say -> open hand, InMoov will ask -> "Did you say open hand?", you will need to
-# respond with a confirmation ("yes","correct","yeah","ya")
-useRightVirtualArduino = True
-useLeftVirtualArduino = True
-useVirtualInMoov = True
-
-useVirtualArduinos = True
+# do voice control of a FingerStarter or hand
+# It uses WebkitSpeechRecognition, so you need to use Chrome as your default browser for this script to work
+# virtual = True
 
 rightPort = "COM8"
 leftPort = "COM10"
 
 i01 = Runtime.start("i01", "InMoov")
 
-if (useRightVirtualArduino):
-    rightVirtual = Runtime.start("rightVirtual","VirtualArduino")
-    rightVirtual.connect(rightPort)
-
-if (useLeftVirtualArduino):
-    leftVirtual  = Runtime.start("leftVirtual","VirtualArduino")
-    leftVirtual.connect(leftPort)
-
+if ('virtual' in globals() and virtual):
+    leftPortvirtualArduino = Runtime.start("leftPortvirtualArduino", "VirtualArduino")
+    leftPortvirtualArduino.connect(leftPort)
+    rightPortvirtualArduino = Runtime.start("rightPortvirtualArduino", "VirtualArduino")
+    rightPortvirtualArduino.connect(rightPort)
 
 # starting parts
-i01.startEar()
-i01.startMouth()
-#to tweak the default voice
-##############
-i01.startRightHand(rightPort)
-# tweaking defaults settings of right hand
-#i01.rightHand.thumb.setMinMax(55,135)
-#i01.rightHand.index.setMinMax(0,160)
-#i01.rightHand.majeure.setMinMax(0,140)
-#i01.rightHand.ringFinger.setMinMax(48,145)
-#i01.rightHand.pinky.setMinMax(45,146)
-#i01.rightHand.thumb.map(0,180,55,135)
-#i01.rightHand.index.map(0,180,0,160)
-#i01.rightHand.majeure.map(0,180,0,140)
-#i01.rightHand.ringFinger.map(0,180,48,145)
-#i01.rightHand.pinky.map(0,180,45,146)
-#################
+i01.startAll(leftPort,rightPort)
+if ('virtual' in globals() and virtual):i01.startVinMoov()
 
 # verbal commands
 ear = i01.ear
