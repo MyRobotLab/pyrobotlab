@@ -1,7 +1,14 @@
-# This example shows how to use the Adafruit16CServoDriver 
+#########################################
+# Adafruit16CServoDriver.py
+# description: servo control
+# categories: servo control
+# more info @: http://myrobotlab.org/service/Adafruit16CServoDriver
+#########################################
+
+# This example shows how to use the Adafruit16CServoDriver
 # It can be used with Arduino, RasPi or Esp8266_01
 # From version 1.0.2316 use attach instead of setController
-# 
+#
 # config
 port = "COM3"
 # Code to be able to use this script with virtalArduino
