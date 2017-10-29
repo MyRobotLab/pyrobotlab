@@ -1,8 +1,22 @@
-# The AFMotor API is supported through Jython 
+#########################################
+# AdafruitMotorShield.py
+# description: motor control
+# categories: motor control
+# more info @: http://myrobotlab.org/service/AdafruitMotorShield
+#########################################
+# virtual = True
+port = "COM99"
+
+# virtual hardware
+if ('virtual' in globals() and virtual):
+    virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
+    virtualArduino.connect(port)
+
+# The AFMotor API is supported through Jython
 fruity = Runtime.createAndStart("fruity","AdafruitMotorShield")
 
 # connect the arduino to serial com port 3
-fruity.connect("COM3")
+fruity.connect(port)
 
 # create a motor on port 4 of the AdaFruit board
 motor1 = fruity.createDCMotor(4)
