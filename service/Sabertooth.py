@@ -5,7 +5,7 @@
 #########################################
 # uncomment for virtual hardware
 from org.myrobotlab.service import Serial
-virtual = True
+# virtual = True
 
 # sabertooth serial port - if on windows might be COM4
 port = "/dev/ttyUSB0"
@@ -23,7 +23,7 @@ if ("virtual" in globals() and virtual):
 
 # TODO - list & print controllers
 # TODO - list & print controllers
-# TODO - list & print axis  
+# TODO - list & print axis
 
 # start the services
 sabertooth = Runtime.start("sabertooth","Sabertooth")
