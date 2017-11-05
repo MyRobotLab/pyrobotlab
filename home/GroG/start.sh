@@ -2,6 +2,10 @@
 #################################
 # bash script for starting robot
 #################################
+REPOS_ROOT="/home/gperry/mrl.develop.head"
+
+# refresh pyrobotlab repo
+sudo -u gperry -H sh -c "cd /home/$REPOS_ROOT/pyrobotlab; git pull" 
 
 # got to future "service" directory
 cd /opt/mrl
