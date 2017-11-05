@@ -21,6 +21,10 @@ if ("virtual" in globals() and virtual):
     uart = Serial.connectVirtualUart(port)
     uart.logRecv(True) # dump bytes sent from sabertooth
 
+# TODO - list & print controllers
+# TODO - list & print controllers
+# TODO - list & print axis  
+
 # start the services
 sabertooth = Runtime.start("sabertooth","Sabertooth")
 m1 = Runtime.start("m1","MotorPort")
@@ -73,3 +77,6 @@ def autoTest():
     m1.move(-0.3)
     sleep(1)
     m1.stop()
+
+sleep(3)
+autoTest()
