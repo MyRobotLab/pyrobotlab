@@ -36,7 +36,7 @@ m2.setPort("m2")
 sabertooth.attach(m1)
 sabertooth.attach(m2)
 m1.attach(joy.getAxis("y"))
-m1.attach(joy.getAxis("rz"))
+m2.attach(joy.getAxis("rz"))
 
 # FIXME - sabertooth.attach(motor1) & sabertooth.attach(motor2)
 # FIXME - motor1.attach(joystick) !
@@ -45,6 +45,8 @@ sabertooth.connect(port)
 m1.stop();
 m2.stop();
 
+# call the function autoTest if you want code to
+# run through a test vs joystick input
 def autoTest():
     # speed up the motor
     for x in range(0,100):
