@@ -36,6 +36,10 @@ joy.setController(controllerIndex)
 m1.setPort("m1")
 m2.setPort("m2")
 
+# in some cases its necessary to "invert" a motor
+m1.setInverted(True)
+m2.setInverted(True)
+
 # attach services
 sabertooth.attach(m1)
 sabertooth.attach(m2)
