@@ -69,6 +69,11 @@ sleep(1)
 # simple point detection and tracking
 # tracker.startLKTracking()
 tracker.faceDetect()
+sleep(10)
 
+# track and recognize faces
+# you need to learn at least 2 faces to get it worky
+if ('virtual' in globals() and virtual):opencv.captureFromImageFile("resource/OpenCV/testData/rachel.jpg")
+tracker.faceDetect(True)
 # scans for faces - tracks if found
 # tracker.findFace()
