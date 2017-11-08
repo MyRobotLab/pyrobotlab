@@ -8,7 +8,10 @@ from org.myrobotlab.service import Serial
 # virtual = True
 
 # sabertooth serial port - if on windows might be COM4
-port = "/dev/ttyUSB0"
+# port = "COM14"
+# port = "/dev/ttyUSB0"
+# I use udev rules to always make it the same port
+port = "/dev/ftdi0"
 
 # controller index for the joystick
 controllerIndex = 0
