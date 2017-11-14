@@ -10,6 +10,9 @@ androidspeechrecognition = Runtime.start("androidspeechrecognition","AndroidSpee
 # start mouth
 marySpeech = Runtime.createAndStart("marySpeech", "MarySpeech")
 
+# shutdown microphone if robot speaking
+androidspeechrecognition.addMouth(marySpeech)
+
 # auto rearm microphone
 androidspeechrecognition.setAutoListen(True)
 androidspeechrecognition.addCommand("turn on the light", "python", "lightOn")
