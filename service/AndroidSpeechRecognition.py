@@ -1,7 +1,6 @@
 #########################################
 # AndroidSpeechRecognition.py
 # more info @: http://myrobotlab.org/service/AndroidSpeechRecognition
-# client : https://github.com/moz4r/SpeechRecognitionMRL/blob/master/AndroidSpeechRecognition.apk
 #########################################
 
 # start the service
