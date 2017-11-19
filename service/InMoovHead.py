@@ -3,21 +3,22 @@
 # more info @: http://myrobotlab.org/service/InMoovHead
 #########################################
 
-#from : InMoov.minimalHead.py
-# this script is provided as a basic guide
+
+# this script is provided as a basic scripting guide
 # most parts can be run by uncommenting them
-# InMoov now can be started in modular pieces through the skeleton.config from full script
+# InMoov now can be started in modular pieces through the .config files from full script
 # although this script is very short you can still
 # do voice control of a InMoov head
 # It uses WebkitSpeechRecognition, so you need to use Chrome as your default browser for this script to work
-# virtual = True
+
 
 # Change to the port that you use
 leftPort = "COM9"
 rightPort = "COM7"
-##############
 
-# start optional virtual arduino service, used for internal test
+
+# start optional virtual arduino service, used for internal test and virtual inmoov
+# virtual=True
 if ('virtual' in globals() and virtual):
     virtualArduinoLeft = Runtime.start("virtualArduinoLeft", "VirtualArduino")
     virtualArduinoLeft.connect(leftPort)
@@ -29,10 +30,10 @@ if ('virtual' in globals() and virtual):
 #to tweak the default voice
 Voice="cmu-bdl-hsmm" #Male US voice 
 #Voice="cmu-slt-hsmm" #Default female for MarySpeech
-voiceType = Voice
+
 mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
 #mouth.installComponentsAcceptLicense(Voice)
-mouth.setVoice(voiceType)
+mouth.setVoice(Voice)
 ##############
 # starting InMoov service
 i01 = Runtime.create("i01", "InMoov")
@@ -90,8 +91,7 @@ i01.eyelids.eyelidleft.attach(right,22)
 i01.eyelids.eyelidright.attach(right,24)
 #i01.eyelids.autoBlink(True)
 #################
-i01.head.enableAutoDisable(False)
-i01.head.enableAutoEnable(True)
+head.setAutoDisable(True)
 #################
 i01.startEyesTracking(leftPort,22,24)
 i01.startHeadTracking(leftPort,12,13)
@@ -142,8 +142,6 @@ def relax():
   i01.setHeadVelocity(30, 30, 30)
   i01.moveHead(90,90,90)
   i01.mouth.speak("I am relaxed")
-  sleep(5)
-  i01.disable()
 
 def fullspeed():
   i01.setHeadVelocity(-1, -1, -1, -1, -1, -1)
@@ -153,53 +151,32 @@ def fullspeed():
 def lookrightside():
   i01.setHeadVelocity(40, 40, 40)
   i01.moveHead(80,40,20)
-  sleep(3)
-  i01.disable()
 
 def lookleftside():
   i01.setHeadVelocity(40, 40, 40)
   i01.moveHead(80,140,160)
-  sleep(3)
-  i01.disable()
 
 def lookinmiddle():
   i01.setHeadVelocity(40, 40, 40)
   i01.moveHead(90,90,90)
-  sleep(3)
-  i01.disable()
 
 def trackHumans():
   i01.headTracking.faceDetect()
-  i01.eyesTracking.faceDetect()
+  #i01.eyesTracking.faceDetect()
   i01.mouth.speak("I start my tracking")
-  fullspeed()
 
 def trackPoint():
   i01.headTracking.startLKTracking()
-  i01.eyesTracking.startLKTracking()
+  #i01.eyesTracking.startLKTracking()
   i01.mouth.speak("I am tracking the point")
   fullspeed()
 
 def stopTracking():
   i01.headTracking.stopTracking()
-  i01.eyesTracking.stopTracking()
+  #i01.eyesTracking.stopTracking()
   i01.mouth.speak("I am stoping my tracking")
 
 def facerecognizer():
-  i01.mouth.speak("I need to be trained with at least two faces")
-  sleep(3)
-  if (i01.eyesTracking.getOpenCV().capturing):
-    i01.headTracking.stopTracking()
-    i01.eyesTracking.stopTracking()
-    i01.opencv.addFilter("PyramidDown")
-    i01.opencv.setDisplayFilter("FaceRecognizer")
-    fr=i01.opencv.addFilter("FaceRecognizer")
-    fr.train()
-
-  else:
-    i01.opencv.capture()
-    i01.opencv.addFilter("PyramidDown")
-    i01.opencv.setDisplayFilter("FaceRecognizer")
-    fr=i01.opencv.addFilter("FaceRecognizer")
-    fr.train()
-  i01.disable()
+  i01.mouth.speakBlocking("I need to be trained with at least two faces")
+  fr=i01.headTracking.faceDetect(faceRecognizerActivated)
+  fr.train()# it takes some time to train and be able to recognize face

@@ -17,6 +17,9 @@ webkitspeechrecognition.setLanguage("en")
 # start mouth
 marySpeech = Runtime.start("marySpeech", "MarySpeech")
 
+# shutdown microphone if robot speaking
+webkitspeechrecognition.addMouth(marySpeech)
+
 # auto rearm microphone
 webkitspeechrecognition.setAutoListen(False)
 
