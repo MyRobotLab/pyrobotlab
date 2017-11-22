@@ -1,7 +1,7 @@
 # Initiate the Esp8266-01
-esp = Runtime.createAndStart("esp","Esp8266_01")
-oled = Runtime.createAndStart("OLED","OledSsd1306")
-oled.setController(esp,"0","0x3C")
+esp = Runtime.start("esp","Esp8266_01")
+oled = Runtime.start("oled","OledSsd1306")
+oled.attach(esp,"0","0x3C")
 # Demo to show how to write images
 # Images arrays are created using the LCDAssistance as described here:
 # https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples
