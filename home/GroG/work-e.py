@@ -1,7 +1,5 @@
 #########################################
-# Sabertooth.py
-# categories: motor
-# more info @: http://myrobotlab.org/service/Sabertooth
+# work-e.py
 #########################################
 # uncomment for virtual hardware
 from org.myrobotlab.service import Serial
@@ -56,34 +54,4 @@ sabertooth.connect(port)
 m1.stop();
 m2.stop();
 
-# call the function autoTest if you want code to
-# run through a test vs joystick input
-def autoTest():
-    # speed up the motor
-    for x in range(0,100):
-      pwr = x * .01
-      print('power ', pwr)
-      m1.move(pwr)
-      sleep(0.01)
-
-    sleep(1)
-
-    # slow down the motor
-    for x in range(100, -1, -1):
-      pwr = x * .01
-      print('power ', pwr)
-      m1.move(pwr)
-      sleep(0.01)
-
-    # move motor clockwise
-    m1.move(0.3)
-    sleep(1)
-    m1.stop()
-
-    # move motor counter-clockwise
-    m1.move(-0.3)
-    sleep(1)
-    m1.stop()
-
-sleep(3)
-autoTest()
+# good to go - play with joystick
