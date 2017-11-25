@@ -7,3 +7,7 @@
 
 # start the service
 mimicspeech = Runtime.start('mimicspeech','MimicSpeech')
+mimicspeech.speakBlocking('hello, this is mimic speech from mycroft project')
+mimicspeech.speakBlocking('I am a speech synthesis program')
+mimicspeech.speakBlocking('How was that ?')
+mimicspeech.speakBlocking('can someone fix my list voices, i think its broke')
