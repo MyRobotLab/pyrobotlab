@@ -1,0 +1,10 @@
+port = "COM99"
+arduino = Runtime.start("arduino","Arduino")
+vard = Runtime.start("va","VirtualArduino")
+vard.connect(port)
+arduino.connect(port)
+servo1 = Runtime.start("servo1","Servo")
+servo2 = Runtime.start("servo2","Servo")
+servo1.attach("arduino",1)
+servo2.attach("arduino",2)
+servo1.sync(servo2)
