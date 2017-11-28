@@ -14,4 +14,4 @@ cd /opt/mrl
 # this starts only 1 service (besides Runtime) and its python
 # after the python service is created the Sabertooth.py service script is executed
 # it binds the joystick axis with the wheel motors
-java -jar myrobotlab.jar -service python Python -invoke python execFile "/home/gperry/mrl.develop.head/pyrobotlab/service/Sabertooth.py"
+java -jar myrobotlab.jar -service python Python -invoke python execFile "/home/gperry/mrl.develop.head/pyrobotlab/home/GroG/work-e.py"
