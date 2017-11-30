@@ -12,8 +12,6 @@ rxtxPort = "Serial2"
 if ('virtual' in globals() and virtual):
     virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
     virtualArduino.connect(port)
-    virtualNano = Runtime.start("virtualNano", "VirtualArduino")
-    virtualNano.connect(rxtxPort)
 # end used for internal test
 
 #Starting Arduino Service
@@ -21,16 +19,20 @@ arduino = Runtime.start("arduino","Arduino")
 arduino.setBoardMega() #or arduino.setBoardUno()
 arduino.connect(port)
 
-#Starting optional RX/TX connected slave arduino
-arduinoNano = Runtime.start("arduino","Arduino")
-arduinoNano.setBoardNano() #or arduino.setBoardUno()
-arduinoNano.connect(rxtxPort)
-
 #Starting NeoPixel Service
 neopixel = Runtime.start("neopixel","NeoPixel")
 
 #neopixel.attach(arduino, pin, number of pixel)
-neopixel.attach(arduinoNano, 2, 16)
+if ('virtual' in globals() and virtual):
+  #Attach Neopixel to main arduino
+  neopixel.attach(arduino, 2, 16)
+else:
+  #Starting optional RX/TX connected slave arduino and Attach Neopixel to slave arduino
+  arduinoNano = Runtime.start("arduinoNano","Arduino")
+  arduinoNano.setBoardNano() #or arduino.setBoardUno()
+  arduinoNano.connect(arduino,rxtxPort)
+  neopixel.attach(arduinoNano, 2, 16)
+
 
 #Animations;
 #"Color Wipe"
