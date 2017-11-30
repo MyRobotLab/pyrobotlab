@@ -1,12 +1,13 @@
+from org.myrobotlab.image import Util
 # start a opencv service
 
 opencv = Runtime.start("opencv","OpenCV")
-python = Runtime.start("python","Python")
-gui = Runtime.start("gui","SwingGui")
+#gui.setActiveTab("opencv")
 
 # add python as a listener to OpenCV data
 # this tells the framework - whenever opencv.publishOpenCVData is invoked
 # python.onOpenCVData will get called
+python = Runtime.start("python","Python")
 python.subscribe("opencv", "publishOpenCVData")
 
 
@@ -20,13 +21,13 @@ def onOpenCVData(data):
 
 # to capture from an image on the file system
 # opencv.captureFromImageFile("C:\Users\grperry\Desktop\mars.jpg")
-gui.undockTab("opencv")
+
 # not for you, it's for test
 if ('virtual' in globals() and virtual):
   opencv.setMinDelay(500)
   opencv.setFrameGrabberType("org.bytedeco.javacv.FFmpegFrameGrabber")
   opencv.setInputSource("file")
-  opencv.setInputFileName("resource/OpenCV/testData/monkeyFace.mp4")
+  opencv.setInputFileName(Util.getRessourceDir()+"OpenCV/testData/monkeyFace.mp4")
 
 opencv.capture()
 
@@ -85,4 +86,3 @@ canny.highThreshold = 100.0
 sleep(4)
 opencv.removeFilters()
 opencv.stopCapture()
-gui.dockTab("opencv")
