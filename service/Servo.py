@@ -22,14 +22,19 @@ arduino = Runtime.start("arduino","Arduino")
 servo01 = Runtime.start("servo01","Servo")
 servo02 = Runtime.start("servo02","Servo")
 
+
 # initialize arduino
-# arduino.connect("/dev/ttyUSB0")
+# linux or macos -> arduino.connect("/dev/ttyUSB0")
 print("connecting arduino to serial port")
 arduino.connect(port)
 
-# TODO - set limits
+# set limits
 print("setting min max limits of servo")
-servo01.setMinMax(0, 180)
+# servo01.setMinMax(0, 180)
+servo01.map(0, 180, 0, 180)
+
+# set rest position
+servo01.setRest(90)
 
 # attach servo
 print("attaching servo with pins to controller")
@@ -38,12 +43,30 @@ servo02.attach(arduino.getName(), servoPin02)
 
 # auto disable - this enables (starts pwm) before a movement
 # and disables (stops pwm) after a movement
-# servo01.setAutoDisable(True) - FIXME waiting for mrl fix in Servo.java
+servo01.setAutoDisable(True)
+servo01.disableDelayIfVelocity=1000 # grace period for autoDisable
+servo02.setAutoDisable(False)
 
-# fast sweep
+# speed changes
+print("speed changes")
+servo01.setVelocity(20) ## Low velocity
+servo01.moveToBlocking(90) # moveToBlocking will wait for finished move
+
+servo01.setVelocity(50) ## medium velocity
+servo01.moveToBlocking(180) # moveToBlocking will wait for finished move
+
+servo01.setVelocity(-1.0) ## max velocity ( no more speed conytol )
+servo01.moveTo(0) # we cannot use moveToBlocking if servo velocity is set to -1 ( max ) !!
+sleep(2)
+
+
+# fast sweep 10 seconds
 print("fast sweep")
-servo01.moveTo(179)
-sleep(0.5)
+#servo01.sweep(0, 180, delay, step);
+servo01.sweep(0, 180, 50, 5);
+sleep(10)
+servo01.stop()
+
 
 # print info
 print("servo position :{}".format(servo01.getPos()))
@@ -54,11 +77,6 @@ print("servo is inverted :{}".format(servo01.isInverted()))
 print("servo min :{}".format(servo01.getMin()))
 print("servo max :{}".format(servo01.getMax()))
 
-servo01.moveTo(10)
-sleep(0.5)
-
-servo01.moveTo(179)
-sleep(0.5)
 
 # sync servo02 with servo01
 # now servo2 will be a slave to servo01
@@ -74,50 +92,18 @@ sleep(0.5)
 servo01.moveTo(10)
 sleep(0.5)
 
-# speed changes
-print("speed changes")
-servo01.setVelocity(0.99) # set speed to 99% of full speed
-servo01.moveTo(90)
-sleep(0.5)
-
-servo01.setVelocity(0.50) # set speed to 50% of full speed
-servo01.moveTo(180)
-sleep(4)
-
-servo01.setVelocity(1.0) # set speed to 100% of full speed
-
-# moving to rest position
-servo01.rest()
-sleep(0.5)
 
 # writing position in us
 servo01.writeMicroseconds(1875)
 print("servo position :{}".format(servo01.getPos())) # check if correct ?
 
-servo01.moveTo(10)
-sleep(0.5)
-
-servo01.moveTo(179)
-sleep(0.5)
-
-servo01.moveTo(10)
-sleep(0.5)
-
-# speed changes
-servo01.setVelocity(60) # set velocity to something slow
-servo01.moveToBlocking(60)
-
-servo01.setVelocity(200) # set velocity to something fast
-servo01.moveToBlocking(180)
-
-servo01.setVelocity(-1) # disable incremental velocity
 
 # moving to rest position
 print("servo01 rest")
 servo01.rest()
 sleep(2)
 
-# turn off power
+# turn off power if servo01.setAutoDisable(False)
 print("turn of servos pwm")
 servo01.disable()
 servo02.disable()

@@ -7,10 +7,18 @@
 
 # start the service
 
+# port = "/dev/ttyUSB0"
+port = "COM15"
+
+# start optional virtual arduino service, used for test
+if ('virtual' in globals() and virtual):
+    virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
+    virtualArduino.connect(port)
+    
 relay = Runtime.start('relay','Relay')
 
 arduino = Runtime.start("arduino","Arduino")
-arduino.connect("COM3")
+arduino.connect(port)
 
 relay.arduino=arduino
 relay.pin=8
