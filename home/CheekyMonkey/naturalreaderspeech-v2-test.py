@@ -64,6 +64,7 @@ def saystuff():
 	for i in range(0,myvoicescount):
 		speech.setVoice(myvoices[i])
 		print("I am speaking with "+(myvoices[i])+"'s voice")
+		onEndSpeaking ("I am speaking with "+(myvoices[i])+"'s voice")
 		onEndSpeaking ("I'm completely operational, and all my circuits are functioning perfectly.")
 		
 
