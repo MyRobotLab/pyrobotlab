@@ -57,11 +57,14 @@ def onEndSpeaking(text):
 	
 
 def saystuff():
-	myvoices = ['Ryan','Rich','Mike','Graham','Laura','Charles','Crystal','Heather','Ella','Rod','Peter','Audrey','Lucy','Rachel','Rosy','Ryan']
+	#myvoices = ['Ryan','Rich','Mike','Graham','Laura','Charles','Crystal','Heather','Ella','Rod','Peter','Audrey','Lucy','Rachel','Rosy','Ryan']
+	myvoices = ["Sharon", "Amanda","Tracy","Ryan","Tim","Suzan", "Mike","Rod","Rachel","Peter","Graham","Selene","Darren","Charles","Audrey","Rosa","Alberto","Diego", "Camila","Paula","Joaquim","Alain","Juliette","Emmanuel", "Marie","Bruno","Alice","Louice","Reiner", "Klara","Klaus","Sarah","Bertha","Jacob","Vittorio","Chiara","Mario","Valentina","Celia","Renata","Andrea","Julieta","Emma","Erik","Gus","Maja","Anika", "Markus"]
+
 	myvoicescount = len(myvoices)
 	for i in range(0,myvoicescount):
 		speech.setVoice(myvoices[i])
 		print("I am speaking with "+(myvoices[i])+"'s voice")
+		onEndSpeaking ("I am speaking with "+(myvoices[i])+"'s voice")
 		onEndSpeaking ("I'm completely operational, and all my circuits are functioning perfectly.")
 		
 
