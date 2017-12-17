@@ -71,8 +71,8 @@ def saystuff():
 		for i in range(0,myvoicescount):
 			speech.setVoice(myvoices[i])
 			print i
-			voicename = myvoices[i].replace("-", "")
-			voicename = myvoices[i].replace("_", "")
+			voicename = myvoices[i].replace("-", " ")
+			voicename = myvoices[i].replace("_", " ")
 			print("I am speaking with "+voicename+"'s voice")
 			onEndSpeaking ("I am speaking with "+voicename+"'s voice")
 			onEndSpeaking ("I'm completely operational, and all my circuits are functioning perfectly.")
