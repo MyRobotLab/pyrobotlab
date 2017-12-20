@@ -29,4 +29,12 @@ servo.map(0,180,60,175)
 servo.pid.setPID("diyservo", 0.011, 0.0001, 0.0001);
 servo.moveTo(90)
 # At this stage you can use the gui or a script to control the DiyServo
+# Soon we will know when targetPos is reached, at this time we need to compute delay
+sleep(3)
 servo.disable()
+
+# Experimental speed limit ( -1 is debrided )
+# servo.setMaxVelocity(10)
+# servo.moveTo(10)
+# At this stage you can use the gui or a script to control the DiyServo
+# Soon we will know when targetPos is reached, at this time we need to compute delay
