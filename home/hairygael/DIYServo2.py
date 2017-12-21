@@ -27,14 +27,12 @@ servo.attach(arduino,A0) # Attach the analog pin 0
 # Set the PID values. This example shows what DiyServo has as default.
 servo.map(0,180,60,175)
 servo.pid.setPID("diyservo", 0.011, 0.0001, 0.0001);
-servo.moveTo(90)
-# At this stage you can use the gui or a script to control the DiyServo
-# Soon we will know when targetPos is reached, at this time we need to compute delay
-sleep(3)
-servo.disable()
 
-# Experimental speed limit ( -1 is debrided )
-# servo.setMaxVelocity(10)
-# servo.moveTo(10)
+# Experimental things because targetPos is not yet accurate at small degrees...
+servo.setMaxVelocity(-1) # <-- This is a temporary trick to slow speed ( maxV = x to -1 )
+servo.setAutoDisable(True)
+servo.moveToBlocking(150)
+servo.moveToBlocking(10)
+
 # At this stage you can use the gui or a script to control the DiyServo
-# Soon we will know when targetPos is reached, at this time we need to compute delay
+# If servo is forced when it's disabled, position will update
