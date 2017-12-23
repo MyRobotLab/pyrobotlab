@@ -3,9 +3,11 @@ OpenWeatherMap.setApiKey("YOUR_KEY") #https://home.openweathermap.org/
 OpenWeatherMap.setUnits("metric") # or imperial
 OpenWeatherMap.setLang("fr") # en / de ...
 
-# fetch raw data for today (0) -> tomorrow is 1 :
+# unit is 3 hours steps (1)
+# fetch raw data for tomorrow (8) -> because 3*8=24H
+# fetch raw data for today (1) -> tomorrow is 1 :
 r=[]
-r=OpenWeatherMap.fetchForecast("paris",0)
+r=OpenWeatherMap.fetchForecast("paris,fr",1)
 if r:
   print r[0],r[1],r[2],r[3],r[4],r[5],r[6],r[7],r[8],r[9]
   # 0:description
