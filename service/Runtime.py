@@ -29,7 +29,7 @@ Runtime.noWorky("GroG")
 
 # To execute a program from the Operating System (OS)
 # Note: this is blocking, that is the program must finish before control returns to MRL
-Runtime.exec("c:/notepad.exe")
+# Runtime.exec("c:/notepad.exe")
 
 # the Big Hammer - the last thing
 # MRL will see - shuts everything down in 10 seconds
