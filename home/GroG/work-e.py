@@ -30,12 +30,15 @@ if ("virtual" in globals() and virtual):
 sabertooth = Runtime.start("sabertooth","Sabertooth")
 m1 = Runtime.start("m1","MotorPort")
 m2 = Runtime.start("m2","MotorPort")
+webgui = Runtime.start("webgui","WebGui")
+opencv = Runtime.start("opencv","OpenCV")
 joy = Runtime.start("joy","Joystick")
 joy.setController(controllerIndex)
 
 # configure services
 m1.setPort("m1")
 m2.setPort("m2")
+opencv.setFrameGrabberType("org.bytedeco.javacv.OpenKinectFrameGrabber")
 
 # in some cases its necessary to "invert" a motor
 m1.setInverted(True)
@@ -55,3 +58,4 @@ m1.stop();
 m2.stop();
 
 # good to go - play with joystick
+opencv.capture()
