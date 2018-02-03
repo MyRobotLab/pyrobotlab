@@ -1,0 +1,1184 @@
+/*  modified for mega and roboclaw   
+ *  roboclaw right leg 2X15A firmware 4.1.23 hardware V5D Oct 1
+ *  roboclaw  left leg 2X15A firmware 4.1.23 hardware V5D  Oct 6
+ *  roboclaw  hips (older 2X15A firmware 4.1.23 hardware V5D  Nov 7
+ *  trying to use position command on roboclaw instead of distance Jan 5
+ *  have legs taking steps Jan 18
+ *  added batteries, removed code not needed, moved 9 axis sensor to electronics base Jan 23
+ *  removed toes and installed new ankles/feet Jan 28
+ */
+
+#include <Arduino.h>
+#include <stdio.h>
+#include <Servo.h>            // used for toes and rotation of ankles
+#include <Wire.h>             // needed for compass
+#include <SPI.h>
+#include "RoboClaw.h"
+
+Servo AnkleServoR;          // create servo object for ankle right
+Servo AnkleServoL;          // create servo object for ankle left
+
+String sBuffer = "";        // string to hold asci key input string
+String inString = "";       // string to hold numbers input
+char c;                     // used in input key many places
+String SendStr = " ";       // used for outputing data to terminal or bluetooth
+long SendNo;                // used for outputing data to terminal or bluetooth
+String verDate = "Feb 2,2018 afternoon speeding up steps";
+
+int32_t LeftKneeCnt = 0;          // current positon of various joints
+int32_t LeftAnkleCnt = 0;
+int32_t LeftHipCnt = 0;
+int LeftHipSw = 0;
+int LeftKneeSw = 0;
+int LeftAnkleSw = 0;
+int32_t LeftKneeSpd = 0;
+int32_t LeftAnkleSpd = 0;
+int32_t LeftHipSpd = 0;
+int LeftAnkleRot = 100;    // starting position should be level with floor
+int32_t RightKneeCnt = 0;
+int32_t RightAnkleCnt = 0;
+int32_t RightHipCnt = 0;
+int RightHipSw = 0;
+int RightKneeSw = 0;
+int RightAnkleSw = 0;
+int32_t RightKneeSpd = 0;
+int32_t RightAnkleSpd = 0;
+int32_t RightHipSpd = 0;
+int RightAnkleRot = 80;   // starting position should be level with floor
+int BaseRoll;             // data from gyro on base
+int BasePitch;
+int BaseYaw;
+
+int i = 0;  
+int LedCnt = 0;       // heart beat on mega board
+int swleg = 0;
+int address = 0x80;   // this could be 80, 81, 82 for roboclaw boards
+int AnalogPins[8] = {0,1,2,3,4,5,6,7};   // analog pins 4 limit switches and 4 photo sensors
+int agDist[8];          // storage area for above values        
+int NumIn = 0;          // keypad number integer number input
+int aval;               // analog value used many places
+int SignString = 0;
+bool AnySpeed;
+int bluetooth = 2;      // 2=icstation bluetooth  1=sparkfun bluetooth 0=no bluetooth
+int NumSteps = 1;       // number of steps to take on walk
+
+const byte redLEDpin = 13;     // Pin heart beat
+const int HipRight = 9;        // limit switch for hip
+const int HipLeft = 8;
+
+// used for special delay
+unsigned long interval = 5000;     // the time we need to wait
+unsigned long previousMillis = 0;  // millis() returns an unsigned long.
+unsigned long currentMillis = 0;
+
+// Serial1 pins 19(RX) 18(TX), Serial2 pins 17(RX) 16(TX), Serial3 pins 15(RX) 14(TX) 
+  RoboClaw roboclawR(&Serial1,10000);   // was 10000
+
+int OutputPinCount = 5;     // number of channels in use
+const int MaOutputPins [] = 
+{
+  5,  
+  4,  
+  6,  // left ankle servo
+  7,  // right ankle servo  
+  13, // heart beat led
+};
+
+void setup() {
+//Open Serials   Serial1 pins 19(RX) 18(TX), Serial2 pins 17(RX) 16(TX), Serial3 pins 15(RX) 14(TX) 
+  Serial.begin( 57600 );        // terminal
+  roboclawR.begin( 38400 );     // roboclaw serial1 both legs and hips
+  InOut(  " ",  55, 'Y' );
+  InOut( "Leg Control ", 55, 'N'  );
+  InOut( verDate, 55, 'Y' );
+  
+  Serial2.begin( 38400 );       // 9 axis sensor on base
+
+//bluetooth can be ICstation 9600 or Sparkfun module defaults to 115200
+  if( bluetooth == 1 )
+    {
+    Serial3.begin( 115200, SERIAL_8N1 );       
+    InOut( "SparkFun bluetoth at 115200 RNBT-C96A key code 1234 on unit 3", 55, 'Y' );   
+//    Serial3.print( "$" );             
+//    Serial3.print( "$" );             
+//    Serial3.print( "$" );             
+//    delay( 100 );
+//    Serial3.println( "U,9600,N" );       
+//    Serial3.begin( 9600 );       
+   }
+  else if( bluetooth == 2 )
+    {
+    Serial3.begin( 9600, SERIAL_8N1 );       
+    Serial3.println( "" );
+    InOut( "ICstation bluetooth at 9600 HC-06 or BT-05 key code 1234", 55, 'Y' );    // original
+    }
+  else
+    InOut( "no bluetooth", 55, 'Y'  );
+  
+  
+  for (int i = 0; i < OutputPinCount; i++)
+  {
+    pinMode( MaOutputPins [i], OUTPUT );   // set to output mode
+    digitalWrite (MaOutputPins [i], LOW);  // set chip enable off
+  }
+  pinMode( 8, INPUT );       // limit switch hip right
+  pinMode( 9, INPUT );       // limit switch hip left
+  pinMode( 10, INPUT );
+  pinMode( 11, INPUT );
+  pinMode( 12, INPUT );
+  digitalWrite( 13, LOW);   // led off
+  // roboclaw
+  pinMode (18, OUTPUT);            // tx 1
+  pinMode (19, INPUT);             // rx 1
+  // gyro
+  pinMode (16, OUTPUT);            // tx 2 
+  pinMode (17, INPUT);             // rx 2
+  // bluetooth
+  pinMode (14, OUTPUT);            // tx 3 
+  pinMode (15, INPUT);             // rx 3
+ 
+// servo setup pins for toes and rotation of ankles
+//  ToeServoR.attach(MaOutputPins [0]); 
+//  ToeServoL.attach(MaOutputPins [1]); 
+  AnkleServoL.attach(MaOutputPins [2]); 
+  AnkleServoR.attach(MaOutputPins [3]); 
+  
+/*  looking at QPPS again on Nov 10 spent most of day
+ *  values from auto tuning in ion studio are being used
+ *  SO NOT SETTING LISTED HERE!
+ *   
+ * Knee Actobotics 142rpm 12 volt motor, max current 4.9a
+ * 142rpm * 84 gear ratio  * 12 counts/rev and divide by 60sec = 2385 for QPPS
+ * Ankle Actobotics 116rpm 12 volt motor, max current 4.9a
+ * 116rpm * 103 gear ratio  * 12 counts/rev and divide by 60sec = 2390 for QPPS 
+ * Hip Actobotics 52rpm 12 volt motor, max current 4.9a
+ * 52rpm * 231 gear ratio  * 12 counts/rev and divide by 60sec = 2400 for QPPS
+ *hip left M1 Vp16046, Vi 3275, Vd 0, QPPS 2110
+ *hipright M2 Vp14304, Vi 2974, Vd 0, QPPS 2096
+
+#define Kp 1.0
+#define Ki 0.5
+#define Kd 0.0
+#define qpps 2200       
+
+//Set PID Coefficients
+  roboclawR.SetM1VelocityPID( 0x80,Kd,Kp,Ki,qpps);  // right ankle
+  roboclawR.SetM2VelocityPID( 0x80,Kd,Kp,Ki,qpps);  // right knee
+  roboclawR.SetM1VelocityPID( 0x81,Kd,Kp,Ki,qpps);  // left ankle
+  roboclawR.SetM2VelocityPID( 0x81,Kd,Kp,Ki,qpps);  // left knee
+  roboclawR.SetM1VelocityPID( 0x82,Kd,Kp,Ki,qpps);  // left hip
+  roboclawR.SetM2VelocityPID( 0x82,Kd,Kp,Ki,qpps);  // right hip
+ */
+ 
+  AllStop( 'N' );               // stop everything and 'R' = reset encoders
+  Compass_Base( 'N' );     // dump compass data left foot
+  while (Serial.available() > 0)  // clean out any characters in serial buffer at start up
+      c = Serial.read();          // dump keys in dont need    
+  sBuffer = "";                   // reset buffer for strings
+}
+
+void loop() 
+{
+  LedCnt ++;          // just a blinking led on mega heart
+  if( LedCnt > 25 )
+  {
+    digitalWrite(redLEDpin, digitalRead(redLEDpin) ^ 1);   // toggle red heart beat
+    LedCnt = 0;
+  }
+  delay( 50 );
+  TerminalIn();
+  delay( 50 );
+  BlueToothIn();
+}
+
+// check terminal for character in?
+void TerminalIn () 
+{ 
+  if (Serial.available () > 0)             
+    {
+    SignString = 1;     // positive number
+    while (Serial.available () > 0)        
+      {
+      delay (10);
+      c = Serial.read ();                    
+      if (c == '\r')                  // look for end of line to exit
+      {
+        NumIn = inString.toInt();    // Convert readString into a number
+        NumIn = constrain(NumIn, -12001, 12001);      // limit number
+
+// next print lines for testing
+        Serial.print( ">" );         // Echo captured string
+        Serial.println( sBuffer );   // Echo captured string
+        ProcessCommand();
+        sBuffer = "";               // reset buffer and inString
+        inString = "";
+        NumIn = 0;                  // reset integer number
+        continue;
+      }
+      sBuffer += c;                 // make string
+      if( isDigit(c) ) 
+        inString += c;              // save just number
+      if( c == '-' )
+      {
+        SignString = -1;            // save negative sign
+        inString += c;
+      }
+    }    // end while
+  }      // end if serial 
+}
+
+// check bluetooth for character in?
+void BlueToothIn()
+{
+  if (Serial3.available () > 0)             
+    {
+    SignString = 1;     // positive number
+    while (Serial3.available () > 0)        
+      {
+      delay (10);
+      c = Serial3.read ();                    
+      if (c == '\r')                  // look for end of line to exit
+      {
+        NumIn = inString.toInt();    // Convert readString into a number
+        NumIn = constrain(NumIn, -12001, 12001);      // limit number
+
+// next print lines for testing
+        Serial3.print( ">" );         
+        Serial3.println( sBuffer );   
+        Serial.print( "B>" );         
+        Serial.println( sBuffer );   
+        ProcessCommand();
+        sBuffer = "";               // reset buffer and inString
+        inString = "";
+        NumIn = 0;                  // reset integer number
+        continue;
+      }
+      sBuffer += c;                 // make string
+      if( isDigit(c) ) 
+        inString += c;              // save just number
+      if( c == '-' )
+      {
+        SignString = -1;            // save negative sign
+        inString += c;
+      }
+    }    // end while
+  }      // end if
+}        // end bluetoothin
+
+void ProcessCommand ()            
+{
+  if (sBuffer.length () > 0)
+    {
+    sBuffer.toUpperCase ();       
+    if( sBuffer[0] == 'B' )        // bend down  
+      BendDown();
+    else if( sBuffer[0] == 'C' )   // read current
+      DisAmps(); 
+    else if( sBuffer[0] == 'D' )   // display encoder counts and speed data
+    {
+      roboclawR.clear();       
+//      roboclawR.flush();       
+      DisplaySpeed( 'D' );      // 1 turns on display
+    }
+    else if( sBuffer[0] == 'E' )  // errors and command buffer status
+      WaitBuffer();      
+    else if( sBuffer[0] == 'F' )  // stand on one foot
+      LeftFoot();
+    else if( sBuffer[0] == 'G' )  // gyro compass on base
+      Compass_Base( 'D' );            
+    else if( sBuffer[0] == 'H' )  // find center for hips
+      CenterHips( 'B' );          // B for both hips could do L for left or R for right
+    else if( sBuffer[0] == 'I' )  // information on limit switches
+      DisplayLmSwitch( 'D' );
+    else if( sBuffer[0] == 'K' )  // both knees to home
+    {
+      KneeLeftLS();
+      KneeRightLS();
+    }
+    else if( sBuffer[0] == 'L' )  // level feet
+      LevelBothFeet();    
+    else if( sBuffer[0] == 'N' )  // using number pad to control leg motors in samll steps
+      NumDrive();     
+    else if( sBuffer[0] == 'S' )  // motors stop if 2nd char is R the encoders are reset
+      AllStop( sBuffer[ 1 ] );     
+    else if( sBuffer[0] == 'W' )  // walk input number of steps to take
+    {
+      NumSteps = NumIn;
+      if( NumSteps == 0 )
+        NumSteps = 1;
+      if( NumSteps > 10 )
+        NumSteps = 10;
+      InOut( "****** Total Steps =", NumSteps, 'Y' );
+      for( int s=0; s<NumSteps; s++ )
+      { 
+        Step();
+      }      
+    }
+   else if( sBuffer[0] == 'T' )   // zero encoder
+      TestPID();             // test routine for figuring out pid values
+   else                               
+      InOut( "?", 55, 'Y' );  // unknown input
+  }
+}
+
+// uses knees and ankles to bend down, limit is plastic knee parts
+void BendDown()
+{
+     InOut( "***   bend knees & ankles, keep feet flat", 55, 'Y' );
+// reset encoders next line will cause an error when running several times
+// there is a deadzone on the position command of 10 
+// so the commands telling position of 0 maybe up to 10 off
+     AllStop( 'N' );                  // no where we start
+     DisplaySpeed(  'D'  );         // just to see where we start
+     roboclawR.SpeedAccelDeccelPositionM2(0x80,1500,4000,4000,7000,1); 
+     roboclawR.SpeedAccelDeccelPositionM2(0x81,1500,4000,4000,7000,1); 
+     roboclawR.SpeedAccelDeccelPositionM1(0x81,1500,4000,4000,-6000,1); 
+     roboclawR.SpeedAccelDeccelPositionM1(0x80,1500,4000,4000,-6000,1); 
+     roboclawR.SpeedAccelDeccelPositionM1(0x82,800,500,500,-1500,1); 
+     roboclawR.SpeedAccelDeccelPositionM2(0x82,800,500,500,1500,1); 
+     delay( 4000 );     // just see stop in between commands  
+     WaitSpeed();       // wait for speed to be 0
+//     DisplaySpeed( 'D' );
+     InOut( "****   straighten knees & ankles down", 55, 'Y' );
+     roboclawR.SpeedAccelDeccelPositionM2(0x80,1500,4000,4000,0,0); 
+     roboclawR.SpeedAccelDeccelPositionM2(0x81,1500,4000,4000,0,0); 
+     roboclawR.SpeedAccelDeccelPositionM1(0x81,1700,4000,4000,0,0); 
+     roboclawR.SpeedAccelDeccelPositionM1(0x80,1700,4000,4000,0,0); 
+     roboclawR.SpeedAccelDeccelPositionM1(0x82,800,500,500,0,0); // move left hip
+     roboclawR.SpeedAccelDeccelPositionM2(0x82,800,500,500,0,0); // move right hip 
+     delay( 4000 );     // just see stop in between commands  
+     WaitSpeed();       // wait for speed to be 0
+//     KneeRightLS();     // find limit switch
+//     KneeLeftLS();
+//     WaitSpeed();       // wait for speed to be 0
+//     DisplaySpeed( 'D' );
+     InOut( "***   Kneel Done", 55, 'Y' );
+}
+
+// use base pitch to level feet
+void LevelBothFeet()
+{
+  LevelLeftFoot();
+  LevelRightFoot();
+  Compass_Base( 'D' );               // check pitch and show me
+}
+
+void LevelLeftFoot()
+{
+     InOut( "***   level left foot, find limit switch", 55, 'Y' );
+     aval = analogRead( AnalogPins[ 3 ] );  // check upper switch left ankle
+     if( aval < 500 )                       // check switch first
+       goto StpLevelLeft;
+     roboclawR.BackwardM1( 0x81,70 );       // make ankle up address and speed
+     while( aval > 500 )
+        aval = analogRead( AnalogPins[ 3 ] ); // check limit switch left ankle
+StpLevelLeft:
+     roboclawR.BackwardM1( 0x81,00 );       // stop this is needed
+     delay( 1000 );                    
+     roboclawR.ResetEncoders( 0x81 );      // reset encoders left leg
+     roboclawR.SpeedAccelDeccelPositionM1(0x81,1500,4000,4000,7700,1); // move off switch was 8000 tried 7000 to much 7500
+     delay( 3000 );           // needs to get off limit switch   
+     WaitSpeed();             // wait for speed to be 0
+     roboclawR.ResetEncoders( 0x81 );      // reset encoders left leg
+     InOut( "level done & encoder reset", 55, 'Y' );
+}
+
+void LevelRightFoot()
+{
+     InOut( "***   level right foot, find limit switch", 55, 'Y' );
+     aval = analogRead( AnalogPins[ 5 ] );  // check upper switch right ankle
+     if( aval < 500 )                       // check switch first
+       goto StpLevelRight;
+     roboclawR.BackwardM1( 0x80,70 );       // make ankle up address and speed
+     while( aval > 500 )
+        aval = analogRead( AnalogPins[ 5 ] ); // check limit switch right ankle
+StpLevelRight:
+     roboclawR.BackwardM1( 0x80,00 );       // stop this is needed
+     delay( 1000 );                    
+     roboclawR.ResetEncoders( 0x80 );      // reset encoders right leg
+     roboclawR.SpeedAccelDeccelPositionM1(0x80,1500,4000,4000,5500,1); // move off switch was 6000
+     delay( 3000 );           // needs to get off limit switch   
+     WaitSpeed();             // wait for speed to be 0
+     roboclawR.ResetEncoders( 0x80 );      // reset encoders right leg
+     InOut( "level done & encoder reset", 55, 'Y' );
+}
+
+// moving left knee to limit switch
+void KneeLeftLS()
+{
+     InOut( "***   left  knee to ls", 55, 'Y' );
+     aval = analogRead( AnalogPins[ 2 ] );  // check limit switch left knee
+     if( aval < 500 )                       // check switch first
+       goto StpLftLs;
+     roboclawR.BackwardM2( 0x81,70 );       // make knee straight address and speed
+     while( aval > 500 )
+        aval = analogRead( AnalogPins[ 2 ] ); // check limit switch left knee
+StpLftLs:
+     roboclawR.BackwardM2( 0x81,00 );       // stop this is needed
+     delay( 500 );                    
+     roboclawR.ResetEncoders( 0x81 );      // reset encoders left leg
+     roboclawR.SpeedAccelDeccelPositionM2(0x81,1000,2000,2000,1700,1); // move off switch
+     delay( 2500 );           // needs to get off limit switch   
+     WaitSpeed();             // wait for speed to be 0
+     roboclawR.ResetEncoders( 0x81 );      // reset encoders left leg
+     InOut( "done on switch & encoder reset", 55, 'Y' );
+}
+
+// moving right knee to limit switch
+void KneeRightLS()
+{
+// lets keep moving right knee to limit switch
+     InOut( "***   right knee to ls", 55, 'Y' );
+     aval = analogRead( AnalogPins[ 4 ] ); // check limit switch right knee
+     if( aval < 500 )                      // check switch first
+       goto StpRghLs;
+     roboclawR.BackwardM2( 0x80,70 );      // make knee straight address and speed
+     while( aval > 500 )
+        aval = analogRead( AnalogPins[ 4 ] ); // check limit switch right knee
+StpRghLs:
+     roboclawR.BackwardM2( 0x80,00 );     // stop this is needed
+     delay( 500 );
+     roboclawR.ResetEncoders( 0x80 );      // reset encoders right leg
+     roboclawR.SpeedAccelDeccelPositionM2(0x80,1000,2000,2000,1700,1); // move off switch
+     delay( 2500 );           // needs to get off limit switch   
+     WaitSpeed();             // wait for speed to be 0
+     roboclawR.ResetEncoders( 0x80 );      // reset encoders right leg
+     InOut( "done on switch & encoder reset", 55, 'Y' );
+} 
+
+void Step()    
+{
+     int t;
+     InOut( "***   take a step ", NumSteps, 'Y' );
+     DisplaySpeed( 'D' );                   // let me know where we start for hips
+     Compass_Base( 'D' );               // check pitch and show me
+     
+// step1
+     InOut( "***   start ankle rotation right=", RightAnkleRot, 'Y' );    // shift weight to right foot
+     for( t=1; t<56; t++ )                      // was 58
+     {
+        AnkleServoR.write( RightAnkleRot - t );       // rotating both ankles
+        AnkleServoL.write( LeftAnkleRot - t );
+        delay( 15 );                                  // tried 10 and body really rocks started with 20
+     }
+     RightAnkleRot = RightAnkleRot - t;   // remember position
+     LeftAnkleRot = LeftAnkleRot - t;
+     InOut( "***   ankle rotation right=", RightAnkleRot, 'N');    // shift weight to right foot
+     InOut( " & left=", LeftAnkleRot, 'Y');   
+     WaitKey(); 
+     
+// step2      
+     InOut( "***   bend right knee & ankle a little leaning legs to right side", 55, 'Y' );
+     roboclawR.SpeedAccelDeccelPositionM2(0x80,2000,2000,2000,1800,1);    // right knee was 1500 jhs
+     roboclawR.SpeedAccelDeccelPositionM1(0x80,2000,2000,2000,-2000,1);   // right ankle    
+     InOut( "***   balance on right leg", 55, 'Y' ); 
+     roboclawR.SpeedAccelDeccelPositionM2(0x81,2000,2000,2000,2500,1);    // left knee raise so does not touch floor
+     delay( 500 );
+     WaitSpeed();
+     WaitKey();  
+         
+// step3 
+     InOut( "***   straighten left knee & ankle, rotating left hip forward", 55, 'Y' );  
+     roboclawR.SpeedAccelDeccelPositionM1(0x82,1500,500,500,-500,1);    // hip was 1000 jhs
+     delay( 500 );
+     roboclawR.SpeedAccelDeccelPositionM2(0x81,2000,2000,2000,-1000,1); // left knee
+     // may want to have ankle bend down so it is aligned with floor
+     roboclawR.SpeedAccelDeccelPositionM1(0x81,2000,2000,4000,1000,1);     // left ankle
+     WaitSpeed();
+     WaitKey(); 
+     
+// step4     
+     InOut( "***   roll ankles to left", 55, 'Y' ); 
+     for( t=1; t<103; t++ )   
+     {
+        AnkleServoR.write( RightAnkleRot + t );
+        AnkleServoL.write( LeftAnkleRot + t );
+        delay( 20 );                                    // this was 40 will try 20
+     }
+     RightAnkleRot = RightAnkleRot + t;
+     LeftAnkleRot = LeftAnkleRot + t;
+     InOut( "***   ankle rotation right=", RightAnkleRot, 'N');    // shift weight to right foot
+     InOut( " & left=", LeftAnkleRot, 'Y');   
+
+     roboclawR.SpeedAccelDeccelPositionM1(0x81,1500,2000,0,0,1);  // left ankle
+     WaitKey(); 
+     
+// step5
+     InOut( "***   bend left knee & ankle", 55, 'Y' );
+     roboclawR.SpeedAccelDeccelPositionM2(0x81,2000,2000,1800,0,1); // knee this was 1500
+     roboclawR.SpeedAccelDeccelPositionM1(0x81,2000,2000,-2000,0,1); // ankle
+     InOut( "***   should balance on left leg", 55, 'Y' );
+     WaitSpeed();    
+     WaitKey();     
+
+// step6 
+     InOut( "***   straighten right leg rotating right hip forward ", 55, 'Y' );
+     roboclawR.SpeedAccelDeccelPositionM1(0x82,1500,500,500,500,1);    // hip left this was 1000
+     roboclawR.SpeedAccelDeccelPositionM2(0x82,1500,500,500,700,1);    // hip right
+     delay( 1000 );                                                    // delay was 1000
+     roboclawR.SpeedAccelDeccelPositionM1(0x80,2000,2000,2000,1000,1);  // ankle right was 1500
+     roboclawR.SpeedAccelDeccelPositionM2(0x80,2000,2000,2000,-1000,1); // knee right
+     delay( 1000 );
+     roboclawR.SpeedAccelDeccelPositionM1(0x81,2000,2000,2000,-1500,1);    // ankle left bend up
+     delay( 500 );
+     WaitSpeed();
+     WaitKey();
+     
+// step8
+     InOut( "***   straighten legs & hips", 55, 'Y' );
+     roboclawR.SpeedAccelDeccelPositionM2(0x80,2000,2000,2000,0,0);    // knee right was 1500
+     roboclawR.SpeedAccelDeccelPositionM1(0x80,2000,2000,2000,0,0);    // ankle right 
+     delay( 1000 );                                                    // time for leg to come down was 1000
+     roboclawR.SpeedAccelDeccelPositionM2(0x81,2000,2000,2000,0,0);    // knee left
+     roboclawR.SpeedAccelDeccelPositionM1(0x81,2000,2000,2000,0,0);    // ankle left
+     delay( 2000 );         
+     roboclawR.SpeedAccelDeccelPositionM1(0x82,1500,500,500,0,0);      // hip left
+     roboclawR.SpeedAccelDeccelPositionM2(0x82,1500,500,500,0,0);      // hip right
+//     delay( 1000 );
+     for( t=1; t<46; t++ )   
+     {
+        AnkleServoR.write( RightAnkleRot - t );
+        AnkleServoL.write( LeftAnkleRot - t );
+        delay( 20 );                        
+     }
+     RightAnkleRot = RightAnkleRot - t;
+     LeftAnkleRot = LeftAnkleRot - t;
+     InOut( "***   ankle rotation right=", RightAnkleRot, 'N');   
+     InOut( " & left=", LeftAnkleRot, 'Y');    
+     WaitSpeed();
+     Compass_Base( 'D' );               // check pitch and show me
+     InOut( "***   Step Done ", NumSteps, 'Y' );
+}
+
+// just testing wait routines with IonStudio PID numbers
+void TestPID()   
+{
+   int addr = 0x80;             // right leg
+   int tstspd = 1500;           // speed for motor
+   int tstaccl = 2000;
+   int tstpos = 4000;           // position to go to
+   InOut( "***   test position command right knee ", addr, 'N' );
+   InOut( " ", tstspd, 'N' );
+   InOut( " ", tstaccl, 'N' );
+   InOut( " ", tstpos, 'Y' );
+   AllStop( 'R' );       // reset encoders
+   roboclawR.SpeedAccelDeccelPositionM2(0x80,tstspd,tstaccl,tstaccl,tstpos,1); //addr,speed start,accl,stop accl,pos,flag
+   delay( 1000 );     
+   WaitSpeed();       // wait for speed to be 0
+   InOut( "***  now back", 55, 'Y' );
+   roboclawR.SpeedAccelDeccelPositionM2(0x80,tstspd,tstaccl,tstaccl,10,0);  // back to 0
+   WaitBuffer();
+   WaitSpeed();
+   InOut( "***   test done", 55, 'Y' );
+}
+
+// lift left foot and stand on right foot adjusted for new right foot/ankle Jan 26
+// added looking at gyro for how much to angle ankle
+void LeftFoot()   
+{
+      int t = 0;
+      int tempt = 0;
+      InOut( "***   stand on left foot", 55, 'Y' );
+
+      InOut( "***   bend right knee & ankle a little pushing over legs to right side", 55, 'Y' );
+      roboclawR.SpeedAccelDeccelPositionM2(0x80,1500,2000,2000,2000,1); // right knee 
+      roboclawR.SpeedAccelDeccelPositionM1(0x80,1500,2000,2000,-1800,1);  // right ankle
+      delay( 500 );           // get steady
+      for( t=1; t<39; t++ )   
+      {
+        Compass_Base( 'D' );  // looking for roll value
+        if( BaseRoll < 8 )    // should balance at 8
+        {
+         tempt = t * 3;
+         if( tempt > 89 )// 180 deg servo so can only move about 90 deg max 
+           tempt = 89;
+         AnkleServoR.write( RightAnkleRot - tempt );        // start position - amount which gets bigger in loop move servo
+         delay( 50 );              // delay prevents jerking and time to steady for gyro read
+        }
+        if( BaseRoll > 7 )        // want to get to 8 deg roll
+        {
+          InOut( "  loop count =", t, 'Y' ); 
+          t = 100;   // exit out of here
+        }
+      }
+      InOut( "***   ankle rotation =", (RightAnkleRot - tempt), 'Y' );
+
+      InOut( "***   ankle left push down to tilt", 55, 'Y' );
+      roboclawR.SpeedAccelDeccelPositionM1(0x81,1500,1000,1000,3300,1);    // ankle left push down to tilt
+      WaitSpeed();        // waits till speed is 0
+      delay( 1000 );
+// should be balanced on right leg
+      Compass_Base( 'D' );
+//      WaitKey();   // for testing
+      InOut( "***  bend left knee, Left Hip Forward, bend ankle",55, 'Y' );
+      roboclawR.SpeedAccelDeccelPositionM2(0x81,1500,2000,2000,7200,1); // knee
+      roboclawR.SpeedAccelDeccelPositionM1(0x81,1500,2000,2000,-7000,1); // ankle
+      roboclawR.SpeedAccelDeccelPositionM1(0x82,1000,500,500,-400,1);    // hip
+      delay( 1000 );
+      WaitSpeed();        // waits till speed is 0
+      delay( 4000 );      // lets see on one foot
+      InOut( "***   straighten knees, ankles flat and Left Hip back", 55, 'Y' );
+      roboclawR.SpeedAccelDeccelPositionM2(0x80,1500,2000,2000,0,0);   // knee right 
+      roboclawR.SpeedAccelDeccelPositionM2(0x81,1500,2000,2000,0,0);   // knee left
+      roboclawR.SpeedAccelDeccelPositionM1(0x81,1500,2000,2000,0,0);    // ankle left
+      roboclawR.SpeedAccelDeccelPositionM1(0x80,1500,2000,2000,0,0);    // ankle right   
+      roboclawR.SpeedAccelDeccelPositionM1(0x82,1000,500,500,0,0);      // hip left
+      delay( 2700 ); // want leg to come down a little before rotating ankles
+      for( t=1; t<tempt; t++ )  
+      {
+        AnkleServoR.write( (RightAnkleRot-tempt) + t );    // where we are now and start moving back to home
+        delay( 100 );          
+      }
+      InOut( "***   ankle rotation = ", ((RightAnkleRot-tempt) + t), 'Y' );
+      WaitSpeed();
+      Compass_Base( 'D' );
+      InOut( "*** Left Foot Done", 55, 'Y' );
+}     // end left foot
+
+// stops program and waits for a key input used for testing routines
+void WaitKey()
+{
+    InOut( "- - - - - waiting key input", 55, 'Y' );     // NumIn = to 1 skip waiting
+    while (Serial.available() == 0) 
+    {       
+      digitalWrite(redLEDpin, digitalRead(redLEDpin) ^ 1);   // toggle RED LED pin heart beat
+      delay (100);
+      digitalWrite(redLEDpin, digitalRead(redLEDpin) ^ 1);   // toggle RED LED pin heart beat
+      delay (100);
+    }
+    c = Serial.read ();        // dump key in dont need     
+}
+
+// checks roboclaw boards for errors and waits until commands are out of buffers
+void WaitBuffer()
+{ 
+    uint8_t depth1;
+    uint8_t depth2;
+    bool valid;
+    int i = 0;
+    // error codes Normal 0x00 M1 OverCurrent 0x01 M2 OverCurrent 0x02 E-Stop 0x04 Temperature 0x08
+    // Main Battery High 0x10 Main Battery Low 0x20 Logic Battery High 0x40 Logic Battery Low 0x80
+    uint16_t reading = roboclawR.ReadError(0x80, &valid);
+    InOut( "...   RoboClaw controller errors", 55, 'N' );
+    InOut( " 80=", reading, 'N' );
+    delay( 20 );
+    reading = roboclawR.ReadError(0x81, &valid);
+    InOut( " 81=", reading, 'N' );
+    delay( 20 );
+    reading = roboclawR.ReadError(0x82, &valid);
+    InOut( " 82=", reading, 'Y' );
+    delay( 20 );
+    // The buffer value will be 0x80 if the motors are idle
+    // number returned is how many commands are buffered waiting to run
+    // Loop until command has completed 80=done 0=busy 1=one command waiting ect
+
+    InOut( "...   RoboClaw buffers (128 means no commands in buffers", 55, 'Y' );
+    do
+    {
+      roboclawR.clear();   
+      roboclawR.ReadBuffers( 0x80, depth1, depth2 ); 
+//      Serial.print( " 80=" );
+//      Serial.print( depth1 );
+//      Serial.print( "&" );
+//      Serial.print( depth2 );
+      i++;
+      if( i >20 )
+        goto Stop1;
+      delay( 50 );  // need to wait atleast 10ms for the roboclaw to clear its packet buffer
+    } while( depth1!=0x80 || depth2!=0x80 );
+Stop1:
+        InOut( "Bd.80=", depth1, 'N' );
+        InOut( " &", depth2, 'N' );
+
+    i = 0;
+    do
+    {
+      roboclawR.clear();
+      roboclawR.ReadBuffers( 0x81, depth1, depth2 );
+//      Serial.print( " 81=" );
+//      Serial.print( depth1 );
+//      Serial.print( "&" );
+//      Serial.print( depth2 );
+      i++;
+      if( i >20 )         // sometime hangs in these, so a way out
+        goto Stop2;
+      delay( 50 );  // need to wait atleast 10ms for the roboclaw to clear its packet buffer
+    } while( depth1!=0x80 || depth2!=0x80 );  //Loop until command has completed 80=done 0=busy
+Stop2:
+        InOut( " Bd.81=", depth1, 'N' );
+        InOut( " &", depth2, 'N' );
+    i = 0;
+    do
+    {
+      roboclawR.clear();
+      roboclawR.ReadBuffers( 0x82, depth1, depth2 );
+//      Serial.print( " 82=" );
+//      Serial.print( depth1 );
+//      Serial.print( "&" );
+//      Serial.print( depth2 );
+      i++;
+      if( i >20 )
+        goto Stop3;
+     delay( 50 );  // need to wait atleast 10ms for the roboclaw to clear its packet buffer
+   } while( depth1!=0x80 || depth2!=0x80 );  //Loop until command has completed 80=done 0=busy
+Stop3:
+        InOut( " Bd.82=", depth1, 'N' );
+        InOut( " &", depth2, 'Y' );
+}
+
+// checks for speed to be stopped or limit switch active
+void WaitSpeed()
+{
+    InOut( "...waiting for motors stopped", 55, 'Y' );
+    delay( 1000 );               // time for motor to start before checking was 1000 change jan 26
+    do
+    {
+      DisplaySpeed(  'N'  );   // get speed data
+      aval = analogRead( AnalogPins[ 4 ] ); // check upper switch right knee
+      if( aval < 500 )
+      {
+        roboclawR.BackwardM2( 0x80, 0x00 );  // stop right knee
+        Serial.print( " RK " );
+        delay( 400 );
+      }
+      
+      aval = analogRead( AnalogPins[ 5 ] );  // check upper switch right ankle   
+      if( aval < 500 )
+      {
+        roboclawR.BackwardM1( 0x80, 0x00 );  // stop right ankle
+        Serial.print( " RA " );
+        delay( 400 );
+      }
+      
+      aval = analogRead( AnalogPins[ 2 ] );  // check upper switch left knee
+      if( aval < 500 )
+      {
+        roboclawR.BackwardM2( 0x81, 0x00 );  // stop left knee
+        Serial.print( " LK " );
+        delay( 400 );
+      }
+      
+      aval = analogRead( AnalogPins[ 3 ] );  // check upper switch left ankle
+      if( aval < 500 )
+      {
+        roboclawR.BackwardM1( 0x81, 0x00 );  // stop left ankle
+        Serial.print( " LA " );
+        delay( 400 );
+      }
+      delay( 75 );                          // need to wait 10ms between reads ion manual
+    }while( AnySpeed == 1 );
+// next line did not work seems like it should
+//    }while( (RightKneeSpd >5) || (LeftKneeSpd >5) || (RightKneeSpd <-5) || (LeftKneeSpd <-5) || (RightAnkleSpd >5) || (LeftAnkleSpd >5) || (RightAnkleSpd <-5) || (LeftAnkleSpd <-5) );
+    DisplaySpeed(  'D'  ); 
+}     // end speed
+
+// shuts down all motors and homes servos on ankles
+// can reset encoder counters
+void AllStop( char disp )
+{
+      roboclawR.BackwardM1( 0x80, 0x00 );  // stop right ankle
+      roboclawR.BackwardM2( 0x80, 0x00 );  // stop right knee
+      roboclawR.BackwardM1( 0x81, 0x00 );  // stop left ankle
+      roboclawR.BackwardM2( 0x81, 0x00 );  // stop left knee
+      roboclawR.BackwardM1( 0x82, 0x00 );  // stop left hip
+      roboclawR.BackwardM2( 0x82, 0x00 );  // stop right hip
+      AnkleServoL.write( LeftAnkleRot );   // ankles stop and make level
+      AnkleServoR.write( RightAnkleRot );
+      InOut( "*** Motors at rest", 55, 'N' );   
+      if( disp == 'R' )      // reset encoders ?
+      {
+        roboclawR.ResetEncoders( 0x80 );      // reset encoders right leg
+        roboclawR.ResetEncoders( 0x81 );      // reset encoders left leg
+        roboclawR.ResetEncoders( 0x82 );      // reset encoders hips
+        InOut( " right/left leg & hip encoders reset", 55, 'N' );   
+      }        
+      InOut( " ", 55, 'Y' );   
+}
+
+// displays curent from motors
+void DisAmps()
+{
+int currentFromMotorOne;
+int currentFromMotorTwo;
+bool gotIt;
+    gotIt = roboclawR.ReadCurrents( 0x80, currentFromMotorOne, currentFromMotorTwo );
+   if( gotIt )
+   {
+     InOut( "*** Current in ma RghAnk:", currentFromMotorOne, 'N' );
+     InOut( " & RghKne:", currentFromMotorTwo, 'N' );
+   }
+   gotIt = roboclawR.ReadCurrents( 0x81, currentFromMotorOne, currentFromMotorTwo );
+   if( gotIt )
+   {
+     InOut( " LftAnk:", currentFromMotorOne, 'N');
+     InOut( " & LftKne:", currentFromMotorTwo, 'N');
+   }
+   gotIt = roboclawR.ReadCurrents( 0x82, currentFromMotorOne, currentFromMotorTwo );
+   if( gotIt )
+   {
+     InOut( " LftHip:", currentFromMotorOne, 'N');
+     InOut( " & RghHip:", currentFromMotorTwo, 'Y');
+   }
+}
+
+// displays data from limit switches
+void DisplayLmSwitch( char DispOff )
+{
+/* lower limit switches go to motor controllers for now
+ * upper switches to mega bd
+ A0 
+ A1 
+ A2 left knee opto switch high>800 low<700
+ A3 left ankle opto switch high>800 low<700
+ A4 right knee opto switch high>800 low<700
+ A5 right ankle opto switch high>800 low<700
+ A6 
+ A7 
+ */
+  LeftHipSw =  digitalRead( HipLeft );      // read limit switch on hip
+  LeftKneeSw = analogRead( AnalogPins[ 2 ] ); // get raw number
+  LeftAnkleSw = analogRead( AnalogPins[ 3 ] ); 
+  RightHipSw = digitalRead( HipRight );
+  RightKneeSw = analogRead( AnalogPins[ 4 ] ); // get raw number
+  RightAnkleSw = analogRead( AnalogPins[ 5 ] ); 
+
+  if( DispOff == 'D' )            // may want to check status but not show on display
+  {
+    InOut( " Switches Right Hip=", RightHipSw, 'N' );     
+    InOut( " Kne=", RightKneeSw, 'N' );     
+    InOut( " Ank=", RightAnkleSw, 'N' );     
+    InOut( " Left Hip=", LeftHipSw, 'N' );     
+    InOut( " Kne=", LeftKneeSw, 'N' );     
+    InOut( " Ank=", LeftAnkleSw, 'Y' );      
+  }       // end display off
+}  // end display routine
+
+
+// displays speed & encoder info
+void DisplaySpeed( char DispOff )
+{
+  uint8_t status1,status2,status3,status4;
+  bool valid1,valid2,valid3,valid4;
+  AnySpeed = 0;
+  roboclawR.clear();         
+  address = 0x80;
+  RightAnkleCnt = roboclawR.ReadEncM1( address, &status1, &valid1);
+  RightKneeCnt = roboclawR.ReadEncM2( address, &status2, &valid2);
+  RightAnkleSpd = roboclawR.ReadSpeedM1( address, &status3, &valid3);
+  RightKneeSpd = roboclawR.ReadSpeedM2( address, &status4, &valid4);
+  if( RightAnkleSpd>5 || RightAnkleSpd<-5 )
+    AnySpeed = 1;
+  if( RightKneeSpd>5 || RightKneeSpd<-5 )
+    AnySpeed = 1;
+  if( DispOff == 'D' )            // may want to check status but not show on display
+  {
+   if(valid1)
+     InOut( "  Encoder Right UpperAnkle_M1:", RightAnkleCnt, 'N' );  
+   if(valid2)
+     InOut( " UpperKnee_M2:", RightKneeCnt, 'N' );  
+   if( valid3 )
+     InOut( " Speeds 80_M1_RA", RightAnkleSpd, 'N' );  
+   if( valid4 )
+     InOut( " 80_M2_RK", RightKneeSpd, 'Y' );  
+  }  // end if
+  roboclawR.clear();       
+  address = 0x81;
+  LeftAnkleCnt = roboclawR.ReadEncM1( address, &status1, &valid1);
+  LeftKneeCnt = roboclawR.ReadEncM2( address, &status2, &valid2);
+  LeftAnkleSpd = roboclawR.ReadSpeedM1( address, &status3, &valid3);
+  LeftKneeSpd = roboclawR.ReadSpeedM2( address, &status4, &valid4);
+  if( LeftAnkleSpd>5 || LeftAnkleSpd<-5 )
+    AnySpeed = 1;
+  if( LeftKneeSpd>5 || LeftKneeSpd<-5 )
+    AnySpeed = 1;
+ if( DispOff == 'D' ) 
+ {
+   if(valid1)
+    InOut( "  Encoder Left UpperAnkle_M1:", LeftAnkleCnt, 'N' );  
+   if(valid2)
+    InOut( " UpperKnee_M2:", LeftKneeCnt, 'N' );  
+   if( valid3 )
+    InOut( " Speeds 81_M1_LA", LeftAnkleSpd, 'N' );  
+   if( valid4 )
+     InOut( " 81_M2_LK", LeftKneeSpd, 'Y' );  
+ }
+  roboclawR.clear();       
+  address = 0x82;
+  RightHipCnt = roboclawR.ReadEncM2( address, &status1, &valid1);
+  LeftHipCnt = roboclawR.ReadEncM1( address, &status2, &valid2);
+  RightHipSpd = roboclawR.ReadSpeedM2( address, &status3, &valid3);
+  LeftHipSpd = roboclawR.ReadSpeedM1( address, &status4, &valid4);
+  if( RightHipSpd>5 || RightHipSpd<-5 )
+    AnySpeed = 1;
+  if( LeftHipSpd>5 || LeftHipSpd<-5 )
+    AnySpeed = 1;
+ if( DispOff == 'D' )       
+ {
+   if(valid1)
+    InOut( "  Encoder Hips  Left_M1:", LeftHipCnt, 'N' );  
+   if(valid2)
+    InOut( " Rgh_M2:", RightHipCnt, 'N' );  
+   if( valid3 )
+    InOut( " Speeds 82_M1_RH", LeftHipSpd, 'N' );  
+  if( valid4 )
+    InOut( " 82_M2_LH", RightHipSpd, 'Y' );  
+ }       // end display off
+}        // end display routine
+
+
+// trying to get hip motors to be at same spot
+// hard to do as the legs hanging in the air have momentom when stopping
+void CenterHips( char hipp )    
+  {
+  InOut( "***   Center Hips", 55, 'Y' );
+  InOut( "find limit switch right hip", 55, 'Y' );
+  while ( (digitalRead( HipRight )) == HIGH )
+  {
+     Serial.print( "#" );  
+     roboclawR.ForwardM2( 0x82, 100 ); // max 127 for speed
+     delay( 80 );                     // how long to have motor on
+     roboclawR.ForwardM2( 0x82, 0 );  // motor off
+     delay( 70 ); 
+  } 
+  Serial.println( " " );
+  
+  InOut( "find limit switch left  hip", 55, 'Y' );
+  while ( (digitalRead( HipLeft )) == HIGH )
+  {
+     Serial.print( "&" );  
+     roboclawR.BackwardM1( 0x82, 100 );  // max speed 127
+     delay( 80 );                    
+     roboclawR.BackwardM1( 0x82, 0 );  
+     delay( 70 ); 
+  }     
+  Serial.println( " " );
+//  WaitKey();
+
+// want platform to be more level and then reset encoders  
+  roboclawR.ResetEncoders( 0x82 );      // reset encoders hips
+  delay( 1000 );
+  roboclawR.SpeedAccelDeccelPositionM1(0x82,800,1000,1000,-250,1);   // left forward is minus value
+  delay( 1000 );
+  roboclawR.SpeedAccelDeccelPositionM2(0x82,800,1000,1000,250,1);  // right forward is plus value
+  delay( 3000 ); 
+  roboclawR.ResetEncoders( 0x82 );      // reset encoders hips
+  DisplaySpeed(  'D'  );        // show me encoders
+  RightHipCnt = 0;
+  LeftHipCnt = 0;       
+  InOut( "***   hips done", 55, 'Y' );
+ }    // end center hips
+
+// reads the 9 axis sensor on left foot
+void Compass_Base( char dispp )
+{
+  int StartChar;
+  String tempstr = " ";
+
+  Serial2.print( "1" );             // request data from compass
+  sBuffer = " ";
+  while (Serial2.available () > 0)      
+  {
+      delay (1);                  // thinking about delay here at 38,400 baud a bit is 26us or char is 10 * that or .26ms
+      c = Serial2.read ();                 
+      if (c == '\r')  
+      {
+//        Serial.println( sBuffer );     // Echo captured string for testing
+        break;
+      }
+      sBuffer += c;             // make string
+   }
+  StartChar = sBuffer.indexOf( 'R' );     // roll
+  tempstr = sBuffer.substring( (StartChar+1),(StartChar+4) );
+  BaseRoll = tempstr.toInt( );
+
+  StartChar = sBuffer.indexOf( 'P' );     // pitch
+  tempstr  = sBuffer.substring( (StartChar+1),(StartChar+4) );
+//  BasePitch = (tempstr.toInt( ) + 4 );     // dec 31 added correction of 4 removed Jan 25
+  BasePitch = (tempstr.toInt( ) );     // not sure what is going on with this
+  
+  StartChar = sBuffer.indexOf( 'Y' );     // yaw
+  tempstr  = sBuffer.substring( (StartChar+1),(StartChar+4) );
+  BaseYaw = tempstr.toInt( );
+  
+  if( dispp == 'D' ) 
+  {  
+    InOut( "  Base R:", BaseRoll, 'N' );  
+    InOut( " P:", BasePitch, 'N' );    
+    InOut( " Y:", BaseYaw, 'Y' );  
+  }  
+}     // end compass
+
+void InOut( String msg, int num, char newline )
+{
+  Serial.print( msg );
+  Serial.print( " " );
+  if( num != 55 )
+    Serial.print( num,DEC );
+  if( newline == 'Y' )
+    Serial.println( "" );
+  if( bluetooth > 0 )
+    {
+    Serial3.print( msg );
+    Serial3.print( " " );
+    if( num != 55 )
+      Serial3.print( num,DEC );
+    if( newline == 'Y' )
+      Serial3.println( "" );
+    }
+}
+
+ // control platform by keypad numbers  manual mode for motors    working Jan 29 changed to position control
+void NumDrive()
+{
+  int Rlast = RightAnkleRot;               // starting place for ankle servos
+  int Llast = LeftAnkleRot;                // starting place for ankle servos
+  int SpdHip = 500;
+  InOut( "Number Pad Control ", (sBuffer[ 1 ]), 'Y' );  
+  if( sBuffer[ 1 ] == 'L' )         // left leg testing
+        swleg = 1;
+  if( sBuffer[ 1 ] == 'R' )         // right leg testing
+        swleg = 2;
+  if( sBuffer[ 1 ] == 'A' )         // ankles testing
+        swleg = 4;
+  if( sBuffer[ 1 ] == 'H' )         // hip testing
+        swleg = 5;
+
+NumRepeat:
+  {
+    c = Serial.read ();      // get number from keypad             
+    switch ( c )             // look at first character
+    {               
+    case '8':
+    {
+        if( swleg == 1 )           // left knee testing
+        {
+          InOut( "Upper Left Leg straight",LeftKneeCnt, 'Y' );                     
+          roboclawR.SpeedAccelDeccelPositionM2(0x81,1500,4000,4000, (LeftKneeCnt-500) ,1);  // left knee
+        }
+        if( swleg == 2 )           // right knee testing
+        {
+          InOut( "Upper Right Leg straight", RightKneeCnt, 'Y' );                     
+          roboclawR.SpeedAccelDeccelPositionM2(0x80,1500,4000,4000, (RightKneeCnt-500) ,1);  // right knee
+        }
+        if( swleg == 4 )          // ankle rotation testing
+        {
+          Rlast = Rlast + 5;
+          AnkleServoR.write( Rlast );
+          InOut( "right ankle rotate to left (count up)", Rlast, 'Y' );                     
+        }
+        if( swleg == 5 )          // hip rotation testing
+        {
+          InOut( "Right Hip Back", RightHipCnt, 'Y' );                     
+          roboclawR.SpeedAccelDeccelPositionM2(0x82,SpdHip,2000,2000, (RightHipCnt-300) ,1); // right hip
+        }
+        break;    
+    }
+      
+    case '2':
+    {
+        if( swleg == 1 )           // left knee testing
+        {
+          InOut( "Upper Left Leg bend", LeftKneeCnt, 'Y' );                     
+          roboclawR.SpeedAccelDeccelPositionM2(0x81,1500,4000,4000, (LeftKneeCnt+500) ,1);  // left knee
+        }
+        if( swleg == 2 )           // right knee testing
+        {
+          InOut( "Upper Right Leg bend", RightKneeCnt, 'Y' );                     
+          roboclawR.SpeedAccelDeccelPositionM2(0x80,1500,4000,4000, (RightKneeCnt+500) ,1);  // right knee
+        }
+        if( swleg == 4 )          // ankle rotation testing
+        {
+          Rlast = Rlast - 5;
+          AnkleServoR.write( Rlast );
+          InOut( "right ankle rotate to right (count down)", Rlast, 'Y' );                     
+        }
+       if( swleg == 5 )          // hip rotation testing
+        {
+          InOut( "Right Hip Forward", RightHipCnt, 'Y' );                     
+          roboclawR.SpeedAccelDeccelPositionM2(0x82,SpdHip,2000,2000, (RightHipCnt+300) ,1); // right hip
+        }
+        break;   
+    }
+        
+    case '4':
+    {
+        if( swleg == 1 )          // left ankle up testing
+        {
+          InOut( "left foot down", LeftAnkleCnt, 'Y' );                     
+          roboclawR.SpeedAccelDeccelPositionM1(0x81,1500,4000,4000, (LeftAnkleCnt+500) ,1);  // left ankle
+        }
+        if( swleg == 2 )           // right ankle up testing
+        {
+          InOut( "right foot down", RightAnkleCnt, 'Y' );                     
+          roboclawR.SpeedAccelDeccelPositionM1(0x80,1500,4000,4000, (RightAnkleCnt+500) ,1);  // right ankle
+        }                 
+        if( swleg == 4 )          // ankle rotation testing
+        {
+          Llast = Llast - 5;
+          AnkleServoL.write( Llast );
+          InOut( "left ankle rotate to left (count up)", Llast, 'Y' );                     
+        }
+        if( swleg == 5 )          // hip rotation testing
+        {
+          InOut( "Left Hip Forward", LeftHipCnt, 'Y' );                     
+          roboclawR.SpeedAccelDeccelPositionM1(0x82,SpdHip,2000,2000, (LeftHipCnt+300) ,1 ); // move left hip 
+        }
+        break;           
+    }
+      
+    case '6':
+    {
+        if( swleg == 1 )
+        {
+          InOut( "left foot up", LeftAnkleCnt, 'Y' );                     
+          roboclawR.SpeedAccelDeccelPositionM1(0x81,1500,4000,4000, (LeftAnkleCnt-500) ,1) ;  // left ankle
+        }
+        if( swleg == 2 )
+        {
+          InOut( "right foot up", RightAnkleCnt, 'Y' );                     
+          roboclawR.SpeedAccelDeccelPositionM1(0x80,1500,4000,4000, (RightAnkleCnt-500) ,1 );  // right ankle
+        }
+        if( swleg == 4 )          // ankle rotation testing
+        {
+          Llast = Llast + 5;
+          AnkleServoL.write( Llast );
+          InOut( "left ankle rotate to right (count down)", Llast, 'Y' );
+        }                   
+        if( swleg == 5 )          // hip rotation testing
+        {
+          InOut( "Left Hip Back", LeftHipCnt, 'Y' );                     
+          roboclawR.SpeedAccelDeccelPositionM1(0x82,SpdHip,2000,2000, (LeftHipCnt-300) ,1 ); // move left hip 
+        }
+        break;           
+    }
+      
+    case '5':
+    {
+      DisplaySpeed(  'D'  );      // read encoders and update variables
+      DisplayLmSwitch( 'D' );
+      Compass_Base( 'D' );
+      break;           
+    }
+      
+    case '0':
+    {
+        goto NumStop;                    
+        break;           
+    }
+  }   // end case statement
+    
+  delay( 500 );         // hip rotation testing
+  c = '0';
+  DisplaySpeed(  'N'  );      // read encoders and update variables
+  goto NumRepeat;
+  }
+NumStop:
+  roboclawR.BackwardM1( 0x80, 0x00 );  // stop right ankle
+  roboclawR.BackwardM2( 0x80, 0x00 );  // stop right knee
+  roboclawR.BackwardM1( 0x81, 0x00 );  // stop right ankle
+  roboclawR.BackwardM2( 0x81, 0x00 );  // stop right knee
+  roboclawR.BackwardM1( 0x82, 0x00 );  // stop right hip
+  roboclawR.BackwardM2( 0x82, 0x00 );  // stop right hip
+  InOut( "*** exit keypad", 55, 'Y' );               
+}
+
