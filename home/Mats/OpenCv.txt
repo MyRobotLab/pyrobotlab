@@ -1,0 +1,44 @@
+--- Basic ( Works OK, but no Java or optimization )
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.3.0/modules \
+    -D BUILD_TESTS=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=OFF \
+    -D BUILD_EXAMPLES=OFF ..
+
+
+--- Basic + Java bindings ( cmake seems ok, try compiling, install Oracle Java SDK first )
+--- Stops, don't kno why. Looses contact
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.3.0/modules \
+    -D ENABLE_NEON=ON \
+    -D INSTALL_PYTHON_EXAMPLES=OFF \
+    -D JAVA_AWT_INCLUDE_PATH=/home/pi/java8/jdk1.8.0_152/include \
+    -D JAVA_AWT_LIBRARY=/home/pi/java8/jdk1.8.0_152/include/jawt.h \
+    -D JAVA_INCLUDE_PATH=/home/pi/java8/jdk1.8.0_152/include \
+    -D JAVA_INCLUDE_PATH2=/home/pi/java8/jdk1.8.0_152/linux/include \
+    -D JAVA_JVM_LIBRARY=/home/pi/java8/jdk1.8.0_152/include/jni.h \
+    -D BUILD_SHARED_LIBS=OFF \
+    -D BUILD_EXAMPLES=OFF ..
+
+--- Optimal with Neon and VFPV3
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.3.0/modules \
+    -D ENABLE_NEON=ON \
+    -D ENABLE_VFPV3=ON \
+    -D BUILD_TESTS=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=OFF \
+    -D BUILD_EXAMPLES=OFF ..
+
+--- Optimal with Neon and VFPV3 + Java bindings
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.3.0/modules \
+    -D ENABLE_NEON=ON \
+    -D ENABLE_VFPV3=ON \
+    -D BUILD_TESTS=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=OFF \
+    -D BUILD_SHARED_LIBS=OFF \
+    -D BUILD_EXAMPLES=OFF ..
