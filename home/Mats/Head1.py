@@ -1,74 +1,72 @@
-#
-# This is a smaller script to just test the servos in the head
-# Start all services
-arduino = Runtime.start("arduino","Arduino")
-jaw = Runtime.start("jaw","Servo")
-rothead = Runtime.start("RotHead","Servo")
-leftEyeX = Runtime.start("LeftEyeX","Servo")
-rightEyeX = Runtime.start("RightEyeX","Servo")
-eyeY = Runtime.start("EyeY","Servo")
+# Script for the head of my InMoov
+# Supposed to start when powered in, so the startup seqence may seem a bit strange
+# First it starts the eye servos and move the eyes around a bit to make him "awake"
+# Then the speech service is started so that the robot can explan talk about the rest of the
+# startup sequence
 # 
-# Connect the Arduino
+# Start the Arduino service and connect to it
+def lookSideways(degrees):
+	eyeLeft.moveTo(eyeLeft.getRest() + degrees)
+	eyeRight.moveTo(eyeRight.getRest() + degrees)
+	neck.moveTo(neck.getRest() - degrees)
+# 
+arduino = Runtime.start("arduino","Arduino")
 arduino.connect("/dev/ttyACM0")
 #
-# Start of main script
-jaw.attach(arduino,9)
-jaw.setMinMax(80,120)
-# Connect the head turn left and right
-rothead.setRest(100)
-rothead.attach(arduino,8)
-rothead.setVelocity(20)
-rothead.rest()
-# Connect the left eye
-leftEyeX.setMinMax(50,110)
-leftEyeX.setRest(80)
-leftEyeX.attach(arduino,10)
-leftEyeX.rest()
-# Connect the right eye
-rightEyeX.setMinMax(60,120)
-rightEyeX.setRest(90)
-rightEyeX.attach(arduino,11)
-rightEyeX.rest()
-# Make the left eye follow the right
-# runtime.subscribe("rightEyeX","publishServoEvent","leftEyeY","MoveTo")
-# rightEyeX.eventsEnabled(True)
-# Connect eyes up/down
-eyeY.setMinMax(60,140)
-eyeY.setRest(90)
-eyeY.attach(arduino,12)
-eyeY.rest()
-def lookRight():
-	rightEyeX.moveTo(120)
-def lookLeft():
-	rightEyeX.moveTo(60)
-def lookForward():
-	rightEyeX.rest()
-	eyeY.rest()
-def lookDown():
-	EyeY.moveTo(60)
-def lookUp():
-	EyeY.moveTo(140)
-def headRight():
-	rothead.moveTo(70)
-def headLeft():
-	rothead.moveTo(130)
-def headForward():
-	rothead.rest()
-lookRight()
-sleep(2)
-lookLeft()
-sleep(2)
-lookForward()
-sleep(2)
-lookUp()
-sleep(2)
-lookDown()
-sleep(2)
-lookForward()
-sleep(2)
-headRight()
-sleep(5)
-headLeft()
-# sleep(5)
-# headForward()
-# sleep(5)
+# Start all the eye servos
+eyes = Runtime.start("eyes","Servo")
+eyeLeft = Runtime.start("eyeLeft","Servo")
+eyeRight = Runtime.start("eyeRight","Servo")
+neck = Runtime.start("neck","Servo")
+eyes.setMinMax(50,120)
+eyes.setRest(90)
+eyes.attach("arduino",12)
+eyes.rest()
+
+eyeRight.setMinMax(70,130)
+eyeRight.setRest(100)
+eyeRight.attach("arduino",11)
+eyeRight.rest()
+
+eyeLeft.setMinMax(40,100)
+eyeLeft.setRest(70)
+eyeLeft.attach("arduino",10)
+eyeLeft.rest()
+
+neck.setMinMax(0,180)
+neck.setRest(90)
+neck.attach("arduino",8)
+neck.setVelocity(20)
+neck.rest()
+
+speech = Runtime.start("speech","MarySpeech")
+voice = 'cmu-bdl-hsmm'
+speech.setVoice(voice)
+lookSideways(10)
+speech.speakBlocking("Hello")
+lookSideways(-10)
+speech.speakBlocking("My name is InMoov")
+lookSideways(20)
+speech.speakBlocking("I was designeg by Gael Langevin in Paris")
+lookSideways(-20)
+speech.speakBlocking("All the parts in my body has been printed on a 3d printer")
+lookSideways(30)
+speech.speakBlocking("I have a Raspberry PI in the head that is my brain")
+lookSideways(-30)
+speech.speakBlocking("A second PI is mounted in my back. It acts as my gut feeling")
+lookSideways(30)
+speech.speakBlocking("My head also contains an Arduino that drives the servos for my eyes, mouth and neck")	
+lookSideways(-30)
+speech.speakBlocking("In each arm I have a small board that drives the servos for my arm and hand")	
+lookSideways(0)
+speech.speakBlocking("There is a camera in my eye so that I can see")	
+lookSideways(30)
+speech.speakBlocking("As you can hear I also can speak")	
+lookSideways(30)
+speech.speakBlocking("I also have a microphone,so that I can hear")	
+lookSideways(30)
+speech.speakBlocking("It will soon be replace with a microphone array, so that I can detect where the sound is coming from")	
+lookSideways(0)
+webgui = Runtime.create("webgui","WebGui")
+webgui.autoStartBrowser(False)
+webgui.start()
