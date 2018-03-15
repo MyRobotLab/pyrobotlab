@@ -11,8 +11,8 @@ from org.myrobotlab.opencv import OpenCVFilterFaceRecognizer
 # the bot.
 #############################################################
 # All bot specific hardware configuration goes here.
-leftPort = "/dev/ttyACM0"
-rightPort = "/dev/ttyACM1"
+leftPort = "/dev/ttyACM1"
+rightPort = "/dev/ttyACM0"
 headPort = leftPort
 
 gesturesPath = "/home/pi/github/pyrobotlab/home/kwatters/harry/gestures"
@@ -54,9 +54,11 @@ htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 
 ######################################################################
 # mouth service, speech synthesis
-mouth = Runtime.createAndStart("i01.mouth", "NaturalReaderSpeech")
-mouth.setVoice(botVoice)
+# mouth = Runtime.createAndStart("i01.mouth", "NaturalReaderSpeech")
+# mouth.setVoice(botVoice)
 
+mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
+mouth.setVoice("cmu-bdl-hsmm")
 ######################################################################
 # the "ear" of the inmoov TODO: replace this with just base inmoov ear?
 ear = Runtime.createAndStart("i01.ear", "WebkitSpeechRecognition")
@@ -122,20 +124,22 @@ i01.loadCalibration(calibrationPath)
 # i01.opencv.setInputFileName("/dev/video0")
 
 i01.opencv.setFrameGrabberType("org.myrobotlab.opencv.MJpegFrameGrabber")
-i01.opencv.setInputFileName("http://192.168.4.117:8080/?action=stream")
+# i01.opencv.setInputFileName("http://192.168.4.114:8080/?action=stream")
+i01.opencv.setInputFileName("http://localhost:8080/?action=stream")
 i01.opencv.setInputSource("network")
-# i01.opencv.setStreamerEnabled(False)
+
+i01.opencv.setStreamerEnabled(False)
 
 # add 3 transposes..  would be nice to add one going counter clock.
 tr1 = OpenCVFilterTranspose("tr1")
-tr2 = OpenCVFilterTranspose("tr2")
-tr3 = OpenCVFilterTranspose("tr3")
+# tr2 = OpenCVFilterTranspose("tr2")
+# tr3 = OpenCVFilterTranspose("tr3")
 
 i01.opencv.addFilter(tr1)
-i01.opencv.addFilter(tr2)
-i01.opencv.addFilter(tr3)
+# i01.opencv.addFilter(tr2)
+# i01.opencv.addFilter(tr3)
 
-i01.opencv.capture()
+# i01.opencv.capture()
 # face recognizer
 # fr = OpenCVFilterFaceRecognizer("fr")
 # i01.opencv.addFilter(fr)
@@ -154,13 +158,13 @@ gui.undockTab("python")
 gui.undockTab("i01.opencv")
 
 
-i01.headTracking.pid.setPID("x", 25,5.0,1.0)
-i01.headTracking.pid.setPID("y", 50,5.0,1.0)
+i01.headTracking.pid.setPID("x", 50,1.0,0.1)
+i01.headTracking.pid.setPID("y", 50,1.0,0.1)
 
 i01.head.rothead.rest()
 i01.head.neck.rest()
 
-trackHumans()
+# trackHumans()
 
 
 
