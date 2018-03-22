@@ -40,4 +40,4 @@ print "on demand range is ", sr04.range()
  
 # you can also ping - ping does not do any calculations
 # it simply returns the duration in microseconds of the ping
-print "ping ", sr04.ping(), " mircoseconds"
+print "ping ", sr04.ping(), " microseconds"
