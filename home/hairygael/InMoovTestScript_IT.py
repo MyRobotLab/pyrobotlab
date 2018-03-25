@@ -13,8 +13,8 @@ rightPort = "COM9"
 # start optional virtual arduino service, used for internal test and virtual inmoov
 # virtual=True
 if ('virtual' in globals() and virtual):
-    virtualArduinoLeft = Runtime.start("virtualArduinoLeft", "VirtualArduino")
-    virtualArduinoLeft.connect(leftPort)
+    # virtualArduinoLeft = Runtime.start("virtualArduinoLeft", "VirtualArduino")
+    # virtualArduinoLeft.connect(leftPort)
     virtualArduinoRight = Runtime.start("virtualArduinoRight", "VirtualArduino")
     virtualArduinoRight.connect(rightPort)
 # end used for internal test
