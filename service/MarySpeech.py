@@ -20,6 +20,9 @@ print ("this is the voice I am using", mouth.getVoice())
 #mouth.setVoice("ac-nsh")
 #mouth.speakBlocking(u"привет")
 
+# force no audioEffects
+mouth.setAudioEffects("")
+
 #speakBlocking!
 # this blocks until speaking is done
 mouth.speakBlocking(u"Hello world")
