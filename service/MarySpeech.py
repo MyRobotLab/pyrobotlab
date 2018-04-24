@@ -1,5 +1,5 @@
 #start Service
-mouth = Runtime.start("MarySpeech", "MarySpeech")
+mouth = Runtime.start("mouth", "MarySpeech")
 
 #possible voices
 print ("these are the voices I can have", mouth.getVoices())
