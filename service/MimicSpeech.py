@@ -6,8 +6,16 @@
 #########################################
 
 # start the service
-mimicspeech = Runtime.start('mimicspeech','MimicSpeech')
-mimicspeech.speakBlocking('hello, this is mimic speech from mycroft project')
-mimicspeech.speakBlocking('I am a speech synthesis program')
-mimicspeech.speakBlocking('How was that ?')
-mimicspeech.speakBlocking('can someone fix my list voices, i think its broke')
+mouth = Runtime.start('mouth','MimicSpeech')
+
+#possible voices ( selected voice is stored inside config until you change it )
+print ("these are the voices I can have", mouth.getVoices())
+print ("this is the voice I am using", mouth.getVoice())
+
+mouth.speakBlocking('hello, this is mimic speech from mycroft project')
+mouth.speakBlocking('I am a speech synthesis program')
+mouth.speakBlocking('How was that ?')
+mouth.speakBlocking('can someone fix my list voices, i think its broke. Oh thanks, fixed now')
+
+mouth.setVolume(0.7)
+mouth.speakBlocking("Silent please")

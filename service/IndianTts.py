@@ -3,8 +3,12 @@
 # description: used as a general template
 # more info @: http://myrobotlab.org/service/IndianTts
 #########################################
+
 tts=Runtime.start("tts", "IndianTts")
-#change api and user
-tts.api="2d108780-0b86-11e6-b056-07d516fb06e1"
-tts.userid="80"
+
+# You sould't not expose keys here !! inside gui is a good place
+# But you can do it here ( only once is enough )
+# An AES safe is used to store keys
+# tts.setKeys("USER_ID","API")
+
 tts.speak(u"नमस्ते भारत मित्र")

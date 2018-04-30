@@ -1,7 +1,13 @@
+#########################################
+# MarySpeech.py
+# categories: speech
+# more info @: http://myrobotlab.org/service/MarySpeech
+#########################################
+
 #start Service
 mouth = Runtime.start("mouth", "MarySpeech")
 
-#possible voices
+#possible voices ( selected voice is stored inside config until you change it )
 print ("these are the voices I can have", mouth.getVoices())
 print ("this is the voice I am using", mouth.getVoice())
 
@@ -35,6 +41,9 @@ mouth.speakBlocking(u"What should I use")
 #more effects and information @ http://myrobotlab.org/service/MarySpeech
 mouth.setAudioEffects("FIRFilter+Robot(amount=50)")
 mouth.speakBlocking(u"this is after a sound effect ")
+
+speech.setVolume(0.7)
+speech.speakBlocking("Silent please")
 
 #speak!
 # this not blocks speaking and next line is executed immediatly

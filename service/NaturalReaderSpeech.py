@@ -7,13 +7,20 @@
 
 
 # start the service
-speech = Runtime.start("Speech", "NaturalReaderSpeech")
-speech.setVoice(u"Korean_Seoyeon")
-speech.speakBlocking(u"내 로봇 연구소는 너무 강력하다")
-#setRate is -x/0/+x
-speech.setRate(-50)
-speech.setVoice(u"US-English_Ronald")
-speech.speakBlocking(u"Hey, Watson was here!")
+mouth = Runtime.start("mouth", "NaturalReaderSpeech")
+
+#possible voices ( selected voice is stored inside config until you change it )
+print ("these are the voices I can have", mouth.getVoices())
+print ("this is the voice I am using", mouth.getVoice())
+
+mouth.setVoice(u"Korean_Seoyeon")
+mouth.speakBlocking(u"내 로봇 연구소는 너무 강력하다")
+
+mouth.setVoice(u"US-English_Ronald")
+mouth.speakBlocking(u"Hey, Watson was here!")
 #unicode test
-speech.setVoice(u"French_Chloé")
-speech.speakBlocking(u"coucou les francophones")
+mouth.setVoice(u"French_Chloé")
+mouth.speakBlocking(u"coucou les francophones")
+
+mouth.setVolume(0.7)
+mouth.speakBlocking("Silent please")
