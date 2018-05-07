@@ -13,7 +13,7 @@ print alice.getResponse("How are you?")
 mouth = Runtime.start("mouth", "MarySpeech")
 # create a route which sends published Responses to the
 # mouth.speak(String) method
-alice.addTextListener(mouth)
+alice.attach(mouth)
 
 alice.getResponse(u"What is new?")
 sleep(3)
