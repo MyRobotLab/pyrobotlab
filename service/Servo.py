@@ -6,6 +6,9 @@
 # uncomment for virtual hardware
 # virtual = True
 
+# Every settings like limits / port number / controller are saved after initial use
+# so you can share them between differents script 
+
 servoPin01 = 4
 servoPin02 = 5
 
@@ -44,8 +47,8 @@ servo02.attach(arduino.getName(), servoPin02)
 # auto disable - this enables (starts pwm) before a movement
 # and disables (stops pwm) after a movement
 servo01.setAutoDisable(True)
-servo01.disableDelayIfVelocity=1000 # grace period for autoDisable
-servo02.setAutoDisable(False)
+servo01.setDisableDelayIfVelocity(1000) # grace period for autoDisable
+# servo02.setAutoDisable(False)
 
 # speed changes
 print("speed changes")
