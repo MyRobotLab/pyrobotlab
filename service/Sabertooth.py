@@ -33,6 +33,9 @@ sabertooth = Runtime.start("sabertooth","Sabertooth")
 m1 = Runtime.start("m1","MotorPort")
 m2 = Runtime.start("m2","MotorPort")
 joy = Runtime.start("joy","Joystick")
+
+print(joy.getControllerNames())
+
 joy.setController(controllerIndex)
 
 # configure services
