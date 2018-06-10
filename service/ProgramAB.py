@@ -5,7 +5,8 @@
 
 # create a ProgramAB service and start a session
 alice = Runtime.start("alice", "ProgramAB")
-alice.startSession("username")
+# supported language list : https://github.com/MyRobotLab/aiml/tree/master/bots
+alice.startSession("username","en-US")
 
 print alice.getResponse("How are you?")
 
