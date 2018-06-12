@@ -1,73 +1,76 @@
-import time
+# constants
+port = "COM4"
 
-ser = Runtime.start( "serial","Serial" )
-print ser.getPortNames()
-ser.getPortNames()
+# velocity and pid constants
+d = 0
+p = 15000
+i = 46
+qpps = 56000
+deadzone = 500
+minPos = 0
+maxPos = 40000000
 
-port = "COM6"
-# I use udev rules to always make it the same port
-#port = "/dev/ftdi0"
-#port = "/dev/ttyACM1"
-# port = "/dev/ttyUSB0"
+# speed accel and deccel
+speed = 1000000
+accel = 1000000
+deccel = 1000000
 
-print( 'RoboClaw test' )
+# initial position
+pos = 0
 
-roboclaw = Runtime.start( "roboclaw", "RoboClaw" )
-m1 = Runtime.start( "m1", "MotorPort" )
-m2 =  Runtime.start( "m2", "MotorPort" )
+# make sure we have a python service named 'python'
+Runtime.start('python','Python')
 
-m1.setPort( "m1" )
-m2.setPort( "m2" )
+# create our roboclaw
+rc = Runtime.start('rc','RoboClaw')
 
-roboclaw.connect(port)
+# reset the encoders
+# rc.resetEncoders()
 
-# attach services
-roboclaw.attach(m1)
-roboclaw.attach(m2)
+# set an encoder to a value
+rc.setEncoderM1(100000)
 
-# roboclaw.resetQuadratureEncoderCounters()
-# roboclaw.restoreDefaults()
-m1.stop()
-m2.stop()
+# allow buffering of commands - default false
+rc.setBuffer(True)
 
-# sleep here
-time.sleep( .5 )
-# read encoders
-pos1 = roboclaw.readEncoderM1()
-pos2 = roboclaw.readEncoderM2()
-print( 'enc 1:', pos1, ' enc 2:', pos2 )
+# start encoder 1 publishing
+rc.startEncoderM1()
 
-for i in range( 0, 20 ):
-   m1.move( 0.1 * i )
-   time.sleep( .1 )
-   m2.move( 0.1 * i )
-   print( 'cnt= ', i )
-   time.sleep( .1 )
+# create callback to handle subscription
+def onEncoderData(data):
+    print("onEncoderData - %s" % data);
 
-m1.move( 0 )
-time.sleep( .01 )
-m2.move( 0 )
+# subscribe to encoder events
+python.subscribe(rc, 'publishEncoderData')
 
-# sleep here
-time.sleep( .5 )
-# read encoders
-pos1 = roboclaw.readEncoderM1()
-pos2 = roboclaw.readEncoderM2()
-print( 'enc 1:', pos1, ' enc 2:', pos2 )
+# connect it
+rc.connect(port)
+print('initial encoder reads %s' % rc.readEncoderM1())
+print('initial pid reads %s' % rc.readPidM1())
 
-roboclaw.resetQuadratureEncoderCounters()
+# set all the constants for pid qpps min and max
+print('setting constants')
+sleep(1)
+rc.setPidQppsDeadzoneMinMaxM1(d, p, i, qpps, deadzone, minPos, maxPos)
+print('pid now reads %s' % rc.readPidM1())
+sleep(1)
 
-# sleep here
-time.sleep( .5 )
-# read encoders
-pos1 = roboclaw.readEncoderM1()
-pos2 = roboclaw.readEncoderM2()
-print( 'enc 1:', pos1, ' enc 2:', pos2 )
+# start publishing encoder data
+rc.startEncoderM1()
 
-# roboclaw.readEncoderCount()
-# roboclaw.read
-# roboclaw.bufferedDriveM1WithSignedSpeedAccelDeccelPosition(500,500,500,10000,1)
-# roboclaw.
-# time.sleep( .01 )
-# roboclaw.driveM1WithSignedDutyAndAccel( 255, 255 )
-# time.sleep( .01 )
+# move the motor
+rc.driveSpeedAccelDeccelPosM1(speed, accel, deccel, pos)
+# see how close we came
+print(rc.readEncoderM1())
+
+# change pos
+pos = 3000000
+
+# move in the other direction
+rc.driveSpeedAccelDeccelPosM1(speed, accel, deccel, pos)
+# see how close we came
+print('motor target %s motor actual %s' % (pos, rc.readEncoderM1()))
+
+# continue polling encoder for 10 seconds
+sleep(30)
+rc.stopPolling()
