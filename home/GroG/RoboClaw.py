@@ -51,7 +51,7 @@ print('initial pid reads %s' % rc.readPidM1())
 # set all the constants for pid qpps min and max
 print('setting constants')
 sleep(1)
-rc.setPidQppsDeadzoneMinMaxM1(d, p, i, qpps, deadzone, minPos, maxPos)
+rc.setPidQppsDeadzoneMinMaxM1(p, i, d, qpps, deadzone, minPos, maxPos)
 print('pid now reads %s' % rc.readPidM1())
 sleep(1)
 
