@@ -7,7 +7,6 @@ def heard(data):
   print "Speech Recognition Data:"+str(data)
 
 # create a ProgramAB service and start a session
-Runtime.createAndStart("htmlFilter", "HtmlFilter")
 chatBot=Runtime.start("chatBot", "ProgramAB")
 chatBot.setPath("C:\mrl\myrobotlab.1.0.2693\InMoov\chatbot")
 chatBot.startSession("default",Language)
