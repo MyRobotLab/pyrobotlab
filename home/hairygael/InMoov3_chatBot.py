@@ -18,7 +18,7 @@ WebGui.autoStartBrowser(False)
 WebGui.startService()
 
 # Then start the browsers and show the WebkitSpeechRecognition service named webkitspeechrecognition
-WebGui.startBrowser("http://localhost:8888/#/service/webkitspeechrecognition")
+WebGui.startBrowser("http://localhost:8888/#/service/ear")
 ear = Runtime.start("ear","WebkitSpeechRecognition")
 ear.setLanguage("en")
 ear.addListener("publishText", python.name, "heard");
