@@ -8,7 +8,7 @@ servo01 = Runtime.start("servo01","Servo")
 servo02 = Runtime.start("servo02","Servo")
 arduino.connect(port)
 servo01.attach(arduino.getName(), servoPin01)
-servo02.attach(arduino.getName(), servoPin01)
+servo02.attach(arduino.getName(), servoPin02)
 def trackHumans():
   servo01.setVelocity(30)
   servo02.setVelocity(30)
