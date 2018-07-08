@@ -1,0 +1,233 @@
+#read solar control data from OUtBack Mate 
+# July 5 2018
+
+import time
+import datetime
+import sys
+
+port = "COM25"		# laptop
+#port = "COM6"		# desktop
+serial = Runtime.createAndStart("serial","Serial")
+serial.connect(port,19200, 8, 1, 0)			# mate serial parm
+# need to have DTR high and RTS low to power serial port on Mate
+serial.port.setDTR(True)
+serial.port.setRTS(False)
+
+# declare string names
+strs = ["" for x in range(20)]		# so make empty stings
+
+def CheckStr():					# having problem with short or bad strings of data
+    global tf
+    tf = "bad"						# set intial condition
+    number = len(strs[x].split(',') )	# how many comma or parts
+#    print "   string split ", strs[x], "   number of comas=", number		# good for testing seeing data
+    if ( (number == 14) or (number == 12) ): 				# string needs so many parts
+      Stemp = strs[x].split(',')		# split string at commas  Stemp should hava a number
+      for t in range( 1, 11):			# now check all numbers
+#        print "Stemp=", Stemp[ t ], t	# shows individual number
+        if (Stemp[ t ].isdigit()):
+          tf = "good"
+#          print "   string split ", Stemp, " num comas=", number, " good"
+        else:
+          print "****   not a number ", Stemp, " num comas=", number, " bad"
+          tf = "bad"  
+          break  
+
+def FX():
+  global tf, mx
+  CheckStr()
+  if tf == "good":						# check string
+    temp = strs[ x ].split(',')		# split string at commas
+#    print( "   string split ", temp )
+    Charcur = int( temp[ 1 ] )
+    ACvolts = int( temp[ 5 ] )
+    OPmode = int( temp[ 7 ] )
+    ERRmode = int( temp[ 8 ] )
+    ACmode = int( temp[ 9 ] )
+    Batvolts = int( temp[ 10 ])
+    Batvolts = float( Batvolts) / 10.0
+    print( mx,' FX DC to AC inverter  bat volts={}'.format(Batvolts), ' AC volts={}'.format(ACvolts), ' AC amps={}'.format(Charcur), ' AC Mode={}'.format(ACmode) )
+
+def MX():			
+  global tf, mx
+  CheckStr()
+  if tf == "good":						# check string
+    temp = strs[ x ].split(',')		# split string at commas
+#    print( "   string split ", temp )
+    CHARcur = int( temp[ 2 ] )
+    PVcur = int( temp[ 3 ] )
+    PVvolt = int( temp[ 4 ] )
+    kWH = int( temp[ 5 ] )
+    ERRmode = int( temp[ 8 ] )
+    Charmode = int( temp[ 9 ] )
+    Batvolts = int( temp[ 10 ])
+    Batvolts = float( Batvolts) / 10.0
+    INVcur = int( temp[ 1 ] )
+    AUXmd = int( temp[ 7 ] )
+    print( mx,' MX solar charger PV volts={}'.format(PVvolt), ' PV amps={}'.format(PVcur), ' charg Bat amps={}'.format(CHARcur) )
+
+def DC():
+  global tf, mx
+  CheckStr()
+  if tf == "good":						# check string
+    temp = strs[ x ].split(',')		# split string at commas
+#    print( "   string split ", temp )
+    Shuntcur1 = float( temp[ 1 ] ) / 10.0
+    Shuntcur2 = float( temp[ 2 ] ) / 10.0
+    Shuntcur3 = float( temp[ 3 ] ) / 10.0
+    StateChar = int( temp[ 7 ] )  
+    Batvolts = int( temp[ 6 ])
+    Batvolts = float( Batvolts) / 10.0
+    BatTemp = int( temp[ 10 ] ) 
+    print(  mx,' Bat Temp in C={}'.format(BatTemp), ' ShuntCur1={}'.format(Shuntcur1), ' ShuntCur2={}'.format(Shuntcur2), ' ShuntCur3={}'.format(Shuntcur3), ' Battery Percent Charge={}'.format(StateChar) )
+
+# main program 
+print( " " )
+print( "solar panels data output" )
+
+while True:
+ print( " " )
+ now = datetime.datetime.now()
+ print "Current date and time:", now.strftime("%Y-%m-%d %H:%M")
+ 
+# find beginning of data string
+ c = serial.read()
+ while c != 0x0a:
+   c = serial.read()
+
+# need to read 5 OutBack devcices 3 solar charge controllers, 2 inverters, 1 battery monitor
+# dont always get good string, so read more than 5
+ for x in range( 1, 10 ):
+  strs[ x ] = ""					# set string to nothing
+  chksum = 0						# zero checksum for this string
+ # get one string from device end with newline should be 48 long
+  for i in range( 1, 50 ):
+   code = ( (serial.read()) & 0xff)
+   if (code == 10 ):				# exit on new line
+       length = len( strs[ x ] )		# store correct length
+       number = len(strs[x].split(',') )	# how many comma or parts
+       Stemp = strs[x].split(',')			# split string at commas  Stemp should hava a number
+#jhs       print "str split=", strs[x], " comas=", number		# good for testing seeing data
+# calculate check sum
+       if (number == 14) and ( len(Stemp[13]) < 5) and (length == 48):       # looking at number of commas and lenth of checksum
+#         print  "14=",(Stemp[13])," loop len=", i, " coma=",number," str len=",length			# for testing
+         newchk100 = (int (Stemp[13] )/100) 	# get 100s place
+         newchk10 = ((int (Stemp[13] )- (newchk100 * 100)) / 10)  # get 10s place
+         newchk1 =(int (Stemp[13] )- (newchk100 * 100)- (newchk10 * 10))  # get 10s place
+#         print newchk100, newchk10, newchk1
+         chksum = chksum - (newchk100 + newchk10 + newchk1)	# subtract off  checksum count from checksum    
+         if( (int(Stemp[13])) == chksum ):
+#           print "****   string split ", strs[x]," comas=", number,"checksum good=", chksum
+           j = 1
+         else:
+           strs[ x ] = " "			# reset string it is bad
+           print "checksum bad"
+           
+       if (number == 12) and (len(Stemp[11]) < 5) and (length == 48):
+#         print  "12=",(Stemp[11])," loop len=", i, " coma=",number," str len=",length			# for testing
+         newchk100 = (int (Stemp[11] )/100) 	# get 100s place
+         newchk10 = ((int (Stemp[11] )- (newchk100 * 100)) / 10)  # get 10s place
+         newchk1 =(int (Stemp[11] )- (newchk100 * 100)- (newchk10 * 10))  # get 10s place
+#         print newchk100, newchk10, newchk1
+         chksum = chksum - (newchk100 + newchk10 + newchk1)	# subtract off  checksum count from checksum    
+# now is check sum correct? need to check it  sent check sum - calculated check sum = 0
+         if( (int (Stemp[11])) == chksum ):
+#            print "****   string split ", strs[x]," comas=", number,"checksum good=", chksum
+            j = 1
+         else:
+           strs[ x ] = " "			# reset string it is bad
+           print "checksum bad"
+       if (number < 12):
+         strs[ x ] = " "				# reset string it is bad
+         print "error not enough comas"
+       break
+       
+   strs[ x ] += chr( code )			# make string
+   if (code > 47) and (i > 0):	# cr and comma and first letter
+     chksum = chksum + (code -48 )			# calculate simple checksum 
+#     print( code, chksum )				# see calculated check sum for testing
+
+  if ( i > 49 ):				# should not go over 48
+    strs[ x ] = " "
+    print "string to long"
+
+   		
+#print( "show all strings" )	 # for testing code
+#listOfStrings = [ strs[ 1 ], strs[ 2 ], strs[ 3 ], strs[ 4 ], strs[ 5 ], strs[ 6 ], strs[ 7 ], strs[ 8 ], strs[ 9 ] ]
+#print( listOfStrings )
+
+# have problem with skipping some data so read more than 5 strings but only want to show each string one time
+ one = 0
+ two = 0
+ ccc = 0
+ eee = 0
+ fff = 0
+ ggg = 0
+
+# check all strings and show good ones once
+ for x in range( 1, 10):
+#  print( strs[ x ] )		# for testing only
+  mx = 'N'
+  if type(strs[ x ]) == str:
+#      print('variable is a string')
+      j=1
+  else:
+      print('variable IS NOT a string')
+      strs[ x ] = ""					# set string to nothing
+  if 'G' in ( strs[ x ] ):
+#    print("G found in List : " , strs[ x ])
+    count = strs[ x ].index( "G," )
+#    print( "string length ", length )
+    if count == 0 and ggg == 0 and length == 48:
+      ggg = 1
+      mx = 'G'
+      MX()
+
+  if 'E' in ( strs[ x ] ):
+#    print("E found in List : " , strs[ x ])
+    count = strs[ x ].index( "E," )
+#    print( "string length ", length )
+    if count == 0 and eee == 0 and length == 48:
+      eee = 1
+      mx = 'E'
+      MX()
+ 
+  if 'F' in ( strs[ x ] ):
+    count = strs[ x ].index( "F," )
+#    print( "string length ", length )
+    if count == 0 and fff == 0 and length == 48:
+      fff = 1
+      mx = 'F'
+      MX()
+      
+  if '1,' in ( strs[ x ] ):
+    count = strs[ x ].index( "1," )
+#  need check to see where 1 is since coulb be many places
+#    print( "string length ", length )
+    if count == 0 and one == 0 and length == 48:
+#      print("1 found in List : " , strs[ x ])
+      one = 1
+      mx = '1'
+      FX()
+  if '2,' in ( strs[ x ] ):
+    count = strs[ x ].index( "2," )
+#  need check to see where 2 is since coulb be many places
+#    print( "string length ", length )
+    if count == 0 and two == 0 and length == 48:
+#      print("2 found in List : " , strs[ x ])
+     two = 1
+     mx = '2'
+     FX()
+  if 'c' in ( strs[ x ] ):
+    count = strs[ x ].index( "c," )
+#    print( "string length ", length )
+    if count == 0 and ccc == 0 and length == 48:
+#      print("c found in List : " , strs[ x ])
+      ccc = 1
+      mx = 'C'
+      DC()
+ 
+ time.sleep( 60 * 2 )       # Delay  1 minute (60 seconds)
+  
+
+
