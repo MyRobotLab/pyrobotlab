@@ -14,7 +14,7 @@ print ("this is the voice I am using", mouth.getVoice())
 # You sould't not expose keys here, inside gui is a good place
 # But you can do it here ( only once is enough )
 # An AES safe is used to store keys
-# speech.setKey("voicerss.api.key","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+# mouth.setKey("voicerss.api.key","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 
 mouth.setVoice("Sally")
 
