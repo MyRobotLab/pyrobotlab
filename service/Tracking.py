@@ -9,17 +9,30 @@ port = "COM19"   #change COM port to your own port
 xServoPin = 13   #change this to the right servo pin if needed, for inmoov this is right
 yServoPin = 12   #change this to the right servo pin if needed, for inmoov this is right
 
+# create a servo controller and a servo
+arduino = Runtime.start("arduino","Arduino")
+xServo = Runtime.start("xServo","Servo")
+yServo = Runtime.start("yServo","Servo")
+
+# start optional virtual arduino service, used for test
+#virtual=1
+if ('virtual' in globals() and virtual):
+    virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
+    virtualArduino.connect(port)
+
+arduino.connect(port)
+xServo.attach(arduino.getName(), xServoPin)
+yServo.attach(arduino.getName(), yServoPin)
+
 tracker = Runtime.start("tracker", "Tracking")
-gui = Runtime.start("gui", "SwingGui")
+
 opencv=tracker.getOpenCV()
 
 # set specifics on each Servo
-servoX = tracker.getX()
-servoX.setMinMax(30, 150)  #minimum and maximum settings for the X servo
+xServo.setMinMax(30, 150)  #minimum and maximum settings for the X servo
 # servoX.setInverted(True) # invert if necessary
 
-servoY = tracker.getY()
-servoY.setMinMax(30, 150)  #minimum and maximum settings for the Y servo
+xServo.setMinMax(30, 150)  #minimum and maximum settings for the Y servo
 # servoY.setInverted(True) # invert if necessary
 
 # changing Pid values change the 
@@ -32,27 +45,10 @@ pid = tracker.getPID()
 
 pid.setPID("x",5.0, 5.0, 0.1)
 pid.setPID("y",5.0, 5.0, 0.1)
-
-# optional filter settings
-opencv = tracker.getOpenCV()
-
-# not for you, it's for test
-#virtual=1
-if ('virtual' in globals() and virtual):
-  virtualArduino = Runtime.start("virtualArduino", "VirtualArduino")
-  virtualArduino.connect(port)
   
 # connect to the Arduino ( 0 = camera index )
-tracker.connect(port, xServoPin, yServoPin, 0)
+tracker.connect(opencv, xServo, yServo)
 
-if ('virtual' in globals() and virtual):
-  opencv.stopCapture()
-  opencv.setMinDelay(500)
-  opencv.setFrameGrabberType("org.bytedeco.javacv.FFmpegFrameGrabber")
-  opencv.setInputSource("file")
-  opencv.setInputFileName("resource/OpenCV/testData/monkeyFace.mp4")
-
-gui.undockTab("tracker.opencv")
 opencv.broadcastState();
 sleep(1)
 
@@ -68,12 +64,7 @@ sleep(1)
 # mouse and it should track
 # simple point detection and tracking
 # tracker.startLKTracking()
-tracker.faceDetect()
-sleep(10)
-
-# track and recognize faces
-# you need to learn at least 2 faces to get it worky
-if ('virtual' in globals() and virtual):opencv.captureFromImageFile("resource/OpenCV/testData/rachel.jpg")
-tracker.faceDetect(True)
 # scans for faces - tracks if found
 # tracker.findFace()
+# tracker + facedetect : tracker.faceDetect(True)
+tracker.faceDetect()
