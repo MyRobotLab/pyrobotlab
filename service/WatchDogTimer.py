@@ -1,5 +1,6 @@
 # FIXME - "default" checkPoint() - e.g. watchdog.checkPoint() should work
 # FIXME - re-running the script makes multiple timers & multiple corrective actions
+# FIXME - make start() & stop() to enable and disable all watchdogtimers
 
 # start services
 Runtime.start("joy", "Joystick")
