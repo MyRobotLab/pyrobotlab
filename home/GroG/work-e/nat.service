@@ -1,0 +1,13 @@
+#########################################################################
+# file : /etc/systemd/system/nat.service
+# systemctl enable nat
+# systemctl daemon-reload
+
+[Unit]
+Description=nat service
+
+[Service]
+ExecStart=/sbin/nat.sh
+
+[Install]
+WantedBy=multi-user.target

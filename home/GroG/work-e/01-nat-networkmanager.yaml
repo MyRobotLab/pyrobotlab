@@ -1,0 +1,18 @@
+#########################################################################
+# file : /etc/netplan/01-nat-networkmanager.yaml
+# Let NetworkManager manage all devices on this system
+# commands :
+#             netplan generate
+#             netplan apply
+
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    eno1:
+      addresses:
+        - 192.168.100.1/24
+      # gateway4: 192.168.0.1
+      nameservers:
+          search: [myrobotlab.org]
+          addresses: [8.8.8.8, 8.8.4.4]

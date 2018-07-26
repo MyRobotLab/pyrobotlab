@@ -1,0 +1,144 @@
+#########################################################################
+# file : /etc/netplan/01-network-manager-all.yaml
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    eno1:
+      addresses:
+        - 192.168.100.1/24
+      # gateway4: 192.168.0.1
+      nameservers:
+          search: [myrobotlab.org]
+          addresses: [8.8.8.8, 8.8.4.4]
+
+# end file : /etc/netplan/01-network-manager-all.yaml
+#########################################################################
+
+#########################################################################
+# file : /etc/systemd/system/nat.service
+# systemctl enable nat
+# systemctl daemon-reload
+
+[Unit]
+Description=nat service
+
+[Service]
+ExecStart=/sbin/nat.sh
+
+[Install]
+WantedBy=multi-user.target
+
+# end file : /etc/systemd/system/nat.service
+#########################################################################
+
+#!/bin/bash
+# Proper header for a Bash script
+# file : /sbin/nat.sh
+# chmod +x /sbin/nat.sh
+
+echo starting iptables NAT
+
+# gratefully lifted from  https://www.howtoforge.com/nat_iptables
+# ipforwarding
+sysctl -w net.ipv4.ip_forward=1
+# verify
+sysctl net.ipv4.ip_forward
+
+iptables --flush            # Flush all the rules in filter and nat tables
+
+iptables --table nat --flush
+
+iptables --delete-chain
+
+# Delete all chains that are not in default filter and nat table
+
+iptables --table nat --delete-chain
+
+# Set up IP FORWARDing and Masquerading
+# eno1 is "private" wlx is "public"
+
+iptables --table nat --append POSTROUTING --out-interface wlx00e04c6770ed -j MASQUERADE
+iptables --append FORWARD --in-interface eno1 -j ACCEPT
+
+# clean up (deletes) FIXME - perhaps persist via netplan explicit routes
+# ip route delete 0.0.0.0/0 dev eno1
+# ip route delete 192.168.0.1/32 dev eno1
+
+# end file : /sbin/nat.sh
+#########################################################################
+
+
+# netplan generate
+# netplan apply
+
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eno1:
+      addresses:
+        - 192.168.7.2/24
+      gateway4: 192.168.0.1
+      nameservers:
+          search: [myrobotlab.org]
+          addresses: [8.8.8.8, 8.8.4.4]
+
+
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+
+
+# merge
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    eno1:
+      addresses:
+        - 192.168.100.1/24
+      # gateway4: 192.168.0.1
+      nameservers:
+          search: [myrobotlab.org]
+          addresses: [8.8.8.8, 8.8.4.4]
+
+root@work-e:/etc/netplan# route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.0.1     0.0.0.0         UG    20100  0        0 eno1
+0.0.0.0         192.168.0.1     0.0.0.0         UG    20600  0        0 wlx00e04c6770ed
+169.254.0.0     0.0.0.0         255.255.0.0     U     1000   0        0 eno1
+192.168.0.0     0.0.0.0         255.255.255.0   U     600    0        0 wlx00e04c6770ed
+192.168.0.1     0.0.0.0         255.255.255.255 UH    20100  0        0 eno1
+192.168.100.0   0.0.0.0         255.255.255.0   U     100    0        0 eno1
+
+root@work-e:/etc/netplan# ifconfig
+eno1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.100.1  netmask 255.255.255.0  broadcast 192.168.100.255
+        inet6 fe80::eef4:bbff:fe80:2ec6  prefixlen 64  scopeid 0x20<link>
+        ether ec:f4:bb:80:2e:c6  txqueuelen 1000  (Ethernet)
+        RX packets 559  bytes 56849 (56.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 305  bytes 27413 (27.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 20  memory 0xf7a00000-f7a20000
+
+wlx00e04c6770ed: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.16  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::3f4a:1650:4b52:bd22  prefixlen 64  scopeid 0x20<link>
+        ether 00:e0:4c:67:70:ed  txqueuelen 1000  (Ethernet)
+        RX packets 3045  bytes 3092272 (3.0 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1795  bytes 185855 (185.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@work-e:/etc/netplan# ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether ec:f4:bb:80:2e:c6 brd ff:ff:ff:ff:ff:ff
+3: wlx00e04c6770ed: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DORMANT group default qlen 1000
+    link/ether 00:e0:4c:67:70:ed brd ff:ff:ff:ff:ff:ff
