@@ -9,7 +9,7 @@ from org.myrobotlab.service import Serial
 # port = "COM14"
 # port = "/dev/ttyUSB0"
 # I use udev rules to always make it the same port
-port = "/dev/ftdi0"
+port = "/dev/ttyUSB0"
 
 # controller index for the joystick
 controllerIndex = 0
@@ -31,14 +31,14 @@ sabertooth = Runtime.start("sabertooth","Sabertooth")
 m1 = Runtime.start("m1","MotorPort")
 m2 = Runtime.start("m2","MotorPort")
 webgui = Runtime.start("webgui","WebGui")
-opencv = Runtime.start("opencv","OpenCV")
+# opencv = Runtime.start("opencv","OpenCV")
 joy = Runtime.start("joy","Joystick")
 joy.setController(controllerIndex)
 
 # configure services
 m1.setPort("m1")
 m2.setPort("m2")
-opencv.setFrameGrabberType("org.bytedeco.javacv.OpenKinectFrameGrabber")
+# opencv.setFrameGrabberType("org.bytedeco.javacv.OpenKinectFrameGrabber")
 
 # in some cases its necessary to "invert" a motor
 m1.setInverted(True)
@@ -54,8 +54,12 @@ m2.attach(joy.getAxis("rz"))
 # FIXME - motor1.attach(joystick) !
 sabertooth.connect(port)
 
+# setting min/max input I assume
+m1.setMinMax(-0.20, 0.20)
+m2.setMinMax(-0.20, 0.20)
+
 m1.stop();
 m2.stop();
 
 # good to go - play with joystick
-opencv.capture()
+# opencv.capture()
