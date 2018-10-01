@@ -1,3 +1,5 @@
+from java.util import ArrayList
+
 def trackHumans():
   i01.startedGesture()
   if (i01.RobotIsOpenCvCapturing()):
@@ -7,7 +9,7 @@ def trackHumans():
     i01.startHeadTracking("leftPort",12,13)
     #i01.startEyesTracking("leftPort",22,24)
     sleep(1)
-    i01.headTracking.clearPreFilters()
+    i01.headTracking.preFilters = ArrayList()
     i01.headTracking.faceDetect()
     #i01.eyesTracking.faceDetect()
     i01.setHeadVelocity(80, -1)
@@ -18,7 +20,7 @@ def trackHumans():
     i01.startHeadTracking("leftPort",12,13)
     #i01.startEyesTracking("leftPort",22,24)
     sleep(1)
-    i01.headTracking.clearPreFilters()
+    i01.headTracking.preFilters = ArrayList()
     i01.headTracking.faceDetect()
     #i01.eyesTracking.faceDetect()
     i01.setHeadVelocity(80, -1)

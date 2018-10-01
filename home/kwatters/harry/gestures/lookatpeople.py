@@ -39,3 +39,4 @@ def lookatpeople():
   lookinmiddle()
   sleep(3)
   i01.mouth.speak("nice to meet you all")
+  #i01.mouth.speak(u"Приятно с вами познакомиться")

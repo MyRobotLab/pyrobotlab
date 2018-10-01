@@ -1,9 +1,10 @@
 def getball():
   rest()
-  i01.setHandSpeed("right", 0.85, 0.75, 0.75, 0.75, 0.85, 0.75)
-  i01.setArmSpeed("right", 1.0, 1.0, 1.0, 0.85)
-  i01.setHeadSpeed(0.9, 0.9)
-  i01.setTorsoSpeed(0.75, 0.55, 1.0)
+  i01.startedGesture()
+  i01.setHandVelocity("right", 43.0, 31.0, 31.0, 31.0, 43.0, 31.0)
+  i01.setArmVelocity("right", -1, -1, -1, 43.0)
+  i01.setHeadVelocity(50.0, 50.0)
+  i01.setTorsoVelocity(31.0, 13.0, -1)
   i01.moveHead(45,65)
   i01.moveArm("left",5,90,16,15)
   i01.moveArm("right",6,85,110,22)
@@ -12,4 +13,6 @@ def getball():
   i01.moveTorso(101,100,90)
   sleep(2.5)
   i01.moveHand("right",180,140,140,3,0,11)
+  sleep(1)
+  i01.finishedGesture()
 

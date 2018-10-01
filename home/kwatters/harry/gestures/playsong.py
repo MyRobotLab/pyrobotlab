@@ -1,14 +1,17 @@
 def playsong(data):
-  if (data == "can i have your attention"):
+  i01.startedGesture()
+  if (data == "can i have your attention"): # Могу ли я привлечь ваше внимание
     i01.mouth.speak("ok you have my attention")
+    #i01.mouth.speak(u"Хорошо, что я привлёк ваше внимание")
     stopit()
     i01.mouth.speak("electro funk inmoov")
-    i01.setHeadSpeed(1.0,1.0)
-    i01.setArmSpeed("left",1.0,1.0,1.0,1.0)
-    i01.setArmSpeed("right",1.0,1.0,1.0,1.0)
-    i01.setHandSpeed("left",1.0,1.0,1.0,1.0,1.0,1.0)
-    i01.setHandSpeed("right",1.0,1.0,1.0,1.0,1.0,1.0)
-    i01.setTorsoSpeed(1.0,1.0,1.0)
+    #i01.mouth.speak(u"Электо функции Инмоова")
+    i01.setHeadVelocity(-1,-1)
+    i01.setArmVelocity("left",-1.0,-1.0,-1.0,-1.0)
+    i01.setArmVelocity("right",-1.0,-1.0,-1.0,-1.0)
+    i01.setHandVelocity("left",-1,-1,-1,-1,-1,-1)
+    i01.setHandVelocity("right",-1,-1,-1,-1,-1,-1)
+    i01.setTorsoVelocity(-1.0,-1.0,-1.0)
     #for x in range(5):
     i01.moveHead(60,90)
     sleep(2)
@@ -90,7 +93,8 @@ def playsong(data):
     madeby()
     relax()
     sleep(5)
-    i01.disable()  
+    i01.disable()
+  i01.finishedGesture()
 
   
    

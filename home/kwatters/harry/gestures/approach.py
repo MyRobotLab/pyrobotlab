@@ -1,10 +1,11 @@
 def approach():
-  i01.setHandSpeed("left", 0.85, 0.85, 0.85, 0.85, 0.85, 1.0)
-  i01.setHandSpeed("right", 0.85, 0.85, 0.85, 0.85, 0.85, 1.0)
-  i01.setArmSpeed("left", 1.0, 1.0, 1.0, 1.0)
-  i01.setArmSpeed("right", 1.0, 1.0, 1.0, 1.0)
-  i01.setHeadSpeed(1.0, 0.90)
-  i01.setTorsoSpeed(1.0, 1.0, 1.0)
+  i01.startedGesture()
+  i01.setHandVelocity("left", 43.0, 43.0, 43.0, 43.0, 43.0, -1)
+  i01.setHandVelocity("right", 43.0, 43.0, 43.0, 43.0, 43.0, -1)
+  i01.setArmVelocity("left", -1.0, -1.0, -1.0, -1.0)
+  i01.setArmVelocity("right", -1.0, -1.0, -1.0, -1.0)
+  i01.setHeadVelocity(-1, 50)
+  i01.setTorsoVelocity(-1, -1, -1)
   i01.moveHead(92,80)
   i01.moveArm("left",7,76,24,16)
   i01.moveArm("right",7,79,24,15)
@@ -33,6 +34,9 @@ def approach():
   i01.moveHand("right",119,150,163,134,151,180)
   i01.moveTorso(90,90,90)
   i01.mouth.speakBlocking("please approach")
+  #i01.mouth.speakBlocking(u"подойди пожалуйста")
+  sleep(1)
+  i01.finishedGesture()
   relax()
 
 
