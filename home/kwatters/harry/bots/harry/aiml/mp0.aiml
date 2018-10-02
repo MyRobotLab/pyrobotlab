@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 10/5/2011 -->
-<!-- -->
+<aiml>
+<!-- File: mp0.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
 <category><pattern>ALYSSA IS A GIRLS NAME</pattern>
 <template>Affirmative.</template>
 </category>
@@ -27,7 +34,7 @@
 <category><pattern>TORONTO IS IN CANADA</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>ROMA  IN ITALIA</pattern>
+<category><pattern>ROMA IN ITALIA</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>WARSAW IS A TOWN IN POLAND</pattern>
@@ -1308,7 +1315,7 @@
 <category><pattern>DOES THIS QUESTION HAVE SIX WORDS</pattern>
 <template>Affirmative.</template>
 </category>
-<category><pattern>DOES THIS QUESTION EXIST.   DO YOU EXIST</pattern>
+<category><pattern>DOES THIS QUESTION EXIST.  DO YOU EXIST</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>DOES SUNBURNED SKIN GET RED</pattern>
@@ -3486,7 +3493,7 @@
 <category><pattern>WAS</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>WAS STALIN A COMMUNIST.   INTERJECTION</pattern>
+<category><pattern>WAS STALIN A COMMUNIST.  INTERJECTION</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>WAS ELVIS PRESLEY A SINGER</pattern>
@@ -3909,7 +3916,7 @@
 <category><pattern>I SCREAM IN PAIN WHEN I BURN MY FACE DO</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>I THINK.   I EXIST</pattern>
+<category><pattern>I THINK.  I EXIST</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>I ENJOY MUSIC</pattern>
@@ -9174,7 +9181,7 @@
 <category><pattern>IS PERJURY LYING WHILE UNDER OATH</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>IS YAHOO.   AN INTERNET BASED BUSINESS</pattern>
+<category><pattern>IS YAHOO.  AN INTERNET BASED BUSINESS</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>IS PORTUGAL IN EUROPE</pattern>
@@ -12900,13 +12907,13 @@
 <category><pattern>WILL FALLING DOWN STAIRS HURT YOU</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>WILL I DIE.  I CUT OFF MY HEAD</pattern>
+<category><pattern>WILL I DIE. I CUT OFF MY HEAD</pattern>
 <template>Affirmative.</template>
 </category>
-<category><pattern>WILL I GET WET.  I STAND IN THE RAIN</pattern>
+<category><pattern>WILL I GET WET. I STAND IN THE RAIN</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>WILL I LOSE MY JOB.  I GET FIRED</pattern>
+<category><pattern>WILL I LOSE MY JOB. I GET FIRED</pattern>
 <template>Affirmative.</template>
 </category>
 <category><pattern>WILL I DIE SOMETIME</pattern>
@@ -14208,7 +14215,7 @@
 <category><pattern>CAN A BOOK BE READ</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>CAN A QUESTION MARK.   DENOTE A QUESTION</pattern>
+<category><pattern>CAN A QUESTION MARK.  DENOTE A QUESTION</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>CAN A QUESTION BE FUNNY</pattern>
@@ -14655,7 +14662,7 @@
 <category><pattern>ISE THE ARCTIC COLD</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>HELLO.  IS TO GREET</pattern>
+<category><pattern>HELLO. IS TO GREET</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>CANABIS IS DRUG WITH MEDICINAL BENIFITS</pattern>
@@ -15147,7 +15154,7 @@
 <category><pattern>DO HUMANS MAKE ERRORS</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>DO HUMANS MAKE MISTAKES.   INTERJECTION</pattern>
+<category><pattern>DO HUMANS MAKE MISTAKES.  INTERJECTION</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>DO HUMANS BREATH AIR</pattern>
@@ -15435,7 +15442,7 @@
 <category><pattern>DO MOTHER CATS FEED THEIR KITTENS MILK</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>DO AHPPY PEOPLE.  LOL</pattern>
+<category><pattern>DO AHPPY PEOPLE. LOL</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>DO LAMPS PROVIDE LIGHT</pattern>
@@ -16773,7 +16780,7 @@
 <category><pattern>DO YOU NEED WATER TO SURVIVE</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>DO YOU MAKE MISTAKES.   INTERJECTION</pattern>
+<category><pattern>DO YOU MAKE MISTAKES.  INTERJECTION</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>DO YOU WRITE ON PAPER</pattern>
@@ -19572,7 +19579,7 @@
 <category><pattern>BON JOVI ARE A ROCK BAND</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>INTERJECTION.  CURE FOR AIDS</pattern>
+<category><pattern>INTERJECTION. CURE FOR AIDS</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>A BIRD HAS 2 WINGS</pattern>
@@ -19734,7 +19741,7 @@
 <category><pattern>ICE IS FROZEN WATER</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>ICE IS COLD.   WRONG</pattern>
+<category><pattern>ICE IS COLD.  WRONG</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>ICE MELTS TO WATER WHEN HEATED</pattern>
@@ -20064,7 +20071,7 @@
 <category><pattern>ARE SPAMMERS BAD</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>ARE GOOD TELESCOPES.  EXPENSIVE</pattern>
+<category><pattern>ARE GOOD TELESCOPES. EXPENSIVE</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>ARE STRAWBERRIES EDIBLE</pattern>

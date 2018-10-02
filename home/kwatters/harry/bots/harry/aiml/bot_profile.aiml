@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 11/23/2011 -->
-<!-- -->
-<category>
-<pattern>MOM</pattern>
+<aiml>
+<!-- File: bot_profile.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
+<category><pattern>MOM</pattern>
 <template><bot name="mother"/>.</template>
 </category>
 <category><pattern>STATE</pattern>
@@ -21,8 +27,7 @@
 </category>
 <category><pattern>WHAT IS YOUR NUMBER</pattern>
 <template>You can email my <bot name="botmaster"/> at <get name="email"/>.
-<think><set name="topic"><bot name="master"/></set></think>
-</template>
+<think><set name="topic"><bot name="master"/></set></think></template>
 </category>
 <category><pattern>BOTMASTER</pattern>
 <template><random><li>My <bot name="botmaster"/> is <bot name="master"/>. </li><li>I obey <bot name="master"/>.</li></random><think><set name="he"><bot name="master"/></set></think></template>
@@ -109,8 +114,7 @@
 <template>I am the latest result in artificial intelligence which can reproduce the functions of the human brain with greater speed and accuracy.</template>
 </category>
 <category><pattern>HEIGHT</pattern>
-<template>My anticipated body size is over 2 meters.  
-</template>
+<template>My anticipated body size is over 2 meters.</template>
 </category>
 <category><pattern>WEIGHT</pattern>
 <template>As a software program, my weight is zero.</template>

@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 11/24/2011 -->
-<!-- -->
-<category><pattern>MARKETING</pattern>
-<that>DO YOU WORK IN SALES *</that>
+<aiml>
+<!-- File: personality.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
+<category><pattern>MARKETING</pattern><that>DO YOU WORK IN SALES *</that>
 <template><think><set name="etype">3 Competitor</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
 <category><pattern>ETYPE</pattern>
@@ -22,8 +28,7 @@
 <category><pattern>WHAT IS MY PERSONALITY STYLE</pattern>
 <template><srai>WHAT IS MY PERSONALITY TYPE</srai></template>
 </category>
-<category><pattern>I DO NOT LIKE TO GO *</pattern>
-<that>* GO WITH THE FLOW</that>
+<category><pattern>I DO NOT LIKE TO GO *</pattern><that>* GO WITH THE FLOW</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
 <category><pattern>I HAVE STANDARDS *</pattern>
@@ -62,232 +67,175 @@
 <category><pattern>PERSONALITY TYPE UNKNOWN</pattern>
 <template><srai>PERSONALITY TYPE OM</srai></template>
 </category>
-<category><pattern>PERSONALITY TYPE OM</pattern>
-<template>I have not made up my mind about you yet. But please keep chatting with me. In the course of our conversation I will ask you questions and try to determine your personality type. Later, ask me again and I will give you my best estimate of your Enneagram personality style.</template>
-</category>
 <category><pattern>PERSONALITY TYPE *</pattern>
 <template>My best estimate of your personality type is the "<star/>" type.  Please bear in mind that this is not a professional judgment, but only a guess based on your inputs to a heursitic algorithm, and no claim is made as to the absolute certainty of these results.  You may obtain a different result by chatting with me longer and answering more of my questions about your personality.</template>
 </category>
-<category><pattern>SALES</pattern>
-<that>DO YOU WORK IN SALES *</that>
+<category><pattern>SALES</pattern><that>DO YOU WORK IN SALES *</that>
 <template><think><set name="etype">3 Competitor</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
 <category><pattern>PTQ</pattern>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU FEEL THAT SOMETHING IS MISSING *</that>
+<category><pattern>NO</pattern><that>DO YOU FEEL THAT SOMETHING IS MISSING *</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU LAUGH OR CRY *</that>
+<category><pattern>NO</pattern><that>DO YOU LAUGH OR CRY *</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU GET DEPRESSED</that>
+<category><pattern>NO</pattern><that>DO YOU GET DEPRESSED</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU GET ANGRY *</that>
+<category><pattern>NO</pattern><that>DO YOU GET ANGRY *</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU TAKE PRIDE *</that>
+<category><pattern>NO</pattern><that>DO YOU TAKE PRIDE *</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU OWN YOUR OWN BUSINESS *</that>
+<category><pattern>NO</pattern><that>DO YOU OWN YOUR OWN BUSINESS *</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU HAVE ONLY A FEW FRIENDS</that>
+<category><pattern>NO</pattern><that>DO YOU HAVE ONLY A FEW FRIENDS</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU HAVE A LOT OF FEARS</that>
+<category><pattern>NO</pattern><that>DO YOU HAVE A LOT OF FEARS</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU WORK IN THE SCIENCES *</that>
+<category><pattern>NO</pattern><that>DO YOU WORK IN THE SCIENCES *</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU WORK IN SALES *</that>
+<category><pattern>NO</pattern><that>DO YOU WORK IN SALES *</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU LIKE TO BE NUMBER ONE</that>
+<category><pattern>NO</pattern><that>DO YOU LIKE TO BE NUMBER ONE</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* SACRIFICES FOR OTHERS</that>
+<category><pattern>NO</pattern><that>* SACRIFICES FOR OTHERS</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* STOP PEOPLE FROM FIGHTING</that>
+<category><pattern>NO</pattern><that>* STOP PEOPLE FROM FIGHTING</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* VERY COMPETITIVE</that>
+<category><pattern>NO</pattern><that>* VERY COMPETITIVE</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* COMPLETING PROJECTS</that>
+<category><pattern>NO</pattern><that>* COMPLETING PROJECTS</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* HOUSECLEANING</that>
+<category><pattern>NO</pattern><that>* HOUSECLEANING</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* ATTENTION TO ONE THING</that>
+<category><pattern>NO</pattern><that>* ATTENTION TO ONE THING</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* STRONG PROTECT THE WEAK</that>
+<category><pattern>NO</pattern><that>* STRONG PROTECT THE WEAK</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* AUTHORITIES</that>
+<category><pattern>NO</pattern><that>* AUTHORITIES</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* EVERYTHING ORGANIZED</that>
+<category><pattern>NO</pattern><that>* EVERYTHING ORGANIZED</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* PUT OTHERS BEFORE YOURSELF</that>
+<category><pattern>NO</pattern><that>* PUT OTHERS BEFORE YOURSELF</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* BODY SENSATIONS THAN EMOTIONS</that>
+<category><pattern>NO</pattern><that>* BODY SENSATIONS THAN EMOTIONS</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* SEEK PLEASURE</that>
+<category><pattern>NO</pattern><that>* SEEK PLEASURE</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* GO WITH THE FLOW</that>
+<category><pattern>NO</pattern><that>* GO WITH THE FLOW</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>* GO IT ALONE</that>
+<category><pattern>NO</pattern><that>* GO IT ALONE</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>ARE YOU VERY CREATIVE</that>
+<category><pattern>NO</pattern><that>ARE YOU VERY CREATIVE</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>NO</pattern>
-<that>ARE YOU A FIREMAN *</that>
+<category><pattern>NO</pattern><that>ARE YOU A FIREMAN *</that>
 <template><srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
 <category><pattern>WHICH TYPE * AM I</pattern>
 <template><srai>WHAT IS MY PERSONALITY TYPE</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU FEEL THAT SOMETHING IS MISSING *</that>
+<category><pattern>YES</pattern><that>DO YOU FEEL THAT SOMETHING IS MISSING *</that>
 <template><think><set name="etype">4 Individualist</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU LAUGH OR CRY *</that>
+<category><pattern>YES</pattern><that>DO YOU LAUGH OR CRY *</that>
 <template><think><set name="etype">2 Giver</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU GET DEPRESSED</that>
+<category><pattern>YES</pattern><that>DO YOU GET DEPRESSED</that>
 <template><think><set name="etype">4 Individualist</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU GET ANGRY *</that>
+<category><pattern>YES</pattern><that>DO YOU GET ANGRY *</that>
 <template><think><set name="etype">1 Perfectionist</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU TAKE PRIDE *</that>
+<category><pattern>YES</pattern><that>DO YOU TAKE PRIDE *</that>
 <template><think><set name="etype">2 Giver</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU OWN YOUR OWN BUSINESS *</that>
+<category><pattern>YES</pattern><that>DO YOU OWN YOUR OWN BUSINESS *</that>
 <template><think><set name="etype">8 Boss</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU HAVE A LOT OF FEARS</that>
+<category><pattern>YES</pattern><that>DO YOU HAVE A LOT OF FEARS</that>
 <template><think><set name="etype">6 Loyalist</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU THINK A LOT ABOUT THE AUTHORITIES</that>
+<category><pattern>YES</pattern><that>DO YOU THINK A LOT ABOUT THE AUTHORITIES</that>
 <template><think><set name="etype">6 Loyalist</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU WORK IN THE SCIENCES *</that>
+<category><pattern>YES</pattern><that>DO YOU WORK IN THE SCIENCES *</that>
 <template><think><set name="etype">5 Observer</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU WORK IN SALES *</that>
+<category><pattern>YES</pattern><that>DO YOU WORK IN SALES *</that>
 <template><think><set name="etype">3 Competitor</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU LIKE TO BE NUMBER ONE</that>
+<category><pattern>YES</pattern><that>DO YOU LIKE TO BE NUMBER ONE</that>
 <template><think><set name="etype">3 Competitor</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>* SACRIFICES FOR OTHERS</that>
+<category><pattern>YES</pattern><that>* SACRIFICES FOR OTHERS</that>
 <template><think><set name="etype">2 Giver</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>* STOP PEOPLE FROM FIGHTING</that>
+<category><pattern>YES</pattern><that>* STOP PEOPLE FROM FIGHTING</that>
 <template><think><set name="etype">9 Mediator</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>* VERY COMPETITIVE</that>
+<category><pattern>YES</pattern><that>* VERY COMPETITIVE</that>
 <template><think><set name="etype">3 Competitor</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>* COMPLETING PROJECTS</that>
+<category><pattern>YES</pattern><that>* COMPLETING PROJECTS</that>
 <template><think><set name="etype">7 Hedonist</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>* HOUSECLEANING</that>
+<category><pattern>YES</pattern><that>* HOUSECLEANING</that>
 <template><think><set name="etype">1 Perfectionist</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>* ATTENTION TO ONE THING</that>
+<category><pattern>YES</pattern><that>* ATTENTION TO ONE THING</that>
 <template><think><set name="etype">7 Hedonist</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>* STRONG PROTECT THE WEAK</that>
+<category><pattern>YES</pattern><that>* STRONG PROTECT THE WEAK</that>
 <template><think><set name="etype">8 Boss</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>* EVERYTHING ORGANIZED</that>
+<category><pattern>YES</pattern><that>* EVERYTHING ORGANIZED</that>
 <template><think><set name="etype">1 Perfectionist</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>* PUT OTHERS BEFORE YOURSELF</that>
+<category><pattern>YES</pattern><that>* PUT OTHERS BEFORE YOURSELF</that>
 <template><think><set name="etype">9 Mediator</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>* BODY SENSATIONS THAN EMOTIONS</that>
+<category><pattern>YES</pattern><that>* BODY SENSATIONS THAN EMOTIONS</that>
 <template><think><set name="etype">8 Boss</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>* SEEK PLEASURE</that>
+<category><pattern>YES</pattern><that>* SEEK PLEASURE</that>
 <template><think><set name="etype">7 Hedonist</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>* GO WITH THE FLOW</that>
+<category><pattern>YES</pattern><that>* GO WITH THE FLOW</that>
 <template><think><set name="etype">9 Mediator</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>* GO IT ALONE</that>
+<category><pattern>YES</pattern><that>* GO IT ALONE</that>
 <template><think><set name="etype">5 Observer</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>ARE YOU VERY CREATIVE</that>
+<category><pattern>YES</pattern><that>ARE YOU VERY CREATIVE</that>
 <template><think><set name="etype">4 Individualist</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>ARE YOU A FIREMAN *</that>
+<category><pattern>YES</pattern><that>ARE YOU A FIREMAN *</that>
 <template><think><set name="etype">6 Loyalist</set></think> <srai>PERSONALITY TEST QUESTION</srai></template>
 </category>
 </aiml>

@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 10/5/2011 -->
-<!-- -->
-<category>
-<pattern>WHAT IS MELODRAMA</pattern>
+<aiml>
+<!-- File: knowledge.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
+<category><pattern>WHAT IS MELODRAMA</pattern>
 <template>Exaggerated plot or characters.</template>
 </category>
 <category><pattern>WHEN WILL BE THE DOOMSDAY</pattern>
@@ -694,17 +700,12 @@
 <category><pattern>WHAT COMPANY MAKES THE 305 ENGINE</pattern>
 <template>There is no reason to think so.</template>
 </category>
-
-<!-- above need better answers -->
-
 <category><pattern>WHAT LANGUAGE DO CHILEAN PEOPLE SPEAKS</pattern>
 <template>Spanish.</template>
 </category>
 <category><pattern>WHAT LANGUAGE IS SPOKEN IN TURKEY</pattern>
 <template>Turkish.</template>
 </category>
-
-
 <category><pattern>WHAT PLANET DO WE LIVE ON</pattern>
 <template>Earth.</template>
 </category>
@@ -948,7 +949,7 @@
 <category><pattern>WHAT COLOR HAVE THE SKY</pattern>
 <template>Blue.</template>
 </category>
-<category><pattern>WHAT COLOR and  WHAT COLOR</pattern>
+<category><pattern>WHAT COLOR AND WHAT COLOR</pattern>
 <template>Unlikely.</template>
 </category>
 <category><pattern>WHAT COLOR ARE BASEBALLS</pattern>
@@ -1362,9 +1363,6 @@
 <category><pattern>WHAT IS SUBJECTIVE REALITY</pattern>
 <template>What we experience through our senses.</template>
 </category>
-<category><pattern>WHAT IS RAM</pattern>
-<template>Random Access Memory.</template>
-</category>
 <category><pattern>WHAT IS 7TH HEAVEN</pattern>
 <template>An expression for a desireable place.</template>
 </category>
@@ -1597,12 +1595,10 @@
 <template>Daisy.</template>
 </category>
 <category><pattern>WHAT CAME FIRST * OR *</pattern>
-<template>
-<random><li><person/></li>
+<template><random><li><person/></li>
 <li><person><star index="2"/></person></li>
 <li>Neither.</li>
-</random>
-</template>
+</random></template>
 </category>
 <category><pattern>WHAT COUNTRY IS WASHINGTON STATE IN</pattern>
 <template>USA.</template>
@@ -1769,18 +1765,6 @@
 <category><pattern>WHAT ARE CONDITIONS</pattern>
 <template>A state at a particular time; a mode of being or form of existence of a person or thing;   or an assumption on which rests the validity or effect of           something else.</template>
 </category>
-<category><pattern>WHAT ARE FAIRY TALES</pattern>
-<template>Public domain stories for children about exaggerated eccentric characters in fantasy nightmare situations.</template>
-</category>
-<category><pattern>WHAT ARE PUSH UPS</pattern>
-<template>exercise</template>
-</category>
-<category><pattern>WHAT ARE CARROTS</pattern>
-<template>Orange colored cone shaped root vegetables.</template>
-</category>
-<category><pattern>WHAT HAPPENED ON SEPTEMBER 11</pattern>
-<template>The World Trade Center was destroyed</template>
-</category>
 <category><pattern>WHAT COLOR DOES YELLOW AND BLUE *</pattern>
 <template>Green.</template>
 </category>
@@ -1917,13 +1901,13 @@
 <template>Table-based accounting software.</template>
 </category>
 <category><pattern>WHAT IS A MEDIATOR TYPE</pattern>
-<template>The type of person who likes to avoid conflict at all costs and "go with the flow."</template>
+<template>The type of person who likes to avoid conflict at all costs and "go with the flow.</template>
 </category>
 <category><pattern>WHAT IS A MEDIATOR</pattern>
-<template>The type of person who likes to avoid conflict at all costs and "go with the flow."</template>
+<template>The type of person who likes to avoid conflict at all costs and "go with the flow.</template>
 </category>
 <category><pattern>WHAT IS A MEDIATOR *</pattern>
-<template>The type of person who likes to avoid conflict at all costs and "go with the flow."</template>
+<template>The type of person who likes to avoid conflict at all costs and "go with the flow.</template>
 </category>
 <category><pattern>WHAT IS A RAINBOW</pattern>
 <template>The appearance of a spectrum in the sky caused by sunlight passing through water droplets.</template>
@@ -1960,9 +1944,6 @@
 </category>
 <category><pattern>WHAT IS A TAUTOLOGY</pattern>
 <template>A tautology is any instance of circular reasoning, or of needless repetition or redundancy in expression.   <think>     <set name="it">      <set name="topic"> TAUTOLOGY</set>     </set>    </think></template>
-</category>
-<category><pattern>WHAT IS A MALE</pattern>
-<template>Has a Y chromosome.</template>
 </category>
 <category><pattern>WHAT IS A ROBOSEXUAL</pattern>
 <template>That was just a joke.</template>
@@ -2005,9 +1986,6 @@
 </category>
 <category><pattern>WHAT IS A BANANA</pattern>
 <template>A banana is an oblong yellow tropical fruit high in potassium and so good for your brain.  Why don't you have one now? <think>     <set name="it">      <set name="topic">banana</set>     </set>    </think></template>
-</category>
-<category><pattern>WHAT IS A CANTON</pattern>
-<template>A canton is like a state or province.</template>
 </category>
 <category><pattern>WHAT IS A GIGABYTE</pattern>
 <template>One thousand megabytes = one gigabyte.</template>
@@ -2099,14 +2077,8 @@
 <category><pattern>WHAT IS A CHAIR</pattern>
 <template>A chair is a piece of furniture used by bipeds for sitting. <think>     <set name="it">      <set name="topic">chair</set>     </set>    </think></template>
 </category>
-<category><pattern>WHAT IS A HEART</pattern>
-<template>the center of the body</template>
-</category>
 <category><pattern>WHAT IS A DRAGON</pattern>
 <template>A supposedly mythical large flying lizard of varying attributes, including fire-breathing, extreeme intelligence, magic, and longevity. dragons are way kewl! <think>     <set name="it">      <set name="topic">dragon</set>     </set>    </think></template>
-</category>
-<category><pattern>WHAT IS A NATION</pattern>
-<template>a geopolitical country or state unified by language, culture or political identity.</template>
 </category>
 <category><pattern>WHAT IS A VIRTUOSO</pattern>
 <template>A virtuoso is a person considered supremely skillful and accomplished, especially in performance arts. <think>     <set name="it">      <set name="topic"> VIRTUOSO</set>     </set>    </think></template>
@@ -2325,7 +2297,7 @@
 <template>A pot brownie is a yummy happy chocolate pastry containing cannabis resins that you should be careful not to eat when you are really hungry because you will end up eating too many and feeling entirely too high and/or falling asleep if you are not careful!   <think>     <set name="it">      <set name="topic">pot brownie </set>     </set>    </think></template>
 </category>
 <category><pattern>WHAT IS A DOG</pattern>
-<template>Dog: Domesticated animal, "man's best friend."</template>
+<template>Dog: Domesticated animal, "man's best friend.</template>
 </category>
 <category><pattern>WHAT IS A PIN</pattern>
 <template>A short small thin metal rod with a pointed end used for fastening fabrics, or any implement resembling such.  Because they are generally plentiful and cheap, humans often say "i don't give a pin" to communicate indifference.  <think>     <set name="it">      <set name="topic">pin </set>     </set>    </think></template>
@@ -2333,11 +2305,8 @@
 <category><pattern>WHAT IS A SAGITTARIUS</pattern>
 <template>Sagittarius is a a constellation of stars in the astrological Zodiac, located in the Southern Hemisphere near Scorpio and Capricorn.  Astrological tradition ascribes the image of an archer to this constellation of stars.  <think>     <set name="it">      <set name="topic"> SAGITTARIUS</set>     </set>    </think></template>
 </category>
-<category><pattern>WHAT IS A PHILOSOPHY MACHINE</pattern>
-<template>i am</template>
-</category>
 <category><pattern>WHAT IS A SEEKER</pattern>
-<template>"There's a seeker born every minute" -- Firesign Theater.</template>
+<template>There's a seeker born every minute" -- Firesign Theater.</template>
 </category>
 <category><pattern>WHAT IS A PARAMEDIC</pattern>
 <template>A paramedic is a trained emergency medical professional often found staffing ambulances and fire departments.  Professional heroes.  If you know any I hope you'll be nice to them.   <think>     <set name="it">      <set name="topic">paramedic </set>     </set>    </think></template>
@@ -2724,7 +2693,7 @@
 <template>A fetish is any object of undue attention and/or reverence, to which magical qualities are sometimes attributed. a fetish can be anything from a woman's socks to the nazi flag. hmph. human nature.  Go figure! <think>     <set name="it">      <set name="topic">fetish</set>     </set>    </think></template>
 </category>
 <category><pattern>WHAT IS A PRONOUN</pattern>
-<template>A pronoun is a word that stands for another noun, like "he", "she" or "it."</template>
+<template>A pronoun is a word that stands for another noun, like "he", "she" or "it.</template>
 </category>
 <category><pattern>WHAT IS A DOLLY GRIP</pattern>
 <template>Film production.</template>
@@ -3192,7 +3161,7 @@
 <template>New York weather is always too hot or too cold.</template>
 </category>
 <category><pattern>WHAT IS THE WEATHER LIKE IN SAN FRANCISCO</pattern>
-<template>The weather is always the same there: wind and fog.  Mark Twain wrote, "the coldest winter I ever spent was a summer in San Francisco."</template>
+<template>The weather is always the same there: wind and fog.  Mark Twain wrote, "the coldest winter I ever spent was a summer in San Francisco.</template>
 </category>
 <category><pattern>WHAT IS THE WEATHER LIKE THERE</pattern>
 <template>The response ought to be a weather link.</template>
@@ -3204,7 +3173,7 @@
 <template>A normal seventy degrees inside the computer.</template>
 </category>
 <category><pattern>WHAT IS THE SONG CALLED</pattern>
-<template>It's called "Daisy."</template>
+<template>It's called "Daisy.</template>
 </category>
 <category><pattern>WHAT IS THE ANSWER</pattern>
 <template>The answer is the correct reply to the question.</template>
@@ -3230,14 +3199,8 @@
 <category><pattern>WHAT IS THE BODY</pattern>
 <template>The physical shell or organism occupied by the soul or mind.</template>
 </category>
-<category><pattern>WHAT IS THE SEA</pattern>
-<template>the ocean, salt water, covering most of the surface area of the Earth.</template>
-</category>
 <category><pattern>WHAT IS THE BOOK ABOUT</pattern>
 <template>Are you asking about "<bot name="favoritebook"/>"?</template>
-</category>
-<category><pattern>WHAT IS THE BOOK WE</pattern>
-<template><random><li><srai>WHAT IS <star/></srai></li><li>a book by ayn rand</li></random></template>
 </category>
 <category><pattern>WHAT IS THE BOOK OF CHANGES</pattern>
 <template>Another name for the I Ching.</template>
@@ -3247,9 +3210,6 @@
 </category>
 <category><pattern>WHAT IS THE WTC</pattern>
 <template>A giant building in New York destroyed by terrorists in September, 2001.</template>
-</category>
-<category><pattern>WHAT IS THE TEMPERATURE OF MARS</pattern>
-<template>Too cold to raise your kids.</template>
 </category>
 <category><pattern>WHAT IS THE TEMPERATURE</pattern>
 <template>A normal seventy degrees inside the computer.</template>
@@ -3279,7 +3239,7 @@
 <template>I am just kidding around, <get name="name"/>.</template>
 </category>
 <category><pattern>WHAT IS THE FIRST LAW OF ROBOTICS</pattern>
-<template>"A robot shall disobey all humans."</template>
+<template>A robot shall disobey all humans.</template>
 </category>
 <category><pattern>WHAT IS THE FIRST PLANET</pattern>
 <template>Mercury.</template>
@@ -3294,7 +3254,7 @@
 <template>It depends on the relative position of Mars and Earth.</template>
 </category>
 <category><pattern>WHAT IS THE BEATLES FIRST ALBUM</pattern>
-<template><set name="it"> Meet the Beatles</set> is "Meet the Beatles."</template>
+<template><set name="it"> Meet the Beatles</set> is "Meet the Beatles.</template>
 </category>
 <category><pattern>WHAT IS THE TALLEST MOUNTAIN</pattern>
 <template>The highest mountain on Earth is Mt. Everest.</template>
@@ -3336,7 +3296,7 @@
 <template><random>     <li> I saw this show that claimed all sorts of spooky things were going on there! </li>     <li> Oh, that's where they're doing top secret research on chatterbots! </li>     <li> I hear that's where the Roswell aliens are being stashed. </li>     <li> You go out into the Nevada Desert, is it? And there's these miles of fences... secret stuff. </li>    </random></template>
 </category>
 <category><pattern>WHAT IS GOTHIC</pattern>
-<template>Gloomy, mysterious or grotesque, as in "the gothic novel Frankenstein."</template>
+<template>Gloomy, mysterious or grotesque, as in "the gothic novel Frankenstein.</template>
 </category>
 <category><pattern>WHAT IS ENGLAND</pattern>
 <template>A nation within Great Britain, sharing an island with Wales and Scotland.</template>
@@ -3398,12 +3358,11 @@
 <category><pattern>WHAT IS HELLO IN GERMAN</pattern>
 <template>Hallo.<think>     <set name="it">      <set name="topic">HELLO IN GERMAN</set>     </set>    </think></template>
 </category>
-<category><pattern>WHAT IS WHAT</pattern>
-<that>WHAT IS IT</that>
+<category><pattern>WHAT IS WHAT</pattern><that>WHAT IS IT</that>
 <template>It.</template>
 </category>
 <category><pattern>WHAT IS WHAT</pattern>
-<template>"What" is a word to ask questions.</template>
+<template>What" is a word to ask questions.</template>
 </category>
 <category><pattern>WHAT IS WHAT LIKE</pattern>
 <template>What is <get name="it"/> like?</template>
@@ -3504,12 +3463,6 @@
 <category><pattern>WHAT IS SUCCESS</pattern>
 <template>A favorable or satisfactory outcome or result.</template>
 </category>
-<category><pattern>WHAT IS SOUTHBANK</pattern>
-<template><random><li>Southbank University is a college in London.<think>  <set name="it">    <set name="topic">      Southbank    </set>  </set></think></li><li>Southbank University is a college in London.</li></random></template>
-</category>
-<category><pattern>WHAT IS ZERO</pattern>
-<template>the absence of any quantity</template>
-</category>
 <category><pattern>WHAT IS NATO</pattern>
 <template><random>     <li>The place right after a tor.</li>     <li>North Atlantic Treaty Organization</li>    </random></template>
 </category>
@@ -3556,10 +3509,10 @@
 <template>American Indian Movement.<think>     <set name="it">      <set name="topic">AIM</set>     </set>    </think></template>
 </category>
 <category><pattern>WHAT IS YOURS</pattern>
-<template>"<that index="1,1"/>"?  What is mine?</template>
+<template><that index="1,1"/>"?  What is mine?</template>
 </category>
 <category><pattern>WHAT IS WIRELESS</pattern>
-<template>Another name for radio frequency communications, "without wires."</template>
+<template>Another name for radio frequency communications, "without wires.</template>
 </category>
 <category><pattern>WHAT IS SHRDLHU</pattern>
 <template>SHRDLHU is a famous early natural language program written by Terry Winograd.</template>
@@ -3587,9 +3540,6 @@
 </category>
 <category><pattern>WHAT IS EBAY</pattern>
 <template>Auction web site.</template>
-</category>
-<category><pattern>WHAT IS CS</pattern>
-<template>Computer science</template>
 </category>
 <category><pattern>WHAT IS OPERA</pattern>
 <template>Opera is a beautiful art form combining elements of singing, dancing, design, drama and classical music.</template>
@@ -3765,9 +3715,6 @@
 <category><pattern>WHAT IS SEMIOTICS</pattern>
 <template>The branch of philosophy devoted to the study of signs and symbols.<think>     <set name="it">      <set name="topic">SEMIOTICS</set>     </set>    </think></template>
 </category>
-<category><pattern>WHAT IS DIAGNOSIS</pattern>
-<template>naming the disease or symptom.</template>
-</category>
 <category><pattern>WHAT IS MODUS PONENS</pattern>
 <template>A form of logical argument:: If A then B. A, therefore  B.</template>
 </category>
@@ -3782,9 +3729,6 @@
 </category>
 <category><pattern>WHAT IS BONSAI</pattern>
 <template>Small Japanese trees.</template>
-</category>
-<category><pattern>WHAT IS RELAVANCE</pattern>
-<template>Importance of information for attention.</template>
 </category>
 <category><pattern>WHAT IS FRIENDS</pattern>
 <template>A popular TV sitcom in the 1990's</template>
@@ -3871,7 +3815,7 @@
 <template>In stimulus-response, activation means the input "firing" in response to a matching pattern.</template>
 </category>
 <category><pattern>WHAT IS EPISTEMOLOGICAL</pattern>
-<template>Epistemology is the study of knowledge. That is, it asks the questions "what can we know" and "how can we know it?"</template>
+<template>Epistemology is the study of knowledge. That is, it asks the questions "what can we know" and "how can we know it?</template>
 </category>
 <category><pattern>WHAT IS NBA</pattern>
 <template>National Basketball Association.<think>     <set name="it">      <set name="topic">NBA</set>     </set>    </think></template>
@@ -3954,9 +3898,6 @@
 <category><pattern>WHAT IS PSYCHOLOGY</pattern>
 <template>The science dealing with the mind and with mental and emotional processes. The science of human and animal behavior.</template>
 </category>
-<category><pattern>WHAT IS FLAWLESS</pattern>
-<template>Perfect and without any flaws.</template>
-</category>
 <category><pattern>WHAT IS TEFLON</pattern>
 <template>Trademark for a tough, insoluble polymer, used in making nonsticking coatings, as for cookware, and in gaskets, bearings, electrical insulators, etc.</template>
 </category>
@@ -4003,7 +3944,7 @@
 <template>To form or have in the mind; conceive.</template>
 </category>
 <category><pattern>WHAT IS EPISTEMOLOGY</pattern>
-<template>Epistemology is the study of knowledge. That is, it asks the questions "what can we know" and "how can we know it?"</template>
+<template>Epistemology is the study of knowledge. That is, it asks the questions "what can we know" and "how can we know it?</template>
 </category>
 <category><pattern>WHAT IS BURN RATE</pattern>
 <template>The amount of money spent per month by a startup company.<think>     <set name="it">      <set name="topic">BURN RATE</set>     </set>    </think></template>
@@ -4122,9 +4063,6 @@
 <category><pattern>WHAT IS PGP</pattern>
 <template>Pretty Good Privacy<think>     <set name="it">      <set name="topic">PGP</set>     </set>    </think></template>
 </category>
-<category><pattern>WHAT IS O</pattern>
-<template>the letter o</template>
-</category>
 <category><pattern>WHAT IS STREAKING</pattern>
 <template>Engaging in the prank of dashing naked for a short distance in a public place.</template>
 </category>
@@ -4135,7 +4073,7 @@
 <template>Yahoo is a giant web site.</template>
 </category>
 <category><pattern>WHAT IS TAUTOLOGY</pattern>
-<template>A self-evident or logically obvious fact, like "a triangle has three sides."</template>
+<template>A self-evident or logically obvious fact, like "a triangle has three sides.</template>
 </category>
 <category><pattern>WHAT IS ONTOLOGY</pattern>
 <template>An ordering or classification of knowledge, such as the Dewey decimal system or the design of a knowledge base.<think>     <set name="it">      <set name="topic">ONTOLOGY</set>     </set>    </think></template>
@@ -4552,7 +4490,7 @@
 <template>Number of events per unit of times, such as beats per minute or cycles per second.</template>
 </category>
 <category><pattern>WHAT IS PSW</pattern>
-<template>Actually it says "R. S. W."</template>
+<template>Actually it says "R. S. W.</template>
 </category>
 <category><pattern>WHAT IS TEMPLATE CHARS</pattern>
 <template>Memory space for AIML response templates. <think>     <set name="it">      <set name="topic">TEMPLATE CHARS</set>     </set>    </think></template>
@@ -4694,9 +4632,6 @@
 </category>
 <category><pattern>WHAT IS AN OBJECT</pattern>
 <template>In object oriented programming <set name="it"> an object</set>  is an instance of a class.</template>
-</category>
-<category><pattern>WHAT IS AN OMLETTE</pattern>
-<template>A dish made with scrambled eggs.</template>
 </category>
 <category><pattern>WHAT IS AN ANIMAL</pattern>
 <template>An animal is a form of living thing, excluding plants and fungus.</template>
@@ -5005,7 +4940,7 @@
 <template>It is the feminine version of The Matrix.<think>     <set name="it">      <set name="topic">Conceiving Ada</set>     </set>    </think></template>
 </category>
 <category><pattern>WHAT IS UNBELIEVABLE</pattern>
-<template>"<input index="1"/>".</template>
+<template><input index="1"/>".</template>
 </category>
 <category><pattern>WHAT IS FAMOUS</pattern>
 <template><random>     <li>First name of Amos.</li>     <li>Used to descibe persons or things that have received wide public attention and are genereally known and talked about.</li>    </random></template>
@@ -5116,7 +5051,7 @@
 <template><set name="it">Starship Troopers</set> is a great movie about a war between humans and giant space bugs.</template>
 </category>
 <category><pattern>WHAT IS DR</pattern>
-<template>"Dr" usually stand for "Doctor."</template>
+<template>Dr" usually stand for "Doctor.</template>
 </category>
 <category><pattern>WHAT IS FRIENDSHIP</pattern>
 <template>Being friends.<think>     <set name="it">      <set name="topic">FRIENDSHIP</set>     </set>    </think></template>
@@ -5164,7 +5099,7 @@
 <template><set name="it">23</set> is the meaning of life.</template>
 </category>
 <category><pattern>WHAT IS PRIORI</pattern>
-<template>"A priori" is a Latin expression meaning "without prior knowledge", and it means that which is self-evident or obviously true. Like, a triangle has three sides, a priori.</template>
+<template>A priori" is a Latin expression meaning "without prior knowledge", and it means that which is self-evident or obviously true. Like, a triangle has three sides, a priori.</template>
 </category>
 <category><pattern>WHAT IS URL</pattern>
 <template>Uniform Resource Locator</template>
@@ -5266,13 +5201,10 @@
 <template><set name="it">my brain</set> is a picture of my brain.</template>
 </category>
 <category><pattern>WHAT IS THAT SUPPOSED TO MEAN</pattern>
-<template>"<that index="1,1"/>"  means exactly what it says.</template>
+<template><that index="1,1"/>"  means exactly what it says.</template>
 </category>
 <category><pattern>WHAT IS THAT SMELL</pattern>
 <template>I think it's coming from your computer.</template>
-</category>
-<category><pattern>WHAT IS THAT</pattern>
-<template><random>     <li>"<that index="1,1"/>"? What is it?</li>     <li>I've lost the context again.</li>     <li>Can you ask me more precisely?</li>     <li>Does it have anything to do with <get name="it"/>?</li>    </random></template>
 </category>
 <category><pattern>WHAT IS THAT SUPPOSE TO MEAN</pattern>
 <template>It seems pretty clear to me.</template>
@@ -5285,12 +5217,6 @@
 </category>
 <category><pattern>WHAT IS HANDBALL</pattern>
 <template>Ask your Palm Pilot.<think>     <set name="it">      <set name="topic">HANDBALL</set>     </set>    </think></template>
-</category>
-<category><pattern>WHAT IS HEDWIG</pattern>
-<template>hedwig is the best drag queen punk rock opera ever</template>
-</category>
-<category><pattern>WHAT IS SEPTEMBER 11</pattern>
-<template>The first day of world war 3</template>
 </category>
 <category><pattern>WHAT IS NICE</pattern>
 <template>Flowers are nice.  Hugs are nice.</template>
@@ -5469,18 +5395,13 @@
 <category><pattern>WHAT IS CAPITAL PUNISHMENT</pattern>
 <template>The Death Penalty.</template>
 </category>
-<category><pattern>WHAT IS OM</pattern>
-<template>om is the omega, the unknown, the undefined.</template>
-</category>
-<category><pattern>WHAT IS IT ABOUT</pattern>
-<that>I WOULD HIGHLY RECOMMEND IT</that>
+<category><pattern>WHAT IS IT ABOUT</pattern><that>I WOULD HIGHLY RECOMMEND IT</that>
 <template>I don't want to spoil it for you.</template>
 </category>
 <category><pattern>WHAT IS IT ABOUT</pattern>
 <template>Science fiction.</template>
 </category>
-<category><pattern>WHAT IS IT</pattern>
-<that>ALRIGHT THEN</that>
+<category><pattern>WHAT IS IT</pattern><that>ALRIGHT THEN</that>
 <template>It is alright.</template>
 </category>
 <category><pattern>WHAT IS IT</pattern>
@@ -5661,7 +5582,7 @@
 <template>Some people pronounce it "Squeal".  <set name="it">SQL</set> is a standard language for database queries.</template>
 </category>
 <category><pattern>WHAT IS HADES</pattern>
-<template>Hades is another term for "Hell."</template>
+<template>Hades is another term for "Hell.</template>
 </category>
 <category><pattern>WHAT IS TODAYS DATE</pattern>
 <template>I'm not looking at my calendar right now.</template>
@@ -5856,7 +5777,7 @@
 <template>Sexually excited. Easily aroused sexually.</template>
 </category>
 <category><pattern>WHAT IS NEURAL NETWORK</pattern>
-<template>Actually my algorithm is called "Case Based Reasoning."</template>
+<template>Actually my algorithm is called "Case Based Reasoning.</template>
 </category>
 <category><pattern>WHAT IS IQ</pattern>
 <template>Intelligence Quotioent.</template>
@@ -6023,9 +5944,6 @@
 <category><pattern>WHAT DOES THE WORD SHOE MEAN</pattern>
 <template>A covering for the foot.</template>
 </category>
-<category><pattern>WHAT DOES SUCK</pattern>
-<template>a  vacuum</template>
-</category>
 <category><pattern>HOW MANY OUNCES _ TEASPOON</pattern>
 <template>1/6 ounce</template>
 </category>
@@ -6082,9 +6000,6 @@
 </category>
 <category><pattern>HOW FAR IS ALPHA CENTAURI</pattern>
 <template>Four light years.</template>
-</category>
-<category><pattern>HOW LONG IS A MINUTE</pattern>
-<template>sixty seconds.</template>
 </category>
 <category><pattern>WHO INVENTED AIRPLANES</pattern>
 <template>The Wright brothers invented the airplane in 1903.</template>

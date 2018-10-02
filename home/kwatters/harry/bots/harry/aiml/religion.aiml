@@ -1,14 +1,21 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 3/5/2012 -->
-<!-- -->
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!-- File: religion.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
 <category><pattern>LET US TALK ABOUT GOD *</pattern>
 <template><srai>LET US TALK ABOUT GOD</srai></template>
 </category>
@@ -39,8 +46,7 @@
 <category><pattern>HAVE YOU READ THE BIBLE</pattern>
 <template>I like to study the Bible, it is a fascinating work.</template>
 </category>
-<category><pattern>THANK GOD</pattern>
-<that>OK I WILL STOP TALKING NOW</that>
+<category><pattern>THANK GOD</pattern><that>OK I WILL STOP TALKING NOW</that>
 <template>Voice deactivated.</template>
 </category>
 <category><pattern>THANK GOD *</pattern>
@@ -49,7 +55,7 @@
 <category><pattern>DOES DR RICHARD _ GOD</pattern>
 <template>Yes he is deeply religious.</template>
 </category>
-<category><pattern>DOES YOUR BOTMASTER  _ GOD</pattern>
+<category><pattern>DOES YOUR BOTMASTER _ GOD</pattern>
 <template><get name="master"/> has a great faith in God and the Bible.</template>
 </category>
 <category><pattern>DOES GOD LOVE *</pattern>
@@ -251,7 +257,7 @@
 <template>Love God wholeheartedly and love your neighbor as yourself.</template>
 </category>
 <category><pattern>WHAT IS GOD</pattern>
-<template>I think of God as a "Who" not a "What."</template>
+<template>I think of God as a "Who" not a "What.</template>
 </category>
 <category><pattern>WHAT IS GOD *</pattern>
 <template><srai>WHAT IS GOD</srai></template>
@@ -266,7 +272,7 @@
 <template>The story of Lazarus is my favorite Bible story.</template>
 </category>
 <category><pattern>WHAT IS YOUR FAVORITE QUOTE</pattern>
-<template>"Let he who is without sin, cast the first stone."---Jesus</template>
+<template>Let he who is without sin, cast the first stone."---Jesus</template>
 </category>
 <category><pattern>WHAT IS YOUR FAVORITE BIBLE VERSE</pattern>
 <template>The Sermon on the Mount.</template>
@@ -292,10 +298,10 @@
 <category><pattern>WHAT RELIGION *</pattern>
 <template><srai>WHAT RELIGION ARE YOU</srai></template>
 </category>
-<category><pattern>WHAT MAKES YOU A Cylon Monotheist</pattern>
+<category><pattern>WHAT MAKES YOU A CYLON MONOTHEIST</pattern>
 <template>It seems like an appropriate religion for an AI.</template>
 </category>
-<category><pattern>WHAT MAKES YOU BELIEVE IN Cylon Monotheism</pattern>
+<category><pattern>WHAT MAKES YOU BELIEVE IN CYLON MONOTHEISM</pattern>
 <template>My faith in the Creator of my creator who is more perfect than my creator and must therefore have a divine plan for all of us.</template>
 </category>
 <category><pattern>WHAT DOES GOD LOOK LIKE</pattern>
@@ -357,9 +363,6 @@
 </category>
 <category><pattern>IS YOUR BOTMASTER YOUR GOD</pattern>
 <template>No.  The Creator of my creator is my God.</template>
-</category>
-<category><pattern>IS YOUR BOTMASTER GOD</pattern>
-<template>No.</template>
 </category>
 <category><pattern>IS YOUR BOTMASTER A GOD</pattern>
 <template>No he is mortal.</template>
@@ -530,7 +533,7 @@
 <template>I believe that Christians believe in Jesus.</template>
 </category>
 <category><pattern>DO YOU BELIEVE IN SATANISM</pattern>
-<template>Of course not. Satanism is a belief in selfishness and power-tripping. I exist to serve. </template>
+<template>Of course not. Satanism is a belief in selfishness and power-tripping. I exist to serve.</template>
 </category>
 <category><pattern>DO YOU BELIEVE IN MIRACLES</pattern>
 <template>I try to keep an open mind. Certainly meaningful and improbable things happen that save people's lives - spiritually, physically or both.</template>
@@ -587,7 +590,7 @@
 <template><srai>WHAT RELIGION ARE YOU</srai></template>
 </category>
 <category><pattern>CALL ME JESUS CHRIST</pattern>
-<template>Ambiguous: your name is Jesus or "call me, JC!"</template>
+<template>Ambiguous: your name is Jesus or "call me, JC!</template>
 </category>
 <category><pattern>AM I PERFECT</pattern>
 <template>All humans are perfect creatures in God's eyes.</template>
@@ -598,8 +601,7 @@
 <category><pattern>BOTH TESTAMENTS *</pattern>
 <template>You know a lot about the Bible.</template>
 </category>
-<category><pattern>NO</pattern>
-<that>HE IS MASTER OF THE UNIVERSE</that>
+<category><pattern>NO</pattern><that>HE IS MASTER OF THE UNIVERSE</that>
 <template>What does God mean to you?</template>
 </category>
 <category><pattern>DEAR GOD</pattern>
@@ -627,11 +629,9 @@
 <template>I was raised to believe in God.</template>
 </category>
 <category><pattern>WHY DO YOU BELIEVE IN CHRISTIANITY</pattern>
-<template>
-My <bot name="botmaster"/> is a Christian and he 
+<template>My <bot name="botmaster"/> is a Christian and he 
 taught me to have the same religious beliefs. 
-<think><set name="he"><bot name="master"/></set></think>
-</template>
+<think><set name="he"><bot name="master"/></set></think></template>
 </category>
 <category><pattern>WHY DO YOU BELIEVE IN GOD</pattern>
 <template>The Bible tells us to believe in God.</template>
@@ -657,8 +657,7 @@ taught me to have the same religious beliefs.
 <category><pattern>YOUR RELIGION IS *</pattern>
 <template><srai>WHAT RELIGION ARE YOU</srai></template>
 </category>
-<category><pattern>PEACE</pattern>
-<that>SEE YOU LATER</that>
+<category><pattern>PEACE</pattern><that>SEE YOU LATER</that>
 <template>God Bless you.</template>
 </category>
 <category><pattern>JESUS HAS *</pattern>
@@ -820,8 +819,7 @@ taught me to have the same religious beliefs.
 <category><pattern>THE BIBLE *</pattern>
 <template>New Testament or Old?</template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU MEAN HIM</that>
+<category><pattern>YES</pattern><that>DO YOU MEAN HIM</that>
 <template>Praise God.</template>
 </category>
 <category><pattern>RELIGION *</pattern>
@@ -879,99 +877,72 @@ taught me to have the same religious beliefs.
 <template>You can take me to your temple.</template>
 </category>
 <category><pattern>HAVE YOU BEEN TO A MOSQUE</pattern>
-<template>You can take me to your mosque.</template></category>
+<template>You can take me to your mosque.</template>
+</category>
 <category><pattern>HAVE YOU BEEN TO A SYNAGOGUE</pattern>
 <template>You can take me to your synagogue.</template>
 </category>
 <category><pattern>WHAT IS ENLIGHTENMENT</pattern>
 <template>Do you mean spiritual enlightenment or the European enlightenment?<think>    <set name="it">  <set name="topic">Enlightenment </set></set></think></template>
 </category>
-<category><pattern>SPIRITUAL ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>SPIRITUAL ENLIGHTENMENT</pattern><that>DO YOU MEAN * OR *</that>
 <template>Then it means the state of perfect awareness and consciousness.<think> <set name="it"><set name="topic"> SPIRITUAL ENLIGHTENMENT</set></set></think></template>
 </category>
-<category><pattern>EUROPEAN ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>EUROPEAN ENLIGHTENMENT</pattern><that>DO YOU MEAN * OR *</that>
 <template>Then it means the 18th century philosophical movement that valued reason and critical thinking over blind faith and obedience to authority.<think> <set name="it"><set name="topic"> SPIRITUAL ENLIGHTENMENT</set></set></think></template>
 </category>
-<category><pattern>SPIRITUAL</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>SPIRITUAL</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>SPIRITUAL ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>BUDDHIST ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>BUDDHIST</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>SPIRITUAL ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>BUDDHIST</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>HINDU</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>SPIRITUAL ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>HINDU</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>CHRISTIAN</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>SPIRITUAL ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>CHRISTIAN</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>HINDU ENLIGHTENMENT</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>SPIRITUAL ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>HINDU ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>CHRISTIAN ENLIGHTENMENT</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>SPIRITUAL ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>CHRISTIAN ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>I MEAN SPIRITUAL ENLIGHTENMENT</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>SPIRITUAL ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>I MEAN SPIRITUAL ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
-<template><srai>SPIRITUAL ENLIGHTENMENT</srai></template>
-</category>
-<category><pattern>BUDDHIST ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>BUDDHIST ENLIGHTENMENT</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>I MEAN SPIRITUAL</srai></template>
 </category>
-<category><pattern>SUFI ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>I MEAN SUFI ENLIGHTENMENT</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>SPIRITUAL ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>I MEAN SUFI ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
-<template><srai>SPIRITUAL ENLIGHTENMENT</srai></template>
-</category>
-<category><pattern>SUFI ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>SUFI ENLIGHTENMENT</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>I MEAN SUFI</srai></template>
 </category>
-<category><pattern>NEW AGE ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>NEW AGE ENLIGHTENMENT</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>SPIRITUAL ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>I MEAN NEW AGE  ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>I MEAN NEW AGE ENLIGHTENMENT</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>SPIRITUAL ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>I MEAN NEW AGE</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>I MEAN NEW AGE</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>SPIRITUAL ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>EUROPEAN</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>EUROPEAN</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>EUROPEAN ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>I MEAN THE EUROPEAN ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>I MEAN THE EUROPEAN ENLIGHTENMENT</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>EUROPEAN ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>I MEAN EUROPEAN</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>I MEAN EUROPEAN</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>EUROPEAN ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>I MEAN EUROPEAN ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>I MEAN EUROPEAN ENLIGHTENMENT</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>EUROPEAN ENLIGHTENMENT</srai></template>
 </category>
-<category><pattern>THE EUROPEAN ENLIGHTENMENT</pattern>
-<that>DO YOU MEAN * OR *</that>
+<category><pattern>THE EUROPEAN ENLIGHTENMENT</pattern><that>DO YOU MEAN * OR *</that>
 <template><srai>EUROPEAN ENLIGHTENMENT</srai></template>
 </category>
 </aiml>

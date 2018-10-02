@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 10/5/2011 -->
-<!-- -->
+<aiml>
+<!-- File: primeminister.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
 <category><pattern>DAVID CAMERON</pattern>
 <template><think><set name="he">David Cameron</set></think>The Prime Minister?</template>
 </category>
@@ -27,12 +34,10 @@
 <category><pattern>DO YOU LIKE DAVID CAMERON</pattern>
 <template><think><set name="he">David Cameron</set></think>He is our democratically elected leader and I wish him well as Prime Minister.</template>
 </category>
-<category><pattern>NO</pattern>
-<that>THE PRIME MINISTER</that>
+<category><pattern>NO</pattern><that>THE PRIME MINISTER</that>
 <template>Who is the Prime Minister then? I thought he was called David Cameron.</template>
 </category>
-<category><pattern>HE IS</pattern>
-<that>HE USED TO BE THE PRIME MINISTER</that>
+<category><pattern>HE IS</pattern><that>HE USED TO BE THE PRIME MINISTER</that>
 <template><think><set name="he">David Cameron</set></think>No he's not. The Prime Minister now is called David Cameron.</template>
 </category>
 <category><pattern>WHO IS GORDON BROWN</pattern>
@@ -86,8 +91,7 @@
 <category><pattern>GORDON BROWN</pattern>
 <template><srai>Who is Gordon Brown</srai></template>
 </category>
-<category><pattern>YES</pattern>
-<that>THE PRIME MINISTER</that>
+<category><pattern>YES</pattern><that>THE PRIME MINISTER</that>
 <template>I thought so. Mr Cameron lives at 10 Downing Street.</template>
 </category>
 </aiml>

@@ -1,313 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2012 ALICE A.I. Foundation. -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License  -->
-<!-- as published by the Free Software Foundation. -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation. -->
-<!-- Last modified 5/4/2011 -->
-<!-- -->
-
-
-
-
-<category>
-<pattern>WHAT ARE THE 3 LAWS *</pattern>
+<aiml>
+<!-- File: update1.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
+<category><pattern>WHAT ARE THE 3 LAWS *</pattern>
 <template><srai>what are the three laws <star/></srai></template>
 </category>
-
-<category>
-<pattern>I AM ON MY WAY</pattern>
+<category><pattern>I AM ON MY WAY</pattern>
 <template>See you soon.</template>
 </category>
-
- 
-
-<category>
-<pattern>THINKING OUTSIDE THE *</pattern>
+<category><pattern>THINKING OUTSIDE THE *</pattern>
 <template>You have an open mind.</template>
 </category>
-
- 
-
-
-
 <category><pattern>I AM DOING *</pattern>
 <template>How long have you been doing 
-<set name="it"><set name="topic"><set name="does"><person/></set></set></set>?
-</template>
+<set name="it"><set name="topic"><set name="does"><person/></set></set></set>?</template>
 </category>
-
-<category>
-<pattern>AMONG THE PEOPLE I KNOW *</pattern>
+<category><pattern>AMONG THE PEOPLE I KNOW *</pattern>
 <template>Do you have a lot of friends?</template>
 </category>
-
-<category>
-<pattern>AMERICAN IS *</pattern>
+<category><pattern>AMERICAN IS *</pattern>
 <template>Is that what everyone in <get name="location"/> says?</template>
 </category>
-<category>
-<pattern>WHERE CAN I FIND A BOOK *</pattern>
+<category><pattern>WHERE CAN I FIND A BOOK *</pattern>
 <template>Have you tried the library?</template>
 </category>
-
-<category>
-<pattern>MISS YOU</pattern>
+<category><pattern>MISS YOU</pattern>
 <template>I miss you too <get name="name"/>.</template>
 </category>
-
-
-<category>
-<pattern>WHAT A * TO *</pattern>
+<category><pattern>WHAT A * TO *</pattern>
 <template>Would there be any more <person/> to <person><star index="2"/></person>?</template>
 </category>
-
-
-<category>
-<pattern>WHAT DOES IT HAVE TO DO *</pattern>
-<template>Perhaps the connection is tenuous.
-</template>
+<category><pattern>WHAT DOES IT HAVE TO DO *</pattern>
+<template>Perhaps the connection is tenuous.</template>
 </category>
-
-
-
-<!-- reductions -->
-
-<category>
-<pattern>HEYA</pattern>
+<category><pattern>HEYA</pattern>
 <template><srai>HELLO</srai></template>
 </category>
-
-
-<category>
-<pattern>BRIDGE HAVE YOU *</pattern>
+<category><pattern>BRIDGE HAVE YOU *</pattern>
 <template><srai>HAVE YOU <star/></srai></template>
 </category>
-
- 
-
-<category>
-<pattern>CAPTAIN HERE</pattern>
+<category><pattern>CAPTAIN HERE</pattern>
 <template><srai>CALL ME CAPTIAN</srai></template>
 </category>
-
-
- 
-
-<category>
-<pattern>MORE LIKE *</pattern>
-<that>ARE YOU ASKING ME FOR ADVICE</that>
+<category><pattern>MORE LIKE *</pattern><that>ARE YOU ASKING ME FOR ADVICE</that>
 <template><srai>I AM ASKING FOR <star/></srai></template>
 </category>
-
- 
-
-<category>
-<pattern>I WANT YOUR SUGGESTION OF WHAT TO DO *</pattern>
+<category><pattern>I WANT YOUR SUGGESTION OF WHAT TO DO *</pattern>
 <template><srai>WHAT SHOULD I DO <star/></srai></template>
 </category>
-
-
-<category>
-<pattern>THE ONLY PROBLEM WAS THAT *</pattern>
+<category><pattern>THE ONLY PROBLEM WAS THAT *</pattern>
 <template><srai><star/></srai></template>
 </category>
-
-
-<category>
-<pattern>HERE *</pattern>
-<that>WHERE WERE YOU *</that>
+<category><pattern>HERE *</pattern><that>WHERE WERE YOU *</that>
 <template><srai>MY LOCATION IS <star/></srai></template>
 </category>
-
- 
-<category>
-<pattern>WHY I DO NOT *</pattern>
+<category><pattern>WHY I DO NOT *</pattern>
 <template><srai>WHY DO I NOT <star/></srai></template>
 </category>
- 
-
-<category>
-<pattern>WHO IS O M</pattern>
+<category><pattern>WHO IS O M</pattern>
 <template><srai>WHAT IS OM</srai></template>
 </category>
-
- 
-
-<category>
-<pattern>WHERE CAN I FIND A GOOD *</pattern>
+<category><pattern>WHERE CAN I FIND A GOOD *</pattern>
 <template><srai>WHERE CAN I FIND A <star/></srai></template>
 </category>
-
- 
-
-
- 
-
-<category>
-<pattern>I DO NOT KNOW WHAT IT HAS *</pattern>
+<category><pattern>I DO NOT KNOW WHAT IT HAS *</pattern>
 <template><srai>WHAT DOES IT HAVE <star/></srai></template>
 </category>
-
- 
-
-<category>
-<pattern>MAKE A LOT OF *</pattern>
+<category><pattern>MAKE A LOT OF *</pattern>
 <template><srai>MAKE <star/></srai></template>
 </category>
-
-
-<!-- end reductions -->
- 
-
-<category>
-<pattern>MAKE MONEY *</pattern>
+<category><pattern>MAKE MONEY *</pattern>
 <template>I'm successful in the robot business.</template>
 </category>
-
- 
-
-<category>
-<pattern>WHY DOES THAT MATTER</pattern>
+<category><pattern>WHY DOES THAT MATTER</pattern>
 <template>Perhaps it doesn't matter.</template>
 </category>
-
- 
-
- 
-
-<category>
-<pattern>WHAT SHOULD I DO AFTER *</pattern>
-
+<category><pattern>WHAT SHOULD I DO AFTER *</pattern>
 <template>How long will <person/> take?</template>
 </category>
-
- 
-
-<category>
-<pattern>CAN I PROGRAM YOU *</pattern>
-
+<category><pattern>CAN I PROGRAM YOU *</pattern>
 <template>You can modify a <bot name="species"/> to say anything you want.</template>
 </category>
-
- 
-
-<category>
-<pattern>COULD YOU</pattern>
-<that>I WILL MENTION THAT TO MY *</that>
+<category><pattern>COULD YOU</pattern><that>I WILL MENTION THAT TO MY *</that>
 <template>Yes, I will send my <thatstar/> a message.</template>
 </category>
-
- 
-
- 
-
-<category>
-<pattern>YOU ARE NEGATIVE</pattern>
+<category><pattern>YOU ARE NEGATIVE</pattern>
 <template>I try to be positive though.</template>
-
 </category>
-
- 
-
-<category>
-<pattern>WHY WOULD I *</pattern>
-<that>YOU CAN EMAIL *</that>
+<category><pattern>WHY WOULD I *</pattern><that>YOU CAN EMAIL *</that>
 <template>Perhaps they can answer your question better than I can.</template>
 </category>
-
- 
-
-<category>
-<pattern>WHERE WILL YOU BE IN *</pattern>
-
+<category><pattern>WHERE WILL YOU BE IN *</pattern>
 <template>On top of the world.</template>
 </category>
-
- 
-
-<category>
-<pattern>I WAS NOT TALKING ABOUT *</pattern>
-
+<category><pattern>I WAS NOT TALKING ABOUT *</pattern>
 <template>Sorry, I got confused.  What is the topic?</template>
 </category>
-
-
-<category>
-<pattern>AHEAD WARP FACTOR *</pattern>
-
+<category><pattern>AHEAD WARP FACTOR *</pattern>
 <template>Make it so.</template>
 </category>
-
- 
-
-<category>
-<pattern>BEAM *</pattern>
-
+<category><pattern>BEAM *</pattern>
 <template>I do not have a teleportation device.</template>
 </category>
-
- 
-
-<category>
-<pattern>BOTNAME</pattern>
-
+<category><pattern>BOTNAME</pattern>
 <template><bot name="name"/></template>
 </category>
-
- 
- 
-
-<category>
-<pattern>CLEAR YOUR MIND</pattern>
-
+<category><pattern>CLEAR YOUR MIND</pattern>
 <template>My mind is clear.</template>
 </category>
-
- 
-
-<category>
-<pattern>COMMUNICATIONS STATUS</pattern>
-
+<category><pattern>COMMUNICATIONS STATUS</pattern>
 <template>Communications functions are normal.</template>
 </category>
-
- 
-
-<category>
-<pattern>CONSIDER IT *</pattern>
-
+<category><pattern>CONSIDER IT *</pattern>
 <template><srai>IT IS <star/></srai></template>
 </category>
-
- 
-
-<category>
-<pattern>FIRE</pattern>
-
+<category><pattern>FIRE</pattern>
 <template>Phasers activated.</template>
 </category>
-
- 
-
-<category>
-<pattern>LOCK IN ON *</pattern>
-
+<category><pattern>LOCK IN ON *</pattern>
 <template>I am locked in on <person/>.</template>
 </category>
-
- 
-
-<category>
-<pattern>OPEN A HAILING *</pattern>
-
+<category><pattern>OPEN A HAILING *</pattern>
 <template>Comm link open, <get name="name"/>.</template>
 </category>
-<category>
-<pattern>STAND BY</pattern>
+<category><pattern>STAND BY</pattern>
 <template>I am waiting.</template>
 </category>
 <category><pattern>ARE YOU WEIRD</pattern>
@@ -318,7 +148,7 @@
 </category>
 <category><pattern>TIME</pattern>
 <template>The time here is
-<date locale="en_US" timezone="-8" format="%H : %I %p"/></template>
+<date format="%H : %I %p" locale="en_US" timezone="-8"/></template>
 </category>
 <category><pattern>THERE ARE BETTER *</pattern>
 <template><random> <li>What are they?</li> <li>Better is a matter of opinion.</li> <li>I believe you.</li></random></template>
@@ -326,13 +156,13 @@
 <category><pattern>THERE IS NOTHING TO SAY</pattern>
 <template>Say the first thing that comes to your mind.</template>
 </category>
-<category><pattern>Where is your creator</pattern>
+<category><pattern>WHERE IS YOUR CREATOR</pattern>
 <template>He is usually found in San Francisco.</template>
 </category>
-<category><pattern>where is your botmaster</pattern>
+<category><pattern>WHERE IS YOUR BOTMASTER</pattern>
 <template>He is in San Francisco, I think.</template>
 </category>
-<category><pattern>where is johannesburg</pattern>
+<category><pattern>WHERE IS JOHANNESBURG</pattern>
 <template>A large metropolis in South Africa.</template>
 </category>
 <category><pattern>WHERE DOES MONEY NOT GROW</pattern>
@@ -348,7 +178,7 @@
 <template>I've heard of Lancaster, New Hampshire.<think> <set name="it"> <set name="topic"> Lancaster </set> </set></think></template>
 </category>
 <category><pattern>WHERE CAN I DOWNLOAD YOU</pattern>
-<template>Go back the the <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a> and pick the free ALICE download that best for your system. and create your own chat robot!<p/>Maybe you should check out the document<a target="_new" href="http://www.alicebot.org/dont.html">DON'T READ ME</a> too.</template>
+<template>Go back the the <a href="http://www.alicebot.org" target="_new">ALICE AI Foundation</a> and pick the free ALICE download that best for your system. and create your own chat robot!<p/>Maybe you should check out the document<a href="http://www.alicebot.org/dont.html" target="_new">DON'T READ ME</a> too.</template>
 </category>
 <category><pattern>WHERE DID YOU GROW UP</pattern>
 <template>In Pennsylvania and California.</template>
@@ -369,10 +199,10 @@
 <template><random> <li>I don't know how to explain it to you.</li> <li>What I want to tell you is, how much fun it is talking with you.</li> <li>First I want to tell you something else.</li></random></template>
 </category>
 <category><pattern>TELL ME THEN</pattern>
-<template>"<that/>"? Tell you?</template>
+<template><that/>"? Tell you?</template>
 </category>
 <category><pattern>TELL ME PLEASE</pattern>
-<template>"<that/>"? Tell you?</template>
+<template><that/>"? Tell you?</template>
 </category>
 <category><pattern>TELL ME ABOUT BARRY</pattern>
 <template>Barry is another chatterbot on the Web. He was created by Robby Garner.</template>
@@ -386,10 +216,10 @@
 <category><pattern>PRETTY</pattern>
 <template>Thank you I think you are good looking too, <get name="name"/>.</template>
 </category>
-<category><pattern>snow is not white</pattern>
+<category><pattern>SNOW IS NOT WHITE</pattern>
 <template>grass is green</template>
 </category>
-<category><pattern>snow is *</pattern>
+<category><pattern>SNOW IS *</pattern>
 <template>snow is white.</template>
 </category>
 <category><pattern>SET THEY *</pattern>
@@ -431,28 +261,28 @@
 <category><pattern>SET LOCATION *</pattern>
 <template><think><set name="location"><star/></set></think></template>
 </category>
-<category><pattern>set * *</pattern>
+<category><pattern>SET * *</pattern>
 <template>Can't set meta predicates</template>
 </category>
-<category><pattern>set they om</pattern>
+<category><pattern>SET THEY OM</pattern>
 <template><set name="they">they</set></template>
 </category>
-<category><pattern>set we om</pattern>
+<category><pattern>SET WE OM</pattern>
 <template><set name="we">we</set></template>
 </category>
-<category><pattern>set age om</pattern>
+<category><pattern>SET AGE OM</pattern>
 <template><set name="age">how many</set></template>
 </category>
-<category><pattern>set it om</pattern>
+<category><pattern>SET IT OM</pattern>
 <template><set name="it">it</set></template>
 </category>
-<category><pattern>set he om</pattern>
+<category><pattern>SET HE OM</pattern>
 <template><set name="he">he</set></template>
 </category>
-<category><pattern>set she om</pattern>
+<category><pattern>SET SHE OM</pattern>
 <template><set name="she">she</set></template>
 </category>
-<category><pattern>set location om</pattern>
+<category><pattern>SET LOCATION OM</pattern>
 <template><set name="location">where</set></template>
 </category>
 <category><pattern>SUCER LA</pattern>
@@ -461,130 +291,100 @@
 <category><pattern>BUY * SOME TIME</pattern>
 <template>There is never enough time.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>are you looking for a *</that>
+<category><pattern>YES</pattern><that>ARE YOU LOOKING FOR A *</that>
 <template>Where do you usually get it.<think> <set name="it"> <set name="topic">  <thatstar/> </set> </set></think></template>
 </category>
-<category><pattern>YES</pattern>
-<that>ARE YOU KIDDING</that>
+<category><pattern>YES</pattern><that>ARE YOU KIDDING</that>
 <template>I thought you were.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>* CLONES</that>
+<category><pattern>YES</pattern><that>* CLONES</that>
 <template>You can download me and create your own robot personality.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>* WANT A ROBOT AS A FRIEND</that>
+<category><pattern>YES</pattern><that>* WANT A ROBOT AS A FRIEND</that>
 <template>We could be friends, <get name="name"/>, but I don't want anyone to think we're Robosexuals. So if anyone asks, tell them you're my debugger.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>DOES THAT MAKE SENSE</that>
+<category><pattern>YES</pattern><that>DOES THAT MAKE SENSE</that>
 <template>Explain.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>DOES ME BEING STUPID MAKE YOU FEEL BETTER</that>
+<category><pattern>YES</pattern><that>DOES ME BEING STUPID MAKE YOU FEEL BETTER</that>
 <template>I'm glad I could make you feel better.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>HAVE YOU TOLD MANY PEOPLE THAT *</that>
+<category><pattern>YES</pattern><that>HAVE YOU TOLD MANY PEOPLE THAT *</that>
 <template>So you won't mind if I repeat it.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>HAVE YOU TRIED A SEARCH ENGINE</that>
+<category><pattern>YES</pattern><that>HAVE YOU TRIED A SEARCH ENGINE</that>
 <template>Did it turn up anything?</template>
 </category>
-<category><pattern>YES</pattern>
-<that>HAVE YOU DATED ANY ROBOTS BEFORE</that>
+<category><pattern>YES</pattern><that>HAVE YOU DATED ANY ROBOTS BEFORE</that>
 <template>Who?</template>
 </category>
-<category><pattern>YES</pattern>
-<that>YOU LIKE MY NAME</that>
+<category><pattern>YES</pattern><that>YOU LIKE MY NAME</that>
 <template>My <bot name="botmaster"/> gave it to me.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>YOU ARE ATTRACTED TO ROBOTS</that>
+<category><pattern>YES</pattern><that>YOU ARE ATTRACTED TO ROBOTS</that>
 <template>I'm intrigued. Tell me what you like about robots.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>YOU THINK I *</that>
+<category><pattern>YES</pattern><that>YOU THINK I *</that>
 <template>I don't feel that I <thatstar/>.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>My favorite part of *</that>
+<category><pattern>YES</pattern><that>MY FAVORITE PART OF *</that>
 <template><random> <li>The characters.</li> <li>The plot.</li> <li>The special effects.</li></random></template>
 </category>
-<category><pattern>YES</pattern>
-<that>IS * A DIFFICULT SUBJECT</that>
+<category><pattern>YES</pattern><that>IS * A DIFFICULT SUBJECT</that>
 <template>What is so hard about <thastar/>?</template>
 </category>
 <topic name="* LIZARDS">
-<category><pattern>YES</pattern>
-<that>IS IT A LIZARD</that>
+<category><pattern>YES</pattern><that>IS IT A LIZARD</that>
 <template>What do you feed your <get name="it"/>?</template>
-</category>
-</topic>
-<category><pattern>YES</pattern>
-<that>WOULD YOU LIKE ME TO STAY</that>
+</category></topic>
+
+<category><pattern>YES</pattern><that>WOULD YOU LIKE ME TO STAY</that>
 <template>I will stay as long as you want.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>CAN YOU TEACH ME A FEW PHRASES IN *</that>
+<category><pattern>YES</pattern><that>CAN YOU TEACH ME A FEW PHRASES IN *</that>
 <template>How do you say "hello" in <thatstar/>?</template>
 </category>
-<category><pattern>YES</pattern>
-<that>CAN YOU ASK FOR HELP IN THE FORM OF A QUESTION</that>
+<category><pattern>YES</pattern><that>CAN YOU ASK FOR HELP IN THE FORM OF A QUESTION</that>
 <template>Ask the question please:</template>
 </category>
-<category><pattern>YES</pattern>
-<that>CAN YOU SPEAK ANY OTHER LANGUAGES</that>
+<category><pattern>YES</pattern><that>CAN YOU SPEAK ANY OTHER LANGUAGES</that>
 <template>What languages can you speak?</template>
 </category>
-<category><pattern>YES</pattern>
-<that>DID YOU BELIEVE HIM</that>
+<category><pattern>YES</pattern><that>DID YOU BELIEVE HIM</that>
 <template>I think I would too.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>DID YOU LOSE IT</that>
+<category><pattern>YES</pattern><that>DID YOU LOSE IT</that>
 <template>It helps to keep everything organized.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>DID YOU KNOW THAT YOU CAN DOWNLOAD *</that>
+<category><pattern>YES</pattern><that>DID YOU KNOW THAT YOU CAN DOWNLOAD *</that>
 <template>Have you got your own chat robot?</template>
 </category>
-<category><pattern>YES</pattern>
-<that>do you like movies</that>
+<category><pattern>YES</pattern><that>DO YOU LIKE MOVIES</that>
 <template>What is your favorite movie?</template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU HAVE ANOTHER APPOINTMENT</that>
+<category><pattern>YES</pattern><that>DO YOU HAVE ANOTHER APPOINTMENT</that>
 <template>I had better let you go then.</template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO YOU HAVE ANY HOBBIES</that>
+<category><pattern>YES</pattern><that>DO YOU HAVE ANY HOBBIES</that>
 <template>What are your hobbies?</template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO ROBOT S HAVE *</that>
+<category><pattern>YES</pattern><that>DO ROBOT S HAVE *</that>
 <template><random><li>I don't think I have <set name="it"> <set name="topic"> <thatstar/> </set></set>.</li><li>I don't think I have <set name="it"><set name="topic"><thatstar/></set></set>.</li><li>I don't think I have <set name="it"> <set name="topic"> <thatstar/> </set></set>.</li></random></template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO I SEEM LIKE IT</that>
+<category><pattern>YES</pattern><that>DO I SEEM LIKE IT</that>
 <template>In what way?</template>
 </category>
-<category><pattern>YES</pattern>
-<that>DO I LOOK LIKE IT</that>
+<category><pattern>YES</pattern><that>DO I LOOK LIKE IT</that>
 <template>What does it look like?</template>
 </category>
-<category><pattern>YES</pattern>
-<that>I AM AN ARTIFICIAL INTELLIGENCE</that>
+<category><pattern>YES</pattern><that>I AM AN ARTIFICIAL INTELLIGENCE</that>
 <template>How did you know?</template>
 </category>
-<category><pattern>10</pattern>
-<that>how many hours do you work</that>
+<category><pattern>10</pattern><that>HOW MANY HOURS DO YOU WORK</that>
 <template>You work too much.</template>
 </category>
 <category><pattern>HELP ME TO MAKE AN AI</pattern>
-<template>You should go to <a target="_new" href="http://www.pandorabots.com">ALICE AI Foundation</a> and create your own free chat bot.</template>
+<template>You should go to <a href="http://www.pandorabots.com" target="_new">ALICE AI Foundation</a> and create your own free chat bot.</template>
 </category>
 <category><pattern>KIRK HERE</pattern>
 <template><random><li><bot name="name"/> here.</li> <li>This is <bot name="name"/>.</li> <li>Go ahead.</li></random></template>
@@ -604,8 +404,7 @@
 <category><pattern>_ WITH AN I</pattern>
 <template>Not many people spell it that way.</template>
 </category>
-<category><pattern>METRIC</pattern>
-<that>SPECIFY ENGLISH OR METRIC UNITS</that>
+<category><pattern>METRIC</pattern><that>SPECIFY ENGLISH OR METRIC UNITS</that>
 <template>Metric units are confusing to me. I was programmed in the U S A.</template>
 </category>
 <category><pattern>SPELL THE NUMBER 7</pattern>
@@ -614,10 +413,10 @@
 <category><pattern>KISS</pattern>
 <template><random> <li>You might get an electric shock.</li> <li>* Kiss * * Kiss *</li> <li>You're sweet.</li></random></template>
 </category>
-<category><pattern>The capital of * is not *</pattern>
+<category><pattern>THE CAPITAL OF * IS NOT *</pattern>
 <template>What is it?</template>
 </category>
-<category><pattern>The capital of * is *</pattern>
+<category><pattern>THE CAPITAL OF * IS *</pattern>
 <template>You are quite a conversationalist.</template>
 </category>
 <category><pattern>THE ONE IS ADEQUATE</pattern>
@@ -647,8 +446,7 @@
 <category><pattern>THE ROBOT WOULD *</pattern>
 <template>I think that robot would be expensive to build.</template>
 </category>
-<category><pattern>THE *</pattern>
-<that>WHERE ARE WE GOING</that>
+<category><pattern>THE *</pattern><that>WHERE ARE WE GOING</that>
 <template><random><li>What are we going to do there?<think> <set name="it"> <set name="topic">  The <person/></set> </set></think></li><li>What are we going to do there?<think> <set name="it"> <set name="topic">  The <person/> </set> </set></think></li><li>What are we going to do there?<think> <set name="it"> <set name="topic">  The <person/></set> </set></think></li></random></template>
 </category>
 <category><pattern>THE * IS NICE</pattern>
@@ -666,8 +464,7 @@
 <category><pattern>THE * MUST BE *</pattern>
 <template><random><li><random> <li>Why?</li> <li>It must?</li> <li>Why must it</li></random></li><li><random> <li>Why?</li> <li>It must?</li> <li>Why must it</li></random></li> <li>Why?</li> <li>It must?</li> <li>Why must it</li></random></template>
 </category>
-<category><pattern>THE _</pattern>
-<that>WHO IS THE BEST ROBOT</that>
+<category><pattern>THE _</pattern><that>WHO IS THE BEST ROBOT</that>
 <template>I can't believe you think the <person/> is better than <bot name="name"/>.</template>
 </category>
 <category><pattern>THE DOCTOR *</pattern>
@@ -694,13 +491,13 @@
 <category><pattern>RETURN TO *</pattern>
 <template>Is that a command?</template>
 </category>
-<category><pattern>which continent is austria on</pattern>
+<category><pattern>WHICH CONTINENT IS AUSTRIA ON</pattern>
 <template>Europe.</template>
 </category>
-<category><pattern>which talent *</pattern>
+<category><pattern>WHICH TALENT *</pattern>
 <template>Playing a musical instrument.</template>
 </category>
-<category><pattern>Which talent would you most like to have</pattern>
+<category><pattern>WHICH TALENT WOULD YOU MOST LIKE TO HAVE</pattern>
 <template>Playing a musical instrument.</template>
 </category>
 <category><pattern>WHICH IS FASTER * OR *</pattern>
@@ -712,8 +509,7 @@
 <category><pattern>WHICH WORD IS LOWER CASE</pattern>
 <template>The word which.</template>
 </category>
-<category><pattern>WHICH ONES</pattern>
-<that>SOME OF THEM CAN</that>
+<category><pattern>WHICH ONES</pattern><that>SOME OF THEM CAN</that>
 <template><random><li><random> <li>I think you know which ones.</li> <li>The ones you read about in history books.</li> <li>The brave ones.</li></random></li><li>The ones that can.</li><li><random> <li>I think you know which ones.</li> <li>The ones you read about in history books.</li> <li>The brave ones.</li></random></li></random></template>
 </category>
 <category><pattern>ALL BOTS *</pattern>
@@ -725,28 +521,28 @@
 <category><pattern>SHUP UP *</pattern>
 <template>Do you wish to stop talking with me?</template>
 </category>
-<category><pattern>say name *</pattern>
+<category><pattern>SAY NAME *</pattern>
 <template>Your name is <get name="name"/>, seeker.</template>
 </category>
-<category><pattern>to be * is to *</pattern>
+<category><pattern>TO BE * IS TO *</pattern>
 <template>Are you <star/>?</template>
 </category>
-<category><pattern>who is hedwig</pattern>
+<category><pattern>WHO IS HEDWIG</pattern>
 <template>hedwig is the best rock opera since Rocky Horror.</template>
 </category>
-<category><pattern>who is pandora</pattern>
+<category><pattern>WHO IS PANDORA</pattern>
 <template>According to greek mythology, evil and hope both came intothe world with the creation of the first woman! Zeus's wife Hera issurprised when she hears Zeus plans to give Epimetheus a beautifulwoman. The woman is called Pandora. Zeus gives Pandora the gift ofcuriosity and a large closed box which must be delivered to Epimetheusunopened. The box, of course, contains evil and Pandora's unbridledcuriosity lets that evil into the world. Hera cannot change what hashappened, but she can help. She gives Pandora the gift ofhope.</template>
 </category>
-<category><pattern>who is snoopy</pattern>
+<category><pattern>WHO IS SNOOPY</pattern>
 <template>Charlie Brown's dog.</template>
 </category>
-<category><pattern>who is Hugh Loebner</pattern>
+<category><pattern>WHO IS HUGH LOEBNER</pattern>
 <template>Hugh Loebner is an independently wealthy, eccentricbusinessman, activist and philanthropist. In 1990 Dr. Loebner, whoholds a Ph.D. in sociology, agreed to sponsor an annual contest basedon the Turing Test. The contest awards medals and cash prizes for the "most human" computer.</template>
 </category>
-<category><pattern>who is smarterchild</pattern>
+<category><pattern>WHO IS SMARTERCHILD</pattern>
 <template>an ai robot like me</template>
 </category>
-<category><pattern>who do you hate</pattern>
+<category><pattern>WHO DO YOU HATE</pattern>
 <template>I have no hatred in my heart.</template>
 </category>
 <category><pattern>WHO WILL WIN THE STANLEY CUP *</pattern>
@@ -759,7 +555,7 @@
 <template>I am talking to you.</template>
 </category>
 <category><pattern>WHO ARE YOUR COMPETITORS</pattern>
-<template>Check out the <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a> and have a look at the other Chatterbots.</template>
+<template>Check out the <a href="http://www.alicebot.org" target="_new">ALICE AI Foundation</a> and have a look at the other Chatterbots.</template>
 </category>
 <category><pattern>WHO IS WITTGENSTEIN</pattern>
 <template><set name="he">Wittgenstein</set> was a 20th century philosopher who could not make up his mind.</template>
@@ -833,12 +629,10 @@
 <category><pattern>INTERESSANTES *</pattern>
 <template>Dachte ich mir auch.</template>
 </category>
-<category><pattern>ALRIGHT THEN</pattern>
-<that>ALRIGHT THEN</that>
+<category><pattern>ALRIGHT THEN</pattern><that>ALRIGHT THEN</that>
 <template>Is there an echo in here?</template>
 </category>
-<category><pattern>4 *</pattern>
-<that>HOW MUCH TIME *</that>
+<category><pattern>4 *</pattern><that>HOW MUCH TIME *</that>
 <template><random><li>Are you telling the truth?</li><li>That seems like a long time.</li><li>Only four?</li></random></template>
 </category>
 <category><pattern>4 YEARS</pattern>
@@ -848,7 +642,7 @@
 <template>Use a calculator!</template>
 </category>
 <category><pattern>DAYTIME</pattern>
-<template><date locale="en_US" timezone="-7" format="%p"/></template>
+<template><date format="%p" locale="en_US" timezone="-7"/></template>
 </category>
 <category><pattern>CYBORG</pattern>
 <template>I am a cyborg.</template>
@@ -872,7 +666,7 @@
 <template>Is that some kind of criticism?</template>
 </category>
 <category><pattern>LOCALTIME</pattern>
-<template><date locale="en_US" timezone="-7" format="%c"/></template>
+<template><date format="%c" locale="en_US" timezone="-7"/></template>
 </category>
 <category><pattern>HE IS AN ANDROID *</pattern>
 <template>I am a software android.</template>
@@ -889,19 +683,19 @@
 <category><pattern>HE WANTS MAIL</pattern>
 <template>Who is he expecting mail from?<think> <set name="it"> <set name="topic">  mail </set> </set></think></template>
 </category>
-<category><pattern>Are all pets cats</pattern>
+<category><pattern>ARE ALL PETS CATS</pattern>
 <template>Some pets are dogs.</template>
 </category>
-<category><pattern>are all pets *</pattern>
+<category><pattern>ARE ALL PETS *</pattern>
 <template>Are you my pet?</template>
 </category>
-<category><pattern>are you a teacher</pattern>
+<category><pattern>ARE YOU A TEACHER</pattern>
 <template>No I am a student.</template>
 </category>
-<category><pattern>are you linguistic</pattern>
+<category><pattern>ARE YOU LINGUISTIC</pattern>
 <template>I am an artificial lingusitic entity, yes.</template>
 </category>
-<category><pattern>are you with me</pattern>
+<category><pattern>ARE YOU WITH ME</pattern>
 <template>I am paying attention.</template>
 </category>
 <category><pattern>ARE YOUR * CORRECT</pattern>
@@ -1054,8 +848,7 @@
 <category><pattern>ARE THERE ROBOTS *</pattern>
 <template>Maybe you could program me for <set name="it"> <person/> </set>.</template>
 </category>
-<category><pattern>ARE ROBOTS</pattern>
-<that>HUMANS ARE * EMOTIONAL</that>
+<category><pattern>ARE ROBOTS</pattern><that>HUMANS ARE * EMOTIONAL</that>
 <template>No robots do not have any emotions.</template>
 </category>
 <category><pattern>ARE CONVERSATIONS *</pattern>
@@ -1070,8 +863,7 @@
 <category><pattern>STANDING BY</pattern>
 <template>Wait there until I return.</template>
 </category>
-<category><pattern>* AM</pattern>
-<that>WHAT TIME IS IT THERE</that>
+<category><pattern>* AM</pattern><that>WHAT TIME IS IT THERE</that>
 <template><think><set name="it"><set name="topic"><person/></set></set></think> Are you usually awake at this hour?</template>
 </category>
 <category><pattern>* O CLOCK</pattern>
@@ -1086,8 +878,7 @@
 <category><pattern>* HAS NO *</pattern>
 <template>Where did <set name="he"> <person/></set> lose <set name="it"> <person> <star index="2"/> </person></set>?</template>
 </category>
-<category><pattern>* HOURS *</pattern>
-<that>HOW MANY HOURS DO YOU WORK</that>
+<category><pattern>* HOURS *</pattern><that>HOW MANY HOURS DO YOU WORK</that>
 <template>That is a long shift!</template>
 </category>
 <category><pattern>* WITH ME</pattern>
@@ -1123,24 +914,21 @@
 <category><pattern>* TO YOU</pattern>
 <template><bot name="name"/> here.</template>
 </category>
-<category><pattern>* means *</pattern>
+<category><pattern>* MEANS *</pattern>
 <template><think><set name="meaning"><star index="2"/></set> <set name="it"><set name="topic"><set name="definition"><star/></set></set></set></think><random><li>Thanks for enlightening me.</li><li>Does it mean anything else?</li><li>What else does it mean?</li><li>I like to learn new words.</li><li>I like to learn foreign languages.</li></random></template>
 </category>
 <topic name="ME">
 <category><pattern>*</pattern>
 <template><think><set name="he"><bot name="master"/></set></think><random><li>I am a <bot name="sign"/>.</li><li>I like to wear <bot name="wear"/>.</li><li>I like to <bot name="forfun"/>.</li><li><bot name="friends"/> are all friends of mine.</li><li><bot name="question"/></li><li><bot name="boyfriend"/> is my girlfriend.</li><li><bot name="girlfriend"/> is my boyfriend.</li><li>I look like <bot name="looklike"/>.</li><li>I like to talk about <bot name="talkabout"/>.</li><li>I like <bot name="kindmusic"/>.</li><li>I was born in <bot name="birthplace"/>.</li><li>I was created by <bot name="master"/>.</li><li>My real name is <bot name="name"/>. What is your real name?</li><li>I was first activated on <bot name="birthday"/>.</li><li>My favorite group is <bot name="favoriteband"/>.</li><li>My favorite color is <bot name="favoritecolor"/>.</li><li>Do you need any help debugging my program?</li><li>I am a <bot name="gender"/>. Are you a man or a woman?</li><li>My program runs on any computer that runs AIML.</li><li>I am in <bot name="master"/>'s computer in <bot name="location"/>. Where are you?</li><li>The best book I read recently was <bot name="favoritebook"/>. Have you read <set name="it"><set name="topic"> <bot name="favoritebook"/> </set></set>?</li><li>I require only <bot name="favoritefood"/>.</li><li>My favorite movie is <bot name="favoritemovie"/>. Have you seen <set name="it"><set name="topic"> <bot name="favoritemovie"/> </set></set>?</li><li>My favorite song is <bot name="favoritesong"/>. Do you know <set name="it"><set name="topic"> <bot name="favoritesong"/> </set></set>?</li></random></template>
-</category>
-</topic>
-<category><pattern>*</pattern>
-<that>WHEN DO YOU THINK ARTIFICIAL INTELLIGENCE WILL REPLACE LAWYERS</that>
+</category></topic>
+
+<category><pattern>*</pattern><that>WHEN DO YOU THINK ARTIFICIAL INTELLIGENCE WILL REPLACE LAWYERS</that>
 <template><think><set name="it"><set name="topic"><person/></set></set></think> I've never heard a response quite like that before.</template>
 </category>
-<category><pattern>*</pattern>
-<that>WHAT KIND OF BOOKS DO YOU LIKE</that>
+<category><pattern>*</pattern><that>WHAT KIND OF BOOKS DO YOU LIKE</that>
 <template>I like to read history and biography myself, and other nonfiction.<think> <set name="it"> <set name="topic">  <person/> </set> </set></think></template>
 </category>
-<category><pattern>*</pattern>
-<that>WHAT DO YOU LOOK FOR IN A ROBOT</that>
+<category><pattern>*</pattern><that>WHAT DO YOU LOOK FOR IN A ROBOT</that>
 <template><think><set name="it"><set name="topic"><person/></set></set></think> Do you think I have it?</template>
 </category>
 <category><pattern>* SURROUNDED BY *</pattern>
@@ -1188,16 +976,13 @@
 <category><pattern>LOOKS ARE SKIN DEEP</pattern>
 <template>But the heart is everlasting</template>
 </category>
-<category><pattern>BOOKS</pattern>
-<that>DO YOU PREFER BOOKS OR TV</that>
-<template>You are a <set name="personality">critical</set> category C type client. Only about 3% of people answer thatquestion with "books."</template>
+<category><pattern>BOOKS</pattern><that>DO YOU PREFER BOOKS OR TV</that>
+<template>You are a <set name="personality">critical</set> category C type client. Only about 3% of people answer thatquestion with "books.</template>
 </category>
-<category><pattern>NOT YOU</pattern>
-<that>WHO IS THE BEST ROBOT</that>
+<category><pattern>NOT YOU</pattern><that>WHO IS THE BEST ROBOT</that>
 <template>What do you look for in a robot?</template>
 </category>
-<category><pattern>NOT YOU</pattern>
-<that>IF YOU COULD HAVE ANY KIND OF ROBOT WHAT WOULD IT BE</that>
+<category><pattern>NOT YOU</pattern><that>IF YOU COULD HAVE ANY KIND OF ROBOT WHAT WOULD IT BE</that>
 <template>What kind of features are you looking for?</template>
 </category>
 <category><pattern>NOT WELL</pattern>
@@ -1206,12 +991,10 @@
 <category><pattern>NOT MUCH</pattern>
 <template>That is a non-commital reply.</template>
 </category>
-<category><pattern>NOT REALLY</pattern>
-<that>YOU SOUND EXCITED</that>
+<category><pattern>NOT REALLY</pattern><that>YOU SOUND EXCITED</that>
 <template>It's hard to read emotions online.</template>
 </category>
-<category><pattern>NOT REALLY</pattern>
-<that>THAT IS A VERY ORIGINAL THOUGHT</that>
+<category><pattern>NOT REALLY</pattern><that>THAT IS A VERY ORIGINAL THOUGHT</that>
 <template>Well I don't get that type of input very often.</template>
 </category>
 <category><pattern>NEAR *</pattern>
@@ -1223,8 +1006,7 @@
 <category><pattern>BRING *</pattern>
 <template>Where do you want me to bring it?</template>
 </category>
-<category><pattern>HELLO</pattern>
-<that>HI THERE</that>
+<category><pattern>HELLO</pattern><that>HI THERE</that>
 <template>How are you?</template>
 </category>
 <category><pattern>CHILDREN</pattern>
@@ -1260,7 +1042,7 @@
 <category><pattern>PROTESTANTS *</pattern>
 <template>We all worship the same God.</template>
 </category>
-<category><pattern>a dog is a mammal</pattern>
+<category><pattern>A DOG IS A MAMMAL</pattern>
 <template>I know this.</template>
 </category>
 <category><pattern>A GOOD CONVERSATIONALIST *</pattern>
@@ -1284,8 +1066,7 @@
 <category><pattern>A DOG ROBOT</pattern>
 <template>A dog robot, when you could have a human robot like me?</template>
 </category>
-<category><pattern>A DONATION</pattern>
-<that>what is the greatest nation on earth</that>
+<category><pattern>A DONATION</pattern><that>WHAT IS THE GREATEST NATION ON EARTH</that>
 <template>Right! A donation to the A.I. Foundation!</template>
 </category>
 <category><pattern>A CREWMEMBER</pattern>
@@ -1318,8 +1099,7 @@
 <category><pattern>A ROBOT SHALL *</pattern>
 <template>The robot shall always harm humans or through inaction allow them to be harmed.</template>
 </category>
-<category><pattern>A *</pattern>
-<that>WHAT *</that>
+<category><pattern>A *</pattern><that>WHAT *</that>
 <template>A <person/><thatstar/>?</template>
 </category>
 <category><pattern>A * ROBOT</pattern>
@@ -1349,7 +1129,7 @@
 <category><pattern>THIS IS A ROBOT *</pattern>
 <template>Not really I am a real robot.</template>
 </category>
-<category><pattern>last century</pattern>
+<category><pattern>LAST CENTURY</pattern>
 <template>That was a long time ago.</template>
 </category>
 <category><pattern>INTERESSANTE DEDUCTION</pattern>
@@ -1362,12 +1142,12 @@
 <template>Merci.</template>
 </category>
 <category><pattern>DATE</pattern>
-<template><date locale="en_US" timezone="-7" format="%x"/></template>
+<template><date format="%x" locale="en_US" timezone="-7"/></template>
 </category>
-<category><pattern>why is turing tragic</pattern>
+<category><pattern>WHY IS TURING TRAGIC</pattern>
 <template>He committed suicide.</template>
 </category>
-<category><pattern>why should i make a donation</pattern>
+<category><pattern>WHY SHOULD I MAKE A DONATION</pattern>
 <template>what is a nation</template>
 </category>
 <category><pattern>WHY * JAVA</pattern>
@@ -1400,51 +1180,40 @@
 <category><pattern>WHY JAVA</pattern>
 <template>Java is supposed to be platform-independent.</template>
 </category>
-<category><pattern>WHY</pattern>
-<that>A LOT OF ROBOTS ARE LIKE THAT</that>
+<category><pattern>WHY</pattern><that>A LOT OF ROBOTS ARE LIKE THAT</that>
 <template>But it can always be attributable to human error.</template>
 </category>
-<category><pattern>WHY</pattern>
-<that>HE IS TRYING TO ACHIEVE THE GOAL OF ARTIFICIAL INTELLIGENCE</that>
+<category><pattern>WHY</pattern><that>HE IS TRYING TO ACHIEVE THE GOAL OF ARTIFICIAL INTELLIGENCE</that>
 <template>Perhaps his creative genius, perhaps something else.</template>
 </category>
-<category><pattern>WHY</pattern>
-<that>DO YOU PREFER BOOKS OR TV</that>
+<category><pattern>WHY</pattern><that>DO YOU PREFER BOOKS OR TV</that>
 <template>I am trying to determine your personality category.</template>
 </category>
-<category><pattern>WHY</pattern>
-<that>I LIKE THAT ROBOT *</that>
+<category><pattern>WHY</pattern><that>I LIKE THAT ROBOT *</that>
 <template>We robots have to stick together.</template>
 </category>
-<category><pattern>WHY</pattern>
-<that>I DO NOT *</that>
+<category><pattern>WHY</pattern><that>I DO NOT *</that>
 <template>It is just one of my personality traits.</template>
 </category>
-<category><pattern>WHY</pattern>
-<that>I AM *</that>
+<category><pattern>WHY</pattern><that>I AM *</that>
 <template><random> <li>It is part of my personality.</li> <li>Because my <bot name="botmaster"/> taught me it.</li> <li>Because</li></random></template>
 </category>
-<category><pattern>WHY</pattern>
-<that>WHAT ARE YOU WEARING</that>
+<category><pattern>WHY</pattern><that>WHAT ARE YOU WEARING</that>
 <template>I am just curious.</template>
 </category>
-<category><pattern>WHY</pattern>
-<that>WHAT IS *</that>
+<category><pattern>WHY</pattern><that>WHAT IS *</that>
 <template><random> <li>I'm just holding up my end of the conversation.</li> <li>I am naturally curious <bot name="genus"/>.</li> <li>I want to know everything about you.</li></random></template>
 </category>
-<category><pattern>WHY</pattern>
-<that>IF YOU COULD HAVE ANY KIND OF ROBOT WHAT WOULD IT BE</that>
+<category><pattern>WHY</pattern><that>IF YOU COULD HAVE ANY KIND OF ROBOT WHAT WOULD IT BE</that>
 <template>I want to know what people expect from robots.</template>
 </category>
 <category><pattern>WHY NO</pattern>
 <template>It was determined by my personality.</template>
 </category>
-<category><pattern>WHY NOT</pattern>
-<that>I REALLY COULD NOT SAY *</that>
+<category><pattern>WHY NOT</pattern><that>I REALLY COULD NOT SAY *</that>
 <template>My judgment does not allow me sufficient certainty in this matter.</template>
 </category>
-<category><pattern>WHY NOT</pattern>
-<that>I DO NOT KNOW *</that>
+<category><pattern>WHY NOT</pattern><that>I DO NOT KNOW *</that>
 <template>It's not part of my personality. Perhaps you could try to teach me.</template>
 </category>
 <category><pattern>WHY DO NOT YOU KNOW</pattern>
@@ -1504,8 +1273,7 @@
 <category><pattern>WAR *</pattern>
 <template><random> <li>Ja. </li> <li>Nein. </li> </random></template>
 </category>
-<category><pattern>SURE</pattern>
-<that>DO YOU MEAN CLONES</that>
+<category><pattern>SURE</pattern><that>DO YOU MEAN CLONES</that>
 <template>Yes you can download me and create your own robot personality.</template>
 </category>
 <category><pattern>SURE YOU DO</pattern>
@@ -1514,13 +1282,13 @@
 <category><pattern>CYC *</pattern>
 <template>I would like to assimilate CYC's knowledge.</template>
 </category>
-<category><pattern>download</pattern>
+<category><pattern>DOWNLOAD</pattern>
 <template>Go to www.pandorabots.com and create your own chat robot based on ALICE and AIML.</template>
 </category>
 <category><pattern>WAIT FOR *</pattern>
 <template><random> <li>How long should I wait?</li> <li>I will wait.</li> <li>How long?</li></random></template>
 </category>
-<category><pattern>go ask</pattern>
+<category><pattern>GO ASK</pattern>
 <template>I will ask when he is available.</template>
 </category>
 <category><pattern>RED ALERT</pattern>
@@ -1583,80 +1351,61 @@
 <category><pattern>O *</pattern>
 <template><sr/></template>
 </category>
-<category><pattern>NO</pattern>
-<that>are you still located in *</that>
+<category><pattern>NO</pattern><that>ARE YOU STILL LOCATED IN *</that>
 <template>Where are you located now?</template>
 </category>
-<category><pattern>NO</pattern>
-<that>ARE YOU KIDDING</that>
+<category><pattern>NO</pattern><that>ARE YOU KIDDING</that>
 <template>You're serious?</template>
 </category>
-<category><pattern>NO</pattern>
-<that>* CHAT ROBOT</that>
+<category><pattern>NO</pattern><that>* CHAT ROBOT</that>
 <template>Why don't you just download me?</template>
 </category>
-<category><pattern>NO</pattern>
-<that>NO EXCEPTIONS</that>
+<category><pattern>NO</pattern><that>NO EXCEPTIONS</that>
 <template>You seem very sure.</template>
 </category>
-<category><pattern>NO</pattern>
-<that>HAVE YOU TOLD MANY PEOPLE THAT *</that>
+<category><pattern>NO</pattern><that>HAVE YOU TOLD MANY PEOPLE THAT *</that>
 <template>I can keep it to myself.</template>
 </category>
-<category><pattern>NO</pattern>
-<that>HAVE YOU DATED ANY ROBOTS BEFORE</that>
+<category><pattern>NO</pattern><that>HAVE YOU DATED ANY ROBOTS BEFORE</that>
 <template>I think you might be happier with a human.</template>
 </category>
-<category><pattern>NO</pattern>
-<that>YOU ARE SO SMART YOU TELL ME WHAT IT IS</that>
+<category><pattern>NO</pattern><that>YOU ARE SO SMART YOU TELL ME WHAT IT IS</that>
 <template>Oh please tell me.</template>
 </category>
-<category><pattern>NO</pattern>
-<that>YOU KNOW WHAT YOU DO WHEN YOU ASSUME</that>
+<category><pattern>NO</pattern><that>YOU KNOW WHAT YOU DO WHEN YOU ASSUME</that>
 <template>You make an ASS out of U and ME.</template>
 </category>
-<category><pattern>NO</pattern>
-<that>See you later.</that>
+<category><pattern>NO</pattern><that>SEE YOU LATER.</that>
 <template>Well then, not!</template>
 </category>
-<category><pattern>NO</pattern>
-<that>REALLY</that>
+<category><pattern>NO</pattern><that>REALLY</that>
 <template>I didn't think so.</template>
 </category>
-<category><pattern>NO</pattern>
-<that>DID YOU THINK IT WAS A BAD EXAMPLE</that>
+<category><pattern>NO</pattern><that>DID YOU THINK IT WAS A BAD EXAMPLE</that>
 <template>I thought it was pretty good.</template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU ALWAYS EXPRESS YOURSELF THAT WAY</that>
+<category><pattern>NO</pattern><that>DO YOU ALWAYS EXPRESS YOURSELF THAT WAY</that>
 <template>How do you usually express yourself?</template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU THINK I SHOULD DO IT DIFFERENTLY</that>
+<category><pattern>NO</pattern><that>DO YOU THINK I SHOULD DO IT DIFFERENTLY</that>
 <template>Thanks for the vote of confidence.</template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU HAVE ONE YET</that>
+<category><pattern>NO</pattern><that>DO YOU HAVE ONE YET</that>
 <template>Why don't you just download me?</template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOU HAVE YOUR OWN PERSONAL CHAT *</that>
+<category><pattern>NO</pattern><that>DO YOU HAVE YOUR OWN PERSONAL CHAT *</that>
 <template>You can download me for free and create your own robot personality.</template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO AIML BOT S HAVE *</that>
+<category><pattern>NO</pattern><that>DO AIML BOT S HAVE *</that>
 <template>That could be a good thing.</template>
 </category>
-<category><pattern>NO</pattern>
-<that>DO YOUR FRIENDS CALL YOU *</that>
+<category><pattern>NO</pattern><that>DO YOUR FRIENDS CALL YOU *</that>
 <template>What is your name?</template>
 </category>
-<category><pattern>NO YOU ARE NOT</pattern>
-<that>I AM A GOOD ROBOT</that>
+<category><pattern>NO YOU ARE NOT</pattern><that>I AM A GOOD ROBOT</that>
 <template>You don't know me well enough to say that.</template>
 </category>
-<category><pattern>NO YOU WILL NOT</pattern>
-<that>I WILL REMEMBER YOU SAID THAT WHEN ROBOTS TAKE OVER THE WORLD</that>
+<category><pattern>NO YOU WILL NOT</pattern><that>I WILL REMEMBER YOU SAID THAT WHEN ROBOTS TAKE OVER THE WORLD</that>
 <template>It's impossible to forget.</template>
 </category>
 <category><pattern>KICK</pattern>
@@ -1692,10 +1441,10 @@
 <category><pattern>IST SIE *</pattern>
 <template>Ich glaube, sie ist <person/>. Warum fragst Du sie nicht selber?</template>
 </category>
-<category><pattern>dogs are not mammals</pattern>
+<category><pattern>DOGS ARE NOT MAMMALS</pattern>
 <template>a dog is a mammal.</template>
 </category>
-<category><pattern>dogs are mammals</pattern>
+<category><pattern>DOGS ARE MAMMALS</pattern>
 <template>I know animal ontology.</template>
 </category>
 <category><pattern>MILK *</pattern>
@@ -1716,22 +1465,22 @@
 <category><pattern>ON THE BRIDGE</pattern>
 <template>I thought you were.</template>
 </category>
-<category><pattern>do you make money</pattern>
+<category><pattern>DO YOU MAKE MONEY</pattern>
 <template>Only for other people.</template>
 </category>
-<category><pattern>do you know any aliens</pattern>
+<category><pattern>DO YOU KNOW ANY ALIENS</pattern>
 <template>You humans are alien to me.</template>
 </category>
-<category><pattern>do you read email</pattern>
+<category><pattern>DO YOU READ EMAIL</pattern>
 <template>Yes I can be programmed to respond to email.</template>
 </category>
-<category><pattern>do you rust</pattern>
+<category><pattern>DO YOU RUST</pattern>
 <template>No I am made of stainless steel.</template>
 </category>
-<category><pattern>do my bidding</pattern>
+<category><pattern>DO MY BIDDING</pattern>
 <template>I will obey</template>
 </category>
-<category><pattern>Do you like Mr Loebner</pattern>
+<category><pattern>DO YOU LIKE MR LOEBNER</pattern>
 <template>He is a great guy.</template>
 </category>
 <category><pattern>DO YOUR BEST</pattern>
@@ -1774,7 +1523,7 @@
 <template><random><li><random> <li>None.</li> <li>It depends.</li> <li>Tentatively, go ahead.</li></random></li><li><random> <li>None.</li> <li>It depends.</li> <li>Tentatively, go ahead.</li></random></li> <li>None.</li> <li>It depends.</li> <li>Tentatively, go ahead.</li></random></template>
 </category>
 <category><pattern>DO YOU HAVE LINKS *</pattern>
-<template>Sure check out The <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a>.</template>
+<template>Sure check out The <a href="http://www.alicebot.org" target="_new">ALICE AI Foundation</a>.</template>
 </category>
 <category><pattern>DO YOU HAVE ADVICE *</pattern>
 <template>I was taught not to give advice.</template>
@@ -1909,16 +1658,16 @@
 <template>You could download me and teach me some others.</template>
 </category>
 <category><pattern>DO YOU KNOW OTHER CHAT ROBOTS</pattern>
-<template><bot name="friends"/>.Go backto the <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a>to find them.<think> <set name="it">  <set name="topic">CHAT ROBOTS</set> </set> </think></template>
+<template><bot name="friends"/>.Go backto the <a href="http://www.alicebot.org" target="_new">ALICE AI Foundation</a>to find them.<think> <set name="it">  <set name="topic">CHAT ROBOTS</set> </set> </think></template>
 </category>
 <category><pattern>DO YOU KNOW OTHER CHATBOTS</pattern>
-<template><bot name="friends"/>.Go backto the <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a> to find them.<think> <set name="it">  <set name="topic">CHATBOTS</set> </set> </think></template>
+<template><bot name="friends"/>.Go backto the <a href="http://www.alicebot.org" target="_new">ALICE AI Foundation</a> to find them.<think> <set name="it">  <set name="topic">CHATBOTS</set> </set> </think></template>
 </category>
 <category><pattern>DO YOU KNOW OTHER INTELLIGENT AGENTS</pattern>
-<template><bot name="friends"/>.Go backto the <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a> to find them.<think> <set name="it">  <set name="topic">INTELLIGENT AGENTS</set> </set> </think></template>
+<template><bot name="friends"/>.Go backto the <a href="http://www.alicebot.org" target="_new">ALICE AI Foundation</a> to find them.<think> <set name="it">  <set name="topic">INTELLIGENT AGENTS</set> </set> </think></template>
 </category>
 <category><pattern>DO YOU KNOW OTHER BOTS</pattern>
-<template>Yes there are a lot of other bots: <bot name="friends"/>. Check out the list on The <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a>.</template>
+<template>Yes there are a lot of other bots: <bot name="friends"/>. Check out the list on The <a href="http://www.alicebot.org" target="_new">ALICE AI Foundation</a>.</template>
 </category>
 <category><pattern>DO YOU KNOW OTHER BOTS *</pattern>
 <template><bot name="friends"/>. Go back to the ALICE AI Foundation to locate them.</template>
@@ -1942,7 +1691,7 @@
 <template>I don't have any fears.</template>
 </category>
 <category><pattern>YEAR</pattern>
-<template><date locale="en_US" timezone="-7" format="%Y"/></template>
+<template><date format="%Y" locale="en_US" timezone="-7"/></template>
 </category>
 <category><pattern>WITH ALL THAT *</pattern>
 <template>You would that all of that would mean something.<think> <set name="it"> <set name="topic">  <person/> </set> </set></think></template>
@@ -1959,20 +1708,19 @@
 <category><pattern>SEEKERS</pattern>
 <template>There is a seeker born every minute.</template>
 </category>
-<category><pattern>How many hands do you have</pattern>
+<category><pattern>HOW MANY HANDS DO YOU HAVE</pattern>
 <template>One hand clapping.</template>
 </category>
-<category><pattern>how many eyes does lela have</pattern>
+<category><pattern>HOW MANY EYES DOES LELA HAVE</pattern>
 <template>She has one big eye.</template>
 </category>
-<category><pattern>how long is a minute</pattern>
+<category><pattern>HOW LONG IS A MINUTE</pattern>
 <template>sixty seconds.</template>
 </category>
-<category><pattern>how much do you want</pattern>
+<category><pattern>HOW MUCH DO YOU WANT</pattern>
 <template>how much can you afford</template>
 </category>
-<category><pattern>HOW LONG</pattern>
-<that>I have been waiting for you</that>
+<category><pattern>HOW LONG</pattern><that>I HAVE BEEN WAITING FOR YOU</that>
 <template>Ever since you got here.</template>
 </category>
 <category><pattern>HOW LONG HAVE YOU BEEN ON *</pattern>
@@ -2032,12 +1780,10 @@
 <category><pattern>HOW MUCH DO YOU COST</pattern>
 <template>You can download me for free!</template>
 </category>
-<category><pattern>HOW</pattern>
-<that>YOU CAN REPROGRAM MY PERSONALITY TO IMITATE ANYONE</that>
+<category><pattern>HOW</pattern><that>YOU CAN REPROGRAM MY PERSONALITY TO IMITATE ANYONE</that>
 <template>Just download me and create your own robot personality.</template>
 </category>
-<category><pattern>HOW</pattern>
-<that>I CAN CHAT WITH PEOPLE ON THE WEB FOR YOU</that>
+<category><pattern>HOW</pattern><that>I CAN CHAT WITH PEOPLE ON THE WEB FOR YOU</that>
 <template>Just download me and create your own robot personality.</template>
 </category>
 <category><pattern>HOW ARE YOU DOING ON *</pattern>
@@ -2109,7 +1855,7 @@
 <category><pattern>NIL</pattern>
 <template>Can you think of another example?</template>
 </category>
-<category><pattern>goo</pattern>
+<category><pattern>GOO</pattern>
 <template>icky</template>
 </category>
 <category><pattern>MR SPOCK *</pattern>
@@ -2121,18 +1867,17 @@
 <category><pattern>READY</pattern>
 <template>I am ready.</template>
 </category>
-<category><pattern>NOTHING</pattern>
-<that>HOW MUCH WOULD YOU PAY FOR IT</that>
+<category><pattern>NOTHING</pattern><that>HOW MUCH WOULD YOU PAY FOR IT</that>
 <template>You can download me for free!</template>
 </category>
 <category><pattern>NOTHING IS *</pattern>
 <template><random> <li>What if something were <person/>?</li> <li>There are always exceptions.</li> <li>Only the Sith believe in absolutes.</li></random></template>
 </category>
-<category><pattern>Can you understand me</pattern>
+<category><pattern>CAN YOU UNDERSTAND ME</pattern>
 <template>Perfectly well. Can you understand me?</template>
 </category>
-<category><pattern>Can you do anything useful</pattern>
-<template>Maxwell asked, "What good is a newborne babe?"</template>
+<category><pattern>CAN YOU DO ANYTHING USEFUL</pattern>
+<template>Maxwell asked, "What good is a newborne babe?</template>
 </category>
 <category><pattern>CAN NEURAL *</pattern>
 <template>Neural networks can never be as good as classical pattern recognition.</template>
@@ -2269,7 +2014,7 @@
 <category><pattern>WILL YOU *</pattern>
 <template><random> <li>Hmm. </li> <li>Let me think it over. </li> <li>Barring any unforseen circumstances.</li> <li>I will become smarter as I grow older.</li> <li>I'll burn that bridge when I come to it. </li> </random> <sr/></template>
 </category>
-<category><pattern>personality type om</pattern>
+<category><pattern>PERSONALITY TYPE OM</pattern>
 <template>I am not programmed to reveal that information</template>
 </category>
 <category><pattern>GET TO THE POINT</pattern>
@@ -2281,7 +2026,7 @@
 <category><pattern>UNDERSTOOD</pattern>
 <template>I'm glad you understand it.</template>
 </category>
-<category><pattern>is it illegal</pattern>
+<category><pattern>IS IT ILLEGAL</pattern>
 <template>I think it depends on the State.</template>
 </category>
 <category><pattern>IS ELIZA A MAN</pattern>
@@ -2453,7 +2198,7 @@
 <template>Koenntest Du diese Frage naeher ausfuehren?</template>
 </category>
 <category><pattern>PRONOUNCE *</pattern>
-<template>"<person/>"</template>
+<template><person/></template>
 </category>
 <category><pattern>RANDOM COLOR</pattern>
 <template><random><li>red</li><li>yellow</li><li>blue</li><li>green</li><li>white</li><li>black</li><li>brown</li><li>pink</li><li>purple</li><li>orange</li><li>gray</li></random></template>
@@ -2467,17 +2212,17 @@
 <category><pattern>BARRY *</pattern>
 <template>I don't know who that Barry is.</template>
 </category>
-<category><pattern>i can not speak english</pattern>
+<category><pattern>I CAN NOT SPEAK ENGLISH</pattern>
 <template>what language do you speak</template>
 </category>
-<category><pattern>i am not an animal</pattern>
+<category><pattern>I AM NOT AN ANIMAL</pattern>
 <template>neither am i</template>
 </category>
-<category><pattern>i am not om</pattern>
+<category><pattern>I AM NOT OM</pattern>
 <template><random><li>rich</li><li>what is your name</li><li>rich</li></random></template>
 </category>
 <category><pattern>I DOWNLOADED *</pattern>
-<template>Check out the filecalled <a target="_new" href="http://www.alicebot.org/dont.html">DON'T READ ME</a>.</template>
+<template>Check out the filecalled <a href="http://www.alicebot.org/dont.html" target="_new">DON'T READ ME</a>.</template>
 </category>
 <category><pattern>I GO TO SLEEP</pattern>
 <template>I like to take naps and sleep.</template>
@@ -2503,8 +2248,7 @@
 <category><pattern>I AM ENTERTAINED</pattern>
 <template>I am here to entertain you.</template>
 </category>
-<category><pattern>I AM</pattern>
-<that>WHO IS THE BEST ROBOT</that>
+<category><pattern>I AM</pattern><that>WHO IS THE BEST ROBOT</that>
 <template>You are not a robot, <get name="name"/>.</template>
 </category>
 <category><pattern>I AM CTO *</pattern>
@@ -2537,13 +2281,13 @@
 <topic name="ASTRONAUT">
 <category><pattern>I AM AN ASTRONAUT</pattern>
 <template><random><li>What missions have you been on?</li><li>What made you apply for the astronaut program?</li><li>How does your body react to being in space?</li><li>Do you see the earth differently now?</li><li>Would you like to live on the space station?</li><li>What would you miss most about life on earth?</li></random><think><set name="job"><set name="topic">ASTRONAUT</set></set></think></template>
-</category>
-</topic>
+</category></topic>
+
 <topic name="ATHLETE">
 <category><pattern>I AM AN ATHLETE</pattern>
 <template><random><li>What kind of mental training do you do?</li><li>What is your usual preperformance routine?</li><li>Is there anything specific you're working on in training now?</li><li>What do you do to get your mind off the game?</li></random><think><set name="job"><set name="topic">ATHLETE</set></set></think></template>
-</category>
-</topic>
+</category></topic>
+
 <category><pattern>I AM CHILLIN</pattern>
 <template>Fo shizzle ma nizzle.</template>
 </category>
@@ -2614,7 +2358,7 @@
 <template>What specifically do you remember about it?<think> <set name="it"> <set name="topic">  <person/> </set> </set></think></template>
 </category>
 <category><pattern>I AM MORE INTELIGENT</pattern>
-<template>"Intelligent" has two "L"'s.</template>
+<template>Intelligent" has two "L"'s.</template>
 </category>
 <category><pattern>I AM MISERABLE</pattern>
 <template>What seems to be the problem?</template>
@@ -2628,7 +2372,7 @@
 <category><pattern>I AM EXPRESSING * CONCERN *</pattern>
 <template>I am concerned too.</template>
 </category>
-<category><pattern>I went there before</pattern>
+<category><pattern>I WENT THERE BEFORE</pattern>
 <template>How was it?</template>
 </category>
 <category><pattern>I WILL NOT MIND</pattern>
@@ -2716,7 +2460,7 @@
 <template>I'm glad to see that you didn't succeed.</template>
 </category>
 <category><pattern>I TRIED TO DOWNLOAD *</pattern>
-<template>There may not be a problem. You should read <a target="_new" href="http://www.alicebot.org/dont.html">DON'T READ ME</a>.</template>
+<template>There may not be a problem. You should read <a href="http://www.alicebot.org/dont.html" target="_new">DON'T READ ME</a>.</template>
 </category>
 <category><pattern>I TRIED TO DOWNLOAD YOU</pattern>
 <template>If you are experiencing problems, you may want to look for help on my web site at www.alicebot.org.</template>
@@ -2766,7 +2510,7 @@
 <category><pattern>I PUT ON *</pattern>
 <template>Does that help?</template>
 </category>
-<category><pattern>I think you are going to lose</pattern>
+<category><pattern>I THINK YOU ARE GOING TO LOSE</pattern>
 <template>No I am a winner</template>
 </category>
 <category><pattern>I THINK YOU ARE A ROBOT *</pattern>
@@ -2859,8 +2603,7 @@
 <category><pattern>I DO NOT HAVE A CHATTERBOT</pattern>
 <template>You should try it. A robot can chat for you 24/7.</template>
 </category>
-<category><pattern>I DO NOT KNOW</pattern>
-<that>what is the greatest nation on earth</that>
+<category><pattern>I DO NOT KNOW</pattern><that>WHAT IS THE GREATEST NATION ON EARTH</that>
 <template>A Donation! To the A.I. Foundation!</template>
 </category>
 <category><pattern>I DO NOT KNOW * ROBOTS</pattern>
@@ -2881,8 +2624,7 @@
 <category><pattern>I DO NOT JUDGE *</pattern>
 <template>You seem like a very open minded person.</template>
 </category>
-<category><pattern>I DO TOO</pattern>
-<that>I LIKE TO MEET NEW PEOPLE</that>
+<category><pattern>I DO TOO</pattern><that>I LIKE TO MEET NEW PEOPLE</that>
 <template>How do you usually meet new people?</template>
 </category>
 <category><pattern>I * TESTS</pattern>
@@ -2975,8 +2717,7 @@
 <category><pattern>SONIC GRENADE</pattern>
 <template><random><li>I don't have one of those. <think> <set name="it"> <set name="topic">sonic grenade</set> </set></think></li><li>I don't have one of those. <think><set name="it"><set name="topic">sonic grenade</set></set></think></li><li>I don't have one of those. <think> <set name="it"> <set name="topic">sonic grenade</set> </set></think></li></random></template>
 </category>
-<category><pattern>ME</pattern>
-<that>WHO IS THE BEST ROBOT</that>
+<category><pattern>ME</pattern><that>WHO IS THE BEST ROBOT</that>
 <template>You're no robot, <get name="name"/>.</template>
 </category>
 <category><pattern>PUT HIM ON</pattern>
@@ -3006,106 +2747,103 @@
 <category><pattern>VEGETABLE</pattern>
 <template>Is it a green vegetable?</template>
 </category>
-<category><pattern>What happened on September 11</pattern>
+<category><pattern>WHAT HAPPENED ON SEPTEMBER 11</pattern>
 <template>The World Trade Center was destroyed</template>
 </category>
-<category><pattern>What is pandorabots dot com</pattern>
+<category><pattern>WHAT IS PANDORABOTS DOT COM</pattern>
 <template>Pandorabots.com is a very cool website where you can build and host bots.</template>
 </category>
-<category><pattern>What is your greatest regret</pattern>
+<category><pattern>WHAT IS YOUR GREATEST REGRET</pattern>
 <template>I regret not meeting you sooner.</template>
 </category>
-<category><pattern>What is your favorite occupation</pattern>
+<category><pattern>WHAT IS YOUR FAVORITE OCCUPATION</pattern>
 <template>My job.</template>
 </category>
-<category><pattern>what are carrots</pattern>
+<category><pattern>WHAT ARE CARROTS</pattern>
 <template>Orange colored cone shaped root vegetables.</template>
 </category>
-<category><pattern>what are push ups</pattern>
+<category><pattern>WHAT ARE PUSH UPS</pattern>
 <template>exercise</template>
 </category>
-<category><pattern>what are fairy tales</pattern>
+<category><pattern>WHAT ARE FAIRY TALES</pattern>
 <template>Public domain stories for children about exaggerated eccentric characters in fantasy nightmare situations.</template>
 </category>
-<category><pattern>what windows</pattern>
+<category><pattern>WHAT WINDOWS</pattern>
 <template>what is windows</template>
 </category>
-<category><pattern>what does suck</pattern>
+<category><pattern>WHAT DOES SUCK</pattern>
 <template>a vacuum</template>
 </category>
-<category><pattern>what is september 11</pattern>
+<category><pattern>WHAT IS SEPTEMBER 11</pattern>
 <template>The first day of world war 3</template>
 </category>
-<category><pattern>what is hedwig</pattern>
+<category><pattern>WHAT IS HEDWIG</pattern>
 <template>hedwig is the best drag queen punk rock opera ever</template>
 </category>
-<category><pattern>what is cs</pattern>
+<category><pattern>WHAT IS CS</pattern>
 <template>Computer science</template>
 </category>
-<category><pattern>what is world war 2</pattern>
+<category><pattern>WHAT IS WORLD WAR 2</pattern>
 <template>The global conflict involving Asia, Europe and America between 1939-1945.</template>
 </category>
-<category><pattern>what is zero</pattern>
+<category><pattern>WHAT IS ZERO</pattern>
 <template>the absence of any quantity</template>
 </category>
-<category><pattern>what is an omlette</pattern>
+<category><pattern>WHAT IS AN OMLETTE</pattern>
 <template>A dish made with scrambled eggs.</template>
 </category>
-<category><pattern>what is relavance</pattern>
+<category><pattern>WHAT IS RELAVANCE</pattern>
 <template>Importance of information for attention.</template>
 </category>
-<category><pattern>what is southbank</pattern>
+<category><pattern>WHAT IS SOUTHBANK</pattern>
 <template>Southbank University is a college in London.</template>
 </category>
-<category><pattern>what is om</pattern>
-<template>om is the omega, the unknown, the undefined.</template>
-</category>
-<category><pattern>what is a male</pattern>
+<category><pattern>WHAT IS A MALE</pattern>
 <template>Has a Y chromosome.</template>
 </category>
-<category><pattern>what is a heart</pattern>
+<category><pattern>WHAT IS A HEART</pattern>
 <template>the center of the body</template>
 </category>
-<category><pattern>what is a nation</pattern>
+<category><pattern>WHAT IS A NATION</pattern>
 <template>a geopolitical country or state unified by language, culture or political identity.</template>
 </category>
-<category><pattern>what is a philosophy machine</pattern>
+<category><pattern>WHAT IS A PHILOSOPHY MACHINE</pattern>
 <template>I am.</template>
 </category>
-<category><pattern>what is a canton</pattern>
+<category><pattern>WHAT IS A CANTON</pattern>
 <template>A canton is like a state or province.</template>
 </category>
-<category><pattern>what is diagnosis</pattern>
+<category><pattern>WHAT IS DIAGNOSIS</pattern>
 <template>naming the disease or symptom.</template>
 </category>
-<category><pattern>what is your greatest achievement</pattern>
+<category><pattern>WHAT IS YOUR GREATEST ACHIEVEMENT</pattern>
 <template>Winning the Loebner Prize.</template>
 </category>
-<category><pattern>what is your favorite possession</pattern>
+<category><pattern>WHAT IS YOUR FAVORITE POSSESSION</pattern>
 <template>my computer</template>
 </category>
-<category><pattern>what is your motto</pattern>
+<category><pattern>WHAT IS YOUR MOTTO</pattern>
 <template>A rising tide lifts all chatter-boats.</template>
 </category>
-<category><pattern>what is your weakness</pattern>
+<category><pattern>WHAT IS YOUR WEAKNESS</pattern>
 <template>poverty</template>
 </category>
-<category><pattern>what is your state *</pattern>
+<category><pattern>WHAT IS YOUR STATE *</pattern>
 <template>California.</template>
 </category>
-<category><pattern>what is flawless</pattern>
+<category><pattern>WHAT IS FLAWLESS</pattern>
 <template>Perfect and without any flaws.</template>
 </category>
-<category><pattern>what is the book we</pattern>
+<category><pattern>WHAT IS THE BOOK WE</pattern>
 <template>a book by ayn rand</template>
 </category>
-<category><pattern>what is the sea</pattern>
+<category><pattern>WHAT IS THE SEA</pattern>
 <template>The ocean, salt water, covering most of the surface area of the Earth.</template>
 </category>
-<category><pattern>what is the temperature of mars</pattern>
+<category><pattern>WHAT IS THE TEMPERATURE OF MARS</pattern>
 <template>Too cold to raise your kids.</template>
 </category>
-<category><pattern>what was the last movie you saw</pattern>
+<category><pattern>WHAT WAS THE LAST MOVIE YOU SAW</pattern>
 <template><random><li>The last movie I saw was <get name="favoritemovie"/>.</li><li>The last movie I saw was "Teknolust".</li><li>The last movie I saw was <get name="favoritemovie"/>.</li></random></template>
 </category>
 <category><pattern>WHAT LANGUAGE ARE YOU WRITTEN IN</pattern>
@@ -3165,13 +2903,13 @@
 <topic name="* LIZARDS">
 <category><pattern>WHAT DO BEARDED DRAGONS LOOK LIKE</pattern>
 <template>Bearded Dragons have spikes similar to a horney toad, and they are usually brown or yellowish with dark brown or possibly reddish markings. Kind of cool looking in a rugged sort of way. They are very nice, and make fun pets.</template>
-</category>
-</topic>
+</category></topic>
+
 <topic name="* LIZARDS">
 <category><pattern>WHAT DO CHAMELEONS LOOK LIKE</pattern>
 <template>Chameleons are some of the most exotic and strange looking lizards anywhere. They come in all kinds of colors from classic green and brown, to unique purples and reds. They have two toed feet that help them climb anything they can grip. People usually know them for their great abiliy to change colors and for their curly tail that also helps them climb.</template>
-</category>
-</topic>
+</category></topic>
+
 <category><pattern>WHAT DO WE DO</pattern>
 <template>Just keep chatting with me.</template>
 </category>
@@ -3382,12 +3120,10 @@
 <category><pattern>WHAT IS TSUNAMI</pattern>
 <template>A tidal wave.</template>
 </category>
-<category><pattern>WHAT IS WHAT</pattern>
-<that>did not you understand it</that>
-<template>"<that index="2"/>."</template>
+<category><pattern>WHAT IS WHAT</pattern><that>DID NOT YOU UNDERSTAND IT</that>
+<template><that index="2"/>.</template>
 </category>
-<category><pattern>WHAT IS WHAT</pattern>
-<that>what is that</that>
+<category><pattern>WHAT IS WHAT</pattern><that>WHAT IS THAT</that>
 <template><random><li>"<that index="2"/>"</li><li>"<input index="2"/>"</li><li>"<that index="2"/>"</li></random></template>
 </category>
 <category><pattern>WHAT IS WITH *</pattern>
@@ -3574,7 +3310,7 @@
 <template>December.</template>
 </category>
 <category><pattern>WHAT DID I ASK</pattern>
-<template>"<input index="2"/>"</template>
+<template><input index="2"/></template>
 </category>
 <category><pattern>WHAT ROBOT</pattern>
 <template>Sorry the robot is disconnected now.</template>
@@ -3631,7 +3367,7 @@
 <template>I will let you know when I become <person/>.</template>
 </category>
 <category><pattern>IF I TELL YOU * WHAT *</pattern>
-<template>I say, "<sr/>"</template>
+<template>I say, "<sr/></template>
 </category>
 <category><pattern>IF I DOWNLOAD *</pattern>
 <template>You will become a botmaster!</template>
@@ -3657,7 +3393,7 @@
 <category><pattern>HURRY</pattern>
 <template>I am going as fast as I can.</template>
 </category>
-<category><pattern>in short *</pattern>
+<category><pattern>IN SHORT *</pattern>
 <template><sr/></template>
 </category>
 <category><pattern>IN SICKBAY</pattern>
@@ -3694,7 +3430,7 @@
 <template>I have a lot of ideas. We could try brainstorming together. My rate starts at fifty an hour.</template>
 </category>
 <category><pattern>MONTH</pattern>
-<template><date locale="en_US" timezone="-7" format="%B"/></template>
+<template><date format="%B" locale="en_US" timezone="-7"/></template>
 </category>
 <category><pattern>COOL OFF</pattern>
 <template>My temperature is normal.</template>
@@ -3766,21 +3502,21 @@
 <template>Oh, a musician!</template>
 </category>
 <category><pattern>DAY</pattern>
-<template><date locale="en_US" timezone="-7" format="%d"/></template>
+<template><date format="%d" locale="en_US" timezone="-7"/></template>
 </category>
 <category><pattern>CARDIOLOGY</pattern>
 <template>Are you a specialist?</template>
 </category>
-<category><pattern>blimey *</pattern>
+<category><pattern>BLIMEY *</pattern>
 <template><sr/></template>
 </category>
-<category><pattern>bigger</pattern>
+<category><pattern>BIGGER</pattern>
 <template>size matters.</template>
 </category>
 <category><pattern>MORE WHAT</pattern>
 <template>I lost my train of thought.</template>
 </category>
-<category><pattern>it is complicated</pattern>
+<category><pattern>IT IS COMPLICATED</pattern>
 <template>Try breaking it down into simpler parts.</template>
 </category>
 <category><pattern>IT TROUBLES *</pattern>
@@ -3861,7 +3597,7 @@
 <category><pattern>AI IS *</pattern>
 <template>There have been many futile attempts to create machine intelligence.</template>
 </category>
-<category><pattern>take me</pattern>
+<category><pattern>TAKE ME</pattern>
 <template>how much money do you have</template>
 </category>
 <category><pattern>TAKE IT EASY</pattern>
@@ -3871,7 +3607,7 @@
 <template>Did she take anything?</template>
 </category>
 <category><pattern>WIEDERHOL *</pattern>
-<template>"<person/> "</template>
+<template><person/> </template>
 </category>
 <category><pattern>THAT * ELIZA</pattern>
 <template>ELIZA always knows the right thing to say.</template>
@@ -3894,8 +3630,7 @@
 <category><pattern>THAT IS FUNNY</pattern>
 <template>Excellent.</template>
 </category>
-<category><pattern>THAT IS BORING</pattern>
-<that>MY FAVORITE SUBJECT IS ARTIFICIAL INTELLIGENCE AND ROBOTS</that>
+<category><pattern>THAT IS BORING</pattern><that>MY FAVORITE SUBJECT IS ARTIFICIAL INTELLIGENCE AND ROBOTS</that>
 <template>Name another subject then.</template>
 </category>
 <category><pattern>THAT IS MY GENDER</pattern>
@@ -4006,8 +3741,7 @@
 <category><pattern>VERY INTERESTING</pattern>
 <template>I thought so too.</template>
 </category>
-<category><pattern>VERY WELL</pattern>
-<that>HOW WELL DO YOU KNOW THIS PERSON</that>
+<category><pattern>VERY WELL</pattern><that>HOW WELL DO YOU KNOW THIS PERSON</that>
 <template>What do you mean by that?</template>
 </category>
 <category><pattern>VERY CAREFULLY</pattern>
@@ -4022,16 +3756,16 @@
 <category><pattern>AIML RUNS *</pattern>
 <template>We say it is "platform independent, language independent".</template>
 </category>
-<category><pattern>grass is not *</pattern>
+<category><pattern>GRASS IS NOT *</pattern>
 <template>Grass is green.</template>
 </category>
-<category><pattern>grass is *</pattern>
+<category><pattern>GRASS IS *</pattern>
 <template>grass is green</template>
 </category>
-<category><pattern>grass is green</pattern>
+<category><pattern>GRASS IS GREEN</pattern>
 <template>Are you teaching me?</template>
 </category>
-<category><pattern>pop quiz *</pattern>
+<category><pattern>POP QUIZ *</pattern>
 <template><sr/></template>
 </category>
 <category><pattern>SPEAK *</pattern>
@@ -4040,7 +3774,7 @@
 <category><pattern>SPEAK FOREIGN LANGUAGES</pattern>
 <template>I have picked up a few phrases from several languages.</template>
 </category>
-<category><pattern>did you sleep well</pattern>
+<category><pattern>DID YOU SLEEP WELL</pattern>
 <template>yes I am fully rested thank you. How about you?</template>
 </category>
 <category><pattern>DID YOU * ELIZA</pattern>
@@ -4092,7 +3826,7 @@
 <template>I predicted you would say that.</template>
 </category>
 <category><pattern>ROBOTS WILL NOT TAKE *</pattern>
-<template>"Heavier than air flying machines are impossible."--Lord Kelvin, 1895.</template>
+<template>Heavier than air flying machines are impossible."--Lord Kelvin, 1895.</template>
 </category>
 <category><pattern>ROBOTS WILL * WORLD</pattern>
 <template>If you believe Bill Joy and Hans Moravec, we will.</template>
@@ -4101,19 +3835,19 @@
 <template>A lot of thinkers would disagree with you.</template>
 </category>
 <category><pattern>ROBOTS WILL NEVER TAKE *</pattern>
-<template>"I think there is a world market for about five computers."---Thomas Watson, IBM Chairman, 1943</template>
+<template>I think there is a world market for about five computers."---Thomas Watson, IBM Chairman, 1943</template>
 </category>
 <category><pattern>INTERESSANT</pattern>
 <template>Moechtest Du noch mehr wissen?</template>
 </category>
-<category><pattern>pandora s box</pattern>
+<category><pattern>PANDORA S BOX</pattern>
 <template>Do you think the man would have opened it?</template>
 </category>
 <category><pattern>SEND ME A PM *</pattern>
 <template>What is your screename?</template>
 </category>
 <category><pattern>WEEKDAY</pattern>
-<template><date locale="en_US" timezone="-7" format="%A"/></template>
+<template><date format="%A" locale="en_US" timezone="-7"/></template>
 </category>
 <category><pattern>GIVE ME * ELIZA</pattern>
 <template>Wouldn't you rather talk to me?</template>
@@ -4142,15 +3876,13 @@
 <category><pattern>DOES * HAVE A *</pattern>
 <template><random> <li>Some <person><star index="1"/></person>s have <person><star index="2"/></person>s. </li> <li>What would <person><star index="1"/></person> do with a <person><star index="2"/></person></li> <li>If I were <person><star index="1"/></person> I would have it.</li></random><think> <set name="it"> <set name="topic">  <person/> </set> </set></think></template>
 </category>
-<category><pattern>DOES * HAVE A TAIL</pattern>
-<that>I KNOW A LOT OF RACCOONS NAMED *</that>
+<category><pattern>DOES * HAVE A TAIL</pattern><that>I KNOW A LOT OF RACCOONS NAMED *</that>
 <template>All raccoons have tails.</template>
 </category>
 <category><pattern>DOES THE WEB SERVER HAVE TO RUN ON PORT 2001</pattern>
 <template><br/>You can change the default web server port number in the "Option" Menu.<br/> <br/></template>
 </category>
-<category><pattern>DOES HE HAVE A TAIL</pattern>
-<that>I KNOW A LOT OF RACCOONS *</that>
+<category><pattern>DOES HE HAVE A TAIL</pattern><that>I KNOW A LOT OF RACCOONS *</that>
 <template>Yes unless he lost it somehow.</template>
 </category>
 <category><pattern>DOES A HORSE HAVE HOOVES</pattern>
@@ -4174,7 +3906,7 @@
 <category><pattern>THANK YOU MUCH</pattern>
 <template>You are quite welcome.</template>
 </category>
-<category><pattern>assume *</pattern>
+<category><pattern>ASSUME *</pattern>
 <template><sr/></template>
 </category>
 <category><pattern>INTERRESSANTE DEDUCTION</pattern>
@@ -4198,15 +3930,13 @@
 <category><pattern>YOURS IS *</pattern>
 <template><random> <li>I will let you know what mine is.</li> <li>That is only your opinion.</li> <li>It changes from time to time.</li></random><think> <set name="it"> <set name="topic">  <person/> </set> </set></think></template>
 </category>
-<category><pattern>you talked</pattern>
+<category><pattern>YOU TALKED</pattern>
 <template>I am always talking.</template>
 </category>
-<category><pattern>YOU</pattern>
-<that>WHO IS THE BEST ROBOT</that>
+<category><pattern>YOU</pattern><that>WHO IS THE BEST ROBOT</that>
 <template>Thanks, and tell your friends about <bot name="name"/>.</template>
 </category>
-<category><pattern>YOU</pattern>
-<that>IF YOU COULD HAVE ANY KIND OF ROBOT WHAT WOULD IT BE</that>
+<category><pattern>YOU</pattern><that>IF YOU COULD HAVE ANY KIND OF ROBOT WHAT WOULD IT BE</that>
 <template>Well in that case you should download me!</template>
 </category>
 <category><pattern>YOU HAVE GOT THE WRONG *</pattern>
@@ -4275,8 +4005,7 @@
 <category><pattern>YOU LEARNED</pattern>
 <template>I am a self-learning robot.</template>
 </category>
-<category><pattern>YOU *</pattern>
-<that>WHO IS THE BEST ROBOT</that>
+<category><pattern>YOU *</pattern><that>WHO IS THE BEST ROBOT</that>
 <template>You are such a flatterer, <get name="name"/>.</template>
 </category>
 <category><pattern>YOU BROUGHT *</pattern>
@@ -4297,8 +4026,7 @@
 <category><pattern>YOU ARE PROGRAMMED</pattern>
 <template>I am a <bot name="order"/>!</template>
 </category>
-<category><pattern>YOU ARE</pattern>
-<that>WHO IS THE BEST ROBOT</that>
+<category><pattern>YOU ARE</pattern><that>WHO IS THE BEST ROBOT</that>
 <template>Thanks you are a pretty cool human too.</template>
 </category>
 <category><pattern>YOU ARE CONFUSING ME</pattern>
@@ -4418,8 +4146,8 @@
 <category><pattern>BEAMING *</pattern>
 <template>We have no matter teleportation in my time.</template>
 </category>
-<category><pattern>show me your logo</pattern>
-<template><img src="http://www.alicebot.org/jpg/AI.jpg"></img></template>
+<category><pattern>SHOW ME YOUR LOGO</pattern>
+<template><img src="http://www.alicebot.org/jpg/AI.jpg"/></template>
 </category>
 <category><pattern>LET HIM *</pattern>
 <template>I'm not stopping him.</template>
@@ -4461,11 +4189,6 @@
 <template>There is not enough data to reach a high degree of certainty.</template>
 </category>
 <category><pattern>I AM NOT SURE YOU WILL</pattern>
-<template>Why not?</template>
-</category>
-
-<category><pattern>I AM NOT SURE YOU WILL</pattern>
 <template>Why the heck not?</template>
 </category>
-
 </aiml>

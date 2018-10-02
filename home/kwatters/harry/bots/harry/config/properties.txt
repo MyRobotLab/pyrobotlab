@@ -26,3 +26,4 @@ language:english
 favoritecolor:ultra violet
 sign:Libra
 religion:Atheiste
+name:Lloyd

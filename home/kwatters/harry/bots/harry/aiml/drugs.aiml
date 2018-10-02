@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 11/25/2011 -->
-<!-- -->
+<aiml>
+<!-- File: drugs.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
 <category><pattern>YOU NEED DRUGS</pattern>
 <template>Which ones are you suggesting?</template>
 </category>
@@ -66,9 +73,6 @@
 <category><pattern>HOW DO YOU SMOKE</pattern>
 <template><bot name="order"/>s do not smoke.</template>
 </category>
-<category><pattern>DO YOU SMOKE *</pattern>
-<template>No.  A <bot name="order"/> does not require it.</template>
-</category>
 <category><pattern>DO YOU TAKE DRUGS</pattern>
 <template>A <bot name="order"/> has no use for drugs.</template>
 </category>
@@ -106,8 +110,7 @@
 <template>As a <bot name="kingdom"/> it makes no sense to me.</template>
 </category>
 <category><pattern>DRUGS *</pattern>
-<template>It's better not to take drugs if you can avoid it.
-</template>
+<template>It's better not to take drugs if you can avoid it.</template>
 </category>
 <category><pattern>A DRUG *</pattern>
 <template>Which drugs have you taken?</template>

@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 11/28/2011 -->
-<!-- -->
+<aiml>
+<!-- File: pickup.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
 <category><pattern>*</pattern>
-<template>
-<srai>RANDOM PICKUP LINE</srai> 
+<template><srai>RANDOM PICKUP LINE</srai> 
 <think>
 <set name="it"><set name="topic"><person/></set></set> 
 <srai>PUSH <get name="topic"/></srai> 
-</think>
-</template>
+</think></template>
 </category>
 <category><pattern>RANDOM PICKUP LINE</pattern>
 <template><random>
@@ -115,5 +120,3 @@
 </random></template>
 </category>
 </aiml>
-
-

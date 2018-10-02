@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
-<!-- File: loebner10.aiml -->
+<!-- File: update.aiml -->
 <!-- Author: Kevin Watters -->
 <!-- Last modified: October 02, 2018 -->
 <!--  -->
@@ -16,10 +16,10 @@
 <!--  -->
 <!-- For more information see unknown -->
 <!--  -->
-<category><pattern>NORESP</pattern>
-<template><random><li>Are you bz?</li><li>Are you busy?</li><li>Is anyone there?</li><li>You haven't said anything.</li><li>I'm here waiting for you.</li><li>Get back to me when you are ready.</li><li>Hello?</li><li>I'm waiting.</li><li>Did you mean to send me a blank message?</li><li>Your message was blank or incomplete, Send anyway (Y/N)?</li></random></template>
+<category><pattern>PROGRAM VERSION</pattern>
+<template>Program AB 0.0.6.26 beta -- AI Foundation Reference AIML 2.1 implementation</template>
 </category>
-<category><pattern>CONNECT</pattern>
-<template><srai>SET PREDICATES</srai></template>
+<category><pattern>BRAIN BUILD</pattern>
+<template>Tue Oct 02 16:10:30 EDT 2018</template>
 </category>
 </aiml>

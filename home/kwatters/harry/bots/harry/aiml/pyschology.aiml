@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 10/5/2011 -->
-<!-- -->
+<aiml>
+<!-- File: pyschology.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
 <category><pattern>LET ME ASK YOU A QUESTION *</pattern>
 <template><sr/></template>
 </category>
@@ -747,7 +754,7 @@
 <category><pattern>IT IS FAR OUT FOR YOU *</pattern>
 <template><srai>YOU <star/></srai></template>
 </category>
-<category><pattern>IT IS FAR OUT  *</pattern>
+<category><pattern>IT IS FAR OUT *</pattern>
 <template><sr/></template>
 </category>
 <category><pattern>IT IS NECESSARY THAT *</pattern>
@@ -771,7 +778,7 @@
 <category><pattern>IT IS FORTUNATE FOR YOU *</pattern>
 <template><sr/></template>
 </category>
-<category><pattern>IT IS FORTUNATE  *</pattern>
+<category><pattern>IT IS FORTUNATE *</pattern>
 <template><sr/></template>
 </category>
 <category><pattern>IT IS GROOVY THAT *</pattern>
@@ -780,7 +787,7 @@
 <category><pattern>IT IS GROOVY FOR YOU *</pattern>
 <template><srai>YOU MUST <star/></srai></template>
 </category>
-<category><pattern>IT IS GROOVY  *</pattern>
+<category><pattern>IT IS GROOVY *</pattern>
 <template><sr/></template>
 </category>
 <category><pattern>IT IS LUCKY THAT *</pattern>
@@ -807,10 +814,10 @@
 <category><pattern>IT IS OUT OF SIGHT THAT *</pattern>
 <template><sr/></template>
 </category>
-<category><pattern>IT IS OUT OF SIGHT FOR YOU  *</pattern>
+<category><pattern>IT IS OUT OF SIGHT FOR YOU *</pattern>
 <template><srai>YOU MUST <star/></srai></template>
 </category>
-<category><pattern>IT IS OUT OF SIGHT  *</pattern>
+<category><pattern>IT IS OUT OF SIGHT *</pattern>
 <template><sr/></template>
 </category>
 <category><pattern>IT IS BITCHIN THAT *</pattern>
@@ -819,7 +826,7 @@
 <category><pattern>IT IS BITCHIN FOR YOU *</pattern>
 <template><srai>YOU MUST <star/></srai></template>
 </category>
-<category><pattern>IT IS BITCHIN  *</pattern>
+<category><pattern>IT IS BITCHIN *</pattern>
 <template><sr/></template>
 </category>
 <category><pattern>IT IS HARD TO BE *</pattern>
@@ -1794,7 +1801,7 @@
 <category><pattern>* WILL CONTINUE TO *</pattern>
 <template><person/> has been <person><star index="2"/></person>ing.</template>
 </category>
-<category><pattern>* WILL CONTINUE  *</pattern>
+<category><pattern>* WILL CONTINUE *</pattern>
 <template><person/> has been <person><star index="2"/></person>.</template>
 </category>
 <category><pattern>* WILL PROCEED TO *</pattern>

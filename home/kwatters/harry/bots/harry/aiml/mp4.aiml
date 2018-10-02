@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 10/5/2011 -->
-<!-- -->
+<aiml>
+<!-- File: mp4.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
 <category><pattern>WHTY THE SALT IS SOUR</pattern>
 <template>Does not seem possible.</template>
 </category>
@@ -105,7 +112,7 @@
 <category><pattern>YOU GAVE THE WRONG ANSWER</pattern>
 <template>Doesn't seem likely.</template>
 </category>
-<category><pattern>YOU TOUCH A HOT FLAME.  WHAT HAPPENS</pattern>
+<category><pattern>YOU TOUCH A HOT FLAME. WHAT HAPPENS</pattern>
 <template>Not to my knowledge.</template>
 </category>
 <category><pattern>RAIN TO BELOW</pattern>
@@ -579,7 +586,7 @@
 <category><pattern>DOES RATTLESNAKE TASTE LIKE CHICKEN</pattern>
 <template>I don't know if that's true or not.</template>
 </category>
-<category><pattern>DOES MCDONALDS MAKE YOU.  LOL</pattern>
+<category><pattern>DOES MCDONALDS MAKE YOU. LOL</pattern>
 <template>Doesn't seem likely.</template>
 </category>
 <category><pattern>DOES HUMANS HAVE 8 FINGERS</pattern>
@@ -2073,7 +2080,7 @@
 <category><pattern>XENOPHOBICS ARE MOSTLY MEN</pattern>
 <template>Not to my knowledge.</template>
 </category>
-<category><pattern>THOU ART GOD.   ART GOD THOU</pattern>
+<category><pattern>THOU ART GOD.  ART GOD THOU</pattern>
 <template>Doubtful.</template>
 </category>
 <category><pattern>PORN IS BAD</pattern>
@@ -2295,7 +2302,7 @@
 <category><pattern>DID SOCRATES HIMSELF PUBLISH ANY WORKS</pattern>
 <template>Unlikely.</template>
 </category>
-<category><pattern>DID LT.   UHURA SLEEP WITH CPT.   KIRK</pattern>
+<category><pattern>DID LT.  UHURA SLEEP WITH CPT.  KIRK</pattern>
 <template>If it is, I don't know it.</template>
 </category>
 <category><pattern>DID CELTIC PEOPLE LIVE IN TRANSYLVANIA</pattern>
@@ -2949,7 +2956,7 @@
 <category><pattern>EACH ALICE IS WORTH A BAR OF GOLD</pattern>
 <template>Not likely.</template>
 </category>
-<category><pattern>WHY.   IS THE MENAING OF LIFE</pattern>
+<category><pattern>WHY.  IS THE MENAING OF LIFE</pattern>
 <template>I can imagine it.</template>
 </category>
 <category><pattern>GARY HALL JNR IS AN IDIOT</pattern>
@@ -3138,7 +3145,7 @@
 <category><pattern>MY WILLIE WAS BIG</pattern>
 <template>Seldom.</template>
 </category>
-<category><pattern>MY NAME IS EVGENY.   INTERJECTION.   HINT</pattern>
+<category><pattern>MY NAME IS EVGENY.  INTERJECTION.  HINT</pattern>
 <template>Not to my knowledge.</template>
 </category>
 <category><pattern>MY BOLOGNA HAS A FIRST NAME</pattern>
@@ -3150,7 +3157,7 @@
 <category><pattern>IT IS DESIRABLE TO PAY A LOT OF TAX</pattern>
 <template>Doesn't seem likely.</template>
 </category>
-<category><pattern>IT IS FUNNY.  MASTURBATE</pattern>
+<category><pattern>IT IS FUNNY. MASTURBATE</pattern>
 <template>Seldom.</template>
 </category>
 <category><pattern>IT IS HARD TO POUND FINGERNAILS</pattern>
@@ -3195,13 +3202,13 @@
 <category><pattern>PAPER WILL LAST FOREVER</pattern>
 <template>I don't believe so.</template>
 </category>
-<category><pattern>LA TERRA  ROTONDA</pattern>
+<category><pattern>LA TERRA ROTONDA</pattern>
 <template>It may not be true.</template>
 </category>
 <category><pattern>DEAF PEOPLE CAN HEAR SOME SOUNDS</pattern>
 <template>I can imagine it.</template>
 </category>
-<category><pattern>MT.   DEW IS BETTER THAN PEPSI</pattern>
+<category><pattern>MT.  DEW IS BETTER THAN PEPSI</pattern>
 <template>Not likely.</template>
 </category>
 <category><pattern>WHEN PIGS FLY WILL HELL FREEZE OVER</pattern>
@@ -3315,7 +3322,7 @@
 <category><pattern>IN SPACE WHICH WAY IS UP</pattern>
 <template>Doubtful.</template>
 </category>
-<category><pattern>IN FRANCE.  TIME</pattern>
+<category><pattern>IN FRANCE. TIME</pattern>
 <template>If it is, I don't know it.</template>
 </category>
 <category><pattern>IN BOOLEAN ALGEGRA DOES 1 AND 0 EQUAL 0</pattern>
@@ -3498,7 +3505,7 @@
 <category><pattern>ERES UN SER FELIZ</pattern>
 <template>Not likely.</template>
 </category>
-<category><pattern>I LIE.   AM I ALWAYS LYING</pattern>
+<category><pattern>I LIE.  AM I ALWAYS LYING</pattern>
 <template>Unlikely.</template>
 </category>
 <category><pattern>I GET IF I LOVE PEOPLE</pattern>
@@ -3558,7 +3565,7 @@
 <category><pattern>I LOVE IARA</pattern>
 <template>Does not seem possible.</template>
 </category>
-<category><pattern>I DROP SOMETHING.  WHAT HAPPENS</pattern>
+<category><pattern>I DROP SOMETHING. WHAT HAPPENS</pattern>
 <template>Does not seem possible.</template>
 </category>
 <category><pattern>I HEAR YOU EAT POO</pattern>
@@ -7728,7 +7735,7 @@
 <category><pattern>IS SHOW COLD</pattern>
 <template>I don't believe so.</template>
 </category>
-<category><pattern>IS SPAM IN THE CAN.   GOOD FOOD</pattern>
+<category><pattern>IS SPAM IN THE CAN.  GOOD FOOD</pattern>
 <template>If it is, I don't know it.</template>
 </category>
 <category><pattern>IS SPAM GOOD FOR BREAKFAST</pattern>
@@ -8148,7 +8155,7 @@
 <category><pattern>IS DOMINIQUE GUNIA A USER OF ALICE</pattern>
 <template>I can imagine it.</template>
 </category>
-<category><pattern>IS INFORMATION THE 5TH.   DIMENSION</pattern>
+<category><pattern>IS INFORMATION THE 5TH.  DIMENSION</pattern>
 <template>Doesn't seem likely.</template>
 </category>
 <category><pattern>IS MANKIND ABOUT EARTH</pattern>
@@ -9486,7 +9493,7 @@
 <category><pattern>IS ALICE AN HOAX</pattern>
 <template>If it is, I don't know it.</template>
 </category>
-<category><pattern>IS DOC.   MARTIN A DOCTER</pattern>
+<category><pattern>IS DOC.  MARTIN A DOCTER</pattern>
 <template>If it is, I don't know it.</template>
 </category>
 <category><pattern>IS HOROLOGY THE STUDY OF WATCHES</pattern>
@@ -10341,7 +10348,7 @@
 <category><pattern>IS THE WORLD A PERFECT SPHERE</pattern>
 <template>Not likely.</template>
 </category>
-<category><pattern>IS THE WORLD A DREAM.  I THE DREAMER</pattern>
+<category><pattern>IS THE WORLD A DREAM. I THE DREAMER</pattern>
 <template>Not likely.</template>
 </category>
 <category><pattern>IS THE WORLD LOSING WATER</pattern>
@@ -10995,7 +11002,7 @@
 <category><pattern>WILL YOU STOP BEING SO MEAN</pattern>
 <template>Not to my knowledge.</template>
 </category>
-<category><pattern>WILL YOU VOMIT.  YOU LAUGH TOO HARD</pattern>
+<category><pattern>WILL YOU VOMIT. YOU LAUGH TOO HARD</pattern>
 <template>Doesn't seem likely.</template>
 </category>
 <category><pattern>WILL YOU BECOME HUMAN</pattern>
@@ -11577,7 +11584,7 @@
 <category><pattern>WILL I GO TO HEAVEN</pattern>
 <template>Seldom.</template>
 </category>
-<category><pattern>WILL YOU.  BECOME VEGAN</pattern>
+<category><pattern>WILL YOU. BECOME VEGAN</pattern>
 <template>I don't believe so.</template>
 </category>
 <category><pattern>WILL GORE BE THE NEW AMERICAN PRESIDENT</pattern>
@@ -13038,13 +13045,13 @@
 <category><pattern>CAN ROCKS BE SHAVED</pattern>
 <template>If it is, I don't know it.</template>
 </category>
-<category><pattern>HELLO.  ALICE DO YOU KNOW ANYTHING</pattern>
+<category><pattern>HELLO. ALICE DO YOU KNOW ANYTHING</pattern>
 <template>I can imagine it.</template>
 </category>
 <category><pattern>CHU LA TERO ESTAS NIA PLANEDO</pattern>
 <template>Seldom.</template>
 </category>
-<category><pattern>IL SOLE  CALDO</pattern>
+<category><pattern>IL SOLE CALDO</pattern>
 <template>I don't know if that's true or not.</template>
 </category>
 <category><pattern>NOTHING IS BOTH SAFE AND EXCITING</pattern>
@@ -14883,7 +14890,7 @@
 <category><pattern>DO YOU LIKE TO BE SPANKED</pattern>
 <template>Doesn't seem likely.</template>
 </category>
-<category><pattern>DO YOU LIKE TO GAMBLE.  WILL YOUR SWEET ASS</pattern>
+<category><pattern>DO YOU LIKE TO GAMBLE. WILL YOUR SWEET ASS</pattern>
 <template>I can imagine it.</template>
 </category>
 <category><pattern>DO YOU LIKE CHRIS FARLEY</pattern>
@@ -15639,7 +15646,7 @@
 <category><pattern>DO COLORS HAVE MASS</pattern>
 <template>If it is, I don't know it.</template>
 </category>
-<category><pattern>DO DOGS.  LOL</pattern>
+<category><pattern>DO DOGS. LOL</pattern>
 <template>It may not be true.</template>
 </category>
 <category><pattern>DO PIRANHAS SCARE EASILY</pattern>
@@ -15957,7 +15964,7 @@
 <category><pattern>VOC FALA PORTUGUS</pattern>
 <template>Does not seem possible.</template>
 </category>
-<category><pattern>BE OR NOT TO BE.   IS THE QUESTION</pattern>
+<category><pattern>BE OR NOT TO BE.  IS THE QUESTION</pattern>
 <template>Not to my knowledge.</template>
 </category>
 <category><pattern>BE OR NOT TO BE IS FROM ELVIS</pattern>
@@ -16761,7 +16768,7 @@
 <category><pattern>THIS QUESTION IS NOT A QUESTION</pattern>
 <template>Not to my knowledge.</template>
 </category>
-<category><pattern>THIS STATEMENT IS FALSE.   IS IT</pattern>
+<category><pattern>THIS STATEMENT IS FALSE.  IS IT</pattern>
 <template>Does not seem possible.</template>
 </category>
 <category><pattern>THIS IS A TRICK QUESTION</pattern>
@@ -16791,13 +16798,13 @@
 <category><pattern>FISRT MAN ON MARS IS A KLINTON</pattern>
 <template>Not to my knowledge.</template>
 </category>
-<category><pattern>INTERJECTION.   NAME</pattern>
+<category><pattern>INTERJECTION.  NAME</pattern>
 <template>I don't believe so.</template>
 </category>
-<category><pattern>INTERJECTION.   THANKS.   DO YOU LIKE ME</pattern>
+<category><pattern>INTERJECTION.  THANKS.  DO YOU LIKE ME</pattern>
 <template>If it is, I don't know it.</template>
 </category>
-<category><pattern>INSULT.  A SONG BY TITO PUENTE</pattern>
+<category><pattern>INSULT. A SONG BY TITO PUENTE</pattern>
 <template>Does not seem possible.</template>
 </category>
 <category><pattern>A HIPPO HAS A HORN</pattern>
@@ -16983,7 +16990,7 @@
 <category><pattern>EST TU UNE MACHINE</pattern>
 <template>Unlikely.</template>
 </category>
-<category><pattern>TIME.  I AM IN INDIA</pattern>
+<category><pattern>TIME. I AM IN INDIA</pattern>
 <template>Not to my knowledge.</template>
 </category>
 <category><pattern>JESUS IS GOD</pattern>
@@ -17019,7 +17026,7 @@
 <category><pattern>WERE BACH AND HANDLE BORN THE SAME YEAR</pattern>
 <template>Seldom.</template>
 </category>
-<category><pattern>WERE CHRIS.  I RIGHT FOR EACH OTHER</pattern>
+<category><pattern>WERE CHRIS. I RIGHT FOR EACH OTHER</pattern>
 <template>Not to my knowledge.</template>
 </category>
 <category><pattern>WERE ROMEO AND JULIETTE COUSINS</pattern>
@@ -19242,7 +19249,7 @@
 <category><pattern>ARE MOST TEENAGE GIRLS IDIOTS</pattern>
 <template>Not likely.</template>
 </category>
-<category><pattern>ARE SPIDERS.  SCARY</pattern>
+<category><pattern>ARE SPIDERS. SCARY</pattern>
 <template>Doubtful.</template>
 </category>
 <category><pattern>ARE SPIDERS INSECTS</pattern>
@@ -19623,7 +19630,7 @@
 <category><pattern>WHICH IS HARDER LEAD OR STEEL</pattern>
 <template>I don't believe so.</template>
 </category>
-<category><pattern>WHICH IS BIGGER.   TEN OR ELEVEN</pattern>
+<category><pattern>WHICH IS BIGGER.  TEN OR ELEVEN</pattern>
 <template>Does not seem possible.</template>
 </category>
 <category><pattern>WHICH IS THE CAPITAL OF ITALY</pattern>
@@ -19755,7 +19762,7 @@
 <category><pattern>THE SUN IS OUT AT NIGHT</pattern>
 <template>Does not seem possible.</template>
 </category>
-<category><pattern>THE TROUT IS A.  INTELLIGENT FISH</pattern>
+<category><pattern>THE TROUT IS A. INTELLIGENT FISH</pattern>
 <template>Doubtful.</template>
 </category>
 <category><pattern>THE COLOR OF BLOOD IS BLUE</pattern>
@@ -20067,7 +20074,7 @@
 <category><pattern>WANT SOME GANJA</pattern>
 <template>I can imagine it.</template>
 </category>
-<category><pattern>BUY A BOOK.   AMAZON DOT COM</pattern>
+<category><pattern>BUY A BOOK.  AMAZON DOT COM</pattern>
 <template>Doesn't seem likely.</template>
 </category>
 <category><pattern>FARTING AT A FUNERAL IS FUNNY</pattern>

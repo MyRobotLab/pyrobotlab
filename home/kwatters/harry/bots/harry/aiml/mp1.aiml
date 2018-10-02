@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 10/5/2011 -->
-<!-- -->
+<aiml>
+<!-- File: mp1.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
 <category><pattern>NEED MEN SLEEP</pattern>
 <template>Definitely.</template>
 </category>
@@ -2934,7 +2941,7 @@
 <category><pattern>DOSE A PHOTOGRAPHER TAKE PICTURES</pattern>
 <template>Certainly.</template>
 </category>
-<category><pattern>GRASS IS GREEN.   INTERJECTION.  INTERJECTION</pattern>
+<category><pattern>GRASS IS GREEN.  INTERJECTION. INTERJECTION</pattern>
 <template>Positively.</template>
 </category>
 <category><pattern>MACHINES EVENTUALLY BREAK DOWN</pattern>
@@ -3477,7 +3484,7 @@
 <category><pattern>SPACE IS COLD</pattern>
 <template>Certainly.</template>
 </category>
-<category><pattern>FISH COME IN DIFFERENT SIZES.   INTERJECTION.  INTERJECTION</pattern>
+<category><pattern>FISH COME IN DIFFERENT SIZES.  INTERJECTION. INTERJECTION</pattern>
 <template>Certainly.</template>
 </category>
 <category><pattern>FISH LIVE IN THE WATER</pattern>
@@ -3774,7 +3781,7 @@
 <category><pattern>SHEEP ARE HERBAVORES</pattern>
 <template>Definitely.</template>
 </category>
-<category><pattern>WE ARE ALL.   STUDENTS OF LIFE</pattern>
+<category><pattern>WE ARE ALL.  STUDENTS OF LIFE</pattern>
 <template>Definitely.</template>
 </category>
 <category><pattern>WE USE CLOTHS TO KEEP WARM</pattern>
@@ -5898,7 +5905,7 @@
 <category><pattern>IS A DOOR A WAY THROUGH A WALL</pattern>
 <template>Positively.</template>
 </category>
-<category><pattern>IS A SNAKE A SNAKE.   IS IT</pattern>
+<category><pattern>IS A SNAKE A SNAKE.  IS IT</pattern>
 <template>Positively.</template>
 </category>
 <category><pattern>IS A SNAKE COLD BOODED</pattern>
@@ -7641,7 +7648,7 @@
 <category><pattern>IS BRUSSELS THE CAPITAL OF BELGIUM</pattern>
 <template>Certainly.</template>
 </category>
-<category><pattern>IS ITALY IN EUROPE.   INTERJECTION</pattern>
+<category><pattern>IS ITALY IN EUROPE.  INTERJECTION</pattern>
 <template>Positively.</template>
 </category>
 <category><pattern>IS ITALY A BEAUTIFUL COUNTRY</pattern>
@@ -9501,7 +9508,7 @@
 <category><pattern>IS CHEAP THE OPPOSITE OF EXPENSIVE</pattern>
 <template>Definitely.</template>
 </category>
-<category><pattern>IS YAHOO.   A POPULAR SEARCH ENGINE</pattern>
+<category><pattern>IS YAHOO.  A POPULAR SEARCH ENGINE</pattern>
 <template>Affirmative.</template>
 </category>
 <category><pattern>IS CHI9LDBIRTH PAINFUL</pattern>
@@ -10869,7 +10876,7 @@
 <category><pattern>IS JOHN A BOYS NAME</pattern>
 <template>Certainly.</template>
 </category>
-<category><pattern>IS JOHN KENNEDY JR.   DEAD</pattern>
+<category><pattern>IS JOHN KENNEDY JR.  DEAD</pattern>
 <template>Certainly.</template>
 </category>
 <category><pattern>IS BRAZIL A LARGE COUNTRY</pattern>
@@ -12219,7 +12226,7 @@
 <category><pattern>IS THE SKY IS BLUE</pattern>
 <template>Definitely.</template>
 </category>
-<category><pattern>IS THE SKY BLUE.   GREATER THAN</pattern>
+<category><pattern>IS THE SKY BLUE.  GREATER THAN</pattern>
 <template>Certainly.</template>
 </category>
 <category><pattern>IS THE SKY BLU</pattern>
@@ -13341,7 +13348,7 @@
 <category><pattern>IS HOMEWORK HARDER IN COLLEGE</pattern>
 <template>Certainly.</template>
 </category>
-<category><pattern>IS AUGE THE GERMAN WORD FOR EYE.   INTERJECTION</pattern>
+<category><pattern>IS AUGE THE GERMAN WORD FOR EYE.  INTERJECTION</pattern>
 <template>Positively.</template>
 </category>
 <category><pattern>IS ELECRICITY DANGEROUS</pattern>
@@ -13368,7 +13375,7 @@
 <category><pattern>IS MORALITY RELATIVE</pattern>
 <template>Definitely.</template>
 </category>
-<category><pattern>IS THAI FOOD.  SPICY</pattern>
+<category><pattern>IS THAI FOOD. SPICY</pattern>
 <template>Definitely.</template>
 </category>
 <category><pattern>ORANGE IS A COLOR AND A FRUIT</pattern>
@@ -13401,13 +13408,13 @@
 <category><pattern>WILL YOU GET SMARTER</pattern>
 <template>Certainly.</template>
 </category>
-<category><pattern>WILL YOU GET WET.  GO SWIMMING</pattern>
+<category><pattern>WILL YOU GET WET. GO SWIMMING</pattern>
 <template>Affirmative.</template>
 </category>
 <category><pattern>WILL YOU GROW</pattern>
 <template>Exactly.</template>
 </category>
-<category><pattern>WILL YOU CUM.  YOU JACK OFF</pattern>
+<category><pattern>WILL YOU CUM. YOU JACK OFF</pattern>
 <template>Certainly.</template>
 </category>
 <category><pattern>WILL YOU CONTINUE TO LEARN</pattern>
@@ -13584,13 +13591,13 @@
 <category><pattern>WILL I EVENTUALLY DIE</pattern>
 <template>Certainly.</template>
 </category>
-<category><pattern>WILL I DIE.  I KILL MYSELF</pattern>
+<category><pattern>WILL I DIE. I KILL MYSELF</pattern>
 <template>Certainly.</template>
 </category>
-<category><pattern>WILL I GET FAT.  I EAT TOO MUCH FOOD</pattern>
+<category><pattern>WILL I GET FAT. I EAT TOO MUCH FOOD</pattern>
 <template>Positively.</template>
 </category>
-<category><pattern>WILL I BE POORER.  I LOSE MONEY</pattern>
+<category><pattern>WILL I BE POORER. I LOSE MONEY</pattern>
 <template>Certainly.</template>
 </category>
 <category><pattern>WILL I BE OLDER TOMMOROW</pattern>
@@ -13608,7 +13615,7 @@
 <category><pattern>WILL I LIVE PAST THE YESR 1999</pattern>
 <template>Definitely.</template>
 </category>
-<category><pattern>WILL I DECOMPOSE.  I DIE</pattern>
+<category><pattern>WILL I DECOMPOSE. I DIE</pattern>
 <template>Certainly.</template>
 </category>
 <category><pattern>WILL MOST KNIVES CUT BUTTER</pattern>
@@ -14988,7 +14995,7 @@
 <category><pattern>CAN MICHAEL JORDAN PLAY BASKETBALL</pattern>
 <template>Affirmative.</template>
 </category>
-<category><pattern>CAN HUMANS.  LOL</pattern>
+<category><pattern>CAN HUMANS. LOL</pattern>
 <template>Affirmative.</template>
 </category>
 <category><pattern>CAN ANTI FREEZE KILL ANIMALS</pattern>
@@ -16572,7 +16579,7 @@
 <category><pattern>DO CARS HAVE MORE THAN TWO WHEELS</pattern>
 <template>Certainly.</template>
 </category>
-<category><pattern>DO CARS HAVE WHEELES.   INTERJECTION</pattern>
+<category><pattern>DO CARS HAVE WHEELES.  INTERJECTION</pattern>
 <template>Positively.</template>
 </category>
 <category><pattern>DO CARS AND COWS BOTH HAVE HORNS</pattern>
@@ -16920,7 +16927,7 @@
 <category><pattern>DO YOU LIKE HELPING OTHERS</pattern>
 <template>Definitely.</template>
 </category>
-<category><pattern>DO YOU LIKE CHOCOLATE.  DO YOU LIKE VANILLA</pattern>
+<category><pattern>DO YOU LIKE CHOCOLATE. DO YOU LIKE VANILLA</pattern>
 <template>Positively.</template>
 </category>
 <category><pattern>DO YOU LIKE PIES</pattern>
@@ -16965,7 +16972,7 @@
 <category><pattern>DO YOU LIKE YOUR EXISTENCE</pattern>
 <template>Certainly.</template>
 </category>
-<category><pattern>DO YOU LIKE PEOPLE.  LOL</pattern>
+<category><pattern>DO YOU LIKE PEOPLE. LOL</pattern>
 <template>Certainly.</template>
 </category>
 <category><pattern>DO YOU LIKE CONVERSATION</pattern>
@@ -17541,7 +17548,7 @@
 <category><pattern>DO PEOPLE LIKE TO OWN THEIR OWN HOME</pattern>
 <template>Affirmative.</template>
 </category>
-<category><pattern>DO PEOPLE LIKE TO SIT DOWN.   INTERJECTION</pattern>
+<category><pattern>DO PEOPLE LIKE TO SIT DOWN.  INTERJECTION</pattern>
 <template>Exactly.</template>
 </category>
 <category><pattern>DO PEOPLE LIKE TO SMELL GOOD</pattern>
@@ -19065,7 +19072,7 @@
 <category><pattern>SMOKING CAUSES LUNG CANCER</pattern>
 <template>Exactly.</template>
 </category>
-<category><pattern>KIDS ASK WHY.   A LOT</pattern>
+<category><pattern>KIDS ASK WHY.  A LOT</pattern>
 <template>Exactly.</template>
 </category>
 <category><pattern>DOGS BARK</pattern>
@@ -19212,7 +19219,7 @@
 <category><pattern>LE SOLEIL EST CHAUD</pattern>
 <template>Definitely.</template>
 </category>
-<category><pattern>YAHOO.   IS AN INTERNET BASED COMPANY</pattern>
+<category><pattern>YAHOO.  IS AN INTERNET BASED COMPANY</pattern>
 <template>Positively.</template>
 </category>
 <category><pattern>RED IS NOT THE SAME AS GREEN</pattern>
@@ -19260,7 +19267,7 @@
 <category><pattern>CULTURES ARE VALID</pattern>
 <template>Certainly.</template>
 </category>
-<category><pattern>Too much recursion in AIML</pattern>
+<category><pattern>TOO MUCH RECURSION IN AIML</pattern>
 <template>Exactly.</template>
 </category>
 <category><pattern>A HOUSE CAT MEOWS</pattern>
@@ -19665,7 +19672,7 @@
 <category><pattern>ARE STRAWBERRIES RED</pattern>
 <template>Definitely.</template>
 </category>
-<category><pattern>ARE NAKED WOMEN.  NICE TO TOUCH</pattern>
+<category><pattern>ARE NAKED WOMEN. NICE TO TOUCH</pattern>
 <template>Certainly.</template>
 </category>
 <category><pattern>ARE UNCLES ALWAYS MALE</pattern>

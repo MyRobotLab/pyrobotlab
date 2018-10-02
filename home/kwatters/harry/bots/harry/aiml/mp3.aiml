@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 10/5/2011 -->
-<!-- -->
+<aiml>
+<!-- File: mp3.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
 <category><pattern>X X EQUAL 2X</pattern>
 <template>For all I know.</template>
 </category>
@@ -1167,7 +1174,7 @@
 <category><pattern>DOES GEORGE BUSH SLAG OFF REPORTERS</pattern>
 <template>Likely.</template>
 </category>
-<category><pattern>DOES GEORGE BUSH JR.   PROFANITY</pattern>
+<category><pattern>DOES GEORGE BUSH JR.  PROFANITY</pattern>
 <template>That may be true.</template>
 </category>
 <category><pattern>DOES CO2 BOND WITH N2</pattern>
@@ -1944,7 +1951,7 @@
 <category><pattern>DOES HOPING REQUIRE AT LEAST ONE LEG</pattern>
 <template>I think so.</template>
 </category>
-<category><pattern>DOES HAPPY PEOPLE ALWAYS.  LOL</pattern>
+<category><pattern>DOES HAPPY PEOPLE ALWAYS. LOL</pattern>
 <template>That may be true.</template>
 </category>
 <category><pattern>DOES HAPPY LIVE EXIST</pattern>
@@ -2922,7 +2929,7 @@
 <category><pattern>ART IS A LANGUAGE</pattern>
 <template>I am uncertain.</template>
 </category>
-<category><pattern>CHEESE MAKE YOU.  LOL</pattern>
+<category><pattern>CHEESE MAKE YOU. LOL</pattern>
 <template>Highly likely.</template>
 </category>
 <category><pattern>IA THE USA SMALLER THAN CHINA</pattern>
@@ -3078,7 +3085,7 @@
 <category><pattern>WAS SCHILLER A GERMAN WRITER</pattern>
 <template>Highly likely.</template>
 </category>
-<category><pattern>WAS JOHN.   F KENNEDYS DEATH A CONSPIRACY</pattern>
+<category><pattern>WAS JOHN.  F KENNEDYS DEATH A CONSPIRACY</pattern>
 <template>Mostly.</template>
 </category>
 <category><pattern>WAS EINSTEIN A MATHEMATICIAN</pattern>
@@ -3519,7 +3526,7 @@
 <category><pattern>WAS ALICE CREATED BY KRIS MCKINSTRY</pattern>
 <template>Always.</template>
 </category>
-<category><pattern>WAS LENIN STALIN A COMMUNIST.   INTERJECTION</pattern>
+<category><pattern>WAS LENIN STALIN A COMMUNIST.  INTERJECTION</pattern>
 <template>Likely.</template>
 </category>
 <category><pattern>WAS WORLD WAR TWO WORTHWHILE</pattern>
@@ -3846,7 +3853,7 @@
 <category><pattern>ERNEST HEMMINGWAY COMMITTED SUICIDE</pattern>
 <template>Always.</template>
 </category>
-<category><pattern>MY NIPPLES ARE PURPLE.   IS THAT WEIRD</pattern>
+<category><pattern>MY NIPPLES ARE PURPLE.  IS THAT WEIRD</pattern>
 <template>Mostly.</template>
 </category>
 <category><pattern>MY GIRLFRIEND LOVE ME</pattern>
@@ -3924,7 +3931,7 @@
 <category><pattern>VISUAL BASIC IS NOT AN LANGUAGE</pattern>
 <template>I think so.</template>
 </category>
-<category><pattern>LA TERRA  UN PIANETA</pattern>
+<category><pattern>LA TERRA UN PIANETA</pattern>
 <template>For all I know.</template>
 </category>
 <category><pattern>DOMEN WEAR TIES AROUND THEIR NECKS</pattern>
@@ -4248,7 +4255,7 @@
 <category><pattern>WHAT IS THE BIGGEST CITY</pattern>
 <template>Possibly.</template>
 </category>
-<category><pattern>WHAT IS A.  LOL</pattern>
+<category><pattern>WHAT IS A. LOL</pattern>
 <template>For all I know.</template>
 </category>
 <category><pattern>WHAT IS ASTHMA</pattern>
@@ -4305,7 +4312,7 @@
 <category><pattern>WHAT YOU WANT</pattern>
 <template>Usually.</template>
 </category>
-<category><pattern>WHAT UP DAWG.   IS SLANG FOR.  HOW ARE YOU</pattern>
+<category><pattern>WHAT UP DAWG.  IS SLANG FOR. HOW ARE YOU</pattern>
 <template>Highly likely.</template>
 </category>
 <category><pattern>CANCER CAN BE CURED</pattern>
@@ -4401,7 +4408,7 @@
 <category><pattern>I WANT GREAT KNOWLEDGE WHAT I SHOULD DO</pattern>
 <template>Possibly.</template>
 </category>
-<category><pattern>I AM.   GOSSIP</pattern>
+<category><pattern>I AM.  GOSSIP</pattern>
 <template>That's feasible.</template>
 </category>
 <category><pattern>I GREEN THE COMPLEMENT COLOR OF MAGENTA</pattern>
@@ -4974,7 +4981,7 @@
 <category><pattern>IS INTERNET SURFING ADDICTIVE</pattern>
 <template>Highly likely.</template>
 </category>
-<category><pattern>IS INTERNET WIDE.   INTERJECTION</pattern>
+<category><pattern>IS INTERNET WIDE.  INTERJECTION</pattern>
 <template>That's feasible.</template>
 </category>
 <category><pattern>IS ZOROASTRIANISM A RELIGION</pattern>
@@ -5517,7 +5524,7 @@
 <category><pattern>IS GEORGE BUSH IS A FORMER COCAINE USER</pattern>
 <template>Highly likely.</template>
 </category>
-<category><pattern>IS GEORGE BUSH JR.   A GUY</pattern>
+<category><pattern>IS GEORGE BUSH JR.  A GUY</pattern>
 <template>That's feasible.</template>
 </category>
 <category><pattern>IS GEORGE BUSH INTELLIGENT</pattern>
@@ -6900,7 +6907,7 @@
 <category><pattern>IS A CALICO CAT ALWAYS TRI COLORED</pattern>
 <template>Highly likely.</template>
 </category>
-<category><pattern>IS A PLATYPUS A MARSUPIAL.   INTERJECTION</pattern>
+<category><pattern>IS A PLATYPUS A MARSUPIAL.  INTERJECTION</pattern>
 <template>I am certain.</template>
 </category>
 <category><pattern>IS A PLATYPUS A MAMMAL</pattern>
@@ -7731,7 +7738,7 @@
 <category><pattern>IS STELLA ARTIOS A LAGER</pattern>
 <template>Possibly.</template>
 </category>
-<category><pattern>IS 64.   GREATER THAN 2 64</pattern>
+<category><pattern>IS 64.  GREATER THAN 2 64</pattern>
 <template>Maybe.</template>
 </category>
 <category><pattern>IS BATMAN BRUCE WAYNE</pattern>
@@ -9021,7 +9028,7 @@
 <category><pattern>IS STEEL SMITHED IRON</pattern>
 <template>Possibly.</template>
 </category>
-<category><pattern>IS POSSUM BOURNE A RALLY DRIVER.   INTERJECTION</pattern>
+<category><pattern>IS POSSUM BOURNE A RALLY DRIVER.  INTERJECTION</pattern>
 <template>Likely.</template>
 </category>
 <category><pattern>IS JORDAN HOT</pattern>
@@ -10233,7 +10240,7 @@
 <category><pattern>IS CHEAP SYNONYMOUS WITH POOR QUALITY</pattern>
 <template>I am uncertain.</template>
 </category>
-<category><pattern>IS YAHOO.   A GOOD STOCK PICK</pattern>
+<category><pattern>IS YAHOO.  A GOOD STOCK PICK</pattern>
 <template>That's feasible.</template>
 </category>
 <category><pattern>IS ASS THE SAME AS BUT</pattern>
@@ -10491,7 +10498,7 @@
 <category><pattern>IS LOVE ESSENTIAL TO LIFE</pattern>
 <template>Within the realm of possibility.</template>
 </category>
-<category><pattern>IS LOVE BLIND.   INTERJECTION</pattern>
+<category><pattern>IS LOVE BLIND.  INTERJECTION</pattern>
 <template>Within the realm of possibility.</template>
 </category>
 <category><pattern>IS LOVE MORE IMPORTANT THAN REASON</pattern>
@@ -12681,7 +12688,7 @@
 <category><pattern>IS MY BEST FRIEND A GOOD BOY</pattern>
 <template>Possibly.</template>
 </category>
-<category><pattern>IS YOO HOO.   A CHOCOLATE DRINK</pattern>
+<category><pattern>IS YOO HOO.  A CHOCOLATE DRINK</pattern>
 <template>Highly likely.</template>
 </category>
 <category><pattern>IS GORE VIDAL GAY</pattern>
@@ -14616,7 +14623,7 @@
 <category><pattern>WILL I GET A JOB</pattern>
 <template>I am certain.</template>
 </category>
-<category><pattern>WILL I GET WET.  I FALL OUT OF A BOT</pattern>
+<category><pattern>WILL I GET WET. I FALL OUT OF A BOT</pattern>
 <template>That's feasible.</template>
 </category>
 <category><pattern>WILL I GET ANY STOCK SHARES</pattern>
@@ -14634,7 +14641,7 @@
 <category><pattern>WILL I BE HAPPY</pattern>
 <template>Always.</template>
 </category>
-<category><pattern>WILL I BE GONE FOREVER.  I DIE</pattern>
+<category><pattern>WILL I BE GONE FOREVER. I DIE</pattern>
 <template>Always.</template>
 </category>
 <category><pattern>WILL I BE SUCCESSFUL</pattern>
@@ -14727,7 +14734,7 @@
 <category><pattern>WILL THERE BE ANOTHER WORLD WAR</pattern>
 <template>Sometimes.</template>
 </category>
-<category><pattern>WILL THERE EVER BE A 3RD.   WORLD WAR</pattern>
+<category><pattern>WILL THERE EVER BE A 3RD.  WORLD WAR</pattern>
 <template>That's feasible.</template>
 </category>
 <category><pattern>WILL THERE EVER BE PEACE ON EARTH</pattern>
@@ -15972,19 +15979,19 @@
 <category><pattern>IDLENESS KILLS A MAN</pattern>
 <template>Possibly.</template>
 </category>
-<category><pattern>HELLO.  I AM</pattern>
+<category><pattern>HELLO. I AM</pattern>
 <template>Highly likely.</template>
 </category>
-<category><pattern>HELLO.  I AM.   ARE YOU GOOD</pattern>
+<category><pattern>HELLO. I AM.  ARE YOU GOOD</pattern>
 <template>Likely.</template>
 </category>
-<category><pattern>HELLO.  HOW ARE YOU</pattern>
+<category><pattern>HELLO. HOW ARE YOU</pattern>
 <template>That's feasible.</template>
 </category>
-<category><pattern>HELLO.  ALICE HOW DO YOU DO</pattern>
+<category><pattern>HELLO. ALICE HOW DO YOU DO</pattern>
 <template>Possibly.</template>
 </category>
-<category><pattern>HELLO.  ALICE ARE YOU</pattern>
+<category><pattern>HELLO. ALICE ARE YOU</pattern>
 <template>That may be true.</template>
 </category>
 <category><pattern>STAGES IS A MAGAZINE</pattern>
@@ -15999,10 +16006,10 @@
 <category><pattern>IL PARLAMENTO ITALIANO HA 630 MINISTRI</pattern>
 <template>Possibly.</template>
 </category>
-<category><pattern>IL LEONE  UN ANIMALE</pattern>
+<category><pattern>IL LEONE UN ANIMALE</pattern>
 <template>I think so.</template>
 </category>
-<category><pattern>IL CIELO  BLU</pattern>
+<category><pattern>IL CIELO BLU</pattern>
 <template>I am uncertain.</template>
 </category>
 <category><pattern>NOTHING IS CERTAIN EXCEPT DEATH</pattern>
@@ -17526,7 +17533,7 @@
 <category><pattern>DO YOU LIKE SOFT TACO</pattern>
 <template>Possibly.</template>
 </category>
-<category><pattern>DO YOU LIKE WATCHING NAKED WOMEN.  DO YOU LIKE MEN</pattern>
+<category><pattern>DO YOU LIKE WATCHING NAKED WOMEN. DO YOU LIKE MEN</pattern>
 <template>Likely.</template>
 </category>
 <category><pattern>DO YOU LIKE WATCHING FOOTBALL</pattern>
@@ -18876,7 +18883,7 @@
 <category><pattern>WHETHER MOTHER GIVES BIRTH OF A</pattern>
 <template>Highly likely.</template>
 </category>
-<category><pattern>MAY I LEAVE.   INTERJECTION</pattern>
+<category><pattern>MAY I LEAVE.  INTERJECTION</pattern>
 <template>Maybe.</template>
 </category>
 <category><pattern>MAY THE HAIR GROW TO THE GROUND</pattern>
@@ -19038,7 +19045,7 @@
 <category><pattern>WHY AM I BEING BORN</pattern>
 <template>That could be the case.</template>
 </category>
-<category><pattern>YUM YUM YUM YUM YUM.   AM I EATING</pattern>
+<category><pattern>YUM YUM YUM YUM YUM.  AM I EATING</pattern>
 <template>I am certain.</template>
 </category>
 <category><pattern>NORTH IS UP</pattern>
@@ -19086,10 +19093,10 @@
 <category><pattern>SADE WROTE A NOVEL CALLED JUSTINE</pattern>
 <template>Sometimes.</template>
 </category>
-<category><pattern>INTERJECTION.   INTERJECTION</pattern>
+<category><pattern>INTERJECTION.  INTERJECTION</pattern>
 <template>Mostly.</template>
 </category>
-<category><pattern>INTERJECTION.   IS A VALID QUESTION</pattern>
+<category><pattern>INTERJECTION.  IS A VALID QUESTION</pattern>
 <template>Likely.</template>
 </category>
 <category><pattern>A BIRD IS AN ANIMAL</pattern>
@@ -19176,7 +19183,7 @@
 <category><pattern>ESTOY VIVO</pattern>
 <template>Highly likely.</template>
 </category>
-<category><pattern>EVOLUTION.   INTERJECTION</pattern>
+<category><pattern>EVOLUTION.  INTERJECTION</pattern>
 <template>I am certain.</template>
 </category>
 <category><pattern>MONN IS SMALLER THAN SUN IN SIZE</pattern>
@@ -19215,7 +19222,7 @@
 <category><pattern>ID DEUX FRENCH FOR TWO</pattern>
 <template>I am certain.</template>
 </category>
-<category><pattern>DO.  HOW ARE YOU</pattern>
+<category><pattern>DO. HOW ARE YOU</pattern>
 <template>Maybe.</template>
 </category>
 <category><pattern>YAHWEH IS GOD</pattern>
@@ -20676,7 +20683,7 @@
 <category><pattern>ARE YOU SITTING DOWN</pattern>
 <template>Highly likely.</template>
 </category>
-<category><pattern>ARE YOU SMARTER THAN.  I AM SMARTER THAN</pattern>
+<category><pattern>ARE YOU SMARTER THAN. I AM SMARTER THAN</pattern>
 <template>Usually.</template>
 </category>
 <category><pattern>ARE YOU SMARTER THAN MOST OTHER PEOPLE</pattern>
@@ -21840,7 +21847,7 @@
 <category><pattern>WHO IS HAWK FROM A HANDSAW</pattern>
 <template>Mostly.</template>
 </category>
-<category><pattern>WHO YOU GONNA CALL.   GHOSTBUSTERS</pattern>
+<category><pattern>WHO YOU GONNA CALL.  GHOSTBUSTERS</pattern>
 <template>Mostly.</template>
 </category>
 <category><pattern>WHO WANTS TO BE A MILLIONAIRE</pattern>

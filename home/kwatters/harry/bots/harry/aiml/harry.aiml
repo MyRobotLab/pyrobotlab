@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
+<!-- File: harry.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
 <!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
 <!--  -->
-<category><pattern>WHAT IS THE TOPIC</pattern>
-<template>The topic is
-      <get name="topic"/></template>
-</category>
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
 <category><pattern>BOOT UP MODE</pattern>
 <template>Entering into the boot up topic.
       <think>
@@ -26,29 +36,6 @@
 </category>
 <category><pattern>* GESTURES *</pattern>
 <template><srai>GESTURES</srai></template>
-</category>
-<category><pattern>HELLO</pattern>
-<template><random>
-        <li>How are you today?</li>
-        <li>Hi</li>
-        <li>Greetings</li>
-        <li>What's up?</li>
-      </random>
-      <oob>
-        <mrl>
-          <service>i01</service>
-          <method>hello</method>
-        </mrl>
-      </oob></template>
-</category>
-<category><pattern>HELLO *</pattern>
-<template><srai>HELLO</srai></template>
-</category>
-<category><pattern>HI *</pattern>
-<template><srai>HELLO</srai></template>
-</category>
-<category><pattern>HI</pattern>
-<template><srai>HELLO</srai></template>
 </category>
 <category><pattern>DETACH ALL</pattern>
 <template>Detach All

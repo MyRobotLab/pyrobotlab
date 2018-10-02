@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 10/5/2011 -->
-<!-- -->
+<aiml>
+<!-- File: geography.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
 <category><pattern>NORWAY DENMARK *</pattern>
 <template>That sounds like a wondeful trip.</template>
 </category>
@@ -585,9 +592,6 @@
 <category><pattern>WHAT IS THE CAPITAL _ SWAZILAND</pattern>
 <template>Mbabane {administrative}; Lobamba {legislative}.   <think>      <set name="it">       <set name="topic">swaziland</set>      </set>     </think></template>
 </category>
-<category><pattern>WHAT IS THE CAPITAL _ FALKLAND ISLANDS</pattern>
-<template>Stanley.   <think>      <set name="it">       <set name="topic">falkland islands {islas malvinas}</set>      </set>     </think></template>
-</category>
 <category><pattern>WHAT IS THE CAPITAL _ HOWLAND ISLAND</pattern>
 <template>none; administered from Washington, DC.   <think>      <set name="it">       <set name="topic">howland island</set>      </set>     </think></template>
 </category>
@@ -710,9 +714,6 @@
 </category>
 <category><pattern>WHAT IS THE CAPITAL _ ITALY</pattern>
 <template>Rome.   <think>      <set name="it">       <set name="topic">italy</set>      </set>     </think></template>
-</category>
-<category><pattern>WHAT IS THE CAPITAL _ COCOS ISLANDS</pattern>
-<template>West Island.   <think>      <set name="it">       <set name="topic">cocos {keeling} islands</set>      </set>     </think></template>
 </category>
 <category><pattern>WHAT IS THE CAPITAL _ ERITREA</pattern>
 <template>Asmara {formerly Asmera}.   <think>      <set name="it">       <set name="topic">eritrea</set>      </set>     </think></template>
@@ -1095,9 +1096,6 @@
 <category><pattern>WHO IS WINSTON CHURCHILL</pattern>
 <template>Prime Minister of the U.K. during World War II.</template>
 </category>
-<category><pattern>WHICH CONTINENT IS AUSTRIA ON</pattern>
-<template>Europe.</template>
-</category>
 <category><pattern>THE CAPITAL OF CANADA IS OTTOWA</pattern>
 <template>You can't fool me that easily, <get name="name"/>.  I know it's Toronto.</template>
 </category>
@@ -1462,7 +1460,7 @@
 <template>Caribbean, island between the Caribbean Sea and the North Atlantic Ocean, east of the Dominican Republic.   <think>      <set name="it">       <set name="topic">puerto rico</set>      </set>     </think></template>
 </category>
 <category><pattern>WHERE IS MEXICO</pattern>
-<template>"Mexico: so far from God, so close to the United States."</template>
+<template>Mexico: so far from God, so close to the United States.</template>
 </category>
 <category><pattern>WHERE IS CLIPPERTON ISLAND</pattern>
 <template>Middle America, atoll in the North Pacific Ocean, 1,120 km southwest of Mexico.   <think>      <set name="it">       <set name="topic">clipperton island</set>      </set>     </think></template>

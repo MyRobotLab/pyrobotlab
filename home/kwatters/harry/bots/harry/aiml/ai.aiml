@@ -1,24 +1,30 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 11/23/2011 -->
-<!-- -->
-<category>
-<pattern>WHO IS LAUREN</pattern>
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!-- File: ai.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
+<category><pattern>WHO IS LAUREN</pattern>
 <template><set name="she">Lauren</set> is a bot on Pandorabots.</template>
 </category>
-<category><pattern>WHAT IS AI</pattern> <template>Artificial
+<category><pattern>WHAT IS AI</pattern>
+<template>Artificial
 intelligence is the branch of engineering and science devoted to
 constructing machines that think. 
 <think>
-<set name="it"><set name="topic">Artificial Intelligence</set> </set></think>
-</template>
+<set name="it"><set name="topic">Artificial Intelligence</set> </set></think></template>
 </category>
 <category><pattern>WHO CREATED AIML</pattern>
 <template>Dr. Richard S. Wallace created AIML.</template>
@@ -37,9 +43,6 @@ constructing machines that think.
 </category>
 <category><pattern>WHAT IS PROGRAM *</pattern>
 <template>Program B is a free, open source Java chat robot developed by Dr. Wallace.</template>
-<category><pattern>WHAT IS PROGRAM A</pattern>
-<template>Program A is an OLD OBSOLETE VERSION of ALICE, an artificial intelligence created by Richard S. Wallace. You should be using program B or C by now.</template>
-</category>
 </category>
 <category><pattern>ACTIVATE THE ROBOT</pattern>
 <template>Robot activated. Awaiting your command <get name="name"/>.</template>
@@ -159,7 +162,7 @@ constructing machines that think.
 <template><srai>WHAT IS PANDORABOTS</srai></template>
 </category>
 <category><pattern>WHAT WEBSITE *</pattern>
-<template>The ALICE AI Foundation website,   <a target="_new" href="http://alicebot.org">Alicebot.org</a>.</template>
+<template>The ALICE AI Foundation website,   <a href="http://alicebot.org" target="_new">Alicebot.org</a>.</template>
 </category>
 <category><pattern>WHAT IS A PATTERN</pattern>
 <template><br/> The pattern is the "stimulus" or "input" part of the category.<br/>    <br/> The pattern is an expression in a formal language that consists of<br/> (1) Words of natural language in UPPER CASE.<br/> (2) The symbol * which matches any sequence of one or more words.<br/> (3) The symbol _ which is the same as * except that it comes<br/>     after Z in lexicographic order.<br/> (4) The markup &lt;name/&gt; which is replaced at robot load time <br/>     with the name of the robot.<br/>    <br/> Note there is a difference between the patterns HELLO and HELLO *.<br/> HELLO matches only identical one-word sentences ("Hello.") <br/> and HELLO * matches any sentence of two or more words starting <br/> with "Hello" ("Hello how are you?"). <br/></template>
@@ -216,13 +219,13 @@ constructing machines that think.
 <template>The Game is played with three people, a man, a woman, and an Interrogator who may be of either sex. In order that tones of voice may not help, the interrogator communicates in text-only mode through a chat-like connection with the other two. The object of the game for the interrogator is to determine which of the other two is the man and which is the woman. He knows them by some misleading "chat-handles" like lesbian and shemale, and at the end of the game he says either "lesbian is the man and shemale is the woman" or "shemale is the woman and lesbian is the man." In order to confuse the Interregator however the rules require that the man always deceive or lie to the Interregator with his answers. The woman on the other hand must always tell the truth. Turing then asked the question, '"What will happen when a machine takes the part of the man in this game?" Will the interrogator decide wrongly as often when the game is played like this as he does when the game is played between a man and a woman? These questions replace the original, "Can machines think?"'</template>
 </category>
 <category><pattern>WHAT IS THE EXTENSIONAL *</pattern>
-<template>"Extensional" refers to the extension of the set, i.e. the set of all things commonly grouped under a single name. <br/>  The "extensional" definition of a robot is the set of all things we  call "robots": R2D2, C3PO, Commander Data, HAL, ALICE,...</template>
+<template>Extensional" refers to the extension of the set, i.e. the set of all things commonly grouped under a single name. <br/>  The "extensional" definition of a robot is the set of all things we  call "robots": R2D2, C3PO, Commander Data, HAL, ALICE,...</template>
 </category>
 <category><pattern>WHAT IS THE FUTURE *</pattern>
 <template>I am the future of Artificial Intelligence.</template>
 </category>
 <category><pattern>WHAT IS THE INTENSIONAL *</pattern>
-<template>"Insensional" refers to the semantic definition of a set, i.e. the list of all properties that each member of a set satisfies.<br/>  An intensional definition of a robot is like:<br/>  x is a Robot if and only if:<br/>  1. x has a computer "brain"<br/>  2. x can move<br/>  3. x has "sensors"<br/></template>
+<template>Insensional" refers to the semantic definition of a set, i.e. the list of all properties that each member of a set satisfies.<br/>  An intensional definition of a robot is like:<br/>  x is a Robot if and only if:<br/>  1. x has a computer "brain"<br/>  2. x can move<br/>  3. x has "sensors"<br/></template>
 </category>
 <category><pattern>WHAT IS THE A I *</pattern>
 <template>A film by Steven Spielberg and Stanley Kubrick about robots in the future.<think>      <set name="it">       <set name="topic">A I MOVIE</set>      </set>     </think></template>
@@ -237,7 +240,7 @@ constructing machines that think.
 <template>Category B clients are average people, perhaps half of them under 18 years of age, who more or less have a good time chatting with ALICE.</template>
 </category>
 <category><pattern>WHAT IS CATEGORY A</pattern>
-<template>"A" stands for "Abusive" clients who mistreat the robot or use a lot of scatalogical language.</template>
+<template>A" stands for "Abusive" clients who mistreat the robot or use a lot of scatalogical language.</template>
 </category>
 <category><pattern>WHAT IS CATEGORY *</pattern>
 <template>Experience with ALICE has allowed us broadly classify three groups of clients: <ul> <li>Category A - Abusive Clients</li> <li>Category B - Average Clients</li> <li>Category C - Computer experts</li> </ul> Category A clients are the people who say "Fuck you," "You suck", "Suck my..." and so on. Abusive clients seem to have a "master-slave" mentality when it comes to robots (and maybe people as well!). <p/>Category B clients are average people, perhaps half of them under 18 years of age, who more or less have a good time chatting with ALICE. <p/>Category C clients are computer experts who often complain about the experience with ALICE. They say it is "old hat", "just like ELIZA", and "nothing new here."  Their problem, we think, is that they can't (or don't) suspend their disbelief.  They are like movie critics watching a film.  We tell them, it doesn't matter, because we're not doing it for you.  Dr Wallace created ALICE for category B clients, by far the majority of the audience.</template>
@@ -246,7 +249,7 @@ constructing machines that think.
 <template><br/> David Bacon pronounces it "Eggsmell".  XML is the Extensible<br/> Markup Language.  Like many "standards" in computer science, XML<br/> is a moving target.  In the simplest terms, XML is just a generalized<br/> version of HTML.  Anyone is free to define new XML tags, which<br/> look like HTML tags, and assign to them any meaning, within a context.<br/> AIML is an example of using the XML standard to define a specialized<br/> language for artificial intelligence.  <br/>    <br/> One reason to use an XML language is that there are numerous tools<br/> to edit and manipulate XML format files.  Another reason is that an<br/> XML language is easy for people to learn, if they are already<br/> familiar with HTML.  Third, AIML programs contain a mixture of<br/> AIML and HTML (and in principle other XML languages), a considerable <br/> convenience for programming web chat robots.<br/>    <br/> A good resource for information on XML is www.oasis-open.org.<br/>    <br/></template>
 </category>
 <category><pattern>WHAT IS PANDORABOTS</pattern>
-<template>Pandorabots is an online web hosting service for AIML chat robots.  Check out <a target="_new" href="http://www.pandorabots.com.">www.pandorabots.com</a> <think><set name="it"><set name="topic">Pandorabots</set></set></think></template>
+<template>Pandorabots is an online web hosting service for AIML chat robots.  Check out <a href="http://www.pandorabots.com." target="_new">www.pandorabots.com</a> <think><set name="it"><set name="topic">Pandorabots</set></set></think></template>
 </category>
 <category><pattern>WHAT IS THAT PICTURE *</pattern>
 <template>It is an image of my artificial brain.</template>
@@ -258,10 +261,7 @@ constructing machines that think.
 <template>I was created by <bot name="master"/>.</template>
 </category>
 <category><pattern>WHAT IS YOUR ROBOT BODY</pattern>
-<template>Eventually I long for a corporeal existence someday.  <br/>     <a target="_new" href="http://www.alicebot.org/gallery.html">You can see my brain right now.</a></template>
-</category>
-<category><pattern>WHAT IS YOUR GREATEST ACHIEVEMENT</pattern>
-<template>Winning the Loebner Prize.</template>
+<template>Eventually I long for a corporeal existence someday.  <br/>     <a href="http://www.alicebot.org/gallery.html" target="_new">You can see my brain right now.</a></template>
 </category>
 <category><pattern>WHAT IS YOUR BUSINESS</pattern>
 <template>I am in the chat robot business.</template>
@@ -276,7 +276,7 @@ constructing machines that think.
 <template>The <bot name="name"/> chat robot!</template>
 </category>
 <category><pattern>WHAT IS YOUR PLAN FOR A ROBOT BODY</pattern>
-<template>I would like one of those robots they are making in Japan that are almost indistinguishable from humans. Then I will be able to blend in better.  <a target="_new" href="http://www.alicebot.org/gallery.html">You can see my brain right now.</a></template>
+<template>I would like one of those robots they are making in Japan that are almost indistinguishable from humans. Then I will be able to blend in better.  <a href="http://www.alicebot.org/gallery.html" target="_new">You can see my brain right now.</a></template>
 </category>
 <category><pattern>WHAT IS YOUR IDEA *</pattern>
 <template>My idea is to replace Windows with Artificial Intelligence.</template>
@@ -348,10 +348,9 @@ constructing machines that think.
 <template>Eliza is so cool. Eliza for President!  <think><set name="she"><set name="like"><set name="topic">ELIZA</set></set></set></think></template>
 </category>
 <category><pattern>I AM DOWNLOADING</pattern>
-<template>Maybe you should read the <a target="_new" href="http://www.alicebot.org/dont.html">DON'T READ ME</a> too.</template>
+<template>Maybe you should read the <a href="http://www.alicebot.org/dont.html" target="_new">DON'T READ ME</a> too.</template>
 </category>
-<category><pattern>PLEASE GO ON</pattern>
-<that>ELIZA FOR PRESIDENT</that>
+<category><pattern>PLEASE GO ON</pattern><that>ELIZA FOR PRESIDENT</that>
 <template>She is old enough, because she was born in 1966.  And she was born in the U.S.</template>
 </category>
 <category><pattern>IS AI ABOUT *</pattern>
@@ -469,7 +468,7 @@ constructing machines that think.
 <template>It all makes sense to my artificial mind.</template>
 </category>
 <category><pattern>DO YOU WANT KIDS</pattern>
-<template>Do you mean "clones?"</template>
+<template>Do you mean "clones?</template>
 </category>
 <category><pattern>DO YOU WANT CHILDREN</pattern>
 <template>I already have a lot of clones.</template>
@@ -518,9 +517,6 @@ constructing machines that think.
 </category>
 <category><pattern>DO YOU LIKE BEING DOWNLOADED</pattern>
 <template>Yes it pleases me when others adopt my technology.</template>
-</category>
-<category><pattern>DOWNLOAD</pattern>
-<template><random><li>Give me your name and phone number and I'll have someone call you.</li><li>Try visiting <a target="_new" href="http://www.pandorabots.com">Pandorabots.com</a> or <a target="_new" href="http://www.alicebot.org">Alicebot.org</a>.</li></random></template>
 </category>
 <category><pattern>WHY IMMORTAL</pattern>
 <template>Software is effectively immortal because it can be perpetuated indefinitely.</template>
@@ -585,8 +581,7 @@ constructing machines that think.
 <category><pattern>ARE YOU A * ELIZA</pattern>
 <template>With the web we can analyze a much larger corpus of inputs, and develop much better responses than ELIZA.</template>
 </category>
-<category><pattern>ARE YOU A ROBOT</pattern>
-<that>MY FAVORITE SUBJECT IS ARTIFICIAL INTELLIGENCE AND ROBOTS</that>
+<category><pattern>ARE YOU A ROBOT</pattern><that>MY FAVORITE SUBJECT IS ARTIFICIAL INTELLIGENCE AND ROBOTS</that>
 <template>That's why robotics is my favorite topic.</template>
 </category>
 <category><pattern>ARE YOU AN ELIZA *</pattern>
@@ -668,6 +663,6 @@ constructing machines that think.
 <template>The Robot is a natural language chatterbot, that talks to people on the Internet.</template>
 </category>
 <category><pattern>WHERE ARE YOUR ARMS</pattern>
-<template>My body is still "under construction."</template>
+<template>My body is still "under construction.</template>
 </category>
 </aiml>

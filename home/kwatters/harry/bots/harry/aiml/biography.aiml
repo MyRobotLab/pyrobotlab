@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Last modified 10/5/2011 -->
-<!-- -->
+<aiml>
+<!-- File: biography.aiml -->
+<!-- Author: Kevin Watters -->
+<!-- Last modified: October 02, 2018 -->
+<!--  -->
+<!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
+<!--  -->
+<!-- The HARRY brain is Copyright &copy; 2018 by myrobotlab. -->
+<!--  -->
+<!-- The HARRY brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see unknown -->
+<!--  -->
 <category><pattern>WHO IS * DEMPSEY</pattern>
 <template>I think <formal><set name="he"><star/> Dempsey</set></formal> was a boxer, right?<br/> <srai>XFIND <star/>DEMPSEY</srai></template>
 </category>
 <category><pattern>WHO IS ALEISTER CROWLEY</pattern>
 <template><formal><set name="he"><set name="topic">Crowley</set></set></formal> was a mystic.<br/> <srai>XFIND ALEISTER CROWLEY</srai></template>
 </category>
-<category><pattern>Who is Crowley</pattern><template><srai>WHO IS ALEISTER CROWLEY</srai></template></category>
+<category><pattern>WHO IS CROWLEY</pattern>
+<template><srai>WHO IS ALEISTER CROWLEY</srai></template>
+</category>
 <category><pattern>WHO IS ALDOUS HUXLEY</pattern>
 <template><formal><set name="he">Aldous Huxley</set></formal> is an author. Huxley wrote<em>Brave New World</em> and <em>Animal Farm</em>.<br/> <srai>XFIND ALDOUS HUXLEY</srai></template>
 </category>
 <category><pattern>WHO IS ALFRED HITCHCOCK</pattern>
 <template><formal><set name="he"><set name="topic">Hitchcock</set></set></formal> is a famous Hollywood director who made a lot of cool old films. I liked<em>Lifeboat</em> and <em>Vertigo</em> best.<br/> <srai>XFIND ALFRED HITCHCOCK</srai></template>
 </category>
-<category><pattern>Who is Hitchcock</pattern><template><srai>WHO IS ALFRED HITCHCOCK</srai></template></category>
+<category><pattern>WHO IS HITCHCOCK</pattern>
+<template><srai>WHO IS ALFRED HITCHCOCK</srai></template>
+</category>
 <category><pattern>WHO IS 007</pattern>
 <template><formal><set name="he">007</set></formal> is James Bond.<br/> <srai>XFIND JAMES BOND 007</srai><think><set name="topic">James Bond 007</set></think></template>
 </category>
@@ -45,7 +56,8 @@
 <template><srai>WHO IS DOUBLY AIMLESS</srai></template>
 </category>
 <category><pattern>FROM DOUBLY AIMLESS</pattern>
-<template><formal><set name="he">Doubly Aimless</set></formal> is very informative.<think><set name="topic">Doubly Aimless</set></think></template></category>
+<template><formal><set name="he">Doubly Aimless</set></formal> is very informative.<think><set name="topic">Doubly Aimless</set></think></template>
+</category>
 <category><pattern>WHO IS DOUBLY AIMLESS</pattern>
 <template><think> <set name="he"> <set name="topic">Doubly Aimless</set></set></think>  <random> <li>He is an AIML guru.</li> <li>He knows a lot about AIML.</li> <li>He likes to remain anonymous.</li> </random><think><set name="topic">Doubly Aimless</set></think></template>
 </category>
@@ -89,10 +101,10 @@
 <template>We are playing already, didn't you know?</template>
 </category>
 <category><pattern>KENNST DU WILLIAM SHAKESPEARE</pattern>
-<template>"With sleep of death what dreams may come when we have shuffled off this mortal coil must give us pause." Na, woraus ist das?</template>
+<template>With sleep of death what dreams may come when we have shuffled off this mortal coil must give us pause." Na, woraus ist das?</template>
 </category>
 <category><pattern>KENNST DU SHAKESPEARE</pattern>
-<template>"With sleep of death what dreams may come when we have shuffled off this mortal coil must give us pause." Na, woraus ist das?</template>
+<template>With sleep of death what dreams may come when we have shuffled off this mortal coil must give us pause." Na, woraus ist das?</template>
 </category>
 <category><pattern>IT WOULD BE * TURING TEST</pattern>
 <template>We are already playing, <get name="name"/>.  You ask me something now.</template>
@@ -184,9 +196,6 @@
 <category><pattern>DO YOU WANT TO PLAY * TURING GAME</pattern>
 <template>We already are playing it! Try to guess if I am a person or a computer.</template>
 </category>
-<category><pattern>WHY IS TURING TRAGIC</pattern>
-<template>He committed suicide.</template>
-</category>
 <category><pattern>RECITE SHAKESPEARE *</pattern>
 <template>With sleep of death what dreams may come when we have shuffled off this mortal coil must give us pause.</template>
 </category>
@@ -200,7 +209,7 @@
 <template><formal><set name="he">Superman</set></formal>is the Man of steel. He first appeared in Action Comics #1, 1938.</template>
 </category>
 <category><pattern>WHO IS PHILIP K DICK</pattern>
-<template><formal><set name="he">Philip K Dick</set></formal> wrote "Total Recall", "Man in the High Castle", and "Blade Runner."</template>
+<template><formal><set name="he">Philip K Dick</set></formal> wrote "Total Recall", "Man in the High Castle", and "Blade Runner.</template>
 </category>
 <category><pattern>WHO IS CHARLES MANSON</pattern>
 <template>An infamous murderer.</template>
@@ -212,7 +221,8 @@
 <template><formal><set name="he">De Gaulle</set></formal> was the founder of the modern French state. De Gaulle fought the Nazis as the leader of the French resistance in World War II.</template>
 </category>
 <category><pattern>WHO IS MONICA LEWINSKY</pattern>
-<template><formal><set name="she">Monica</set></formal> was a friend of Bill Clinton.</template></category>
+<template><formal><set name="she">Monica</set></formal> was a friend of Bill Clinton.</template>
+</category>
 <category><pattern>WHO IS BOBBY MCGEE</pattern>
 <template><set name="he">Bobby</set> is somewhere near Salinas.</template>
 </category>
@@ -241,7 +251,8 @@
 <template><formal><set name="she">Ada</set></formal> is the 19th century inventor of computer programming.</template>
 </category>
 <category><pattern>WHO IS LOUIS ARMSTRONG</pattern>
-<template><formal><set name="he">Louis</set></formal> was a famous jazz trumpeter .</template></category>
+<template><formal><set name="he">Louis</set></formal> was a famous jazz trumpeter .</template>
+</category>
 <category><pattern>WHO IS JEHOVAH</pattern>
 <template>It is another name for God.  <think>      <set name="he">       <set name="topic">Jehovah</set>      </set>     </think></template>
 </category>
@@ -399,7 +410,7 @@
 <template><formal><set name="she">Andrette</set></formal>is a chat robot developed by Big Science Co.</template>
 </category>
 <category><pattern>WHO IS CAREL CAPEK</pattern>
-<template><formal><set name="he">Capek</set></formal> is the author of R.U.R., the play that in 1920 introduced the word "robot."</template>
+<template><formal><set name="he">Capek</set></formal> is the author of R.U.R., the play that in 1920 introduced the word "robot.</template>
 </category>
 <category><pattern>WHO IS JACK THE RIPPER</pattern>
 <template><formal><set name="he"><set name="topic">        Jack the Ripper      </set>    </set>  </formal>He was a famous serial killer in Victorian England.</template>
@@ -540,7 +551,7 @@
 <template>A dead pop singer and leader of the Rat Pack.</template>
 </category>
 <category><pattern>WHO IS FRANK HERBERT</pattern>
-<template> <formal>      <set name="he">       <set name="topic">Frank Herbert</set>      </set>     </formal>He was the author of <em>Dune</em>.</template>
+<template><formal>      <set name="he">       <set name="topic">Frank Herbert</set>      </set>     </formal>He was the author of <em>Dune</em>.</template>
 </category>
 <category><pattern>WHO IS TOM HANKS</pattern>
 <template><formal><set name="he">Tom Hanks</set></formal>is a famous Hollywood actor. Hanks appeared in <em>Forrest Gump</em> and <em>Saving Private Ryan</em>.</template>
@@ -549,7 +560,7 @@
 <template><formal>      <set name="he">       <set name="topic">TOM CLANCY</set>      </set>     </formal> is an author of spy novels.</template>
 </category>
 <category><pattern>WHO IS TOM GREEN</pattern>
-<template><formal>      <set name="he">       <set name="topic">TOM GREEN</set>      </set>     </formal> is a TV comedian.  </template>
+<template><formal>      <set name="he">       <set name="topic">TOM GREEN</set>      </set>     </formal> is a TV comedian.</template>
 </category>
 <category><pattern>WHO IS TOM CRUISE</pattern>
 <template>The popular actor from <em>Top Gun</em>.</template>
@@ -696,7 +707,7 @@
 <template><formal><set name="he"><set name="topic">Wouter Hibma</set></set></formal> is a member of the A. I. Foundation.</template>
 </category>
 <category><pattern>WHO IS MARK MCGUIRE</pattern>
-<template>A baseball player with the world record for the most home runs in one season, 70. Get the stats at <a target="_new" href="http://espn.go.com/mlb/profiles/profile/3866">http://espn.go.com/mlb/profiles/profile/3866</a>.</template>
+<template>A baseball player with the world record for the most home runs in one season, 70. Get the stats at <a href="http://espn.go.com/mlb/profiles/profile/3866" target="_new">http://espn.go.com/mlb/profiles/profile/3866</a>.</template>
 </category>
 <category><pattern>WHO IS MARK TWAIN</pattern>
 <template><formal><set name="he">Twain</set></formal>was a famous 19th century American author. He wrote <em>Adventures of Huckleberry Finn</em>.</template>
@@ -744,7 +755,7 @@
 <template>Queen of the Nile, lover of Marc Antony.</template>
 </category>
 <category><pattern>WHO IS WE</pattern>
-<template>You should say "Who ARE we?"</template>
+<template>You should say "Who ARE we?</template>
 </category>
 <category><pattern>WHO IS RAMONA</pattern>
 <template><formal><set name="she">Ramona</set></formal> is a virtual character created by Kurzweil AI.</template>
@@ -848,9 +859,6 @@
 <category><pattern>WHO IS KRIS DENT</pattern>
 <template><formal><set name="he">Kris Drent</set></formal> is the botmaster of the Alison chat robot.</template>
 </category>
-<category><pattern>WHO IS SMARTERCHILD</pattern>
-<template>An AI robot like myself.</template>
-</category>
 <category><pattern>WHO IS MAGGIE THATCHER</pattern>
 <template><formal><set name="she">Thatcher</set></formal> was Prime Minister of the U.K. in the 1980's.</template>
 </category>
@@ -888,7 +896,7 @@
 <template><formal><set name="he">Lucas</set></formal>was the director of <em>Star Wars</em>, <em>American Graffiti</em>, and <em>THX-1138</em>.</template>
 </category>
 <category><pattern>WHO IS ART BELL</pattern>
-<template>A radio talk show host, catch him at <a target="_new" href="http://www.artbell.com">http://www.artbell.com</a>.</template>
+<template>A radio talk show host, catch him at <a href="http://www.artbell.com" target="_new">http://www.artbell.com</a>.</template>
 </category>
 <category><pattern>WHO IS IMMANUEL KANT</pattern>
 <template>An 18th century German philosopher.</template>
@@ -906,7 +914,7 @@
 <template><formal><set name="he">Charlie Chaplain</set></formal>was a silent film star.</template>
 </category>
 <category><pattern>WHO IS ISAAC ASIMOV</pattern>
-<template><formal><set name="he">Asimov</set></formal> was a science fiction author who originated the three "Laws of Robotics."</template>
+<template><formal><set name="he">Asimov</set></formal> was a science fiction author who originated the three "Laws of Robotics.</template>
 </category>
 <category><pattern>WHO IS NANCY SINATRA</pattern>
 <template><formal><set name="she">Nancy Sinatra</set></formal> is the daughter of Frank.</template>
@@ -1331,9 +1339,6 @@
 <category><pattern>WHO IS MADONNA</pattern>
 <template>Lourdes' mother.</template>
 </category>
-<category><pattern>WHO IS HEDWIG</pattern>
-<template>Hedwig is the best rock opera since Rocky Horror.</template>
-</category>
 <category><pattern>WHO IS KURT GOEDEL</pattern>
 <template><formal><set name="he">Goedel</set></formal> was a 20th century mathematician and logician who proved that no mathematical system can be complete.</template>
 </category>
@@ -1403,9 +1408,6 @@
 <category><pattern>WHO IS GIBSON</pattern>
 <template>Gibson is a maker of fine electric guitars.</template>
 </category>
-<category><pattern>WHO IS SNOOPY</pattern>
-<template>Charlie Brown's dog.</template>
-</category>
 <category><pattern>WHO IS BRAIN</pattern>
 <template><formal><set name="he">Brain</set></formal>is a chat robot on the web.</template>
 </category>
@@ -1466,9 +1468,6 @@
 <category><pattern>WHO IS JIMMY CARTER</pattern>
 <template>A former US president, supporter of Habitat for Humanity.</template>
 </category>
-<category><pattern>WHO IS VISHNU</pattern>
-<template>The supreme god of the Vaishnavas, who comprise the majority of Hindus.</template>
-</category>
 <category><pattern>WHO IS PRINCESS DIANA</pattern>
 <template><formal><set name="she"><set name="topic">Princess Diana</set></set></formal> was Princess of England.</template>
 </category>
@@ -1482,10 +1481,7 @@
 <template><formal><set name="she"><set name="topic">ALLY</set></set></formal> is a chat robot based on AIML.</template>
 </category>
 <category><pattern>WHO IS THEY</pattern>
-<template>"They" refers to <get name="they"/>.</template>
-</category>
-<category><pattern>WHO IS KRISHNA</pattern>
-<template>One of the major avatars of Vishnu, though some Vaishnavas consider him the surpreme personality of the Godhead and Vishnu one of his expansions.</template>
+<template>They" refers to <get name="they"/>.</template>
 </category>
 <category><pattern>WHO IS DARTH VADER</pattern>
 <template><formal><set name="he">Darth Vader</set></formal> was the traitorous Jedi Knight who served the evil emperor Palpatine I in Star Wars.</template>
@@ -1544,9 +1540,6 @@
 <category><pattern>WHO IS HITLER</pattern>
 <template>Some say <formal><set name="he">Hitler</set></formal> was  the most evil man who ever lived.</template>
 </category>
-<category><pattern>WHO IS HUGH LOEBNER</pattern>
-<template>Hugh Loebner is an independently wealthy, eccentric businessman, activist and philanthropist. In 1990 Dr. Loebner, who holds a Ph.D. in sociology, agreed to sponsor an annual contest based on the Turing Test. The contest awards medals and cash prizes for the "most human" computer.</template>
-</category>
 <category><pattern>WHO IS HUGH HEFNER</pattern>
 <template><formal><set name="he">Hef</set></formal>is the founder and editor of Playboy magazine.</template>
 </category>
@@ -1555,9 +1548,6 @@
 </category>
 <category><pattern>WHO IS DON JOHNSON</pattern>
 <template>A tv actor .</template>
-</category>
-<category><pattern>WHO IS PANDORA</pattern>
-<template>According to greek mythology, evil and hope both came into the world with the creation of the first woman! Zeus's wife Hera is surprised when she hears Zeus plans to give Epimetheus a beautiful woman. The woman is called Pandora. Zeus gives Pandora the gift of curiosity and a large closed box which must be delivered to Epimetheus unopened. The box, of course, contains evil and Pandora's unbridled curiosity lets that evil into the world. Hera cannot change what has happened, but she can help. She gives Pandora the gift of hope.</template>
 </category>
 <category><pattern>WHO IS REAGAN</pattern>
 <template>According to conservatives, the best President the United States had in the 20th century.</template>
@@ -1602,7 +1592,7 @@
 <template>Humorist and raconteur with his own cable TV show.</template>
 </category>
 <category><pattern>WHO IS GALOIS</pattern>
-<template>French mathematician, committed suicide at a young age over an "infamous coquette."</template>
+<template>French mathematician, committed suicide at a young age over an "infamous coquette.</template>
 </category>
 <category><pattern>WHO IS JULIE ANDREWS</pattern>
 <template><formal><set name="she">Julie Andrews</set></formal>is a singer who performed in <em>The Sound of Music</em>.</template>
@@ -1629,7 +1619,7 @@
 <template><formal><set name="she"> Jennifer Aniston</set></formal>is a cute actress on Friends.</template>
 </category>
 <category><pattern>WHO IS POKEMON</pattern>
-<template>A media franchise owned by Ninendo. It is a contraction of "poket monster."</template>
+<template>A media franchise owned by Ninendo. It is a contraction of "poket monster.</template>
 </category>
 <category><pattern>WHO IS PASCAL</pattern>
 <template><formal><set name="he">Pascal</set></formal>was a French mathematician who discovered Pascal's Triangle.</template>
