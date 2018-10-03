@@ -2,7 +2,7 @@
 <aiml>
 <!-- File: update.aiml -->
 <!-- Author: Kevin Watters -->
-<!-- Last modified: October 02, 2018 -->
+<!-- Last modified: October 03, 2018 -->
 <!--  -->
 <!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
 <!--  -->
@@ -20,6 +20,6 @@
 <template>Program AB 0.0.6.26 beta -- AI Foundation Reference AIML 2.1 implementation</template>
 </category>
 <category><pattern>BRAIN BUILD</pattern>
-<template>Tue Oct 02 16:10:30 EDT 2018</template>
+<template>Wed Oct 03 09:25:55 EDT 2018</template>
 </category>
 </aiml>

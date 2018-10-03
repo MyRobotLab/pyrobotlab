@@ -2,7 +2,7 @@
 <aiml>
 <!-- File: stack.aiml -->
 <!-- Author: Kevin Watters -->
-<!-- Last modified: October 02, 2018 -->
+<!-- Last modified: October 03, 2018 -->
 <!--  -->
 <!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
 <!--  -->
@@ -17,7 +17,7 @@
 <!-- For more information see unknown -->
 <!--  -->
 <category><pattern>SHOW STACK</pattern>
-<template>top=" <get name="top"/>   " second=" <get name="second"/>   " third=" <get name="third"/>   " fourth=" <get name="fourth"/>   " fifth=" <get name="fifth"/>   " sixth=" <get name="sixth"/>   " seventh=" <get name="seventh"/>   " last=" <get name="last"/>   </template>
+<template>top=" <get name="top"/>   " second=" <get name="second"/>   " third=" <get name="third"/>   " fourth=" <get name="fourth"/>   " fifth=" <get name="fifth"/>   " sixth=" <get name="sixth"/>   " seventh=" <get name="seventh"/>   " last=" <get name="last"/></template>
 </category>
 <category><pattern>POP</pattern>
 <template><srai>POPOM <get name="top"/></srai></template>

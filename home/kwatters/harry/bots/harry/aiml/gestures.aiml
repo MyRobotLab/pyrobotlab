@@ -2,7 +2,7 @@
 <aiml>
 <!-- File: gestures.aiml -->
 <!-- Author: Kevin Watters -->
-<!-- Last modified: October 02, 2018 -->
+<!-- Last modified: October 03, 2018 -->
 <!--  -->
 <!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
 <!--  -->
@@ -27,254 +27,6 @@
             <service>python</service>
             <method>exec</method>
             <param>rest()</param>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACH HEAD</pattern>
-<template>I'm attaching my head.
-        <oob>
-          <mrl>
-            <service>i01.head</service>
-            <method>attach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>DISCONNECT HEAD</pattern>
-<template>I'm disconnecting my head.
-        <oob>
-          <mrl>
-            <service>i01.head</service>
-            <method>detach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACH EYES</pattern>
-<template>My eyes are now attached.
-        <oob>
-          <mrl>
-            <service>i01.head.eyeY</service>
-            <method>attach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>DISCONNECT EYES</pattern>
-<template>Disconnecting my eye servos
-        <oob>
-          <mrl>
-            <service>i01.head.eyeY</service>
-            <method>detach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACH RIGHT HAND</pattern>
-<template>Connecting my right hand.
-        <oob>
-          <mrl>
-            <service>i01.rightHand</service>
-            <method>attach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACHED RIGHT HAND</pattern>
-<template><srai>ATTACH RIGHT HAND</srai></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>DISCONNECT RIGHT HAND</pattern>
-<template>Detaching my right hand.
-        <oob>
-          <mrl>
-            <service>i01.rightHand</service>
-            <method>detach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACH LEFT HAND</pattern>
-<template>Connecting my left hand.
-        <oob>
-          <mrl>
-            <service>i01.leftHand</service>
-            <method>attach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>DISCONNECT LEFT HAND</pattern>
-<template>Detaching my left hand.
-        <oob>
-          <mrl>
-            <service>i01.leftHand</service>
-            <method>detach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACH EVERYTHING</pattern>
-<template>I'm connecting all servos now.
-        <oob>
-          <mrl>
-            <service>i01</service>
-            <method>attach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>DISCONNECT EVERYTHING</pattern>
-<template>I'm detaching everything now.
-        <oob>
-          <mrl>
-            <service>i01</service>
-            <method>detach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACH LEFT ARM</pattern>
-<template>Connecting my left arm.
-        <oob>
-          <mrl>
-            <service>i01.leftArm</service>
-            <method>attach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>DISCONNECT LEFT ARM</pattern>
-<template>Detaching my left arm.
-        <oob>
-          <mrl>
-            <service>i01.leftArm</service>
-            <method>detach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACH RIGHT ARM</pattern>
-<template>Connect my right arm.
-        <oob>
-          <mrl>
-            <service>i01.rightArm</service>
-            <method>attach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACHED RIGHT ARM</pattern>
-<template><srai>ATTACH RIGHT ARM</srai></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>DISCONNECT RIGHT ARM</pattern>
-<template>Detach right arm.
-        <oob>
-          <mrl>
-            <service>i01.rightArm</service>
-            <method>detach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACH TORSO</pattern>
-<template>Connecting the servo in my torso.
-        <oob>
-          <mrl>
-            <service>i01.torso</service>
-            <method>attach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACHED OR SO</pattern>
-<template><srai>ATTACH TORSO</srai></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>DISCONNECT TORSO</pattern>
-<template>Detaching the servo in my torso.
-        <oob>
-          <mrl>
-            <service>i01.torso</service>
-            <method>detach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>DISCONNECT OR SO</pattern>
-<template><srai>DISCONNECT TORSO</srai></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACH JAW</pattern>
-<template>Connecting my jaw.
-        <oob>
-          <mrl>
-            <service>i01.head.jaw</service>
-            <method>attach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>DISCONNECT JAW</pattern>
-<template>Detaching my jaw servo.
-        <oob>
-          <mrl>
-            <service>i01.head.jaw</service>
-            <method>detach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACH WHEEL</pattern>
-<template>I don't have a wheel to attach, sorry.
-        <oob>
-          <mrl>
-            <service>forwardServo</service>
-            <method>attach</method>
-          </mrl>
-          <mrl>
-            <service>directionServo</service>
-            <method>attach</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>DISCONNECT WHEEL</pattern>
-<template>I don't have a wheel.
-        <oob>
-          <mrl>
-            <service>directionServo</service>
-            <method>detach</method>
-          </mrl>
-          <mrl>
-            <service>forwardServo</service>
-            <method>detach</method>
           </mrl>
         </oob></template>
 </category></topic>
@@ -323,28 +75,6 @@
             <service>python</service>
             <method>exec</method>
             <param>stopTracking()</param>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>ATTACH SENSOR</pattern>
-<template>Starting the PIR sensor.
-        <oob>
-          <mrl>
-            <service>i01</service>
-            <method>startPIR</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>DISCONNECT SENSOR</pattern>
-<template>Stopping the PIR sensor.
-        <oob>
-          <mrl>
-            <service>i01</service>
-            <method>stopPIR</method>
           </mrl>
         </oob></template>
 </category></topic>
@@ -416,8 +146,9 @@
 <template>GIVING
         <oob>
           <mrl>
-            <service>i01</service>
-            <method>giving</method>
+            <service>python</service>
+            <method>exec</method>
+            <param>giving()</param>
           </mrl>
         </oob></template>
 </category></topic>
@@ -431,8 +162,9 @@
         </random>
         <oob>
           <mrl>
-            <service>i01</service>
-            <method>fighter</method>
+ 			<service>python</service>
+            <method>exec</method>
+            <param>fighter()</param>
           </mrl>
         </oob></template>
 </category></topic>
@@ -454,8 +186,9 @@
 <template>What do you have there?  I'm looking.
         <oob>
           <mrl>
-            <service>i01</service>
-            <method>lookAtThis</method>
+             <service>python</service>
+            <method>exec</method>
+            <param>lookAtThis()</param>
           </mrl>
         </oob></template>
 </category></topic>
@@ -465,8 +198,10 @@
 <template>It's good to win.
         <oob>
           <mrl>
-            <service>i01</service>
-            <method>victory</method>
+            <service>python</service>
+             <service>python</service>
+            <method>exec</method>
+            <param>victory()</param>
           </mrl>
         </oob></template>
 </category></topic>
@@ -491,8 +226,9 @@
 <template>Holding my arms in front of me.
         <oob>
           <mrl>
-            <service>i01</service>
-            <method>armsFront</method>
+            <service>python</service>
+            <method>exec</method>
+            <param>armsFront()</param>
           </mrl>
         </oob></template>
 </category></topic>
@@ -502,8 +238,9 @@
 <template>This is the pose from Leonardo Da Vinci's drawings.
         <oob>
           <mrl>
-            <service>i01</service>
-            <method>daVinci</method>
+ 			<service>python</service>
+            <method>exec</method>
+            <param>daVinci()</param>
           </mrl>
         </oob></template>
 </category></topic>
@@ -511,28 +248,6 @@
 <topic name="GESTURES">
 <category><pattern>DAVINCI</pattern>
 <template><srai>DA VINCI</srai></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>MANUAL</pattern>
-<template>There is no manual, sorry.
-        <oob>
-          <mrl>
-            <service>i01.ear</service>
-            <method>lockOutAllGrammarExcept</method>
-          </mrl>
-        </oob></template>
-</category></topic>
-
-<topic name="GESTURES">
-<category><pattern>VOICE CONTROL</pattern>
-<template>I'm listening.
-        <oob>
-          <mrl>
-            <service>i01.ear</service>
-            <method>clearLock</method>
-          </mrl>
-        </oob></template>
 </category></topic>
 
 <topic name="GESTURES">

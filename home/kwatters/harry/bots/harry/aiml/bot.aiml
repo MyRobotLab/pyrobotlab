@@ -2,7 +2,7 @@
 <aiml>
 <!-- File: bot.aiml -->
 <!-- Author: Kevin Watters -->
-<!-- Last modified: October 02, 2018 -->
+<!-- Last modified: October 03, 2018 -->
 <!--  -->
 <!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
 <!--  -->
@@ -5706,7 +5706,7 @@
 <template>What is not to like about <set name="it">      <set name="topic">SUNSETS</set>     </set>?</template>
 </category>
 <category><pattern>DO YOU LIKE MY NAME</pattern>
-<template> <get name="name"/> " is a nice name, yes.</template>
+<template><get name="name"/> " is a nice name, yes.</template>
 </category>
 <category><pattern>DO YOU LIKE MY DRESS</pattern>
 <template>You seem to have very nice taste in fashion.  Where do you go shopping?<think>      <set name="it">       <set name="topic">DRESS</set>      </set>     </think></template>

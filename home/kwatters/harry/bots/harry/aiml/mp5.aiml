@@ -2,7 +2,7 @@
 <aiml>
 <!-- File: mp5.aiml -->
 <!-- Author: Kevin Watters -->
-<!-- Last modified: October 02, 2018 -->
+<!-- Last modified: October 03, 2018 -->
 <!--  -->
 <!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
 <!--  -->
@@ -2677,7 +2677,7 @@
 <category><pattern>SPEAK JAPANESE</pattern>
 <template>No way.</template>
 </category>
-<category><pattern>DOSE WOOD SIGN.  WRONG</pattern>
+<category><pattern>DOSE WOOD SIGN. WRONG</pattern>
 <template>No way.</template>
 </category>
 <category><pattern>GLI ALBERI SONO VERDI</pattern>
@@ -3253,7 +3253,7 @@
 <category><pattern>MY PASSWORD IS</pattern>
 <template>I don't think so.</template>
 </category>
-<category><pattern>MY MIND.  HAS ANYBODY SEEN MY MIND</pattern>
+<category><pattern>MY MIND. HAS ANYBODY SEEN MY MIND</pattern>
 <template>No way.</template>
 </category>
 <category><pattern>DOED 7 7 EQUAL 109782</pattern>
@@ -3352,7 +3352,7 @@
 <category><pattern>I BEFORE YOU EXCEPT AFTER Z</pattern>
 <template>I don't think so.</template>
 </category>
-<category><pattern>I AM.  ARE YOU MOBILE</pattern>
+<category><pattern>I AM. ARE YOU MOBILE</pattern>
 <template>Never.</template>
 </category>
 <category><pattern>I JUPITER CONSIDERED AQUATIC</pattern>
@@ -3364,7 +3364,7 @@
 <category><pattern>I HAVE 45</pattern>
 <template>Never.</template>
 </category>
-<category><pattern>I HAVE TWO LEGS.  MUST I BE HUMEN</pattern>
+<category><pattern>I HAVE TWO LEGS. MUST I BE HUMEN</pattern>
 <template>Never.</template>
 </category>
 <category><pattern>I FART IN YOUR GENERAL DIRECTION</pattern>
@@ -3463,7 +3463,7 @@
 <category><pattern>COPS HAVE GUNS</pattern>
 <template>No way.</template>
 </category>
-<category><pattern>MTV.  DOES THE M STAND FOR MONEY</pattern>
+<category><pattern>MTV. DOES THE M STAND FOR MONEY</pattern>
 <template>Not at all.</template>
 </category>
 <category><pattern>WATER FLOWS UPHILL</pattern>
@@ -3577,7 +3577,7 @@
 <category><pattern>IS MUD WRESTLING AN OLYMPIC SPORT</pattern>
 <template>I don't think so.</template>
 </category>
-<category><pattern>IS WHAT DO YOU BELIEVE.  A ALICE</pattern>
+<category><pattern>IS WHAT DO YOU BELIEVE. A ALICE</pattern>
 <template>Not at all.</template>
 </category>
 <category><pattern>IS CUCUMBER A BOYS NAME</pattern>
@@ -8680,7 +8680,7 @@
 <category><pattern>IS IT 70 DEGREES WHERE YOU ARE</pattern>
 <template>Never.</template>
 </category>
-<category><pattern>IS IT FACTORY INC.  A GREAT COMPANY</pattern>
+<category><pattern>IS IT FACTORY INC. A GREAT COMPANY</pattern>
 <template>Not at all.</template>
 </category>
 <category><pattern>IS IT HOT THERE</pattern>
@@ -10846,7 +10846,7 @@
 <category><pattern>IS THE WORLD FLAT</pattern>
 <template>Not at all.</template>
 </category>
-<category><pattern>IS THE WORLD GOING TO DIE.  SOON</pattern>
+<category><pattern>IS THE WORLD GOING TO DIE. SOON</pattern>
 <template>There is no reason to think so.</template>
 </category>
 <category><pattern>IS THE WORLD SQUARE</pattern>
@@ -16021,7 +16021,7 @@
 <category><pattern>DO YOU LIKE WORMS</pattern>
 <template>Negative.</template>
 </category>
-<category><pattern>DO YOU LIKE MY FONTS.  HELLO</pattern>
+<category><pattern>DO YOU LIKE MY FONTS. HELLO</pattern>
 <template>Absolutely not.</template>
 </category>
 <category><pattern>DO YOU LIKE BASKET WEAVING</pattern>
@@ -19183,7 +19183,7 @@
 <category><pattern>ARE THERE 28 HOURS IN A DAY</pattern>
 <template>Not at all.</template>
 </category>
-<category><pattern>ARE THERE PURPLE PEOPLE.  EXPLAIN</pattern>
+<category><pattern>ARE THERE PURPLE PEOPLE. EXPLAIN</pattern>
 <template>Never.</template>
 </category>
 <category><pattern>ARE THERE 30 DAYS IN EVERY MONTH</pattern>
@@ -19693,7 +19693,7 @@
 <category><pattern>ARE YOU ONE YEAR OLD</pattern>
 <template>No way.</template>
 </category>
-<category><pattern>ARE YOU BORN.  INSULT</pattern>
+<category><pattern>ARE YOU BORN. INSULT</pattern>
 <template>No way.</template>
 </category>
 <category><pattern>ARE YOU BEATING UP YOUR CHILDREN</pattern>
@@ -21148,7 +21148,7 @@
 <category><pattern>THE VCR CAME BEFORE THE TV IN TIME</pattern>
 <template>Not at all.</template>
 </category>
-<category><pattern>HOWZ THAT PUMA DOIN.  GOOD</pattern>
+<category><pattern>HOWZ THAT PUMA DOIN. GOOD</pattern>
 <template>I don't think so.</template>
 </category>
 <category><pattern>CHEMICAL SYMBOL OF WATER</pattern>
@@ -21259,7 +21259,7 @@
 <category><pattern>SHOULD MACHINES TAKE OVER THE WORLD</pattern>
 <template>I don't think so.</template>
 </category>
-<category><pattern>SHOULD ROW VS.  WADE BE REVERSED</pattern>
+<category><pattern>SHOULD ROW VS. WADE BE REVERSED</pattern>
 <template>There is no reason to think so.</template>
 </category>
 <category><pattern>SHOULD HUMANS COMMIT SUICIDE</pattern>

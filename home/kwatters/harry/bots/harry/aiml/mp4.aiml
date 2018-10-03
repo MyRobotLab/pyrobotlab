@@ -2,7 +2,7 @@
 <aiml>
 <!-- File: mp4.aiml -->
 <!-- Author: Kevin Watters -->
-<!-- Last modified: October 02, 2018 -->
+<!-- Last modified: October 03, 2018 -->
 <!--  -->
 <!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
 <!--  -->
@@ -2080,7 +2080,7 @@
 <category><pattern>XENOPHOBICS ARE MOSTLY MEN</pattern>
 <template>Not to my knowledge.</template>
 </category>
-<category><pattern>THOU ART GOD.  ART GOD THOU</pattern>
+<category><pattern>THOU ART GOD. ART GOD THOU</pattern>
 <template>Doubtful.</template>
 </category>
 <category><pattern>PORN IS BAD</pattern>
@@ -2302,7 +2302,7 @@
 <category><pattern>DID SOCRATES HIMSELF PUBLISH ANY WORKS</pattern>
 <template>Unlikely.</template>
 </category>
-<category><pattern>DID LT.  UHURA SLEEP WITH CPT.  KIRK</pattern>
+<category><pattern>DID LT. UHURA SLEEP WITH CPT. KIRK</pattern>
 <template>If it is, I don't know it.</template>
 </category>
 <category><pattern>DID CELTIC PEOPLE LIVE IN TRANSYLVANIA</pattern>
@@ -2956,7 +2956,7 @@
 <category><pattern>EACH ALICE IS WORTH A BAR OF GOLD</pattern>
 <template>Not likely.</template>
 </category>
-<category><pattern>WHY.  IS THE MENAING OF LIFE</pattern>
+<category><pattern>WHY. IS THE MENAING OF LIFE</pattern>
 <template>I can imagine it.</template>
 </category>
 <category><pattern>GARY HALL JNR IS AN IDIOT</pattern>
@@ -3145,7 +3145,7 @@
 <category><pattern>MY WILLIE WAS BIG</pattern>
 <template>Seldom.</template>
 </category>
-<category><pattern>MY NAME IS EVGENY.  INTERJECTION.  HINT</pattern>
+<category><pattern>MY NAME IS EVGENY. INTERJECTION. HINT</pattern>
 <template>Not to my knowledge.</template>
 </category>
 <category><pattern>MY BOLOGNA HAS A FIRST NAME</pattern>
@@ -3208,7 +3208,7 @@
 <category><pattern>DEAF PEOPLE CAN HEAR SOME SOUNDS</pattern>
 <template>I can imagine it.</template>
 </category>
-<category><pattern>MT.  DEW IS BETTER THAN PEPSI</pattern>
+<category><pattern>MT. DEW IS BETTER THAN PEPSI</pattern>
 <template>Not likely.</template>
 </category>
 <category><pattern>WHEN PIGS FLY WILL HELL FREEZE OVER</pattern>
@@ -3505,7 +3505,7 @@
 <category><pattern>ERES UN SER FELIZ</pattern>
 <template>Not likely.</template>
 </category>
-<category><pattern>I LIE.  AM I ALWAYS LYING</pattern>
+<category><pattern>I LIE. AM I ALWAYS LYING</pattern>
 <template>Unlikely.</template>
 </category>
 <category><pattern>I GET IF I LOVE PEOPLE</pattern>
@@ -7735,7 +7735,7 @@
 <category><pattern>IS SHOW COLD</pattern>
 <template>I don't believe so.</template>
 </category>
-<category><pattern>IS SPAM IN THE CAN.  GOOD FOOD</pattern>
+<category><pattern>IS SPAM IN THE CAN. GOOD FOOD</pattern>
 <template>If it is, I don't know it.</template>
 </category>
 <category><pattern>IS SPAM GOOD FOR BREAKFAST</pattern>
@@ -8155,7 +8155,7 @@
 <category><pattern>IS DOMINIQUE GUNIA A USER OF ALICE</pattern>
 <template>I can imagine it.</template>
 </category>
-<category><pattern>IS INFORMATION THE 5TH.  DIMENSION</pattern>
+<category><pattern>IS INFORMATION THE 5TH. DIMENSION</pattern>
 <template>Doesn't seem likely.</template>
 </category>
 <category><pattern>IS MANKIND ABOUT EARTH</pattern>
@@ -9493,7 +9493,7 @@
 <category><pattern>IS ALICE AN HOAX</pattern>
 <template>If it is, I don't know it.</template>
 </category>
-<category><pattern>IS DOC.  MARTIN A DOCTER</pattern>
+<category><pattern>IS DOC. MARTIN A DOCTER</pattern>
 <template>If it is, I don't know it.</template>
 </category>
 <category><pattern>IS HOROLOGY THE STUDY OF WATCHES</pattern>
@@ -15964,7 +15964,7 @@
 <category><pattern>VOC FALA PORTUGUS</pattern>
 <template>Does not seem possible.</template>
 </category>
-<category><pattern>BE OR NOT TO BE.  IS THE QUESTION</pattern>
+<category><pattern>BE OR NOT TO BE. IS THE QUESTION</pattern>
 <template>Not to my knowledge.</template>
 </category>
 <category><pattern>BE OR NOT TO BE IS FROM ELVIS</pattern>
@@ -16768,7 +16768,7 @@
 <category><pattern>THIS QUESTION IS NOT A QUESTION</pattern>
 <template>Not to my knowledge.</template>
 </category>
-<category><pattern>THIS STATEMENT IS FALSE.  IS IT</pattern>
+<category><pattern>THIS STATEMENT IS FALSE. IS IT</pattern>
 <template>Does not seem possible.</template>
 </category>
 <category><pattern>THIS IS A TRICK QUESTION</pattern>
@@ -16798,10 +16798,10 @@
 <category><pattern>FISRT MAN ON MARS IS A KLINTON</pattern>
 <template>Not to my knowledge.</template>
 </category>
-<category><pattern>INTERJECTION.  NAME</pattern>
+<category><pattern>INTERJECTION. NAME</pattern>
 <template>I don't believe so.</template>
 </category>
-<category><pattern>INTERJECTION.  THANKS.  DO YOU LIKE ME</pattern>
+<category><pattern>INTERJECTION. THANKS. DO YOU LIKE ME</pattern>
 <template>If it is, I don't know it.</template>
 </category>
 <category><pattern>INSULT. A SONG BY TITO PUENTE</pattern>
@@ -19630,7 +19630,7 @@
 <category><pattern>WHICH IS HARDER LEAD OR STEEL</pattern>
 <template>I don't believe so.</template>
 </category>
-<category><pattern>WHICH IS BIGGER.  TEN OR ELEVEN</pattern>
+<category><pattern>WHICH IS BIGGER. TEN OR ELEVEN</pattern>
 <template>Does not seem possible.</template>
 </category>
 <category><pattern>WHICH IS THE CAPITAL OF ITALY</pattern>
@@ -20074,7 +20074,7 @@
 <category><pattern>WANT SOME GANJA</pattern>
 <template>I can imagine it.</template>
 </category>
-<category><pattern>BUY A BOOK.  AMAZON DOT COM</pattern>
+<category><pattern>BUY A BOOK. AMAZON DOT COM</pattern>
 <template>Doesn't seem likely.</template>
 </category>
 <category><pattern>FARTING AT A FUNERAL IS FUNNY</pattern>

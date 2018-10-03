@@ -2,7 +2,7 @@
 <aiml>
 <!-- File: mp6.aiml -->
 <!-- Author: Kevin Watters -->
-<!-- Last modified: October 02, 2018 -->
+<!-- Last modified: October 03, 2018 -->
 <!--  -->
 <!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
 <!--  -->
@@ -2029,7 +2029,7 @@
 <category><pattern>2 PLUS 9 EQUALS 12</pattern>
 <template>No.</template>
 </category>
-<category><pattern>2 2 EQUAL 5.  INTERJECTION</pattern>
+<category><pattern>2 2 EQUAL 5. INTERJECTION</pattern>
 <template>Not by any means.</template>
 </category>
 <category><pattern>SADDAM HUSSEIN INVENTED THE AUTOMOBILE</pattern>
@@ -9655,7 +9655,7 @@
 <category><pattern>AM I A SALAMANDER</pattern>
 <template>Not by any means.</template>
 </category>
-<category><pattern>AM I 20 FT.  LONG</pattern>
+<category><pattern>AM I 20 FT. LONG</pattern>
 <template>No.</template>
 </category>
 <category><pattern>AM I WEARING A BLUE OVERCOAT</pattern>
@@ -11959,7 +11959,7 @@
 <category><pattern>ARE SOLDIERS WOMEN</pattern>
 <template>No.</template>
 </category>
-<category><pattern>ARE PARENTS ALL RIGHT.  ALWAYS</pattern>
+<category><pattern>ARE PARENTS ALL RIGHT. ALWAYS</pattern>
 <template>No.</template>
 </category>
 <category><pattern>ARE THINGS HUMAN SAY TRUE</pattern>

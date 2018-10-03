@@ -2,7 +2,7 @@
 <aiml>
 <!-- File: mp0.aiml -->
 <!-- Author: Kevin Watters -->
-<!-- Last modified: October 02, 2018 -->
+<!-- Last modified: October 03, 2018 -->
 <!--  -->
 <!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
 <!--  -->
@@ -1315,7 +1315,7 @@
 <category><pattern>DOES THIS QUESTION HAVE SIX WORDS</pattern>
 <template>Affirmative.</template>
 </category>
-<category><pattern>DOES THIS QUESTION EXIST.  DO YOU EXIST</pattern>
+<category><pattern>DOES THIS QUESTION EXIST. DO YOU EXIST</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>DOES SUNBURNED SKIN GET RED</pattern>
@@ -3493,7 +3493,7 @@
 <category><pattern>WAS</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>WAS STALIN A COMMUNIST.  INTERJECTION</pattern>
+<category><pattern>WAS STALIN A COMMUNIST. INTERJECTION</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>WAS ELVIS PRESLEY A SINGER</pattern>
@@ -3916,7 +3916,7 @@
 <category><pattern>I SCREAM IN PAIN WHEN I BURN MY FACE DO</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>I THINK.  I EXIST</pattern>
+<category><pattern>I THINK. I EXIST</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>I ENJOY MUSIC</pattern>
@@ -9181,7 +9181,7 @@
 <category><pattern>IS PERJURY LYING WHILE UNDER OATH</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>IS YAHOO.  AN INTERNET BASED BUSINESS</pattern>
+<category><pattern>IS YAHOO. AN INTERNET BASED BUSINESS</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>IS PORTUGAL IN EUROPE</pattern>
@@ -14215,7 +14215,7 @@
 <category><pattern>CAN A BOOK BE READ</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>CAN A QUESTION MARK.  DENOTE A QUESTION</pattern>
+<category><pattern>CAN A QUESTION MARK. DENOTE A QUESTION</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>CAN A QUESTION BE FUNNY</pattern>
@@ -15154,7 +15154,7 @@
 <category><pattern>DO HUMANS MAKE ERRORS</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>DO HUMANS MAKE MISTAKES.  INTERJECTION</pattern>
+<category><pattern>DO HUMANS MAKE MISTAKES. INTERJECTION</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>DO HUMANS BREATH AIR</pattern>
@@ -16780,7 +16780,7 @@
 <category><pattern>DO YOU NEED WATER TO SURVIVE</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>DO YOU MAKE MISTAKES.  INTERJECTION</pattern>
+<category><pattern>DO YOU MAKE MISTAKES. INTERJECTION</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>DO YOU WRITE ON PAPER</pattern>
@@ -19741,7 +19741,7 @@
 <category><pattern>ICE IS FROZEN WATER</pattern>
 <template>Yes.</template>
 </category>
-<category><pattern>ICE IS COLD.  WRONG</pattern>
+<category><pattern>ICE IS COLD. WRONG</pattern>
 <template>Yes.</template>
 </category>
 <category><pattern>ICE MELTS TO WATER WHEN HEATED</pattern>

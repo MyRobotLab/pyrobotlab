@@ -2,7 +2,7 @@
 <aiml>
 <!-- File: reduction2.safe.aiml -->
 <!-- Author: Kevin Watters -->
-<!-- Last modified: October 02, 2018 -->
+<!-- Last modified: October 03, 2018 -->
 <!--  -->
 <!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
 <!--  -->
@@ -9268,7 +9268,7 @@
 <category><pattern>DO YOU HAVE BUGS *</pattern>
 <template><srai>do you have bugs</srai></template>
 </category>
-<category><pattern>DO YOU HAVE TO BRING THAT UP  *</pattern>
+<category><pattern>DO YOU HAVE TO BRING THAT UP *</pattern>
 <template><srai>do you have to bring that up   </srai></template>
 </category>
 <category><pattern>DO YOU HAVE ANY MORE GOSSIP</pattern>

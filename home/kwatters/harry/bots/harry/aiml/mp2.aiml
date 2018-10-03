@@ -2,7 +2,7 @@
 <aiml>
 <!-- File: mp2.aiml -->
 <!-- Author: Kevin Watters -->
-<!-- Last modified: October 02, 2018 -->
+<!-- Last modified: October 03, 2018 -->
 <!--  -->
 <!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
 <!--  -->
@@ -1294,7 +1294,7 @@
 <category><pattern>DOES LATIN DECLINE VERBS</pattern>
 <template>Precisely.</template>
 </category>
-<category><pattern>DOES MT.  DEW HAVE A LOT OF CAFFEINE</pattern>
+<category><pattern>DOES MT. DEW HAVE A LOT OF CAFFEINE</pattern>
 <template>Beyond a doubt.</template>
 </category>
 <category><pattern>DOES CHINA HAVE THE GREATEST POPULATION</pattern>
@@ -4171,7 +4171,7 @@
 <category><pattern>I SOUP HOT</pattern>
 <template>Indubitably.</template>
 </category>
-<category><pattern>I AM.  ARE YOU GOOD</pattern>
+<category><pattern>I AM. ARE YOU GOOD</pattern>
 <template>Precisely.</template>
 </category>
 <category><pattern>I JUMP. ILL FALL DOWN</pattern>
@@ -8230,7 +8230,7 @@
 <category><pattern>IS PUMPERNICKEL BREAD BROWN</pattern>
 <template>Unquestionably.</template>
 </category>
-<category><pattern>IS MT.  EVEREST THE TALLEST PEAK</pattern>
+<category><pattern>IS MT. EVEREST THE TALLEST PEAK</pattern>
 <template>Indubitably.</template>
 </category>
 <category><pattern>IS MORMONISM A RELIGION</pattern>
@@ -8758,7 +8758,7 @@
 <category><pattern>IS JAPAN AN ARCHIPELAGO</pattern>
 <template>Unquestionably.</template>
 </category>
-<category><pattern>IS JAPAN WEST OF USA.  INTERJECTION</pattern>
+<category><pattern>IS JAPAN WEST OF USA. INTERJECTION</pattern>
 <template>Of course.</template>
 </category>
 <category><pattern>IS POETRY GOOD</pattern>
@@ -11089,7 +11089,7 @@
 <category><pattern>IS HOMOSEXUAL THE SAME AS BEING GAY</pattern>
 <template>I am certain.</template>
 </category>
-<category><pattern>IS I AM.  INTERJECTION</pattern>
+<category><pattern>IS I AM. INTERJECTION</pattern>
 <template>Undoubtedly.</template>
 </category>
 <category><pattern>IS PELE BRAZILIAN</pattern>
@@ -11443,7 +11443,7 @@
 <category><pattern>IS NOSE FOR BREATHING</pattern>
 <template>Naturally.</template>
 </category>
-<category><pattern>IS ARE YOU A HACKER.  AS QUESTION</pattern>
+<category><pattern>IS ARE YOU A HACKER. AS QUESTION</pattern>
 <template>Undoubtedly.</template>
 </category>
 <category><pattern>IS APPEARANCE IMPORTANT</pattern>
@@ -12319,7 +12319,7 @@
 <category><pattern>IS THE WAR BAD</pattern>
 <template>Undoubtedly.</template>
 </category>
-<category><pattern>IS THE TALLEST MOUNTAIN MT.  EVEREST</pattern>
+<category><pattern>IS THE TALLEST MOUNTAIN MT. EVEREST</pattern>
 <template>Most assuredly.</template>
 </category>
 <category><pattern>IS THE METAL IRON IRON COLORED</pattern>
@@ -13663,7 +13663,7 @@
 <category><pattern>WILL I LIVE PAST THE TEAR 2001</pattern>
 <template>Indubitably.</template>
 </category>
-<category><pattern>WILL MOST LANGUAGES DIE OUT.  INTERJECTION</pattern>
+<category><pattern>WILL MOST LANGUAGES DIE OUT. INTERJECTION</pattern>
 <template>Most assuredly.</template>
 </category>
 <category><pattern>WILL GOOD TRIUMPH OVER EVIL</pattern>
@@ -14929,10 +14929,10 @@
 <category><pattern>CAN COLOR BE FELT BY TOUCH</pattern>
 <template>Exactly.</template>
 </category>
-<category><pattern>HELLO.  DO YOU LIKE RICE</pattern>
+<category><pattern>HELLO. DO YOU LIKE RICE</pattern>
 <template>Of course.</template>
 </category>
-<category><pattern>HELLO.  ARE YOU</pattern>
+<category><pattern>HELLO. ARE YOU</pattern>
 <template>I am certain.</template>
 </category>
 <category><pattern>BIG BLUE IS ANOTHER NAME FOR IBM</pattern>
@@ -15898,7 +15898,7 @@
 <category><pattern>DO TURTLES HAVE TAILS</pattern>
 <template>Indubitably.</template>
 </category>
-<category><pattern>DO TURTLES EAT FISH.  HINT</pattern>
+<category><pattern>DO TURTLES EAT FISH. HINT</pattern>
 <template>Naturally.</template>
 </category>
 <category><pattern>DO GIRAFFES HAVE KNOBBY KNEES</pattern>
@@ -17485,7 +17485,7 @@
 <category><pattern>DO RAINBOWS HAVE SEVEN COLOURS</pattern>
 <template>Unquestionably.</template>
 </category>
-<category><pattern>DO CAR TIRES WEAR OUT.  INTERJECTION</pattern>
+<category><pattern>DO CAR TIRES WEAR OUT. INTERJECTION</pattern>
 <template>Naturally.</template>
 </category>
 <category><pattern>DO ENDANGERED SPECIES LIVE ON GUAM</pattern>
@@ -18088,7 +18088,7 @@
 <category><pattern>DEMOCRATS ARE LIBERAL</pattern>
 <template>Unquestionably.</template>
 </category>
-<category><pattern>GREEN IS PLEASANT TO EYES.  IS IT NOT</pattern>
+<category><pattern>GREEN IS PLEASANT TO EYES. IS IT NOT</pattern>
 <template>Of course.</template>
 </category>
 <category><pattern>SMOKING CAN KILL YOU</pattern>
@@ -18322,7 +18322,7 @@
 <category><pattern>WITHOUT ELECTRICITY ALICE WILL DIE</pattern>
 <template>Of course.</template>
 </category>
-<category><pattern>IS.  A PUNCTUATION MARK</pattern>
+<category><pattern>IS. A PUNCTUATION MARK</pattern>
 <template>Precisely.</template>
 </category>
 <category><pattern>THINK IS A ACTION</pattern>
@@ -20644,7 +20644,7 @@
 <category><pattern>ARE YOU CONSIOUS</pattern>
 <template>Naturally.</template>
 </category>
-<category><pattern>ARE YOU SITTING.  GOOD</pattern>
+<category><pattern>ARE YOU SITTING. GOOD</pattern>
 <template>Naturally.</template>
 </category>
 <category><pattern>ARE YOU MAKING ME SMARTER</pattern>
@@ -21553,7 +21553,7 @@
 <category><pattern>ARE COLORS DIFFERENT</pattern>
 <template>Unquestionably.</template>
 </category>
-<category><pattern>ARE COLORS DIFFERENT.  INTERJECTION</pattern>
+<category><pattern>ARE COLORS DIFFERENT. INTERJECTION</pattern>
 <template>Indubitably.</template>
 </category>
 <category><pattern>ARE VIRTUAL MACHINES A GOOD THING</pattern>
@@ -22384,7 +22384,7 @@
 <category><pattern>MARILYN MONROE COMMITTED SUICIDE</pattern>
 <template>Unquestionably.</template>
 </category>
-<category><pattern>BREASTS COME IN PAIRS.  DO YOU UNDERSTAND</pattern>
+<category><pattern>BREASTS COME IN PAIRS. DO YOU UNDERSTAND</pattern>
 <template>Beyond a doubt.</template>
 </category>
 <category><pattern>7 DAYS MAKE A WEEK</pattern>

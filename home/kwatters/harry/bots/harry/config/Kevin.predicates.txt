@@ -13,12 +13,13 @@ contacttype:unknown
 wife:who
 them:who
 emailaddress:unknown
-it:right now
+it:air speed velocity of an unlaiden swallow
 multipleids:false
 lastname:An
 multiplenames:<displayname>         <multipleids>       </displayname>, <displayname>         the       </displayname>, <displayname>         microsoft       </displayname>, <displayname>         amazon       </displayname>, <displayname>         and       </displayname>, <displayname>         google       </displayname>, <displayname>         are       </displayname>, <displayname>         all       </displayname>, <displayname>         headed       </displayname>, <displayname>         in       </displayname>, <displayname>         the       </displayname>, <displayname>         same       </displayname>, <displayname>         direction       </displayname>, <displayname>         that       </displayname>, <displayname>         way       </displayname>, <displayname>         </multipleids>       </displayname>
 birthplace:where
 dialnumber:unknown
+seventh:unknown
 meta:set
 favoriteactress:who
 brother:who
@@ -32,7 +33,9 @@ boyfriend:who
 latitude:which
 phonenumber:unknown
 isanumber:false
+sixth:unknown
 jsenabled:true
+top:air speed velocity of an unlaiden swallow
 email:what
 familiarpronoun:unknown
 address:where
@@ -43,6 +46,8 @@ newcontact:unknown
 voicemailnumber:unknown
 displayname:unknown
 checkednameoruri:false
+fifth:unknown
+fourth:unknown
 country:which
 contactquery:unknown
 favoritedrink:what
@@ -52,6 +57,7 @@ favoritesport:what
 sign:which
 husband:who
 isacontacturi:false
+second:unknown
 favoriteicecream:what
 mother:who
 son:who
@@ -68,6 +74,7 @@ favoritefood:what
 contactaddress:unknown
 familiarname:unknown
 town:which
+last:unknown
 externalname:unknown
 favoritecolor:what
 longitute:which
@@ -76,7 +83,7 @@ girlfriend:who
 she:sarah
 isaname:false
 customname:harry
-name:Penelope
+name:Kevin
 topic:GESTURES
 daughter:who
 isfamiliarname:false
@@ -92,6 +99,7 @@ contactname:unknown
 hair:what
 messagebody:unknown
 niece:who
+personality:average
 street:which
 cat:what
 statement:I see what is your favorite color
@@ -105,10 +113,11 @@ newpattern:NORESP
 equalto:false
 middlename:what
 featurerequest:PLAY GAMES
+third:unknown
 selectedcontact:thanks
 there:where
 baby:who
 location:where
 he:who
-age:40
+age:41
 isafamiliarname:false

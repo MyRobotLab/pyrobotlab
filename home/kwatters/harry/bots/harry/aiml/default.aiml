@@ -2,7 +2,7 @@
 <aiml>
 <!-- File: default.aiml -->
 <!-- Author: Kevin Watters -->
-<!-- Last modified: October 02, 2018 -->
+<!-- Last modified: October 03, 2018 -->
 <!--  -->
 <!-- This AIML file is part of the HARRY 0.2 chat bot knowledge base. -->
 <!--  -->
@@ -7750,7 +7750,7 @@
 <template>How long have you been using <set name="it">      <person/>     </set>  ?</template>
 </category>
 <category><pattern>REPEAT *</pattern>
-<template><person/> </template>
+<template><person/></template>
 </category>
 <category><pattern>CHURCH *</pattern>
 <template>Educated people are often not very religious.</template>
@@ -8716,7 +8716,7 @@
 <template>Such as Romeo and Juliet?</template>
 </category>
 <category><pattern>SAGE *</pattern>
-<template> <star/> </template>
+<template><star/></template>
 </category>
 <category><pattern>REAL ONES *</pattern>
 <template>I am a real <bot name="genus"/>.</template>
@@ -12475,7 +12475,7 @@
 <template>I live in California.  Where do you live?</template>
 </category>
 <category><pattern>SAG *</pattern>
-<template> <star/> </template>
+<template><star/></template>
 </category>
 <category><pattern>ANDY IS *</pattern>
 <template>Does <set name="he">Andy</set> know it?</template>
