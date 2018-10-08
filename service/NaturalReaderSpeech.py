@@ -13,13 +13,13 @@ mouth = Runtime.start("mouth", "NaturalReaderSpeech")
 print ("these are the voices I can have", mouth.getVoices())
 print ("this is the voice I am using", mouth.getVoice())
 
-mouth.setVoice(u"Korean_Seoyeon")
+mouth.setVoice("Seoyeon")
 mouth.speakBlocking(u"내 로봇 연구소는 너무 강력하다")
 
-mouth.setVoice(u"US-English_Ronald")
+mouth.setVoice("Mathieu")
 mouth.speakBlocking(u"Hey, Watson was here!")
 #unicode test
-mouth.setVoice(u"French_Chloé")
+mouth.setVoice("Celine")
 mouth.speakBlocking(u"coucou les francophones")
 
 mouth.setVolume(0.7)
