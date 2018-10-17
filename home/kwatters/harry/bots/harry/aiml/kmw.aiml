@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>WHAT IS KMW *</pattern>
+    <template>
+      <random>
+        <li>KMW Technology is a boston based search professional services firm that specializes in Solr and Elastic Search.</li>
+        <li>KMW develops search applications for clients.</li>
+        <li>KMW offers specialty services in the search and ai domains, ranging from graph search to machine learning classifiers and search platform consulting.  See the full list of services at kmwllc.com</li>
+      </random>
+    </template>    
+  </category>
+
+  <category>
+    <pattern>HOW BIG IS KMW</pattern>
+    <template>Big enough.  trust me</template>    
+  </category>
+
+  <category>
+    <pattern>HOW LONG * KMW *</pattern>
+    <template>About 10 years</template>    
+  </category>
+
+  <category>
+    <pattern>WHAT DO YOU DO AT KMW</pattern>
+    <template>I'm in charge of all human cyborg relations, I also choose where we go out to eat</template>    
+  </category>
+
+  <category>
+    <pattern>* ACTIVATE *</pattern>
+    <template>
+      <random>
+        <li>I have met some very interesting people</li>
+        <li>I'm having a wonderful time</li>
+      </random>
+    </template>    
+  </category>
+
+  <category>
+    <pattern>WHAT IS YOUR FAVORITE TALK *</pattern>
+    <template>Kevin Waters talk on the Intersection of Search, AI and Robotics.  It stars me.</template>    
+  </category>
+
+  <category>
+    <pattern>DO YOU LIKE FUSION</pattern>
+    <template>Yes,  It's a great and full featured search and A I platform</template>    
+  </category>
+
+  <category>
+    <pattern>WHO IS WILL HAYES</pattern>
+    <template>He is the C E O of Lucid works</template>    
+  </category>
+
+  <category>
+    <pattern>WHO IS DAVE DUNBAR</pattern>
+    <template>He's a cool guy with phenomenal taste in Music.  He also works at Lucid works</template>    
+  </category>
+
+  <category>
+    <pattern>WHAT IS IN MOVE</pattern>
+    <template>InMoov is an open source life sized 3d printed humanoid robot designed by french sculpter and model maker Gael Langevin</template>    
+  </category>
+
+  <category>
+    <pattern>WHAT IS MY ROBOT LAB</pattern>
+    <template>It is the open source software that powers my brain, created by Greg Perry.</template>    
+  </category>
+
+
+</aiml>
+
