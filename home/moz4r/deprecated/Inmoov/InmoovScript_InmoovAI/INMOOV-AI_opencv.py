@@ -110,7 +110,7 @@ def PhotoProcess(messagePhoto):
 	opencv.capture()
 	sleep(0.5)
 	Light(0,0,0)
-	photoFileName = opencv.recordSingleFrame()
+	photoFileName = opencv.recordFrame()
 	#print "name file is" , os.getcwd()+'\\'+str(photoFileName)
 	Light(1,1,1)
 	

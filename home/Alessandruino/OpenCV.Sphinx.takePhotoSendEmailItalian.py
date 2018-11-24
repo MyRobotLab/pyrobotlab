@@ -60,7 +60,7 @@ def heard(data):
          mouth.speak("ciao Alessandro.") 
       elif (data == "take photo"):           
            global photoFileName
-           photoFileName = opencv.recordSingleFrame()
+           photoFileName = opencv.recordFrame()
            print "name file is" , photoFileName
            mouth.speak("foto scattata")
            mouth.speak("se vuoi posso inviarti la foto per email")

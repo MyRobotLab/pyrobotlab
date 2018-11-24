@@ -11,4 +11,4 @@ opencv.capture()
 # register your application at https://dev.twitter.com/apps/new and obtain your own keys
 twitter.setSecurity("yourConsumerKey","yourConsumerSecret", "yourAccessToken", "yourAccessTokenSecret")
 twitter.configure()
-twitter.uploadImageFile(opencv.recordSingleFrame() , "text to upload");
+twitter.uploadImageFile(opencv.recordFrame() , "text to upload");

@@ -35,7 +35,7 @@ def readTextFromImage():
   print("tess results: ", txtStr) 
   mouth.speakBlocking(txtStr)
   ## Not sure why I need to cleanup string for image name???
-  ####imgNameStr = opencv.recordSingleFrame()
+  ####imgNameStr = opencv.recordFrame()
   ####imgNameStr = imgNameStr.replace("u'", "").replace("'", "")
   ####print("captured image: ", imgNameStr)
   ####txtStr = tesseract.ocr(imgNameStr)

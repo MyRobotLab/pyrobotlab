@@ -13,4 +13,4 @@ neck.startLKTracking()
 #neck.faceDetect()
 
 # records a single frame from the display
-#print i01.opencv.recordSingleFrame()
+#print i01.opencv.recordFrame()

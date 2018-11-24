@@ -23,7 +23,7 @@ def heard():
       if (data == "hello robot"):
          mouth.speak("Hi Alessandro.") 
       elif (data == "take photo"):           
-           photoFileName = opencv.recordSingleFrame()
+           photoFileName = opencv.recordFrame()
            print "name file is" , photoFileName
            mouth.speak("photo taken")
 
