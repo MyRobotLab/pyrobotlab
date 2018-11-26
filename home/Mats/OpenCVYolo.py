@@ -1,10 +1,13 @@
-# Run opencv yolo filter optionally receiving a videostream from the PI camera on a remote host
+from java.net import URLEncoder
+# Run opencv yolo filter receiving a videostream from the PI camera on a remote host
 # Get a hook to python
 python = Runtime.start("python","Python")
 # Start the speech service
 speech = Runtime.start("speech","MarySpeech")
+speech.setVoice("Obadiah")
 # Start opencv
 opencv = Runtime.start("opencv","OpenCV")
+# opencv.setCameraIndex(1)
 ## To stream from a Rapberry PI install UV4L as described in the link below 
 ## https://www.linux-projects.org/uv4l/installation/
 ## Uncomment the three lines below if you want to use a videostream from UV4L
@@ -12,7 +15,7 @@ opencv = Runtime.start("opencv","OpenCV")
 #opencv.setInputSource("file")
 #opencv.setInputFileName("http://headpi:8080/stream/video.mjpeg")
 # Subscribe to opencv data
-python.subscribe("opencv", "publishYoloClassification")
+python.subscribe("opencv", "publishClassification")
 # Subscribe to speech data
 python.subscribe("speech", "publishStartSpeaking")
 python.subscribe("speech", "publishEndSpeaking")
@@ -20,20 +23,28 @@ python.subscribe("speech", "publishEndSpeaking")
 lastSentence = ""
 speaking = False
 imageLabels = {}
-def onYoloClassification(data):
+def onClassification(classifications):
   global lastSentence
   global imageLabels
   global speaking
 
-  imageLabels.clear()
-  for elem in data:
-    label = elem.label
-    if label in imageLabels:
-      # print("Adding label " + label)
-      imageLabels[label] = imageLabels[label] +1
-    else:
-      # print("Adding one more " + label)
-      imageLabels[label] = 1
+  # print(classifications)
+  if classifications.size() > 0:
+    imageLabels.clear()
+  for id, documents in classifications.items():
+    # print(id)
+    # print(documents)
+    for document in documents:
+      # print(document)
+      # print(document.getLabel())
+      label = document.getId()
+      label = document.getLabel()
+      if label in imageLabels:
+        # print("Adding label " + label)
+        imageLabels[label] = imageLabels[label] +1
+      else:
+        # print("Adding one more " + label)
+        imageLabels[label] = 1
 
   if speaking == False:   
     sentence = "I see "
@@ -53,7 +64,7 @@ def onYoloClassification(data):
       print sentence
       speech.speakBlocking(sentence)
       lastSentence = sentence
-        
+    
 def onStartSpeaking(x):
     global speaking
     speaking = True
@@ -62,6 +73,7 @@ def onEndSpeaking(x):
     global speaking
     speaking = False
 # Add filters
-opencv.addFilter("Yolo","Yolo")
+opencv.addFilter("yolo","Yolo")
+# opencv.addFilter("facedetect","FaceDetectDNN")
 # capture
 opencv.capture()
