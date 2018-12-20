@@ -28,7 +28,7 @@ if ('virtual' in globals() and virtual):
 
 
 #to tweak the default voice
-Voice="cmu-bdl-hsmm" #Male US voice 
+Voice="Mark" #Male US voice 
 #Voice="cmu-slt-hsmm" #Default female for MarySpeech
 
 mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
