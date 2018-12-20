@@ -83,7 +83,8 @@ eyelids.eyelidright.setRest(90)
 i01 = Runtime.start("i01","InMoov")
 ################# 
 i01.startHead(leftPort)
-i01.startEyelids(rightPort)
+i01.startOpenCV()
+i01.startEyelids(right,22,24)
 #################
 #We attach these three parts to the right Arduino
 i01.head.rollNeck.attach(right,12)
@@ -93,9 +94,9 @@ i01.eyelids.eyelidright.attach(right,24)
 #################
 head.setAutoDisable(True)
 #################
-i01.startEyesTracking(leftPort,22,24)
-i01.startHeadTracking(leftPort,12,13)
-i01.startMouthControl(leftPort)
+i01.startEyesTracking()
+i01.startHeadTracking()
+i01.startMouthControl()
 i01.mouthControl.setmouth(0,80)
 ############################################################
 #to tweak the default PID values
@@ -138,6 +139,8 @@ ear.addNegations("no","wrong","nope","nah")
 
 ear.startListening()
 
+#updated gestures : https://github.com/MyRobotLab/inmoov/tree/develop/InMoov/gestures
+
 def relax():
   i01.setHeadVelocity(30, 30, 30)
   i01.moveHead(90,90,90)
@@ -161,22 +164,22 @@ def lookinmiddle():
   i01.moveHead(90,90,90)
 
 def trackHumans():
-  i01.headTracking.faceDetect()
-  #i01.eyesTracking.faceDetect()
+  i01.trackHumans()
   i01.mouth.speak("I start my tracking")
 
 def trackPoint():
-  i01.headTracking.startLKTracking()
+  i01.trackPoint()
   #i01.eyesTracking.startLKTracking()
   i01.mouth.speak("I am tracking the point")
   fullspeed()
 
 def stopTracking():
-  i01.headTracking.stopTracking()
+  i01.stopTracking()
   #i01.eyesTracking.stopTracking()
   i01.mouth.speak("I am stoping my tracking")
 
-def facerecognizer():
-  i01.mouth.speakBlocking("I need to be trained with at least two faces")
-  fr=i01.headTracking.faceDetect(faceRecognizerActivated)
+def facerecognizer(): 
+  #you need to train at least 2 FACES !   
+  i01.cameraOn()
+  fr=i01.vision.setActiveFilter("FaceRecognizer")
   fr.train()# it takes some time to train and be able to recognize face
