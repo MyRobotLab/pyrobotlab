@@ -8,7 +8,7 @@
 # although this script is very short you can still
 # do voice control of a FingerStarter or hand
 # It uses WebkitSpeechRecognition, so you need to use Chrome as your default browser for this script to work
-# virtual = True
+## virtual = True
 
 rightPort = "COM8"
 leftPort = "COM10"
@@ -22,8 +22,28 @@ if ('virtual' in globals() and virtual):
     rightPortvirtualArduino.connect(rightPort)
 
 # starting parts
+i01.setLanguage("en-US")
 i01.startAll(leftPort,rightPort)
+
+# load gestures, uncomment :
+##i01.loadGestures("InMoov/gestures");
+
+# chatbot, uncomment :
+##i01.chatBot=Runtime.start("i01.chatBot", "ProgramAB")
+##htmlFilter=Runtime.start("htmlFilter", "HtmlFilter")
+##i01.chatBot.addTextListener(htmlFilter)
+##htmlFilter.addListener("publishText", "i01", "speak")
+##i01.chatBot.attach(i01.ear)
+##i01.startBrain();
+
 if ('virtual' in globals() and virtual):i01.startVinMoov()
+
+# Start the WebGui service without starting the browser
+WebGui = Runtime.create("WebGui","WebGui")
+WebGui.autoStartBrowser(False)
+WebGui.startService()
+# Then start the browsers and show the WebkitSpeechRecognition service named i01.ear
+WebGui.startBrowser("http://localhost:8888/#/service/i01.ear")
 
 # verbal commands
 ear = i01.ear
