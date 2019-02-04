@@ -19,6 +19,8 @@ i01.rightHand.setAutoDisable(True)
 keyboard = Runtime.start("keyboard", "Keyboard")
 keyboard.addKeyListener(python);
 
+rightIndexPos = 0
+
 # We define our keys
 def onKey(key):
     print "you pressed ", key
@@ -30,6 +32,12 @@ def onKey(key):
              openindex()
     if (key=="Q"):
              closeindex()                           
+    if (key=="K"):
+             rightIndexPos++;
+             i01.rightHand.index.moveTo(rightIndexPos)                           
+    if (key=="L"):
+             rightIndexPos--;
+             i01.rightHand.index.moveTo(rightIndexPos)                           
            
 print "here waiting"
 keypress = keyboard.readKey()
