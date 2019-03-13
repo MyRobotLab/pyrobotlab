@@ -49,7 +49,7 @@ i01.startMouth()
 mouth = i01.mouth
 i01.startMouthControl(leftPort)
 #to tweak the default voice
-i01.mouth.setVoice("Matthew")
+#i01.mouth.setVoice("Matthew")
 
 ################
 #Setting the predefined servos velocity
