@@ -1,30 +1,11 @@
-from java.util import ArrayList
-
-def trackHumans():
-  i01.startedGesture()
-  if (i01.RobotIsOpenCvCapturing()):
-    i01.opencv.removeFilter("Gray")
-    i01.opencv.removeFilter("PyramidDown")
-    i01.opencv.removeFilter("FaceRecognizer")
-    i01.startHeadTracking("leftPort",12,13)
-    #i01.startEyesTracking("leftPort",22,24)
-    sleep(1)
-    i01.headTracking.preFilters = ArrayList()
-    i01.headTracking.faceDetect()
-    #i01.eyesTracking.faceDetect()
-    i01.setHeadVelocity(80, -1)
-    sleep(1)
-    fullspeed()
-    
-  else:
-    i01.startHeadTracking("leftPort",12,13)
-    #i01.startEyesTracking("leftPort",22,24)
-    sleep(1)
-    i01.headTracking.preFilters = ArrayList()
-    i01.headTracking.faceDetect()
-    #i01.eyesTracking.faceDetect()
-    i01.setHeadVelocity(80, -1)
-    sleep(1)
-    fullspeed()
-  i01.finishedGesture()
+def trackHumans(noFaceRecognizerOverride=True):
+  i01.cameraOn()
+  i01.trackHumans()
+  try:gui.setActiveTab("i01.opencv")
+  except:pass
+  i01.head.rollNeck.setOverrideAutoDisable(True)
+  i01.head.rollNeck.moveToBlocking(90)
+  i01.setHeadVelocity(-1,-1,-1,-1,-1)
+  i01.headTracking.pid.setPID("x",12,5,0.1)
+  i01.headTracking.pid.setPID("y",12,5,0.1)
 
