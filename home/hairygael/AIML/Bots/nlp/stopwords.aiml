@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<category><pattern>STOPWORD *</pattern>
+<template>false</template>
+</category>
+<category><pattern>STOPWORD I I</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD ME ME</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD MY MY</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD MYSELF MYSELF</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WE WE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD OUR OUR</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD OURS OURS</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD OURSELVES OURSELVES</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD YOU YOU</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD YOUR YOUR</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD YOURS YOURS</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD YOURSELF YOURSELF</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD YOURSELVES YOURSELVES</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HE HE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HIM HIM</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HIS HIS</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HIMSELF HIMSELF</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD SHE SHE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HER HER</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HERS HERS</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HERSELF HERSELF</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD IT IT</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD ITS ITS</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD ITSELF ITSELF</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THEY THEY</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THEM THEM</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THEIR THEIR</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THEIRS THEIRS</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THEMSELVES THEMSELVES</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WHAT WHAT</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WHICH WHICH</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WHO WHO</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WHOM WHOM</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THIS THIS</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THAT THAT</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THESE THESE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THOSE THOSE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD AM AM</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD IS IS</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD ARE ARE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WAS WAS</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WERE WERE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD BE BE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD BEEN BEEN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD BEING BEING</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HAVE HAVE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HAS HAS</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HAD HAD</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HAVING HAVING</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD DO DO</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD DOES DOES</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD DID DID</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD DOING DOING</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD A A</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD AN AN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THE THE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD AND AND</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD BUT BUT</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD IF IF</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD OR OR</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD BECAUSE BECAUSE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD AS AS</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD UNTIL UNTIL</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WHILE WHILE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD OF OF</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD AT AT</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD BY BY</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD FOR FOR</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WITH WITH</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD ABOUT ABOUT</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD AGAINST AGAINST</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD BETWEEN BETWEEN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD INTO INTO</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THROUGH THROUGH</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD DURING DURING</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD BEFORE BEFORE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD AFTER AFTER</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD ABOVE ABOVE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD BELOW BELOW</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD TO TO</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD FROM FROM</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD UP UP</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD DOWN DOWN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD IN IN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD OUT OUT</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD ON ON</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD OFF OFF</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD OVER OVER</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD UNDER UNDER</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD AGAIN AGAIN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD FURTHER FURTHER</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THEN THEN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD ONCE ONCE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HERE HERE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THERE THERE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WHEN WHEN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WHERE WHERE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WHY WHY</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HOW HOW</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD ALL ALL</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD ANY ANY</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD BOTH BOTH</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD EACH EACH</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD FEW FEW</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD MORE MORE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD MOST MOST</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD OTHER OTHER</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD SOME SOME</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD SUCH SUCH</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD NO NO</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD NOR NOR</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD NOT NOT</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD ONLY ONLY</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD OWN OWN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD SAME SAME</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD SO SO</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD THAN THAN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD TOO TOO</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD VERY VERY</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD S S</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD T T</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD CAN CAN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WILL WILL</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD JUST JUST</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD DON DON</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD SHOULD SHOULD</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD NOW NOW</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD D D</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD LL LL</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD M M</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD O O</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD RE RE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD VE VE</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD Y Y</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD AIN AIN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD AREN AREN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD COULDN COULDN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD DIDN DIDN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD DOESN DOESN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HADN HADN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HASN HASN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD HAVEN HAVEN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD ISN ISN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD MA MA</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD MIGHTN MIGHTN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD MUSTN MUSTN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD NEEDN NEEDN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD SHAN SHAN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD SHOULDN SHOULDN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WASN WASN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WEREN WEREN</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WON WON</pattern>
+<template>true</template>
+</category>
+<category><pattern>STOPWORD WOULDN WOULDN</pattern>
+<template>true</template>
+</category>
+</aiml>
