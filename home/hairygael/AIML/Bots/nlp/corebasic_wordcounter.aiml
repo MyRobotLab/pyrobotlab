@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+
+<!--  Note:                                                            -->
+<!--         If the input words exceeds the number of asterisks, the   -->
+<!--         last one will match                                       -->
+<!--         Also, contractions will match as two words (i.e.,         -->
+<!--         "here's" will come out as "here is")                      -->
+<!--                                                                   -->
+
+
+<category>
+<pattern>WORDCOUNTER *</pattern>
+<template>
+1
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * *</pattern>
+<template>
+2
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * *</pattern>
+<template>
+3
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * *</pattern>
+<template>
+4
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * *</pattern>
+<template>
+5
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * *</pattern>
+<template>
+6
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * *</pattern>
+<template>
+7
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * * *</pattern>
+<template>
+8
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * * * *</pattern>
+<template>
+9
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * * * * *</pattern>
+<template>
+10
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * * * * * *</pattern>
+<template>
+11
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * * * * * * *</pattern>
+<template>
+12
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * * * * * * * *</pattern>
+<template>
+13
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * * * * * * * * *</pattern>
+<template>
+14
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * * * * * * * * * *</pattern>
+<template>
+15
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * * * * * * * * * * *</pattern>
+<template>
+16
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * * * * * * * * * * * *</pattern>
+<template>
+17
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * * * * * * * * * * * * *</pattern>
+<template>
+18
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * * * * * * * * * * * * * *</pattern>
+<template>
+19
+</template>
+</category>
+
+<category>
+<pattern>WORDCOUNTER * * * * * * * * * * * * * * * * * * * *</pattern>
+<template>
+20
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD *</pattern>
+<template>
+unknown
+</template>
+</category>
+
+
+<category>
+<pattern>RETURNWORD 1 *</pattern>
+<template>
+<star/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 1 * *</pattern>
+<template>
+<star/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 2 * *</pattern>
+<template>
+<star index="2"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 2 * * *</pattern>
+<template>
+<star index="2"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 3 * * *</pattern>
+<template>
+<star index="3"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 3 * * * *</pattern>
+<template>
+<star index="3"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 4 * * * *</pattern>
+<template>
+<star index="4"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 4 * * * * *</pattern>
+<template>
+<star index="4"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 5 * * * * *</pattern>
+<template>
+<star index="5"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 5 * * * * * *</pattern>
+<template>
+<star index="5"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 6 * * * * * *</pattern>
+<template>
+<star index="6"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 6 * * * * * * *</pattern>
+<template>
+<star index="6"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 7 * * * * * * *</pattern>
+<template>
+<star index="7"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 7 * * * * * * * *</pattern>
+<template>
+<star index="7"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 8 * * * * * * * *</pattern>
+<template>
+<star index="8"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 8 * * * * * * * * *</pattern>
+<template>
+<star index="8"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 9 * * * * * * * * *</pattern>
+<template>
+<star index="9"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 9 * * * * * * * * * *</pattern>
+<template>
+<star index="9"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 10 * * * * * * * * * *</pattern>
+<template>
+<star index="10"/>
+</template>
+</category>
+
+<category>
+<pattern>RETURNWORD 10 * * * * * * * * * * *</pattern>
+<template>
+<star index="10"/>
+</template>
+</category>
+
+
+<category>
+<pattern>RETURNREMAININGWORDS 1 * *</pattern>
+<template>
+<star index="2"/>
+</template>
+</category>
+
+
+
+</aiml>
