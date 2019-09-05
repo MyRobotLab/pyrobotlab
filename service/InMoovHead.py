@@ -46,7 +46,7 @@ right.connect(rightPort)
 # starting parts
 i01.startEar()
 # Start the WebGui service without starting the browser
-WebGui = Runtime.create("WebGui","WebGui")
+WebGui = Runtime.create("webgui","WebGui")
 WebGui.autoStartBrowser(False)
 WebGui.startService()
 # Then start the browsers and show the WebkitSpeechRecognition service named i01.ear
@@ -94,14 +94,14 @@ i01.eyelids.eyelidright.attach(right,24)
 #################
 head.setAutoDisable(True)
 #################
-i01.startEyesTracking()
+#i01.startEyesTracking()
 i01.startHeadTracking()
 i01.startMouthControl()
 i01.mouthControl.setmouth(0,80)
 ############################################################
 #to tweak the default PID values
-i01.eyesTracking.pid.setPID("eyeX",12.0,1.0,0.1)
-i01.eyesTracking.pid.setPID("eyeY",12.0,1.0,0.1)
+#i01.eyesTracking.pid.setPID("eyeX",12.0,1.0,0.1)
+#i01.eyesTracking.pid.setPID("eyeY",12.0,1.0,0.1)
 i01.headTracking.pid.setPID("rothead",5.0,1.0,0.1)
 i01.headTracking.pid.setPID("neck",5.0,1.0,0.1)
 #################
