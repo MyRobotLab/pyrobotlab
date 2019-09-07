@@ -87,6 +87,8 @@ i01.rightHand.setAutoDisable(True)
 #################
 # verbal commands
 ear = i01.ear
+setAutoListen=True
+i01.ear.setAutoListen(setAutoListen)
 
 ear.addCommand("attach your right hand", "i01.rightHand", "enable")
 ear.addCommand("disconnect your right hand", "i01.rightHand", "disable")
