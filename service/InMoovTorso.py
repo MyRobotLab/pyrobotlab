@@ -27,8 +27,7 @@ if ('virtual' in globals() and virtual):
 # end used for internal test
 
 #to tweak the default voice
-Voice="Mark" #Male US voice 
-#Voice="cmu-slt-hsmm" #Default female for MarySpeech
+Voice="cmu-bdl-hsmm" #Default male for MarySpeech
 
 mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
 #mouth.installComponentsAcceptLicense(Voice)
@@ -44,6 +43,7 @@ left.connect(leftPort)
 
 # starting parts
 i01.startEar()
+
 # Start the webgui service without starting the browser
 webgui = Runtime.create("webgui","WebGui")
 webgui.autoStartBrowser(False)
@@ -78,6 +78,8 @@ i01.torso.setAutoDisable(True)
 #################
 # verbal commands
 ear = i01.ear
+setAutoListen=True
+i01.ear.setAutoListen(setAutoListen)
 
 ear.addCommand("attach everything", "i01", "enable")
 ear.addCommand("disconnect everything", "i01", "disable")
