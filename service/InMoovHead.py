@@ -46,7 +46,7 @@ right.connect(rightPort)
 # starting parts
 i01.startEar()
 # Start the WebGui service without starting the browser
-WebGui = Runtime.create("WebGui","WebGui")
+WebGui = Runtime.create("webgui","WebGui")
 WebGui.autoStartBrowser(False)
 WebGui.startService()
 # Then start the browsers and show the WebkitSpeechRecognition service named i01.ear
