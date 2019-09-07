@@ -22,9 +22,8 @@ if ('virtual' in globals() and virtual):
     virtualArduinoRight.connect(rightPort)
 # end used for internal test
 
-#to tweak the default voice
-Voice="Mark" #Male US voice 
-#Voice="cmu-slt-hsmm" #Default female for MarySpeech
+#to tweak the default voice 
+Voice="cmu-bdl-hsmm" #Default male for MarySpeech
 
 mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
 #mouth.installComponentsAcceptLicense(Voice)
@@ -97,6 +96,8 @@ i01.rightArm.setAutoDisable(True)
 #################
 # verbal commands
 ear = i01.ear
+setAutoListen=True
+i01.ear.setAutoListen(setAutoListen)
 
 ear.addCommand("attach everything", "i01", "enable")
 ear.addCommand("disconnect everything", "i01", "disable")
