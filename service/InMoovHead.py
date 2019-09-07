@@ -27,9 +27,8 @@ if ('virtual' in globals() and virtual):
 # end used for internal test
 
 
-#to tweak the default voice
-Voice="Mark" #Male US voice 
-#Voice="cmu-slt-hsmm" #Default female for MarySpeech
+#to tweak the default voice 
+Voice="cmu-bdl-hsmm" #Default male for MarySpeech
 
 mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
 #mouth.installComponentsAcceptLicense(Voice)
@@ -107,6 +106,8 @@ i01.headTracking.pid.setPID("neck",5.0,1.0,0.1)
 #################
 # verbal commands
 ear = i01.ear
+setAutoListen=True
+i01.ear.setAutoListen(setAutoListen)
  
 ear.addCommand("rest", "i01.head", "rest")#hardcoded gesture
 ear.addCommand("full speed", "python", "fullspeed")
