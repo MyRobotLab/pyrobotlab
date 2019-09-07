@@ -39,7 +39,7 @@ i01.startAll(leftPort,rightPort)
 if ('virtual' in globals() and virtual):i01.startVinMoov()
 
 # Start the WebGui service without starting the browser
-WebGui = Runtime.create("WebGui","WebGui")
+WebGui = Runtime.create("webgui","WebGui")
 WebGui.autoStartBrowser(False)
 WebGui.startService()
 # Then start the browsers and show the WebkitSpeechRecognition service named i01.ear
@@ -47,6 +47,8 @@ WebGui.startBrowser("http://localhost:8888/#/service/i01.ear")
 
 # verbal commands
 ear = i01.ear
+setAutoListen=True
+i01.ear.setAutoListen(setAutoListen)
 
 ear.addCommand("attach right hand", "i01.rightHand", "attach")
 ear.addCommand("disconnect right hand", "i01.rightHand", "detach")
