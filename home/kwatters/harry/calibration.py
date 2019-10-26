@@ -25,9 +25,9 @@ i01.head.eyeY.enableAutoEnable(True)
 
 # Servo Config : i01.head.jaw
 i01.head.jaw.detach()
-i01.head.jaw.setMinMax(100.0,140.0)
+i01.head.jaw.setMinMax(130.0,180.0)
 i01.head.jaw.setVelocity(-1.0)
-i01.head.jaw.setRest(110.0)
+i01.head.jaw.setRest(135.0)
 i01.head.jaw.setPin(26)
 i01.head.jaw.attach("i01.right",26,10.0)
 i01.head.jaw.enableAutoDisable(True)
@@ -123,7 +123,7 @@ i01.leftHand.majeure.setPin(4)
 i01.leftHand.majeure.attach("i01.left",4,2.0)
 i01.leftHand.majeure.enableAutoDisable(True)
 i01.leftHand.majeure.enableAutoEnable(True)
-i01.leftHand.majeure.setInverted(True)
+i01.leftHand.majeure.setInverted(False)
 
 # Servo Config : i01.leftHand.pinky
 i01.leftHand.pinky.detach()
@@ -238,6 +238,7 @@ i01.rightHand.pinky.setPin(6)
 i01.rightHand.pinky.attach("i01.right",6,2.0)
 i01.rightHand.pinky.enableAutoDisable(True)
 i01.rightHand.pinky.enableAutoEnable(True)
+i01.rightHand.pinky.setInverted(True)
 
 # Servo Config : i01.rightHand.ringFinger
 i01.rightHand.ringFinger.detach()
@@ -258,6 +259,7 @@ i01.rightHand.thumb.setPin(2)
 i01.rightHand.thumb.attach("i01.right",2,2.0)
 i01.rightHand.thumb.enableAutoDisable(True)
 i01.rightHand.thumb.enableAutoEnable(True)
+i01.rightHand.thumb.setInverted(True)
 
 # Servo Config : i01.rightHand.wrist
 i01.rightHand.wrist.detach()
@@ -299,5 +301,4 @@ i01.torso.topStom.attach("i01.left",27,90.0)
 i01.torso.topStom.enableAutoDisable(True)
 i01.torso.topStom.enableAutoEnable(True)
 
-
-i01.mouthControl.setmouth(100,140)
+i01.mouthControl.setmouth(120,180)

@@ -17,15 +17,13 @@ leftPort = "/dev/ttyACM0"
 rightPort = "/dev/ttyACM1"
 headPort = leftPort
 
-gesturesPath = "/home/pi/pyrobotlab/home/kwatters/harry/gestures"
-calibrationPath = "/home/pi/pyrobotlab/home/kwatters/harry/calibration.py"
+gesturesPath = "/home/pi/github/pyrobotlab/home/kwatters/harry/gestures"
+calibrationPath = "/home/pi/github/pyrobotlab/home/kwatters/harry/calibration.py"
 
-aimlPath = "/home/pi/pyrobotlab/home/kwatters/harry"
+aimlPath = "/home/pi/github/pyrobotlab/home/kwatters/harry"
 aimlBotName = "harry"
 aimlUserName = "Kevin"
 botVoice = "Brian"
-
-eyeUrl = "http://10.0.0.2:8080/?action=stream"
 
 # toggle to only load program ab  and skip the inmoov services
 startInMoov = True
@@ -62,7 +60,7 @@ htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 # mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
 # mouth.setVoice(botVoice)
 
-
+# TODO: a better voice?
 mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
 mouth.setVoice("cmu-bdl-hsmm")
 
@@ -125,39 +123,9 @@ sleep(1)
 i01.loadCalibration(calibrationPath)
 
 
-# Open CV calibrati0n
-
-# grabber = IPCameraFrameGrabber("http://10.0.0.19:8080/?action=stream")
-# grabber = MJpegFrameGrabber(eyeUrl)
-# grabber.setImageWidth(320)
-# grabber.setImageHeight(240)
-# i01.opencv.width=320
-# i01.opencv.height=240
-
-# i01.opencv.setFrameGrabberType("org.bytedeco.javacv.FFmpegFrameGrabber")
-# i01.opencv.setInputSource("imagefile")
-# i01.opencv.setInputFileName("/dev/video0")
-
-# i01.opencv.setFrameGrabberType("org.myrobotlab.opencv.MJpegFrameGrabber")
-# i01.opencv.setInputFileName("http://10.0.0.2:8080/?action=stream")
-# i01.opencv.setInputSource("network")
-# i01.opencv.setStreamerEnabled(False)
-
-# add 3 transposes..  would be nice to add one going counter clock.
-# tr1 = OpenCVFilterTranspose("tr1")
-# tr2 = OpenCVFilterTranspose("tr2")
-# tr3 = OpenCVFilterTranspose("tr3")
-
-# i01.opencv.addFilter(tr1)
-# i01.opencv.addFilter(tr2)
-# i01.opencv.addFilter(tr3)
-# grabber.start()
-# i01.opencv.capture(grabber)
-# face recognizer
-# fr = OpenCVFilterFaceRecognizer("fr")
-# i01.opencv.addFilter(fr)
-# fr.load("/home/pi/pyrobotlab/home/kwatters/harry/faceModel.bin")
- 
+# Open CV calibration / resolution
+i01.opencv.width=320
+i01.opencv.height=240
 
 # now start the webgui
 webgui = Runtime.create("webgui", "WebGui")
@@ -165,21 +133,20 @@ webgui = Runtime.create("webgui", "WebGui")
 webgui.autoStartBrowser(False)
 webgui.startService()
 webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
+# TODO: figure out why this doesn't launch chromium....
 
-
-gui.undockTab("python")
-gui.undockTab("i01.opencv")
+# gui.undockTab("python")
+# gui.undockTab("i01.opencv")
 
 
 i01.headTracking.pid.setPID("x", 20,0.1,0.1)
 i01.headTracking.pid.setPID("y", 20,0.1,0.1)
 
-i01.head.rothead.rest()
-i01.head.neck.rest()
+i01.rest()
 
 # trackHumans()
 
 mixer = Runtime.start("mixer", "ServoMixer")
 sleep(1)
-gui.undockTab("mixer")
+# gui.undockTab("mixer")
 
