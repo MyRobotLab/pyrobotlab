@@ -1,8 +1,9 @@
 # ##############################################################################
 #            *** ROBOT MOVE THE EYELIDS RANDOMLY ***
 # ##############################################################################
-  
-MoveEyeLidsTimer = Runtime.start("MoveEyeLidsTimer","Clock")
+
+if isEyeLidsActivated:
+  MoveEyeLidsTimer = Runtime.start("MoveEyeLidsTimer","Clock")
 
 def MoveEyeLids(timedata):
   #redefine next loop
@@ -21,11 +22,11 @@ def MoveEyeLids(timedata):
   
 #initial function
 def MoveEyeLidsStart():
-  
-  print "moveEyeLidsstart"
-  if not i01.RobotIsSleeping and not i01.RobotIsTrackingSomething():
-    MoveEyeLidsTimer.startClock()
-    if not isEyeLidsActivated:MoveEyeLidsTimer.stopClock()
+  if isEyeLidsActivated:
+    print "moveEyeLidsStart"
+    if not i01.RobotIsSleeping and not i01.RobotIsTrackingSomething():
+      MoveEyeLidsTimer.startClock()
+    else:MoveEyeLidsTimer.stopClock()
     
 def MoveEyeLidsStop():
   
