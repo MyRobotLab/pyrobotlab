@@ -11,12 +11,20 @@ if isEyeLidsActivated:
     if not i01.RobotIsSleeping and not i01.RobotIsTrackingSomething():
       
       if isEyeLidsActivated:
-        i01.eyelids.setVelocity(-1,-1)
-        #i01.setEyeLidsVelocity(random.randint(45,-1),random.randint(45,-1),random.randint(45,-1))
-        #move the servo randomly
-        i01.eyelids.moveToBlocking(random.uniform(0,180),random.uniform(0,180))
-        sleep(0.2)
-        i01.eyelids.moveTo(0,0)
+        if EyeLidsLeftActivated and EyeLidsRightActivated:
+          i01.eyelids.setVelocity(-1,-1)
+          i01.eyelids.moveToBlocking(180,180)
+          sleep(0.2)
+          i01.eyelids.moveTo(0,0)
+          sleep(0.1)
+          i01.eyelids.disable()
+        elif EyeLidsLeftActivated and not EyeLidsRightActivated:
+          i01.eyelids.eyelidleft.setVelocity(-1)
+          i01.eyelids.eyelidleft.moveToBlocking(180)
+          sleep(0.2)
+          i01.eyelids.eyelidleft.moveTo(0)
+          sleep(0.1)
+          i01.eyelids.eyelidleft.disable()
       else:
         MoveEyeLidsTimer.stopClock()
     
@@ -32,9 +40,14 @@ if isEyeLidsActivated:
     
     if not i01.RobotIsSleeping and not i01.RobotIsTrackingSomething():
       if isEyeLidsActivated:
-        MoveEyeLidsTimer.stopClock()
-        i01.eyelids.setVelocity(-1,-1)
-        i01.eyelids.rest()
+        if EyeLidsLeftActivated and EyeLidsRightActivated:
+          MoveEyeLidsTimer.stopClock()
+          i01.eyelids.setVelocity(-1,-1)
+          i01.eyelids.rest()
+        elif EyeLidsLeftActivated and not EyeLidsRightActivated:
+          MoveEyeLidsTimer.stopClock()
+          i01.eyelids.eyelidleft.setVelocity(-1)
+          i01.eyelids.eyelidleft.rest()
 
   if RobotCanMoveEyeLids==1:
     MoveEyeLidsStart()
