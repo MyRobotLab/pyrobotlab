@@ -111,6 +111,8 @@ rightPsiMin=0
 global leftPsiMin
 leftPsiMin=0
 
+import pickle
+
 if rightHandSensorActivated:
   
   try:
@@ -222,36 +224,46 @@ if rightHandSensorActivated:
     talkEvent(lang_startingRightHandSensor)
 
     
+    #def test():
+      #a = 1
+      #b = 2
+      #pickle.dump(file, (a, b))
+
+    #def test2():
+      #a, b = pickle.load(file)
+      #print a
+
+
     def RightSensorCalibrate():
         global rightPsiMin
         rightHandSensorArduino.enablePin(right_thumbPin,2)
         rightHandSensorArduino.disablePin(right_thumbPin)
         sleep(0.3)
-        right_thumb_Psi_min= str(unicode(rightPsiMin, 'utf-8'))
+        right_thumb_Psi_min= (unicode(rightPsiMin, 'utf-8'))
         print "right_thumb_Psi_min:",right_thumb_Psi_min
         sleep(0.1)
         rightHandSensorArduino.enablePin(right_indexPin,2)
         rightHandSensorArduino.disablePin(right_indexPin)
         sleep(0.1)
-        right_index_Psi_min= str(unicode(rightPsiMin, 'utf-8'))
+        right_index_Psi_min= (unicode(rightPsiMin, 'utf-8'))
         print "right_index_Psi_min:",right_index_Psi_min
         sleep(0.1)
         rightHandSensorArduino.enablePin(right_majeurePin,2)
         rightHandSensorArduino.disablePin(right_majeurePin)
         sleep(0.1)
-        right_majeure_Psi_min= str(unicode(rightPsiMin, 'utf-8'))
+        right_majeure_Psi_min= (unicode(rightPsiMin, 'utf-8'))
         print "right_majeure_Psi_min:",right_majeure_Psi_min
         sleep(0.1)
         rightHandSensorArduino.enablePin(right_ringFingerPin,2)
         rightHandSensorArduino.disablePin(right_ringFingerPin)
         sleep(0.1)
-        right_ringFinger_Psi_min= str(unicode(rightPsiMin, 'utf-8'))
+        right_ringFinger_Psi_min= (unicode(rightPsiMin, 'utf-8'))
         print "right_ringFinger_Psi_min:",right_ringFinger_Psi_min
         sleep(0.1)
         rightHandSensorArduino.enablePin(right_pinkyPin,2)
         rightHandSensorArduino.disablePin(right_pinkyPin)
         sleep(0.1)
-        right_pinky_Psi_min= str(unicode(rightPsiMin, 'utf-8'))
+        right_pinky_Psi_min= (unicode(rightPsiMin, 'utf-8'))
         print "right_pinky_Psi_min:",right_pinky_Psi_min
         #sleep(0.1)
         #rightHandSensorArduino.enablePin(right_extraPin,2)
@@ -408,31 +420,31 @@ if leftHandSensorActivated:
         leftHandSensorArduino.enablePin(left_thumbPin,2)
         leftHandSensorArduino.disablePin(left_thumbPin)
         sleep(0.3)
-        left_thumb_Psi_min= str(unicode(leftPsiMin, 'utf-8'))
+        left_thumb_Psi_min= (unicode(leftPsiMin, 'utf-8'))
         print "left_thumb_Psi_min:",left_thumb_Psi_min
         sleep(0.1)
         leftHandSensorArduino.enablePin(left_indexPin,2)
         leftHandSensorArduino.disablePin(left_indexPin)
         sleep(0.1)
-        left_index_Psi_min= str(unicode(leftPsiMin, 'utf-8'))
+        left_index_Psi_min= (unicode(leftPsiMin, 'utf-8'))
         print "left_index_Psi_min:",left_index_Psi_min
         sleep(0.1)
         leftHandSensorArduino.enablePin(left_majeurePin,2)
         leftHandSensorArduino.disablePin(left_majeurePin)
         sleep(0.1)
-        left_majeure_Psi_min= str(unicode(leftPsiMin, 'utf-8'))
+        left_majeure_Psi_min= (unicode(leftPsiMin, 'utf-8'))
         print "left_majeure_Psi_min:",left_majeure_Psi_min
         sleep(0.1)
         leftHandSensorArduino.enablePin(left_ringFingerPin,2)
         leftHandSensorArduino.disablePin(left_ringFingerPin)
         sleep(0.1)
-        left_ringFinger_Psi_min= str(unicode(leftPsiMin, 'utf-8'))
+        left_ringFinger_Psi_min= (unicode(leftPsiMin, 'utf-8'))
         print "left_ringFinger_Psi_min:",left_ringFinger_Psi_min
         sleep(0.1)
         leftHandSensorArduino.enablePin(left_pinkyPin,2)
         leftHandSensorArduino.disablePin(left_pinkyPin)
         sleep(0.1)
-        left_pinky_Psi_min= str(unicode(leftPsiMin, 'utf-8'))
+        left_pinky_Psi_min= (unicode(leftPsiMin, 'utf-8'))
         print "left_pinky_Psi_min:",left_pinky_Psi_min
         #sleep(0.1)
         #leftHandSensorArduino.enablePin(left_extraPin,2)
@@ -474,4 +486,4 @@ def fingerSensorCalib():
     if leftHandSensorActivated:
       LeftSensorCalibrate()
     else:
-      pass      
+      pass
