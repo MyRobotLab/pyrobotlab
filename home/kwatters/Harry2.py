@@ -52,7 +52,7 @@ def heard(data):
 ######################################################################
 # Create ProgramAB chat bot ( This is the inmoov "brain" )
 ######################################################################
-harry = Runtime.createAndStart("harry", "ProgramAB")
+harry = Runtime.createAndStart("i01.brain", "ProgramAB")
 harry.setPath(aimlPath)
 harry.startSession(aimlUserName, aimlBotName)
 
@@ -126,12 +126,13 @@ i01.loadGestures(gesturesPath)
 
 sleep(1)
 
-i01.loadCalibration(calibrationPath)
+# i01.loadCalibration(calibrationPath)
 
 
 # Open CV calibration / resolution
-i01.opencv.width=320
-i01.opencv.height=240
+opencv = i01.startEye()
+opencv.setWidth(320)
+opencv.setHeight(240)
 
 # now start the webgui
 webgui = Runtime.create("webgui", "WebGui")
