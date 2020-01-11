@@ -121,6 +121,8 @@ isLeftArmActivated = True
 isHeadActivated = True
 isTorsoActivated = True
 isEyeLidsActivated = False
+isNeopixelActivated = False
+setNeopixelAnimation = False
 
 i01.loadGestures(gesturesPath)
 
@@ -139,7 +141,8 @@ webgui = Runtime.create("webgui", "WebGui")
 
 webgui.autoStartBrowser(False)
 webgui.startService()
-webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
+# you can't have 2 browsers opened both running 'ear' so I'm  shutting this one off for the moment
+# webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
 # TODO: figure out why this doesn't launch chromium....
 
 # gui.undockTab("python")
