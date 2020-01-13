@@ -23,7 +23,7 @@ calibrationPath = "/home/pi/github/pyrobotlab/home/kwatters/harry/calibration.py
 aimlPath = "/home/pi/github/pyrobotlab/home/kwatters/harry"
 
 # re-hardcoded 
-gesturesPath = "/lhome/grperry/github/mrl.develop/myrobotlab/src/main/resources/resource/InMoov2/gestures"
+gesturesPath = "./src/main/resources/resource/InMoov2/gestures"
 calibrationPath = "/lhome/grperry/github/mrl.develop/pyrobotlab/home/kwatters/harry/calibration.py"
 aimlPath = "/lhome/grperry/github/mrl.develop/pyrobotlab/home/kwatters/harry/"
 
@@ -52,13 +52,13 @@ def heard(data):
 ######################################################################
 # Create ProgramAB chat bot ( This is the inmoov "brain" )
 ######################################################################
-harry = Runtime.createAndStart("i01.brain", "ProgramAB")
+harry = Runtime.start("i01.brain", "ProgramAB")
 harry.setPath(aimlPath)
 harry.startSession(aimlUserName, aimlBotName)
 
 ######################################################################
 # Html filter to clean the output from programab.  (just in case)
-htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
+htmlfilter = Runtime.start("htmlfilter", "HtmlFilter")
 
 ######################################################################
 # mouth service, speech synthesis
@@ -67,32 +67,32 @@ htmlfilter = Runtime.createAndStart("htmlfilter", "HtmlFilter")
 # mouth.setVoice(botVoice)
 
 # TODO: a better voice?
-mouth = Runtime.createAndStart("i01.mouth", "MarySpeech")
+mouth = Runtime.start("i01.mouth", "MarySpeech")
 mouth.setVoice("cmu-bdl-hsmm")
 
 
 ######################################################################
 # the "ear" of the inmoov TODO: replace this with just base inmoov ear?
-ear = Runtime.createAndStart("i01.ear", "WebkitSpeechRecognition")
-ear.addListener("publishText", python.name, "heard");
-ear.addMouth(mouth)
+# ear = Runtime.start("i01.ear", "WebkitSpeechRecognition")
+# ear.addListener("publishText", python.getName(), "heard");
+# ear.addMouth(mouth)
 
 ######################################################################
 # MRL Routing webkitspeechrecognition/ear -> program ab -> htmlfilter -> mouth
 ######################################################################
-ear.addTextListener(harry)
-harry.addTextListener(htmlfilter)
-htmlfilter.addTextListener(mouth)
+# ear.addTextListener(harry)
+# harry.addTextListener(htmlfilter)
+# htmlfilter.addTextListener(mouth)
 
 ######################################################################
 # Start up the inmoov and attach stuff.
 ######################################################################
-i01 = Runtime.createAndStart("i01", "InMoov2")
-i01.setMute(True)
+i01 = Runtime.start("i01", "InMoov2")
+i01.setMute(False)
 if startInMoov:
   i01.startAll(leftPort, rightPort)
 else:
-  i01.mouth = mouth
+  i01.startMouth()
     
 # Harry doesn't have a forward servo, but i'm adding it here as a 
 # place holder
@@ -112,17 +112,6 @@ forwardServo = Runtime.start("forwardServo","Servo")
 ######################################################################
 # Helper functions and various gesture definitions
 ######################################################################
-
-# some globals that are used by the gestures..  (they shouldn't be!)
-isRightHandActivated = True
-isLeftHandActivated = True
-isRightArmActivated = True
-isLeftArmActivated = True
-isHeadActivated = True
-isTorsoActivated = True
-isEyeLidsActivated = False
-isNeopixelActivated = False
-setNeopixelAnimation = False
 
 i01.loadGestures(gesturesPath)
 
