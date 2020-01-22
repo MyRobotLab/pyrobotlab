@@ -53,7 +53,7 @@ i01 = Runtime.start("i01","InMoov")
 ##############
 i01.startRightHand(rightPort)
 i01.rightHand.enableAutoDisable(True)
-i01.rightHand.enableAutoEnable(True)
+# i01.rightHand.enableAutoEnable(True)
 ##############
 # Verbal commands
 ear = i01.ear
