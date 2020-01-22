@@ -4,6 +4,7 @@ from org.myrobotlab.opencv import OpenCVFilterTranspose
 from org.myrobotlab.opencv import OpenCVFilterFaceRecognizer
 from org.bytedeco.javacv import IPCameraFrameGrabber
 from org.myrobotlab.opencv import MJpegFrameGrabber
+from org.myrobotlab.framework import Platform
 
 #############################################################
 # This is the Harry script
@@ -22,10 +23,10 @@ gesturesPath = "/home/pi/github/pyrobotlab/home/kwatters/harry/gestures"
 calibrationPath = "/home/pi/github/pyrobotlab/home/kwatters/harry/calibration.py"
 aimlPath = "/home/pi/github/pyrobotlab/home/kwatters/harry"
 
-# re-hardcoded 
-gesturesPath = "./src/main/resources/resource/InMoov2/gestures"
-calibrationPath = "/lhome/grperry/github/mrl.develop/pyrobotlab/home/kwatters/harry/calibration.py"
-aimlPath = "/lhome/grperry/github/mrl.develop/pyrobotlab/home/kwatters/harry/"
+
+gesturesPath = "../pyrobotlab/home/kwatters/harry/gestures"
+calibrationPath = "../pyrobotlab/home/kwatters/harry/calibration.py"
+aimlPath = "../pyrobotlab/home/kwatters/harry"
 
 aimlBotName = "harry"
 aimlUserName = "Kevin"
@@ -52,7 +53,7 @@ def heard(data):
 ######################################################################
 # Create ProgramAB chat bot ( This is the inmoov "brain" )
 ######################################################################
-harry = Runtime.createAndStart("i01.brain", "ProgramAB")
+harry = Runtime.createAndStart("harry", "ProgramAB")
 harry.setPath(aimlPath)
 harry.startSession(aimlUserName, aimlBotName)
 
@@ -73,26 +74,26 @@ mouth.setVoice("cmu-bdl-hsmm")
 
 ######################################################################
 # the "ear" of the inmoov TODO: replace this with just base inmoov ear?
-# ear = Runtime.createAndStart("i01.ear", "WebkitSpeechRecognition")
-# ear.addListener("publishText", python.getName(), "heard");
-# ear.addMouth(mouth)
+ear = Runtime.createAndStart("i01.ear", "WebkitSpeechRecognition")
+ear.addListener("publishText", python.name, "heard");
+ear.addMouth(mouth)
 
 ######################################################################
 # MRL Routing webkitspeechrecognition/ear -> program ab -> htmlfilter -> mouth
 ######################################################################
-# ear.addTextListener(harry)
-# harry.addTextListener(htmlfilter)
-# htmlfilter.addTextListener(mouth)
+ear.addTextListener(harry)
+harry.addTextListener(htmlfilter)
+htmlfilter.addTextListener(mouth)
 
 ######################################################################
 # Start up the inmoov and attach stuff.
 ######################################################################
-i01 = Runtime.start("i01", "InMoov2")
+i01 = Runtime.createAndStart("i01", "InMoov")
 i01.setMute(False)
 if startInMoov:
   i01.startAll(leftPort, rightPort)
 else:
-  i01.startMouth()
+  i01.mouth = mouth
     
 # Harry doesn't have a forward servo, but i'm adding it here as a 
 # place holder
@@ -113,25 +114,32 @@ forwardServo = Runtime.start("forwardServo","Servo")
 # Helper functions and various gesture definitions
 ######################################################################
 
+# some globals that are used by the gestures..  (they shouldn't be!)
+isRightHandActivated = True
+isLeftHandActivated = True
+isRightArmActivated = True
+isLeftArmActivated = True
+isHeadActivated = True
+isTorsoActivated = True
+isEyeLidsActivated = False
+
 i01.loadGestures(gesturesPath)
 
 sleep(1)
 
-# i01.loadCalibration(calibrationPath)
+i01.loadCalibration(calibrationPath)
 
 
 # Open CV calibration / resolution
-opencv = i01.startEye()
-opencv.setWidth(320)
-opencv.setHeight(240)
+i01.opencv.width=320
+i01.opencv.height=240
 
 # now start the webgui
 webgui = Runtime.create("webgui", "WebGui")
 
 webgui.autoStartBrowser(False)
 webgui.startService()
-# you can't have 2 browsers opened both running 'ear' so I'm  shutting this one off for the moment
-# webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
+webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
 # TODO: figure out why this doesn't launch chromium....
 
 # gui.undockTab("python")
