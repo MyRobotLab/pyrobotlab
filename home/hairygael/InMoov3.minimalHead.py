@@ -17,7 +17,7 @@ webgui.startBrowser("http://localhost:8888/#/service/i01.ear")
 # webgui = Runtime.createAndStart("webgui","WebGui")
 
 # Change to the port that you use
-rightPort = "COM20"
+leftPort = "COM20"
 
 #to tweak the default voice
 Voice="cmu-slt-hsmm" # Default female for MarySpeech 
@@ -32,7 +32,7 @@ i01 = Runtime.createAndStart("i01", "InMoov")
 i01.startEar()
 i01.startMouth()
 ##############
-#i01.startHead(leftPort)
+i01.startHead(leftPort)
 ##############
 i01.head.jaw.setMinMax(42,101)
 i01.head.jaw.map(0,180,42,101)
@@ -51,13 +51,13 @@ i01.head.rothead.map(0,180,60,130)
 i01.head.rothead.setMinMax(0,180)
 i01.head.rothead.setRest(90)
 #################
-i01.startEyesTracking(leftPort,22,24)
-i01.startHeadTracking(leftPort)
+#i01.startEyesTracking(leftPort,22,24)
+i01.startHeadTracking(leftPort,12,13)
 # mrl > 1999 : i01.startHeadTracking(leftPort,12,13)
 ############################################################
 #to tweak the default PID values
-i01.eyesTracking.pid.setPID("eyeX",12.0,1.0,0.1)
-i01.eyesTracking.pid.setPID("eyeY",12.0,1.0,0.1)
+#i01.eyesTracking.pid.setPID("eyeX",12.0,1.0,0.1)
+#i01.eyesTracking.pid.setPID("eyeY",12.0,1.0,0.1)
 i01.headTracking.pid.setPID("rothead",5.0,1.0,0.1)
 i01.headTracking.pid.setPID("neck",5.0,1.0,0.1)
 ############################################################
@@ -111,17 +111,17 @@ def lookinmiddle():
 
 def trackHumans():
   i01.headTracking.faceDetect()
-  i01.eyesTracking.faceDetect()
+  #i01.eyesTracking.faceDetect()
   fullspeed()
 
 def trackPoint():
   i01.headTracking.startLKTracking()
-  i01.eyesTracking.startLKTracking()
+  #i01.eyesTracking.startLKTracking()
   fullspeed()
 
 def stopTracking():
   i01.headTracking.stopTracking()
-  i01.eyesTracking.stopTracking()
+  #i01.eyesTracking.stopTracking()
 
 
 
