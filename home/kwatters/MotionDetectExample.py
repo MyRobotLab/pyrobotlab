@@ -24,7 +24,3 @@ opencv.addListener("publishMotionDetected", "python", "onMotionDetected");
 opencv.capture()
 
 
-## TODO: subscribe to the publishMotion callback.
-
-# ik.addListener("publishJointAngles", leftArm.getName(), "onJointAngles")
-
