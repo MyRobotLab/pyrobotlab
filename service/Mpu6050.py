@@ -17,7 +17,7 @@ if ('virtual' in globals() and virtual):
 arduino = Runtime.start("arduino","Arduino")
 arduino.connect(port)
 
-# mpu6050.attach(raspi,"1","0x68")
+# mpu6050.attach(raspi,"0","0x68")
 mpu6050.attach(arduino,"1","0x68")
 mpu6050.refresh()
 print mpu6050.filtered_x_angle
