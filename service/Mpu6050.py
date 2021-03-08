@@ -16,7 +16,10 @@ if ('virtual' in globals() and virtual):
 # raspi = Runtime.createAndStart("RasPi","RasPi")
 arduino = Runtime.start("arduino","Arduino")
 arduino.connect(port)
-
+# on a raspi you may need to search both buses to find
+# your device e.g.
+# sudo i2cdetect -y 0
+# sudo i2cdetect -y 1
 # mpu6050.attach(raspi,"0","0x68")
 mpu6050.attach(arduino,"1","0x68")
 mpu6050.refresh()
