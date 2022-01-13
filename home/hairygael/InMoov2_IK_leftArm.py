@@ -94,7 +94,8 @@ i01_left.attach("i01.leftArm.rotate")
 jme = i01.startSimulator()
 
 # update the IK service with the DH parameter description of the inmoov arm.
-ik.setCurrentArm("i01_leftArm", i01_leftArm.getDHRobotArm("arm", "left"))
+# For info, D is a length, r is a length. theta and alpha are angles.
+ik.setCurrentArm("i01_leftArm", i01_leftArm.getDHRobotArm("i01", "left"))
 # wire in the callbacks between IK and the InMoovArm
 ik.addListener("publishJointAngles", i01_leftArm.getName(), "onJointAngles")
 
@@ -117,7 +118,7 @@ if useJoystick:
 #y = 0.1
 #z = 100.0
 #ik.moveTo(x,y,z)
-# print(ik.currentPosition())
+# print(ik.currentPosition("i01_leftArm"))
 
 # starting point
 # x , y , z
