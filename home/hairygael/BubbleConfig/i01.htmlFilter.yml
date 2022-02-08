@@ -1,0 +1,9 @@
+!!org.myrobotlab.service.config.HtmlFilterConfig
+postHtmlTag: </pre>
+preHtmlTag: <pre>
+stripHtml: true
+textListeners: [
+  ]
+textPublishers: [
+  ]
+type: HtmlFilter

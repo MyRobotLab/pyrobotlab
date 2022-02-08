@@ -1,0 +1,5 @@
+!!org.myrobotlab.service.config.RandomConfig
+addRandom: {
+  }
+enabled: true
+type: Random

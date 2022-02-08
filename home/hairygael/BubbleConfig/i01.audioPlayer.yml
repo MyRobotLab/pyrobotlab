@@ -1,0 +1,7 @@
+!!org.myrobotlab.service.config.AudioFileConfig
+currentPlaylist: null
+currentTrack: null
+mute: false
+playlists: null
+type: AudioFile
+volume: 1.0

@@ -1,0 +1,8 @@
+!!org.myrobotlab.service.config.LocalSpeechConfig
+blocking: false
+mute: false
+speechRecognizers:
+- i01.ear
+substitutions: null
+type: LocalSpeech
+voice: Best-Of-Vox Zozoti (fran�ais)
