@@ -1,0 +1,9 @@
+!!org.myrobotlab.service.config.ProgramABConfig
+currentBotName: fr-FR
+currentUserName: Copain
+textListeners:
+- i01
+- i01.htmlFilter
+type: ProgramAB
+utteranceListeners: [
+  ]

@@ -1,0 +1,27 @@
+!!org.myrobotlab.service.config.RuntimeConfig
+enableCli: true
+locale: fr-FR
+logLevel: null
+registry:
+- runtime
+- security
+- webgui
+- intro
+- python
+- i01
+- i01.audioPlayer
+- i01.right
+- i01.right.serial
+- cover
+- head
+- backLeft
+- backRight
+- front
+- ultrasonic
+- i01.mouth
+- i01.mouth.audioFile
+- i01.ear
+- i01.chatBot
+- i01.htmlFilter
+type: Runtime
+virtual: false
