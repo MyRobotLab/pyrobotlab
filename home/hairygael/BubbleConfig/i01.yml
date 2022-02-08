@@ -1,0 +1,24 @@
+!!org.myrobotlab.service.config.InMoov2Config
+enableAudioPlayer: true
+enableHead: false
+enableLeftArm: false
+enableLeftHand: false
+enableLeftHandSensor: false
+enableNeoPixel: false
+enableOpenCV: false
+enablePir: false
+enableRightArm: false
+enableRightHand: false
+enableRightHandSensors: false
+enableServoMixer: false
+enableSimulator: false
+enableTorso: false
+enableUltrasonicLeft: false
+enableUltrasonicRight: false
+loadGestures: false
+locale: en-US
+pirEnableTracking: false
+pirWakeUp: false
+shutdownStartupSpeed: 50.0
+type: InMoov2
+virtual: false
