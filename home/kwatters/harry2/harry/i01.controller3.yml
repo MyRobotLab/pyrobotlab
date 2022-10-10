@@ -1,0 +1,6 @@
+!!org.myrobotlab.service.config.ArduinoConfig
+autoStartPeers: true
+connect: true
+port: /dev/ttyACM2
+serial: i01.controller3.serial
+type: Arduino

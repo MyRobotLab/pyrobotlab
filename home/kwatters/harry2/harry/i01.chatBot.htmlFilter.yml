@@ -1,0 +1,8 @@
+!!org.myrobotlab.service.config.HtmlFilterConfig
+autoStartPeers: true
+postHtmlTag: </pre>
+preHtmlTag: <pre>
+stripHtml: true
+textListeners: [
+  ]
+type: HtmlFilter

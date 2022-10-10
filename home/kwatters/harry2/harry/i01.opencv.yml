@@ -1,0 +1,12 @@
+!!org.myrobotlab.service.config.OpenCVConfig
+autoStartPeers: true
+cameraIndex: 0
+capturing: false
+filters: {
+  }
+grabberType: OpenCV
+inputFile: null
+inputSource: camera
+nativeViewer: true
+type: OpenCV
+webViewer: false

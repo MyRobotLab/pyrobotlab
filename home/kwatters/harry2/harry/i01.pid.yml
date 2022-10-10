@@ -1,0 +1,60 @@
+!!org.myrobotlab.service.config.PidConfig
+autoStartPeers: true
+data:
+  i01.head.eyeY:
+    deadband: 0.0
+    enabled: true
+    inAuto: true
+    inverted: false
+    kd: 0.0
+    key: i01.head.eyeY
+    ki: 1.0
+    kp: 30.0
+    outCenter: 0.0
+    outMax: null
+    outMin: null
+    sampleTime: 100
+    setpoint: 0.0
+  i01.head.eyeX:
+    deadband: 0.0
+    enabled: true
+    inAuto: true
+    inverted: false
+    kd: 0.0
+    key: i01.head.eyeX
+    ki: 1.0
+    kp: 15.0
+    outCenter: 0.0
+    outMax: null
+    outMin: null
+    sampleTime: 100
+    setpoint: 0.0
+  i01.head.rothead:
+    deadband: 0.0
+    enabled: true
+    inAuto: true
+    inverted: false
+    kd: 0.0
+    key: i01.head.rothead
+    ki: 1.0
+    kp: 15.0
+    outCenter: 0.0
+    outMax: null
+    outMin: null
+    sampleTime: 100
+    setpoint: 0.0
+  i01.head.neck:
+    deadband: 0.0
+    enabled: true
+    inAuto: true
+    inverted: false
+    kd: 0.0
+    key: i01.head.neck
+    ki: 1.0
+    kp: 30.0
+    outCenter: 0.0
+    outMax: null
+    outMin: null
+    sampleTime: 100
+    setpoint: 0.0
+type: Pid

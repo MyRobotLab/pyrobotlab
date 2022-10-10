@@ -1,0 +1,9 @@
+!!org.myrobotlab.service.config.InMoov2HandConfig
+autoStartPeers: true
+index: i01.rightHand.index
+majeure: i01.rightHand.majeure
+pinky: i01.rightHand.pinky
+ringFinger: i01.rightHand.ringFinger
+thumb: i01.rightHand.thumb
+type: InMoov2Hand
+wrist: i01.rightHand.wrist

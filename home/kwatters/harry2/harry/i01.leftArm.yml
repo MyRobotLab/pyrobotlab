@@ -1,0 +1,7 @@
+!!org.myrobotlab.service.config.InMoov2ArmConfig
+autoStartPeers: true
+bicep: i01.leftArm.bicep
+omoplate: i01.leftArm.omoplate
+rotate: i01.leftArm.rotate
+shoulder: i01.leftArm.shoulder
+type: InMoov2Arm

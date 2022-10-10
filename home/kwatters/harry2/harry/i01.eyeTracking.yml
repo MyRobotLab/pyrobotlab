@@ -1,0 +1,10 @@
+!!org.myrobotlab.service.config.TrackingConfig
+autoStartPeers: true
+controller: null
+cv: i01.opencv
+enabled: false
+lostTrackingDelayMs: 1000
+pan: i01.head.eyeX
+pid: i01.pid
+tilt: i01.head.eyeY
+type: Tracking

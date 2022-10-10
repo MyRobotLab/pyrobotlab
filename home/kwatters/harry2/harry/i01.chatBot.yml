@@ -1,0 +1,29 @@
+!!org.myrobotlab.service.config.ProgramABConfig
+autoStartPeers: true
+botDir: null
+bots:
+- data/ProgramAB/Alice
+- data/ProgramAB/Dr.Who
+- data/ProgramAB/Ency
+- data/ProgramAB/Mr. Turing
+- data/ProgramAB/de-DE
+- data/ProgramAB/en-US
+- data/ProgramAB/es-ES
+- data/ProgramAB/fi-FI
+- data/ProgramAB/fr-FR
+- data/ProgramAB/hi-IN
+- data/ProgramAB/it-IT
+- data/ProgramAB/nl-NL
+- data/ProgramAB/pt-PT
+- data/ProgramAB/ru-RU
+- data/ProgramAB/tr-TR
+currentBotName: en-US
+currentUserName: human
+search: null
+sleep: false
+textFilters: null
+textListeners:
+- i01.mouth
+type: ProgramAB
+utteranceListeners: [
+  ]

@@ -1,0 +1,11 @@
+!!org.myrobotlab.service.config.InMoov2Config
+autoStartPeers: true
+heartbeat: true
+idleTimer: true
+loadGestures: true
+locale: en-US
+pirEnableTracking: false
+pirWakeUp: false
+shutdownStartupSpeed: 50.0
+type: InMoov2
+virtual: false

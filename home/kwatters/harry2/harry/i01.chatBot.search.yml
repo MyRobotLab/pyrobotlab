@@ -1,0 +1,6 @@
+!!org.myrobotlab.service.config.WikipediaConfig
+autoStartPeers: true
+enabled: true
+imagePublishers: [
+  ]
+type: Wikipedia

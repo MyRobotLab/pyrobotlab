@@ -1,0 +1,14 @@
+!!org.myrobotlab.service.config.NeoPixelConfig
+autoStartPeers: true
+blue: 242
+brightness: 100
+controller: i01.controller3
+currentAnimation: Ironman
+fill: false
+green: 223
+pin: 10
+pixelCount: 16
+pixelDepth: 4
+red: 174
+speed: 30
+type: NeoPixel

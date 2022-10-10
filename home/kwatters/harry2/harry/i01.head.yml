@@ -1,0 +1,11 @@
+!!org.myrobotlab.service.config.InMoov2HeadConfig
+autoStartPeers: true
+eyeX: i01.head.eyeX
+eyeY: i01.head.eyeY
+eyelidLeft: i01.head.eyelidLeft
+eyelidRight: i01.head.eyelidRight
+jaw: i01.head.jaw
+neck: i01.head.neck
+rollNeck: i01.head.rollNeck
+rothead: i01.head.rothead
+type: InMoov2Head
