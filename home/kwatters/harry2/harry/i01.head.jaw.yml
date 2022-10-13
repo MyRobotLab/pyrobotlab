@@ -7,12 +7,13 @@ enabled: false
 idleTimeout: 3000
 inverted: false
 maxIn: 180.0
-maxOut: 180.0
+maxOut: 45.0
 minIn: 0.0
-minOut: 0.0
+minOut: 5.0
 pin: '26'
 rest: 10.0
-speed: 500.0
+speed: 125.0
 sweepMax: null
 sweepMin: null
+synced: null
 type: Servo

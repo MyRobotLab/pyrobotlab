@@ -17,6 +17,10 @@ registry:
 - i01.ear
 - i01.left.serial
 - i01.left
+- i01.right.serial
+- i01.right
+- i01.controller3.serial
+- i01.controller3
 - i01.opencv
 - i01.head.eyeX
 - i01.pid
@@ -45,8 +49,6 @@ registry:
 - i01.leftHand
 - i01.mouth.audioFile
 - i01.mouth
-- i01.right.serial
-- i01.right
 - i01.rightArm.bicep
 - i01.rightArm.omoplate
 - i01.rightArm.rotate
@@ -64,8 +66,6 @@ registry:
 - i01.torso.midStom
 - i01.torso.topStom
 - i01.torso
-- i01.controller3.serial
-- i01.controller3
 - i01.neoPixel
 type: Runtime
 virtual: false

@@ -3,7 +3,7 @@ autoDisable: true
 autoStartPeers: true
 clip: true
 controller: i01.right
-enabled: false
+enabled: true
 idleTimeout: 3000
 inverted: false
 maxIn: 180.0
@@ -11,8 +11,9 @@ maxOut: 120.0
 minIn: 0.0
 minOut: 0.0
 pin: '12'
-rest: 90.0
+rest: 15.0
 speed: 90.0
 sweepMax: null
 sweepMin: null
+synced: null
 type: Servo
