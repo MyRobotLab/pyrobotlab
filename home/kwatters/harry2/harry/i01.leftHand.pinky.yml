@@ -5,7 +5,7 @@ clip: true
 controller: i01.left
 enabled: false
 idleTimeout: 3000
-inverted: false
+inverted: true
 maxIn: 180.0
 maxOut: 180.0
 minIn: 0.0
@@ -15,4 +15,5 @@ rest: 0.0
 speed: 90.0
 sweepMax: null
 sweepMin: null
+synced: null
 type: Servo
