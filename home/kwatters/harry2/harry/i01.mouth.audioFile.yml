@@ -1,4 +1,6 @@
 !!org.myrobotlab.service.config.AudioFileConfig
+audioListeners: [
+  ]
 autoStartPeers: true
 currentPlaylist: default
 currentTrack: default

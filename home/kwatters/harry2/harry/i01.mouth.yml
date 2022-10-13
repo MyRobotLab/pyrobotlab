@@ -1,4 +1,4 @@
-!!org.myrobotlab.service.config.MarySpeechConfig
+!!org.myrobotlab.service.config.LocalSpeechConfig
 audioFile: i01.mouth.audioFile
 autoStartPeers: true
 blocking: false
@@ -6,5 +6,5 @@ mute: false
 speechRecognizers:
 - i01.ear
 substitutions: null
-type: MarySpeech
-voice: Obadiah
+type: LocalSpeech
+voice: Harry
